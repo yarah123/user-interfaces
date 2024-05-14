@@ -427,15 +427,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   CateringReportComponent: () => (/* binding */ CateringReportComponent)
 /* harmony export */ });
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 47422);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 47422);
 /* harmony import */ var _reports_state_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../reports-state.service */ 73245);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 26575);
-/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/progress-spinner */ 33910);
-/* harmony import */ var _reports_options_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reports-options.component */ 53006);
-/* harmony import */ var _catering_report_overall_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./catering-report-overall.component */ 53095);
-/* harmony import */ var _catering_report_orders_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./catering-report-orders.component */ 49771);
-/* harmony import */ var _catering_report_items_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./catering-report-items.component */ 66845);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 61699);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 26575);
+/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/progress-spinner */ 33910);
+/* harmony import */ var _libs_components_src_lib_printable_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../libs/components/src/lib/printable.component */ 81886);
+/* harmony import */ var _reports_options_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reports-options.component */ 53006);
+/* harmony import */ var _catering_report_overall_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./catering-report-overall.component */ 53095);
+/* harmony import */ var _catering_report_orders_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./catering-report-orders.component */ 49771);
+/* harmony import */ var _catering_report_items_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./catering-report-items.component */ 66845);
+
 
 
 
@@ -448,49 +450,49 @@ __webpack_require__.r(__webpack_exports__);
 
 function CateringReportComponent_ng_container_2_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "catering-report-overall")(2, "catering-report-orders")(3, "catering-report-items");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](1, "catering-report-overall")(2, "catering-report-orders")(3, "catering-report-items");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
 }
 function CateringReportComponent_ng_container_2_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, CateringReportComponent_ng_container_2_div_1_Template, 4, 0, "div", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](2, "async");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](1, CateringReportComponent_ng_container_2_div_1_Template, 4, 0, "div", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](2, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
-    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](2, 2, ctx_r0.total_count))("ngIfElse", _r4);
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵreference"](7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](2, 2, ctx_r0.total_count))("ngIfElse", _r4);
   }
 }
 function CateringReportComponent_ng_template_4_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "mat-spinner", 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "p", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, "Loading report data...");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](1, "mat-spinner", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "p", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](3, "Loading report data...");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("diameter", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("diameter", 32);
   }
 }
 function CateringReportComponent_ng_template_6_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 6)(1, "p", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, " Select levels and time period to generate a report. ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 9)(1, "p", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, " Select levels and time period to generate a report. ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
   }
 }
 class CateringReportComponent {
   constructor(_state) {
     this._state = _state;
-    this.total_count = this._state.stats.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.map)(i => i.count || 0));
+    this.total_count = this._state.stats.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.map)(i => i.count || 0));
     this.loading = this._state.loading;
   }
   ngOnInit() {
@@ -499,30 +501,30 @@ class CateringReportComponent {
     });
   }
   static #_ = this.ɵfac = function CateringReportComponent_Factory(t) {
-    return new (t || CateringReportComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_reports_state_service__WEBPACK_IMPORTED_MODULE_0__.ReportsStateService));
+    return new (t || CateringReportComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_reports_state_service__WEBPACK_IMPORTED_MODULE_0__.ReportsStateService));
   };
-  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
+  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({
     type: CateringReportComponent,
     selectors: [["catering-report"]],
     decls: 8,
     vars: 4,
-    consts: [[1, "flex-1", "h-1/2", "w-full", "overflow-auto"], [4, "ngIf", "ngIfElse"], ["load_state", ""], ["empty_state", ""], ["class", "h-full w-full", 4, "ngIf", "ngIfElse"], [1, "h-full", "w-full"], [1, "h-full", "w-full", "flex", "flex-col", "items-center", "p-8"], [1, "mb-4", 3, "diameter"], ["simple", ""]],
+    consts: [[1, "flex-1", "h-1/2", "w-full", "overflow-auto"], [4, "ngIf", "ngIfElse"], ["load_state", ""], ["empty_state", ""], ["class", "h-full w-full", "printable", "", 4, "ngIf", "ngIfElse"], ["printable", "", 1, "h-full", "w-full"], [1, "h-full", "w-full", "flex", "flex-col", "items-center", "p-8"], [1, "mb-4", 3, "diameter"], ["simple", ""], [1, "h-full", "w-full", "flex", "flex-col", "items-center", "p-8", "screen-only"]],
     template: function CateringReportComponent_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](0, "reports-options");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](2, CateringReportComponent_ng_container_2_Template, 3, 4, "ng-container", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](3, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](4, CateringReportComponent_ng_template_4_Template, 4, 1, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"])(6, CateringReportComponent_ng_template_6_Template, 3, 0, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](0, "reports-options");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](2, CateringReportComponent_ng_container_2_Template, 3, 4, "ng-container", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](3, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](4, CateringReportComponent_ng_template_4_Template, 4, 1, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplateRefExtractor"])(6, CateringReportComponent_ng_template_6_Template, 3, 0, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
       }
       if (rf & 2) {
-        const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](3, 2, ctx.loading))("ngIfElse", _r2);
+        const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵreference"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", !_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](3, 2, ctx.loading))("ngIfElse", _r2);
       }
     },
-    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_8__.MatProgressSpinner, _reports_options_component__WEBPACK_IMPORTED_MODULE_1__.ReportsOptionsComponent, _catering_report_overall_component__WEBPACK_IMPORTED_MODULE_2__.CateringReportOverallComponent, _catering_report_orders_component__WEBPACK_IMPORTED_MODULE_3__.CateringReportOrdersComponent, _catering_report_items_component__WEBPACK_IMPORTED_MODULE_4__.CateringReportItemsComponent, _angular_common__WEBPACK_IMPORTED_MODULE_7__.AsyncPipe],
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_9__.MatProgressSpinner, _libs_components_src_lib_printable_component__WEBPACK_IMPORTED_MODULE_1__.PrintableComponent, _reports_options_component__WEBPACK_IMPORTED_MODULE_2__.ReportsOptionsComponent, _catering_report_overall_component__WEBPACK_IMPORTED_MODULE_3__.CateringReportOverallComponent, _catering_report_orders_component__WEBPACK_IMPORTED_MODULE_4__.CateringReportOrdersComponent, _catering_report_items_component__WEBPACK_IMPORTED_MODULE_5__.CateringReportItemsComponent, _angular_common__WEBPACK_IMPORTED_MODULE_8__.AsyncPipe],
     styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n                height: 100%;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9jYXRlcmluZy9jYXRlcmluZy1yZXBvcnQuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxhQUFhO2dCQUNiLHNCQUFzQjtnQkFDdEIsWUFBWTtZQUNoQiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgOmhvc3Qge1xuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
   });
 }
@@ -647,17 +649,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ContactTracingReportComponent: () => (/* binding */ ContactTracingReportComponent)
 /* harmony export */ });
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ 6324);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! date-fns */ 6324);
 /* harmony import */ var _contact_tracing_state_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./contact-tracing-state.service */ 82949);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 57314);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 26575);
-/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/tooltip */ 60702);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/core */ 55309);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 61699);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ 26575);
+/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/tooltip */ 60702);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/core */ 55309);
 /* harmony import */ var _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../libs/components/src/lib/icon.component */ 94888);
 /* harmony import */ var _libs_components_src_lib_custom_table_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../libs/components/src/lib/custom-table.component */ 27442);
-/* harmony import */ var _contact_tracing_options_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./contact-tracing-options.component */ 58493);
-/* harmony import */ var _get_user_pipe__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./get-user.pipe */ 53829);
+/* harmony import */ var _libs_components_src_lib_printable_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../libs/components/src/lib/printable.component */ 81886);
+/* harmony import */ var _contact_tracing_options_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./contact-tracing-options.component */ 58493);
+/* harmony import */ var _get_user_pipe__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./get-user.pipe */ 53829);
+
 
 
 
@@ -673,69 +677,69 @@ __webpack_require__.r(__webpack_exports__);
 
 function ContactTracingReportComponent_ng_container_2_div_1_ng_template_5_span_0_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "span", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "span", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const data_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]().data;
-    const ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("matTooltip", ctx_r17.options(data_r16));
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", data_r16.length, " option(s) ");
+    const data_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]().data;
+    const ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("matTooltip", ctx_r17.options(data_r16));
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", data_r16.length, " option(s) ");
   }
 }
 function ContactTracingReportComponent_ng_container_2_div_1_ng_template_5_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](0, ContactTracingReportComponent_ng_container_2_div_1_ng_template_5_span_0_Template, 2, 2, "span", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](0, ContactTracingReportComponent_ng_container_2_div_1_ng_template_5_span_0_Template, 2, 2, "span", 15);
   }
   if (rf & 2) {
     const data_r16 = ctx.data;
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", data_r16.length);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", data_r16.length);
   }
 }
 function ContactTracingReportComponent_ng_container_2_div_1_ng_template_7_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](1, "async");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](2, "user");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipe"](1, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipe"](2, "user");
   }
   if (rf & 2) {
     const data_r19 = ctx.data;
     const row_r20 = ctx.row;
     let tmp_0_0;
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](((tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](1, 1, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](2, 3, data_r19))) == null ? null : tmp_0_0.name) || row_r20.mac_address);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](((tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind1"](1, 1, _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind1"](2, 3, data_r19))) == null ? null : tmp_0_0.name) || row_r20.mac_address);
   }
 }
 function ContactTracingReportComponent_ng_container_2_div_1_ng_template_9_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](1, "date");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](2, "date");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipe"](1, "date");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipe"](2, "date");
   }
   if (rf & 2) {
     const data_r21 = ctx.data;
-    const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate2"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](1, 2, data_r21, "mediumDate"), ", ", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](2, 5, data_r21, ctx_r10.time_format), " ");
+    const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate2"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind2"](1, 2, data_r21, "mediumDate"), ", ", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind2"](2, 5, data_r21, ctx_r10.time_format), " ");
   }
 }
 function ContactTracingReportComponent_ng_container_2_div_1_ng_template_11_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](0);
   }
   if (rf & 2) {
     const data_r22 = ctx.data;
-    const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", ctx_r12.formatDuration(data_r22 || 0) || "Less than a minute", " ");
+    const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", ctx_r12.formatDuration(data_r22 || 0) || "Less than a minute", " ");
   }
 }
 function ContactTracingReportComponent_ng_container_2_div_1_ng_template_13_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](0);
   }
   if (rf & 2) {
     const data_r23 = ctx.data;
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", data_r23, "m ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", data_r23, "m ");
   }
 }
 const _c0 = () => ["date", "user_id", "contact_id", "duration"];
@@ -751,59 +755,59 @@ const _c3 = (a0, a1, a2, a3, a4, a5) => ({
 });
 function ContactTracingReportComponent_ng_container_2_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 6)(1, "div", 7)(2, "h2", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](3, "Contact Events");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](4, "custom-table", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](5, ContactTracingReportComponent_ng_container_2_div_1_ng_template_5_Template, 1, 1, "ng-template", null, 10, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplateRefExtractor"])(7, ContactTracingReportComponent_ng_container_2_div_1_ng_template_7_Template, 3, 5, "ng-template", null, 11, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplateRefExtractor"])(9, ContactTracingReportComponent_ng_container_2_div_1_ng_template_9_Template, 3, 8, "ng-template", null, 12, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplateRefExtractor"])(11, ContactTracingReportComponent_ng_container_2_div_1_ng_template_11_Template, 1, 1, "ng-template", null, 13, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplateRefExtractor"])(13, ContactTracingReportComponent_ng_container_2_div_1_ng_template_13_Template, 1, 1, "ng-template", null, 14, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplateRefExtractor"]);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 6)(1, "div", 7)(2, "h2", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](3, "Contact Events");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](4, "custom-table", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](5, ContactTracingReportComponent_ng_container_2_div_1_ng_template_5_Template, 1, 1, "ng-template", null, 10, _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplateRefExtractor"])(7, ContactTracingReportComponent_ng_container_2_div_1_ng_template_7_Template, 3, 5, "ng-template", null, 11, _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplateRefExtractor"])(9, ContactTracingReportComponent_ng_container_2_div_1_ng_template_9_Template, 3, 8, "ng-template", null, 12, _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplateRefExtractor"])(11, ContactTracingReportComponent_ng_container_2_div_1_ng_template_11_Template, 1, 1, "ng-template", null, 13, _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplateRefExtractor"])(13, ContactTracingReportComponent_ng_container_2_div_1_ng_template_13_Template, 1, 1, "ng-template", null, 14, _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplateRefExtractor"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵreference"](6);
-    const _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵreference"](8);
-    const _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵreference"](10);
-    const _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵreference"](12);
-    const _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵreference"](14);
-    const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("dataSource", ctx_r5.tracing_events)("columns", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](7, _c0))("display_column", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](8, _c1))("column_size", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](9, _c2))("template", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction6"](10, _c3, _r7, _r11, _r15, _r9, _r9, _r13))("pagination", true)("page_size", 30);
+    const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵreference"](6);
+    const _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵreference"](8);
+    const _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵreference"](10);
+    const _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵreference"](12);
+    const _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵreference"](14);
+    const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("dataSource", ctx_r5.tracing_events)("columns", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpureFunction0"](7, _c0))("display_column", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpureFunction0"](8, _c1))("column_size", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpureFunction0"](9, _c2))("template", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpureFunction6"](10, _c3, _r7, _r11, _r15, _r9, _r9, _r13))("pagination", true)("page_size", 30);
   }
 }
 function ContactTracingReportComponent_ng_container_2_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](1, ContactTracingReportComponent_ng_container_2_div_1_Template, 15, 17, "div", 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](2, "async");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](1, ContactTracingReportComponent_ng_container_2_div_1_Template, 15, 17, "div", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipe"](2, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
-    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵreference"](10);
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
+    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵreference"](10);
     let tmp_0_0;
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", (tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](2, 2, ctx_r0.options)) == null ? null : tmp_0_0.user)("ngIfElse", _r4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", (tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind1"](2, 2, ctx_r0.options)) == null ? null : tmp_0_0.user)("ngIfElse", _r4);
   }
 }
 function ContactTracingReportComponent_ng_template_7_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 17);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](1, "map-spinner", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "p");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](4, "async");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](1, "map-spinner", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](2, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipe"](4, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](4, 1, ctx_r1.loading));
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind1"](4, 1, ctx_r1.loading));
   }
 }
 function ContactTracingReportComponent_ng_template_9_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 17)(1, "p", 19);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, "Select a user from the topbar to begin");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 19)(1, "p", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](2, "Select a user from the topbar to begin");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
   }
 }
 class ContactTracingReportComponent {
@@ -818,43 +822,43 @@ class ContactTracingReportComponent {
     this.tracing_events = this._state.events;
     this.setOptions = _ => this._state.setOptions(_);
     this.downloadReport = () => this._state.downloadReport();
-    this.formatDuration = d => (0,date_fns__WEBPACK_IMPORTED_MODULE_7__["default"])({
+    this.formatDuration = d => (0,date_fns__WEBPACK_IMPORTED_MODULE_8__["default"])({
       hours: Math.floor(d / 60),
       minutes: d % 60
     });
   }
   static #_ = this.ɵfac = function ContactTracingReportComponent_Factory(t) {
-    return new (t || ContactTracingReportComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_contact_tracing_state_service__WEBPACK_IMPORTED_MODULE_0__.ContactTracingStateService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_placeos_common__WEBPACK_IMPORTED_MODULE_1__.SettingsService));
+    return new (t || ContactTracingReportComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_contact_tracing_state_service__WEBPACK_IMPORTED_MODULE_0__.ContactTracingStateService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_placeos_common__WEBPACK_IMPORTED_MODULE_1__.SettingsService));
   };
-  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({
+  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineComponent"]({
     type: ContactTracingReportComponent,
     selectors: [["app-contact-tracing-report"]],
     decls: 11,
     vars: 4,
-    consts: [[1, "flex-1", "h-1/2", "w-full", "overflow-auto"], [4, "ngIf", "ngIfElse"], ["icon", "", "matRipple", "", "matTooltip", "Download Report", 1, "bg-base-100", "absolute", "bottom-2", "left-2", "shadow", 3, "click"], ["load_state", ""], ["empty_state", ""], ["class", "w-[64rem] max-w-[calc(100%-2rem)] rounded overflow-hidden bg-base-100 shadow mx-auto my-2", 4, "ngIf", "ngIfElse"], [1, "w-[64rem]", "max-w-[calc(100%-2rem)]", "rounded", "overflow-hidden", "bg-base-100", "shadow", "mx-auto", "my-2"], [1, "border-b", "border-base-200", "flex", "items-center", "justify-between", "px-4"], [1, "py-2", "text-xl", "font-medium"], ["empty", "No contact records for selected period", 1, "w-full", "h-full", 3, "dataSource", "columns", "display_column", "column_size", "template", "pagination", "page_size"], ["option_state", ""], ["user_state", ""], ["date_state", ""], ["duration_state", ""], ["distance_state", ""], ["class", "text-xs px-2 py-1 rounded bg-base-200", 3, "matTooltip", 4, "ngIf"], [1, "text-xs", "px-2", "py-1", "rounded", "bg-base-200", 3, "matTooltip"], [1, "p-8", "flex", "flex-col", "items-center", "justify-center", "space-y-2"], ["diameter", "32"], [1, "opacity-60"]],
+    consts: [[1, "flex-1", "h-1/2", "w-full", "overflow-auto"], [4, "ngIf", "ngIfElse"], ["icon", "", "matRipple", "", "matTooltip", "Download Report", 1, "bg-base-100", "absolute", "bottom-2", "left-2", "shadow", 3, "click"], ["load_state", ""], ["empty_state", ""], ["class", "w-[64rem] max-w-[calc(100%-2rem)] rounded overflow-hidden bg-base-100 shadow mx-auto my-2", "printable", "", 4, "ngIf", "ngIfElse"], ["printable", "", 1, "w-[64rem]", "max-w-[calc(100%-2rem)]", "rounded", "overflow-hidden", "bg-base-100", "shadow", "mx-auto", "my-2"], [1, "border-b", "border-base-200", "flex", "items-center", "justify-between", "px-4"], [1, "py-2", "text-xl", "font-medium"], ["empty", "No contact records for selected period", 1, "w-full", "h-full", 3, "dataSource", "columns", "display_column", "column_size", "template", "pagination", "page_size"], ["option_state", ""], ["user_state", ""], ["date_state", ""], ["duration_state", ""], ["distance_state", ""], ["class", "text-xs px-2 py-1 rounded bg-base-200", 3, "matTooltip", 4, "ngIf"], [1, "text-xs", "px-2", "py-1", "rounded", "bg-base-200", 3, "matTooltip"], [1, "p-8", "flex", "flex-col", "items-center", "justify-center", "space-y-2"], ["diameter", "32"], [1, "p-8", "flex", "flex-col", "items-center", "justify-center", "space-y-2", "screen-only"], [1, "opacity-60"]],
     template: function ContactTracingReportComponent_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](0, "contact-tracing-options");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](2, ContactTracingReportComponent_ng_container_2_Template, 3, 4, "ng-container", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](3, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](4, "button", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ContactTracingReportComponent_Template_button_click_4_listener() {
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "contact-tracing-options");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](1, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](2, ContactTracingReportComponent_ng_container_2_Template, 3, 4, "ng-container", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipe"](3, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](4, "button", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function ContactTracingReportComponent_Template_button_click_4_listener() {
           return ctx.downloadReport();
         });
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](5, "app-icon");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](6, "download");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](7, ContactTracingReportComponent_ng_template_7_Template, 5, 3, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplateRefExtractor"])(9, ContactTracingReportComponent_ng_template_9_Template, 3, 0, "ng-template", null, 4, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](5, "app-icon");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](6, "download");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](7, ContactTracingReportComponent_ng_template_7_Template, 5, 3, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplateRefExtractor"])(9, ContactTracingReportComponent_ng_template_9_Template, 3, 0, "ng-template", null, 4, _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplateRefExtractor"]);
       }
       if (rf & 2) {
-        const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵreference"](8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", !_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](3, 2, ctx.loading))("ngIfElse", _r2);
+        const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵreference"](8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", !_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind1"](3, 2, ctx.loading))("ngIfElse", _r2);
       }
     },
-    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_9__.MatTooltip, _angular_material_core__WEBPACK_IMPORTED_MODULE_10__.MatRipple, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_2__.IconComponent, _libs_components_src_lib_custom_table_component__WEBPACK_IMPORTED_MODULE_3__.CustomTableComponent, _contact_tracing_options_component__WEBPACK_IMPORTED_MODULE_4__.ContactTracingOptionsComponent, _angular_common__WEBPACK_IMPORTED_MODULE_8__.AsyncPipe, _angular_common__WEBPACK_IMPORTED_MODULE_8__.DatePipe, _get_user_pipe__WEBPACK_IMPORTED_MODULE_5__.GetUserPipe],
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_10__.MatTooltip, _angular_material_core__WEBPACK_IMPORTED_MODULE_11__.MatRipple, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_2__.IconComponent, _libs_components_src_lib_custom_table_component__WEBPACK_IMPORTED_MODULE_3__.CustomTableComponent, _libs_components_src_lib_printable_component__WEBPACK_IMPORTED_MODULE_4__.PrintableComponent, _contact_tracing_options_component__WEBPACK_IMPORTED_MODULE_5__.ContactTracingOptionsComponent, _angular_common__WEBPACK_IMPORTED_MODULE_9__.AsyncPipe, _angular_common__WEBPACK_IMPORTED_MODULE_9__.DatePipe, _get_user_pipe__WEBPACK_IMPORTED_MODULE_6__.GetUserPipe],
     styles: ["[_nghost-%COMP%] {\n                width: 100%;\n                height: 100%;\n                display: flex;\n                flex-direction: column;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9jb250YWN0LXRyYWNpbmcvY29udGFjdC10cmFjaW5nLXJlcG9ydC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLFdBQVc7Z0JBQ1gsWUFBWTtnQkFDWixhQUFhO2dCQUNiLHNCQUFzQjtZQUMxQiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgOmhvc3Qge1xuICAgICAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
   });
 }
@@ -1466,15 +1470,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ReportDesksComponent: () => (/* binding */ ReportDesksComponent)
 /* harmony export */ });
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 47422);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 47422);
 /* harmony import */ var _reports_state_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../reports-state.service */ 73245);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 26575);
-/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/progress-spinner */ 33910);
-/* harmony import */ var _reports_options_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reports-options.component */ 53006);
-/* harmony import */ var _report_desks_overall_list_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./report-desks-overall-list.component */ 84735);
-/* harmony import */ var _report_desks_level_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./report-desks-level-list.component */ 18938);
-/* harmony import */ var _report_desks_charts_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./report-desks-charts.component */ 41976);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 61699);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 26575);
+/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/progress-spinner */ 33910);
+/* harmony import */ var _libs_components_src_lib_printable_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../libs/components/src/lib/printable.component */ 81886);
+/* harmony import */ var _reports_options_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reports-options.component */ 53006);
+/* harmony import */ var _report_desks_overall_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./report-desks-overall-list.component */ 84735);
+/* harmony import */ var _report_desks_level_list_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./report-desks-level-list.component */ 18938);
+/* harmony import */ var _report_desks_charts_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./report-desks-charts.component */ 41976);
+
 
 
 
@@ -1488,71 +1494,71 @@ __webpack_require__.r(__webpack_exports__);
 const _c0 = ["report-desks", ""];
 function ReportDesksComponent_ng_container_2_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 4)(2, "div", 5)(3, "h3");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](4, "Total Bookings");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "p");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](7, "async");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "div", 5)(9, "h3");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](10, "Utilisation");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](11, "p");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](13, "async");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](14, "report-desks-charts")(15, "report-desks-overall-list")(16, "report-desks-levels-list");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 4)(2, "div", 5)(3, "h3");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](4, "Total Bookings");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](5, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](7, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](8, "div", 5)(9, "h3");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](10, "Utilisation");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](11, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](13, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](14, "report-desks-charts")(15, "report-desks-overall-list")(16, "report-desks-levels-list");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
-    const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](7, 2, ctx_r5.total_count) || 0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"]("", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](13, 4, ctx_r5.utilisation) || 0, "%");
+    const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](7, 2, ctx_r5.total_count) || 0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"]("", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](13, 4, ctx_r5.utilisation) || 0, "%");
   }
 }
 function ReportDesksComponent_ng_container_2_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, ReportDesksComponent_ng_container_2_ng_container_1_Template, 17, 6, "ng-container", 1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](2, "async");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](1, ReportDesksComponent_ng_container_2_ng_container_1_Template, 17, 6, "ng-container", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](2, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
-    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](2, 2, ctx_r0.total_count))("ngIfElse", _r4);
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵreference"](7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](2, 2, ctx_r0.total_count))("ngIfElse", _r4);
   }
 }
 function ReportDesksComponent_ng_template_4_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "mat-spinner", 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "p", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, "Loading report data...");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](1, "mat-spinner", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "p", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](3, "Loading report data...");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("diameter", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("diameter", 32);
   }
 }
 function ReportDesksComponent_ng_template_6_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 6)(1, "p", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, " Select levels and time period to generate a report. ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 9)(1, "p", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, " Select levels and time period to generate a report. ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
   }
 }
 class ReportDesksComponent {
   constructor(_state) {
     this._state = _state;
-    this.total_count = this._state.stats.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.map)(i => i.count || 0));
-    this.utilisation = this._state.stats.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.map)(i => ((i.utilisation || 0) * 100).toFixed(1)));
+    this.total_count = this._state.stats.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.map)(i => i.count || 0));
+    this.utilisation = this._state.stats.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.map)(i => ((i.utilisation || 0) * 100).toFixed(1)));
     this.loading = this._state.loading;
   }
   ngOnInit() {
@@ -1561,31 +1567,31 @@ class ReportDesksComponent {
     });
   }
   static #_ = this.ɵfac = function ReportDesksComponent_Factory(t) {
-    return new (t || ReportDesksComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_reports_state_service__WEBPACK_IMPORTED_MODULE_0__.ReportsStateService));
+    return new (t || ReportDesksComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_reports_state_service__WEBPACK_IMPORTED_MODULE_0__.ReportsStateService));
   };
-  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
+  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({
     type: ReportDesksComponent,
     selectors: [["", "report-desks", ""]],
     attrs: _c0,
     decls: 8,
     vars: 4,
-    consts: [[1, "flex-1", "h-1/2", "w-full", "overflow-auto"], [4, "ngIf", "ngIfElse"], ["load_state", ""], ["empty_state", ""], [1, "m-4", "p-4", "rounded", "bg-base-100", "shadow", "flex", "justify-center", "items-center", "space-x-2"], [1, "flex", "flex-col", "items-center", "flex-1"], [1, "h-full", "w-full", "flex", "flex-col", "items-center", "p-8"], [1, "mb-4", 3, "diameter"], ["simple", ""]],
+    consts: [["printable", "", 1, "flex-1", "h-1/2", "w-full", "overflow-auto"], [4, "ngIf", "ngIfElse"], ["load_state", ""], ["empty_state", ""], [1, "m-4", "p-4", "rounded", "bg-base-100", "shadow", "flex", "justify-center", "items-center", "space-x-2"], [1, "flex", "flex-col", "items-center", "flex-1"], [1, "h-full", "w-full", "flex", "flex-col", "items-center", "p-8"], [1, "mb-4", 3, "diameter"], ["simple", ""], [1, "h-full", "w-full", "flex", "flex-col", "items-center", "p-8", "screen-only"]],
     template: function ReportDesksComponent_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](0, "reports-options");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](2, ReportDesksComponent_ng_container_2_Template, 3, 4, "ng-container", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](3, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](4, ReportDesksComponent_ng_template_4_Template, 4, 1, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"])(6, ReportDesksComponent_ng_template_6_Template, 3, 0, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](0, "reports-options");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](2, ReportDesksComponent_ng_container_2_Template, 3, 4, "ng-container", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](3, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](4, ReportDesksComponent_ng_template_4_Template, 4, 1, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplateRefExtractor"])(6, ReportDesksComponent_ng_template_6_Template, 3, 0, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
       }
       if (rf & 2) {
-        const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](3, 2, ctx.loading))("ngIfElse", _r2);
+        const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵreference"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", !_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](3, 2, ctx.loading))("ngIfElse", _r2);
       }
     },
-    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_8__.MatProgressSpinner, _reports_options_component__WEBPACK_IMPORTED_MODULE_1__.ReportsOptionsComponent, _report_desks_overall_list_component__WEBPACK_IMPORTED_MODULE_2__.ReportDesksOverallListComponent, _report_desks_level_list_component__WEBPACK_IMPORTED_MODULE_3__.ReportDesksLevelListComponent, _report_desks_charts_component__WEBPACK_IMPORTED_MODULE_4__.ReportDesksChartsComponent, _angular_common__WEBPACK_IMPORTED_MODULE_7__.AsyncPipe],
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_9__.MatProgressSpinner, _libs_components_src_lib_printable_component__WEBPACK_IMPORTED_MODULE_1__.PrintableComponent, _reports_options_component__WEBPACK_IMPORTED_MODULE_2__.ReportsOptionsComponent, _report_desks_overall_list_component__WEBPACK_IMPORTED_MODULE_3__.ReportDesksOverallListComponent, _report_desks_level_list_component__WEBPACK_IMPORTED_MODULE_4__.ReportDesksLevelListComponent, _report_desks_charts_component__WEBPACK_IMPORTED_MODULE_5__.ReportDesksChartsComponent, _angular_common__WEBPACK_IMPORTED_MODULE_8__.AsyncPipe],
     styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n                height: 100%;\n            }\n\n            h3[_ngcontent-%COMP%] {\n                font-weight: 500;\n            }\n\n            p[_ngcontent-%COMP%]:not([simple]) {\n                font-size: 1.75rem;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9kZXNrcy9yZXBvcnQtZGVza3MuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxhQUFhO2dCQUNiLHNCQUFzQjtnQkFDdEIsWUFBWTtZQUNoQjs7WUFFQTtnQkFDSSxnQkFBZ0I7WUFDcEI7O1lBRUE7Z0JBQ0ksa0JBQWtCO1lBQ3RCIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgaDMge1xuICAgICAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiA1MDA7XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIHA6bm90KFtzaW1wbGVdKSB7XG4gICAgICAgICAgICAgICAgZm9udC1zaXplOiAxLjc1cmVtO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
   });
 }
@@ -1618,7 +1624,7 @@ __webpack_require__.r(__webpack_exports__);
 const _c0 = ["app-new-reports", ""];
 function NewReportsComponent_div_5_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](0, "div", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](0, "div", 4);
   }
 }
 class NewReportsComponent {
@@ -1638,15 +1644,15 @@ class NewReportsComponent {
     attrs: _c0,
     decls: 6,
     vars: 1,
-    consts: [[1, "flex", "flex-1", "h-px"], [1, "flex", "flex-col", "flex-1", "w-1/2", "h-full", "relative"], ["reports-menu", "", "class", "absolute inset-0", 4, "ngIf"], ["reports-menu", "", 1, "absolute", "inset-0"]],
+    consts: [[1, "screen-only"], [1, "flex", "flex-1", "h-px"], [1, "flex", "flex-col", "flex-1", "w-1/2", "h-full", "relative"], ["reports-menu", "", "class", "absolute inset-0 screen-only", 4, "ngIf"], ["reports-menu", "", 1, "absolute", "inset-0", "screen-only"]],
     template: function NewReportsComponent_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](0, "app-topbar");
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](2, "app-sidebar");
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](3, "main", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](0, "app-topbar", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](2, "app-sidebar", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](3, "main", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](4, "router-outlet");
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](5, NewReportsComponent_div_5_Template, 1, 0, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](5, NewReportsComponent_div_5_Template, 1, 0, "div", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
       }
       if (rf & 2) {
@@ -1975,7 +1981,7 @@ class ReportsOptionsComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1
     features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵInheritDefinitionFeature"]],
     decls: 28,
     vars: 28,
-    consts: [[1, "bg-base-100", "h-20", "w-full", "flex", "items-center", "px-2", "shadow", "z-20", "border-b", "border-base-200"], ["appearance", "outline", 1, "w-48"], ["multiple", "", "placeholder", "Select Levels...", 3, "ngModel", "ngModelChange"], ["value", "All"], [3, "value", 4, "ngFor", "ngForOf"], ["appearance", "outline", 1, "w-64"], [3, "rangePicker"], ["matStartDate", "", "placeholder", "Start date", 3, "ngModel", "ngModelChange"], ["matEndDate", "", "placeholder", "End date", 3, "ngModel", "ngModelChange"], ["matSuffix", "", 3, "for"], ["picker", ""], ["btn", "", "matRipple", "", 1, "ml-4", 3, "disabled", "click"], [3, "diameter", 4, "ngIf"], [4, "ngIf"], [3, "value"], [3, "diameter"]],
+    consts: [[1, "bg-base-100", "h-20", "w-full", "flex", "items-center", "px-2", "shadow", "z-20", "border-b", "border-base-200", "screen-only"], ["appearance", "outline", 1, "w-48"], ["multiple", "", "placeholder", "Select Levels...", 3, "ngModel", "ngModelChange"], ["value", "All"], [3, "value", 4, "ngFor", "ngForOf"], ["appearance", "outline", 1, "w-64"], [3, "rangePicker"], ["matStartDate", "", "placeholder", "Start date", 3, "ngModel", "ngModelChange"], ["matEndDate", "", "placeholder", "End date", 3, "ngModel", "ngModelChange"], ["matSuffix", "", 3, "for"], ["picker", ""], ["btn", "", "matRipple", "", 1, "ml-4", 3, "disabled", "click"], [3, "diameter", 4, "ngIf"], [4, "ngIf"], [3, "value"], [3, "diameter"]],
     template: function ReportsOptionsComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0)(1, "mat-form-field", 1)(2, "mat-select", 2);
@@ -2338,7 +2344,7 @@ class ReportsComponent {
     attrs: _c0,
     decls: 4,
     vars: 1,
-    consts: [[1, "h-full"], [1, "relative", "overflow-hidden", "flex", "flex-col", "flex-1", "w-1/2", "h-full", "bg-base-200"], ["reports-menu", "", "class", "absolute inset-0", 4, "ngIf"], ["reports-menu", "", 1, "absolute", "inset-0"]],
+    consts: [[1, "h-full", "screen-only"], [1, "relative", "overflow-hidden", "flex", "flex-col", "flex-1", "w-1/2", "h-full", "bg-base-200"], ["reports-menu", "", "class", "absolute inset-0 screen-only", 4, "ngIf"], ["reports-menu", "", 1, "absolute", "inset-0", "screen-only"]],
     template: function ReportsComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "sidebar", 0);
@@ -2952,15 +2958,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ReportSpacesComponent: () => (/* binding */ ReportSpacesComponent)
 /* harmony export */ });
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 47422);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 47422);
 /* harmony import */ var _reports_state_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../reports-state.service */ 73245);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 26575);
-/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/progress-spinner */ 33910);
-/* harmony import */ var _reports_options_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reports-options.component */ 53006);
-/* harmony import */ var _report_spaces_overall_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./report-spaces-overall.component */ 28901);
-/* harmony import */ var _report_spaces_space_listing_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./report-spaces-space-listing.component */ 48282);
-/* harmony import */ var _report_spaces_user_listing_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./report-spaces-user-listing.component */ 82518);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 61699);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 26575);
+/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/progress-spinner */ 33910);
+/* harmony import */ var _libs_components_src_lib_printable_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../libs/components/src/lib/printable.component */ 81886);
+/* harmony import */ var _reports_options_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reports-options.component */ 53006);
+/* harmony import */ var _report_spaces_overall_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./report-spaces-overall.component */ 28901);
+/* harmony import */ var _report_spaces_space_listing_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./report-spaces-space-listing.component */ 48282);
+/* harmony import */ var _report_spaces_user_listing_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./report-spaces-user-listing.component */ 82518);
+
 
 
 
@@ -2974,49 +2982,49 @@ __webpack_require__.r(__webpack_exports__);
 const _c0 = ["report-spaces", ""];
 function ReportSpacesComponent_ng_container_2_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "report-spaces-overall")(2, "report-spaces-space-listing")(3, "report-spaces-user-listing");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](1, "report-spaces-overall")(2, "report-spaces-space-listing")(3, "report-spaces-user-listing");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerEnd"]();
   }
 }
 function ReportSpacesComponent_ng_container_2_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, ReportSpacesComponent_ng_container_2_ng_container_1_Template, 4, 0, "ng-container", 1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](2, "async");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](1, ReportSpacesComponent_ng_container_2_ng_container_1_Template, 4, 0, "ng-container", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](2, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
-    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](2, 2, ctx_r0.total_count))("ngIfElse", _r4);
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵreference"](7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](2, 2, ctx_r0.total_count))("ngIfElse", _r4);
   }
 }
 function ReportSpacesComponent_ng_template_4_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "mat-spinner", 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "p", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, "Loading report data...");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](1, "mat-spinner", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "p", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](3, "Loading report data...");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("diameter", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("diameter", 32);
   }
 }
 function ReportSpacesComponent_ng_template_6_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 4)(1, "p", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, " Select levels and time period to generate a report. ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 7)(1, "p", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](2, " Select levels and time period to generate a report. ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
   }
 }
 class ReportSpacesComponent {
   constructor(_state) {
     this._state = _state;
-    this.total_count = this._state.stats.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.map)(i => i.count || 0));
+    this.total_count = this._state.stats.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.map)(i => i.count || 0));
     this.loading = this._state.loading;
   }
   ngOnInit() {
@@ -3025,31 +3033,31 @@ class ReportSpacesComponent {
     });
   }
   static #_ = this.ɵfac = function ReportSpacesComponent_Factory(t) {
-    return new (t || ReportSpacesComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_reports_state_service__WEBPACK_IMPORTED_MODULE_0__.ReportsStateService));
+    return new (t || ReportSpacesComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_reports_state_service__WEBPACK_IMPORTED_MODULE_0__.ReportsStateService));
   };
-  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
+  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({
     type: ReportSpacesComponent,
     selectors: [["", "report-spaces", ""]],
     attrs: _c0,
     decls: 8,
     vars: 4,
-    consts: [[1, "relative", "flex-1", "h-1/2", "w-full", "overflow-auto", "z-0"], [4, "ngIf", "ngIfElse"], ["load_state", ""], ["empty_state", ""], [1, "h-full", "w-full", "flex", "flex-col", "items-center", "p-8"], [1, "mb-4", 3, "diameter"], ["simple", ""]],
+    consts: [["printable", "", 1, "relative", "flex-1", "h-1/2", "w-full", "overflow-auto", "z-0"], [4, "ngIf", "ngIfElse"], ["load_state", ""], ["empty_state", ""], [1, "h-full", "w-full", "flex", "flex-col", "items-center", "p-8"], [1, "mb-4", 3, "diameter"], ["simple", ""], [1, "h-full", "w-full", "flex", "flex-col", "items-center", "p-8", "screen-only"]],
     template: function ReportSpacesComponent_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](0, "reports-options");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](2, ReportSpacesComponent_ng_container_2_Template, 3, 4, "ng-container", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](3, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](4, ReportSpacesComponent_ng_template_4_Template, 4, 1, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"])(6, ReportSpacesComponent_ng_template_6_Template, 3, 0, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](0, "reports-options");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](2, ReportSpacesComponent_ng_container_2_Template, 3, 4, "ng-container", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](3, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](4, ReportSpacesComponent_ng_template_4_Template, 4, 1, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplateRefExtractor"])(6, ReportSpacesComponent_ng_template_6_Template, 3, 0, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplateRefExtractor"]);
       }
       if (rf & 2) {
-        const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](3, 2, ctx.loading))("ngIfElse", _r2);
+        const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵreference"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", !_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](3, 2, ctx.loading))("ngIfElse", _r2);
       }
     },
-    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_8__.MatProgressSpinner, _reports_options_component__WEBPACK_IMPORTED_MODULE_1__.ReportsOptionsComponent, _report_spaces_overall_component__WEBPACK_IMPORTED_MODULE_2__.ReportSpacesOverallComponent, _report_spaces_space_listing_component__WEBPACK_IMPORTED_MODULE_3__.ReportSpacesSpaceListing, _report_spaces_user_listing_component__WEBPACK_IMPORTED_MODULE_4__.ReportSpacesUserListingComponent, _angular_common__WEBPACK_IMPORTED_MODULE_7__.AsyncPipe],
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_9__.MatProgressSpinner, _libs_components_src_lib_printable_component__WEBPACK_IMPORTED_MODULE_1__.PrintableComponent, _reports_options_component__WEBPACK_IMPORTED_MODULE_2__.ReportsOptionsComponent, _report_spaces_overall_component__WEBPACK_IMPORTED_MODULE_3__.ReportSpacesOverallComponent, _report_spaces_space_listing_component__WEBPACK_IMPORTED_MODULE_4__.ReportSpacesSpaceListing, _report_spaces_user_listing_component__WEBPACK_IMPORTED_MODULE_5__.ReportSpacesUserListingComponent, _angular_common__WEBPACK_IMPORTED_MODULE_8__.AsyncPipe],
     styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n                height: 100%;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9zcGFjZXMvcmVwb3J0LXNwYWNlcy5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGFBQWE7Z0JBQ2Isc0JBQXNCO2dCQUN0QixZQUFZO1lBQ2hCIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
   });
 }

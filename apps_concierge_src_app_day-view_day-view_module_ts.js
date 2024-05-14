@@ -1754,107 +1754,136 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function RoomBookingsComponent_mat_option_13_Template(rf, ctx) {
+function RoomBookingsComponent_mat_form_field_10_mat_option_3_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "mat-option", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "mat-option", 21);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const level_r6 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("value", level_r6.id);
+    const level_r7 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("value", level_r7.id);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", level_r6.display_name || level_r6.name, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", level_r7.display_name || level_r7.name, " ");
   }
 }
-function RoomBookingsComponent_ng_container_15_Template(rf, ctx) {
+function RoomBookingsComponent_mat_form_field_10_Template(rf, ctx) {
   if (rf & 1) {
-    const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
+    const _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "mat-form-field", 18)(1, "mat-select", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("ngModelChange", function RoomBookingsComponent_mat_form_field_10_Template_mat_select_ngModelChange_1_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r9);
+      const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵresetView"](ctx_r8.updateZones($event));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipe"](2, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](3, RoomBookingsComponent_mat_form_field_10_mat_option_3_Template, 2, 2, "mat-option", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipe"](4, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
+  }
+  if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind1"](2, 2, ctx_r0.zones));
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind1"](4, 4, ctx_r0.levels));
+  }
+}
+function RoomBookingsComponent_ng_container_11_div_1_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "div", 7);
+  }
+}
+function RoomBookingsComponent_ng_container_11_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](1, "div", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](2, "mat-slide-toggle", 21);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("ngModelChange", function RoomBookingsComponent_ng_container_15_Template_mat_slide_toggle_ngModelChange_2_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r8);
-      const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵresetView"](ctx_r7.updateUIOptions({
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](1, RoomBookingsComponent_ng_container_11_div_1_Template, 1, 0, "div", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](2, "mat-slide-toggle", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("ngModelChange", function RoomBookingsComponent_ng_container_11_Template_mat_slide_toggle_ngModelChange_2_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r12);
+      const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵresetView"](ctx_r11.updateUIOptions({
         show_overflow: $event
       }));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipe"](3, "async");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](4, "div", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](4, "div", 24);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](5, "Setup / Breakdown");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
-    let tmp_0_0;
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", (tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind1"](3, 1, ctx_r1.ui_options)) == null ? null : tmp_0_0.show_overflow);
+    let tmp_1_0;
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", !ctx_r1.use_region);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", (tmp_1_0 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind1"](3, 2, ctx_r1.ui_options)) == null ? null : tmp_1_0.show_overflow);
   }
 }
-function RoomBookingsComponent_mat_checkbox_26_Template(rf, ctx) {
+function RoomBookingsComponent_mat_checkbox_22_Template(rf, ctx) {
   if (rf & 1) {
-    const _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "mat-checkbox", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("ngModelChange", function RoomBookingsComponent_mat_checkbox_26_Template_mat_checkbox_ngModelChange_0_listener($event) {
-      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r11);
-      const type_r9 = restoredCtx.$implicit;
-      const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵresetView"](ctx_r10.setFilter(type_r9.id, !$event));
+    const _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "mat-checkbox", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("ngModelChange", function RoomBookingsComponent_mat_checkbox_22_Template_mat_checkbox_ngModelChange_0_listener($event) {
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r15);
+      const type_r13 = restoredCtx.$implicit;
+      const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵresetView"](ctx_r14.setFilter(type_r13.id, !$event));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const type_r9 = ctx.$implicit;
+    const type_r13 = ctx.$implicit;
     const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", !ctx_r3.type_list.includes(type_r9.id));
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", !ctx_r3.type_list.includes(type_r13.id));
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", type_r9.name, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", type_r13.name, " ");
   }
 }
-function RoomBookingsComponent_ng_container_27_div_1_Template(rf, ctx) {
+function RoomBookingsComponent_ng_container_23_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    const _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](1, "div", 26);
+    const _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](1, "div", 28);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](2, "div");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](4, "button", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function RoomBookingsComponent_ng_container_27_div_1_Template_button_click_4_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r16);
-      const type_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]().$implicit;
-      const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵresetView"](ctx_r14.setFilter(type_r12.id, true));
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](4, "button", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function RoomBookingsComponent_ng_container_23_div_1_Template_button_click_4_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r20);
+      const type_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]().$implicit;
+      const ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵresetView"](ctx_r18.setFilter(type_r16.id, true));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](5, "app-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](6, "close");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
-    const type_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]().$implicit;
+    const type_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]().$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", type_r12.color);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵstyleProp"]("background-color", type_r16.color);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](type_r12.name);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](type_r16.name);
   }
 }
-function RoomBookingsComponent_ng_container_27_Template(rf, ctx) {
+function RoomBookingsComponent_ng_container_23_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](1, RoomBookingsComponent_ng_container_27_div_1_Template, 7, 3, "div", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](1, RoomBookingsComponent_ng_container_23_div_1_Template, 7, 3, "div", 26);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
-    const type_r12 = ctx.$implicit;
+    const type_r16 = ctx.$implicit;
     const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", !ctx_r4.type_list.includes(type_r12.id));
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", !ctx_r4.type_list.includes(type_r16.id));
   }
 }
-function RoomBookingsComponent_room_bookings_approvals_30_Template(rf, ctx) {
+function RoomBookingsComponent_room_bookings_approvals_26_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "room-bookings-approvals");
   }
@@ -1869,6 +1898,9 @@ class RoomBookingsComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__
   }
   get allow_setup_breakdown() {
     return this._settings.get('app.events.allow_setup_breakdown');
+  }
+  get use_region() {
+    return this._settings.get('app.use_region');
   }
   constructor(_org, _state, _router, _route, _settings) {
     super();
@@ -1911,6 +1943,7 @@ class RoomBookingsComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__
   ngOnInit() {
     var _this = this;
     this.subscription('route.query', this._route.queryParamMap.subscribe(params => {
+      if (this.use_region) return;
       if (params.has('zone_ids')) {
         const zones = params.get('zone_ids').split(',');
         if (zones.length) {
@@ -1922,6 +1955,7 @@ class RoomBookingsComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__
     }));
     this.subscription('levels', this._org.active_levels.subscribe( /*#__PURE__*/function () {
       var _ref = (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (levels) {
+        if (_this.use_region) return;
         const zones = (yield _this.zones.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.take)(1)).toPromise()).filter(zone => levels.find(lvl => lvl.id === zone));
         if (!zones.length && levels.length) {
           zones.push(levels[0].id);
@@ -1932,6 +1966,7 @@ class RoomBookingsComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__
         return _ref.apply(this, arguments);
       };
     }()));
+    this.subscription('region', this._org.active_region.subscribe(_ => this.updateZones([_.id])));
   }
   setFilter(id, value) {
     const filters = this._state.filters;
@@ -1949,9 +1984,9 @@ class RoomBookingsComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__
     type: RoomBookingsComponent,
     selectors: [["room-bookings"]],
     features: [_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵInheritDefinitionFeature"]],
-    decls: 31,
-    vars: 11,
-    consts: [[1, "absolute", "inset-0", "flex", "flex-col", "overflow-hidden", "pl-8"], [1, "flex", "items-center", "justify-between", "w-full", "py-4", "pr-8"], [1, "text-2xl", "font-medium"], ["btn", "", "matRipple", "", 1, "space-x-2", 3, "click"], [1, "w-full", "flex", "items-center"], ["appearance", "outline", 1, "h-[3.5rem]"], ["multiple", "", "placeholder", "All Levels", 3, "ngModel", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "border-l", "h-full", "ml-8", "mr-4"], [1, "flex", "items-center", "space-x-2"], ["btn", "", "matRipple", "", 1, "inverse", 3, "matMenuTriggerFor"], [1, "mx-2"], [1, ""], ["menu", "matMenu"], [1, "flex", "flex-col", "space-y-2", "overflow-hidden", "w-48"], [3, "ngModel", "ngModelChange", 4, "ngFor", "ngForOf"], [4, "ngFor", "ngForOf"], [1, "flex", "w-full", "flex-1", "h-px", "border-t", "mt-4", "border-base-200"], [1, "flex-1"], [3, "value"], [1, "m-2", 3, "ngModel", "ngModelChange"], [1, "text-xs"], [3, "ngModel", "ngModelChange"], ["class", "flex items-center border border-base-200 rounded-3xl", 4, "ngIf"], [1, "flex", "items-center", "border", "border-base-200", "rounded-3xl"], [1, "h-4", "w-4", "m-2", "rounded-full"], ["icon", "", "matRipple", "", 3, "click"]],
+    decls: 27,
+    vars: 6,
+    consts: [[1, "absolute", "inset-0", "flex", "flex-col", "overflow-hidden", "pl-8"], [1, "flex", "items-center", "justify-between", "w-full", "py-4", "pr-8"], [1, "text-2xl", "font-medium"], ["btn", "", "matRipple", "", 1, "space-x-2", 3, "click"], [1, "w-full", "flex", "items-center"], ["appearance", "outline", "class", "h-[3.5rem]", 4, "ngIf"], [4, "ngIf"], [1, "border-l", "h-full", "ml-8", "mr-4"], [1, "flex", "items-center", "space-x-2"], ["btn", "", "matRipple", "", 1, "inverse", 3, "matMenuTriggerFor"], [1, "mx-2"], [1, ""], ["menu", "matMenu"], [1, "flex", "flex-col", "space-y-2", "overflow-hidden", "w-48"], [3, "ngModel", "ngModelChange", 4, "ngFor", "ngForOf"], [4, "ngFor", "ngForOf"], [1, "flex", "w-full", "flex-1", "h-px", "border-t", "mt-4", "border-base-200"], [1, "flex-1"], ["appearance", "outline", 1, "h-[3.5rem]"], ["multiple", "", "placeholder", "All Levels", 3, "ngModel", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], ["class", "border-l h-full ml-8 mr-4", 4, "ngIf"], [1, "m-2", 3, "ngModel", "ngModelChange"], [1, "text-xs"], [3, "ngModel", "ngModelChange"], ["class", "flex items-center border border-base-200 rounded-3xl", 4, "ngIf"], [1, "flex", "items-center", "border", "border-base-200", "rounded-3xl"], [1, "h-4", "w-4", "m-2", "rounded-full"], ["icon", "", "matRipple", "", 3, "click"]],
     template: function RoomBookingsComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "h2", 2);
@@ -1967,39 +2002,30 @@ class RoomBookingsComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](7, "app-icon");
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](8, "add");
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](9, "div", 4)(10, "mat-form-field", 5)(11, "mat-select", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("ngModelChange", function RoomBookingsComponent_Template_mat_select_ngModelChange_11_listener($event) {
-          return ctx.updateZones($event);
-        });
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipe"](12, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](13, RoomBookingsComponent_mat_option_13_Template, 2, 2, "mat-option", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipe"](14, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](15, RoomBookingsComponent_ng_container_15_Template, 6, 3, "ng-container", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](16, "div", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](17, "div", 10)(18, "button", 11)(19, "app-icon");
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](20, "filter_list");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](9, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](10, RoomBookingsComponent_mat_form_field_10_Template, 5, 6, "mat-form-field", 5)(11, RoomBookingsComponent_ng_container_11_Template, 6, 4, "ng-container", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](12, "div", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](13, "div", 8)(14, "button", 9)(15, "app-icon");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](16, "filter_list");
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](21, "div", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](22, "Filters");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](17, "div", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](18, "Filters");
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](23, "mat-menu", 13, 14)(25, "div", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](26, RoomBookingsComponent_mat_checkbox_26_Template, 2, 2, "mat-checkbox", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](19, "mat-menu", 11, 12)(21, "div", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](22, RoomBookingsComponent_mat_checkbox_22_Template, 2, 2, "mat-checkbox", 14);
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](27, RoomBookingsComponent_ng_container_27_Template, 2, 1, "ng-container", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](23, RoomBookingsComponent_ng_container_23_Template, 2, 1, "ng-container", 15);
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](28, "div", 18);
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](29, "room-bookings-timeline", 19);
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](30, RoomBookingsComponent_room_bookings_approvals_30_Template, 1, 0, "room-bookings-approvals", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](24, "div", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](25, "room-bookings-timeline", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](26, RoomBookingsComponent_room_bookings_approvals_26_Template, 1, 0, "room-bookings-approvals", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
       }
       if (rf & 2) {
-        const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵreference"](24);
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngModel", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind1"](12, 7, ctx.zones));
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind1"](14, 9, ctx.levels));
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
+        const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵreference"](20);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", !ctx.use_region);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx.allow_setup_breakdown);
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("matMenuTriggerFor", _r2);

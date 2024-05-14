@@ -570,11 +570,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 class ParkingStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.AsyncHandler {
-  constructor(_org, _dialog) {
+  constructor(_org, _dialog, _settings) {
     super();
     this._org = _org;
     this._dialog = _dialog;
+    this._settings = _settings;
     this._poll = new rxjs__WEBPACK_IMPORTED_MODULE_6__.BehaviorSubject(0);
     this._change = new rxjs__WEBPACK_IMPORTED_MODULE_6__.BehaviorSubject(0);
     this._options = new rxjs__WEBPACK_IMPORTED_MODULE_6__.BehaviorSubject({
@@ -584,7 +586,19 @@ class ParkingStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.A
     });
     this._loading = new rxjs__WEBPACK_IMPORTED_MODULE_6__.BehaviorSubject([]);
     /** List of available parking levels for the current building */
-    this.levels = this._org.active_levels.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.map)(_ => _.filter(lvl => lvl.tags.includes('parking'))));
+    this.levels = this._org.level_list.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.map)(_ => {
+      if (!this._settings.get('app.use_region')) {
+        const blds = this._org.buildingsForRegion();
+        const bld_ids = blds.map(bld => bld.id);
+        const list = _.filter(lvl => bld_ids.includes(lvl.parent_id) && lvl.tags.includes('parking'));
+        list.map(lvl => ({
+          ...lvl,
+          display_name: `${blds.find(_ => _.id === lvl.parent_id)?.display_name} - ${lvl.display_name}`
+        }));
+        return list;
+      }
+      return _.filter(lvl => lvl.parent_id === this._org.building.id && lvl.tags.includes('parking'));
+    }));
     /** List of parking spaces for the current building/level */
     this.spaces = (0,rxjs__WEBPACK_IMPORTED_MODULE_8__.combineLatest)([this.levels, this._options, this._change]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.filter)(([lvls, options]) => !!(options.zones[0] || lvls[0]?.id)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.switchMap)(([levels, options]) => {
       this._loading.next([...this._loading.getValue(), 'spaces']);
@@ -688,7 +702,7 @@ class ParkingStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.A
     })();
   }
   static #_ = this.ɵfac = function ParkingStateService_Factory(t) {
-    return new (t || ParkingStateService)(_angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵinject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_3__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵinject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_21__.MatDialog));
+    return new (t || ParkingStateService)(_angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵinject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_3__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵinject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_21__.MatDialog), _angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵinject"](_placeos_common__WEBPACK_IMPORTED_MODULE_2__.SettingsService));
   };
   static #_2 = this.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_20__["ɵɵdefineInjectable"]({
     token: ParkingStateService,
@@ -740,6 +754,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 function ParkingTopbarComponent_mat_option_3_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-option", 7);
@@ -766,12 +781,16 @@ function ParkingTopbarComponent_date_options_7_Template(rf, ctx) {
   }
 }
 class ParkingTopbarComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.AsyncHandler {
-  constructor(_state, _org, _route, _router) {
+  get use_region() {
+    return !!this._settings.get('app.use_region');
+  }
+  constructor(_state, _org, _route, _router, _settings) {
     super();
     this._state = _state;
     this._org = _org;
     this._route = _route;
     this._router = _router;
+    this._settings = _settings;
     this.manage = false;
     /** List of selected levels */
     this.zones = [];
@@ -816,6 +835,7 @@ class ParkingTopbarComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1_
         }
       }));
       _this.subscription('levels', _this._state.levels.subscribe(levels => {
+        if (_this.use_region) return;
         _this.zones = _this.zones.filter(zone => levels.find(lvl => lvl.id === zone));
         if (!_this.zones.length && levels.length) {
           _this.zones.push(levels[0].id);
@@ -826,7 +846,7 @@ class ParkingTopbarComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1_
     })();
   }
   static #_ = this.ɵfac = function ParkingTopbarComponent_Factory(t) {
-    return new (t || ParkingTopbarComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_parking_state_service__WEBPACK_IMPORTED_MODULE_3__.ParkingStateService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_2__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.Router));
+    return new (t || ParkingTopbarComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_parking_state_service__WEBPACK_IMPORTED_MODULE_3__.ParkingStateService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_2__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_placeos_common__WEBPACK_IMPORTED_MODULE_1__.SettingsService));
   };
   static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({
     type: ParkingTopbarComponent,

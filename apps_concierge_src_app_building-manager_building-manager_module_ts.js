@@ -650,7 +650,7 @@ function BuildingListComponent_ng_template_6_Template(rf, ctx) {
       return _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵresetView"](ctx_r16.setAutoRelease(row_r11));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](19, "div", 13)(20, "app-icon", 15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](21, "release_alert");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](21, " release_alert ");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](22, "span");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](23, "Auto-release Settings");
@@ -660,13 +660,26 @@ function BuildingListComponent_ng_template_6_Template(rf, ctx) {
       const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r14);
       const row_r11 = restoredCtx.row;
       const ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵresetView"](ctx_r17.removeBuilding(row_r11));
+      return _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵresetView"](ctx_r17.setSupportIssueTypes(row_r11));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](25, "div", 16)(26, "app-icon", 17);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](27, "delete");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](25, "div", 13)(26, "app-icon", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](27, " support_agent ");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](28, "span");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](29, "Delete Building");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](29, "Support Request Types");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](30, "button", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function BuildingListComponent_ng_template_6_Template_button_click_30_listener() {
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r14);
+      const row_r11 = restoredCtx.row;
+      const ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵresetView"](ctx_r18.removeBuilding(row_r11));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](31, "div", 16)(32, "app-icon", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](33, " delete ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](34, "span");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](35, "Delete Building");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()()()();
   }
   if (rf & 2) {
@@ -693,6 +706,7 @@ class BuildingListComponent {
     this.editBuildingMetadata = building => this._manager.editBuildingMetadata(building);
     this.removeBuilding = building => this._manager.removeBuilding(building);
     this.setAutoRelease = building => this._manager.setAutoRelease(building);
+    this.setSupportIssueTypes = building => this._manager.setSupportIssueTypes(building);
   }
   static #_ = this.ɵfac = function BuildingListComponent_Factory(t) {
     return new (t || BuildingListComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_building_management_service__WEBPACK_IMPORTED_MODULE_0__.BuildingManagementService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_placeos_common__WEBPACK_IMPORTED_MODULE_1__.SettingsService));
@@ -708,7 +722,7 @@ class BuildingListComponent {
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](1, "custom-table", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](2, BuildingListComponent_ng_template_2_Template, 3, 5, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplateRefExtractor"])(4, BuildingListComponent_ng_template_4_Template, 2, 2, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplateRefExtractor"])(6, BuildingListComponent_ng_template_6_Template, 30, 1, "ng-template", null, 4, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](2, BuildingListComponent_ng_template_2_Template, 3, 5, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplateRefExtractor"])(4, BuildingListComponent_ng_template_4_Template, 2, 2, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplateRefExtractor"])(6, BuildingListComponent_ng_template_6_Template, 36, 1, "ng-template", null, 4, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplateRefExtractor"]);
       }
       if (rf & 2) {
         const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵreference"](3);
@@ -738,14 +752,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 57314);
 /* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/organisation */ 5745);
 /* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/ts-client */ 64331);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ 70462);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ 64555);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 47422);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ 70462);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs */ 64555);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ 47422);
 /* harmony import */ var _building_modal_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./building-modal.component */ 33629);
 /* harmony import */ var _ui_app_settings_modal_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../ui/app-settings-modal.component */ 66229);
 /* harmony import */ var _auto_release_settings_modal_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./auto-release-settings-modal.component */ 42455);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/dialog */ 17401);
+/* harmony import */ var _item_list_modal_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./item-list-modal.component */ 22866);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 61699);
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/dialog */ 17401);
+
 
 
 
@@ -763,10 +779,10 @@ class BuildingManagementService {
   constructor(_org, _dialog) {
     this._org = _org;
     this._dialog = _dialog;
-    this._options = new rxjs__WEBPACK_IMPORTED_MODULE_7__.BehaviorSubject({});
-    this._change = new rxjs__WEBPACK_IMPORTED_MODULE_7__.BehaviorSubject(0);
+    this._options = new rxjs__WEBPACK_IMPORTED_MODULE_8__.BehaviorSubject({});
+    this._change = new rxjs__WEBPACK_IMPORTED_MODULE_8__.BehaviorSubject(0);
     this.options = this._options.asObservable();
-    this.filtered_buildings = (0,rxjs__WEBPACK_IMPORTED_MODULE_8__.combineLatest)([this._org.region_list, this._org.building_list, this._options, this._org.initialised]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.map)(([regions, list, options]) => {
+    this.filtered_buildings = (0,rxjs__WEBPACK_IMPORTED_MODULE_9__.combineLatest)([this._org.region_list, this._org.building_list, this._options, this._org.initialised]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.map)(([regions, list, options]) => {
       if (options.zone) {
         list = list.filter(_ => _.parent_id === options.zone);
       }
@@ -819,6 +835,12 @@ class BuildingManagementService {
       data: building.id
     });
   }
+  setSupportIssueTypes(building) {
+    if (!building?.id) return;
+    this._dialog.open(_item_list_modal_component__WEBPACK_IMPORTED_MODULE_7__.ItemListModalComponent, {
+      data: building.id
+    });
+  }
   removeBuilding(building) {
     var _this = this;
     return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
@@ -842,9 +864,9 @@ class BuildingManagementService {
     })();
   }
   static #_ = this.ɵfac = function BuildingManagementService_Factory(t) {
-    return new (t || BuildingManagementService)(_angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵinject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_2__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵinject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_11__.MatDialog));
+    return new (t || BuildingManagementService)(_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵinject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_2__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵinject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_12__.MatDialog));
   };
-  static #_2 = this.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjectable"]({
+  static #_2 = this.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineInjectable"]({
     token: BuildingManagementService,
     factory: BuildingManagementService.ɵfac,
     providedIn: 'root'
@@ -927,19 +949,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   BuildingManagerModule: () => (/* binding */ BuildingManagerModule)
 /* harmony export */ });
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ 26575);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/forms */ 28849);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/router */ 27947);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common */ 26575);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/forms */ 28849);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/router */ 27947);
 /* harmony import */ var _ui_ui_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ui/ui.module */ 97428);
 /* harmony import */ var _placeos_spaces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/spaces */ 55322);
 /* harmony import */ var _placeos_users__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/users */ 81239);
 /* harmony import */ var _building_manager_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./building-manager.component */ 27207);
-/* harmony import */ var _angular_material_chips__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/chips */ 21757);
+/* harmony import */ var _angular_material_chips__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/chips */ 21757);
 /* harmony import */ var _building_list_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./building-list.component */ 34640);
 /* harmony import */ var _building_form_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./building-form.component */ 13304);
 /* harmony import */ var _building_modal_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./building-modal.component */ 33629);
 /* harmony import */ var _auto_release_settings_modal_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./auto-release-settings-modal.component */ 42455);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 61699);
+/* harmony import */ var _item_list_modal_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./item-list-modal.component */ 22866);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ 61699);
+
 
 
 
@@ -965,17 +989,17 @@ class BuildingManagerModule {
   static #_ = this.ɵfac = function BuildingManagerModule_Factory(t) {
     return new (t || BuildingManagerModule)();
   };
-  static #_2 = this.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineNgModule"]({
+  static #_2 = this.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineNgModule"]({
     type: BuildingManagerModule
   });
-  static #_3 = this.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineInjector"]({
-    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_9__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.FormsModule, _ui_ui_module__WEBPACK_IMPORTED_MODULE_0__.UIModule, _placeos_spaces__WEBPACK_IMPORTED_MODULE_1__.SharedSpacesModule, _placeos_users__WEBPACK_IMPORTED_MODULE_2__.SharedUsersModule, _angular_material_chips__WEBPACK_IMPORTED_MODULE_11__.MatChipsModule, _angular_router__WEBPACK_IMPORTED_MODULE_12__.RouterModule.forChild(ROUTES)]
+  static #_3 = this.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineInjector"]({
+    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_10__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormsModule, _ui_ui_module__WEBPACK_IMPORTED_MODULE_0__.UIModule, _placeos_spaces__WEBPACK_IMPORTED_MODULE_1__.SharedSpacesModule, _placeos_users__WEBPACK_IMPORTED_MODULE_2__.SharedUsersModule, _angular_material_chips__WEBPACK_IMPORTED_MODULE_12__.MatChipsModule, _angular_router__WEBPACK_IMPORTED_MODULE_13__.RouterModule.forChild(ROUTES)]
   });
 }
 (function () {
-  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵsetNgModuleScope"](BuildingManagerModule, {
-    declarations: [_building_manager_component__WEBPACK_IMPORTED_MODULE_3__.BuildingManagerComponent, _building_list_component__WEBPACK_IMPORTED_MODULE_4__.BuildingListComponent, _building_form_component__WEBPACK_IMPORTED_MODULE_5__.BuildingFormComponent, _building_modal_component__WEBPACK_IMPORTED_MODULE_6__.BuildingModalComponent, _auto_release_settings_modal_component__WEBPACK_IMPORTED_MODULE_7__.AutoReleaseSettingsModalComponent],
-    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_9__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.FormsModule, _ui_ui_module__WEBPACK_IMPORTED_MODULE_0__.UIModule, _placeos_spaces__WEBPACK_IMPORTED_MODULE_1__.SharedSpacesModule, _placeos_users__WEBPACK_IMPORTED_MODULE_2__.SharedUsersModule, _angular_material_chips__WEBPACK_IMPORTED_MODULE_11__.MatChipsModule, _angular_router__WEBPACK_IMPORTED_MODULE_12__.RouterModule]
+  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵsetNgModuleScope"](BuildingManagerModule, {
+    declarations: [_building_manager_component__WEBPACK_IMPORTED_MODULE_3__.BuildingManagerComponent, _building_list_component__WEBPACK_IMPORTED_MODULE_4__.BuildingListComponent, _building_form_component__WEBPACK_IMPORTED_MODULE_5__.BuildingFormComponent, _building_modal_component__WEBPACK_IMPORTED_MODULE_6__.BuildingModalComponent, _auto_release_settings_modal_component__WEBPACK_IMPORTED_MODULE_7__.AutoReleaseSettingsModalComponent, _item_list_modal_component__WEBPACK_IMPORTED_MODULE_8__.ItemListModalComponent],
+    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_10__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_11__.FormsModule, _ui_ui_module__WEBPACK_IMPORTED_MODULE_0__.UIModule, _placeos_spaces__WEBPACK_IMPORTED_MODULE_1__.SharedSpacesModule, _placeos_users__WEBPACK_IMPORTED_MODULE_2__.SharedUsersModule, _angular_material_chips__WEBPACK_IMPORTED_MODULE_12__.MatChipsModule, _angular_router__WEBPACK_IMPORTED_MODULE_13__.RouterModule]
   });
 })();
 
@@ -1071,6 +1095,147 @@ class BuildingModalComponent {
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__.MatDialogClose, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_1__.IconComponent, _building_form_component__WEBPACK_IMPORTED_MODULE_2__.BuildingFormComponent]
+  });
+}
+
+/***/ }),
+
+/***/ 22866:
+/*!******************************************************************************!*\
+  !*** ./apps/concierge/src/app/building-manager/item-list-modal.component.ts ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ItemListModalComponent: () => (/* binding */ ItemListModalComponent)
+/* harmony export */ });
+/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/dialog */ 17401);
+/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 57314);
+/* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/ts-client */ 64331);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 61699);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 26575);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ 28849);
+/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/tooltip */ 60702);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/core */ 55309);
+/* harmony import */ var _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/icon.component */ 94888);
+
+
+
+
+
+
+
+
+
+
+
+
+function ItemListModalComponent_div_9_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 6)(1, "input", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("ngModelChange", function ItemListModalComponent_div_9_Template_input_ngModelChange_1_listener($event) {
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r4);
+      const i_r2 = restoredCtx.index;
+      const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r3.item_list[i_r2] = $event);
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "button", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ItemListModalComponent_div_9_Template_button_click_2_listener() {
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r4);
+      const i_r2 = restoredCtx.index;
+      const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r5.item_list.splice(i_r2, 1));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "app-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4, "close");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
+  }
+  if (rf & 2) {
+    const i_r2 = ctx.index;
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngModel", ctx_r0.item_list[i_r2]);
+  }
+}
+class ItemListModalComponent {
+  constructor(_bld_id, _settings, _dialog_ref) {
+    this._bld_id = _bld_id;
+    this._settings = _settings;
+    this._dialog_ref = _dialog_ref;
+    this.item_list = [];
+    this.loading = false;
+    this.identify = (index, item) => index;
+  }
+  ngOnInit() {
+    var _this = this;
+    return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      const metadata_key = _this._settings.get('app.workplace_metadata_key') || 'workplace_app';
+      const metadata = yield (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_2__.showMetadata)(_this._bld_id, metadata_key).toPromise();
+      const items = metadata?.details?.support_issue_types || [];
+      _this.item_list = items;
+    })();
+  }
+  save() {
+    var _this2 = this;
+    return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      const metadata_key = _this2._settings.get('app.workplace_metadata_key') || 'workplace_app';
+      _this2.loading = true;
+      const items = _this2.item_list.filter(_ => _);
+      const metadata = yield (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_2__.showMetadata)(_this2._bld_id, metadata_key).toPromise();
+      metadata.details.support_issue_types = items;
+      const resp = yield (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_2__.updateMetadata)(_this2._bld_id, {
+        name: metadata_key,
+        details: metadata.details,
+        description: metadata.description || ''
+      }).toPromise().catch(_ => {
+        (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.notifyError)(`Failed to save issue types. ${_}`);
+      });
+      _this2.loading = false;
+      if (resp) _this2._dialog_ref.close();
+    })();
+  }
+  static #_ = this.ɵfac = function ItemListModalComponent_Factory(t) {
+    return new (t || ItemListModalComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__.MAT_DIALOG_DATA), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_placeos_common__WEBPACK_IMPORTED_MODULE_1__.SettingsService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__.MatDialogRef));
+  };
+  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+    type: ItemListModalComponent,
+    selectors: [["item-list-modal"]],
+    decls: 13,
+    vars: 2,
+    consts: [["icon", "", "matRipple", "", "mat-dialog-close", ""], [1, "w-[24rem]", "overflow-auto", "h-[50vh]", "p-2", "space-y-2"], ["btn", "", "matRipple", "", 1, "w-full", 3, "click"], ["class", "w-full flex items-center space-x-2", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "flex", "items-center", "justify-end", "p-2", "border-t", "border-base-200"], ["btn", "", "matRipple", "", 1, "w-32", 3, "click"], [1, "w-full", "flex", "items-center", "space-x-2"], ["type", "text", "placeholder", "Issue Name", 1, "w-full", "border", "border-base-200", "px-4", "py-3", "rounded", 3, "ngModel", "ngModelChange"], ["icon", "", "matRipple", "", "matTooltip", "Remove Item", 3, "click"]],
+    template: function ItemListModalComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "header")(1, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, "Support Request Issue Types");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "button", 0)(4, "app-icon");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](5, "close");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](6, "main", 1)(7, "button", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ItemListModalComponent_Template_button_click_7_listener() {
+          return ctx.item_list.push("");
+        });
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](8, " Add Item ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](9, ItemListModalComponent_div_9_Template, 5, 1, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "footer", 4)(11, "button", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ItemListModalComponent_Template_button_click_11_listener() {
+          return ctx.save();
+        });
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](12, "Save");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
+      }
+      if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", ctx.item_list)("ngForTrackBy", ctx.identify);
+      }
+    },
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_6__.NgForOf, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgModel, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_8__.MatTooltip, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__.MatDialogClose, _angular_material_core__WEBPACK_IMPORTED_MODULE_9__.MatRipple, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_3__.IconComponent]
   });
 }
 
