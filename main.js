@@ -19937,15 +19937,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "5831191",
-  "hash": "5831191",
+  "raw": "6ba1768",
+  "hash": "6ba1768",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "5831191",
+  "suffix": "6ba1768",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1715665930228
+  "time": 1715827924776
 };
 /* tslint:enable */
 
@@ -45245,6 +45245,14 @@ class OrganisationService {
    */
   buildingsForRegion(region = this.region) {
     return this.buildings.filter(bld => bld.parent_id === region?.id);
+  }
+  /**
+   * Get list of levels for the given region
+   * @param region Region to list levels for
+   */
+  levelsForRegion(region = this.region) {
+    const bld_list = this.buildingsForRegion(region);
+    return this.levels.filter(lvl => lvl.parent_id && bld_list.find(bld => bld.id === lvl.parent_id));
   }
   addZone(zone) {
     if (zone.tags.includes('region')) {
