@@ -25,6 +25,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! date-fns */ 55702);
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! date-fns */ 58415);
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! date-fns */ 8276);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! date-fns */ 12687);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ 70462);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ 64555);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! rxjs */ 9681);
@@ -39,8 +40,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! rxjs/operators */ 58175);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! rxjs/operators */ 680);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! rxjs/operators */ 1062);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @angular/material/dialog */ 17401);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @angular/core */ 61699);
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @angular/material/dialog */ 17401);
 
 
 
@@ -197,7 +198,6 @@ class ScheduleStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.
               period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_20__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_26__["default"])(Date.now(), (auto_release.time_after || 5) + (auto_release.time_before || 0))),
               type
             }).toPromise();
-            console.log('Check Bookings:', type, bookings, _this._ignore_cancel);
             const check_block = (auto_release.time_after || 0) + (auto_release.time_before || 0);
             for (const booking of bookings) {
               if (_this._ignore_cancel.includes(booking.id) || booking.checked_in || booking.rejected) {
@@ -206,13 +206,14 @@ class ScheduleStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.
               _this._dialog.closeAll();
               const diff = (0,date_fns__WEBPACK_IMPORTED_MODULE_27__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_26__["default"])(booking.date, auto_release.time_after || 0), Date.now());
               if (diff > check_block || diff < 0) continue;
+              const time = (0,date_fns__WEBPACK_IMPORTED_MODULE_26__["default"])(booking.date, auto_release.time_after || 0);
               const result = yield (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.openConfirmModal)({
                 title: `Keep ${type} booking`,
                 content: `You have indicated you are not in the office. 
-                                Your booking will be cancelled in about ${diff} minutes. 
+                                Your booking "<i>${booking.title}</i>" for ${(0,date_fns__WEBPACK_IMPORTED_MODULE_28__["default"])(booking.date, _this._settings.time_format)} will be cancelled at ${(0,date_fns__WEBPACK_IMPORTED_MODULE_28__["default"])(time, _this._settings.time_format)}.<br/><br/>
                                 Do you wish to keep this booking?`,
                 icon: {
-                  content: 'cancel'
+                  content: 'event_busy'
                 },
                 confirm_text: 'Keep',
                 cancel_text: 'Dismiss'
@@ -281,9 +282,9 @@ class ScheduleStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.
     })();
   }
   static #_ = this.ɵfac = function ScheduleStateService_Factory(t) {
-    return new (t || ScheduleStateService)(_angular_core__WEBPACK_IMPORTED_MODULE_28__["ɵɵinject"](_placeos_common__WEBPACK_IMPORTED_MODULE_2__.SettingsService), _angular_core__WEBPACK_IMPORTED_MODULE_28__["ɵɵinject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_4__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_28__["ɵɵinject"](_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.LockersService), _angular_core__WEBPACK_IMPORTED_MODULE_28__["ɵɵinject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_29__.MatDialog));
+    return new (t || ScheduleStateService)(_angular_core__WEBPACK_IMPORTED_MODULE_29__["ɵɵinject"](_placeos_common__WEBPACK_IMPORTED_MODULE_2__.SettingsService), _angular_core__WEBPACK_IMPORTED_MODULE_29__["ɵɵinject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_4__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_29__["ɵɵinject"](_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.LockersService), _angular_core__WEBPACK_IMPORTED_MODULE_29__["ɵɵinject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_30__.MatDialog));
   };
-  static #_2 = this.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_28__["ɵɵdefineInjectable"]({
+  static #_2 = this.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_29__["ɵɵdefineInjectable"]({
     token: ScheduleStateService,
     factory: ScheduleStateService.ɵfac,
     providedIn: 'root'

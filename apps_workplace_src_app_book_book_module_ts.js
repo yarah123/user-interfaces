@@ -6361,6 +6361,15 @@ class NewDeskFlowFormComponent {
       this._state.clearForm();
     };
     this.viewConfirm = () => {
+      const {
+        asset_id,
+        resources
+      } = this.form.getRawValue();
+      if (resources.length && !asset_id) {
+        this.form.patchValue({
+          asset_id: resources[0].id
+        });
+      }
       if (!this.form.valid) return (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.notifyError)(`Some fields are invalid. [${(0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.getInvalidFields)(this.form).join(', ')}]`);
       this.sheet_ref = this._bottom_sheet.open(_new_desk_flow_confirm_component__WEBPACK_IMPORTED_MODULE_4__.NewDeskFlowConfirmComponent);
       this.sheet_ref.instance.show_close = true;

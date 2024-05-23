@@ -19937,15 +19937,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "6ba1768",
-  "hash": "6ba1768",
+  "raw": "176d339",
+  "hash": "176d339",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "6ba1768",
+  "suffix": "176d339",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1715827924776
+  "time": 1716431454042
 };
 /* tslint:enable */
 
@@ -24763,6 +24763,10 @@ function InteractiveMapComponent_ng_container_0_Template(rf, ctx) {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r5);
       const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r6.zoomChange.next($event));
+    })("mapInfo", function InteractiveMapComponent_ng_container_0_Template_map_renderer_mapInfo_1_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r5);
+      const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r7.mapInfo.next($event));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵprojection"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
@@ -24776,20 +24780,20 @@ function InteractiveMapComponent_ng_container_0_Template(rf, ctx) {
 }
 function InteractiveMapComponent_ng_template_2_Template(rf, ctx) {
   if (rf & 1) {
-    const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+    const _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "maps-indoors", 4);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("zoneChange", function InteractiveMapComponent_ng_template_2_Template_maps_indoors_zoneChange_0_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r8);
-      const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r7.onLevelChange($event));
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r9);
+      const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r8.onLevelChange($event));
     })("zoomChange", function InteractiveMapComponent_ng_template_2_Template_maps_indoors_zoomChange_0_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r8);
-      const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r9.zoom = $event);
-    })("zoomChange", function InteractiveMapComponent_ng_template_2_Template_maps_indoors_zoomChange_0_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r8);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r9);
       const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r10.zoomChange.next($event));
+      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r10.zoom = $event);
+    })("zoomChange", function InteractiveMapComponent_ng_template_2_Template_maps_indoors_zoomChange_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r9);
+      const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r11.zoomChange.next($event));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵprojection"](1, 1);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
@@ -24801,30 +24805,30 @@ function InteractiveMapComponent_ng_template_2_Template(rf, ctx) {
 }
 function InteractiveMapComponent_div_4_Template(rf, ctx) {
   if (rf & 1) {
-    const _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+    const _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 5)(1, "button", 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function InteractiveMapComponent_div_4_Template_button_click_1_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r12);
-      const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r11.zoom = ctx_r11.zoom * 1.1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r13);
+      const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r12.zoom = ctx_r12.zoom * 1.1);
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "app-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](3, "add");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](4, "button", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function InteractiveMapComponent_div_4_Template_button_click_4_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r12);
-      const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r13.zoom = ctx_r13.zoom * (10 / 11));
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r13);
+      const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r14.zoom = ctx_r14.zoom * (10 / 11));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](5, "app-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](6, "remove");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](7, "button", 8);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function InteractiveMapComponent_div_4_Template_button_click_7_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r12);
-      const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r14.reset = ctx_r14.reset + 1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r13);
+      const ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r15.reset = ctx_r15.reset + 1);
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](8, "app-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](9, "refresh");
@@ -24852,6 +24856,7 @@ class InteractiveMapComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0
     this.options = {};
     this.zoomChange = new _angular_core__WEBPACK_IMPORTED_MODULE_3__.EventEmitter();
     this.centerChange = new _angular_core__WEBPACK_IMPORTED_MODULE_3__.EventEmitter();
+    this.mapInfo = new _angular_core__WEBPACK_IMPORTED_MODULE_3__.EventEmitter();
     this.use_mapsindoors$ = this._mapspeople.available$;
   }
   ngOnChanges(changes) {
@@ -24889,13 +24894,14 @@ class InteractiveMapComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0
     },
     outputs: {
       zoomChange: "zoomChange",
-      centerChange: "centerChange"
+      centerChange: "centerChange",
+      mapInfo: "mapInfo"
     },
     features: [_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵInheritDefinitionFeature"], _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵNgOnChangesFeature"]],
     ngContentSelectors: _c0,
     decls: 5,
     vars: 5,
-    consts: [[4, "ngIf", "ngIfElse"], ["mapsindoors_template", ""], ["zoom", "", "class", "absolute bottom-16 right-1 border border-base-200 divide-y divide-base-200 shadow flex flex-col bg-base-100 text-base-content rounded overflow-hidden", 4, "ngIf"], [3, "src", "zoom", "reset", "styles", "features", "actions", "labels", "zoomChange"], [3, "zone", "zoom", "options", "reset", "focus", "metadata", "zoneChange", "zoomChange"], ["zoom", "", 1, "absolute", "bottom-16", "right-1", "border", "border-base-200", "divide-y", "divide-base-200", "shadow", "flex", "flex-col", "bg-base-100", "text-base-content", "rounded", "overflow-hidden"], ["icon", "", "matRipple", "", "matTooltip", "Zoom In", 1, "rounded-none", 3, "click"], ["icon", "", "matRipple", "", "matTooltip", "Zoom Out", 1, "rounded-none", 3, "click"], ["icon", "", "matRipple", "", "matTooltip", "Reset Zoom and Position", 1, "rounded-none", 3, "click"]],
+    consts: [[4, "ngIf", "ngIfElse"], ["mapsindoors_template", ""], ["zoom", "", "class", "absolute bottom-16 right-1 border border-base-200 divide-y divide-base-200 shadow flex flex-col bg-base-100 text-base-content rounded overflow-hidden", 4, "ngIf"], [3, "src", "zoom", "reset", "styles", "features", "actions", "labels", "zoomChange", "mapInfo"], [3, "zone", "zoom", "options", "reset", "focus", "metadata", "zoneChange", "zoomChange"], ["zoom", "", 1, "absolute", "bottom-16", "right-1", "border", "border-base-200", "divide-y", "divide-base-200", "shadow", "flex", "flex-col", "bg-base-100", "text-base-content", "rounded", "overflow-hidden"], ["icon", "", "matRipple", "", "matTooltip", "Zoom In", "matTooltipPosition", "left", 1, "rounded-none", 3, "click"], ["icon", "", "matRipple", "", "matTooltip", "Zoom Out", "matTooltipPosition", "left", 1, "rounded-none", 3, "click"], ["icon", "", "matRipple", "", "matTooltip", "Reset Zoom and Position", "matTooltipPosition", "left", 1, "rounded-none", 3, "click"]],
     template: function InteractiveMapComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵprojectionDef"](_c0);
@@ -26114,6 +26120,7 @@ class MapRendererComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.
     };
     this.zoomChange = new _angular_core__WEBPACK_IMPORTED_MODULE_6__.EventEmitter();
     this.centerChange = new _angular_core__WEBPACK_IMPORTED_MODULE_6__.EventEmitter();
+    this.mapInfo = new _angular_core__WEBPACK_IMPORTED_MODULE_6__.EventEmitter();
     this.injectors = [];
     this.feature_list = [];
     /** Observable for changes on the SVG viewer */
@@ -26226,6 +26233,8 @@ class MapRendererComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.
           _this.zoomChange.emit(v.zoom);
           _this.centerChange.emit(v.center);
         }));
+        const viewer = (0,_placeos_svg_viewer__WEBPACK_IMPORTED_MODULE_2__.getViewer)(_this.viewer);
+        _this.mapInfo.emit(viewer.mappings);
         if (_this.focus) _this.focusOn(_this.focus);
       } else if (_this.src && !_this._outlet_el?.nativeElement || _this.loading) {
         _this.timeout('create_view', () => _this.createView().catch(e => console.warn(e)));
@@ -26305,7 +26314,8 @@ class MapRendererComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.
     },
     outputs: {
       zoomChange: "zoomChange",
-      centerChange: "centerChange"
+      centerChange: "centerChange",
+      mapInfo: "mapInfo"
     },
     features: [_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵInheritDefinitionFeature"], _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵNgOnChangesFeature"]],
     decls: 6,
@@ -26598,7 +26608,7 @@ class MapsIndoorsComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.
     const id = event.properties?.externalId || event.properties?.roomId || event.id;
     const actions = this.metadata?.actions || [];
     for (const action of actions) {
-      if (action.id === id && action.action !== 'enter' && action.action !== 'leave') {
+      if ((action.id === id || action.id === '*') && action.action !== 'enter' && action.action !== 'leave') {
         action.callback(event);
         break;
       }
@@ -35333,7 +35343,7 @@ class ExploreSpacesService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.
     this.timeout('update_hover_els', () => this._updateHoverElements(spaces), 100);
   }
   handleStatusChange(spaces, space, status) {
-    this._statuses[space.id] = space.bookable ? status || 'free' : 'not-bookable';
+    if (space.bookable) this._statuses[space.id] = status || 'free';else delete this._statuses[space.id];
     this.timeout('update_statuses', () => {
       this.clearTimeout('update_hover_els');
       this._updateStatus(spaces);
@@ -35346,7 +35356,8 @@ class ExploreSpacesService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.
       const style_map = {};
       const colours = _this2._settings.get('app.explore.colors') || {};
       for (const space of spaces) {
-        const status = _this2._statuses[space.id] || 'not-bookable';
+        if (!_this2._statuses[space.id]) continue;
+        const status = _this2._statuses[space.id];
         style_map[`#${space.map_id}`] = {
           fill: colours[`space-${status}`] || colours[`${status}`] || DEFAULT_COLOURS[`${status}`],
           opacity: 0.6
@@ -35368,7 +35379,7 @@ class ExploreSpacesService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.
         data: {
           space: new libs_spaces_src_lib_space_class__WEBPACK_IMPORTED_MODULE_4__.Space(space),
           events: this._bookings[space.id],
-          status: this._statuses[space.id]
+          status: this._statuses[space.id] || 'not-bookable'
         }
       });
     }
@@ -39629,9 +39640,9 @@ function SupportTicketModalComponent_main_6_div_26_mat_option_5_Template(rf, ctx
   }
   if (rf & 2) {
     const type_r10 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("value", type_r10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("value", (type_r10 == null ? null : type_r10.name) || type_r10);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", type_r10, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", type_r10.name || type_r10, " ");
   }
 }
 function SupportTicketModalComponent_main_6_div_26_Template(rf, ctx) {
@@ -39811,7 +39822,8 @@ class SupportTicketModalComponent {
           images,
           issue_type
         } = _this.form.value;
-        yield mod.execute('send_mail', [_this.support_email, `Support Ticket from Workplace Application${issue_type ? ' - ' + issue_type : ''}`, `${name}\n${email}\n\n${location}\n\n${description.replace(/<[^>]+>/g, '')}\n\n${images.join('\n')}`, `<p>${name}</p><p>${email}</p><p>${location}</p><p>${description}</p>${images.join('<br>')}`, [], [], [], [], null, `${email}`]);
+        const support_email = _this.support_request_types.find(type => type.name === issue_type)?.email || _this.support_email;
+        yield mod.execute('send_mail', [support_email, `Support Ticket from Workplace Application${issue_type ? ' - ' + issue_type : ''}`, `${name}\n${email}\n\n${location}\n\n${description.replace(/<[^>]+>/g, '')}\n\n${images.join('\n')}`, `<p>${name}</p><p>${email}</p><p>${location}</p><p>${description}</p>${images.join('<br>')}`, [], [], [], [], null, `${email}`]);
         _this._dialog_ref.close();
         _this.loading = false;
         (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.notifySuccess)('Successfully submitted support ticket');
@@ -40919,6 +40931,8 @@ function validateEmail(email) {
   const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email);
 }
+const ACCEPTED_FILE_TYPES = ['text/csv', 'text/plain'];
+const DENIED_FILE_TYPES = ['application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
 class UserListFieldComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0__.AsyncHandler {
   searchStaff(q) {
     return this._settings.get('app.basic_user_search') ? (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_6__.queryUsers)({
@@ -41033,6 +41047,10 @@ class UserListFieldComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0_
       const file = event.target.files[0];
       /* istanbul ignore else */
       if (file) {
+        if (!ACCEPTED_FILE_TYPES.includes(file.type) || DENIED_FILE_TYPES.includes(file.type)) {
+          (0,_placeos_common__WEBPACK_IMPORTED_MODULE_0__.notifyError)('Only CSV files are supported');
+          return;
+        }
         const reader = new FileReader();
         reader.readAsText(file, 'UTF-8');
         reader.addEventListener('load', evt => {
