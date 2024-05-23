@@ -1140,25 +1140,35 @@ function ItemListModalComponent_div_9_Template(rf, ctx) {
       const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r4);
       const i_r2 = restoredCtx.index;
       const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r3.item_list[i_r2] = $event);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r3.item_list[i_r2].name = $event);
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "button", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ItemListModalComponent_div_9_Template_button_click_2_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "input", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("ngModelChange", function ItemListModalComponent_div_9_Template_input_ngModelChange_2_listener($event) {
       const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r4);
       const i_r2 = restoredCtx.index;
       const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r5.item_list.splice(i_r2, 1));
+      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r5.item_list[i_r2].email = $event);
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "app-icon");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4, "close");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "button", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ItemListModalComponent_div_9_Template_button_click_3_listener() {
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r4);
+      const i_r2 = restoredCtx.index;
+      const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r6.item_list.splice(i_r2, 1));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "app-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](5, "close");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
     const i_r2 = ctx.index;
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngModel", ctx_r0.item_list[i_r2]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngModel", ctx_r0.item_list[i_r2].name);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngModel", ctx_r0.item_list[i_r2].email);
   }
 }
 class ItemListModalComponent {
@@ -1206,7 +1216,7 @@ class ItemListModalComponent {
     selectors: [["item-list-modal"]],
     decls: 13,
     vars: 2,
-    consts: [["icon", "", "matRipple", "", "mat-dialog-close", ""], [1, "w-[24rem]", "overflow-auto", "h-[50vh]", "p-2", "space-y-2"], ["btn", "", "matRipple", "", 1, "w-full", 3, "click"], ["class", "w-full flex items-center space-x-2", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "flex", "items-center", "justify-end", "p-2", "border-t", "border-base-200"], ["btn", "", "matRipple", "", 1, "w-32", 3, "click"], [1, "w-full", "flex", "items-center", "space-x-2"], ["type", "text", "placeholder", "Issue Name", 1, "w-full", "border", "border-base-200", "px-4", "py-3", "rounded", 3, "ngModel", "ngModelChange"], ["icon", "", "matRipple", "", "matTooltip", "Remove Item", 3, "click"]],
+    consts: [["icon", "", "matRipple", "", "mat-dialog-close", ""], [1, "w-[36rem]", "overflow-auto", "h-[50vh]", "p-2", "space-y-2"], ["btn", "", "matRipple", "", 1, "w-full", 3, "click"], ["class", "w-full flex items-center space-x-2", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "flex", "items-center", "justify-end", "p-2", "border-t", "border-base-200"], ["btn", "", "matRipple", "", 1, "w-32", 3, "click"], [1, "w-full", "flex", "items-center", "space-x-2"], ["type", "text", "placeholder", "Issue Name", 1, "flex-1", "border", "border-base-200", "px-4", "py-3", "rounded", 3, "ngModel", "ngModelChange"], ["type", "email", "placeholder", "Issue Email", 1, "flex-[2]", "border", "border-base-200", "px-4", "py-3", "rounded", 3, "ngModel", "ngModelChange"], ["icon", "", "matRipple", "", "matTooltip", "Remove Item", 3, "click"]],
     template: function ItemListModalComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "header")(1, "h2");
@@ -1217,11 +1227,14 @@ class ItemListModalComponent {
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](6, "main", 1)(7, "button", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ItemListModalComponent_Template_button_click_7_listener() {
-          return ctx.item_list.push("");
+          return ctx.item_list.push({
+            name: "",
+            email: ""
+          });
         });
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](8, " Add Item ");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](9, ItemListModalComponent_div_9_Template, 5, 1, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](9, ItemListModalComponent_div_9_Template, 6, 2, "div", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "footer", 4)(11, "button", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ItemListModalComponent_Template_button_click_11_listener() {
