@@ -1846,6 +1846,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 class AssetManagerStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.AsyncHandler {
   get form() {
     return this._form;
@@ -1856,11 +1857,12 @@ class AssetManagerStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_
   get base_route() {
     return this.is_new_ui ? '/book/assets/new' : '/book/assets';
   }
-  constructor(_spaces, _org, _dialog) {
+  constructor(_spaces, _org, _dialog, _settings) {
     super();
     this._spaces = _spaces;
     this._org = _org;
     this._dialog = _dialog;
+    this._settings = _settings;
     this._options = new rxjs__WEBPACK_IMPORTED_MODULE_11__.BehaviorSubject({
       view: 'grid'
     });
@@ -1888,13 +1890,14 @@ class AssetManagerStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_
       return (0,_placeos_assets__WEBPACK_IMPORTED_MODULE_4__.queryAssetPurchaseOrders)();
     }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_14__.tap)(() => this._loading.next(false)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_15__.shareReplay)(1));
     /** List of requests made by users for assets */
-    this.requests = (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.combineLatest)([this._options, this._org.active_building, this._poll, this._change, this._spaces.initialised]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_16__.debounceTime)(200), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.switchMap)(([{
+    this.requests = (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.combineLatest)([this._options, this._org.active_building, this._org.active_region, this._poll, this._change, this._spaces.initialised]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_16__.debounceTime)(200), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.switchMap)(([{
       date
-    }, bld]) => {
+    }, bld, region]) => {
       const start = (0,date_fns__WEBPACK_IMPORTED_MODULE_17__["default"])(date || Date.now()).valueOf();
       const end = (0,date_fns__WEBPACK_IMPORTED_MODULE_18__["default"])(date || Date.now()).valueOf();
+      const zones = this._settings.get('app.use_region') ? this._org.buildingsForRegion().map(_ => _.id).join(',') : bld?.id;
       return (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.queryBookings)({
-        zones: bld?.id,
+        zones,
         period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_19__["default"])(start),
         period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_19__["default"])(end),
         type: 'asset-request'
@@ -2108,7 +2111,7 @@ class AssetManagerStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_
     })();
   }
   static #_ = this.ɵfac = function AssetManagerStateService_Factory(t) {
-    return new (t || AssetManagerStateService)(_angular_core__WEBPACK_IMPORTED_MODULE_27__["ɵɵinject"](_placeos_spaces__WEBPACK_IMPORTED_MODULE_3__.SpacesService), _angular_core__WEBPACK_IMPORTED_MODULE_27__["ɵɵinject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_6__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_27__["ɵɵinject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_28__.MatDialog));
+    return new (t || AssetManagerStateService)(_angular_core__WEBPACK_IMPORTED_MODULE_27__["ɵɵinject"](_placeos_spaces__WEBPACK_IMPORTED_MODULE_3__.SpacesService), _angular_core__WEBPACK_IMPORTED_MODULE_27__["ɵɵinject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_6__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_27__["ɵɵinject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_28__.MatDialog), _angular_core__WEBPACK_IMPORTED_MODULE_27__["ɵɵinject"](_placeos_common__WEBPACK_IMPORTED_MODULE_2__.SettingsService));
   };
   static #_2 = this.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_27__["ɵɵdefineInjectable"]({
     token: AssetManagerStateService,

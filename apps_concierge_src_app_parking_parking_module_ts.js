@@ -65,7 +65,7 @@ class NewParkingComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0__.A
     features: [_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵInheritDefinitionFeature"]],
     decls: 9,
     vars: 3,
-    consts: [[1, "flex", "flex-1", "h-px"], [1, "flex", "flex-col", "flex-1", "w-1/2", "h-full", "relative"], [1, "flex-1", "h-1/2", "w-full", "relative", "overflow-auto", "px-8"], ["class", "absolute inset-0 bg-base-100/80/20 flex flex-col items-center justify-center z-50", 4, "ngIf"], [1, "absolute", "inset-0", "bg-base-100/80/20", "flex", "flex-col", "items-center", "justify-center", "z-50"]],
+    consts: [[1, "flex", "flex-1", "h-px"], [1, "flex", "flex-col", "flex-1", "w-1/2", "h-full", "relative"], [1, "relative", "flex-1", "h-1/2", "w-full", "overflow-auto", "px-8"], ["class", "absolute inset-0 bg-base-100/80/20 flex flex-col items-center justify-center z-50", 4, "ngIf"], [1, "absolute", "inset-0", "bg-base-100/80/20", "flex", "flex-col", "items-center", "justify-center", "z-50"]],
     template: function NewParkingComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](0, "app-topbar");
@@ -301,7 +301,7 @@ class ParkingSpaceListComponent {
     selectors: [["parking-space-list"]],
     decls: 11,
     vars: 20,
-    consts: [[1, "absolute", "inset-0", "overflow-auto", "px-2"], [1, "block", "min-w-[56rem]", 3, "dataSource", "columns", "display_column", "column_size", "template", "filter"], ["action_template", ""], ["class", "absolute bottom-0 inset-x-0", 4, "ngIf"], ["btn", "", "icon", "", "matRipple", "", 1, "absolute", "bottom-2", "left-2", "bg-secondary", "text-secondary-content", 3, "click"], [1, "w-full", "flex", "items-center", "justify-end"], ["icon", "", 3, "click"], [1, "absolute", "bottom-0", "inset-x-0"]],
+    consts: [[1, "h-full", "w-full", "overflow-auto"], [1, "block", "min-w-[56rem]", 3, "dataSource", "columns", "display_column", "column_size", "template", "filter"], ["action_template", ""], ["class", "absolute bottom-0 inset-x-0", 4, "ngIf"], ["btn", "", "icon", "", "matRipple", "", 1, "absolute", "bottom-2", "left-2", "bg-secondary", "text-secondary-content", 3, "click"], [1, "w-full", "flex", "items-center", "justify-end"], ["icon", "", 3, "click"], [1, "absolute", "bottom-0", "inset-x-0"]],
     template: function ParkingSpaceListComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0);
@@ -878,7 +878,7 @@ class ParkingTopbarComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1_
     features: [_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵInheritDefinitionFeature"]],
     decls: 13,
     vars: 9,
-    consts: [[1, "flex", "items-center", "w-full", "pt-4", "px-8", "space-x-2"], [1, "text-2xl", "font-medium"], [1, "flex-1", "w-px"], [1, "mr-2", 3, "model", "modelChange"], [1, "flex", "items-center", "bg-base-100", "px-8", "h-20"], ["appearance", "outline", 1, "w-[18rem]"], ["placeholder", "All Levels", "multiple", "", 3, "ngModel", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], [1, "flex-1", "w-0"], [3, "dateChange", 4, "ngIf"], [3, "value"], [1, "flex", "flex-col-reverse"], ["class", "text-xs opacity-30", 4, "ngIf"], [1, "text-xs", "opacity-30"], [1, "opacity-0"], [3, "dateChange"]],
+    consts: [[1, "flex", "items-center", "w-full", "pt-4", "pb-2", "px-8", "space-x-2"], [1, "text-2xl", "font-medium"], [1, "flex-1", "w-px"], [1, "mr-2", 3, "model", "modelChange"], [1, "flex", "items-center", "bg-base-100", "px-8", "h-20"], ["appearance", "outline", 1, "w-[15rem]"], ["placeholder", "All Levels", "multiple", "", 3, "ngModel", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], [1, "flex-1", "w-0"], [3, "dateChange", 4, "ngIf"], [3, "value"], [1, "flex", "flex-col-reverse"], ["class", "text-xs opacity-30", 4, "ngIf"], [1, "text-xs", "opacity-30"], [1, "opacity-0"], [3, "dateChange"]],
     template: function ParkingTopbarComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 0)(1, "h2", 1);
