@@ -180,13 +180,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function DeskBookingsComponent_ng_template_5_Template(rf, ctx) {
+function DeskBookingsComponent_ng_template_4_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 12)(1, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 11)(1, "div", 12);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](3, "date");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "div", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "div", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](5);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](6, "date");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
@@ -199,7 +199,7 @@ function DeskBookingsComponent_ng_template_5_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind2"](6, 5, date_r12, "dd"));
   }
 }
-function DeskBookingsComponent_ng_template_7_ng_container_0_ng_container_1_Template(rf, ctx) {
+function DeskBookingsComponent_ng_template_6_ng_container_0_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1);
@@ -214,17 +214,17 @@ function DeskBookingsComponent_ng_template_7_ng_container_0_ng_container_1_Templ
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate2"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind2"](2, 2, row_r13.date, ctx_r16.time_format), " \u2013 ", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind2"](3, 5, row_r13.end, ctx_r16.time_format), " ");
   }
 }
-function DeskBookingsComponent_ng_template_7_ng_container_0_ng_container_2_Template(rf, ctx) {
+function DeskBookingsComponent_ng_template_6_ng_container_0_ng_container_2_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, "All Day");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerEnd"]();
   }
 }
-function DeskBookingsComponent_ng_template_7_ng_container_0_Template(rf, ctx) {
+function DeskBookingsComponent_ng_template_6_ng_container_0_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, DeskBookingsComponent_ng_template_7_ng_container_0_ng_container_1_Template, 4, 8, "ng-container", 15)(2, DeskBookingsComponent_ng_template_7_ng_container_0_ng_container_2_Template, 2, 0, "ng-container", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, DeskBookingsComponent_ng_template_6_ng_container_0_ng_container_1_Template, 4, 8, "ng-container", 14)(2, DeskBookingsComponent_ng_template_6_ng_container_0_ng_container_2_Template, 2, 0, "ng-container", 14);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
@@ -235,10 +235,10 @@ function DeskBookingsComponent_ng_template_7_ng_container_0_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", row_r13.all_day);
   }
 }
-function DeskBookingsComponent_ng_template_7_ng_container_1_Template(rf, ctx) {
+function DeskBookingsComponent_ng_template_6_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 15);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerEnd"]();
@@ -249,9 +249,9 @@ function DeskBookingsComponent_ng_template_7_ng_container_1_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", row_r13.status === "ended" ? "Manually Ended" : "Expired", " ");
   }
 }
-function DeskBookingsComponent_ng_template_7_Template(rf, ctx) {
+function DeskBookingsComponent_ng_template_6_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](0, DeskBookingsComponent_ng_template_7_ng_container_0_Template, 3, 2, "ng-container", 15)(1, DeskBookingsComponent_ng_template_7_ng_container_1_Template, 3, 1, "ng-container", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](0, DeskBookingsComponent_ng_template_6_ng_container_0_Template, 3, 2, "ng-container", 14)(1, DeskBookingsComponent_ng_template_6_ng_container_1_Template, 3, 1, "ng-container", 14);
   }
   if (rf & 2) {
     const row_r13 = ctx.row;
@@ -260,9 +260,9 @@ function DeskBookingsComponent_ng_template_7_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", row_r13.status === "declined" || row_r13.deleted || row_r13.status === "ended");
   }
 }
-function DeskBookingsComponent_ng_template_9_div_3_Template(rf, ctx) {
+function DeskBookingsComponent_ng_template_8_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 19);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
   }
@@ -272,12 +272,12 @@ function DeskBookingsComponent_ng_template_9_div_3_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", row_r21.user_email, " ");
   }
 }
-function DeskBookingsComponent_ng_template_9_Template(rf, ctx) {
+function DeskBookingsComponent_ng_template_8_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 17)(1, "div", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 16)(1, "div", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](3, DeskBookingsComponent_ng_template_9_div_3_Template, 2, 1, "div", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](3, DeskBookingsComponent_ng_template_8_div_3_Template, 2, 1, "div", 18);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
@@ -288,36 +288,36 @@ function DeskBookingsComponent_ng_template_9_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", row_r21.user_name);
   }
 }
-function DeskBookingsComponent_ng_template_11_Template(rf, ctx) {
+function DeskBookingsComponent_ng_template_10_Template(rf, ctx) {
   if (rf & 1) {
     const _r27 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 21)(1, "div", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 20)(1, "div", 21);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "app-icon", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "app-icon", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](4, "arrow_drop_down");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "mat-menu", null, 23)(7, "button", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function DeskBookingsComponent_ng_template_11_Template_button_click_7_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "mat-menu", null, 22)(7, "button", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function DeskBookingsComponent_ng_template_10_Template_button_click_7_listener() {
       const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r27);
       const row_r24 = restoredCtx.row;
       const ctx_r26 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r26.approve(row_r24));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "div", 24)(9, "app-icon", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "div", 23)(9, "app-icon", 24);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](10, "event_available");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](11, "div");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](12, "Approve Desk");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](13, "button", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function DeskBookingsComponent_ng_template_11_Template_button_click_13_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](13, "button", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function DeskBookingsComponent_ng_template_10_Template_button_click_13_listener() {
       const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r27);
       const row_r24 = restoredCtx.row;
       const ctx_r28 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r28.reject(row_r24));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](14, "div", 24)(15, "app-icon", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](14, "div", 23)(15, "app-icon", 24);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](16, "event_busy");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](17, "div");
@@ -333,36 +333,36 @@ function DeskBookingsComponent_ng_template_11_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", row_r24.approved ? "Approved" : row_r24.rejected ? "Declined" : "Tentative", " ");
   }
 }
-function DeskBookingsComponent_ng_template_13_Template(rf, ctx) {
+function DeskBookingsComponent_ng_template_12_Template(rf, ctx) {
   if (rf & 1) {
     const _r33 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 26)(1, "div", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 25)(1, "div", 21);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "app-icon", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "app-icon", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](4, "arrow_drop_down");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "mat-menu", null, 27)(7, "button", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function DeskBookingsComponent_ng_template_13_Template_button_click_7_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "mat-menu", null, 26)(7, "button", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function DeskBookingsComponent_ng_template_12_Template_button_click_7_listener() {
       const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r33);
       const row_r30 = restoredCtx.row;
       const ctx_r32 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r32.checkin(row_r30, true));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "div", 24)(9, "app-icon", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "div", 23)(9, "app-icon", 24);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](10, "check");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](11, "div");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](12, "Check-in");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](13, "button", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function DeskBookingsComponent_ng_template_13_Template_button_click_13_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](13, "button", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function DeskBookingsComponent_ng_template_12_Template_button_click_13_listener() {
       const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r33);
       const row_r30 = restoredCtx.row;
       const ctx_r34 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r34.checkin(row_r30, false));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](14, "div", 24)(15, "app-icon", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](14, "div", 23)(15, "app-icon", 24);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](16, "cancel");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](17, "div");
@@ -379,11 +379,11 @@ function DeskBookingsComponent_ng_template_13_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r29 ? "Yes" : "No");
   }
 }
-function DeskBookingsComponent_button_15_Template(rf, ctx) {
+function DeskBookingsComponent_button_14_Template(rf, ctx) {
   if (rf & 1) {
     const _r36 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 28);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function DeskBookingsComponent_button_15_Template_button_click_0_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function DeskBookingsComponent_button_14_Template_button_click_0_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r36);
       const ctx_r35 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r35.loadMore());
@@ -444,43 +444,42 @@ class DeskBookingsComponent {
   static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
     type: DeskBookingsComponent,
     selectors: [["desk-bookings"]],
-    decls: 24,
+    decls: 23,
     vars: 25,
-    consts: [[1, "w-full", "h-4"], [1, "overflow-auto", "h-full", "w-full", "px-4", "pb-4"], [1, "min-w-[76rem]", "block", 3, "dataSource", "filter", "columns", "display_column", "column_size", "template", "empty"], ["date_template", ""], ["period_template", ""], ["user_template", ""], ["status_template", ""], ["option_template", ""], ["btn", "", "matRipple", "", "class", "absolute bottom-2 left-2 w-32 mx-auto my-4", 3, "click", 4, "ngIf"], ["icon", "", "matRipple", "", 1, "absolute", "bottom-2", "right-2", "bg-base-100", "shadow", 3, "matMenuTriggerFor"], ["menu", "matMenu"], ["mat-menu-item", "", 3, "click"], [1, "flex", "flex-col", "items-center", "justify-center", "w-full"], [1, "opacity-60"], [1, "text-xl"], [4, "ngIf"], [1, "text-xs", "py-1", "px-2", "bg-error", "rounded-2xl", "text-white"], [1, "flex", "flex-col", "justify-center"], [1, "select-all"], ["class", "text-xs opacity-30 select-all", 4, "ngIf"], [1, "text-xs", "opacity-30", "select-all"], ["matRipple", "", 1, "rounded-3xl", "px-2", "py-1", "flex", "items-center", "space-x-2", "capitalize", 3, "matMenuTriggerFor"], [1, "ml-2"], ["statusMenu", "matMenu"], [1, "flex", "items-center", "space-x-2"], [1, "text-2xl"], ["matRipple", "", 1, "rounded-3xl", "px-2", "py-1", "text-white", "flex", "items-center", "space-x-2", 3, "matMenuTriggerFor", "disabled", "matTooltip"], ["checkinMenu", "matMenu"], ["btn", "", "matRipple", "", 1, "absolute", "bottom-2", "left-2", "w-32", "mx-auto", "my-4", 3, "click"]],
+    consts: [[1, "overflow-auto", "h-full", "w-full", "pb-4"], [1, "min-w-[76rem]", "block", 3, "dataSource", "filter", "columns", "display_column", "column_size", "template", "empty"], ["date_template", ""], ["period_template", ""], ["user_template", ""], ["status_template", ""], ["option_template", ""], ["btn", "", "matRipple", "", "class", "absolute bottom-2 left-2 w-32 mx-auto my-4", 3, "click", 4, "ngIf"], ["icon", "", "matRipple", "", 1, "absolute", "bottom-2", "right-2", "bg-base-100", "shadow", 3, "matMenuTriggerFor"], ["menu", "matMenu"], ["mat-menu-item", "", 3, "click"], [1, "flex", "flex-col", "items-center", "justify-center", "w-full"], [1, "opacity-60"], [1, "text-xl"], [4, "ngIf"], [1, "text-xs", "py-1", "px-2", "bg-error", "rounded-2xl", "text-white"], [1, "flex", "flex-col", "justify-center"], [1, "select-all"], ["class", "text-xs opacity-30 select-all", 4, "ngIf"], [1, "text-xs", "opacity-30", "select-all"], ["matRipple", "", 1, "rounded-3xl", "px-2", "py-1", "flex", "items-center", "space-x-2", "capitalize", 3, "matMenuTriggerFor"], [1, "ml-2"], ["statusMenu", "matMenu"], [1, "flex", "items-center", "space-x-2"], [1, "text-2xl"], ["matRipple", "", 1, "rounded-3xl", "px-2", "py-1", "text-white", "flex", "items-center", "space-x-2", 3, "matMenuTriggerFor", "disabled", "matTooltip"], ["checkinMenu", "matMenu"], ["btn", "", "matRipple", "", 1, "absolute", "bottom-2", "left-2", "w-32", "mx-auto", "my-4", 3, "click"]],
     template: function DeskBookingsComponent_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](2, "custom-table", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "custom-table", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](2, "async");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](3, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](4, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](5, DeskBookingsComponent_ng_template_5_Template, 7, 8, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"])(7, DeskBookingsComponent_ng_template_7_Template, 2, 2, "ng-template", null, 4, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"])(9, DeskBookingsComponent_ng_template_9_Template, 4, 2, "ng-template", null, 5, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"])(11, DeskBookingsComponent_ng_template_11_Template, 19, 12, "ng-template", null, 6, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"])(13, DeskBookingsComponent_ng_template_13_Template, 19, 10, "ng-template", null, 7, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](4, DeskBookingsComponent_ng_template_4_Template, 7, 8, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"])(6, DeskBookingsComponent_ng_template_6_Template, 2, 2, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"])(8, DeskBookingsComponent_ng_template_8_Template, 4, 2, "ng-template", null, 4, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"])(10, DeskBookingsComponent_ng_template_10_Template, 19, 12, "ng-template", null, 5, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"])(12, DeskBookingsComponent_ng_template_12_Template, 19, 10, "ng-template", null, 6, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](15, DeskBookingsComponent_button_15_Template, 2, 0, "button", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](16, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](17, "button", 9)(18, "app-icon");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](19, "more_vert");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](14, DeskBookingsComponent_button_14_Template, 2, 0, "button", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](15, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](16, "button", 8)(17, "app-icon");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](18, "more_vert");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](20, "mat-menu", null, 10)(22, "button", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function DeskBookingsComponent_Template_button_click_22_listener() {
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](19, "mat-menu", null, 9)(21, "button", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function DeskBookingsComponent_Template_button_click_21_listener() {
           return ctx.rejectAll();
         });
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](23, "Reject All");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](22, "Reject All");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
       }
       if (rf & 2) {
-        const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](6);
-        const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](8);
-        const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](10);
-        const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](12);
-        const _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](14);
-        const _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](21);
+        const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](5);
+        const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](7);
+        const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](9);
+        const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](11);
+        const _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](13);
+        const _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](20);
         let tmp_1_0;
         let tmp_6_0;
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("dataSource", ctx.bookings)("filter", (tmp_1_0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](3, 9, ctx.filters)) == null ? null : tmp_1_0.search)("columns", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](15, _c0))("display_column", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](16, _c1))("column_size", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](17, _c2))("template", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction6"](18, _c3, _r5, _r1, _r3, _r7, _r9, _r9))("empty", ((tmp_6_0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](4, 11, ctx.filters)) == null ? null : tmp_6_0.search) ? "No matching desk bookings" : "There are no desk booking for the currently selected date.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("dataSource", ctx.bookings)("filter", (tmp_1_0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](2, 9, ctx.filters)) == null ? null : tmp_1_0.search)("columns", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](15, _c0))("display_column", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](16, _c1))("column_size", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](17, _c2))("template", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction6"](18, _c3, _r5, _r1, _r3, _r7, _r9, _r9))("empty", ((tmp_6_0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](3, 11, ctx.filters)) == null ? null : tmp_6_0.search) ? "No matching desk bookings" : "There are no desk booking for the currently selected date.");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !ctx.loading && _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](16, 13, ctx.has_more_pages));
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !ctx.loading && _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](15, 13, ctx.has_more_pages));
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("matMenuTriggerFor", _r11);
       }
@@ -668,11 +667,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function DesksManageComponent_ng_template_5_Template(rf, ctx) {
+function DesksManageComponent_ng_template_4_Template(rf, ctx) {
   if (rf & 1) {
     const _r15 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "item-list-field", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("ngModelChange", function DesksManageComponent_ng_template_5_Template_item_list_field_ngModelChange_0_listener($event) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "item-list-field", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("ngModelChange", function DesksManageComponent_ng_template_4_Template_item_list_field_ngModelChange_0_listener($event) {
       const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r15);
       const row_r12 = restoredCtx.row;
       const key_r13 = restoredCtx.key;
@@ -689,11 +688,11 @@ function DesksManageComponent_ng_template_5_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("placeholder", key_r13 === "groups" ? "User Groups" : "Features")("name", key_r13)("ngModel", (ctx_r0.changes[row_r12.id] ? ctx_r0.changes[row_r12.id][key_r13] : null) || data_r11);
   }
 }
-function DesksManageComponent_ng_template_7_Template(rf, ctx) {
+function DesksManageComponent_ng_template_6_Template(rf, ctx) {
   if (rf & 1) {
     const _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 11)(1, "mat-form-field", 12)(2, "input", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("ngModelChange", function DesksManageComponent_ng_template_7_Template_input_ngModelChange_2_listener($event) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 10)(1, "mat-form-field", 11)(2, "input", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("ngModelChange", function DesksManageComponent_ng_template_6_Template_input_ngModelChange_2_listener($event) {
       const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r20);
       const row_r17 = restoredCtx.row;
       const key_r18 = restoredCtx.key;
@@ -711,11 +710,11 @@ function DesksManageComponent_ng_template_7_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("placeholder", key_r18)("name", key_r18)("ngModel", (ctx_r2.changes[row_r17.id] ? ctx_r2.changes[row_r17.id][key_r18] : null) || data_r16);
   }
 }
-function DesksManageComponent_ng_template_9_Template(rf, ctx) {
+function DesksManageComponent_ng_template_8_Template(rf, ctx) {
   if (rf & 1) {
     const _r24 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 14)(1, "mat-checkbox", 15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("ngModelChange", function DesksManageComponent_ng_template_9_Template_mat_checkbox_ngModelChange_1_listener($event) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 13)(1, "mat-checkbox", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("ngModelChange", function DesksManageComponent_ng_template_8_Template_mat_checkbox_ngModelChange_1_listener($event) {
       const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r24);
       const row_r22 = restoredCtx.row;
       const ctx_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
@@ -732,18 +731,18 @@ function DesksManageComponent_ng_template_9_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngModel", (tmp_0_0 = ctx_r4.changes[row_r22.id] == null ? null : ctx_r4.changes[row_r22.id].bookable) !== null && tmp_0_0 !== undefined ? tmp_0_0 : data_r21);
   }
 }
-function DesksManageComponent_ng_template_11_ng_template_10_Template(rf, ctx) {
+function DesksManageComponent_ng_template_10_ng_template_10_Template(rf, ctx) {
   if (rf & 1) {
     const _r29 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 21)(1, "div", 22)(2, "a", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 20)(1, "div", 21)(2, "a", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipe"](3, "safe");
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](4, "img", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](4, "img", 23);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](5, "div", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](5, "div", 24);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](6);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](7, "button", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function DesksManageComponent_ng_template_11_ng_template_10_Template_button_click_7_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](7, "button", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function DesksManageComponent_ng_template_10_ng_template_10_Template_button_click_7_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r29);
       const ctx_r28 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](2);
       return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r28.print());
@@ -761,14 +760,14 @@ function DesksManageComponent_ng_template_11_ng_template_10_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", row_r25.name || row_r25.id, " ");
   }
 }
-function DesksManageComponent_ng_template_11_Template(rf, ctx) {
+function DesksManageComponent_ng_template_10_Template(rf, ctx) {
   if (rf & 1) {
     const _r32 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 16)(1, "div", 17)(2, "app-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 15)(1, "div", 16)(2, "app-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](3, "warning");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](4, "button", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function DesksManageComponent_ng_template_11_Template_button_click_4_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](4, "button", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function DesksManageComponent_ng_template_10_Template_button_click_4_listener() {
       const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r32);
       const row_r25 = restoredCtx.row;
       const ctx_r31 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
@@ -777,8 +776,8 @@ function DesksManageComponent_ng_template_11_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](5, "app-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](6, "delete");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](7, "button", 19);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function DesksManageComponent_ng_template_11_Template_button_click_7_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](7, "button", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function DesksManageComponent_ng_template_10_Template_button_click_7_listener() {
       const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r32);
       const row_r25 = restoredCtx.row;
       const ctx_r33 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
@@ -787,7 +786,7 @@ function DesksManageComponent_ng_template_11_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](8, "app-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](9, "qr_code");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](10, DesksManageComponent_ng_template_11_ng_template_10_Template, 9, 6, "ng-template", null, 20, _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplateRefExtractor"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](10, DesksManageComponent_ng_template_10_ng_template_10_Template, 9, 6, "ng-template", null, 19, _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplateRefExtractor"]);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
@@ -800,10 +799,10 @@ function DesksManageComponent_ng_template_11_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("content", _r27);
   }
 }
-function DesksManageComponent_div_13_Template(rf, ctx) {
+function DesksManageComponent_div_12_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](1, "mat-spinner", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](1, "mat-spinner", 27);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](2, "p");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
@@ -814,14 +813,14 @@ function DesksManageComponent_div_13_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate"](ctx_r8.loading);
   }
 }
-function DesksManageComponent_div_14_Template(rf, ctx) {
+function DesksManageComponent_div_13_Template(rf, ctx) {
   if (rf & 1) {
     const _r35 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 29)(1, "div", 30)(2, "div", 31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 28)(1, "div", 29)(2, "div", 30);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](3, " Drop CSV file to add desks ");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](4, "input", 32);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("change", function DesksManageComponent_div_14_Template_input_change_4_listener($event) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](4, "input", 31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("change", function DesksManageComponent_div_13_Template_input_change_4_listener($event) {
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r35);
       const ctx_r34 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r34.loadCSVData($event));
@@ -829,22 +828,22 @@ function DesksManageComponent_div_14_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
   }
 }
-function DesksManageComponent_div_15_Template(rf, ctx) {
+function DesksManageComponent_div_14_Template(rf, ctx) {
   if (rf & 1) {
     const _r37 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 33)(1, "p", 34);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 32)(1, "p", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](3, "div", 35)(4, "button", 36);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function DesksManageComponent_div_15_Template_button_click_4_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](3, "div", 34)(4, "button", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function DesksManageComponent_div_14_Template_button_click_4_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r37);
       const ctx_r36 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r36.clear());
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](5, " Clear Changes ");
     _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](6, "button", 37);
-    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function DesksManageComponent_div_15_Template_button_click_6_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](6, "button", 36);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function DesksManageComponent_div_14_Template_button_click_6_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r37);
       const ctx_r38 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r38.save());
@@ -1012,36 +1011,34 @@ class DesksManageComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.
     type: DesksManageComponent,
     selectors: [["desks-manage"]],
     features: [_angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵInheritDefinitionFeature"]],
-    decls: 16,
+    decls: 15,
     vars: 29,
-    consts: [[1, "w-full", "h-4"], [1, "w-full", "relative", "pl-8", "pb-4", 3, "dragenter", "dragend"], [1, "min-w-[76rem]", "block", 3, "dataSource", "filter", "columns", "display_column", "column_size", "template", "empty", "reset_page", "pagination", "page_size"], ["list_edit_template", ""], ["text_edit_template", ""], ["bookable_edit_template", ""], ["action_template", ""], ["class", "absolute inset-0 flex flex-col items-center justify-center space-y-2 bg-base-100 bg-opacity-60", 4, "ngIf"], ["class", "absolute inset-0 bg-neutral flex items-center justify-center", 4, "ngIf"], ["class", "fixed bottom-0 left-64 right-0 p-2 bg-base-100 shadow border-t border-base-200 flex items-center justify-center space-x-4", 4, "ngIf"], ["hide-outline", "", 1, "w-full", 3, "placeholder", "name", "ngModel", "ngModelChange"], ["hide-outline", "", 1, "w-full", "h-12"], ["appearance", "outline", 1, "h-12", "w-full"], ["matInput", "", 3, "placeholder", "name", "ngModel", "ngModelChange"], [1, "flex", "items-center", "justify-center", "pl-4"], [3, "ngModel", "ngModelChange"], [1, "flex", "items-center", "justify-end", "space-x-2"], ["matTooltip", "Desk has unsaved changes", 1, "p-2", "text-2xl", "text-warning"], ["icon", "", 3, "click"], ["icon", "", "matRipple", "", "customTooltip", "", 3, "content", "click"], ["qr_menu", ""], [1, "bg-base-100", "py-2", "shadow", "rounded"], ["printable", "", 1, ""], ["target", "_blank", "ref", "noopener noreferrer", 1, "block", "p-2", "mx-4", "my-2", "rounded-lg", "border", "border-base-200", "bg-base-100", 3, "href"], [1, "w-48", 3, "src"], [1, "w-[calc(100%-2rem)]", "text-center", "mt-2", "font-mono", "text-sm", "bg-base-200", "rounded", "p-2", "mx-4"], ["btn", "", "matRipple", "", 1, "w-[calc(100%-2rem)]", "mx-4", "my-2", 3, "click"], [1, "absolute", "inset-0", "flex", "flex-col", "items-center", "justify-center", "space-y-2", "bg-base-100", "bg-opacity-60"], ["diameter", "32"], [1, "absolute", "inset-0", "bg-neutral", "flex", "items-center", "justify-center"], [1, "bg-base-100", "p-4", "rounded", "shadow"], [1, "border-4", "border-base-200", "border-dashed", "rounded", "flex", "flex-col", "items-center", "justify-center", "w-64", "h-64"], ["type", "file", 1, "absolute", "inset-0", "opacity-0", 3, "change"], [1, "fixed", "bottom-0", "left-64", "right-0", "p-2", "bg-base-100", "shadow", "border-t", "border-base-200", "flex", "items-center", "justify-center", "space-x-4"], [1, "flex-1", "text-center", "pl-8"], [1, "flex", "items-center", "justify-center", "space-x-2"], ["clear", "", "btn", "", "matRipple", "", 1, "inverse", 3, "click"], ["save", "", "btn", "", "matRipple", "", 3, "click"]],
+    consts: [[1, "overflow-auto", "h-full", "w-full", "pb-4", 3, "dragenter", "dragend"], [1, "min-w-[76rem]", "block", 3, "dataSource", "filter", "columns", "display_column", "column_size", "template", "empty", "reset_page", "pagination", "page_size"], ["list_edit_template", ""], ["text_edit_template", ""], ["bookable_edit_template", ""], ["action_template", ""], ["class", "absolute inset-0 flex flex-col items-center justify-center space-y-2 bg-base-100 bg-opacity-60", 4, "ngIf"], ["class", "absolute inset-0 bg-neutral flex items-center justify-center", 4, "ngIf"], ["class", "fixed bottom-0 left-64 right-0 p-2 bg-base-100 shadow border-t border-base-200 flex items-center justify-center space-x-4", 4, "ngIf"], ["hide-outline", "", 1, "w-full", 3, "placeholder", "name", "ngModel", "ngModelChange"], ["hide-outline", "", 1, "w-full", "h-12"], ["appearance", "outline", 1, "h-12", "w-full"], ["matInput", "", 3, "placeholder", "name", "ngModel", "ngModelChange"], [1, "flex", "items-center", "justify-center", "pl-4"], [3, "ngModel", "ngModelChange"], [1, "flex", "items-center", "justify-end", "space-x-2"], ["matTooltip", "Desk has unsaved changes", 1, "p-2", "text-2xl", "text-warning"], ["icon", "", 3, "click"], ["icon", "", "matRipple", "", "customTooltip", "", 3, "content", "click"], ["qr_menu", ""], [1, "bg-base-100", "py-2", "shadow", "rounded"], ["printable", "", 1, ""], ["target", "_blank", "ref", "noopener noreferrer", 1, "block", "p-2", "mx-4", "my-2", "rounded-lg", "border", "border-base-200", "bg-base-100", 3, "href"], [1, "w-48", 3, "src"], [1, "w-[calc(100%-2rem)]", "text-center", "mt-2", "font-mono", "text-sm", "bg-base-200", "rounded", "p-2", "mx-4"], ["btn", "", "matRipple", "", 1, "w-[calc(100%-2rem)]", "mx-4", "my-2", 3, "click"], [1, "absolute", "inset-0", "flex", "flex-col", "items-center", "justify-center", "space-y-2", "bg-base-100", "bg-opacity-60"], ["diameter", "32"], [1, "absolute", "inset-0", "bg-neutral", "flex", "items-center", "justify-center"], [1, "bg-base-100", "p-4", "rounded", "shadow"], [1, "border-4", "border-base-200", "border-dashed", "rounded", "flex", "flex-col", "items-center", "justify-center", "w-64", "h-64"], ["type", "file", 1, "absolute", "inset-0", "opacity-0", 3, "change"], [1, "fixed", "bottom-0", "left-64", "right-0", "p-2", "bg-base-100", "shadow", "border-t", "border-base-200", "flex", "items-center", "justify-center", "space-x-4"], [1, "flex-1", "text-center", "pl-8"], [1, "flex", "items-center", "justify-center", "space-x-2"], ["clear", "", "btn", "", "matRipple", "", 1, "inverse", 3, "click"], ["save", "", "btn", "", "matRipple", "", 3, "click"]],
     template: function DesksManageComponent_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](1, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("dragenter", function DesksManageComponent_Template_div_dragenter_1_listener($event) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("dragenter", function DesksManageComponent_Template_div_dragenter_0_listener($event) {
           return ctx.handleDrag("enter", $event);
-        })("dragend", function DesksManageComponent_Template_div_dragend_1_listener($event) {
+        })("dragend", function DesksManageComponent_Template_div_dragend_0_listener($event) {
           return ctx.handleDrag("end", $event);
         }, false, _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresolveWindow"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](2, "custom-table", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](1, "custom-table", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipe"](2, "async");
         _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipe"](3, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipe"](4, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](5, DesksManageComponent_ng_template_5_Template, 1, 3, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplateRefExtractor"])(7, DesksManageComponent_ng_template_7_Template, 3, 3, "ng-template", null, 4, _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplateRefExtractor"])(9, DesksManageComponent_ng_template_9_Template, 2, 1, "ng-template", null, 5, _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplateRefExtractor"])(11, DesksManageComponent_ng_template_11_Template, 12, 3, "ng-template", null, 6, _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplateRefExtractor"])(13, DesksManageComponent_div_13_Template, 4, 1, "div", 7)(14, DesksManageComponent_div_14_Template, 5, 0, "div", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](4, DesksManageComponent_ng_template_4_Template, 1, 3, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplateRefExtractor"])(6, DesksManageComponent_ng_template_6_Template, 3, 3, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplateRefExtractor"])(8, DesksManageComponent_ng_template_8_Template, 2, 1, "ng-template", null, 4, _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplateRefExtractor"])(10, DesksManageComponent_ng_template_10_Template, 12, 3, "ng-template", null, 5, _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplateRefExtractor"])(12, DesksManageComponent_div_12_Template, 4, 1, "div", 6)(13, DesksManageComponent_div_13_Template, 5, 0, "div", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](15, DesksManageComponent_div_15_Template, 8, 1, "div", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](14, DesksManageComponent_div_14_Template, 8, 1, "div", 8);
       }
       if (rf & 2) {
-        const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵreference"](6);
-        const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵreference"](8);
-        const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵreference"](10);
-        const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵreference"](12);
+        const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵreference"](5);
+        const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵreference"](7);
+        const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵreference"](9);
+        const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵreference"](11);
         let tmp_2_0;
         let tmp_7_0;
-        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵstyleProp"]("margin-bottom", ctx.changed > 0 ? "4rem" : "");
         _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("dataSource", ctx.desks)("filter", (tmp_2_0 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](3, 15, ctx.filters)) == null ? null : tmp_2_0.search)("columns", _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpureFunction0"](19, _c0))("display_column", _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpureFunction0"](20, _c1))("column_size", _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpureFunction0"](21, _c2))("template", _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpureFunction6"](22, _c3, _r3, _r3, _r5, _r1, _r1, _r7))("empty", ((tmp_7_0 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](4, 17, ctx.filters)) == null ? null : tmp_7_0.search) ? "No matching desks" : "No desks for selected level")("reset_page", ctx.page_reset)("pagination", true)("page_size", 20);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("dataSource", ctx.desks)("filter", (tmp_2_0 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](2, 15, ctx.filters)) == null ? null : tmp_2_0.search)("columns", _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpureFunction0"](19, _c0))("display_column", _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpureFunction0"](20, _c1))("column_size", _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpureFunction0"](21, _c2))("template", _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpureFunction6"](22, _c3, _r3, _r3, _r5, _r1, _r1, _r7))("empty", ((tmp_7_0 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](3, 17, ctx.filters)) == null ? null : tmp_7_0.search) ? "No matching desks" : "No desks for selected level")("reset_page", ctx.page_reset)("pagination", true)("page_size", 20);
         _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](11);
         _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngIf", ctx.loading);
         _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"]();
@@ -1648,27 +1645,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   NewDesksComponent: () => (/* binding */ NewDesksComponent)
 /* harmony export */ });
 /* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/router */ 27947);
-/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 57314);
-/* harmony import */ var _desks_state_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./desks-state.service */ 34381);
-/* harmony import */ var _desk_book_modal_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./desk-book-modal.component */ 45426);
-/* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @placeos/organisation */ 5745);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs/operators */ 46939);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/router */ 27947);
+/* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/organisation */ 5745);
+/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/common */ 57314);
+/* harmony import */ var _desks_state_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./desks-state.service */ 34381);
+/* harmony import */ var _desk_book_modal_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./desk-book-modal.component */ 45426);
 /* harmony import */ var _ui_booking_rules_modal_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../ui/booking-rules-modal.component */ 67232);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/dialog */ 17401);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/common */ 26575);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/forms */ 28849);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs */ 64555);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! rxjs/operators */ 47422);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! rxjs/operators */ 46939);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/core */ 61699);
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/dialog */ 17401);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/common */ 26575);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/forms */ 28849);
 /* harmony import */ var _ui_date_options_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../ui/date-options.component */ 11771);
 /* harmony import */ var _ui_searchbar_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../ui/searchbar.component */ 97338);
 /* harmony import */ var _ui_app_topbar_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../ui/app-topbar.component */ 33005);
 /* harmony import */ var _ui_app_sidebar_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../ui/app-sidebar.component */ 19842);
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/form-field */ 51333);
-/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/select */ 96355);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/core */ 55309);
-/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/tooltip */ 60702);
-/* harmony import */ var _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/material/progress-bar */ 78173);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/form-field */ 51333);
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/material/select */ 96355);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/material/core */ 55309);
+/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/material/tooltip */ 60702);
+/* harmony import */ var _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/material/progress-bar */ 78173);
 /* harmony import */ var _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/icon.component */ 94888);
+/* harmony import */ var _libs_components_src_lib_building_pipe__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/building.pipe */ 3085);
+
+
 
 
 
@@ -1697,124 +1699,200 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const _c0 = ["app-new-desks", ""];
-function NewDesksComponent_ng_container_16_mat_option_4_Template(rf, ctx) {
+function NewDesksComponent_mat_form_field_16_mat_option_3_div_2_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](0, "mat-option", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipe"](2, "building");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](3, "span", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](4, " - ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    const level_r5 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("value", level_r5.id);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtextInterpolate1"](" ", level_r5.display_name || level_r5.name, " ");
-  }
-}
-function NewDesksComponent_ng_container_16_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](1, "mat-form-field", 12)(2, "mat-select", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("ngModelChange", function NewDesksComponent_ng_container_16_Template_mat_select_ngModelChange_2_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵrestoreView"](_r7);
-      const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵresetView"](ctx_r6.updateZones([$event]));
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipe"](3, "async");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtemplate"](4, NewDesksComponent_ng_container_16_mat_option_4_Template, 2, 2, "mat-option", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipe"](5, "async");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelement"](6, "div", 15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementContainerEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵnextContext"]();
+    const level_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]().$implicit;
     let tmp_0_0;
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("ngModel", (tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipeBind1"](3, 2, ctx_r0.filters)) == null ? null : tmp_0_0.zones[0]);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipeBind1"](5, 4, ctx_r0.levels));
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", (tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](2, 1, level_r6.parent_id)) == null ? null : tmp_0_0.display_name, " ");
   }
 }
-function NewDesksComponent_ng_container_18_Template(rf, ctx) {
+function NewDesksComponent_mat_form_field_16_mat_option_3_Template(rf, ctx) {
   if (rf & 1) {
-    const _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](1, "date-options", 17);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("dateChange", function NewDesksComponent_ng_container_18_Template_date_options_dateChange_1_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵrestoreView"](_r9);
-      const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵresetView"](ctx_r8.setDate($event));
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](2, "button", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("click", function NewDesksComponent_ng_container_18_Template_button_click_2_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵrestoreView"](_r9);
-      const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵresetView"](ctx_r10.refresh());
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipe"](3, "async");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](4, "app-icon");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](5, "refresh");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementContainerEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "mat-option", 16)(1, "div", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](2, NewDesksComponent_mat_form_field_16_mat_option_3_div_2_Template, 5, 3, "div", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](3, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("disabled", _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipeBind1"](3, 1, ctx_r1.loading));
+    const level_r6 = ctx.$implicit;
+    const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("value", level_r6.id);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngIf", ctx_r5.use_region);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", level_r6.display_name || level_r6.name, " ");
+  }
+}
+function NewDesksComponent_mat_form_field_16_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "mat-form-field", 13)(1, "mat-select", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("ngModelChange", function NewDesksComponent_mat_form_field_16_Template_mat_select_ngModelChange_1_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r10);
+      const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r9.updateZones($event));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipe"](2, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](3, NewDesksComponent_mat_form_field_16_mat_option_3_Template, 5, 3, "mat-option", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipe"](4, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
+  }
+  if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+    let tmp_0_0;
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngModel", (tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](2, 2, ctx_r0.filters)) == null ? null : tmp_0_0.zones);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](4, 4, ctx_r0.levels));
+  }
+}
+function NewDesksComponent_mat_form_field_17_mat_option_4_div_2_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "div", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipe"](2, "building");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](3, "span", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](4, " - ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
+  }
+  if (rf & 2) {
+    const level_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]().$implicit;
+    let tmp_0_0;
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", (tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](2, 1, level_r12.parent_id)) == null ? null : tmp_0_0.display_name, " ");
+  }
+}
+function NewDesksComponent_mat_form_field_17_mat_option_4_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "mat-option", 16)(1, "div", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](2, NewDesksComponent_mat_form_field_17_mat_option_4_div_2_Template, 5, 3, "div", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](3, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()()();
+  }
+  if (rf & 2) {
+    const level_r12 = ctx.$implicit;
+    const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("value", level_r12.id);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngIf", ctx_r11.use_region);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", level_r12.display_name || level_r12.name, " ");
+  }
+}
+function NewDesksComponent_mat_form_field_17_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "mat-form-field", 13)(1, "mat-select", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("ngModelChange", function NewDesksComponent_mat_form_field_17_Template_mat_select_ngModelChange_1_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r16);
+      const ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r15.updateZones([$event]));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipe"](2, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipe"](3, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](4, NewDesksComponent_mat_form_field_17_mat_option_4_Template, 5, 3, "mat-option", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipe"](5, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+    let tmp_0_0;
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngModel", ((tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](2, 2, ctx_r1.filters)) == null ? null : tmp_0_0.zones == null ? null : tmp_0_0.zones.length) ? (tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](3, 4, ctx_r1.filters)) == null ? null : tmp_0_0.zones[0] : "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](5, 6, ctx_r1.levels));
   }
 }
 function NewDesksComponent_ng_container_19_Template(rf, ctx) {
   if (rf & 1) {
-    const _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](1, "button", 19);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("click", function NewDesksComponent_ng_container_19_Template_button_click_1_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵrestoreView"](_r12);
-      const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵresetView"](ctx_r11.newDesk());
+    const _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](1, "date-options", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("dateChange", function NewDesksComponent_ng_container_19_Template_date_options_dateChange_1_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r18);
+      const ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r17.setDate($event));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](2, "app-icon");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](3, "add");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](4, "button", 20)(5, "app-icon");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](6, "cloud_upload");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](7, "input", 21);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("change", function NewDesksComponent_ng_container_19_Template_input_change_7_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵrestoreView"](_r12);
-      const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵresetView"](ctx_r13.loadCSVData($event));
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](2, "button", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function NewDesksComponent_ng_container_19_Template_button_click_2_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r18);
+      const ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r19.refresh());
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](8, "button", 22);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("click", function NewDesksComponent_ng_container_19_Template_button_click_8_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵrestoreView"](_r12);
-      const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵresetView"](ctx_r14.downloadTemplate());
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](9, "app-icon");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](10, "download");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](11, "button", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("click", function NewDesksComponent_ng_container_19_Template_button_click_11_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵrestoreView"](_r12);
-      const ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵresetView"](ctx_r15.manageRestrictions());
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](12, "app-icon");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](13, "lock_open");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementContainerEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipe"](3, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](4, "app-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](5, "refresh");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementContainerEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("disabled", _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](3, 1, ctx_r2.loading));
   }
 }
-function NewDesksComponent_mat_progress_bar_22_Template(rf, ctx) {
+function NewDesksComponent_ng_container_20_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelement"](0, "mat-progress-bar", 24);
+    const _r21 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](1, "button", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function NewDesksComponent_ng_container_20_Template_button_click_1_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r21);
+      const ctx_r20 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r20.newDesk());
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](2, "app-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](3, "add");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](4, "button", 25)(5, "app-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](6, "cloud_upload");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](7, "input", 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("change", function NewDesksComponent_ng_container_20_Template_input_change_7_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r21);
+      const ctx_r22 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r22.loadCSVData($event));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](8, "button", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function NewDesksComponent_ng_container_20_Template_button_click_8_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r21);
+      const ctx_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r23.downloadTemplate());
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](9, "app-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](10, "download");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](11, "button", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function NewDesksComponent_ng_container_20_Template_button_click_11_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r21);
+      const ctx_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵresetView"](ctx_r24.manageRestrictions());
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](12, "app-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](13, "lock_open");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementContainerEnd"]();
   }
 }
-class NewDesksComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.AsyncHandler {
+function NewDesksComponent_mat_progress_bar_23_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](0, "mat-progress-bar", 29);
+  }
+}
+class NewDesksComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.AsyncHandler {
   get use_region() {
     return !!this._settings.get('app.use_region');
   }
@@ -1827,10 +1905,11 @@ class NewDesksComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.Asy
     this._org = _org;
     this._settings = _settings;
     this.loading = this._state.loading;
+    this.manage = false;
     /** List of levels for the active building */
     this.filters = this._state.filters;
     /** List of levels for the active building */
-    this.levels = this._org.active_levels;
+    this.levels = (0,rxjs__WEBPACK_IMPORTED_MODULE_13__.combineLatest)([this._org.active_building, this._org.active_region]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_14__.map)(([bld, region]) => this._settings.get('app.use_region') ? this._org.levelsForRegion(region) : this._org.levelsForBuilding(bld)));
     this.setDate = date => this._state.setFilters({
       date
     });
@@ -1845,48 +1924,38 @@ class NewDesksComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.Asy
         },
         queryParamsHandling: 'merge'
       });
-      this._state.setFilters({
-        zones
-      });
     };
-    this.page_title = 'Desk Bookings';
   }
   ngOnInit() {
-    var _this = this;
     this._state.refresh();
     this.subscription('router.events', this._router.events.subscribe(e => {
-      if (e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_12__.NavigationEnd) {
+      if (e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_15__.NavigationEnd) {
         const url_parts = this._router.url?.split('/') || [''];
         this.path = url_parts[parts.length - 1].split('?')[0];
-        if (this.path.includes('manage')) {
-          this.page_title = 'Desk Management';
-        } else {
-          this.page_title = 'Desk Bookings';
-        }
+        this._checkManage();
       }
     }));
-    this.subscription('levels', this._org.active_levels.subscribe( /*#__PURE__*/function () {
-      var _ref = (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (levels) {
-        if (_this.use_region) return;
-        const filters = yield _this.filters.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.take)(1)).toPromise();
-        const zones = filters?.zones?.filter(zone => levels.find(lvl => lvl.id === zone) || zone === 'All') || [];
-        if (!zones.length && levels.length) {
-          zones.push(levels[0].id);
-        }
-        _this.updateZones(zones);
-      });
-      return function (_x) {
-        return _ref.apply(this, arguments);
-      };
-    }()));
+    this.subscription('route.query', this._route.queryParamMap.subscribe(params => {
+      if (params.has('zone_ids')) {
+        const zones = params.get('zone_ids').split(',');
+        if (!zones.length) return;
+        const level = this._org.levelWithID(zones);
+        this._state.setFilters({
+          zones
+        });
+        if (!level) return;
+        this._org.building = this._org.buildings.find(bld => bld.id === level.parent_id);
+      }
+    }));
     const parts = this._router.url?.split('/') || [''];
     this.path = parts[parts.length - 1].split('?')[0];
+    this._checkManage();
   }
   ngOnDestroy() {
     super.ngOnDestroy();
   }
   newDeskBooking() {
-    const ref = this._dialog.open(_desk_book_modal_component__WEBPACK_IMPORTED_MODULE_3__.DeskBookModalComponent, {});
+    const ref = this._dialog.open(_desk_book_modal_component__WEBPACK_IMPORTED_MODULE_4__.DeskBookModalComponent, {});
     ref.afterClosed().subscribe(_ => {
       this._state.refresh();
     });
@@ -1899,13 +1968,13 @@ class NewDesksComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.Asy
     });
   }
   newDesk() {
-    this._state.addDesks([new _placeos_organisation__WEBPACK_IMPORTED_MODULE_4__.Desk({
-      id: `desk-${(0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.randomInt)(999999)}`
+    this._state.addDesks([new _placeos_organisation__WEBPACK_IMPORTED_MODULE_1__.Desk({
+      id: `desk-${(0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.randomInt)(999999)}`
     })]);
-    (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.notifyInfo)('New desk added to local data.', undefined, () => (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.notifyInfo)('Make sure to save the new desk before using it.'));
+    (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.notifyInfo)('New desk added to local data.', undefined, () => (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.notifyInfo)('Make sure to save the new desk before using it.'));
   }
   downloadTemplate() {
-    const desk = new _placeos_organisation__WEBPACK_IMPORTED_MODULE_4__.Desk({
+    const desk = new _placeos_organisation__WEBPACK_IMPORTED_MODULE_1__.Desk({
       id: 'desk-123',
       name: 'Test Desk',
       bookable: true,
@@ -1913,94 +1982,115 @@ class NewDesksComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.Asy
       features: ['Standing Desk', 'Dual Monitor']
     }).toJSON();
     delete desk.images;
-    const data = (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.jsonToCsv)([desk]);
-    (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.downloadFile)('desk-template.csv', data);
+    const data = (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.jsonToCsv)([desk]);
+    (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.downloadFile)('desk-template.csv', data);
   }
   loadCSVData(event) {
-    var _this2 = this;
+    var _this = this;
     return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const data = yield (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.loadTextFileFromInputEvent)(event).catch(([m, e]) => {
-        (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.notifyError)(m);
+      const data = yield (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.loadTextFileFromInputEvent)(event).catch(([m, e]) => {
+        (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.notifyError)(m);
         throw e;
       });
       try {
-        const list = (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.csvToJson)(data) || [];
-        _this2._state.addDesks(list.map(_ => new _placeos_organisation__WEBPACK_IMPORTED_MODULE_4__.Desk({
+        const list = (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.csvToJson)(data) || [];
+        _this._state.addDesks(list.map(_ => new _placeos_organisation__WEBPACK_IMPORTED_MODULE_1__.Desk({
           ..._,
-          id: _.id || `desk-${(0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.randomInt)(999999)}`
+          id: _.id || `desk-${(0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.randomInt)(999999)}`
         })));
       } catch (e) {
         console.error(e);
       }
     })();
   }
+  _checkManage() {
+    var _this2 = this;
+    this.manage = this.path.includes('manage');
+    if (this.manage) {
+      this.subscription('zone-changes', this._org.active_levels.subscribe( /*#__PURE__*/function () {
+        var _ref = (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (lvls) {
+          if (!lvls.length) return;
+          const {
+            zones
+          } = yield _this2._state.filters.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_16__.take)(1)).toPromise();
+          const levels_in_zones = zones?.length && zones.some(z => lvls.find(lvl => lvl.id === z));
+          if (!levels_in_zones) _this2.updateZones([lvls[0].id]);
+        });
+        return function (_x) {
+          return _ref.apply(this, arguments);
+        };
+      }()));
+    } else this.unsub('zone-changes');
+  }
   static #_ = this.ɵfac = function NewDesksComponent_Factory(t) {
-    return new (t || NewDesksComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_desks_state_service__WEBPACK_IMPORTED_MODULE_2__.DesksStateService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_12__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_12__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_14__.MatDialog), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_4__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_placeos_common__WEBPACK_IMPORTED_MODULE_1__.SettingsService));
+    return new (t || NewDesksComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵdirectiveInject"](_desks_state_service__WEBPACK_IMPORTED_MODULE_3__.DesksStateService), _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_15__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_15__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_17__.MatDialog), _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵdirectiveInject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_1__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵdirectiveInject"](_placeos_common__WEBPACK_IMPORTED_MODULE_2__.SettingsService));
   };
-  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineComponent"]({
+  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵdefineComponent"]({
     type: NewDesksComponent,
     selectors: [["", "app-new-desks", ""]],
-    features: [_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵInheritDefinitionFeature"]],
+    features: [_angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵInheritDefinitionFeature"]],
     attrs: _c0,
-    decls: 24,
-    vars: 10,
-    consts: [[1, "print:hidden"], [1, "flex", "flex-1", "h-px", "print:hidden"], [1, "flex", "flex-col", "flex-1", "w-1/2", "h-full"], [1, "flex", "items-center", "w-full", "py-4", "px-8", "space-x-2"], [1, "text-2xl", "font-medium"], [1, "flex-1", "w-px"], [1, "mr-2", 3, "model", "modelChange"], ["btn", "", "matRipple", "", 1, "space-x-2", 3, "click"], [1, "w-full", "flex", "items-center", "px-8", "space-x-2"], [4, "ngIf"], [1, "flex-1", "h-1/2", "px-4", "w-full", "relative", "overflow-auto"], ["class", "w-full", "mode", "indeterminate", 4, "ngIf"], ["appearance", "outline", 1, "h-[3.5rem]"], ["placeholder", "All Levels", 3, "ngModel", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], [1, "border-l", "h-full", "!ml-8", "!mr-4"], [3, "value"], [3, "dateChange"], ["btn", "", "icon", "", "matRipple", "", "matTooltip", "Refresh List", 1, "ml-2", "rounded", "border", "border-base-200", 3, "disabled", "click"], ["btn", "", "icon", "", "matRipple", "", "matTooltip", "New Desk", 1, "bg-secondary", "text-white", "rounded", 3, "click"], ["btn", "", "icon", "", "matRipple", "", "matTooltip", "Upload Desks CSV", 1, "bg-secondary", "relative", "text-white", "rounded"], ["type", "file", 1, "absolute", "inset-0", "opacity-0", 3, "change"], ["btn", "", "icon", "", "matRipple", "", "matTooltip", "Download Template Desk CSV", 1, "bg-secondary", "text-white", "rounded", 3, "click"], ["btn", "", "icon", "", "matRipple", "", "matTooltip", "Desk Restrictions", 1, "bg-secondary", "text-white", "rounded", 3, "click"], ["mode", "indeterminate", 1, "w-full"]],
+    decls: 25,
+    vars: 11,
+    consts: [[1, "print:hidden"], [1, "flex", "flex-1", "h-px", "print:hidden"], [1, "flex", "flex-col", "flex-1", "w-1/2", "h-full"], [1, "flex", "items-center", "w-full", "py-4", "px-8", "space-x-2"], [1, "text-2xl", "font-medium"], [1, "flex-1", "w-px"], [1, "mr-2", 3, "model", "modelChange"], ["btn", "", "matRipple", "", 1, "space-x-2", 3, "click"], [1, "w-full", "flex", "items-center", "px-8", "space-x-2", "mb-4"], ["appearance", "outline", "class", "no-subscript w-[15rem]", 4, "ngIf"], [4, "ngIf"], [1, "flex-1", "h-1/2", "px-8", "w-full", "relative", "overflow-auto"], ["class", "w-full", "mode", "indeterminate", 4, "ngIf"], ["appearance", "outline", 1, "no-subscript", "w-[15rem]"], ["placeholder", "All Levels", "multiple", "", 3, "ngModel", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], [1, "flex", "flex-col-reverse"], ["class", "text-xs opacity-30", 4, "ngIf"], [1, "text-xs", "opacity-30"], [1, "opacity-0"], ["placeholder", "All Levels", 3, "ngModel", "ngModelChange"], [3, "dateChange"], ["btn", "", "icon", "", "matRipple", "", "matTooltip", "Refresh List", 1, "ml-2", "rounded", "border", "border-base-200", 3, "disabled", "click"], ["btn", "", "icon", "", "matRipple", "", "matTooltip", "New Desk", 1, "bg-secondary", "text-white", "rounded", 3, "click"], ["btn", "", "icon", "", "matRipple", "", "matTooltip", "Upload Desks CSV", 1, "bg-secondary", "relative", "text-white", "rounded"], ["type", "file", 1, "absolute", "inset-0", "opacity-0", 3, "change"], ["btn", "", "icon", "", "matRipple", "", "matTooltip", "Download Template Desk CSV", 1, "bg-secondary", "text-white", "rounded", 3, "click"], ["btn", "", "icon", "", "matRipple", "", "matTooltip", "Desk Restrictions", 1, "bg-secondary", "text-white", "rounded", 3, "click"], ["mode", "indeterminate", 1, "w-full"]],
     template: function NewDesksComponent_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelement"](0, "app-topbar", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](1, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelement"](2, "app-sidebar");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](3, "main", 2)(4, "div", 3)(5, "h2", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelement"](7, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](8, "searchbar", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("modelChange", function NewDesksComponent_Template_searchbar_modelChange_8_listener($event) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](0, "app-topbar", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](1, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](2, "app-sidebar");
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](3, "main", 2)(4, "div", 3)(5, "h2", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](7, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](8, "searchbar", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("modelChange", function NewDesksComponent_Template_searchbar_modelChange_8_listener($event) {
           return ctx.setFilters({
             search: $event
           });
         });
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipe"](9, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](10, "button", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("click", function NewDesksComponent_Template_button_click_10_listener() {
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipe"](9, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](10, "button", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function NewDesksComponent_Template_button_click_10_listener() {
           return ctx.newDeskBooking();
         });
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](11, "div");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](12, "New Booking");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](13, "app-icon");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](14, "add");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](15, "div", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtemplate"](16, NewDesksComponent_ng_container_16_Template, 7, 6, "ng-container", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelement"](17, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtemplate"](18, NewDesksComponent_ng_container_18_Template, 6, 3, "ng-container", 9)(19, NewDesksComponent_ng_container_19_Template, 14, 0, "ng-container", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](20, "div", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelement"](21, "router-outlet");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtemplate"](22, NewDesksComponent_mat_progress_bar_22_Template, 1, 0, "mat-progress-bar", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipe"](23, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](11, "div");
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](12, "New Booking");
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](13, "app-icon");
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](14, "add");
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](15, "div", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](16, NewDesksComponent_mat_form_field_16_Template, 5, 6, "mat-form-field", 9)(17, NewDesksComponent_mat_form_field_17_Template, 6, 8, "mat-form-field", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](18, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](19, NewDesksComponent_ng_container_19_Template, 6, 3, "ng-container", 10)(20, NewDesksComponent_ng_container_20_Template, 14, 0, "ng-container", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](21, "div", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](22, "router-outlet");
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](23, NewDesksComponent_mat_progress_bar_23_Template, 1, 0, "mat-progress-bar", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipe"](24, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]()();
       }
       if (rf & 2) {
         let tmp_1_0;
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtextInterpolate1"](" ", ctx.page_title, " ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("model", (tmp_1_0 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipeBind1"](9, 6, ctx.filters)) == null ? null : tmp_1_0.search);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("ngIf", !ctx.use_region);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("ngIf", ctx.path === "events");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("ngIf", ctx.path === "manage");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipeBind1"](23, 8, ctx.loading) && ctx.path === "events");
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", ctx.manage ? "Desk Management" : "Desk Bookings", " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("model", (tmp_1_0 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](9, 7, ctx.filters)) == null ? null : tmp_1_0.search);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngIf", !ctx.manage);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngIf", ctx.manage);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngIf", ctx.path === "events");
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngIf", ctx.path === "manage");
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵpipeBind1"](24, 9, ctx.loading) && ctx.path === "events");
       }
     },
-    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_15__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_15__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_16__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_16__.NgModel, _ui_date_options_component__WEBPACK_IMPORTED_MODULE_6__.DateOptionsComponent, _ui_searchbar_component__WEBPACK_IMPORTED_MODULE_7__.SearchbarComponent, _ui_app_topbar_component__WEBPACK_IMPORTED_MODULE_8__.ApplicationTopbarComponent, _ui_app_sidebar_component__WEBPACK_IMPORTED_MODULE_9__.ApplicationSidebarComponent, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__.MatFormField, _angular_material_select__WEBPACK_IMPORTED_MODULE_18__.MatSelect, _angular_material_core__WEBPACK_IMPORTED_MODULE_19__.MatOption, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_20__.MatTooltip, _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_21__.MatProgressBar, _angular_material_core__WEBPACK_IMPORTED_MODULE_19__.MatRipple, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_10__.IconComponent, _angular_router__WEBPACK_IMPORTED_MODULE_12__.RouterOutlet, _angular_common__WEBPACK_IMPORTED_MODULE_15__.AsyncPipe],
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_18__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_18__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_19__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_19__.NgModel, _ui_date_options_component__WEBPACK_IMPORTED_MODULE_6__.DateOptionsComponent, _ui_searchbar_component__WEBPACK_IMPORTED_MODULE_7__.SearchbarComponent, _ui_app_topbar_component__WEBPACK_IMPORTED_MODULE_8__.ApplicationTopbarComponent, _ui_app_sidebar_component__WEBPACK_IMPORTED_MODULE_9__.ApplicationSidebarComponent, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_20__.MatFormField, _angular_material_select__WEBPACK_IMPORTED_MODULE_21__.MatSelect, _angular_material_core__WEBPACK_IMPORTED_MODULE_22__.MatOption, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_23__.MatTooltip, _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_24__.MatProgressBar, _angular_material_core__WEBPACK_IMPORTED_MODULE_22__.MatRipple, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_10__.IconComponent, _angular_router__WEBPACK_IMPORTED_MODULE_15__.RouterOutlet, _angular_common__WEBPACK_IMPORTED_MODULE_18__.AsyncPipe, _libs_components_src_lib_building_pipe__WEBPACK_IMPORTED_MODULE_11__.BuildingPipe],
     styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n                height: 100%;\n                width: 100%;\n                background-color: var(--b1);\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvZGVza3MvbmV3LWRlc2tzLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksYUFBYTtnQkFDYixzQkFBc0I7Z0JBQ3RCLFlBQVk7Z0JBQ1osV0FBVztnQkFDWCwyQkFBMkI7WUFDL0IiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWIxKTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
   });
 }
