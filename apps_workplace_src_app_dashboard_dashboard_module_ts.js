@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkworkplace"] = self["webpackChunkworkplace"] || []).push([["apps_workplace_src_app_dashboard_dashboard_module_ts"],{
 
-/***/ 10593:
+/***/ 68320:
 /*!******************************************************************************!*\
   !*** ./apps/workplace/src/app/dashboard/dashboard-availability.component.ts ***!
   \******************************************************************************/
@@ -11,12 +11,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   DashboardAvailabilityComponent: () => (/* binding */ DashboardAvailabilityComponent)
 /* harmony export */ });
-/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
-/* harmony import */ var _dashboard_state_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dashboard-state.service */ 33885);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 26575);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/core */ 55309);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 27947);
+/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
+/* harmony import */ var _dashboard_state_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dashboard-state.service */ 29448);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/core */ 74646);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 95072);
 
 
 
@@ -28,6 +28,9 @@ const _c0 = () => ["/explore"];
 const _c1 = a0 => ({
   level: a0
 });
+const _c2 = a0 => ({
+  space: a0
+});
 function DashboardAvailabilityComponent_a_7_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "a", 7)(1, "div", 8);
@@ -35,10 +38,10 @@ function DashboardAvailabilityComponent_a_7_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    const lvl_r3 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction0"](3, _c0))("queryParams", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](4, _c1, lvl_r3.id));
+    const lvl_r1 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction0"](3, _c0))("queryParams", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](4, _c1, lvl_r1.id));
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", lvl_r3.display_name || lvl_r3.name, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", lvl_r1.display_name || lvl_r1.name, " ");
   }
 }
 function DashboardAvailabilityComponent_span_10_Template(rf, ctx) {
@@ -48,9 +51,6 @@ function DashboardAvailabilityComponent_span_10_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
   }
 }
-const _c2 = a0 => ({
-  space: a0
-});
 function DashboardAvailabilityComponent_div_12_a_5_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "a", 7)(1, "div", 8);
@@ -58,10 +58,10 @@ function DashboardAvailabilityComponent_div_12_a_5_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    const space_r6 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction0"](3, _c0))("queryParams", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](4, _c2, space_r6.id));
+    const space_r2 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction0"](3, _c0))("queryParams", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](4, _c2, space_r2.id));
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", space_r6.display_name || space_r6.name, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", space_r2.display_name || space_r2.name, " ");
   }
 }
 function DashboardAvailabilityComponent_div_12_span_8_Template(rf, ctx) {
@@ -78,8 +78,8 @@ function DashboardAvailabilityComponent_div_12_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "div", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](5, DashboardAvailabilityComponent_div_12_a_5_Template, 3, 6, "a", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](6, "slice");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](7, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](6, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](7, "slice");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](8, DashboardAvailabilityComponent_div_12_span_8_Template, 2, 0, "span", 12);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](9, "async");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
@@ -87,7 +87,7 @@ function DashboardAvailabilityComponent_div_12_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind3"](6, 2, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](7, 6, ctx_r2.space_list), 0, 3));
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind3"](7, 4, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](6, 2, ctx_r2.space_list), 0, 3));
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", !_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](9, 8, ctx_r2.space_list).length);
   }
@@ -126,8 +126,8 @@ class DashboardAvailabilityComponent {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](6, "div", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](7, DashboardAvailabilityComponent_a_7_Template, 3, 6, "a", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](8, "slice");
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](9, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](8, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](9, "slice");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](10, DashboardAvailabilityComponent_span_10_Template, 2, 0, "span", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipe"](11, "async");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
@@ -137,7 +137,7 @@ class DashboardAvailabilityComponent {
       if (rf & 2) {
         let tmp_2_0;
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind3"](8, 3, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](9, 7, ctx.levels_free), 0, 2));
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind3"](9, 5, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](8, 3, ctx.levels_free), 0, 2));
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", !_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](11, 9, ctx.levels_free).length);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
@@ -151,7 +151,7 @@ class DashboardAvailabilityComponent {
 
 /***/ }),
 
-/***/ 63235:
+/***/ 53526:
 /*!**************************************************************************!*\
   !*** ./apps/workplace/src/app/dashboard/dashboard-contacts.component.ts ***!
   \**************************************************************************/
@@ -161,16 +161,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   DashboardContactsComponent: () => (/* binding */ DashboardContactsComponent)
 /* harmony export */ });
-/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/common */ 57314);
-/* harmony import */ var _dashboard_state_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dashboard-state.service */ 33885);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 26575);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ 28849);
-/* harmony import */ var _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/icon.component */ 94888);
-/* harmony import */ var _libs_components_src_lib_user_avatar_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/user-avatar.component */ 32882);
-/* harmony import */ var _angular_material_menu__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/menu */ 78128);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/core */ 55309);
-/* harmony import */ var _dashboard_deliveries_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dashboard-deliveries.component */ 84823);
+/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/common */ 22797);
+/* harmony import */ var _dashboard_state_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dashboard-state.service */ 29448);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ 34456);
+/* harmony import */ var _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/icon.component */ 69434);
+/* harmony import */ var _libs_components_src_lib_user_avatar_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/user-avatar.component */ 23574);
+/* harmony import */ var _angular_material_menu__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/menu */ 31034);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/core */ 74646);
+/* harmony import */ var _dashboard_deliveries_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dashboard-deliveries.component */ 67887);
 
 
 
@@ -187,11 +187,15 @@ __webpack_require__.r(__webpack_exports__);
 const _c0 = ["input"];
 const _c1 = () => ({
   class: "material-icons",
+  content: "person_add"
+});
+const _c2 = () => ({
+  class: "material-icons",
   content: "close"
 });
 function DashboardContactsComponent_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 15);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "a-user-avatar", 16);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "div", 17);
@@ -199,22 +203,21 @@ function DashboardContactsComponent_div_3_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "button", 18);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function DashboardContactsComponent_div_3_Template_button_click_4_listener() {
-      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r8);
-      const user_r6 = restoredCtx.$implicit;
-      const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r7.removeUser(user_r6));
+      const user_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r2).$implicit;
+      const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r3.removeUser(user_r3));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](5, "app-icon", 19);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    const user_r6 = ctx.$implicit;
+    const user_r3 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("user", user_r6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("user", user_r3);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", user_r6.name, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", user_r3.name, " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("icon", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](3, _c1));
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("icon", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](3, _c2));
   }
 }
 function DashboardContactsComponent_button_15_Template(rf, ctx) {
@@ -231,13 +234,12 @@ function DashboardContactsComponent_button_15_Template(rf, ctx) {
 }
 function DashboardContactsComponent_button_17_Template(rf, ctx) {
   if (rf & 1) {
-    const _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 21);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function DashboardContactsComponent_button_17_Template_button_click_0_listener() {
-      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r11);
-      const user_r9 = restoredCtx.$implicit;
-      const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r10.addUser(user_r9));
+      const user_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r5).$implicit;
+      const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r3.addUser(user_r6));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](2, "a-user-avatar", 23);
@@ -249,13 +251,13 @@ function DashboardContactsComponent_button_17_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()()();
   }
   if (rf & 2) {
-    const user_r9 = ctx.$implicit;
+    const user_r6 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("user", user_r9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("user", user_r6);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](user_r9.name);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](user_r6.name);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", user_r9.email, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", user_r6.email, " ");
   }
 }
 function DashboardContactsComponent_dashboard_deliveries_20_Template(rf, ctx) {
@@ -263,10 +265,6 @@ function DashboardContactsComponent_dashboard_deliveries_20_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](0, "dashboard-deliveries");
   }
 }
-const _c2 = () => ({
-  class: "material-icons",
-  content: "person_add"
-});
 class DashboardContactsComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0__.AsyncHandler {
   get can_deliver() {
     return !!this._settings.get('app.can_deliver');
@@ -318,61 +316,69 @@ class DashboardContactsComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
     features: [_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵInheritDefinitionFeature"]],
     decls: 21,
     vars: 18,
-    consts: [[1, "m-0", "mb-2", "font-medium", "text-xl"], ["name", "contact-list", 1, "bg-base-300", "border", "border-base-200", "shadow", "rounded-lg", "p-2", "pl-0", "space-y-2", "flex", "flex-wrap"], ["name", "contact", "class", "bg-base-100 rounded-lg flex-1 flex flex-col items-center p-2 relative", 4, "ngFor", "ngForOf"], ["name", "contact", "btn", "", "matRipple", "", 1, "rounded-lg", "flex-1", "w-full", 3, "matMenuTriggerFor", "menuOpened", "menuClosed"], [1, "flex", "flex-col", "items-center", "p-4", "text-black", "w-full"], [1, "text-2xl", 3, "icon"], [1, "w-full", "leading-tight", "whitespace-normal"], ["xPosition", "before"], ["menu", "matMenu"], ["mat-menu-item", "", 1, "p-0", 3, "click"], ["placeholder", "Search for user...", 1, "w-full", "p-2", "text-base", 3, "ngModel", "ngModelChange"], ["input", ""], ["mat-menu-item", "", 4, "ngIf"], ["mat-menu-item", "", 3, "click", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["name", "contact", 1, "bg-base-100", "rounded-lg", "flex-1", "flex", "flex-col", "items-center", "p-2", "relative"], [1, "text-2xl", "mb-2", 3, "user"], ["name", "contact-name", 1, "text-sm", "mb-2"], ["icon", "", "name", "close", 3, "click"], [3, "icon"], ["mat-menu-item", ""], ["mat-menu-item", "", 3, "click"], [1, "flex", "items-center", "leading-tight"], [1, "text-xl", "mr-2", 3, "user"], [1, "flex-1"], [1, "text-xs", "text-dark-fade"]],
+    consts: [["menu", "matMenu"], ["input", ""], [1, "m-0", "mb-2", "font-medium", "text-xl"], ["name", "contact-list", 1, "bg-base-300", "border", "border-base-200", "shadow", "rounded-lg", "p-2", "pl-0", "space-y-2", "flex", "flex-wrap"], ["name", "contact", "class", "bg-base-100 rounded-lg flex-1 flex flex-col items-center p-2 relative", 4, "ngFor", "ngForOf"], ["name", "contact", "btn", "", "matRipple", "", 1, "rounded-lg", "flex-1", "w-full", 3, "menuOpened", "menuClosed", "matMenuTriggerFor"], [1, "flex", "flex-col", "items-center", "p-4", "text-black", "w-full"], [1, "text-2xl", 3, "icon"], [1, "w-full", "leading-tight", "whitespace-normal"], ["xPosition", "before"], ["mat-menu-item", "", 1, "p-0", 3, "click"], ["placeholder", "Search for user...", 1, "w-full", "p-2", "text-base", 3, "ngModelChange", "ngModel"], ["mat-menu-item", "", 4, "ngIf"], ["mat-menu-item", "", 3, "click", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["name", "contact", 1, "bg-base-100", "rounded-lg", "flex-1", "flex", "flex-col", "items-center", "p-2", "relative"], [1, "text-2xl", "mb-2", 3, "user"], ["name", "contact-name", 1, "text-sm", "mb-2"], ["icon", "", "name", "close", 3, "click"], [3, "icon"], ["mat-menu-item", ""], ["mat-menu-item", "", 3, "click"], [1, "flex", "items-center", "leading-tight"], [1, "text-xl", "mr-2", 3, "user"], [1, "flex-1"], [1, "text-xs", "text-dark-fade"]],
     template: function DashboardContactsComponent_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "h3", 0);
+        const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "h3", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, "Colleagues");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](3, DashboardContactsComponent_div_3_Template, 6, 4, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](3, DashboardContactsComponent_div_3_Template, 6, 4, "div", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](4, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "button", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "button", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("menuOpened", function DashboardContactsComponent_Template_button_menuOpened_5_listener() {
-          return ctx.focusInput();
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r1);
+          return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx.focusInput());
         })("menuClosed", function DashboardContactsComponent_Template_button_menuClosed_5_listener() {
-          return ctx.clearInput();
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r1);
+          return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx.clearInput());
         });
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](7, "app-icon", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "span", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](7, "app-icon", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "span", 8);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](9, "Click to add a person to contacts");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](10, "mat-menu", 7, 8)(12, "div", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](10, "mat-menu", 9, 0)(12, "div", 10);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function DashboardContactsComponent_Template_div_click_12_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r1);
           $event.stopPropagation();
-          return $event.preventDefault();
+          return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"]($event.preventDefault());
         });
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](13, "input", 10, 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function DashboardContactsComponent_Template_input_ngModelChange_13_listener($event) {
-          return ctx.search_str = $event;
-        })("ngModelChange", function DashboardContactsComponent_Template_input_ngModelChange_13_listener() {
-          return ctx.updateSearch(ctx.search_str);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](13, "input", 11, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtwoWayListener"]("ngModelChange", function DashboardContactsComponent_Template_input_ngModelChange_13_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtwoWayBindingSet"](ctx.search_str, $event) || (ctx.search_str = $event);
+          return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"]($event);
+        });
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function DashboardContactsComponent_Template_input_ngModelChange_13_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r1);
+          return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx.updateSearch(ctx.search_str));
         });
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](15, DashboardContactsComponent_button_15_Template, 2, 1, "button", 12);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](16, "async");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](17, DashboardContactsComponent_button_17_Template, 8, 3, "button", 13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](18, "slice");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](19, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](18, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](19, "slice");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](20, DashboardContactsComponent_dashboard_deliveries_20_Template, 1, 0, "dashboard-deliveries", 14);
       }
       if (rf & 2) {
-        const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](11);
-        let tmp_4_0;
+        let tmp_6_0;
+        const menu_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](11);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](4, 7, ctx.contacts));
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("matMenuTriggerFor", _r1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("matMenuTriggerFor", menu_r7);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("icon", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](17, _c2));
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("icon", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](17, _c1));
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx.search_str);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtwoWayProperty"]("ngModel", ctx.search_str);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !((tmp_4_0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](16, 9, ctx.search_results)) == null ? null : tmp_4_0.length));
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !((tmp_6_0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](16, 9, ctx.search_results)) == null ? null : tmp_6_0.length));
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind3"](18, 11, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](19, 15, ctx.search_results), 0, 8));
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind3"](19, 13, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](18, 11, ctx.search_results), 0, 8));
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.can_deliver);
       }
@@ -384,7 +390,7 @@ class DashboardContactsComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
 
 /***/ }),
 
-/***/ 84823:
+/***/ 67887:
 /*!****************************************************************************!*\
   !*** ./apps/workplace/src/app/dashboard/dashboard-deliveries.component.ts ***!
   \****************************************************************************/
@@ -394,13 +400,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   DashboardDeliveriesComponent: () => (/* binding */ DashboardDeliveriesComponent)
 /* harmony export */ });
-/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ 17627);
-/* harmony import */ var _dashboard_delivery_modal_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dashboard-delivery-modal.component */ 3337);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/dialog */ 17401);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 26575);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/core */ 55309);
+/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ 57871);
+/* harmony import */ var _dashboard_delivery_modal_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dashboard-delivery-modal.component */ 55199);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/dialog */ 12587);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/core */ 74646);
 
 
 
@@ -422,33 +428,33 @@ function DashboardDeliveriesComponent_div_3_div_1_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const item_r4 = ctx.$implicit;
+    const item_r2 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", (item_r4 == null ? null : item_r4.name) || "Untitled Delivery", " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", (item_r2 == null ? null : item_r2.name) || "Untitled Delivery", " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", item_r4 && item_r4.received ? _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind2"](6, 6, item_r4.received, "medium") : "Not received", " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", item_r2 && item_r2.received ? _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind2"](6, 6, item_r2.received, "medium") : "Not received", " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("bg-warning", !item_r4.received)("bg-success", item_r4.received);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("bg-warning", !item_r2.received)("bg-success", item_r2.received);
   }
 }
 function DashboardDeliveriesComponent_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
+    const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 4);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, DashboardDeliveriesComponent_div_3_div_1_Template, 8, 9, "div", 5);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "button", 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function DashboardDeliveriesComponent_div_3_Template_button_click_2_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r6);
-      const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵresetView"](ctx_r5.registerDelivery());
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r1);
+      const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵresetView"](ctx_r2.registerDelivery());
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](3, " Register Delivery ");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx_r0.deliveries);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx_r2.deliveries);
   }
 }
 function DashboardDeliveriesComponent_ng_template_4_Template(rf, ctx) {
@@ -486,21 +492,21 @@ class DashboardDeliveriesComponent {
     selectors: [["dashboard-deliveries"]],
     decls: 6,
     vars: 2,
-    consts: [[1, "m-0", "my-2", "font-medium", "text-xl"], [1, "bg-base-100", "shadow", "p-2", "rounded"], ["class", "divide-y", 4, "ngIf", "ngIfElse"], ["empty_state", ""], [1, "divide-y"], ["class", "flex items-center py-2", 4, "ngFor", "ngForOf"], ["matRipple", "", 1, "w-full", "mt-2", 3, "click"], [1, "flex", "items-center", "py-2"], [1, "flex-1", "pl-2"], [1, ""], [1, "text-xs", "opacity-60"], [1, "m-4", "h-2", "w-2", "rounded-full"], [1, "p-8", "flex", "items-center", "justify-center", "opacity-40"]],
+    consts: [["empty_state", ""], [1, "m-0", "my-2", "font-medium", "text-xl"], [1, "bg-base-100", "shadow", "p-2", "rounded"], ["class", "divide-y", 4, "ngIf", "ngIfElse"], [1, "divide-y"], ["class", "flex items-center py-2", 4, "ngFor", "ngForOf"], ["matRipple", "", 1, "w-full", "mt-2", 3, "click"], [1, "flex", "items-center", "py-2"], [1, "flex-1", "pl-2"], [1, ""], [1, "text-xs", "opacity-60"], [1, "m-4", "h-2", "w-2", "rounded-full"], [1, "p-8", "flex", "items-center", "justify-center", "opacity-40"]],
     template: function DashboardDeliveriesComponent_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "h3", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "h3", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, "Deliveries");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](3, DashboardDeliveriesComponent_div_3_Template, 4, 1, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](3, DashboardDeliveriesComponent_div_3_Template, 4, 1, "div", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](4, DashboardDeliveriesComponent_ng_template_4_Template, 2, 0, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](4, DashboardDeliveriesComponent_ng_template_4_Template, 2, 0, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplateRefExtractor"]);
       }
       if (rf & 2) {
-        const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](5);
+        const empty_state_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.deliveries == null ? null : ctx.deliveries.length)("ngIfElse", _r2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.deliveries == null ? null : ctx.deliveries.length)("ngIfElse", empty_state_r4);
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf, _angular_material_core__WEBPACK_IMPORTED_MODULE_6__.MatRipple, _angular_common__WEBPACK_IMPORTED_MODULE_5__.DatePipe]
@@ -509,7 +515,7 @@ class DashboardDeliveriesComponent {
 
 /***/ }),
 
-/***/ 3337:
+/***/ 55199:
 /*!********************************************************************************!*\
   !*** ./apps/workplace/src/app/dashboard/dashboard-delivery-modal.component.ts ***!
   \********************************************************************************/
@@ -519,14 +525,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   DashboardDeliveryModalComponent: () => (/* binding */ DashboardDeliveryModalComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ 28849);
-/* harmony import */ var _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/icon.component */ 94888);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/core */ 55309);
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/form-field */ 51333);
-/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/select */ 96355);
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/dialog */ 17401);
-/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/input */ 10026);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ 34456);
+/* harmony import */ var _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/icon.component */ 69434);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/core */ 74646);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/form-field */ 24950);
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/select */ 25175);
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/dialog */ 12587);
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/input */ 95541);
 
 
 
@@ -637,7 +643,7 @@ class DashboardDeliveryModalComponent {
 
 /***/ }),
 
-/***/ 48609:
+/***/ 3466:
 /*!*******************************************************************************!*\
   !*** ./apps/workplace/src/app/dashboard/dashboard-schedule-item.component.ts ***!
   \*******************************************************************************/
@@ -647,13 +653,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   DashboardScheduledItemComponent: () => (/* binding */ DashboardScheduledItemComponent)
 /* harmony export */ });
-/* harmony import */ var _placeos_bookings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/bookings */ 40688);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! date-fns */ 70227);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 26575);
-/* harmony import */ var _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/icon.component */ 94888);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/core */ 55309);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 27947);
+/* harmony import */ var _placeos_bookings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/bookings */ 85616);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! date-fns */ 65220);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/icon.component */ 69434);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/core */ 74646);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 95072);
 
 
 
@@ -662,6 +668,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const _c0 = ["scheduled-item", ""];
+const _c1 = (a0, a1) => ["/schedule", "view", a0, a1];
 function DashboardScheduledItemComponent_div_19_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 8)(1, "app-icon", 9);
@@ -678,7 +685,6 @@ function DashboardScheduledItemComponent_div_19_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind3"](5, 1, (ctx_r0.item == null ? null : ctx_r0.item.location) || (ctx_r0.item == null ? null : ctx_r0.item.description), 0, 255), " ");
   }
 }
-const _c1 = (a2, a3) => ["/schedule", "view", a2, a3];
 class DashboardScheduledItemComponent {
   get type() {
     return this.item instanceof _placeos_bookings__WEBPACK_IMPORTED_MODULE_0__.Booking ? 'booking' : 'event';
@@ -766,7 +772,7 @@ class DashboardScheduledItemComponent {
 
 /***/ }),
 
-/***/ 33885:
+/***/ 29448:
 /*!*********************************************************************!*\
   !*** ./apps/workplace/src/app/dashboard/dashboard-state.service.ts ***!
   \*********************************************************************/
@@ -776,27 +782,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   DashboardStateService: () => (/* binding */ DashboardStateService)
 /* harmony export */ });
-/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
-/* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/ts-client */ 64331);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ 70462);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs */ 9681);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 95933);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ 36520);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs/operators */ 58175);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs/operators */ 680);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! rxjs/operators */ 17627);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! rxjs/operators */ 85046);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! rxjs/operators */ 46939);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! rxjs/operators */ 47422);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! date-fns */ 8276);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! date-fns */ 4512);
-/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/common */ 57314);
-/* harmony import */ var _placeos_events__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/events */ 58908);
-/* harmony import */ var _placeos_users__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @placeos/users */ 81239);
-/* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @placeos/organisation */ 5745);
-/* harmony import */ var _placeos_calendar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @placeos/calendar */ 7595);
-/* harmony import */ var _placeos_bookings__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @placeos/bookings */ 40688);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/core */ 61699);
+/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
+/* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/ts-client */ 35713);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ 90521);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs */ 71536);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 19803);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ 71963);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs/operators */ 29314);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs/operators */ 7841);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! rxjs/operators */ 57871);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! rxjs/operators */ 8627);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! rxjs/operators */ 33602);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! rxjs/operators */ 35443);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! date-fns */ 75971);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! date-fns */ 13264);
+/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/common */ 22797);
+/* harmony import */ var _placeos_events__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/events */ 40569);
+/* harmony import */ var _placeos_users__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @placeos/users */ 63870);
+/* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @placeos/organisation */ 2510);
+/* harmony import */ var _placeos_calendar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @placeos/calendar */ 91886);
+/* harmony import */ var _placeos_bookings__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @placeos/bookings */ 85616);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/core */ 37580);
 
 
 
@@ -1002,7 +1008,7 @@ class DashboardStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__
 
 /***/ }),
 
-/***/ 12044:
+/***/ 92541:
 /*!**************************************************************************!*\
   !*** ./apps/workplace/src/app/dashboard/dashboard-upcoming.component.ts ***!
   \**************************************************************************/
@@ -1012,19 +1018,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   DashboardUpcomingComponent: () => (/* binding */ DashboardUpcomingComponent)
 /* harmony export */ });
-/* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/organisation */ 5745);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ 81435);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 47422);
-/* harmony import */ var _placeos_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/components */ 24815);
-/* harmony import */ var _schedule_schedule_state_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../schedule/schedule-state.service */ 16386);
-/* harmony import */ var _dashboard_state_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dashboard-state.service */ 33885);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/dialog */ 17401);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common */ 26575);
-/* harmony import */ var _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/icon.component */ 94888);
-/* harmony import */ var _libs_components_src_lib_user_avatar_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/user-avatar.component */ 32882);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/core */ 55309);
-/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/tooltip */ 60702);
+/* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/organisation */ 2510);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ 68266);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 35443);
+/* harmony import */ var _placeos_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/components */ 51588);
+/* harmony import */ var _schedule_schedule_state_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../schedule/schedule-state.service */ 79184);
+/* harmony import */ var _dashboard_state_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dashboard-state.service */ 29448);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/dialog */ 12587);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/icon.component */ 69434);
+/* harmony import */ var _libs_components_src_lib_user_avatar_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/user-avatar.component */ 23574);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/core */ 74646);
+/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/tooltip */ 80640);
 
 
 
@@ -1054,11 +1060,11 @@ function DashboardUpcomingComponent_div_2_div_13_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const event_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]().$implicit;
+    const event_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]().$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("icon", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](3, _c0));
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate2"](" ", event_r1.guests == null ? null : event_r1.guests.length, " Guest", (event_r1.guests == null ? null : event_r1.guests.length) === 1 ? "" : "s", " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate2"](" ", event_r2.guests == null ? null : event_r2.guests.length, " Guest", (event_r2.guests == null ? null : event_r2.guests.length) === 1 ? "" : "s", " ");
   }
 }
 function DashboardUpcomingComponent_div_2_div_14_a_user_avatar_1_Template(rf, ctx) {
@@ -1066,8 +1072,8 @@ function DashboardUpcomingComponent_div_2_div_14_a_user_avatar_1_Template(rf, ct
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](0, "a-user-avatar", 17);
   }
   if (rf & 2) {
-    const guest_r7 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("user", guest_r7);
+    const guest_r4 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("user", guest_r4);
   }
 }
 function DashboardUpcomingComponent_div_2_div_14_Template(rf, ctx) {
@@ -1077,9 +1083,9 @@ function DashboardUpcomingComponent_div_2_div_14_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const event_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]().$implicit;
+    const event_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]().$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", event_r1.guests);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", event_r2.guests);
   }
 }
 function DashboardUpcomingComponent_div_2_a_15_Template(rf, ctx) {
@@ -1089,13 +1095,13 @@ function DashboardUpcomingComponent_div_2_a_15_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const event_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]().$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("href", event_r1.meeting_link, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵsanitizeUrl"]);
+    const event_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("href", event_r2.meeting_link, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵsanitizeUrl"]);
   }
 }
 function DashboardUpcomingComponent_div_2_Template(rf, ctx) {
   if (rf & 1) {
-    const _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+    const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](1, "div", 3);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](2, "div", 4)(3, "div", 5);
@@ -1110,10 +1116,9 @@ function DashboardUpcomingComponent_div_2_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](11, "a", 9);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function DashboardUpcomingComponent_div_2_Template_a_click_11_listener() {
-      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r11);
-      const event_r1 = restoredCtx.$implicit;
-      const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵresetView"](event_r1.space || event_r1.asset_id ? ctx_r10.locateSpace(event_r1.space || event_r1) : "");
+      const event_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r1).$implicit;
+      const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵresetView"](event_r2.space || event_r2.asset_id ? ctx_r2.locateSpace(event_r2.space || event_r2) : "");
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](12);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
@@ -1123,24 +1128,24 @@ function DashboardUpcomingComponent_div_2_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const event_r1 = ctx.$implicit;
+    const event_r2 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵclassProp"]("bg-primary", event_r1.asset_id);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵclassProp"]("bg-primary", event_r2.asset_id);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](5, 12, event_r1.date, "shortTime"), " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](5, 12, event_r2.date, "shortTime"), " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", event_r1.title, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", event_r2.title, " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵclassProp"]("underline", !!event_r1.space || !!event_r1.asset_id);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("matTooltip", event_r1.space ? "Locate Space" : "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵclassProp"]("underline", !!event_r2.space || !!event_r2.asset_id);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("matTooltip", event_r2.space ? "Locate Space" : "");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate2"](" ", (event_r1.space == null ? null : event_r1.space.display_name) || (event_r1.space == null ? null : event_r1.space.name) || event_r1.asset_name || "<No Location>", " ", (event_r1.space == null ? null : event_r1.space.level == null ? null : event_r1.space.level.display_name) || (event_r1.space == null ? null : event_r1.space.level == null ? null : event_r1.space.level.name) ? ", " + event_r1.space.level.display_name || 0 : "", " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate2"](" ", (event_r2.space == null ? null : event_r2.space.display_name) || (event_r2.space == null ? null : event_r2.space.name) || event_r2.asset_name || "<No Location>", " ", (event_r2.space == null ? null : event_r2.space.level == null ? null : event_r2.space.level.display_name) || (event_r2.space == null ? null : event_r2.space.level == null ? null : event_r2.space.level.name) ? ", " + event_r2.space.level.display_name || 0 : "", " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", event_r1.guests);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", event_r2.guests);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", event_r1.guests);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", event_r2.guests);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", event_r1.meeting_link);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", event_r2.meeting_link);
   }
 }
 class DashboardUpcomingComponent {
@@ -1194,19 +1199,19 @@ class DashboardUpcomingComponent {
     selectors: [["a-dashboard-upcoming"]],
     decls: 5,
     vars: 7,
-    consts: [[1, "m-0", "mb-4", "font-medium", "text-xl"], ["name", "event", "class", "flex bg-base-100 shadow rounded-lg relative overflow-hidden mb-4", 4, "ngFor", "ngForOf"], ["name", "event", 1, "flex", "bg-base-100", "shadow", "rounded-lg", "relative", "overflow-hidden", "mb-4"], ["name", "status", 1, "absolute", "rounded-lg"], ["name", "details", 1, "flex-1", "mr-2"], ["time", "", 1, "text-primary", "text-sm", "font-bold", "mb-2"], ["name", "title", 1, "text-sm", "font-bold", "mb-2"], ["name", "space", 1, "text-xs", "flex", "items-center", "mb-2"], [1, "mr-2"], [1, "text-black", 3, "matTooltip", "click"], ["name", "attendees", "class", "text-xs flex items-center mb-2", 4, "ngIf"], ["name", "guests", "class", "flex space-x-2 text-sm", 4, "ngIf"], ["btn", "", "matRipple", "", "class", "uppercase h-12", 3, "href", 4, "ngIf"], ["name", "attendees", 1, "text-xs", "flex", "items-center", "mb-2"], [1, "mr-2", 3, "icon"], ["name", "guests", 1, "flex", "space-x-2", "text-sm"], [3, "user", 4, "ngFor", "ngForOf"], [3, "user"], ["btn", "", "matRipple", "", 1, "uppercase", "h-12", 3, "href"]],
+    consts: [[1, "m-0", "mb-4", "font-medium", "text-xl"], ["name", "event", "class", "flex bg-base-100 shadow rounded-lg relative overflow-hidden mb-4", 4, "ngFor", "ngForOf"], ["name", "event", 1, "flex", "bg-base-100", "shadow", "rounded-lg", "relative", "overflow-hidden", "mb-4"], ["name", "status", 1, "absolute", "rounded-lg"], ["name", "details", 1, "flex-1", "mr-2"], ["time", "", 1, "text-primary", "text-sm", "font-bold", "mb-2"], ["name", "title", 1, "text-sm", "font-bold", "mb-2"], ["name", "space", 1, "text-xs", "flex", "items-center", "mb-2"], [1, "mr-2"], [1, "text-black", 3, "click", "matTooltip"], ["name", "attendees", "class", "text-xs flex items-center mb-2", 4, "ngIf"], ["name", "guests", "class", "flex space-x-2 text-sm", 4, "ngIf"], ["btn", "", "matRipple", "", "class", "uppercase h-12", 3, "href", 4, "ngIf"], ["name", "attendees", 1, "text-xs", "flex", "items-center", "mb-2"], [1, "mr-2", 3, "icon"], ["name", "guests", 1, "flex", "space-x-2", "text-sm"], [3, "user", 4, "ngFor", "ngForOf"], [3, "user"], ["btn", "", "matRipple", "", 1, "uppercase", "h-12", 3, "href"]],
     template: function DashboardUpcomingComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "h3", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1, "Your Bookings");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](2, DashboardUpcomingComponent_div_2_Template, 16, 15, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](3, "slice");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](4, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](3, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](4, "slice");
       }
       if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind3"](3, 1, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](4, 5, ctx.event_list), 0, 3));
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind3"](4, 3, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](3, 1, ctx.event_list), 0, 3));
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_10__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_10__.NgIf, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_4__.IconComponent, _libs_components_src_lib_user_avatar_component__WEBPACK_IMPORTED_MODULE_5__.UserAvatarComponent, _angular_material_core__WEBPACK_IMPORTED_MODULE_11__.MatRipple, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_12__.MatTooltip, _angular_common__WEBPACK_IMPORTED_MODULE_10__.AsyncPipe, _angular_common__WEBPACK_IMPORTED_MODULE_10__.SlicePipe, _angular_common__WEBPACK_IMPORTED_MODULE_10__.DatePipe],
@@ -1216,7 +1221,7 @@ class DashboardUpcomingComponent {
 
 /***/ }),
 
-/***/ 9017:
+/***/ 31640:
 /*!*****************************************************************!*\
   !*** ./apps/workplace/src/app/dashboard/dashboard.component.ts ***!
   \*****************************************************************/
@@ -1226,14 +1231,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   DashboardComponent: () => (/* binding */ DashboardComponent)
 /* harmony export */ });
-/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/common */ 57314);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 26575);
-/* harmony import */ var _components_topbar_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/topbar.component */ 23299);
-/* harmony import */ var _components_footer_menu_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/footer-menu.component */ 89252);
-/* harmony import */ var _dashboard_availability_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dashboard-availability.component */ 10593);
-/* harmony import */ var _dashboard_upcoming_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dashboard-upcoming.component */ 12044);
-/* harmony import */ var _dashboard_contacts_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./dashboard-contacts.component */ 63235);
+/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/common */ 22797);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _components_topbar_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/topbar.component */ 17434);
+/* harmony import */ var _components_footer_menu_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/footer-menu.component */ 10895);
+/* harmony import */ var _dashboard_availability_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dashboard-availability.component */ 68320);
+/* harmony import */ var _dashboard_upcoming_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dashboard-upcoming.component */ 92541);
+/* harmony import */ var _dashboard_contacts_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./dashboard-contacts.component */ 53526);
 
 
 
@@ -1298,7 +1303,7 @@ class DashboardComponent {
 
 /***/ }),
 
-/***/ 34711:
+/***/ 14935:
 /*!**************************************************************!*\
   !*** ./apps/workplace/src/app/dashboard/dashboard.module.ts ***!
   \**************************************************************/
@@ -1308,19 +1313,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   DashboardModule: () => (/* binding */ DashboardModule)
 /* harmony export */ });
-/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/cdk/scrolling */ 50275);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ 26575);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/forms */ 28849);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/router */ 27947);
-/* harmony import */ var _components_shared_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/shared.module */ 93053);
-/* harmony import */ var _dashboard_availability_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dashboard-availability.component */ 10593);
-/* harmony import */ var _dashboard_contacts_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dashboard-contacts.component */ 63235);
-/* harmony import */ var _dashboard_deliveries_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dashboard-deliveries.component */ 84823);
-/* harmony import */ var _dashboard_delivery_modal_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dashboard-delivery-modal.component */ 3337);
-/* harmony import */ var _dashboard_schedule_item_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./dashboard-schedule-item.component */ 48609);
-/* harmony import */ var _dashboard_upcoming_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./dashboard-upcoming.component */ 12044);
-/* harmony import */ var _dashboard_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./dashboard.component */ 9017);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 61699);
+/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/cdk/scrolling */ 79975);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/forms */ 34456);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/router */ 95072);
+/* harmony import */ var _components_shared_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/shared.module */ 46358);
+/* harmony import */ var _dashboard_availability_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dashboard-availability.component */ 68320);
+/* harmony import */ var _dashboard_contacts_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dashboard-contacts.component */ 53526);
+/* harmony import */ var _dashboard_deliveries_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dashboard-deliveries.component */ 67887);
+/* harmony import */ var _dashboard_delivery_modal_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dashboard-delivery-modal.component */ 55199);
+/* harmony import */ var _dashboard_schedule_item_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./dashboard-schedule-item.component */ 3466);
+/* harmony import */ var _dashboard_upcoming_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./dashboard-upcoming.component */ 92541);
+/* harmony import */ var _dashboard_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./dashboard.component */ 31640);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 37580);
 
 
 
