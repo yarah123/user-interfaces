@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkconcierge"] = self["webpackChunkconcierge"] || []).push([["apps_concierge_src_app_facilities_facilities_module_ts"],{
 
-/***/ 91318:
+/***/ 50700:
 /*!***********************************************************************!*\
   !*** ./apps/concierge/src/app/facilities/facilities-map.component.ts ***!
   \***********************************************************************/
@@ -11,13 +11,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   FacilitiesMapComponent: () => (/* binding */ FacilitiesMapComponent)
 /* harmony export */ });
-/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/common */ 57314);
-/* harmony import */ var _placeos_explore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/explore */ 84203);
-/* harmony import */ var _day_view_events_state_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../day-view/events-state.service */ 81143);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _libs_components_src_lib_interactive_map_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/interactive-map.component */ 51674);
-/* harmony import */ var _libs_explore_src_lib_explore_zoom_control_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../libs/explore/src/lib/explore-zoom-control.component */ 92791);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 26575);
+/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/common */ 22797);
+/* harmony import */ var _placeos_explore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/explore */ 27009);
+/* harmony import */ var _day_view_events_state_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../day-view/events-state.service */ 88288);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _libs_components_src_lib_interactive_map_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/interactive-map.component */ 24918);
+/* harmony import */ var _libs_explore_src_lib_explore_zoom_control_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../libs/explore/src/lib/explore-zoom-control.component */ 69801);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 60316);
 
 
 
@@ -78,7 +78,7 @@ class FacilitiesMapComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0_
 
 /***/ }),
 
-/***/ 65447:
+/***/ 98860:
 /*!**************************************************************************!*\
   !*** ./apps/concierge/src/app/facilities/facilities-status.component.ts ***!
   \**************************************************************************/
@@ -88,8 +88,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   FacilitiesStatusComponent: () => (/* binding */ FacilitiesStatusComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/icon.component */ 94888);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/icon.component */ 69434);
 
 
 const _c0 = () => ({
@@ -158,7 +158,7 @@ class FacilitiesStatusComponent {
 
 /***/ }),
 
-/***/ 74324:
+/***/ 72082:
 /*!**************************************************************************!*\
   !*** ./apps/concierge/src/app/facilities/facilities-topbar.component.ts ***!
   \**************************************************************************/
@@ -168,19 +168,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   FacilitiesTopbarComponent: () => (/* binding */ FacilitiesTopbarComponent)
 /* harmony export */ });
-/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 17627);
-/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 57314);
-/* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/organisation */ 5745);
-/* harmony import */ var _day_view_events_state_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../day-view/events-state.service */ 81143);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 27947);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 26575);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ 28849);
-/* harmony import */ var _ui_searchbar_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ui/searchbar.component */ 97338);
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/form-field */ 51333);
-/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/select */ 96355);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/core */ 55309);
+/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 57871);
+/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 22797);
+/* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/organisation */ 2510);
+/* harmony import */ var _day_view_events_state_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../day-view/events-state.service */ 88288);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 95072);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ 34456);
+/* harmony import */ var _ui_searchbar_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ui/searchbar.component */ 12236);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/form-field */ 24950);
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/select */ 25175);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/core */ 74646);
 
 
 
@@ -204,10 +204,10 @@ function FacilitiesTopbarComponent_mat_option_3_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const level_r2 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("value", level_r2.id);
+    const level_r1 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("value", level_r1.id);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", level_r2.display_name || level_r2.name, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", level_r1.display_name || level_r1.name, " ");
   }
 }
 function FacilitiesTopbarComponent_mat_option_9_Template(rf, ctx) {
@@ -217,10 +217,10 @@ function FacilitiesTopbarComponent_mat_option_9_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const type_r3 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("value", type_r3.id);
+    const type_r2 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("value", type_r2.id);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", type_r3.name, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", type_r2.name, " ");
   }
 }
 class FacilitiesTopbarComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.AsyncHandler {
@@ -302,22 +302,26 @@ class FacilitiesTopbarComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE
     features: [_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵInheritDefinitionFeature"]],
     decls: 12,
     vars: 6,
-    consts: [[1, "flex", "items-center", "bg-base-100", "h-20", "px-4", "border-b", "border-base-200", "space-x-2"], ["appearance", "outline"], ["multiple", "", "placeholder", "All Levels", 3, "ngModel", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], ["multiple", "", "placeholder", "No Events", 3, "ngModel", "ngModelChange"], [1, "flex-full"], [1, "mr-2"], [3, "value"]],
+    consts: [[1, "flex", "items-center", "bg-base-100", "h-20", "px-4", "border-b", "border-base-200", "space-x-2"], ["appearance", "outline"], ["multiple", "", "placeholder", "All Levels", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], ["multiple", "", "placeholder", "No Events", 3, "ngModelChange", "ngModel"], [1, "flex-full"], [1, "mr-2"], [3, "value"]],
     template: function FacilitiesTopbarComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0)(1, "mat-form-field", 1)(2, "mat-select", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtwoWayListener"]("ngModelChange", function FacilitiesTopbarComponent_Template_mat_select_ngModelChange_2_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtwoWayBindingSet"](ctx.zones, $event) || (ctx.zones = $event);
+          return $event;
+        });
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function FacilitiesTopbarComponent_Template_mat_select_ngModelChange_2_listener($event) {
-          return ctx.zones = $event;
-        })("ngModelChange", function FacilitiesTopbarComponent_Template_mat_select_ngModelChange_2_listener($event) {
           return ctx.updateZones($event);
         });
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](3, FacilitiesTopbarComponent_mat_option_3_Template, 2, 2, "mat-option", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](4, "async");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "mat-form-field", 1)(6, "mat-select", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtwoWayListener"]("ngModelChange", function FacilitiesTopbarComponent_Template_mat_select_ngModelChange_6_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtwoWayBindingSet"](ctx.type_list, $event) || (ctx.type_list = $event);
+          return $event;
+        });
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function FacilitiesTopbarComponent_Template_mat_select_ngModelChange_6_listener($event) {
-          return ctx.type_list = $event;
-        })("ngModelChange", function FacilitiesTopbarComponent_Template_mat_select_ngModelChange_6_listener($event) {
           return ctx.updateTypes($event);
         });
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](7, "mat-select-trigger");
@@ -330,11 +334,11 @@ class FacilitiesTopbarComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE
       }
       if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx.zones);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtwoWayProperty"]("ngModel", ctx.zones);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](4, 4, ctx.levels));
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx.type_list);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtwoWayProperty"]("ngModel", ctx.type_list);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", ctx.types);
       }
@@ -346,7 +350,7 @@ class FacilitiesTopbarComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE
 
 /***/ }),
 
-/***/ 27001:
+/***/ 24547:
 /*!*******************************************************************!*\
   !*** ./apps/concierge/src/app/facilities/facilities.component.ts ***!
   \*******************************************************************/
@@ -356,11 +360,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   FacilitiesComponent: () => (/* binding */ FacilitiesComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _ui_sidebar_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ui/sidebar.component */ 42349);
-/* harmony import */ var _facilities_topbar_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./facilities-topbar.component */ 74324);
-/* harmony import */ var _facilities_status_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./facilities-status.component */ 65447);
-/* harmony import */ var _facilities_map_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./facilities-map.component */ 91318);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _ui_sidebar_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ui/sidebar.component */ 74605);
+/* harmony import */ var _facilities_topbar_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./facilities-topbar.component */ 72082);
+/* harmony import */ var _facilities_status_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./facilities-status.component */ 98860);
+/* harmony import */ var _facilities_map_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./facilities-map.component */ 50700);
 
 
 
@@ -395,7 +399,7 @@ class FacilitiesComponent {
 
 /***/ }),
 
-/***/ 57836:
+/***/ 27346:
 /*!****************************************************************!*\
   !*** ./apps/concierge/src/app/facilities/facilities.module.ts ***!
   \****************************************************************/
@@ -405,17 +409,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   FacilitiesModule: () => (/* binding */ FacilitiesModule)
 /* harmony export */ });
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 26575);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ 28849);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ 27947);
-/* harmony import */ var _ui_ui_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ui/ui.module */ 97428);
-/* harmony import */ var _facilities_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./facilities.component */ 27001);
-/* harmony import */ var _facilities_topbar_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./facilities-topbar.component */ 74324);
-/* harmony import */ var _facilities_status_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./facilities-status.component */ 65447);
-/* harmony import */ var _facilities_map_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./facilities-map.component */ 91318);
-/* harmony import */ var _placeos_explore__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @placeos/explore */ 84203);
-/* harmony import */ var _new_facilities_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./new-facilities.component */ 56540);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 61699);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ 34456);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ 95072);
+/* harmony import */ var _ui_ui_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ui/ui.module */ 15412);
+/* harmony import */ var _facilities_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./facilities.component */ 24547);
+/* harmony import */ var _facilities_topbar_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./facilities-topbar.component */ 72082);
+/* harmony import */ var _facilities_status_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./facilities-status.component */ 98860);
+/* harmony import */ var _facilities_map_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./facilities-map.component */ 50700);
+/* harmony import */ var _placeos_explore__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @placeos/explore */ 27009);
+/* harmony import */ var _new_facilities_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./new-facilities.component */ 32450);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37580);
 
 
 
@@ -455,7 +459,7 @@ class FacilitiesModule {
 
 /***/ }),
 
-/***/ 56540:
+/***/ 32450:
 /*!***********************************************************************!*\
   !*** ./apps/concierge/src/app/facilities/new-facilities.component.ts ***!
   \***********************************************************************/
@@ -465,12 +469,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   NewFacilitiesComponent: () => (/* binding */ NewFacilitiesComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _ui_app_topbar_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ui/app-topbar.component */ 33005);
-/* harmony import */ var _ui_app_sidebar_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ui/app-sidebar.component */ 19842);
-/* harmony import */ var _facilities_topbar_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./facilities-topbar.component */ 74324);
-/* harmony import */ var _facilities_status_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./facilities-status.component */ 65447);
-/* harmony import */ var _facilities_map_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./facilities-map.component */ 91318);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _ui_app_topbar_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ui/app-topbar.component */ 45189);
+/* harmony import */ var _ui_app_sidebar_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ui/app-sidebar.component */ 96843);
+/* harmony import */ var _facilities_topbar_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./facilities-topbar.component */ 72082);
+/* harmony import */ var _facilities_status_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./facilities-status.component */ 98860);
+/* harmony import */ var _facilities_map_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./facilities-map.component */ 50700);
 
 
 

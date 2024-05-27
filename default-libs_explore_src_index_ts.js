@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkconcierge"] = self["webpackChunkconcierge"] || []).push([["default-libs_explore_src_index_ts"],{
 
-/***/ 84203:
+/***/ 27009:
 /*!***********************************!*\
   !*** ./libs/explore/src/index.ts ***!
   \***********************************/
@@ -24,16 +24,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   ExploreZoomControlComponent: () => (/* reexport safe */ _lib_explore__WEBPACK_IMPORTED_MODULE_1__.ExploreZoomControlComponent),
 /* harmony export */   SharedExploreModule: () => (/* reexport safe */ _lib_explore_module__WEBPACK_IMPORTED_MODULE_0__.SharedExploreModule)
 /* harmony export */ });
-/* harmony import */ var _lib_explore_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/explore.module */ 95112);
-/* harmony import */ var _lib_explore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lib/explore */ 74608);
-/* harmony import */ var _lib_explore_lockers_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lib/explore-lockers.service */ 89849);
+/* harmony import */ var _lib_explore_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/explore.module */ 42434);
+/* harmony import */ var _lib_explore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lib/explore */ 11874);
+/* harmony import */ var _lib_explore_lockers_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lib/explore-lockers.service */ 49591);
 
 
 
 
 /***/ }),
 
-/***/ 2102:
+/***/ 61104:
 /*!*******************************************************!*\
   !*** ./libs/explore/src/lib/explore-desks.service.ts ***!
   \*******************************************************/
@@ -43,36 +43,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ExploreDesksService: () => (/* binding */ ExploreDesksService)
 /* harmony export */ });
-/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
-/* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/ts-client */ 64331);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! date-fns */ 4512);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! date-fns */ 31957);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! date-fns */ 57016);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! date-fns */ 65822);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs */ 70462);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! rxjs */ 9681);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! rxjs */ 64555);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs/operators */ 85046);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! rxjs/operators */ 36520);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! rxjs/operators */ 58175);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! rxjs/operators */ 47422);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! rxjs/operators */ 680);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! rxjs/operators */ 95933);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! rxjs/operators */ 15746);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! rxjs/operators */ 46939);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! rxjs/operators */ 17627);
-/* harmony import */ var libs_bookings_src_lib_booking_form_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! libs/bookings/src/lib/booking-form.service */ 63863);
-/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/common */ 57314);
-/* harmony import */ var libs_organisation_src_lib_organisation_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 38203);
-/* harmony import */ var libs_organisation_src_lib_desk_class__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! libs/organisation/src/lib/desk.class */ 68480);
-/* harmony import */ var libs_explore_src_lib_set_datetime_modal_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! libs/explore/src/lib/set-datetime-modal.component */ 80011);
-/* harmony import */ var _explore_desk_info_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./explore-desk-info.component */ 90141);
-/* harmony import */ var _explore_device_info_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./explore-device-info.component */ 17625);
-/* harmony import */ var _explore_spaces_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./explore-spaces.service */ 9229);
-/* harmony import */ var _explore_state_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./explore-state.service */ 70855);
-/* harmony import */ var libs_bookings_src_lib_bookings_fn__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! libs/bookings/src/lib/bookings.fn */ 25183);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @angular/material/dialog */ 17401);
+/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
+/* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/ts-client */ 35713);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! date-fns */ 13264);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! date-fns */ 73725);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! date-fns */ 27419);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! date-fns */ 88402);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs */ 90521);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! rxjs */ 71536);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! rxjs */ 68824);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs/operators */ 8627);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! rxjs/operators */ 71963);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! rxjs/operators */ 29314);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! rxjs/operators */ 35443);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! rxjs/operators */ 7841);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! rxjs/operators */ 19803);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! rxjs/operators */ 66000);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! rxjs/operators */ 33602);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! rxjs/operators */ 57871);
+/* harmony import */ var libs_bookings_src_lib_booking_form_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! libs/bookings/src/lib/booking-form.service */ 18379);
+/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/common */ 22797);
+/* harmony import */ var libs_organisation_src_lib_organisation_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
+/* harmony import */ var libs_organisation_src_lib_desk_class__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! libs/organisation/src/lib/desk.class */ 47451);
+/* harmony import */ var libs_explore_src_lib_set_datetime_modal_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! libs/explore/src/lib/set-datetime-modal.component */ 27146);
+/* harmony import */ var _explore_desk_info_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./explore-desk-info.component */ 82882);
+/* harmony import */ var _explore_device_info_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./explore-device-info.component */ 51207);
+/* harmony import */ var _explore_spaces_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./explore-spaces.service */ 65897);
+/* harmony import */ var _explore_state_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./explore-state.service */ 12455);
+/* harmony import */ var libs_bookings_src_lib_bookings_fn__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! libs/bookings/src/lib/bookings.fn */ 18026);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @angular/material/dialog */ 12587);
 
 
 
@@ -124,7 +124,7 @@ class ExploreDesksService extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__.A
     }))))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_15__.catchError)(e => []), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_18__.shareReplay)(1));
     this._bind = (0,rxjs__WEBPACK_IMPORTED_MODULE_20__.combineLatest)([this._state.level, this._state.options]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_19__.debounceTime)(300), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.filter)(([_, {
       is_public
-    }]) => !!_ && !is_public), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_21__.tap)(([lvl]) => {
+    }]) => !!_ && !is_public), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_17__.map)(([lvl]) => {
       this._statuses = {};
       const system_id = this._org.binding('area_management');
       if (!system_id) return;
@@ -133,14 +133,14 @@ class ExploreDesksService extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__.A
       this.subscription(`lvl-in_use`, binding.listen().subscribe(d => this.processBindingChange(d || {}, system_id)));
       this.subscription('lvl-in_use_bind', binding.bind());
     }));
-    this._booking_list = (0,rxjs__WEBPACK_IMPORTED_MODULE_20__.combineLatest)([this._options, this._state.level]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.filter)(([_, lvl]) => (_.use_api || _.date > (0,date_fns__WEBPACK_IMPORTED_MODULE_22__["default"])(Date.now()).valueOf()) && !!lvl), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_14__.switchMap)(([_, level]) => {
+    this._booking_list = (0,rxjs__WEBPACK_IMPORTED_MODULE_20__.combineLatest)([this._options, this._state.level]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.filter)(([_, lvl]) => (_.use_api || _.date > (0,date_fns__WEBPACK_IMPORTED_MODULE_21__["default"])(Date.now()).valueOf()) && !!lvl), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_14__.switchMap)(([_, level]) => {
       return (0,libs_bookings_src_lib_bookings_fn__WEBPACK_IMPORTED_MODULE_11__.queryBookings)({
         type: 'desk',
-        period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_23__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_24__["default"])(_.date || Date.now())),
-        period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_23__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_22__["default"])(_.date || Date.now())),
+        period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_22__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_23__["default"])(_.date || Date.now())),
+        period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_22__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_21__["default"])(_.date || Date.now())),
         zones: level.id
       });
-    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_19__.debounceTime)(200), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_21__.tap)(bookings => {
+    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_19__.debounceTime)(200), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_24__.tap)(bookings => {
       this._in_use.next(bookings.map(_ => _.asset_id));
       this._checked_in.next(bookings.filter(_ => _.checked_in).map(_ => _.asset_id));
     }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_18__.shareReplay)(1));
@@ -201,7 +201,7 @@ class ExploreDesksService extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__.A
     const devices = (value || []).filter(v => !['desk', 'booking'].includes(v.location));
     const desks = (value || []).filter(v => v.location === 'desk' || v.location === 'booking' && v.type === 'desk');
     const date = this._options.getValue().date || Date.now();
-    if (date <= (0,date_fns__WEBPACK_IMPORTED_MODULE_22__["default"])(Date.now()).valueOf() && !this._options.getValue().use_api) {
+    if (date <= (0,date_fns__WEBPACK_IMPORTED_MODULE_21__["default"])(Date.now()).valueOf() && !this._options.getValue().use_api) {
       this._in_use.next(desks.filter(v => v.location === 'booking').map(v => v.map_id || v.asset_id));
       this._checked_in.next(desks.filter(v => v.location === 'booking' && v.checked_in).map(v => v.map_id || v.asset_id));
       this._presence.next(desks.filter(v => v.at_location).map(v => v.map_id || v.asset_id));
@@ -349,7 +349,7 @@ class ExploreDesksService extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__.A
     return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       let user = null;
       if (!!_this4._settings.get('app.desks.allow_time_changes')) {
-        const until = (0,date_fns__WEBPACK_IMPORTED_MODULE_22__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_27__["default"])(Date.now(), _this4._settings.get('app.desks.available_period') || 90));
+        const until = (0,date_fns__WEBPACK_IMPORTED_MODULE_21__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_27__["default"])(Date.now(), _this4._settings.get('app.desks.available_period') || 90));
         const ref = _this4._dialog.open(libs_explore_src_lib_set_datetime_modal_component__WEBPACK_IMPORTED_MODULE_6__.SetDatetimeModalComponent, {
           data: {
             date,
@@ -383,7 +383,7 @@ class ExploreDesksService extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__.A
 
 /***/ }),
 
-/***/ 17625:
+/***/ 51207:
 /*!***************************************************************!*\
   !*** ./libs/explore/src/lib/explore-device-info.component.ts ***!
   \***************************************************************/
@@ -393,15 +393,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ExploreDeviceInfoComponent: () => (/* binding */ ExploreDeviceInfoComponent)
 /* harmony export */ });
-/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
-/* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/ts-client */ 64331);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ 28802);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ 8276);
-/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/common */ 57314);
-/* harmony import */ var libs_components_src_lib_interactive_map_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! libs/components/src/lib/interactive-map.component */ 51674);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 26575);
-/* harmony import */ var _components_src_lib_custom_tooltip_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/src/lib/custom-tooltip.component */ 33884);
+/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
+/* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/ts-client */ 35713);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ 80293);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ 75971);
+/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/common */ 22797);
+/* harmony import */ var libs_components_src_lib_interactive_map_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! libs/components/src/lib/interactive-map.component */ 24918);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _components_src_lib_custom_tooltip_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/src/lib/custom-tooltip.component */ 22238);
 
 
 
@@ -415,131 +415,131 @@ __webpack_require__.r(__webpack_exports__);
 const _c0 = ["explore-device-info", ""];
 function ExploreDeviceInfoComponent_ng_template_5_p_3_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "p", 17)(1, "label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18n"](2, 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "p", 23)(1, "label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18n"](2, 4);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx_r3.mac, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx_r2.mac, " ");
   }
 }
 function ExploreDeviceInfoComponent_ng_template_5_p_12_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "p", 19)(1, "label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18n"](2, 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "p", 24)(1, "label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18n"](2, 5);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx_r4.manufacturer, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx_r2.manufacturer, " ");
   }
 }
 function ExploreDeviceInfoComponent_ng_template_5_p_13_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "p", 21)(1, "label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18n"](2, 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "p", 25)(1, "label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18n"](2, 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx_r5.os, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx_r2.os, " ");
   }
 }
 function ExploreDeviceInfoComponent_ng_template_5_p_14_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "p", 23)(1, "label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18n"](2, 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "p", 26)(1, "label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18n"](2, 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx_r6.ssid, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx_r2.ssid, " ");
   }
 }
 function ExploreDeviceInfoComponent_ng_template_5_p_15_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "p", 25)(1, "label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18n"](2, 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "p", 27)(1, "label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18n"](2, 8);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", (ctx_r7.user == null ? null : ctx_r7.user.name) || (ctx_r7.user == null ? null : ctx_r7.user.username) || ctx_r7.username, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", (ctx_r2.user == null ? null : ctx_r2.user.name) || (ctx_r2.user == null ? null : ctx_r2.user.username) || ctx_r2.username, " ");
   }
 }
 function ExploreDeviceInfoComponent_ng_template_5_p_16_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "p", 27)(1, "label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18n"](2, 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "p", 28)(1, "label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18n"](2, 9);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx_r8.user.type, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx_r2.user.type, " ");
   }
 }
 function ExploreDeviceInfoComponent_ng_template_5_Template(rf, ctx) {
   if (rf & 1) {
-    const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 6);
+    const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 14);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("mouseleave", function ExploreDeviceInfoComponent_ng_template_5_Template_div_mouseleave_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r10);
-      const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r9.close());
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r2);
+      const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r2.close());
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "div", 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "div", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](3, ExploreDeviceInfoComponent_ng_template_5_p_3_Template, 4, 1, "p", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "div", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "div", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](3, ExploreDeviceInfoComponent_ng_template_5_p_3_Template, 4, 1, "p", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "p")(5, "label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18n"](6, 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18n"](6, 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](7);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "p")(9, "label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18n"](10, 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18n"](10, 3);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](11);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](12, ExploreDeviceInfoComponent_ng_template_5_p_12_Template, 4, 1, "p", 12)(13, ExploreDeviceInfoComponent_ng_template_5_p_13_Template, 4, 1, "p", 13)(14, ExploreDeviceInfoComponent_ng_template_5_p_14_Template, 4, 1, "p", 14)(15, ExploreDeviceInfoComponent_ng_template_5_p_15_Template, 4, 1, "p", 15)(16, ExploreDeviceInfoComponent_ng_template_5_p_16_Template, 4, 1, "p", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](12, ExploreDeviceInfoComponent_ng_template_5_p_12_Template, 4, 1, "p", 18)(13, ExploreDeviceInfoComponent_ng_template_5_p_13_Template, 4, 1, "p", 19)(14, ExploreDeviceInfoComponent_ng_template_5_p_14_Template, 4, 1, "p", 20)(15, ExploreDeviceInfoComponent_ng_template_5_p_15_Template, 4, 1, "p", 21)(16, ExploreDeviceInfoComponent_ng_template_5_p_16_Template, 4, 1, "p", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r1.mac && !ctx_r1.hide_fields.includes("mac"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r2.mac && !ctx_r2.hide_fields.includes("mac"));
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx_r1.variance, "m");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx_r2.variance, "m");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx_r1.last_seen, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", ctx_r2.last_seen, "");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r1.manufacturer && !ctx_r1.hide_fields.includes("manufacturer"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r2.manufacturer && !ctx_r2.hide_fields.includes("manufacturer"));
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r1.os && !ctx_r1.hide_fields.includes("os"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r2.os && !ctx_r2.hide_fields.includes("os"));
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r1.ssid && !ctx_r1.hide_fields.includes("ssid"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r2.ssid && !ctx_r2.hide_fields.includes("ssid"));
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r1.username && !ctx_r1.hide_fields.includes("username"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r2.username && !ctx_r2.hide_fields.includes("username"));
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r1.user && !ctx_r1.hide_fields.includes("user"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r2.user && !ctx_r2.hide_fields.includes("user"));
   }
 }
 const EMPTY = [];
@@ -627,8 +627,8 @@ class ExploreDeviceInfoComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
         /**
          * @suppress {msgDescriptions}
          */
-        const MSG_EXTERNAL_1921442792032576180$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS__0 = goog.getMsg("Accuracy:");
-        i18n_0 = MSG_EXTERNAL_1921442792032576180$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS__0;
+        const MSG_EXTERNAL_1921442792032576180$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS_0 = goog.getMsg("Accuracy:");
+        i18n_0 = MSG_EXTERNAL_1921442792032576180$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS_0;
       } else {
         i18n_0 = $localize`:␟4e79bc7b2a23c2e4e80d256c8167411cf124bd20␟1921442792032576180:Accuracy:`;
       }
@@ -637,8 +637,8 @@ class ExploreDeviceInfoComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
         /**
          * @suppress {msgDescriptions}
          */
-        const MSG_EXTERNAL_5291488112436395082$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS__1 = goog.getMsg("Last Seen:");
-        i18n_1 = MSG_EXTERNAL_5291488112436395082$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS__1;
+        const MSG_EXTERNAL_5291488112436395082$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS_1 = goog.getMsg("Last Seen:");
+        i18n_1 = MSG_EXTERNAL_5291488112436395082$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS_1;
       } else {
         i18n_1 = $localize`:␟1c564bebf178f9c70f2c66a80393137bfa0d2ea8␟5291488112436395082:Last Seen:`;
       }
@@ -647,8 +647,8 @@ class ExploreDeviceInfoComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
         /**
          * @suppress {msgDescriptions}
          */
-        const MSG_EXTERNAL_5080596488336446120$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS___0 = goog.getMsg("MAC:");
-        i18n_2 = MSG_EXTERNAL_5080596488336446120$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS___0;
+        const MSG_EXTERNAL_5080596488336446120$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS_2 = goog.getMsg("MAC:");
+        i18n_2 = MSG_EXTERNAL_5080596488336446120$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS_2;
       } else {
         i18n_2 = $localize`:␟14802d5580219b4522c9c50e1a9f401aee191e1e␟5080596488336446120:MAC:`;
       }
@@ -657,8 +657,8 @@ class ExploreDeviceInfoComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
         /**
          * @suppress {msgDescriptions}
          */
-        const MSG_EXTERNAL_6296767522110275448$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS___1 = goog.getMsg("Manufacturer:");
-        i18n_3 = MSG_EXTERNAL_6296767522110275448$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS___1;
+        const MSG_EXTERNAL_6296767522110275448$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS_3 = goog.getMsg("Manufacturer:");
+        i18n_3 = MSG_EXTERNAL_6296767522110275448$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS_3;
       } else {
         i18n_3 = $localize`:␟a082daef9c0b66268ce56dfa8d96d47a04d2c4b1␟6296767522110275448:Manufacturer:`;
       }
@@ -667,8 +667,8 @@ class ExploreDeviceInfoComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
         /**
          * @suppress {msgDescriptions}
          */
-        const MSG_EXTERNAL_2346706060395913038$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS___2 = goog.getMsg("OS:");
-        i18n_4 = MSG_EXTERNAL_2346706060395913038$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS___2;
+        const MSG_EXTERNAL_2346706060395913038$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS_4 = goog.getMsg("OS:");
+        i18n_4 = MSG_EXTERNAL_2346706060395913038$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS_4;
       } else {
         i18n_4 = $localize`:␟5544405b325c518c94412239610d44250d5a223a␟2346706060395913038:OS:`;
       }
@@ -677,8 +677,8 @@ class ExploreDeviceInfoComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
         /**
          * @suppress {msgDescriptions}
          */
-        const MSG_EXTERNAL_4345272263810420547$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS___3 = goog.getMsg("SSID:");
-        i18n_5 = MSG_EXTERNAL_4345272263810420547$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS___3;
+        const MSG_EXTERNAL_4345272263810420547$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS_5 = goog.getMsg("SSID:");
+        i18n_5 = MSG_EXTERNAL_4345272263810420547$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS_5;
       } else {
         i18n_5 = $localize`:␟afd0fc7b37f54299537ba2abc9babf749adf383e␟4345272263810420547:SSID:`;
       }
@@ -687,8 +687,8 @@ class ExploreDeviceInfoComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
         /**
          * @suppress {msgDescriptions}
          */
-        const MSG_EXTERNAL_140822705245800362$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS___4 = goog.getMsg("Username:");
-        i18n_6 = MSG_EXTERNAL_140822705245800362$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS___4;
+        const MSG_EXTERNAL_140822705245800362$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS_6 = goog.getMsg("Username:");
+        i18n_6 = MSG_EXTERNAL_140822705245800362$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS_6;
       } else {
         i18n_6 = $localize`:␟67fc3fe0566f8700b84a908c35497759db78addc␟140822705245800362:Username:`;
       }
@@ -697,30 +697,32 @@ class ExploreDeviceInfoComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
         /**
          * @suppress {msgDescriptions}
          */
-        const MSG_EXTERNAL_2736556170366900089$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS___5 = goog.getMsg("Type:");
-        i18n_7 = MSG_EXTERNAL_2736556170366900089$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS___5;
+        const MSG_EXTERNAL_2736556170366900089$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS_7 = goog.getMsg("Type:");
+        i18n_7 = MSG_EXTERNAL_2736556170366900089$$LIBS_EXPLORE_SRC_LIB_EXPLORE_DEVICE_INFO_COMPONENT_TS_7;
       } else {
         i18n_7 = $localize`:␟e78c0d60ac39787f62c9159646fe0b3c1ed55a1d␟2736556170366900089:Type:`;
       }
-      return [["name", "radius", 1, "radius", "absolute", "center", "bg-info", "bg-opacity-25", "border-8", "border-dashed", "border-blue-600", "rounded-full"], ["shadow", "", 1, "absolute", "center", "bg-neutral", "h-8", "w-8", "rounded-full"], ["name", "dot", 1, "h-3", "w-3", "absolute", "center", "rounded-full", "shadow", "border-2", "border-white"], ["dot", ""], ["customTooltip", "", 1, "absolute", "inset-0", "pointer-events-auto", 3, "content", "backdrop", "xPosition", "yPosition", "hover", "mouseenter"], ["device_tooltip", ""], ["name", "device-info", 1, "w-64", "rounded", "bg-base-100", "p-4", "top-0", "left-0", "shadow", "pointer-events-none", "mx-2", 3, "mouseleave"], [1, "arrow"], [1, "details"], ["class", "break-words", 4, "ngIf"], i18n_0, i18n_1, ["type", "", 4, "ngIf"], ["os", "", 4, "ngIf"], ["ssid", "", 4, "ngIf"], ["username", "", 4, "ngIf"], ["user", "", 4, "ngIf"], [1, "break-words"], i18n_2, ["type", ""], i18n_3, ["os", ""], i18n_4, ["ssid", ""], i18n_5, ["username", ""], i18n_6, ["user", ""], i18n_7];
+      return [["dot", ""], ["device_tooltip", ""], i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_5, i18n_6, i18n_7, ["name", "radius", 1, "radius", "absolute", "center", "bg-info", "bg-opacity-25", "border-8", "border-dashed", "border-blue-600", "rounded-full"], ["shadow", "", 1, "absolute", "center", "bg-neutral", "h-8", "w-8", "rounded-full"], ["name", "dot", 1, "h-3", "w-3", "absolute", "center", "rounded-full", "shadow", "border-2", "border-white"], ["customTooltip", "", 1, "absolute", "inset-0", "pointer-events-auto", 3, "mouseenter", "content", "backdrop", "xPosition", "yPosition", "hover"], ["name", "device-info", 1, "w-64", "rounded", "bg-base-100", "p-4", "top-0", "left-0", "shadow", "pointer-events-none", "mx-2", 3, "mouseleave"], [1, "arrow"], [1, "details"], ["class", "break-words", 4, "ngIf"], ["type", "", 4, "ngIf"], ["os", "", 4, "ngIf"], ["ssid", "", 4, "ngIf"], ["username", "", 4, "ngIf"], ["user", "", 4, "ngIf"], [1, "break-words"], ["type", ""], ["os", ""], ["ssid", ""], ["username", ""], ["user", ""]];
     },
     template: function ExploreDeviceInfoComponent_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](0, "div", 0)(1, "div", 1)(2, "div", 2, 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "div", 4);
+        const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](0, "div", 10)(1, "div", 11)(2, "div", 12, 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "div", 13);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("mouseenter", function ExploreDeviceInfoComponent_Template_div_mouseenter_4_listener() {
-          return ctx.loadUser();
+          _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r1);
+          return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx.loadUser());
         });
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](5, ExploreDeviceInfoComponent_ng_template_5_Template, 17, 8, "ng-template", null, 5, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](5, ExploreDeviceInfoComponent_ng_template_5_Template, 17, 8, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"]);
       }
       if (rf & 2) {
-        const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](6);
+        const device_tooltip_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](6);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵstyleMap"]("height: " + ctx.diameter + "%; width: " + ctx.diameter + "%;");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵstyleProp"]("background-color", ctx.bg_color);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("content", _r2)("backdrop", false)("xPosition", ctx.x_pos)("yPosition", ctx.y_pos)("hover", true);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("content", device_tooltip_r4)("backdrop", false)("xPosition", ctx.x_pos)("yPosition", ctx.y_pos)("hover", true);
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _components_src_lib_custom_tooltip_component__WEBPACK_IMPORTED_MODULE_4__.CustomTooltipComponent],
@@ -730,7 +732,7 @@ class ExploreDeviceInfoComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
 
 /***/ }),
 
-/***/ 89849:
+/***/ 49591:
 /*!*********************************************************!*\
   !*** ./libs/explore/src/lib/explore-lockers.service.ts ***!
   \*********************************************************/
@@ -740,19 +742,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ExploreLockersService: () => (/* binding */ ExploreLockersService)
 /* harmony export */ });
-/* harmony import */ var libs_bookings_src_lib_lockers_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! libs/bookings/src/lib/lockers.service */ 61635);
-/* harmony import */ var _explore_state_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./explore-state.service */ 70855);
-/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/common */ 57314);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 47422);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs/operators */ 85046);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ 70462);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ 64555);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs */ 9681);
-/* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/ts-client */ 64331);
-/* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @placeos/organisation */ 5745);
-/* harmony import */ var _explore_locker_bank_info_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./explore-locker-bank-info.component */ 4620);
-/* harmony import */ var _explore_spaces_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./explore-spaces.service */ 9229);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/core */ 61699);
+/* harmony import */ var libs_bookings_src_lib_lockers_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! libs/bookings/src/lib/lockers.service */ 98796);
+/* harmony import */ var _explore_state_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./explore-state.service */ 12455);
+/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/common */ 22797);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 35443);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs/operators */ 8627);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ 90521);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ 68824);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs */ 71536);
+/* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/ts-client */ 35713);
+/* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @placeos/organisation */ 2510);
+/* harmony import */ var _explore_locker_bank_info_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./explore-locker-bank-info.component */ 84810);
+/* harmony import */ var _explore_spaces_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./explore-spaces.service */ 65897);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/core */ 37580);
 
 
 
@@ -839,7 +841,7 @@ class ExploreLockersService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__
 
 /***/ }),
 
-/***/ 46519:
+/***/ 60468:
 /*!***************************************************************!*\
   !*** ./libs/explore/src/lib/explore-map-control.component.ts ***!
   \***************************************************************/
@@ -849,19 +851,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ExploreMapControlComponent: () => (/* binding */ ExploreMapControlComponent)
 /* harmony export */ });
-/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
-/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 57314);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ 47422);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 17627);
-/* harmony import */ var libs_organisation_src_lib_organisation_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 38203);
-/* harmony import */ var _explore_state_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./explore-state.service */ 70855);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 27947);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 26575);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/core */ 55309);
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/form-field */ 51333);
-/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/select */ 96355);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/forms */ 28849);
+/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
+/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 22797);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ 35443);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 57871);
+/* harmony import */ var libs_organisation_src_lib_organisation_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
+/* harmony import */ var _explore_state_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./explore-state.service */ 12455);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 95072);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/core */ 74646);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/form-field */ 24950);
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/select */ 25175);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/forms */ 34456);
 
 
 
@@ -892,24 +894,24 @@ function ExploreMapControlComponent_mat_form_field_1_mat_option_3_Template(rf, c
 }
 function ExploreMapControlComponent_mat_form_field_1_Template(rf, ctx) {
   if (rf & 1) {
-    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+    const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-form-field", 3)(1, "mat-select", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("ngModelChange", function ExploreMapControlComponent_mat_form_field_1_Template_mat_select_ngModelChange_1_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r5);
-      const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r4.setBuilding($event));
-    });
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](2, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("ngModelChange", function ExploreMapControlComponent_mat_form_field_1_Template_mat_select_ngModelChange_1_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r1);
+      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r1.setBuilding($event));
+    });
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](3, ExploreMapControlComponent_mat_form_field_1_mat_option_3_Template, 2, 2, "mat-option", 5);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](4, "async");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngModel", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](2, 2, ctx_r0.building));
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngModel", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](2, 2, ctx_r1.building));
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](4, 4, ctx_r0.buildings));
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](4, 4, ctx_r1.buildings));
   }
 }
 function ExploreMapControlComponent_mat_form_field_3_mat_option_4_Template(rf, ctx) {
@@ -919,32 +921,32 @@ function ExploreMapControlComponent_mat_form_field_3_mat_option_4_Template(rf, c
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const lvl_r7 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("value", lvl_r7);
+    const lvl_r5 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("value", lvl_r5);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", lvl_r7.display_name || lvl_r7.name, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", lvl_r5.display_name || lvl_r5.name, " ");
   }
 }
 function ExploreMapControlComponent_mat_form_field_3_Template(rf, ctx) {
   if (rf & 1) {
-    const _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-form-field", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](1, "async");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "mat-select", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("ngModelChange", function ExploreMapControlComponent_mat_form_field_3_Template_mat_select_ngModelChange_2_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r9);
-      const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r8.setLevel($event));
-    });
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](3, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("ngModelChange", function ExploreMapControlComponent_mat_form_field_3_Template_mat_select_ngModelChange_2_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r4);
+      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r1.setLevel($event));
+    });
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](4, ExploreMapControlComponent_mat_form_field_3_mat_option_4_Template, 2, 2, "mat-option", 5);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](5, "async");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
+    let tmp_1_0;
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-    let tmp_0_0;
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵattribute"]("has-bld", ((tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](1, 3, ctx_r1.buildings)) == null ? null : tmp_0_0.length) > 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵattribute"]("has-bld", ((tmp_1_0 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](1, 3, ctx_r1.buildings)) == null ? null : tmp_1_0.length) > 1);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngModel", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](3, 5, ctx_r1.level));
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
@@ -1001,8 +1003,8 @@ class ExploreMapControlComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
         /**
          * @suppress {msgDescriptions}
          */
-        const MSG_EXTERNAL_1533056789917995243$$LIBS_EXPLORE_SRC_LIB_EXPLORE_MAP_CONTROL_COMPONENT_TS__0 = goog.getMsg("Select Building...");
-        i18n_0 = MSG_EXTERNAL_1533056789917995243$$LIBS_EXPLORE_SRC_LIB_EXPLORE_MAP_CONTROL_COMPONENT_TS__0;
+        const MSG_EXTERNAL_1533056789917995243$$LIBS_EXPLORE_SRC_LIB_EXPLORE_MAP_CONTROL_COMPONENT_TS_0 = goog.getMsg("Select Building...");
+        i18n_0 = MSG_EXTERNAL_1533056789917995243$$LIBS_EXPLORE_SRC_LIB_EXPLORE_MAP_CONTROL_COMPONENT_TS_0;
       } else {
         i18n_0 = $localize`:␟dea1f8bc2b32584fadf07ef815709b946d3726ff␟1533056789917995243:Select Building...`;
       }
@@ -1011,12 +1013,12 @@ class ExploreMapControlComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
         /**
          * @suppress {msgDescriptions}
          */
-        const MSG_EXTERNAL_7854898325453225869$$LIBS_EXPLORE_SRC_LIB_EXPLORE_MAP_CONTROL_COMPONENT_TS__1 = goog.getMsg("Select Level...");
-        i18n_1 = MSG_EXTERNAL_7854898325453225869$$LIBS_EXPLORE_SRC_LIB_EXPLORE_MAP_CONTROL_COMPONENT_TS__1;
+        const MSG_EXTERNAL_7854898325453225869$$LIBS_EXPLORE_SRC_LIB_EXPLORE_MAP_CONTROL_COMPONENT_TS_1 = goog.getMsg("Select Level...");
+        i18n_1 = MSG_EXTERNAL_7854898325453225869$$LIBS_EXPLORE_SRC_LIB_EXPLORE_MAP_CONTROL_COMPONENT_TS_1;
       } else {
         i18n_1 = $localize`:␟025373b97845a8c2b54d2eb17d9c479f64207b11␟7854898325453225869:Select Level...`;
       }
-      return [[1, "flex", "space-x-2", "w-full"], ["overlay", "", "buildings", "", "class", "flex-1 min-w-[10.5rem] no-subscript", "has-bld", "true", "appearance", "outline", 4, "ngIf"], ["overlay", "", "levels", "", "class", "flex-1 min-w-[10.25rem] no-subscript", "appearance", "outline", 4, "ngIf"], ["overlay", "", "buildings", "", "has-bld", "true", "appearance", "outline", 1, "flex-1", "min-w-[10.5rem]", "no-subscript"], ["placeholder", i18n_0, 3, "ngModel", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], ["overlay", "", "levels", "", "appearance", "outline", 1, "flex-1", "min-w-[10.25rem]", "no-subscript"], ["placeholder", i18n_1, 3, "ngModel", "ngModelChange"]];
+      return [[1, "flex", "space-x-2", "w-full"], ["overlay", "", "buildings", "", "class", "flex-1 min-w-[10.5rem] no-subscript", "has-bld", "true", "appearance", "outline", 4, "ngIf"], ["overlay", "", "levels", "", "class", "flex-1 min-w-[10.25rem] no-subscript", "appearance", "outline", 4, "ngIf"], ["overlay", "", "buildings", "", "has-bld", "true", "appearance", "outline", 1, "flex-1", "min-w-[10.5rem]", "no-subscript"], ["placeholder", i18n_0, 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], ["overlay", "", "levels", "", "appearance", "outline", 1, "flex-1", "min-w-[10.25rem]", "no-subscript"], ["placeholder", i18n_1, 3, "ngModelChange", "ngModel"]];
     },
     template: function ExploreMapControlComponent_Template(rf, ctx) {
       if (rf & 1) {
@@ -1043,7 +1045,7 @@ class ExploreMapControlComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
 
 /***/ }),
 
-/***/ 8458:
+/***/ 83134:
 /*!************************************************************!*\
   !*** ./libs/explore/src/lib/explore-map-view.component.ts ***!
   \************************************************************/
@@ -1053,31 +1055,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ExploreMapViewComponent: () => (/* binding */ ExploreMapViewComponent)
 /* harmony export */ });
-/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
-/* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/ts-client */ 64331);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! rxjs/operators */ 46939);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! rxjs/operators */ 17627);
-/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/common */ 57314);
-/* harmony import */ var _placeos_users__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/users */ 81239);
-/* harmony import */ var libs_spaces_src_lib_spaces_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! libs/spaces/src/lib/spaces.service */ 70982);
-/* harmony import */ var libs_components_src_lib_map_pin_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! libs/components/src/lib/map-pin.component */ 41970);
-/* harmony import */ var libs_components_src_lib_map_radius_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! libs/components/src/lib/map-radius.component */ 58550);
-/* harmony import */ var libs_organisation_src_lib_organisation_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 38203);
-/* harmony import */ var libs_spaces_src_lib_space_pipe__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! libs/spaces/src/lib/space.pipe */ 60942);
-/* harmony import */ var _explore_state_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./explore-state.service */ 70855);
-/* harmony import */ var _explore_spaces_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./explore-spaces.service */ 9229);
-/* harmony import */ var _explore_zones_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./explore-zones.service */ 74293);
-/* harmony import */ var _explore_desks_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./explore-desks.service */ 2102);
-/* harmony import */ var _explore_parking_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./explore-parking.service */ 51946);
-/* harmony import */ var _explore_lockers_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./explore-lockers.service */ 89849);
-/* harmony import */ var libs_common_src_lib_mapspeople_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! libs/common/src/lib/mapspeople.service */ 39253);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/router */ 27947);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/common */ 26575);
-/* harmony import */ var _components_src_lib_interactive_map_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../../components/src/lib/interactive-map.component */ 51674);
-/* harmony import */ var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/material/slide-toggle */ 59293);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/forms */ 28849);
-/* harmony import */ var _explore_map_control_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./explore-map-control.component */ 46519);
+/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
+/* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/ts-client */ 35713);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! rxjs/operators */ 33602);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! rxjs/operators */ 57871);
+/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/common */ 22797);
+/* harmony import */ var _placeos_users__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/users */ 63870);
+/* harmony import */ var libs_spaces_src_lib_spaces_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! libs/spaces/src/lib/spaces.service */ 7401);
+/* harmony import */ var libs_components_src_lib_map_pin_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! libs/components/src/lib/map-pin.component */ 71865);
+/* harmony import */ var libs_components_src_lib_map_radius_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! libs/components/src/lib/map-radius.component */ 95384);
+/* harmony import */ var libs_organisation_src_lib_organisation_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
+/* harmony import */ var libs_spaces_src_lib_space_pipe__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! libs/spaces/src/lib/space.pipe */ 22011);
+/* harmony import */ var _explore_state_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./explore-state.service */ 12455);
+/* harmony import */ var _explore_spaces_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./explore-spaces.service */ 65897);
+/* harmony import */ var _explore_zones_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./explore-zones.service */ 61369);
+/* harmony import */ var _explore_desks_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./explore-desks.service */ 61104);
+/* harmony import */ var _explore_parking_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./explore-parking.service */ 34498);
+/* harmony import */ var _explore_lockers_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./explore-lockers.service */ 49591);
+/* harmony import */ var libs_common_src_lib_mapspeople_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! libs/common/src/lib/mapspeople.service */ 99420);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/router */ 95072);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _components_src_lib_interactive_map_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../../components/src/lib/interactive-map.component */ 24918);
+/* harmony import */ var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/material/slide-toggle */ 8827);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/forms */ 34456);
+/* harmony import */ var _explore_map_control_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./explore-map-control.component */ 60468);
 
 
 
@@ -1114,61 +1116,64 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const _c0 = () => ({
+  controls: true
+});
 function ExploreMapViewComponent_div_6_div_2_Template(rf, ctx) {
   if (rf & 1) {
-    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵelementStart"](0, "div", 5)(1, "mat-slide-toggle", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵlistener"]("ngModelChange", function ExploreMapViewComponent_div_6_div_2_Template_mat_slide_toggle_ngModelChange_1_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵrestoreView"](_r4);
-      const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵnextContext"](2);
-      return _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵresetView"](ctx_r3.toggleZones($event));
-    });
+    const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵelementStart"](0, "div", 7)(1, "mat-slide-toggle", 8);
     _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵpipe"](2, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵlistener"]("ngModelChange", function ExploreMapViewComponent_div_6_div_2_Template_mat_slide_toggle_ngModelChange_1_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵrestoreView"](_r1);
+      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵnextContext"](2);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵresetView"](ctx_r1.toggleZones($event));
+    });
     _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵelementStart"](3, "label", 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵi18n"](4, 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵelementStart"](3, "label", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵi18n"](4, 0);
     _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵnextContext"](2);
-    let tmp_0_0;
+    let tmp_2_0;
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵproperty"]("ngModel", !((tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵpipeBind1"](2, 1, ctx_r2.options)) == null ? null : tmp_0_0.disable == null ? null : tmp_0_0.disable.includes("zones")));
+    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵproperty"]("ngModel", !((tmp_2_0 = _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵpipeBind1"](2, 1, ctx_r1.options)) == null ? null : tmp_2_0.disable == null ? null : tmp_2_0.disable.includes("zones")));
   }
 }
 function ExploreMapViewComponent_div_6_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵelementStart"](0, "div", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵelementStart"](0, "div", 5);
     _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵelement"](1, "explore-map-controls");
-    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵtemplate"](2, ExploreMapViewComponent_div_6_div_2_Template, 5, 3, "div", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵtemplate"](2, ExploreMapViewComponent_div_6_div_2_Template, 5, 3, "div", 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵnextContext"]();
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵproperty"]("ngIf", !ctx_r0.hide_zones);
+    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵproperty"]("ngIf", !ctx_r1.hide_zones);
   }
 }
 function ExploreMapViewComponent_div_8_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵelementStart"](0, "div", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵelementStart"](0, "div", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵelement"](1, "div", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵelementStart"](2, "div", 14);
     _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵtext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    const pair_r6 = ctx.$implicit;
+    const pair_r3 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵstyleProp"]("background-color", pair_r6[1]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵstyleProp"]("background-color", pair_r3[1]);
     _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵtextInterpolate"](pair_r6[0]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵtextInterpolate"](pair_r3[0]);
   }
 }
 function ExploreMapViewComponent_div_8_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵelementStart"](0, "div", 9)(1, "h3", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵi18n"](2, 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵelementStart"](0, "div", 10)(1, "h3", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵi18n"](2, 1);
     _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵtemplate"](3, ExploreMapViewComponent_div_8_div_3_Template, 4, 3, "div", 12);
     _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵelementEnd"]();
@@ -1179,9 +1184,6 @@ function ExploreMapViewComponent_div_8_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵproperty"]("ngForOf", ctx_r1.legend);
   }
 }
-const _c0 = () => ({
-  controls: true
-});
 const EMPTY = [];
 class ExploreMapViewComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.AsyncHandler {
   toggleZones(enabled) {
@@ -1379,8 +1381,8 @@ class ExploreMapViewComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2
         /**
          * @suppress {msgDescriptions}
          */
-        const MSG_EXTERNAL_4377629928032707348$$LIBS_EXPLORE_SRC_LIB_EXPLORE_MAP_VIEW_COMPONENT_TS___0 = goog.getMsg("Zones");
-        i18n_0 = MSG_EXTERNAL_4377629928032707348$$LIBS_EXPLORE_SRC_LIB_EXPLORE_MAP_VIEW_COMPONENT_TS___0;
+        const MSG_EXTERNAL_4377629928032707348$$LIBS_EXPLORE_SRC_LIB_EXPLORE_MAP_VIEW_COMPONENT_TS_0 = goog.getMsg("Zones");
+        i18n_0 = MSG_EXTERNAL_4377629928032707348$$LIBS_EXPLORE_SRC_LIB_EXPLORE_MAP_VIEW_COMPONENT_TS_0;
       } else {
         i18n_0 = $localize`:␟dab9a30ea9f109a7395ec84fe144c4f70d50c32d␟4377629928032707348:Zones`;
       }
@@ -1389,24 +1391,24 @@ class ExploreMapViewComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2
         /**
          * @suppress {msgDescriptions}
          */
-        const MSG_EXTERNAL_7297822327994766046$$LIBS_EXPLORE_SRC_LIB_EXPLORE_MAP_VIEW_COMPONENT_TS__0 = goog.getMsg("Legend");
-        i18n_1 = MSG_EXTERNAL_7297822327994766046$$LIBS_EXPLORE_SRC_LIB_EXPLORE_MAP_VIEW_COMPONENT_TS__0;
+        const MSG_EXTERNAL_7297822327994766046$$LIBS_EXPLORE_SRC_LIB_EXPLORE_MAP_VIEW_COMPONENT_TS_1 = goog.getMsg("Legend");
+        i18n_1 = MSG_EXTERNAL_7297822327994766046$$LIBS_EXPLORE_SRC_LIB_EXPLORE_MAP_VIEW_COMPONENT_TS_1;
       } else {
         i18n_1 = $localize`:␟5c5419db944ed6a96f9515a2ac0ee390ec8cf3b5␟7297822327994766046:Legend`;
       }
-      return [[3, "src", "styles", "features", "actions", "labels", "focus", "options"], ["controls", "", "class", "absolute top-2 left-2 max-w-[calc(100vw-1rem)] bg-base-100 border border-base-200 rounded p-2 space-y-2 overflow-hidden", 4, "ngIf"], ["legend", "", "class", "absolute bottom-2 left-2 p-2 rounded bg-base-100 border border-base-200", 4, "ngIf"], ["controls", "", 1, "absolute", "top-2", "left-2", "max-w-[calc(100vw-1rem)]", "bg-base-100", "border", "border-base-200", "rounded", "p-2", "space-y-2", "overflow-hidden"], ["class", "flex items-center space-x-2", 4, "ngIf"], [1, "flex", "items-center", "space-x-2"], ["name", "zones", 1, "ml-2", 3, "ngModel", "ngModelChange"], ["for", "zones", 1, "mb-0"], i18n_0, ["legend", "", 1, "absolute", "bottom-2", "left-2", "p-2", "rounded", "bg-base-100", "border", "border-base-200"], [1, "mb-2", "font-medium"], i18n_1, ["class", "flex items-center space-x-2", 4, "ngFor", "ngForOf"], [1, "w-3", "h-3", "rounded-full", "border", "border-base-200"], [1, "text-sm"]];
+      return [i18n_0, i18n_1, [3, "src", "styles", "features", "actions", "labels", "focus", "options"], ["controls", "", "class", "absolute top-2 left-2 max-w-[calc(100vw-1rem)] bg-base-100 border border-base-200 rounded p-2 space-y-2 overflow-hidden", 4, "ngIf"], ["legend", "", "class", "absolute bottom-2 left-2 p-2 rounded bg-base-100 border border-base-200", 4, "ngIf"], ["controls", "", 1, "absolute", "top-2", "left-2", "max-w-[calc(100vw-1rem)]", "bg-base-100", "border", "border-base-200", "rounded", "p-2", "space-y-2", "overflow-hidden"], ["class", "flex items-center space-x-2", 4, "ngIf"], [1, "flex", "items-center", "space-x-2"], ["name", "zones", 1, "ml-2", 3, "ngModelChange", "ngModel"], ["for", "zones", 1, "mb-0"], ["legend", "", 1, "absolute", "bottom-2", "left-2", "p-2", "rounded", "bg-base-100", "border", "border-base-200"], [1, "mb-2", "font-medium"], ["class", "flex items-center space-x-2", 4, "ngFor", "ngForOf"], [1, "w-3", "h-3", "rounded-full", "border", "border-base-200"], [1, "text-sm"]];
     },
     template: function ExploreMapViewComponent_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵelement"](0, "interactive-map", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵelement"](0, "interactive-map", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵpipe"](1, "async");
         _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵpipe"](2, "async");
         _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵpipe"](3, "async");
         _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵpipe"](4, "async");
         _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵpipe"](5, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵtemplate"](6, ExploreMapViewComponent_div_6_Template, 3, 1, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵtemplate"](6, ExploreMapViewComponent_div_6_Template, 3, 1, "div", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵpipe"](7, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵtemplate"](8, ExploreMapViewComponent_div_8_Template, 4, 1, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵtemplate"](8, ExploreMapViewComponent_div_8_Template, 4, 1, "div", 4);
       }
       if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵproperty"]("src", _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵpipeBind1"](1, 9, ctx.url))("styles", _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵpipeBind1"](2, 11, ctx.styles))("features", _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵpipeBind1"](3, 13, ctx.features))("actions", _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵpipeBind1"](4, 15, ctx.actions))("labels", _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵpipeBind1"](5, 17, ctx.labels))("focus", ctx.locate)("options", _angular_core__WEBPACK_IMPORTED_MODULE_18__["ɵɵpureFunction0"](21, _c0));
@@ -1423,7 +1425,7 @@ class ExploreMapViewComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2
 
 /***/ }),
 
-/***/ 51946:
+/***/ 34498:
 /*!*********************************************************!*\
   !*** ./libs/explore/src/lib/explore-parking.service.ts ***!
   \*********************************************************/
@@ -1433,32 +1435,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ExploreParkingService: () => (/* binding */ ExploreParkingService)
 /* harmony export */ });
-/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
-/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 57314);
-/* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/ts-client */ 64331);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! date-fns */ 31957);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! date-fns */ 55702);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! date-fns */ 30060);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! date-fns */ 57016);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! date-fns */ 4512);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! date-fns */ 65822);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! date-fns */ 77393);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs */ 70462);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs */ 64555);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! rxjs */ 9681);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! rxjs */ 92130);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs/operators */ 47422);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs/operators */ 36520);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! rxjs/operators */ 680);
-/* harmony import */ var libs_organisation_src_lib_organisation_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 38203);
-/* harmony import */ var libs_bookings_src_lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! libs/bookings/src/lib/bookings.fn */ 25183);
-/* harmony import */ var _explore_state_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./explore-state.service */ 70855);
-/* harmony import */ var _explore_spaces_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./explore-spaces.service */ 9229);
-/* harmony import */ var libs_bookings_src_lib_booking_form_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! libs/bookings/src/lib/booking-form.service */ 63863);
-/* harmony import */ var _set_datetime_modal_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./set-datetime-modal.component */ 80011);
-/* harmony import */ var _explore_desk_info_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./explore-desk-info.component */ 90141);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/material/dialog */ 17401);
+/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
+/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 22797);
+/* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/ts-client */ 35713);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! date-fns */ 73725);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! date-fns */ 46247);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! date-fns */ 2250);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! date-fns */ 27419);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! date-fns */ 13264);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! date-fns */ 88402);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! date-fns */ 26078);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs */ 90521);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs */ 68824);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! rxjs */ 71536);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! rxjs */ 68757);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs/operators */ 35443);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs/operators */ 71963);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! rxjs/operators */ 7841);
+/* harmony import */ var libs_organisation_src_lib_organisation_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
+/* harmony import */ var libs_bookings_src_lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! libs/bookings/src/lib/bookings.fn */ 18026);
+/* harmony import */ var _explore_state_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./explore-state.service */ 12455);
+/* harmony import */ var _explore_spaces_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./explore-spaces.service */ 65897);
+/* harmony import */ var libs_bookings_src_lib_booking_form_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! libs/bookings/src/lib/booking-form.service */ 18379);
+/* harmony import */ var _set_datetime_modal_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./set-datetime-modal.component */ 27146);
+/* harmony import */ var _explore_desk_info_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./explore-desk-info.component */ 82882);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/material/dialog */ 12587);
 
 
 
@@ -1687,7 +1689,7 @@ class ExploreParkingService extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__
 
 /***/ }),
 
-/***/ 37109:
+/***/ 64114:
 /*!**********************************************************!*\
   !*** ./libs/explore/src/lib/explore-search.component.ts ***!
   \**********************************************************/
@@ -1697,17 +1699,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ExploreSearchComponent: () => (/* binding */ ExploreSearchComponent)
 /* harmony export */ });
-/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/common */ 57314);
-/* harmony import */ var _explore_search_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./explore-search.service */ 67178);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 27947);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 26575);
-/* harmony import */ var _components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 94888);
-/* harmony import */ var _components_src_lib_virtual_keyboard_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/src/lib/virtual-keyboard.component */ 87147);
-/* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/autocomplete */ 99892);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/core */ 55309);
-/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/progress-spinner */ 33910);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/forms */ 28849);
+/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/common */ 22797);
+/* harmony import */ var _explore_search_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./explore-search.service */ 35446);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 95072);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
+/* harmony import */ var _components_src_lib_virtual_keyboard_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/src/lib/virtual-keyboard.component */ 75080);
+/* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/autocomplete */ 79771);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/core */ 74646);
+/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/progress-spinner */ 41134);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/forms */ 34456);
 
 
 
@@ -1726,7 +1728,7 @@ const _c0 = ["input"];
 const _c1 = ["button"];
 function ExploreSearchComponent_mat_spinner_8_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](0, "mat-spinner", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](0, "mat-spinner", 10);
   }
   if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("diameter", 32);
@@ -1734,8 +1736,8 @@ function ExploreSearchComponent_mat_spinner_8_Template(rf, ctx) {
 }
 function ExploreSearchComponent_ng_container_12_mat_option_1_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-option", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵi18n"](1, 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-option", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵi18n"](1, 4);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
   }
 }
@@ -1752,33 +1754,33 @@ function ExploreSearchComponent_ng_container_12_mat_option_3_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
-    const option_r8 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("value", option_r8);
+    const option_r2 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("value", option_r2);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](option_r8.name);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](option_r2.name);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](option_r8.description);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](option_r2.description);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", option_r8.type, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", option_r2.type, " ");
   }
 }
 function ExploreSearchComponent_ng_container_12_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](1, ExploreSearchComponent_ng_container_12_mat_option_1_Template, 2, 0, "mat-option", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](1, ExploreSearchComponent_ng_container_12_mat_option_1_Template, 2, 0, "mat-option", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](2, "async");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](3, ExploreSearchComponent_ng_container_12_mat_option_3_Template, 9, 4, "mat-option", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](4, "slice");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](5, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](3, ExploreSearchComponent_ng_container_12_mat_option_3_Template, 9, 4, "mat-option", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](4, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](5, "slice");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
-    const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-    let tmp_0_0;
+    let tmp_5_0;
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", !((tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](2, 2, ctx_r5.results)) == null ? null : tmp_0_0.length));
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", !((tmp_5_0 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](2, 2, ctx_r2.results)) == null ? null : tmp_5_0.length));
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind3"](4, 4, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](5, 8, ctx_r5.results), 0, 5));
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind3"](5, 6, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](4, 4, ctx_r2.results), 0, 5));
   }
 }
 class ExploreSearchComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0__.AsyncHandler {
@@ -1885,54 +1887,64 @@ class ExploreSearchComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0_
         /**
          * @suppress {msgDescriptions}
          */
-        const MSG_EXTERNAL_3411517965707112535$$LIBS_EXPLORE_SRC_LIB_EXPLORE_SEARCH_COMPONENT_TS___0 = goog.getMsg(" No matches found ");
-        i18n_1 = MSG_EXTERNAL_3411517965707112535$$LIBS_EXPLORE_SRC_LIB_EXPLORE_SEARCH_COMPONENT_TS___0;
+        const MSG_EXTERNAL_3411517965707112535$$LIBS_EXPLORE_SRC_LIB_EXPLORE_SEARCH_COMPONENT_TS_1 = goog.getMsg(" No matches found ");
+        i18n_1 = MSG_EXTERNAL_3411517965707112535$$LIBS_EXPLORE_SRC_LIB_EXPLORE_SEARCH_COMPONENT_TS_1;
       } else {
         i18n_1 = $localize`:␟0c720c4e60410fcfcd8582a32297bdd397620830␟3411517965707112535: No matches found `;
       }
-      return [["icon", "", "matRipple", "", 1, "bg-base-200", "m-2", 3, "resize", "click"], ["button", ""], ["role", "search", "tabindex", "0", "matRipple", "", "matAutocompleteOrigin", "", 1, "absolute", "top-1/2", "-translate-y-1/2", "bg-base-100", "flex", "items-center", "z-10", "overflow-hidden", "outline-none", "px-4", "max-w-[calc(100vw-7rem)]", 3, "click"], ["origin", "matAutocompleteOrigin"], ["keyboard", "", "placeholder", i18n_0, 1, "flex-1", "text-base", "border-none", "outline-none", 3, "ngModel", "matAutocomplete", "matAutocompleteConnectedTo", "ngModelChange", "blur"], ["input", ""], ["class", "mr-2", 3, "diameter", 4, "ngIf"], ["auto", "matAutocomplete"], [4, "ngIf"], [1, "mr-2", 3, "diameter"], ["class", "pointer-events-none", 4, "ngIf"], [3, "value", 4, "ngFor", "ngForOf"], [1, "pointer-events-none"], i18n_1, [3, "value"], [1, "flex", "items-center", "leading-tight", "w-[22rem]", "max-w-[calc(100vw-2rem)]"], [1, "flex-1", "w-1/2", "overflow-hidden"], [1, "truncate", "w-full"], [1, "text-xs"], [1, "text-xs", "font-bold", "p-2", "capitalize", "text-white", "bg-base-300", "rounded"]];
+      return [["button", ""], ["origin", "matAutocompleteOrigin"], ["input", ""], ["auto", "matAutocomplete"], i18n_1, ["icon", "", "matRipple", "", 1, "bg-base-200", "m-2", 3, "resize", "click"], ["role", "search", "tabindex", "0", "matRipple", "", "matAutocompleteOrigin", "", 1, "absolute", "top-1/2", "-translate-y-1/2", "bg-base-100", "flex", "items-center", "z-10", "overflow-hidden", "outline-none", "px-4", "max-w-[calc(100vw-7rem)]", 3, "click"], ["keyboard", "", "placeholder", i18n_0, 1, "flex-1", "text-base", "border-none", "outline-none", 3, "ngModelChange", "blur", "ngModel", "matAutocomplete", "matAutocompleteConnectedTo"], ["class", "mr-2", 3, "diameter", 4, "ngIf"], [4, "ngIf"], [1, "mr-2", 3, "diameter"], ["class", "pointer-events-none", 4, "ngIf"], [3, "value", 4, "ngFor", "ngForOf"], [1, "pointer-events-none"], [3, "value"], [1, "flex", "items-center", "leading-tight", "w-[22rem]", "max-w-[calc(100vw-2rem)]"], [1, "flex-1", "w-1/2", "overflow-hidden"], [1, "truncate", "w-full"], [1, "text-xs"], [1, "text-xs", "font-bold", "p-2", "capitalize", "text-white", "bg-base-300", "rounded"]];
     },
     template: function ExploreSearchComponent_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "button", 0, 1);
+        const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "button", 5, 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("resize", function ExploreSearchComponent_Template_button_resize_0_listener() {
-          return ctx.checkButtonPosition();
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r1);
+          return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx.checkButtonPosition());
         }, false, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresolveWindow"])("click", function ExploreSearchComponent_Template_button_click_0_listener($event) {
-          return ctx.show ? ctx.closeSearch($event) : ctx.showSearch();
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r1);
+          return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx.show ? ctx.closeSearch($event) : ctx.showSearch());
         });
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "app-icon");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "div", 2, 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "div", 6, 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ExploreSearchComponent_Template_div_click_4_listener() {
-          return ctx.focusInput();
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r1);
+          return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx.focusInput());
         });
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](6, "input", 4, 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](6, "input", 7, 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtwoWayListener"]("ngModelChange", function ExploreSearchComponent_Template_input_ngModelChange_6_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtwoWayBindingSet"](ctx.search_str, $event) || (ctx.search_str = $event);
+          return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"]($event);
+        });
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("ngModelChange", function ExploreSearchComponent_Template_input_ngModelChange_6_listener($event) {
-          return ctx.search_str = $event;
-        })("ngModelChange", function ExploreSearchComponent_Template_input_ngModelChange_6_listener($event) {
-          return ctx.setItem($event);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r1);
+          return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx.setItem($event));
         })("blur", function ExploreSearchComponent_Template_input_blur_6_listener() {
-          return ctx.show = !!ctx.search_str;
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r1);
+          return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx.show = !!ctx.search_str);
         });
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](8, ExploreSearchComponent_mat_spinner_8_Template, 1, 1, "mat-spinner", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](8, ExploreSearchComponent_mat_spinner_8_Template, 1, 1, "mat-spinner", 8);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](9, "async");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "mat-autocomplete", null, 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](12, ExploreSearchComponent_ng_container_12_Template, 6, 10, "ng-container", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "mat-autocomplete", null, 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](12, ExploreSearchComponent_ng_container_12_Template, 6, 10, "ng-container", 9);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](13, "async");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
       }
       if (rf & 2) {
-        const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵreference"](5);
-        const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵreference"](11);
+        const origin_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵreference"](5);
+        const auto_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵreference"](11);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](ctx.show || ctx.search_str ? "close" : "search");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("right-0", ctx.right_size)("-translate-x-14", ctx.right_size)("left-0", !ctx.right_size)("translate-x-14", !ctx.right_size)("show", ctx.show || ctx.search_str);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngModel", ctx.search_str)("matAutocomplete", _r4)("matAutocompleteConnectedTo", _r1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtwoWayProperty"]("ngModel", ctx.search_str);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("matAutocomplete", auto_r5)("matAutocompleteConnectedTo", origin_r4);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](9, 16, ctx.loading));
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
@@ -1946,7 +1958,7 @@ class ExploreSearchComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0_
 
 /***/ }),
 
-/***/ 67178:
+/***/ 35446:
 /*!********************************************************!*\
   !*** ./libs/explore/src/lib/explore-search.service.ts ***!
   \********************************************************/
@@ -1956,25 +1968,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ExploreSearchService: () => (/* binding */ ExploreSearchService)
 /* harmony export */ });
-/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
-/* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/ts-client */ 64331);
-/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/common */ 57314);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ 70462);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! rxjs */ 9681);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! rxjs */ 64555);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 85046);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 36520);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ 47422);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs/operators */ 680);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs/operators */ 95933);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs/operators */ 15746);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! rxjs/operators */ 58175);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! rxjs/operators */ 17627);
-/* harmony import */ var libs_spaces_src_lib_space_class__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! libs/spaces/src/lib/space.class */ 63362);
-/* harmony import */ var libs_users_src_lib_staff_fn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! libs/users/src/lib/staff.fn */ 48675);
-/* harmony import */ var libs_organisation_src_lib_organisation_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 38203);
-/* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @placeos/organisation */ 5745);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/core */ 61699);
+/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
+/* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/ts-client */ 35713);
+/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/common */ 22797);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ 90521);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! rxjs */ 71536);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! rxjs */ 68824);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 8627);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 71963);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ 35443);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs/operators */ 7841);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs/operators */ 19803);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs/operators */ 66000);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! rxjs/operators */ 29314);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! rxjs/operators */ 57871);
+/* harmony import */ var libs_spaces_src_lib_space_class__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! libs/spaces/src/lib/space.class */ 30735);
+/* harmony import */ var libs_users_src_lib_staff_fn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! libs/users/src/lib/staff.fn */ 2372);
+/* harmony import */ var libs_organisation_src_lib_organisation_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
+/* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @placeos/organisation */ 2510);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/core */ 37580);
 
 
 
@@ -2126,7 +2138,7 @@ class ExploreSearchService {
 
 /***/ }),
 
-/***/ 37952:
+/***/ 79303:
 /*!***************************************************************!*\
   !*** ./libs/explore/src/lib/explore-sensor-info.component.ts ***!
   \***************************************************************/
@@ -2136,13 +2148,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ExploreSensorInfoComponent: () => (/* binding */ ExploreSensorInfoComponent)
 /* harmony export */ });
-/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/common */ 57314);
-/* harmony import */ var _placeos_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/components */ 24815);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 26575);
-/* harmony import */ var _components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 94888);
-/* harmony import */ var _components_src_lib_custom_tooltip_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/src/lib/custom-tooltip.component */ 33884);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/core */ 55309);
+/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/common */ 22797);
+/* harmony import */ var _placeos_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/components */ 51588);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
+/* harmony import */ var _components_src_lib_custom_tooltip_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/src/lib/custom-tooltip.component */ 22238);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/core */ 74646);
 
 
 
@@ -2160,9 +2172,9 @@ function ExploreSensorInfoComponent_ng_template_3_div_1_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](2);
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("", ctx_r2.temp, "\u02DAF");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("", ctx_r0.temp, "\u02DAF");
   }
 }
 function ExploreSensorInfoComponent_ng_template_3_div_2_Template(rf, ctx) {
@@ -2175,9 +2187,9 @@ function ExploreSensorInfoComponent_ng_template_3_div_2_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](2);
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("", ctx_r3.humidity, "%");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("", ctx_r0.humidity, "%");
   }
 }
 function ExploreSensorInfoComponent_ng_template_3_div_3_Template(rf, ctx) {
@@ -2226,17 +2238,17 @@ class ExploreSensorInfoComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
     features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵInheritDefinitionFeature"]],
     decls: 5,
     vars: 1,
-    consts: [["icon", "", "matRipple", "", "customTooltip", "", "yPosition", "center", "xPosition", "center", 1, "absolute", "top-1/2", "left-1/2", "w-7", "h-7", "min-w-0", "-translate-x-1/2", "-translate-y-1/2", "bg-base-100", "shadow", "pointer-events-auto", 3, "content"], ["stats", ""], [1, "absolute", "top-1/2", "left-1/2", "-translate-x-1/2", "-translate-y-1/2", "bg-base-100", "rounded-lg", "border", "border-base-200", "p-2", "text-xl"], ["class", "flex items-center space-x-2 whitespace-nowrap pr-2", 4, "ngIf"], ["class", "absolute top-0 right-0 rounded-full translate-x-1/2 -translate-y-1/2 bg-base-100 border border-base-200", 4, "ngIf"], [1, "flex", "items-center", "space-x-2", "whitespace-nowrap", "pr-2"], [1, ""], [1, "absolute", "top-0", "right-0", "rounded-full", "translate-x-1/2", "-translate-y-1/2", "bg-base-100", "border", "border-base-200"], [1, "text-error", "text-xl"]],
+    consts: [["stats", ""], ["icon", "", "matRipple", "", "customTooltip", "", "yPosition", "center", "xPosition", "center", 1, "absolute", "top-1/2", "left-1/2", "w-7", "h-7", "min-w-0", "-translate-x-1/2", "-translate-y-1/2", "bg-base-100", "shadow", "pointer-events-auto", 3, "content"], [1, "absolute", "top-1/2", "left-1/2", "-translate-x-1/2", "-translate-y-1/2", "bg-base-100", "rounded-lg", "border", "border-base-200", "p-2", "text-xl"], ["class", "flex items-center space-x-2 whitespace-nowrap pr-2", 4, "ngIf"], ["class", "absolute top-0 right-0 rounded-full translate-x-1/2 -translate-y-1/2 bg-base-100 border border-base-200", 4, "ngIf"], [1, "flex", "items-center", "space-x-2", "whitespace-nowrap", "pr-2"], [1, ""], [1, "absolute", "top-0", "right-0", "rounded-full", "translate-x-1/2", "-translate-y-1/2", "bg-base-100", "border", "border-base-200"], [1, "text-error", "text-xl"]],
     template: function ExploreSensorInfoComponent_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "button", 0)(1, "app-icon");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "button", 1)(1, "app-icon");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, " visibility ");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](3, ExploreSensorInfoComponent_ng_template_3_Template, 4, 3, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](3, ExploreSensorInfoComponent_ng_template_3_Template, 4, 3, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplateRefExtractor"]);
       }
       if (rf & 2) {
-        const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵreference"](4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("content", _r1);
+        const stats_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵreference"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("content", stats_r2);
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf, _components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_2__.IconComponent, _components_src_lib_custom_tooltip_component__WEBPACK_IMPORTED_MODULE_3__.CustomTooltipComponent, _angular_material_core__WEBPACK_IMPORTED_MODULE_6__.MatRipple]
@@ -2245,7 +2257,7 @@ class ExploreSensorInfoComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
 
 /***/ }),
 
-/***/ 74293:
+/***/ 61369:
 /*!*******************************************************!*\
   !*** ./libs/explore/src/lib/explore-zones.service.ts ***!
   \*******************************************************/
@@ -2255,22 +2267,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ExploreZonesService: () => (/* binding */ ExploreZonesService)
 /* harmony export */ });
-/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
-/* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/ts-client */ 64331);
-/* harmony import */ var _placeos_svg_viewer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/svg-viewer */ 65519);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs/operators */ 85046);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs/operators */ 47422);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs/operators */ 95933);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! rxjs/operators */ 17627);
-/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/common */ 57314);
-/* harmony import */ var libs_organisation_src_lib_organisation_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 38203);
-/* harmony import */ var _explore_state_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./explore-state.service */ 70855);
-/* harmony import */ var _explore_spaces_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./explore-spaces.service */ 9229);
-/* harmony import */ var _explore_sensor_info_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./explore-sensor-info.component */ 37952);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs */ 70462);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs */ 64555);
-/* harmony import */ var libs_components_src_lib_map_canvas_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! libs/components/src/lib/map-canvas.component */ 7145);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/core */ 61699);
+/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
+/* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/ts-client */ 35713);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ 8627);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs/operators */ 35443);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs/operators */ 19803);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs/operators */ 57871);
+/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/common */ 22797);
+/* harmony import */ var libs_organisation_src_lib_organisation_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
+/* harmony import */ var _explore_state_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./explore-state.service */ 12455);
+/* harmony import */ var _explore_spaces_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./explore-spaces.service */ 65897);
+/* harmony import */ var _explore_sensor_info_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./explore-sensor-info.component */ 79303);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ 90521);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs */ 68824);
+/* harmony import */ var libs_components_src_lib_map_canvas_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! libs/components/src/lib/map-canvas.component */ 37558);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/core */ 37580);
 
 
 
@@ -2285,8 +2296,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-class ExploreZonesService extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__.AsyncHandler {
+class ExploreZonesService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.AsyncHandler {
   constructor(_state, _org, _settings) {
     super();
     this._state = _state;
@@ -2301,16 +2311,16 @@ class ExploreZonesService extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__.A
     this._draw = {};
     this._points = {};
     this._features = [];
-    this._polygons$ = new rxjs__WEBPACK_IMPORTED_MODULE_9__.BehaviorSubject([]);
-    this._bind = (0,rxjs__WEBPACK_IMPORTED_MODULE_10__.combineLatest)([this._org.active_building, this._state.level, this._state.options]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.filter)(([bld, lvl, {
+    this._polygons$ = new rxjs__WEBPACK_IMPORTED_MODULE_8__.BehaviorSubject([]);
+    this._bind = (0,rxjs__WEBPACK_IMPORTED_MODULE_9__.combineLatest)([this._org.active_building, this._state.level, this._state.options]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.filter)(([bld, lvl, {
       is_public
-    }]) => !!bld && !!lvl && !is_public), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_12__.map)(([_, lvl]) => {
+    }]) => !!bld && !!lvl && !is_public), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.map)(([_, lvl]) => {
       this._statuses = {};
       let system_id = this._org.binding('area_management');
       if (!system_id) return;
       const bind_areas = (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_1__.getModule)(system_id, 'AreaManagement').binding(`${lvl.id}:areas`);
       const bind_zone = (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_1__.getModule)(system_id, 'AreaManagement').binding(`${lvl.id}`);
-      const zones = (0,rxjs__WEBPACK_IMPORTED_MODULE_10__.combineLatest)([bind_areas.listen(), bind_zone.listen()]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.debounceTime)(100), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_12__.map)(([a, z]) => [...(a?.value || []), ...(z?.value || []).filter(_ => _.location === 'area')]));
+      const zones = (0,rxjs__WEBPACK_IMPORTED_MODULE_9__.combineLatest)([bind_areas.listen(), bind_zone.listen()]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_12__.debounceTime)(100), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.map)(([a, z]) => [...(a?.value || []), ...(z?.value || []).filter(_ => _.location === 'area')]));
       this.subscription(`zones-status`, zones.subscribe(l => this.parseData(l)));
       this.subscription('binding', bind_areas.bind());
       this.subscription('zone-binding', bind_zone.bind());
@@ -2320,7 +2330,7 @@ class ExploreZonesService extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__.A
   init() {
     var _this = this;
     return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      yield _this._org.initialised.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_14__.first)(_ => _)).toPromise();
+      yield _this._org.initialised.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.first)(_ => _)).toPromise();
       const zone_metadata = yield Promise.all(_this._org.levels.map(bld => (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_1__.showMetadata)(bld.id, 'map_regions').toPromise()));
       _this._area_list = [];
       for (const zone of zone_metadata) {
@@ -2352,7 +2362,7 @@ class ExploreZonesService extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__.A
           x: 0.5,
           y: 0.5
         },
-        content: libs_components_src_lib_map_canvas_component__WEBPACK_IMPORTED_MODULE_8__.MapCanvasComponent,
+        content: libs_components_src_lib_map_canvas_component__WEBPACK_IMPORTED_MODULE_7__.MapCanvasComponent,
         data: {
           polygons$: _this._polygons$,
           draw_points: false,
@@ -2394,7 +2404,7 @@ class ExploreZonesService extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__.A
         features.push({
           track_id: `sensors:${id}`,
           location: this._location[id],
-          content: _explore_sensor_info_component__WEBPACK_IMPORTED_MODULE_7__.ExploreSensorInfoComponent,
+          content: _explore_sensor_info_component__WEBPACK_IMPORTED_MODULE_6__.ExploreSensorInfoComponent,
           data: {
             id,
             temp: zone.temperature || 10,
@@ -2414,7 +2424,7 @@ class ExploreZonesService extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__.A
     const colours = this._settings.get('app.explore.colors') || {};
     const polygons = [];
     for (const zone_id in this._statuses) {
-      const colour = colours[`zone-${this._statuses[zone_id]}`] || colours[`${this._statuses[zone_id]}`] || _explore_spaces_service__WEBPACK_IMPORTED_MODULE_6__.DEFAULT_COLOURS[`${this._statuses[zone_id]}`];
+      const colour = colours[`zone-${this._statuses[zone_id]}`] || colours[`${this._statuses[zone_id]}`] || _explore_spaces_service__WEBPACK_IMPORTED_MODULE_5__.DEFAULT_COLOURS[`${this._statuses[zone_id]}`];
       if (this._draw[zone_id]) {
         polygons.push({
           name: zone_id,
@@ -2433,9 +2443,9 @@ class ExploreZonesService extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__.A
     this._state.setStyles('zones-styles', style_map);
   }
   static #_ = this.ɵfac = function ExploreZonesService_Factory(t) {
-    return new (t || ExploreZonesService)(_angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵinject"](_explore_state_service__WEBPACK_IMPORTED_MODULE_5__.ExploreStateService), _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵinject"](libs_organisation_src_lib_organisation_service__WEBPACK_IMPORTED_MODULE_4__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵinject"](_placeos_common__WEBPACK_IMPORTED_MODULE_3__.SettingsService));
+    return new (t || ExploreZonesService)(_angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵinject"](_explore_state_service__WEBPACK_IMPORTED_MODULE_4__.ExploreStateService), _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵinject"](libs_organisation_src_lib_organisation_service__WEBPACK_IMPORTED_MODULE_3__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵinject"](_placeos_common__WEBPACK_IMPORTED_MODULE_2__.SettingsService));
   };
-  static #_2 = this.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵdefineInjectable"]({
+  static #_2 = this.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdefineInjectable"]({
     token: ExploreZonesService,
     factory: ExploreZonesService.ɵfac
   });
@@ -2460,7 +2470,7 @@ function getCenterPoint(points) {
 
 /***/ }),
 
-/***/ 92791:
+/***/ 69801:
 /*!****************************************************************!*\
   !*** ./libs/explore/src/lib/explore-zoom-control.component.ts ***!
   \****************************************************************/
@@ -2470,11 +2480,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ExploreZoomControlComponent: () => (/* binding */ ExploreZoomControlComponent)
 /* harmony export */ });
-/* harmony import */ var _explore_state_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./explore-state.service */ 70855);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 94888);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/core */ 55309);
-/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/tooltip */ 60702);
+/* harmony import */ var _explore_state_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./explore-state.service */ 12455);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/core */ 74646);
+/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/tooltip */ 80640);
 
 
 
@@ -2564,7 +2574,7 @@ class ExploreZoomControlComponent {
 
 /***/ }),
 
-/***/ 95112:
+/***/ 42434:
 /*!************************************************!*\
   !*** ./libs/explore/src/lib/explore.module.ts ***!
   \************************************************/
@@ -2574,28 +2584,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   SharedExploreModule: () => (/* binding */ SharedExploreModule)
 /* harmony export */ });
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/common */ 26575);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/forms */ 28849);
-/* harmony import */ var _placeos_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/components */ 24815);
-/* harmony import */ var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/slide-toggle */ 59293);
-/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/cdk/overlay */ 72698);
-/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/cdk/portal */ 83517);
-/* harmony import */ var libs_form_fields_src_lib_form_fields_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! libs/form-fields/src/lib/form-fields.module */ 46568);
-/* harmony import */ var libs_bookings_src_lib_bookings_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! libs/bookings/src/lib/bookings.module */ 96845);
-/* harmony import */ var _explore_map_control_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./explore-map-control.component */ 46519);
-/* harmony import */ var _explore_map_view_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./explore-map-view.component */ 8458);
-/* harmony import */ var _explore_search_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./explore-search.component */ 37109);
-/* harmony import */ var _explore_space_info_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./explore-space-info.component */ 46967);
-/* harmony import */ var _explore_zoom_control_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./explore-zoom-control.component */ 92791);
-/* harmony import */ var _explore_device_info_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./explore-device-info.component */ 17625);
-/* harmony import */ var _explore_booking_modal_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./explore-booking-modal.component */ 2182);
-/* harmony import */ var _explore_desk_info_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./explore-desk-info.component */ 90141);
-/* harmony import */ var _set_datetime_modal_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./set-datetime-modal.component */ 80011);
-/* harmony import */ var _explore_book_qr_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./explore-book-qr.component */ 97015);
-/* harmony import */ var _explore_sensor_info_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./explore-sensor-info.component */ 37952);
-/* harmony import */ var _explore_locker_bank_info_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./explore-locker-bank-info.component */ 4620);
-/* harmony import */ var _explore_locker_bank_modal_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./explore-locker-bank-modal.component */ 90151);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/core */ 61699);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/forms */ 34456);
+/* harmony import */ var _placeos_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/components */ 51588);
+/* harmony import */ var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/slide-toggle */ 8827);
+/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/cdk/overlay */ 81570);
+/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/cdk/portal */ 9168);
+/* harmony import */ var libs_form_fields_src_lib_form_fields_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! libs/form-fields/src/lib/form-fields.module */ 77066);
+/* harmony import */ var libs_bookings_src_lib_bookings_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! libs/bookings/src/lib/bookings.module */ 38742);
+/* harmony import */ var _explore_map_control_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./explore-map-control.component */ 60468);
+/* harmony import */ var _explore_map_view_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./explore-map-view.component */ 83134);
+/* harmony import */ var _explore_search_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./explore-search.component */ 64114);
+/* harmony import */ var _explore_space_info_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./explore-space-info.component */ 48303);
+/* harmony import */ var _explore_zoom_control_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./explore-zoom-control.component */ 69801);
+/* harmony import */ var _explore_device_info_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./explore-device-info.component */ 51207);
+/* harmony import */ var _explore_booking_modal_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./explore-booking-modal.component */ 76301);
+/* harmony import */ var _explore_desk_info_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./explore-desk-info.component */ 82882);
+/* harmony import */ var _set_datetime_modal_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./set-datetime-modal.component */ 27146);
+/* harmony import */ var _explore_book_qr_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./explore-book-qr.component */ 72213);
+/* harmony import */ var _explore_sensor_info_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./explore-sensor-info.component */ 79303);
+/* harmony import */ var _explore_locker_bank_info_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./explore-locker-bank-info.component */ 84810);
+/* harmony import */ var _explore_locker_bank_modal_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./explore-locker-bank-modal.component */ 50795);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/core */ 37580);
 
 
 
@@ -2641,7 +2651,7 @@ class SharedExploreModule {
 
 /***/ }),
 
-/***/ 74608:
+/***/ 11874:
 /*!*****************************************!*\
   !*** ./libs/explore/src/lib/explore.ts ***!
   \*****************************************/
@@ -2663,18 +2673,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   ExploreZoomControlComponent: () => (/* reexport safe */ _explore_zoom_control_component__WEBPACK_IMPORTED_MODULE_9__.ExploreZoomControlComponent),
 /* harmony export */   SharedExploreModule: () => (/* reexport safe */ _explore_module__WEBPACK_IMPORTED_MODULE_11__.SharedExploreModule)
 /* harmony export */ });
-/* harmony import */ var _explore_desks_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./explore-desks.service */ 2102);
-/* harmony import */ var _explore_map_control_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./explore-map-control.component */ 46519);
-/* harmony import */ var _explore_map_view_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./explore-map-view.component */ 8458);
-/* harmony import */ var _explore_search_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./explore-search.component */ 37109);
-/* harmony import */ var _explore_search_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./explore-search.service */ 67178);
-/* harmony import */ var _explore_space_info_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./explore-space-info.component */ 46967);
-/* harmony import */ var _explore_spaces_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./explore-spaces.service */ 9229);
-/* harmony import */ var _explore_state_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./explore-state.service */ 70855);
-/* harmony import */ var _explore_zones_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./explore-zones.service */ 74293);
-/* harmony import */ var _explore_zoom_control_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./explore-zoom-control.component */ 92791);
-/* harmony import */ var _explore_parking_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./explore-parking.service */ 51946);
-/* harmony import */ var _explore_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./explore.module */ 95112);
+/* harmony import */ var _explore_desks_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./explore-desks.service */ 61104);
+/* harmony import */ var _explore_map_control_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./explore-map-control.component */ 60468);
+/* harmony import */ var _explore_map_view_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./explore-map-view.component */ 83134);
+/* harmony import */ var _explore_search_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./explore-search.component */ 64114);
+/* harmony import */ var _explore_search_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./explore-search.service */ 35446);
+/* harmony import */ var _explore_space_info_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./explore-space-info.component */ 48303);
+/* harmony import */ var _explore_spaces_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./explore-spaces.service */ 65897);
+/* harmony import */ var _explore_state_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./explore-state.service */ 12455);
+/* harmony import */ var _explore_zones_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./explore-zones.service */ 61369);
+/* harmony import */ var _explore_zoom_control_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./explore-zoom-control.component */ 69801);
+/* harmony import */ var _explore_parking_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./explore-parking.service */ 34498);
+/* harmony import */ var _explore_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./explore.module */ 42434);
 
 
 
@@ -2690,7 +2700,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 80011:
+/***/ 27146:
 /*!**************************************************************!*\
   !*** ./libs/explore/src/lib/set-datetime-modal.component.ts ***!
   \**************************************************************/
@@ -2700,17 +2710,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   SetDatetimeModalComponent: () => (/* binding */ SetDatetimeModalComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ 28849);
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/dialog */ 17401);
-/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/common */ 57314);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 61699);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ 26575);
-/* harmony import */ var _components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 94888);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/core */ 55309);
-/* harmony import */ var _form_fields_src_lib_date_field_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../form-fields/src/lib/date-field.component */ 46362);
-/* harmony import */ var _form_fields_src_lib_duration_field_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../form-fields/src/lib/duration-field.component */ 28442);
-/* harmony import */ var _form_fields_src_lib_time_field_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../form-fields/src/lib/time-field.component */ 59590);
-/* harmony import */ var _form_fields_src_lib_user_search_field_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../form-fields/src/lib/user-search-field.component */ 20576);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ 34456);
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/dialog */ 12587);
+/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/common */ 22797);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/core */ 74646);
+/* harmony import */ var _form_fields_src_lib_date_field_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../form-fields/src/lib/date-field.component */ 19608);
+/* harmony import */ var _form_fields_src_lib_duration_field_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../form-fields/src/lib/duration-field.component */ 83476);
+/* harmony import */ var _form_fields_src_lib_time_field_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../form-fields/src/lib/time-field.component */ 81413);
+/* harmony import */ var _form_fields_src_lib_user_search_field_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../form-fields/src/lib/user-search-field.component */ 18000);
 
 
 
@@ -2725,6 +2735,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const _c0 = () => ({
+  standalone: true
+});
 function SetDatetimeModalComponent_main_6_div_1_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 7)(1, "div", 13)(2, "label");
@@ -2749,12 +2762,9 @@ function SetDatetimeModalComponent_main_6_div_2_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
   }
 }
-const _c0 = () => ({
-  standalone: true
-});
 function SetDatetimeModalComponent_main_6_Template(rf, ctx) {
   if (rf & 1) {
-    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+    const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "main", 5);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](1, SetDatetimeModalComponent_main_6_div_1_Template, 6, 1, "div", 6)(2, SetDatetimeModalComponent_main_6_div_2_Template, 5, 0, "div", 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](3, "div", 7)(4, "div", 8)(5, "label");
@@ -2768,9 +2778,9 @@ function SetDatetimeModalComponent_main_6_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](13, "a-time-field", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("ngModelChange", function SetDatetimeModalComponent_main_6_Template_a_time_field_ngModelChange_13_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r4);
-      const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵresetView"](ctx_r3.form.patchValue({
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r1);
+      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵresetView"](ctx_r1.form.patchValue({
         date: $event
       }));
     });
@@ -2782,19 +2792,19 @@ function SetDatetimeModalComponent_main_6_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
-    let tmp_7_0;
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("formGroup", ctx_r0.form);
+    let tmp_8_0;
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("formGroup", ctx_r1.form);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r0.resource);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r1.resource);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r0.host);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", ctx_r1.host);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("to", ctx_r0.book_until);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("to", ctx_r1.book_until);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngModel", ctx_r0.form.value.date)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](12, _c0))("use_24hr", ctx_r0.use_24hr_time);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngModel", ctx_r1.form.value.date)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](12, _c0))("use_24hr", ctx_r1.use_24hr_time);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("time", (tmp_7_0 = ctx_r0.form.get("date")) == null ? null : tmp_7_0.value)("max", 10 * 60)("min", 60)("step", 60)("use_24hr", ctx_r0.use_24hr_time);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("time", (tmp_8_0 = ctx_r1.form.get("date")) == null ? null : tmp_8_0.value)("max", 10 * 60)("min", 60)("step", 60)("use_24hr", ctx_r1.use_24hr_time);
   }
 }
 class SetDatetimeModalComponent {
@@ -2821,7 +2831,7 @@ class SetDatetimeModalComponent {
     selectors: [["set-datetime-modal"]],
     decls: 10,
     vars: 2,
-    consts: [["classs", "flex items-center justify-between"], ["icon", "", "mat-dialog-close", ""], ["class", "w-[24rem] max-w-[85vw] pt-4", 3, "formGroup", 4, "ngIf"], [1, "w-full", "p-2", "border-t", "border-base-200", "flex", "items-center", "justify-center"], ["btn", "", "matRipple", "", 1, "w-32", 3, "mat-dialog-close"], [1, "w-[24rem]", "max-w-[85vw]", "pt-4", 3, "formGroup"], ["class", "flex flex-col sm:flex-row space-x-0 sm:space-x-2 w-[640px] max-w-[calc(100%-2rem)] mx-auto", 4, "ngIf"], [1, "flex", "flex-col", "sm:flex-row", "space-x-0", "sm:space-x-2", "w-[640px]", "max-w-[calc(100%-2rem)]", "mx-auto"], [1, "flex", "flex-col", "flex-1", "w-full", "sm:w-1/4"], ["formControlName", "date", 3, "to"], [1, "flex", "flex-col", "flex-1", "w-full", "sm:w-1/3"], [3, "ngModel", "ngModelOptions", "use_24hr", "ngModelChange"], ["formControlName", "duration", 3, "time", "max", "min", "step", "use_24hr"], [1, "flex", "flex-col", "flex-1", "w-full", "sm:w-1/4", "mb-2"], [1, "px-4", "py-3", "border", "border-base-200", "rounded", "w-full", "mb-4"], ["formControlName", "user"]],
+    consts: [["classs", "flex items-center justify-between"], ["icon", "", "mat-dialog-close", ""], ["class", "w-[24rem] max-w-[85vw] pt-4", 3, "formGroup", 4, "ngIf"], [1, "w-full", "p-2", "border-t", "border-base-200", "flex", "items-center", "justify-center"], ["btn", "", "matRipple", "", 1, "w-32", 3, "mat-dialog-close"], [1, "w-[24rem]", "max-w-[85vw]", "pt-4", 3, "formGroup"], ["class", "flex flex-col sm:flex-row space-x-0 sm:space-x-2 w-[640px] max-w-[calc(100%-2rem)] mx-auto", 4, "ngIf"], [1, "flex", "flex-col", "sm:flex-row", "space-x-0", "sm:space-x-2", "w-[640px]", "max-w-[calc(100%-2rem)]", "mx-auto"], [1, "flex", "flex-col", "flex-1", "w-full", "sm:w-1/4"], ["formControlName", "date", 3, "to"], [1, "flex", "flex-col", "flex-1", "w-full", "sm:w-1/3"], [3, "ngModelChange", "ngModel", "ngModelOptions", "use_24hr"], ["formControlName", "duration", 3, "time", "max", "min", "step", "use_24hr"], [1, "flex", "flex-col", "flex-1", "w-full", "sm:w-1/4", "mb-2"], [1, "px-4", "py-3", "border", "border-base-200", "rounded", "w-full", "mb-4"], ["formControlName", "user"]],
     template: function SetDatetimeModalComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "header", 0)(1, "h2");
@@ -2844,6 +2854,89 @@ class SetDatetimeModalComponent {
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf, _components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_1__.IconComponent, _angular_material_core__WEBPACK_IMPORTED_MODULE_10__.MatRipple, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_8__.MatDialogClose, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgModel, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControlName, _form_fields_src_lib_date_field_component__WEBPACK_IMPORTED_MODULE_2__.DateFieldComponent, _form_fields_src_lib_duration_field_component__WEBPACK_IMPORTED_MODULE_3__.DurationFieldComponent, _form_fields_src_lib_time_field_component__WEBPACK_IMPORTED_MODULE_4__.TimeFieldComponent, _form_fields_src_lib_user_search_field_component__WEBPACK_IMPORTED_MODULE_5__.UserSearchFieldComponent]
   });
+}
+
+/***/ }),
+
+/***/ 63870:
+/*!*********************************!*\
+  !*** ./libs/users/src/index.ts ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   FindAvailabilityModalComponent: () => (/* reexport safe */ _lib_find_availability_modal_find_availability_modal_component__WEBPACK_IMPORTED_MODULE_2__.FindAvailabilityModalComponent),
+/* harmony export */   GuestUser: () => (/* reexport safe */ _lib_user_class__WEBPACK_IMPORTED_MODULE_5__.GuestUser),
+/* harmony export */   MapLocation: () => (/* reexport safe */ _lib_location_class__WEBPACK_IMPORTED_MODULE_4__.MapLocation),
+/* harmony export */   NewUserModalComponent: () => (/* reexport safe */ _lib_new_user_modal_component__WEBPACK_IMPORTED_MODULE_1__.NewUserModalComponent),
+/* harmony export */   SharedUsersModule: () => (/* reexport safe */ _lib_users_module__WEBPACK_IMPORTED_MODULE_0__.SharedUsersModule),
+/* harmony export */   StaffUser: () => (/* reexport safe */ _lib_user_class__WEBPACK_IMPORTED_MODULE_5__.StaffUser),
+/* harmony export */   USER_DOMAIN: () => (/* reexport safe */ _lib_user_utilities__WEBPACK_IMPORTED_MODULE_6__.USER_DOMAIN),
+/* harmony export */   User: () => (/* reexport safe */ _lib_user_class__WEBPACK_IMPORTED_MODULE_5__.User),
+/* harmony export */   UserFormComponent: () => (/* reexport safe */ _lib_user_form_component__WEBPACK_IMPORTED_MODULE_3__.UserFormComponent),
+/* harmony export */   generateGuestForm: () => (/* reexport safe */ _lib_user_utilities__WEBPACK_IMPORTED_MODULE_6__.generateGuestForm),
+/* harmony export */   generateMockUser: () => (/* reexport safe */ _lib_user_utilities__WEBPACK_IMPORTED_MODULE_6__.generateMockUser),
+/* harmony export */   generateUserForm: () => (/* reexport safe */ _lib_user_utilities__WEBPACK_IMPORTED_MODULE_6__.generateUserForm),
+/* harmony export */   listGuestMeetings: () => (/* reexport safe */ _lib_guests_fn__WEBPACK_IMPORTED_MODULE_7__.listGuestMeetings),
+/* harmony export */   locateStaff: () => (/* reexport safe */ _lib_staff_fn__WEBPACK_IMPORTED_MODULE_8__.locateStaff),
+/* harmony export */   queryGuests: () => (/* reexport safe */ _lib_guests_fn__WEBPACK_IMPORTED_MODULE_7__.queryGuests),
+/* harmony export */   removeGuest: () => (/* reexport safe */ _lib_guests_fn__WEBPACK_IMPORTED_MODULE_7__.removeGuest),
+/* harmony export */   searchGuests: () => (/* reexport safe */ _lib_guests_fn__WEBPACK_IMPORTED_MODULE_7__.searchGuests),
+/* harmony export */   searchStaff: () => (/* reexport safe */ _lib_staff_fn__WEBPACK_IMPORTED_MODULE_8__.searchStaff),
+/* harmony export */   setInternalUserDomain: () => (/* reexport safe */ _lib_user_utilities__WEBPACK_IMPORTED_MODULE_6__.setInternalUserDomain),
+/* harmony export */   showGuest: () => (/* reexport safe */ _lib_guests_fn__WEBPACK_IMPORTED_MODULE_7__.showGuest),
+/* harmony export */   showStaff: () => (/* reexport safe */ _lib_staff_fn__WEBPACK_IMPORTED_MODULE_8__.showStaff),
+/* harmony export */   updateGuest: () => (/* reexport safe */ _lib_guests_fn__WEBPACK_IMPORTED_MODULE_7__.updateGuest)
+/* harmony export */ });
+/* harmony import */ var _lib_users_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/users.module */ 34426);
+/* harmony import */ var _lib_new_user_modal_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lib/new-user-modal.component */ 11543);
+/* harmony import */ var _lib_find_availability_modal_find_availability_modal_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lib/find-availability-modal/find-availability-modal.component */ 12716);
+/* harmony import */ var _lib_user_form_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lib/user-form.component */ 7111);
+/* harmony import */ var _lib_location_class__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./lib/location.class */ 74529);
+/* harmony import */ var _lib_user_class__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./lib/user.class */ 93693);
+/* harmony import */ var _lib_user_utilities__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./lib/user.utilities */ 24129);
+/* harmony import */ var _lib_guests_fn__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./lib/guests.fn */ 86039);
+/* harmony import */ var _lib_staff_fn__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./lib/staff.fn */ 2372);
+
+
+
+
+
+
+
+
+
+
+
+/***/ }),
+
+/***/ 74529:
+/*!**********************************************!*\
+  !*** ./libs/users/src/lib/location.class.ts ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MapLocation: () => (/* binding */ MapLocation)
+/* harmony export */ });
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! date-fns */ 73725);
+
+class MapLocation {
+  constructor(_data = {}) {
+    this.type = _data.type || _data.location || 'other';
+    this.position = _data.position || _data.map_id || _data.asset_id || {
+      x: _data.x / _data.map_width || 0,
+      y: _data.y / _data.map_height || 0
+    };
+    this.variance = _data.variance || 0;
+    this.last_seen = _data.last_seen || (0,date_fns__WEBPACK_IMPORTED_MODULE_0__["default"])(new Date());
+    this.level = _data.level;
+    this.building = _data.building;
+    this.at_location = !!_data.at_location;
+    this.coordinates_from = _data.coordinates_from || 'top-left';
+  }
 }
 
 /***/ })

@@ -1,15 +1,15 @@
 "use strict";
 (self["webpackChunkconcierge"] = self["webpackChunkconcierge"] || []).push([["polyfills"],{
 
-/***/ 42722:
+/***/ 34145:
 /*!*****************************************!*\
   !*** ./apps/concierge/src/polyfills.ts ***!
   \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _angular_localize_init__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/localize/init */ 74686);
-/* harmony import */ var zone_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! zone.js */ 76657);
+/* harmony import */ var _angular_localize_init__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/localize/init */ 1643);
+/* harmony import */ var zone_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! zone.js */ 74124);
 /* harmony import */ var zone_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(zone_js__WEBPACK_IMPORTED_MODULE_1__);
 /***************************************************************************************************
  * Load `$localize` onto the global scope - used if i18n tags appear in Angular templates.
@@ -66,7 +66,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 76657:
+/***/ 74124:
 /*!***********************************************!*\
   !*** ./node_modules/zone.js/fesm2015/zone.js ***!
   \***********************************************/
@@ -2761,7 +2761,7 @@ Zone.__load_patch('queueMicrotask', (global, Zone, api) => {
 
 /***/ }),
 
-/***/ 74686:
+/***/ 1643:
 /*!**********************************************************!*\
   !*** ./node_modules/@angular/localize/fesm2022/init.mjs ***!
   \**********************************************************/
@@ -2771,10 +2771,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   $localize: () => (/* reexport safe */ _angular_localize__WEBPACK_IMPORTED_MODULE_0__["ɵ$localize"])
 /* harmony export */ });
-/* harmony import */ var _angular_localize__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/localize */ 22337);
+/* harmony import */ var _angular_localize__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/localize */ 95116);
 /**
- * @license Angular v17.1.3
- * (c) 2010-2022 Google LLC. https://angular.io/
+ * @license Angular v18.0.0
+ * (c) 2010-2024 Google LLC. https://angular.io/
  * License: MIT
  */
 
@@ -2786,7 +2786,7 @@ globalThis.$localize = _angular_localize__WEBPACK_IMPORTED_MODULE_0__["ɵ$locali
 
 /***/ }),
 
-/***/ 22337:
+/***/ 95116:
 /*!**************************************************************!*\
   !*** ./node_modules/@angular/localize/fesm2022/localize.mjs ***!
   \**************************************************************/
@@ -2810,8 +2810,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ɵtranslate": () => (/* binding */ translate$1)
 /* harmony export */ });
 /**
- * @license Angular v17.1.3
- * (c) 2010-2022 Google LLC. https://angular.io/
+ * @license Angular v18.0.0
+ * (c) 2010-2024 Google LLC. https://angular.io/
  * License: MIT
  */
 
@@ -3105,7 +3105,6 @@ function hash32(view, length, c) {
   }
   return mix(a, b, c)[2];
 }
-// clang-format off
 function mix(a, b, c) {
   a -= b;
   a -= c;
@@ -3136,7 +3135,6 @@ function mix(a, b, c) {
   c ^= b >>> 15;
   return [a, b, c];
 }
-// clang-format on
 // Utils
 var Endian;
 (function (Endian) {
@@ -3585,7 +3583,7 @@ function translate(messageParts, substitutions) {
  * ```
  *
  * This format is the same as that used for `i18n` markers in Angular templates. See the
- * [Angular i18n guide](guide/i18n-common-prepare#mark-text-in-component-template).
+ * [Angular i18n guide](guide/i18n/prepare#mark-text-in-component-template).
  *
  * **Naming placeholders**
  *
@@ -3701,7 +3699,7 @@ function stripBlock(messagePart, rawMessagePart) {
 },
 /******/ __webpack_require__ => { // webpackRuntimeModules
 /******/ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-/******/ var __webpack_exports__ = (__webpack_exec__(42722));
+/******/ var __webpack_exports__ = (__webpack_exec__(34145));
 /******/ }
 ]);
 //# sourceMappingURL=polyfills.js.map
