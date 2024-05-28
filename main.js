@@ -1574,6 +1574,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 function ApplicationSidebarComponent_ng_container_1_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementContainerStart"](0);
@@ -1677,10 +1678,11 @@ function ApplicationSidebarComponent_ng_container_1_Template(rf, ctx) {
   }
 }
 class ApplicationSidebarComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0__.AsyncHandler {
-  constructor(_settings, _org) {
+  constructor(_settings, _org, _element_ref) {
     super();
     this._settings = _settings;
     this._org = _org;
+    this._element_ref = _element_ref;
     this.show_block = {};
     this.links = [{
       name: 'Bookings',
@@ -1835,6 +1837,7 @@ class ApplicationSidebarComponent extends _placeos_common__WEBPACK_IMPORTED_MODU
   ngOnInit() {
     this.updateFilteredLinks();
     this.subscription('building', this._org.active_building.subscribe(() => this.updateFilteredLinks()));
+    this.timeout('update_inview', () => this._moveActiveLinkIntoView(), 50);
   }
   updateFilteredLinks() {
     const features = this._settings.get('app.features') || [];
@@ -1861,8 +1864,16 @@ class ApplicationSidebarComponent extends _placeos_common__WEBPACK_IMPORTED_MODU
       this.filtered_links = this.filtered_links.filter(_ => _.id !== 'facilities');
     }
   }
+  _moveActiveLinkIntoView() {
+    const active_link = this._element_ref.nativeElement.querySelector('a.active');
+    if (!active_link) return;
+    active_link.scrollIntoView({
+      block: 'center',
+      behavior: 'instant'
+    });
+  }
   static #_ = this.ɵfac = function ApplicationSidebarComponent_Factory(t) {
-    return new (t || ApplicationSidebarComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_placeos_common__WEBPACK_IMPORTED_MODULE_0__.SettingsService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_1__.OrganisationService));
+    return new (t || ApplicationSidebarComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_placeos_common__WEBPACK_IMPORTED_MODULE_0__.SettingsService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_1__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_3__.ElementRef));
   };
   static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({
     type: ApplicationSidebarComponent,
@@ -12863,15 +12874,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "15666c1",
-  "hash": "15666c1",
+  "raw": "c525783",
+  "hash": "c525783",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "15666c1",
+  "suffix": "c525783",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1716868551707
+  "time": 1716868912501
 };
 /* tslint:enable */
 
