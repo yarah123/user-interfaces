@@ -1514,9 +1514,6 @@ video {
 #placeos :is(.w-\[13\.625rem\]) {
   width: 13.625rem;
 }
-#placeos :is(.w-\[15rem\]) {
-  width: 15rem;
-}
 #placeos :is(.w-\[17\.25rem\]) {
   width: 17.25rem;
 }
@@ -4592,6 +4589,9 @@ a[icon][disabled] {
 }
 #placeos mat-select [disabled=true] {
   opacity: 0.6;
+}
+#placeos mat-button-toggle mat-pseudo-checkbox {
+  display: none;
 }
 #placeos .mat-form-field-disabled {
   opacity: 0.3;
