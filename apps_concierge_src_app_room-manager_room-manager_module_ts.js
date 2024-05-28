@@ -167,7 +167,7 @@ class RoomListComponent {
     selectors: [["room-list"]],
     decls: 10,
     vars: 13,
-    consts: [["name_template", ""], ["level_template", ""], ["bool_template", ""], ["action_template", ""], [1, "absolute", "inset-0", "overflow-auto", "px-4"], ["empty", "No rooms for selected level or building", 1, "block", "min-w-[48rem]", "w-full", "h-full", 3, "dataSource", "columns", "display_column", "column_size", "template"], [1, "underline", 3, "click", "matTooltip"], [1, "rounded", "h-8", "w-8", "flex", "items-center", "justify-center", "text-2xl", "text-white", "mx-auto"], [1, "w-full", "flex", "justify-end", "space-x-2"], ["btn", "", "icon", "", "matRipple", "", "matTooltip", "Edit Room", 3, "click"]],
+    consts: [["name_template", ""], ["level_template", ""], ["bool_template", ""], ["action_template", ""], [1, "absolute", "inset-0", "overflow-auto", "px-8"], ["empty", "No rooms for selected level or building", 1, "block", "min-w-[48rem]", "w-full", "h-full", 3, "dataSource", "columns", "display_column", "column_size", "template"], [1, "underline", 3, "click", "matTooltip"], [1, "rounded", "h-8", "w-8", "flex", "items-center", "justify-center", "text-2xl", "text-white", "mx-auto"], [1, "w-full", "flex", "justify-end", "space-x-2"], ["btn", "", "icon", "", "matRipple", "", "matTooltip", "Edit Room", 3, "click"]],
     template: function RoomListComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 4);
@@ -443,7 +443,7 @@ class RoomManagerTopbarComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
     features: [_angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵInheritDefinitionFeature"]],
     decls: 16,
     vars: 6,
-    consts: [[1, "flex", "items-center", "justify-between", "p-4"], [1, "text-2xl", "font-medium"], ["btn", "", 1, "w-32", 3, "click"], [1, "flex", "items-center", "bg-base-100", "h-20", "px-4", "space-x-2"], ["appearance", "outline", 1, "no-subscript", "w-[15rem]"], ["placeholder", "All Levels", "multiple", "", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], [1, "flex-1", "w-2"], ["btn", "", "icon", "", "matRipple", "", "matTooltip", "Room Restrictions", 1, "bg-secondary", "text-secondary-content", "rounded", 3, "click"], [1, "mr-2", 3, "modelChange"], [3, "value"], [1, "flex", "flex-col-reverse"], ["class", "text-xs opacity-30", 4, "ngIf"], [1, "text-xs", "opacity-30"], [1, "opacity-0"]],
+    consts: [[1, "flex", "items-center", "justify-between", "px-8", "pt-4"], [1, "text-2xl", "font-medium"], ["btn", "", 1, "w-40", 3, "click"], [1, "flex", "items-center", "bg-base-100", "h-20", "px-8", "space-x-2"], ["appearance", "outline", 1, "no-subscript", "w-[15rem]"], ["placeholder", "All Levels", "multiple", "", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], [1, "flex-1", "w-2"], ["btn", "", "icon", "", "matRipple", "", "matTooltip", "Room Restrictions", 1, "bg-secondary", "text-secondary-content", "rounded", "h-12", "w-12", 3, "click"], [1, "mr-2", 3, "modelChange"], [3, "value"], [1, "flex", "flex-col-reverse"], ["class", "text-xs opacity-30", 4, "ngIf"], [1, "text-xs", "opacity-30"], [1, "opacity-0"]],
     template: function RoomManagerTopbarComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "div", 0)(1, "h2", 1);
