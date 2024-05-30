@@ -48,6 +48,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 function addQRCodeToBooking(booking) {
   return new _placeos_bookings__WEBPACK_IMPORTED_MODULE_2__.Booking({
     ...booking,
@@ -64,10 +65,11 @@ class DesksStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__.Asy
   nextPage() {
     this._call_next_page.next(`NEXT_${Date.now()}`);
   }
-  constructor(_org, _dialog) {
+  constructor(_org, _dialog, _settings) {
     super();
     this._org = _org;
     this._dialog = _dialog;
+    this._settings = _settings;
     this._filters = new rxjs__WEBPACK_IMPORTED_MODULE_6__.BehaviorSubject({});
     this._new_desks = new rxjs__WEBPACK_IMPORTED_MODULE_6__.BehaviorSubject([]);
     this._desk_bookings = [];
@@ -94,7 +96,7 @@ class DesksStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__.Asy
     this.setup_paging = (0,rxjs__WEBPACK_IMPORTED_MODULE_14__.combineLatest)([this._filters, this._org.initialised]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.debounceTime)(500), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_15__.tap)(([filters, loaded]) => {
       if (!loaded) return;
       const date = filters.date || Date.now();
-      const zones = !filters.zones || filters.zones.some(z => this._all_zones_keys.includes(z)) ? [this._org.building.id] : filters.zones;
+      const zones = !filters.zones || filters.zones.some(z => this._all_zones_keys.includes(z)) ? this._settings.get('app.use_region') ? this._org.buildingsForRegion().map(_ => _.id) : [this._org.building.id] : filters.zones;
       this._next_page.next(() => (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_2__.queryPagedBookings)({
         period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_16__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_17__["default"])(date)),
         period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_16__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_18__["default"])(date)),
@@ -256,7 +258,7 @@ class DesksStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__.Asy
     })();
   }
   static #_ = this.ɵfac = function DesksStateService_Factory(t) {
-    return new (t || DesksStateService)(_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵinject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_4__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵinject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_23__.MatDialog));
+    return new (t || DesksStateService)(_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵinject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_4__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵinject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_23__.MatDialog), _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵinject"](_placeos_common__WEBPACK_IMPORTED_MODULE_3__.SettingsService));
   };
   static #_2 = this.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵdefineInjectable"]({
     token: DesksStateService,

@@ -879,11 +879,16 @@ class EventsStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.As
     this.loading = this._loading.asObservable();
     /** Observable for viewed event */
     this.event = this._event.asObservable();
-    this.spaces = (0,rxjs__WEBPACK_IMPORTED_MODULE_8__.combineLatest)([this._zones, this._org.active_building.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.filter)(_ => !!_), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.distinctUntilKeyChanged)('id'))]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.debounceTime)(300), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_12__.tap)(_ => this.unsubWith('bind:')), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.switchMap)(([zone_ids]) => {
+    this.spaces = (0,rxjs__WEBPACK_IMPORTED_MODULE_8__.combineLatest)([this._zones, this._org.active_region.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.filter)(_ => !!_), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.distinctUntilKeyChanged)('id')), this._org.active_building.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.filter)(_ => !!_), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.distinctUntilKeyChanged)('id'))]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.debounceTime)(300), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_12__.tap)(_ => this.unsubWith('bind:')), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.switchMap)(([zone_ids]) => {
       this._loading.next(true);
-      if (!zone_ids?.length) zone_ids = [this._org.building?.id];
+      if (!zone_ids?.length || zone_ids[0] === this._org.region.id) {
+        zone_ids = (this._settings.get('app.use_region') ? this._org.buildingsForRegion(this._org.region).map(_ => _.id) : null) || [this._org.building?.id];
+      }
       return (0,rxjs__WEBPACK_IMPORTED_MODULE_14__.forkJoin)(zone_ids.map(id => (0,_placeos_spaces__WEBPACK_IMPORTED_MODULE_3__.requestSpacesForZone)(id)));
-    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_15__.map)(l => (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.flatten)(l)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_12__.tap)(_ => this._loading.next(false)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_16__.shareReplay)(1));
+    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_15__.map)(l => (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.flatten)(l)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_12__.tap)(_ => {
+      this._loading.next(false);
+      console.log('Spaces', _);
+    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_16__.shareReplay)(1));
     /** Obsevable for filtered list of bookings */
     this.filtered = (0,rxjs__WEBPACK_IMPORTED_MODULE_8__.combineLatest)([this._bookings, this._filters, this._date, this._period, this._zones]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_15__.map)(([events, filters, date, period, zones]) => {
       const start_fn = period === 'month' ? date_fns__WEBPACK_IMPORTED_MODULE_17__["default"] : period === 'week' ? date_fns__WEBPACK_IMPORTED_MODULE_18__["default"] : date_fns__WEBPACK_IMPORTED_MODULE_19__["default"];
@@ -905,6 +910,9 @@ class EventsStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.As
     /** Observable for list of bookings */
     this.events = (0,rxjs__WEBPACK_IMPORTED_MODULE_8__.combineLatest)([this._period, this._zones, this._date, this._poll]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.filter)(([period]) => !!period), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.debounceTime)(300), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.switchMap)(([period, zones, date]) => {
       if (!zones?.length) return (0,rxjs__WEBPACK_IMPORTED_MODULE_23__.of)([]);
+      if (zones[0] === this._org.region.id) {
+        zones = (this._settings.get('app.use_region') ? this._org.buildingsForRegion(this._org.region).map(_ => _.id) : null) || [this._org.building?.id];
+      }
       this._loading.next(true);
       const start_fn = period === 'month' ? date_fns__WEBPACK_IMPORTED_MODULE_17__["default"] : period === 'week' ? date_fns__WEBPACK_IMPORTED_MODULE_18__["default"] : date_fns__WEBPACK_IMPORTED_MODULE_19__["default"];
       const end_fn = period === 'month' ? date_fns__WEBPACK_IMPORTED_MODULE_20__["default"] : period === 'week' ? date_fns__WEBPACK_IMPORTED_MODULE_21__["default"] : date_fns__WEBPACK_IMPORTED_MODULE_22__["default"];
@@ -1566,6 +1574,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 function ApplicationSidebarComponent_ng_container_1_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementContainerStart"](0);
@@ -1669,10 +1678,11 @@ function ApplicationSidebarComponent_ng_container_1_Template(rf, ctx) {
   }
 }
 class ApplicationSidebarComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0__.AsyncHandler {
-  constructor(_settings, _org) {
+  constructor(_settings, _org, _element_ref) {
     super();
     this._settings = _settings;
     this._org = _org;
+    this._element_ref = _element_ref;
     this.show_block = {};
     this.links = [{
       name: 'Bookings',
@@ -1821,6 +1831,7 @@ class ApplicationSidebarComponent extends _placeos_common__WEBPACK_IMPORTED_MODU
   ngOnInit() {
     this.updateFilteredLinks();
     this.subscription('building', this._org.active_building.subscribe(() => this.updateFilteredLinks()));
+    this.timeout('update_inview', () => this._moveActiveLinkIntoView(), 50);
   }
   updateFilteredLinks() {
     const features = this._settings.get('app.features') || [];
@@ -1847,8 +1858,16 @@ class ApplicationSidebarComponent extends _placeos_common__WEBPACK_IMPORTED_MODU
       this.filtered_links = this.filtered_links.filter(_ => _.id !== 'facilities');
     }
   }
+  _moveActiveLinkIntoView() {
+    const active_link = this._element_ref.nativeElement.querySelector('a.active');
+    if (!active_link) return;
+    active_link.scrollIntoView({
+      block: 'center',
+      behavior: 'instant'
+    });
+  }
   static #_ = this.ɵfac = function ApplicationSidebarComponent_Factory(t) {
-    return new (t || ApplicationSidebarComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_placeos_common__WEBPACK_IMPORTED_MODULE_0__.SettingsService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_1__.OrganisationService));
+    return new (t || ApplicationSidebarComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_placeos_common__WEBPACK_IMPORTED_MODULE_0__.SettingsService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_1__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_3__.ElementRef));
   };
   static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({
     type: ApplicationSidebarComponent,
@@ -12849,15 +12868,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "63457ff",
-  "hash": "63457ff",
+  "raw": "51c7ce6",
+  "hash": "51c7ce6",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "63457ff",
+  "suffix": "51c7ce6",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1717044985322
+  "time": 1717045323755
 };
 /* tslint:enable */
 
@@ -19090,6 +19109,8 @@ class MapRendererComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.
       x: 0.5,
       y: 0.5
     };
+    /** Number of times to reset the map */
+    this.reset = 0;
     this.zoomChange = new _angular_core__WEBPACK_IMPORTED_MODULE_6__.EventEmitter();
     this.centerChange = new _angular_core__WEBPACK_IMPORTED_MODULE_6__.EventEmitter();
     this.mapInfo = new _angular_core__WEBPACK_IMPORTED_MODULE_6__.EventEmitter();
@@ -19128,6 +19149,14 @@ class MapRendererComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.
       if (changes.styles || changes.features || changes.labels || changes.actions) {
         this.timeout('update_view', () => this.updateView());
       }
+    }
+    if (changes.reset && changes.reset.currentValue !== changes.reset.previousValue) {
+      this.zoom = 1;
+      this.center = {
+        x: 0.5,
+        y: 0.5
+      };
+      this.updateDisplay();
     }
   }
   ngAfterViewInit() {
@@ -19281,6 +19310,7 @@ class MapRendererComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.
       features: "features",
       labels: "labels",
       actions: "actions",
+      reset: "reset",
       options: "options",
       focus: "focus"
     },
@@ -23095,6 +23125,7 @@ class EventFormService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.Asyn
     this._date = new rxjs__WEBPACK_IMPORTED_MODULE_19__.BehaviorSubject(Date.now());
     this._event = new rxjs__WEBPACK_IMPORTED_MODULE_19__.BehaviorSubject(null);
     this._loading = new rxjs__WEBPACK_IMPORTED_MODULE_19__.BehaviorSubject('');
+    this._changed = new rxjs__WEBPACK_IMPORTED_MODULE_19__.BehaviorSubject(0);
     this.last_success = new _event_class__WEBPACK_IMPORTED_MODULE_6__.CalendarEvent(JSON.parse(sessionStorage.getItem('PLACEOS.last_booked_event') || '{}'));
     this.loading = this._loading.asObservable();
     this.options = this._options.asObservable();
@@ -23138,14 +23169,13 @@ class EventFormService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.Asyn
         return obs;
       }));
     }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_22__.shareReplay)(1));
-    this.current_available_spaces = (0,rxjs__WEBPACK_IMPORTED_MODULE_23__.combineLatest)([this.filtered_spaces, this._space_bookings, this.booking_rules, (0,rxjs__WEBPACK_IMPORTED_MODULE_32__.merge)(this.form.valueChanges, (0,rxjs__WEBPACK_IMPORTED_MODULE_33__.timer)(1000))]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_21__.map)(([list, bookings, booking_rules]) => {
+    this.current_available_spaces = (0,rxjs__WEBPACK_IMPORTED_MODULE_23__.combineLatest)([this.filtered_spaces, this._space_bookings, this.booking_rules, (0,rxjs__WEBPACK_IMPORTED_MODULE_32__.merge)(this.form.valueChanges, (0,rxjs__WEBPACK_IMPORTED_MODULE_33__.timer)(1000)), this._changed]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_26__.debounceTime)(300), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_21__.map)(([list, bookings, booking_rules]) => {
       this._loading.next('Updating available spaces...');
       let {
         ical_uid,
         date,
         duration,
-        all_day,
-        organiser
+        all_day
       } = this._form.getRawValue();
       list = (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.filterResourcesFromRules)(list, {
         date,
@@ -23156,7 +23186,11 @@ class EventFormService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.Asyn
       return (list || []).filter((_, idx) => {
         const start = all_day ? (0,date_fns__WEBPACK_IMPORTED_MODULE_34__["default"])(date).valueOf() : date;
         const end = start + (all_day ? Math.max(24 * 60, duration) : duration) * MINUTES;
-        return (0,_helpers__WEBPACK_IMPORTED_MODULE_13__.periodInFreeTimeSlot)(start, end, (bookings[idx] || []).filter(_ => _.ical_uid !== ical_uid));
+        let booking_list = bookings[idx] || [];
+        if (this.last_success?.system?.id === _.id) {
+          booking_list = [...booking_list, this.last_success];
+        }
+        return (0,_helpers__WEBPACK_IMPORTED_MODULE_13__.periodInFreeTimeSlot)(start, end, booking_list.filter(_ => _.ical_uid !== ical_uid));
       }).sort((a, b) => a.capacity - b.capacity);
     }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_27__.tap)(_ => this._loading.next('')), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_22__.shareReplay)(1));
     this.future_available_spaces = (0,rxjs__WEBPACK_IMPORTED_MODULE_23__.combineLatest)([this.filtered_spaces, this.booking_rules, this.form.valueChanges.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_26__.debounceTime)(400), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_35__.startWith)({}))]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_25__.filter)(() => !this._loading.getValue()), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_26__.debounceTime)(300), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_20__.switchMap)(([spaces, booking_rules]) => {
@@ -23495,6 +23529,7 @@ class EventFormService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.Asyn
         _this2.last_success = result;
         sessionStorage.setItem('PLACEOS.last_booked_event', JSON.stringify(result));
         _this2.setView('success');
+        _this2.timeout('post_finshed', () => _this2._changed.next(Date.now()));
         resolve(result);
         _this2._loading.next('');
       });

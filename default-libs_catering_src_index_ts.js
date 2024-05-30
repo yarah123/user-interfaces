@@ -1542,7 +1542,7 @@ class CateringOrderListComponent {
     selectors: [["catering-order-list"]],
     decls: 26,
     vars: 10,
-    consts: [[1, "sticky", "top-0", "w-full", "text-sm", "font-medium", "flex", "items-center", "py-4", "border-solid", "border-b", "border-base-200", "bg-base-100"], [1, "w-20"], [1, "w-24"], [1, "w-36"], [1, "flex-1"], [1, "w-56"], [1, "w-28"], [1, "w-12"], [1, "list-none", "p-0", "m-0", "w-full", "flex-1", "overflow-auto"], ["class", "border-solid border-b border-base-200", 4, "ngFor", "ngForOf", "ngForTrackBy"], ["empty", "", "class", "info-block opacity-60", 4, "ngIf"], ["class", "w-full", "mode", "indeterminate", 4, "ngIf"], [1, "border-solid", "border-b", "border-base-200"], [3, "order"], ["empty", "", 1, "info-block", "opacity-60"], [1, "p-4", "text-center"], ["mode", "indeterminate", 1, "w-full"]],
+    consts: [[1, "sticky", "top-0", "w-full", "text-sm", "font-medium", "flex", "items-center", "py-4", "border-solid", "border-b", "border-base-200", "bg-base-100"], [1, "w-20"], [1, "w-24"], [1, "w-36"], [1, "flex-1"], [1, "w-56"], [1, "w-28"], [1, "w-12"], [1, "list-none", "p-0", "m-0", "w-full", "flex-1", "overflow-auto"], ["class", "border-solid border-b border-base-200", 4, "ngFor", "ngForOf", "ngForTrackBy"], ["empty", "", "class", "info-block opacity-30", 4, "ngIf"], ["class", "w-full", "mode", "indeterminate", 4, "ngIf"], [1, "border-solid", "border-b", "border-base-200"], [3, "order"], ["empty", "", 1, "info-block", "opacity-30"], [1, "p-4", "text-center"], ["mode", "indeterminate", 1, "w-full"]],
     template: function CateringOrderListComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0);

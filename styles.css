@@ -1244,8 +1244,8 @@ video {
 #placeos :is(.h-\[96rem\]) {
   height: 96rem;
 }
-#placeos :is(.h-\[calc\(100\%-0\.5rem\)\]) {
-  height: calc(100% - 0.5rem);
+#placeos :is(.h-\[calc\(100\%-1\.5rem\)\]) {
+  height: calc(100% - 1.5rem);
 }
 #placeos :is(.h-\[calc\(100\%-19\.75rem\)\]) {
   height: calc(100% - 19.75rem);
@@ -2391,6 +2391,9 @@ video {
 #placeos :is(.border-success) {
   border-color: var(--su);
 }
+#placeos :is(.border-warning) {
+  border-color: var(--wa);
+}
 #placeos :is(.border-white) {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
@@ -2482,6 +2485,9 @@ video {
 }
 #placeos :is(.bg-success-light) {
   background-color: var(--sul);
+}
+#placeos :is(.bg-ternary) {
+  background-color: var(--t);
 }
 #placeos :is(.bg-warning) {
   background-color: var(--wa);
@@ -3074,12 +3080,6 @@ video {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: hidden; }
-#placeos :is(.odd\:border:nth-child(odd)) {
-  border-width: 1px;
-}
-#placeos :is(.odd\:border-base-200:nth-child(odd)) {
-  border-color: var(--b2);
-}
 #placeos :is(.even\:bg-base-200:nth-child(even)) {
   background-color: var(--b2);
 }
@@ -3855,6 +3855,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: h
   --t: hsl(237, 37%, 20%); /* #292F5B */
   --tf: hsl(237, 37%, 10%); /* Darker shade (Hover etc.) */
   --tc: hsl(0, 0%, 100%); /* White content(text) for contrast */
+  /* Ternary */
+  --t: hsl(206, 23%, 85%); /* #E5E5EA */
+  --tf: hsl(206, 23%, 72%); /* Darker shade */
+  --tc: hsl(0, 0%, 0%); /* Black content for contrast */
   /* Accent (Complementary color to Primary) */
   --a: hsl(156, 57%, 48%); /* A contrasting greenish tone */
   --af: hsl(156, 57%, 38%); /* Darker shade of the a */
@@ -3866,9 +3870,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: h
   /* Base */
   --b1: hsl(0, 0%, 98%); /* Near White */
   --b2: hsl(0, 0%, 90%); /* Light Grey */
-  --b3: hsl(206, 23%, 85%); /* Mid-Light Grey */
-  --b4: hsl(0, 0%, 50%); /* Mid Grey */
-  --bc: hsl(0, 0%, 0%); /* Black content(text) on white background */
+  --b3: hsl(0, 0%, 82%); /* Mid-Light Grey */
+  --b4: hsl(0, 0%, 72%); /* Mid Grey */
+  --bc: hsl(0, 0%, 0%); /* Black content on white background */
   /* Info */
   --in: hsla(217, 91%, 60%, 1); /* Blue */
   --inl: hsla(
@@ -3920,6 +3924,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: h
   --t: hsl(237, 37%, 20%); /* #292F5B */
   --tf: hsl(237, 37%, 10%); /* Lighter shade (Hover etc.) */
   --tc: hsl(0, 0%, 100%); /* White content(text) for contrast */
+  /* Ternary */
+  --t: hsl(206, 23%, 85%); /* #E5E5EA */
+  --tf: hsl(206, 23%, 72%); /* Darker shade */
+  --tc: hsl(0, 0%, 0%); /* Black content for contrast */
   /* Accent */
   --a: hsl(156, 57%, 28%); /* Darker shade of complementary color */
   --af: hsl(158, 17%, 9%); /* Even darker shade */
@@ -3931,8 +3939,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: h
   /* Base */
   --b1: hsl(0, 0%, 10%); /* Near Black */
   --b2: hsl(0, 0%, 15%); /* Dark Grey */
-  --b3: hsl(0, 0%, 20%); /* Mid-Dark Grey */
-  --b4: hsl(0, 0%, 50%); /* Mid Grey */
+  --b3: hsl(0, 0%, 24%); /* Mid-Dark Grey */
+  --b3: hsl(0, 0%, 32%); /* Mid Grey */
   --bc: hsl(0, 0%, 80%); /* Light grey text for contrast */
   /* Info */
   --in: hsla(217, 91%, 60%, 1); /* Blue */
@@ -4483,7 +4491,7 @@ a[btn] {
   border: 1px solid var(--color);
   color: var(--sc);
   font-size: 1rem;
-  min-height: 2.75em;
+  min-height: 3em;
   padding: 0 1em;
   display: flex;
   align-items: center;
@@ -4571,6 +4579,9 @@ a[icon][disabled] {
 }
 #placeos mat-select [disabled=true] {
   opacity: 0.6;
+}
+#placeos mat-button-toggle mat-pseudo-checkbox {
+  display: none;
 }
 #placeos .mat-form-field-disabled {
   opacity: 0.3;

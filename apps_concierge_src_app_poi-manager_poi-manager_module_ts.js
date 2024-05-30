@@ -30,7 +30,7 @@ class MapShowElementComponent {
     selectors: [["map-show-element"]],
     decls: 2,
     vars: 8,
-    consts: [[1, "relative", "w-full", "h-full", "border-2"], [1, "opacity-30", "absolute", "inset-0"]],
+    consts: [[1, "relative", "w-full", "h-full", "border-4"], [1, "opacity-40", "absolute", "inset-0"]],
     template: function MapShowElementComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
@@ -38,9 +38,9 @@ class MapShowElementComponent {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
       }
       if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassProp"]("border-secondary", ctx.hover)("border-primary", !ctx.hover);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassProp"]("border-warning", ctx.hover)("border-success", !ctx.hover);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassProp"]("bg-secondary", ctx.hover)("bg-primary", !ctx.hover);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassProp"]("bg-warning", ctx.hover)("bg-success", !ctx.hover);
       }
     }
   });
@@ -229,7 +229,7 @@ class POIListComponent {
     selectors: [["poi-list"]],
     decls: 6,
     vars: 11,
-    consts: [["level_template", ""], ["action_template", ""], ["qr_menu", ""], ["menu", "matMenu"], [1, "absolute", "inset-0", "overflow-auto", "px-4"], ["empty", "No Points of Interest found.", 1, "block", "min-w-[32rem]", "w-full", "h-full", 3, "dataSource", "columns", "display_column", "column_size", "template"], [1, "w-full", "flex", "justify-end", "space-x-2"], ["matTooltip", "Private QR Code"], ["icon", "", "matRipple", "", "customTooltip", "", 3, "click", "content"], ["matTooltip", "Public QR Code"], ["icon", "", "matRipple", "", "customTooltip", "", 3, "click", "disabled", "content"], ["btn", "", "icon", "", "matRipple", "", 3, "matMenuTriggerFor"], ["mat-menu-item", "", 3, "click"], [1, "flex", "items-center", "space-x-2"], [1, "flex", "items-center", "space-x-2", "text-red-500"], [1, "text-error"], [1, "bg-base-100", "py-2", "shadow", "rounded"], ["printable", "", 1, ""], ["target", "_blank", "ref", "noopener noreferrer", 1, "block", "p-2", "mx-4", "my-2", "rounded-lg", "border", "border-base-200", "bg-base-100", 3, "href"], [1, "w-48", 3, "src"], [1, "w-[calc(100%-2rem)]", "text-center", "mt-2", "font-mono", "text-sm", "bg-base-200", "rounded", "p-2", "mx-4"], ["btn", "", "matRipple", "", 1, "w-[calc(100%-2rem)]", "mx-4", "my-2", 3, "click"]],
+    consts: [["level_template", ""], ["action_template", ""], ["qr_menu", ""], ["menu", "matMenu"], [1, "absolute", "inset-0", "overflow-auto", "px-8"], ["empty", "No Points of Interest found.", 1, "block", "min-w-[40rem]", "w-full", "h-full", 3, "dataSource", "columns", "display_column", "column_size", "template"], [1, "w-full", "flex", "justify-end", "space-x-2"], ["matTooltip", "Private QR Code"], ["icon", "", "matRipple", "", "customTooltip", "", 3, "click", "content"], ["matTooltip", "Public QR Code"], ["icon", "", "matRipple", "", "customTooltip", "", 3, "click", "disabled", "content"], ["btn", "", "icon", "", "matRipple", "", 3, "matMenuTriggerFor"], ["mat-menu-item", "", 3, "click"], [1, "flex", "items-center", "space-x-2"], [1, "flex", "items-center", "space-x-2", "text-red-500"], [1, "text-error"], [1, "bg-base-100", "py-2", "shadow", "rounded"], ["printable", "", 1, ""], ["target", "_blank", "ref", "noopener noreferrer", 1, "block", "p-2", "mx-4", "my-2", "rounded-lg", "border", "border-base-200", "bg-base-100", 3, "href"], [1, "w-48", 3, "src"], [1, "w-[calc(100%-2rem)]", "text-center", "mt-2", "font-mono", "text-sm", "bg-base-200", "rounded", "p-2", "mx-4"], ["btn", "", "matRipple", "", 1, "w-[calc(100%-2rem)]", "mx-4", "my-2", 3, "click"]],
     template: function POIListComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵelementStart"](0, "div", 4);
@@ -264,14 +264,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/organisation */ 2510);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ 90521);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ 68824);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs */ 71536);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 71963);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 35443);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 7841);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 29314);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ 35443);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs/operators */ 7841);
 /* harmony import */ var _poi_modal_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./poi-modal.component */ 72053);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/common */ 22797);
 /* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @placeos/ts-client */ 35713);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 37580);
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/dialog */ 12587);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/dialog */ 12587);
 
 
 
@@ -290,9 +292,15 @@ class POIManagementService {
     this._options = new rxjs__WEBPACK_IMPORTED_MODULE_5__.BehaviorSubject({});
     this._change = new rxjs__WEBPACK_IMPORTED_MODULE_5__.BehaviorSubject(0);
     this.options = this._options.asObservable();
-    this._features = (0,rxjs__WEBPACK_IMPORTED_MODULE_6__.combineLatest)([this._org.active_building, this._change]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.switchMap)(([bld]) => (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_4__.showMetadata)(bld.id, 'map_features', {})), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.map)(_ => _.details || {}), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.shareReplay)(1));
-    this.filtered_features = (0,rxjs__WEBPACK_IMPORTED_MODULE_6__.combineLatest)([this._features, this._options]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.map)(([features, options]) => {
-      let list = Object.values(features).reduce((acc, _) => [...acc, ..._], []);
+    this._features = (0,rxjs__WEBPACK_IMPORTED_MODULE_6__.combineLatest)([this._org.active_building, this._change]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.switchMap)(() => (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_4__.showMetadata)(this._org.organisation.id, 'points-of-interest').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.catchError)(_ => (0,rxjs__WEBPACK_IMPORTED_MODULE_9__.of)({
+      details: {}
+    })))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.map)(_ => {
+      const mapping = _.details || {};
+      const levels = this._org.levelsForBuilding(this._org.building);
+      const list = (0,_placeos_common__WEBPACK_IMPORTED_MODULE_3__.flatten)(levels.map(lvl => mapping[lvl.id] || []));
+      return list;
+    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.shareReplay)(1));
+    this.filtered_features = (0,rxjs__WEBPACK_IMPORTED_MODULE_6__.combineLatest)([this._features, this._options]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.map)(([list, options]) => {
       if (options.search) {
         list = list.filter(_ => _.name.toLowerCase().includes(options.search.toLowerCase()));
       }
@@ -330,13 +338,14 @@ class POIManagementService {
       }, _this._dialog);
       if (ref.reason !== 'done') return ref.close();
       ref.loading('Removing point of interest...');
-      const old_metadata = yield (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_4__.showMetadata)(_this._org.building.id, 'map_features', {}).toPromise();
+      const old_metadata = yield (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_4__.showMetadata)(_this._org.organisation.id, 'points-of-interest').toPromise();
       const metadata = old_metadata.details || {};
-      if (metadata[poi.level_id]) {
-        metadata[poi.level_id] = metadata[poi.level_id].filter(_ => _.id !== poi.id);
+      console.log('Metadata:', old_metadata, metadata, poi);
+      for (const lvl in metadata) {
+        if (metadata[lvl]) metadata[lvl] = metadata[lvl].filter(_ => _.id !== poi.id);
       }
-      yield (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_4__.updateMetadata)(_this._org.building.id, {
-        name: 'map_features',
+      yield (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_4__.updateMetadata)(_this._org.organisation.id, {
+        name: 'points-of-interest',
         details: metadata,
         description: ''
       }).toPromise().catch(e => {
@@ -350,9 +359,9 @@ class POIManagementService {
     })();
   }
   static #_ = this.ɵfac = function POIManagementService_Factory(t) {
-    return new (t || POIManagementService)(_angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵinject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_1__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵinject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_11__.MatDialog));
+    return new (t || POIManagementService)(_angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵinject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_1__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵinject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_13__.MatDialog));
   };
-  static #_2 = this.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjectable"]({
+  static #_2 = this.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵdefineInjectable"]({
     token: POIManagementService,
     factory: POIManagementService.ɵfac,
     providedIn: 'root'
@@ -462,7 +471,7 @@ class POIManagerComponent {
     attrs: _c0,
     decls: 13,
     vars: 7,
-    consts: [[1, "flex", "flex-1", "h-px"], [1, "flex", "flex-col", "flex-1", "w-1/2", "h-full"], [1, "flex", "items-center", "justify-between", "px-4", "py-8"], [1, "text-2xl", "font-medium"], ["btn", "", "matRipple", "", 3, "click"], ["class", "flex items-center justify-between mb-2 px-4", 4, "ngIf"], [1, "block", "w-full", "relative", "flex-1", "h-1/2"], [1, "flex", "items-center", "justify-between", "mb-2", "px-4"], ["appearance", "outline", 1, "w-64"], ["name", "building", 3, "ngModelChange", "ngModel", "ngModelOptions", "placeholder"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"]],
+    consts: [[1, "flex", "flex-1", "h-px"], [1, "flex", "flex-col", "flex-1", "w-1/2", "h-full"], [1, "flex", "items-center", "justify-between", "px-8", "py-8"], [1, "text-2xl", "font-medium"], ["btn", "", "matRipple", "", 3, "click"], ["class", "flex items-center justify-between mb-2 px-8", 4, "ngIf"], [1, "block", "w-full", "relative", "flex-1", "h-1/2"], [1, "flex", "items-center", "justify-between", "mb-2", "px-8"], ["appearance", "outline", 1, "w-64"], ["name", "building", 3, "ngModelChange", "ngModel", "ngModelOptions", "placeholder"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"]],
     template: function POIManagerComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](0, "app-topbar");
@@ -870,12 +879,16 @@ class POIModalComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.Asy
   }
   selectPOIfromMap() {
     const ref = this._dialog.open(_select_poi_map_modal_component__WEBPACK_IMPORTED_MODULE_4__.SelectPOIMapModalComponent, {
-      data: this._data
+      data: {
+        ...this._data,
+        ...this.form.getRawValue()
+      }
     });
     ref.afterClosed().subscribe(d => {
       if (!d) return;
       this.form.patchValue({
-        location: d
+        location: d,
+        level_id: ref.componentInstance.level?.id
       });
     });
   }
@@ -911,14 +924,19 @@ class POIModalComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.Asy
         }).toPromise();
       }
       _this2.loading = true;
-      const old_metadata = yield (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__.showMetadata)(_this2._org.building.id, 'map_features', {}).toPromise();
+      const old_metadata = yield (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__.showMetadata)(_this2._org.organisation.id, 'points-of-interest', {}).toPromise();
       const metadata = old_metadata.details || {};
       if (!metadata[data.level_id]) metadata[data.level_id] = [];
+      if (_this2._data?.id) {
+        for (const lvl in metadata) {
+          if (metadata[lvl]) metadata[lvl] = metadata[lvl].filter(_ => _.id !== data.id);
+        }
+      }
       metadata[data.level_id] = [...metadata[data.level_id].filter(_ => _.id !== data.id), data].sort((a, b) => a.name.localeCompare(b.name));
-      const resp = yield (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__.updateMetadata)(_this2._org.building.id, {
-        name: 'map_features',
+      const resp = yield (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__.updateMetadata)(_this2._org.organisation.id, {
+        name: 'points-of-interest',
         details: metadata,
-        description: ''
+        description: 'Point of Interests for maps'
       }).toPromise().catch(e => (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.notifyError)(e));
       if (resp.id) _this2._dialog_ref.close(resp);
       _this2.loading = false;
@@ -1078,16 +1096,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! rxjs/operators */ 7841);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! rxjs/operators */ 33602);
 /* harmony import */ var _map_show_element_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./map-show-element.component */ 34654);
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/dialog */ 12587);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 37580);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/common */ 60316);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/forms */ 34456);
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/form-field */ 24950);
-/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/input */ 95541);
-/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/select */ 25175);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/material/core */ 74646);
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/material/dialog */ 12587);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/forms */ 34456);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/form-field */ 24950);
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/input */ 95541);
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/material/select */ 25175);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/material/core */ 74646);
 /* harmony import */ var _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/icon.component */ 69434);
 /* harmony import */ var _libs_components_src_lib_interactive_map_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/interactive-map.component */ 24918);
+
 
 
 
@@ -1228,39 +1247,36 @@ function SelectPOIMapModalComponent_div_28_Template(rf, ctx) {
       return _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵresetView"](ctx_r2.page = ctx_r2.last_page);
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](16, "async");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](17, "number");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](18, "button", 28);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function SelectPOIMapModalComponent_div_28_Template_button_click_18_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](16, "button", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function SelectPOIMapModalComponent_div_28_Template_button_click_16_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r6);
       const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵresetView"](ctx_r2.page = ctx_r2.page + 1);
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](19, "app-icon");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](20, "chevron_right");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](17, "app-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](18, "chevron_right");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
-    let tmp_13_0;
     const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", ctx_r2.page === 0);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵclassProp"]("!bg-secondary", ctx_r2.page === 0)("text-secondary-content", ctx_r2.page === 0)("!rounded-full", ctx_r2.page === 0);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵclassProp"]("opacity-0", ctx_r2.page < 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵclassProp"]("opacity-0", ctx_r2.page < 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵclassProp"]("opacity-0", ctx_r2.page < 1 || ctx_r2.page > ctx_r2.last_page - 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵclassProp"]("opacity-0", ctx_r2.page == 0 || ctx_r2.page == ctx_r2.last_page);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", ctx_r2.page + 1, " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵclassProp"]("opacity-0", ctx_r2.page > ctx_r2.last_page - 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵclassProp"]("opacity-0", ctx_r2.page > ctx_r2.last_page - 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵclassProp"]("!bg-secondary", ctx_r2.page === ctx_r2.last_page)("text-secondary-content", ctx_r2.page === ctx_r2.last_page)("!rounded-full", ctx_r2.page === ctx_r2.last_page);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind2"](17, 24, ((tmp_13_0 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](16, 22, ctx_r2.search_results)) == null ? null : tmp_13_0.length) / 100, "1.0-0"), " ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", ctx_r2.last_page + 1, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", ctx_r2.page === ctx_r2.last_page);
   }
 }
@@ -1282,8 +1298,9 @@ class SelectPOIMapModalComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
       area: Math.abs(item.geometry.bbox[0] - item.geometry.bbox[2]) * Math.abs(item.geometry.bbox[1] - item.geometry.bbox[3])
     };
   }
-  constructor(_org, _maps_people) {
+  constructor(_data, _org, _maps_people) {
     super();
+    this._data = _data;
     this._org = _org;
     this._maps_people = _maps_people;
     this.level = new _placeos_organisation__WEBPACK_IMPORTED_MODULE_2__.BuildingLevel();
@@ -1300,7 +1317,7 @@ class SelectPOIMapModalComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
       action: 'click',
       callback: (e, p) => this.selectID(p || e)
     }];
-    this.features = (0,rxjs__WEBPACK_IMPORTED_MODULE_8__.combineLatest)([this.selected, this.hovered]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.map)(([s_id, h_id]) => [{
+    this.features = (0,rxjs__WEBPACK_IMPORTED_MODULE_8__.combineLatest)([this.selected, this.hovered]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.map)(([s_id, h_id]) => (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.unique)([{
       location: s_id,
       content: _map_show_element_component__WEBPACK_IMPORTED_MODULE_3__.MapShowElementComponent,
       full_size: true,
@@ -1313,7 +1330,7 @@ class SelectPOIMapModalComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
       },
       full_size: true,
       no_scale: true
-    }].filter(_ => _.location)));
+    }].filter(_ => _.location), 'location')));
     this.search_results = (0,rxjs__WEBPACK_IMPORTED_MODULE_8__.combineLatest)([this.search, this._maps_people.available$, this.changed]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.debounceTime)(300), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.switchMap)(([q, available]) => {
       console.log('Search:', q, available);
       return available ? q.length > 2 ? mapsindoors?.services.LocationsService.getLocations({
@@ -1340,8 +1357,18 @@ class SelectPOIMapModalComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
   ngOnInit() {
     var _this = this;
     return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      console.log('Data:', _this._data);
+      if (_this._data?.location && typeof _this._data.location === 'string') {
+        _this.selected.next(_this._data.location);
+      }
       const levels = yield _this.level_list.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_15__.take)(1)).toPromise();
-      if (levels.length) _this.level = levels[0];
+      if (levels.length) {
+        let level = levels[0];
+        if (_this._data?.level_id) {
+          level = levels.find(_ => _.id === _this._data.level_id) || level;
+        }
+        _this.level = level;
+      }
     })();
   }
   onChange() {
@@ -1376,7 +1403,7 @@ class SelectPOIMapModalComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
     }));
   }
   static #_ = this.ɵfac = function SelectPOIMapModalComponent_Factory(t) {
-    return new (t || SelectPOIMapModalComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_2__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_placeos_common__WEBPACK_IMPORTED_MODULE_1__.MapsPeopleService));
+    return new (t || SelectPOIMapModalComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_16__.MAT_DIALOG_DATA), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_2__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_placeos_common__WEBPACK_IMPORTED_MODULE_1__.MapsPeopleService));
   };
   static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({
     type: SelectPOIMapModalComponent,
@@ -1395,7 +1422,7 @@ class SelectPOIMapModalComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
       } else {
         i18n_0 = $localize`:@@searchPlaceholder␟7e892ba15f2c6c17e83510e273b3e10fc32ea016␟4580988005648117665:Search`;
       }
-      return [["empty_state", ""], ["icon", "", "matRipple", "", "mat-dialog-close", ""], [1, "flex", "min-w-[80vw]", "max-w-[calc(100vw-2rem)]", "sm:max-w-[64rem]", "max-h-[75vh]", "h-[75vh]", "overflow-hidden"], ["map", "", 1, "relative", "h-full", "flex-1", "w-1/2", "bg-base-200"], [3, "mapInfo", "src", "actions", "features", "options", "focus"], ["poi-list", "", 1, "relative", "flex", "flex-col", "h-full", "w-[20rem]", "border-l", "border-base-300", "shadow"], ["search", "", 1, "flex", "flex-col", "border-b", "border-base-200", "p-2"], ["appearance", "outline", 1, "w-full", "no-subscript", "mb-2"], ["name", "level", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], ["appearance", "outline", 1, "w-full", "no-subscript"], ["matInput", "", "name", "search", "placeholder", i18n_0, 3, "ngModelChange", "ngModel"], ["matPrefix", "", 1, "text-2xl"], ["list", "", 1, "flex", "flex-col", "flex-1", "h-1/2", "overflow-auto"], [1, "sticky", "top-0", "w-full", "bg-base-100", "p-3", "z-10"], [4, "ngIf"], [4, "ngIf", "ngIfElse"], ["pagination", "", "class", "sticky flex items-center justify-center bottom-0 w-full bg-base-100 p-2 z-10 space-x-1", 4, "ngIf"], ["actions", "", 1, "p-2", "border-t", "border-base-200"], ["btn", "", "matRipple", "", 1, "w-full", 3, "disabled", "mat-dialog-close"], [3, "value"], ["matRipple", "", "class", "flex items-center text-left w-[calc(100%-1rem)] mx-2 my-1 p-2 rounded odd:border odd:border-base-200 even:bg-base-200 hover:bg-base-300 h-16 min-h-16", 3, "!bg-primary", "!text-primary-content", "click", "mouseover", 4, "ngFor", "ngForOf"], ["matRipple", "", 1, "flex", "items-center", "text-left", "w-[calc(100%-1rem)]", "mx-2", "my-1", "p-2", "rounded", "odd:border", "odd:border-base-200", "even:bg-base-200", "hover:bg-base-300", "h-16", "min-h-16", 3, "click", "mouseover"], [1, "flex", "flex-col"], [1, ""], ["class", "text-xs opacity-30", 4, "ngIf"], [1, "text-xs", "opacity-30"], ["pagination", "", 1, "sticky", "flex", "items-center", "justify-center", "bottom-0", "w-full", "bg-base-100", "p-2", "z-10", "space-x-1"], ["icon", "", "matRipple", "", 1, "border", "border-base-200", "rounded", 3, "click", "disabled"], ["icon", "", "matRipple", "", 3, "click"], ["icon", ""], ["icon", "", "matRipple", "", 1, "!bg-secondary", "text-secondary-content"], ["icon", "", "matRipple", "", 1, "border", "border-base-200", "rounded", 3, "click"], [1, "flex", "flex-col", "items-center", "justify-center", "h-full", "flex-1", "space-y-4"], ["src", "assets/icons/no-results.svg", 1, "w-36"], [1, "text-center", "opacity-30"]];
+      return [["empty_state", ""], ["icon", "", "matRipple", "", "mat-dialog-close", ""], [1, "flex", "min-w-[80vw]", "max-w-[calc(100vw-2rem)]", "sm:max-w-[64rem]", "max-h-[75vh]", "h-[75vh]", "overflow-hidden"], ["map", "", 1, "relative", "h-full", "flex-1", "w-1/2", "bg-base-200"], [3, "mapInfo", "src", "actions", "features", "options", "focus"], ["poi-list", "", 1, "relative", "flex", "flex-col", "h-full", "w-[20rem]", "border-l", "border-base-300", "shadow"], ["search", "", 1, "flex", "flex-col", "border-b", "border-base-200", "p-2"], ["appearance", "outline", 1, "w-full", "no-subscript", "mb-2"], ["name", "level", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], ["appearance", "outline", 1, "w-full", "no-subscript"], ["matInput", "", "name", "search", "placeholder", i18n_0, 3, "ngModelChange", "ngModel"], ["matPrefix", "", 1, "text-2xl"], ["list", "", 1, "flex", "flex-col", "flex-1", "h-1/2", "overflow-auto", "space-y-2", "px-2"], [1, "sticky", "top-0", "w-full", "bg-base-100", "px-1", "py-3", "z-10"], [4, "ngIf"], [4, "ngIf", "ngIfElse"], ["pagination", "", "class", "sticky flex items-center justify-center bottom-0 w-full bg-base-100 p-2 z-10 space-x-1", 4, "ngIf"], ["actions", "", 1, "p-2", "border-t", "border-base-200"], ["btn", "", "matRipple", "", 1, "w-full", 3, "disabled", "mat-dialog-close"], [3, "value"], ["btn", "", "matRipple", "", "class", "clear flex items-center text-left w-full hover:bg-base-200 rounded", 3, "!bg-primary", "!text-primary-content", "click", "mouseover", 4, "ngFor", "ngForOf"], ["btn", "", "matRipple", "", 1, "clear", "flex", "items-center", "text-left", "w-full", "hover:bg-base-200", "rounded", 3, "click", "mouseover"], [1, "flex", "flex-col", "w-full"], [1, ""], ["class", "text-xs opacity-30", 4, "ngIf"], [1, "text-xs", "opacity-30"], ["pagination", "", 1, "sticky", "flex", "items-center", "justify-center", "bottom-0", "w-full", "bg-base-100", "p-2", "z-10", "space-x-1"], ["icon", "", "matRipple", "", 1, "border", "border-base-200", "rounded", 3, "click", "disabled"], ["icon", "", "matRipple", "", 3, "click"], ["icon", ""], ["icon", "", "matRipple", "", 1, "!bg-secondary", "text-secondary-content"], ["icon", "", "matRipple", "", 1, "border", "border-base-200", "rounded", 3, "click"], [1, "flex", "flex-col", "items-center", "justify-center", "h-full", "flex-1", "space-y-4"], ["src", "assets/icons/no-results.svg", 1, "w-36"], [1, "text-center", "opacity-30"]];
     },
     template: function SelectPOIMapModalComponent_Template(rf, ctx) {
       if (rf & 1) {
@@ -1443,7 +1470,7 @@ class SelectPOIMapModalComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](26, SelectPOIMapModalComponent_ng_container_26_Template, 4, 7, "ng-container", 16);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](27, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](28, SelectPOIMapModalComponent_div_28_Template, 21, 27, "div", 17)(29, SelectPOIMapModalComponent_ng_template_29_Template, 4, 0, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](28, SelectPOIMapModalComponent_div_28_Template, 19, 22, "div", 17)(29, SelectPOIMapModalComponent_ng_template_29_Template, 4, 0, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplateRefExtractor"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](31, "div", 18)(32, "button", 19);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](33, " Save ");
@@ -1473,7 +1500,7 @@ class SelectPOIMapModalComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("disabled", !ctx.selected.value)("mat-dialog-close", ctx.selected.value);
       }
     },
-    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_16__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_16__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_17__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_17__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_17__.NgModel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_18__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_18__.MatPrefix, _angular_material_input__WEBPACK_IMPORTED_MODULE_19__.MatInput, _angular_material_select__WEBPACK_IMPORTED_MODULE_20__.MatSelect, _angular_material_core__WEBPACK_IMPORTED_MODULE_21__.MatOption, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_22__.MatDialogClose, _angular_material_core__WEBPACK_IMPORTED_MODULE_21__.MatRipple, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_4__.IconComponent, _libs_components_src_lib_interactive_map_component__WEBPACK_IMPORTED_MODULE_5__.InteractiveMapComponent, _angular_common__WEBPACK_IMPORTED_MODULE_16__.AsyncPipe, _angular_common__WEBPACK_IMPORTED_MODULE_16__.SlicePipe, _angular_common__WEBPACK_IMPORTED_MODULE_16__.DecimalPipe]
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_17__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_17__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_18__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_18__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_18__.NgModel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_19__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_19__.MatPrefix, _angular_material_input__WEBPACK_IMPORTED_MODULE_20__.MatInput, _angular_material_select__WEBPACK_IMPORTED_MODULE_21__.MatSelect, _angular_material_core__WEBPACK_IMPORTED_MODULE_22__.MatOption, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_16__.MatDialogClose, _angular_material_core__WEBPACK_IMPORTED_MODULE_22__.MatRipple, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_4__.IconComponent, _libs_components_src_lib_interactive_map_component__WEBPACK_IMPORTED_MODULE_5__.InteractiveMapComponent, _angular_common__WEBPACK_IMPORTED_MODULE_17__.AsyncPipe, _angular_common__WEBPACK_IMPORTED_MODULE_17__.SlicePipe]
   });
 }
 

@@ -421,7 +421,7 @@ const _c5 = (a0, a1, a2) => ({
   zone: a1,
   actions: a2
 });
-function EmergencyContactsComponent_mat_option_22_Template(rf, ctx) {
+function EmergencyContactsComponent_mat_option_23_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](0, "mat-option", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](1);
@@ -553,7 +553,7 @@ class EmergencyContactsComponent {
     attrs: _c0,
     decls: 37,
     vars: 20,
-    consts: [["roles_template", ""], ["zone_template", ""], ["actions_template", ""], [1, "flex", "flex-1", "h-px"], [1, "flex", "flex-col", "flex-1", "w-1/2", "h-full"], ["topbar", "", 1, "px-8", "py-4", "flex", "flex-col"], [1, "flex", "items-center", "justify-between"], [1, "text-2xl", "font-medium"], [1, "flex", "items-center", "space-x-2"], ["icon", "", "matRipple", "", "matTooltip", "Manage Roles", 1, "bg-secondary", "text-secondary-content", "rounded", 3, "click"], ["btn", "", "matRipple", "", 1, "space-x-2", 3, "click"], [1, "text-2xl"], [1, "pr-2"], [1, "flex", "items-center", "justify-between", "py-2", "mt-2"], ["appearance", "outline", 1, "no-subscript"], ["placeholder", "All Roles", 3, "ngModelChange", "ngModel"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], ["matPrefix", "", 1, "text-2xl"], ["matInput", "", "placeholder", "Filter contacts...", 3, "ngModelChange", "ngModel"], [1, "w-full", "h-1/2", "flex-1", "overflow-auto", "px-8"], [1, "min-w-[40rem]", "block", 3, "dataSource", "filter", "columns", "display_column", "column_size", "template", "empty"], [3, "value"], ["class", "m-1 py-1 px-2 rounded-2xl text-xs font-mono bg-info text-info-content", 4, "ngFor", "ngForOf"], [1, "m-1", "py-1", "px-2", "rounded-2xl", "text-xs", "font-mono", "bg-info", "text-info-content"], [1, "flex", "items-center", "justify-end", "w-full", "space-x-2"], ["icon", "", "matRipple", "", 3, "click"]],
+    consts: [["roles_template", ""], ["zone_template", ""], ["actions_template", ""], [1, "flex", "flex-1", "h-px"], [1, "flex", "flex-col", "flex-1", "w-1/2", "h-full"], ["topbar", "", 1, "px-8", "py-4", "flex", "flex-col"], [1, "flex", "items-center", "justify-between"], [1, "text-2xl", "font-medium"], [1, "flex", "items-center", "space-x-2"], ["appearance", "outline", 1, "no-subscript"], ["matPrefix", "", 1, "text-2xl"], ["matInput", "", "placeholder", "Filter contacts...", 3, "ngModelChange", "ngModel"], ["btn", "", "matRipple", "", 1, "space-x-2", 3, "click"], [1, "text-2xl"], [1, "pr-2"], [1, "flex", "items-center", "justify-between", "py-2", "mt-2"], ["placeholder", "All Roles", 3, "ngModelChange", "ngModel"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], ["icon", "", "matRipple", "", "matTooltip", "Manage Roles", 1, "h-12", "w-12", "bg-secondary", "text-secondary-content", "rounded", 3, "click"], [1, "w-full", "h-1/2", "flex-1", "overflow-auto", "px-8"], [1, "min-w-[60rem]", "block", 3, "dataSource", "filter", "columns", "display_column", "column_size", "template", "empty"], [3, "value"], ["class", "m-1 py-1 px-2 rounded-2xl text-xs font-mono bg-info text-info-content", 4, "ngFor", "ngForOf"], [1, "m-1", "py-1", "px-2", "rounded-2xl", "text-xs", "font-mono", "bg-info", "text-info-content"], [1, "flex", "items-center", "justify-end", "w-full", "space-x-2"], ["icon", "", "matRipple", "", 3, "click"]],
     template: function EmergencyContactsComponent_Template(rf, ctx) {
       if (rf & 1) {
         const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵgetCurrentView"]();
@@ -563,45 +563,45 @@ class EmergencyContactsComponent {
         _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](3, "main", 4)(4, "section", 5)(5, "div", 6)(6, "h2", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](7, "Emergency Contacts");
         _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](8, "div", 8)(9, "button", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("click", function EmergencyContactsComponent_Template_button_click_9_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵrestoreView"](_r1);
-          return _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵresetView"](ctx.manageRoles());
-        });
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](10, "app-icon");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](11, "list_alt");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](12, "button", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("click", function EmergencyContactsComponent_Template_button_click_12_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵrestoreView"](_r1);
-          return _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵresetView"](ctx.editContact());
-        });
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](13, "app-icon", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](14, "add");
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](8, "div", 8)(9, "mat-form-field", 9)(10, "app-icon", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](11, " search ");
         _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](15, "div", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](16, "Add Contact");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](17, "div", 13)(18, "mat-form-field", 14)(19, "mat-select", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("ngModelChange", function EmergencyContactsComponent_Template_mat_select_ngModelChange_19_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵrestoreView"](_r1);
-          return _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵresetView"](ctx.role_filter.next($event));
-        });
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](20, "mat-option", 16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](21, "All Roles");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtemplate"](22, EmergencyContactsComponent_mat_option_22_Template, 2, 2, "mat-option", 17);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipe"](23, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](24, "div", 8)(25, "mat-form-field", 14)(26, "app-icon", 18);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](27, " search ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](28, "input", 19);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtwoWayListener"]("ngModelChange", function EmergencyContactsComponent_Template_input_ngModelChange_28_listener($event) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](12, "input", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtwoWayListener"]("ngModelChange", function EmergencyContactsComponent_Template_input_ngModelChange_12_listener($event) {
           _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵrestoreView"](_r1);
           _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtwoWayBindingSet"](ctx.search, $event) || (ctx.search = $event);
           return _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵresetView"]($event);
         });
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](13, "button", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("click", function EmergencyContactsComponent_Template_button_click_13_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵrestoreView"](_r1);
+          return _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵresetView"](ctx.editContact());
+        });
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](14, "app-icon", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](15, "add");
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](16, "div", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](17, "Add Contact");
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](18, "div", 15)(19, "mat-form-field", 9)(20, "mat-select", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("ngModelChange", function EmergencyContactsComponent_Template_mat_select_ngModelChange_20_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵrestoreView"](_r1);
+          return _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵresetView"](ctx.role_filter.next($event));
+        });
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](21, "mat-option", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](22, "All Roles");
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtemplate"](23, EmergencyContactsComponent_mat_option_23_Template, 2, 2, "mat-option", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipe"](24, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](25, "div", 8)(26, "button", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("click", function EmergencyContactsComponent_Template_button_click_26_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵrestoreView"](_r1);
+          return _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵresetView"](ctx.manageRoles());
+        });
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](27, "app-icon");
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](28, "list_alt");
         _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()()()()();
         _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](29, "section", 20);
         _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelement"](30, "custom-table", 21);
@@ -612,13 +612,13 @@ class EmergencyContactsComponent {
         const roles_template_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵreference"](32);
         const zone_template_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵreference"](34);
         const actions_template_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵreference"](36);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtwoWayProperty"]("ngModel", ctx.search);
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](8);
         _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("ngModel", ctx.role_filter.getValue());
         _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipeBind1"](23, 10, ctx.roles) || _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpureFunction0"](12, _c1));
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtwoWayProperty"]("ngModel", ctx.search);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipeBind1"](24, 10, ctx.roles) || _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpureFunction0"](12, _c1));
+        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](7);
         _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("dataSource", ctx.filtered_contacts)("filter", ctx.search)("columns", _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpureFunction0"](13, _c2))("display_column", _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpureFunction0"](14, _c3))("column_size", _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpureFunction0"](15, _c4))("template", _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpureFunction3"](16, _c5, roles_template_r9, zone_template_r10, actions_template_r11))("empty", ctx.search ? "No matching contacts" : "No emergency contacts for this building");
       }
     },
