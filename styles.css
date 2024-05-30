@@ -1244,6 +1244,9 @@ video {
 #placeos :is(.h-\[96rem\]) {
   height: 96rem;
 }
+#placeos :is(.h-\[calc\(100\%-0\.5rem\)\]) {
+  height: calc(100% - 0.5rem);
+}
 #placeos :is(.h-\[calc\(100\%-19\.75rem\)\]) {
   height: calc(100% - 19.75rem);
 }
@@ -1645,6 +1648,9 @@ video {
 }
 #placeos :is(.min-w-0) {
   min-width: 0px;
+}
+#placeos :is(.min-w-12) {
+  min-width: 3rem;
 }
 #placeos :is(.min-w-48) {
   min-width: 12rem;
