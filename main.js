@@ -22241,15 +22241,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "71d9789",
-  "hash": "71d9789",
+  "raw": "8a3dd0b",
+  "hash": "8a3dd0b",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "71d9789",
+  "suffix": "8a3dd0b",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1717124683340
+  "time": 1717129506918
 };
 /* tslint:enable */
 
@@ -29811,7 +29811,7 @@ function SimpleTableComponent_button_2_Template(rf, ctx) {
     const i_r5 = ctx.index;
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵstyleProp"]("grid-area", ctx_r1.gridSquare(1, 1 + i_r5 + (ctx_r1.selectable ? 1 : 0)));
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("pointer-events-none", !ctx_r1.sortable || column_r4.sortable === false)("active", (ctx_r1.sort == null ? null : ctx_r1.sort.key) === column_r4.key)("border-r", i_r5 !== ctx_r1.columns.length - 1)("width", column_r4.size);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("pointer-events-none", !ctx_r1.sortable || column_r4.sortable === false)("active", (ctx_r1.sort == null ? null : ctx_r1.sort.key) === column_r4.key)("border-r", i_r5 !== ctx_r1.active_columns.length - 1)("width", column_r4.size);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("id", "column-" + column_r4.key);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](column_r4.name || column_r4.key);
@@ -29926,7 +29926,7 @@ function SimpleTableComponent_ng_container_3_div_2_Template(rf, ctx) {
     const i_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().index;
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵstyleProp"]("grid-area", ctx_r1.gridSquare(2 + i_r7, 1 + j_r12 + (ctx_r1.selectable ? 1 : 0)));
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("border-b", i_r7 !== _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](1, 10, ctx_r1.data_view$).length - 1)("border-r", j_r12 !== ctx_r1.columns.length - 1)("width", column_r9.size);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("border-b", i_r7 !== _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](1, 10, ctx_r1.data_view$).length - 1)("border-r", j_r12 !== ctx_r1.active_columns.length - 1)("width", column_r9.size);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngSwitch", ctx_r1.columnType(column_r9));
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
@@ -29944,7 +29944,7 @@ function SimpleTableComponent_ng_container_3_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx_r1.selectable);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx_r1.columns);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx_r1.active_columns);
   }
 }
 function SimpleTableComponent_div_5_Template(rf, ctx) {
@@ -29955,7 +29955,7 @@ function SimpleTableComponent_div_5_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵstyleProp"]("grid-column-start", "span " + ctx_r1.columns.length);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵstyleProp"]("grid-column-start", "span " + ctx_r1.active_columns.length);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", ctx_r1.empty_message, " ");
   }
@@ -29973,6 +29973,7 @@ class SimpleTableComponent {
     this.rowClicked = new _angular_core__WEBPACK_IMPORTED_MODULE_2__.EventEmitter();
     this.page = 0;
     this.active_row = -1;
+    this.active_columns = [];
     this._data$ = new rxjs__WEBPACK_IMPORTED_MODULE_3__.BehaviorSubject([]);
     this._filter$ = new rxjs__WEBPACK_IMPORTED_MODULE_3__.BehaviorSubject('');
     this._sort$ = new rxjs__WEBPACK_IMPORTED_MODULE_3__.BehaviorSubject(null);
@@ -29985,16 +29986,19 @@ class SimpleTableComponent {
     return this.data instanceof Array ? this._data$ : this.data;
   }
   get column_count() {
-    return this.columns.length + (this.selectable ? 1 : 0);
+    return this.active_columns.length + (this.selectable ? 1 : 0);
   }
   get column_template() {
-    const template = this.columns.map(_ => _.size || 'auto').join(' ');
+    const template = this.active_columns.map(_ => _.size || 'auto').join(' ');
     return this.selectable ? `3.5rem ${template}` : template;
   }
   ngOnInit() {}
   ngOnChanges(changes) {
     if (changes.filter) {
       this._filter$.next(this.filter);
+    }
+    if (changes.columns) {
+      this.active_columns = this.columns.filter(_ => _.show !== false);
     }
     if (changes.data) {
       this.data_view$ = (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.combineLatest)([this.data$, this._filter$, this._sort$]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.map)(([data, filter, sort]) => {
@@ -30102,7 +30106,7 @@ class SimpleTableComponent {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.selectable);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.columns);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.active_columns);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](4, 6, ctx.data_view$));
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
