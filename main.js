@@ -32519,15 +32519,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "71d9789",
-  "hash": "71d9789",
+  "raw": "8a3dd0b",
+  "hash": "8a3dd0b",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "71d9789",
+  "suffix": "8a3dd0b",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1717124682444
+  "time": 1717129512444
 };
 /* tslint:enable */
 
@@ -41187,7 +41187,7 @@ function SimpleTableComponent_button_2_Template(rf, ctx) {
     var i_r5 = ctx.index;
     var ctx_r1 = i0.ɵɵnextContext();
     i0.ɵɵstyleProp("grid-area", ctx_r1.gridSquare(1, 1 + i_r5 + (ctx_r1.selectable ? 1 : 0)));
-    i0.ɵɵclassProp("pointer-events-none", !ctx_r1.sortable || column_r4.sortable === false)("active", (ctx_r1.sort == null ? null : ctx_r1.sort.key) === column_r4.key)("border-r", i_r5 !== ctx_r1.columns.length - 1)("width", column_r4.size);
+    i0.ɵɵclassProp("pointer-events-none", !ctx_r1.sortable || column_r4.sortable === false)("active", (ctx_r1.sort == null ? null : ctx_r1.sort.key) === column_r4.key)("border-r", i_r5 !== ctx_r1.active_columns.length - 1)("width", column_r4.size);
     i0.ɵɵproperty("id", "column-" + column_r4.key);
     i0.ɵɵadvance(2);
     i0.ɵɵtextInterpolate(column_r4.name || column_r4.key);
@@ -41302,7 +41302,7 @@ function SimpleTableComponent_ng_container_3_div_2_Template(rf, ctx) {
     var i_r7 = i0.ɵɵnextContext().index;
     var ctx_r1 = i0.ɵɵnextContext();
     i0.ɵɵstyleProp("grid-area", ctx_r1.gridSquare(2 + i_r7, 1 + j_r12 + (ctx_r1.selectable ? 1 : 0)));
-    i0.ɵɵclassProp("border-b", i_r7 !== i0.ɵɵpipeBind1(1, 10, ctx_r1.data_view$).length - 1)("border-r", j_r12 !== ctx_r1.columns.length - 1)("width", column_r9.size);
+    i0.ɵɵclassProp("border-b", i_r7 !== i0.ɵɵpipeBind1(1, 10, ctx_r1.data_view$).length - 1)("border-r", j_r12 !== ctx_r1.active_columns.length - 1)("width", column_r9.size);
     i0.ɵɵadvance(2);
     i0.ɵɵproperty("ngSwitch", ctx_r1.columnType(column_r9));
     i0.ɵɵadvance(2);
@@ -41320,7 +41320,7 @@ function SimpleTableComponent_ng_container_3_Template(rf, ctx) {
     i0.ɵɵadvance();
     i0.ɵɵproperty("ngIf", ctx_r1.selectable);
     i0.ɵɵadvance();
-    i0.ɵɵproperty("ngForOf", ctx_r1.columns);
+    i0.ɵɵproperty("ngForOf", ctx_r1.active_columns);
   }
 }
 function SimpleTableComponent_div_5_Template(rf, ctx) {
@@ -41331,7 +41331,7 @@ function SimpleTableComponent_div_5_Template(rf, ctx) {
   }
   if (rf & 2) {
     var ctx_r1 = i0.ɵɵnextContext();
-    i0.ɵɵstyleProp("grid-column-start", "span " + ctx_r1.columns.length);
+    i0.ɵɵstyleProp("grid-column-start", "span " + ctx_r1.active_columns.length);
     i0.ɵɵadvance();
     i0.ɵɵtextInterpolate1(" ", ctx_r1.empty_message, " ");
   }
@@ -41350,6 +41350,7 @@ var SimpleTableComponent = /*#__PURE__*/function () {
     this.rowClicked = new core_1.EventEmitter();
     this.page = 0;
     this.active_row = -1;
+    this.active_columns = [];
     this._data$ = new rxjs_1.BehaviorSubject([]);
     this._filter$ = new rxjs_1.BehaviorSubject('');
     this._sort$ = new rxjs_1.BehaviorSubject(null);
@@ -41368,12 +41369,12 @@ var SimpleTableComponent = /*#__PURE__*/function () {
   }, {
     key: "column_count",
     get: function get() {
-      return this.columns.length + (this.selectable ? 1 : 0);
+      return this.active_columns.length + (this.selectable ? 1 : 0);
     }
   }, {
     key: "column_template",
     get: function get() {
-      var template = this.columns.map(function (_) {
+      var template = this.active_columns.map(function (_) {
         return _.size || 'auto';
       }).join(' ');
       return this.selectable ? "3.5rem ".concat(template) : template;
@@ -41387,6 +41388,11 @@ var SimpleTableComponent = /*#__PURE__*/function () {
       var _this = this;
       if (changes.filter) {
         this._filter$.next(this.filter);
+      }
+      if (changes.columns) {
+        this.active_columns = this.columns.filter(function (_) {
+          return _.show !== false;
+        });
       }
       if (changes.data) {
         this.data_view$ = (0, rxjs_1.combineLatest)([this.data$, this._filter$, this._sort$]).pipe((0, operators_1.map)(function (_ref) {
@@ -41534,7 +41540,7 @@ _SimpleTableComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵadvance();
       i0.ɵɵproperty("ngIf", ctx.selectable);
       i0.ɵɵadvance();
-      i0.ɵɵproperty("ngForOf", ctx.columns);
+      i0.ɵɵproperty("ngForOf", ctx.active_columns);
       i0.ɵɵadvance();
       i0.ɵɵproperty("ngForOf", i0.ɵɵpipeBind1(4, 6, ctx.data_view$));
       i0.ɵɵadvance(2);
