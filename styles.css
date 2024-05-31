@@ -1730,9 +1730,6 @@ video {
 #placeos :is(.min-w-\[52rem\]) {
   min-width: 52rem;
 }
-#placeos :is(.min-w-\[56rem\]) {
-  min-width: 56rem;
-}
 #placeos :is(.min-w-\[5rem\]) {
   min-width: 5rem;
 }
@@ -2809,6 +2806,9 @@ video {
 }
 #placeos :is(.text-\[0\.875rem\]) {
   font-size: 0.875rem;
+}
+#placeos :is(.text-\[1\.25em\]) {
+  font-size: 1.25em;
 }
 #placeos :is(.text-\[16px\]) {
   font-size: 16px;
