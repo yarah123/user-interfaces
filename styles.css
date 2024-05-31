@@ -554,9 +554,6 @@ video {
 #placeos :is(.visible) {
   visibility: visible;
 }
-#placeos :is(.invisible) {
-  visibility: hidden;
-}
 #placeos :is(.static) {
   position: static;
 }
@@ -1739,14 +1736,14 @@ video {
 #placeos :is(.min-w-\[60vw\]) {
   min-width: 60vw;
 }
+#placeos :is(.min-w-\[64rem\]) {
+  min-width: 64rem;
+}
 #placeos :is(.min-w-\[72rem\]) {
   min-width: 72rem;
 }
 #placeos :is(.min-w-\[76rem\]) {
   min-width: 76rem;
-}
-#placeos :is(.min-w-\[80rem\]) {
-  min-width: 80rem;
 }
 #placeos :is(.min-w-\[80vw\]) {
   min-width: 80vw;
