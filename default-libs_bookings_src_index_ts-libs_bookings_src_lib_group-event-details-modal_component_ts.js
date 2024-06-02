@@ -10567,7 +10567,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function ParkingSpaceListFieldComponent_div_1_img_2_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](0, "img", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](0, "img", 24);
   }
   if (rf & 2) {
     const space_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]().$implicit;
@@ -10576,60 +10576,60 @@ function ParkingSpaceListFieldComponent_div_1_img_2_Template(rf, ctx) {
 }
 function ParkingSpaceListFieldComponent_div_1_ng_template_3_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](0, "img", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](0, "img", 25);
   }
 }
 function ParkingSpaceListFieldComponent_div_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 11)(1, "div", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](2, ParkingSpaceListFieldComponent_div_1_img_2_Template, 1, 1, "img", 13)(3, ParkingSpaceListFieldComponent_div_1_ng_template_3_Template, 1, 0, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplateRefExtractor"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 12)(1, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](2, ParkingSpaceListFieldComponent_div_1_img_2_Template, 1, 1, "img", 14)(3, ParkingSpaceListFieldComponent_div_1_ng_template_3_Template, 1, 0, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplateRefExtractor"]);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "div", 14)(6, "div", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "div", 15)(6, "div", 16);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](7);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "div", 16)(9, "app-icon", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "div", 17)(9, "app-icon", 18);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](10, "place");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](11, "p");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](12);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](13, "div", 16)(14, "app-icon", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](13, "div", 17)(14, "app-icon", 18);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](15, "people");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](16, "p");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵi18n"](17, 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](18, "div", 18)(19, "button", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](18, "div", 19)(19, "button", 20);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ParkingSpaceListFieldComponent_div_1_Template_button_click_19_listener() {
       const space_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r1).$implicit;
       const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r2.changeResources(space_r2));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](20, "div", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](20, "div", 21);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵi18nStart"](21, 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](22, "app-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](22, "app-icon", 9)(23, "div");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵi18nEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](23, "button", 21);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ParkingSpaceListFieldComponent_div_1_Template_button_click_23_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](24, "button", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ParkingSpaceListFieldComponent_div_1_Template_button_click_24_listener() {
       const space_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r1).$implicit;
       const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r2.removeResource(space_r2));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](24, "div", 20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵi18nStart"](25, 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](26, "app-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](25, "div", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵi18nStart"](26, 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](27, "app-icon", 9)(28, "div");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵi18nEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](27, "button", 22);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ParkingSpaceListFieldComponent_div_1_Template_button_click_27_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](29, "button", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ParkingSpaceListFieldComponent_div_1_Template_button_click_29_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r1);
       const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r2.toggleFavourite(ctx_r2.asset));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](28, "app-icon");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](30, "app-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](31);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
@@ -10641,11 +10641,11 @@ function ParkingSpaceListFieldComponent_div_1_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](5);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", space_r2.name || "Meeting Resource", " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](space_r2.location);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", space_r2.location || (space_r2.level == null ? null : space_r2.level.display_name) || (space_r2.level == null ? null : space_r2.level.name) || (space_r2.zone == null ? null : space_r2.zone.display_name) || (space_r2.zone == null ? null : space_r2.zone.name), " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵi18nExp"](space_r2.capacity < 1 ? 2 : space_r2.capacity)(space_r2.capacity);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵi18nExp"](space_r2.capacity < 1 ? 2 : space_r2.capacity || 1)(space_r2.capacity < 1 ? 2 : space_r2.capacity || 1);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵi18nApply"](17);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](12);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("text-blue-400", ctx_r2.favorites.includes(ctx_r2.asset == null ? null : ctx_r2.asset.id));
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](ctx_r2.favorites.includes(ctx_r2.asset == null ? null : ctx_r2.asset.id) ? "favorite" : "favorite_border");
@@ -10741,11 +10741,10 @@ class ParkingSpaceListFieldComponent {
         /**
          * @suppress {msgDescriptions}
          */
-        const MSG_EXTERNAL_426413428618668868$$LIBS_BOOKINGS_SRC_LIB_PARKING_SPACE_LIST_FIELD_COMPONENT_TS_1 = goog.getMsg("{VAR_PLURAL, plural, =1 {Person } other {People\n                            }}");
-        i18n_1 = MSG_EXTERNAL_426413428618668868$$LIBS_BOOKINGS_SRC_LIB_PARKING_SPACE_LIST_FIELD_COMPONENT_TS_1;
+        const MSG_EXTERNAL_3604407389403754414$$LIBS_BOOKINGS_SRC_LIB_PARKING_SPACE_LIST_FIELD_COMPONENT_TS_1 = goog.getMsg("{VAR_PLURAL, plural, =1 {Person } other {People }}");
+        i18n_1 = MSG_EXTERNAL_3604407389403754414$$LIBS_BOOKINGS_SRC_LIB_PARKING_SPACE_LIST_FIELD_COMPONENT_TS_1;
       } else {
-        i18n_1 = $localize`:␟ed210c8c0f2511082633f06a2c94b8410f6cd9bf␟426413428618668868:{VAR_PLURAL, plural, =1 {Person } other {People
-                            }}`;
+        i18n_1 = $localize`:␟de78e9a461c1eabe0e350a345933557c629d0ed1␟3604407389403754414:{VAR_PLURAL, plural, =1 {Person } other {People }}`;
       }
       i18n_1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵi18nPostprocess"](i18n_1, {
         "VAR_PLURAL": "\uFFFD1\uFFFD"
@@ -10755,74 +10754,82 @@ class ParkingSpaceListFieldComponent {
         /**
          * @suppress {msgDescriptions}
          */
-        const MSG_EXTERNAL_686822217414553756$$LIBS_BOOKINGS_SRC_LIB_PARKING_SPACE_LIST_FIELD_COMPONENT_TS_2 = goog.getMsg(" {$interpolation} {$icu} ", {
+        const MSG_EXTERNAL_259696738555613759$$LIBS_BOOKINGS_SRC_LIB_PARKING_SPACE_LIST_FIELD_COMPONENT_TS_2 = goog.getMsg(" {$interpolation} {$icu} ", {
           "icu": i18n_1,
           "interpolation": "\uFFFD0\uFFFD"
         }, {
           original_code: {
-            "icu": "{\n                            space.capacity, plural, =1 { Person } other { People\n                            } }",
-            "interpolation": "{{ space.capacity < 1 ? 2 : space.capacity }}"
+            "icu": "{\n                            (space.capacity < 1 ? 2 : space.capacity || 1),\n                            plural, =1 { Person } other { People } }",
+            "interpolation": "{{ space.capacity < 1 ? 2 : space.capacity || 1 }}"
           }
         });
-        i18n_2 = MSG_EXTERNAL_686822217414553756$$LIBS_BOOKINGS_SRC_LIB_PARKING_SPACE_LIST_FIELD_COMPONENT_TS_2;
+        i18n_2 = MSG_EXTERNAL_259696738555613759$$LIBS_BOOKINGS_SRC_LIB_PARKING_SPACE_LIST_FIELD_COMPONENT_TS_2;
       } else {
-        i18n_2 = $localize`:␟ddc17cbb67fd49c13c14733c877b09fb9bd86d87␟686822217414553756: ${"\uFFFD0\uFFFD"}:INTERPOLATION: ${i18n_1}:ICU: `;
+        i18n_2 = $localize`:␟45802327683c8bd728df5113a59afcd09367e8e9␟259696738555613759: ${"\uFFFD0\uFFFD"}:INTERPOLATION: ${i18n_1}:ICU: `;
       }
       let i18n_3;
       if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
         /**
          * @suppress {msgDescriptions}
          */
-        const MSG_EXTERNAL_559636443235347532$$LIBS_BOOKINGS_SRC_LIB_PARKING_SPACE_LIST_FIELD_COMPONENT_TS_3 = goog.getMsg("{$startTagAppIcon}edit{$closeTagAppIcon} Change ", {
+        const MSG_EXTERNAL_3410599700979759406$$LIBS_BOOKINGS_SRC_LIB_PARKING_SPACE_LIST_FIELD_COMPONENT_TS_3 = goog.getMsg("{$startTagAppIcon}edit{$closeTagAppIcon}{$startTagDiv}Change{$closeTagDiv}", {
           "closeTagAppIcon": "\uFFFD/#22\uFFFD",
-          "startTagAppIcon": "\uFFFD#22\uFFFD"
+          "closeTagDiv": "\uFFFD/#23\uFFFD",
+          "startTagAppIcon": "\uFFFD#22\uFFFD",
+          "startTagDiv": "\uFFFD#23\uFFFD"
         }, {
           original_code: {
             "closeTagAppIcon": "</app-icon>",
-            "startTagAppIcon": "<app-icon>"
+            "closeTagDiv": "</div>",
+            "startTagAppIcon": "<app-icon class=\"text-2xl\">",
+            "startTagDiv": "<div>"
           }
         });
-        i18n_3 = MSG_EXTERNAL_559636443235347532$$LIBS_BOOKINGS_SRC_LIB_PARKING_SPACE_LIST_FIELD_COMPONENT_TS_3;
+        i18n_3 = MSG_EXTERNAL_3410599700979759406$$LIBS_BOOKINGS_SRC_LIB_PARKING_SPACE_LIST_FIELD_COMPONENT_TS_3;
       } else {
-        i18n_3 = $localize`:␟ca9092fdbbb85e5828de77fdf85c49b918cec128␟559636443235347532:${"\uFFFD#22\uFFFD"}:START_TAG_APP_ICON:edit${"\uFFFD/#22\uFFFD"}:CLOSE_TAG_APP_ICON: Change `;
+        i18n_3 = $localize`:␟c5519f0af04771a54fd52f587819c2f86c19691a␟3410599700979759406:${"\uFFFD#22\uFFFD"}:START_TAG_APP_ICON:edit${"\uFFFD/#22\uFFFD"}:CLOSE_TAG_APP_ICON:${"\uFFFD#23\uFFFD"}:START_TAG_DIV:Change${"\uFFFD/#23\uFFFD"}:CLOSE_TAG_DIV:`;
       }
       let i18n_4;
       if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
         /**
          * @suppress {msgDescriptions}
          */
-        const MSG_EXTERNAL_2582674642057285571$$LIBS_BOOKINGS_SRC_LIB_PARKING_SPACE_LIST_FIELD_COMPONENT_TS_4 = goog.getMsg("{$startTagAppIcon}close{$closeTagAppIcon} Remove ", {
-          "closeTagAppIcon": "\uFFFD/#26\uFFFD",
-          "startTagAppIcon": "\uFFFD#26\uFFFD"
+        const MSG_EXTERNAL_913695604792961336$$LIBS_BOOKINGS_SRC_LIB_PARKING_SPACE_LIST_FIELD_COMPONENT_TS_4 = goog.getMsg("{$startTagAppIcon}close{$closeTagAppIcon}{$startTagDiv}Remove{$closeTagDiv}", {
+          "closeTagAppIcon": "\uFFFD/#27\uFFFD",
+          "closeTagDiv": "\uFFFD/#28\uFFFD",
+          "startTagAppIcon": "\uFFFD#27\uFFFD",
+          "startTagDiv": "\uFFFD#28\uFFFD"
         }, {
           original_code: {
             "closeTagAppIcon": "</app-icon>",
-            "startTagAppIcon": "<app-icon>"
+            "closeTagDiv": "</div>",
+            "startTagAppIcon": "<app-icon class=\"text-2xl\">",
+            "startTagDiv": "<div>"
           }
         });
-        i18n_4 = MSG_EXTERNAL_2582674642057285571$$LIBS_BOOKINGS_SRC_LIB_PARKING_SPACE_LIST_FIELD_COMPONENT_TS_4;
+        i18n_4 = MSG_EXTERNAL_913695604792961336$$LIBS_BOOKINGS_SRC_LIB_PARKING_SPACE_LIST_FIELD_COMPONENT_TS_4;
       } else {
-        i18n_4 = $localize`:␟a386ba350cdee69beeb12a908d96f0724ddc2054␟2582674642057285571:${"\uFFFD#26\uFFFD"}:START_TAG_APP_ICON:close${"\uFFFD/#26\uFFFD"}:CLOSE_TAG_APP_ICON: Remove `;
+        i18n_4 = $localize`:␟00e1d7e28d4673ed2d4813ab8c6beb9d7e687e8f␟913695604792961336:${"\uFFFD#27\uFFFD"}:START_TAG_APP_ICON:close${"\uFFFD/#27\uFFFD"}:CLOSE_TAG_APP_ICON:${"\uFFFD#28\uFFFD"}:START_TAG_DIV:Remove${"\uFFFD/#28\uFFFD"}:CLOSE_TAG_DIV:`;
       }
-      return [["placeholder", ""], i18n_0, i18n_2, i18n_3, i18n_4, ["list", "", 1, "space-y-2"], ["space", "", "class", "relative p-2 rounded-lg w-full flex items-center shadow border border-base-200", 4, "ngFor", "ngForOf"], ["btn", "", "matRipple", "", "add-space", "", 1, "w-full", "inverse", "mt-2", 3, "click"], [1, "flex", "items-center", "justify-center", "space-x-2"], [1, "flex", "items-center", "flex-wrap", "sm:space-x-2", "mb-2"], [1, "flex-1", "min-w-[256px]", "space-y-2"], ["space", "", 1, "relative", "p-2", "rounded-lg", "w-full", "flex", "items-center", "shadow", "border", "border-base-200"], [1, "w-24", "h-24", "rounded-xl", "bg-base-200", "mr-4", "overflow-hidden", "flex", "items-center", "justify-center"], ["auth", "", "class", "object-cover h-full", 3, "source", 4, "ngIf", "ngIfElse"], [1, "space-y-2", "pb-4"], [1, "font-medium"], [1, "flex", "items-center", "text-sm", "space-x-2"], [1, "text-blue-500"], [1, "absolute", "bottom-0", "right-0", "flex", "items-center", "justify-end", "text-xs"], ["btn", "", "matRipple", "", "edit-space", "", 1, "clear", 3, "click"], [1, "flex", "items-center", "space-x-2"], ["btn", "", "matRipple", "", "remove-space", "", 1, "clear", 3, "click"], ["icon", "", "matRipple", "", "fav", "", 1, "absolute", "top-1", "right-1", 3, "click"], ["auth", "", 1, "object-cover", "h-full", 3, "source"], ["src", "assets/icons/car-placeholder.svg", 1, "m-auto"]];
+      return [["placeholder", ""], i18n_0, i18n_2, i18n_3, i18n_4, ["list", "", 1, "space-y-2"], ["space", "", "class", "relative p-2 rounded-lg w-full flex items-center shadow border border-base-200", 4, "ngFor", "ngForOf"], ["btn", "", "matRipple", "", "add-space", "", 1, "w-full", "inverse", "mt-2", 3, "click"], [1, "flex", "items-center", "justify-center", "space-x-2"], [1, "text-2xl"], [1, "flex", "items-center", "flex-wrap", "sm:space-x-2", "mb-2"], [1, "flex-1", "min-w-[256px]", "space-y-2"], ["space", "", 1, "relative", "p-2", "rounded-lg", "w-full", "flex", "items-center", "shadow", "border", "border-base-200"], [1, "w-24", "h-24", "rounded-xl", "bg-base-200", "mr-4", "overflow-hidden", "flex", "items-center", "justify-center"], ["auth", "", "class", "object-cover h-full", 3, "source", 4, "ngIf", "ngIfElse"], [1, "space-y-2", "pb-4"], [1, "font-medium"], [1, "flex", "items-center", "text-sm", "space-x-2"], [1, "text-blue-500"], [1, "absolute", "bottom-0", "right-0", "flex", "items-center", "justify-end", "text-xs"], ["btn", "", "matRipple", "", "edit-space", "", 1, "clear", 3, "click"], [1, "flex", "items-center", "space-x-2"], ["btn", "", "matRipple", "", "remove-space", "", 1, "clear", 3, "click"], ["icon", "", "matRipple", "", "fav", "", 1, "absolute", "top-1", "right-1", 3, "click"], ["auth", "", 1, "object-cover", "h-full", 3, "source"], ["src", "assets/icons/car-placeholder.svg", 1, "m-auto"]];
     },
     template: function ParkingSpaceListFieldComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](1, ParkingSpaceListFieldComponent_div_1_Template, 30, 9, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](1, ParkingSpaceListFieldComponent_div_1_Template, 32, 9, "div", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "button", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ParkingSpaceListFieldComponent_Template_button_click_2_listener() {
           return ctx.changeResources();
         });
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "div", 8)(4, "app-icon");
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "div", 8)(4, "app-icon", 9);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](5, "search");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](6, "span");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵi18n"](7, 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "div", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](9, "div", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "div", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](9, "div", 11);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
       }
       if (rf & 2) {
