@@ -41,7 +41,7 @@ const routes = [{
   canLoad: [_placeos_components__WEBPACK_IMPORTED_MODULE_0__.AuthorisedUserGuard]
 }, {
   path: 'book/visitors',
-  loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-libs_users_src_lib_users_module_ts"), __webpack_require__.e("default-libs_bookings_src_index_ts-libs_bookings_src_lib_group-event-details-modal_component_ts"), __webpack_require__.e("apps_concierge_src_app_visitors_visitors_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./visitors/visitors.module */ 43554)).then(m => m.VisitorsModule),
+  loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-libs_users_src_lib_users_module_ts"), __webpack_require__.e("default-libs_bookings_src_index_ts-libs_bookings_src_lib_group-event-details-modal_component_ts"), __webpack_require__.e("default-apps_concierge_src_app_parking_parking-state_service_ts"), __webpack_require__.e("apps_concierge_src_app_visitors_visitors_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./visitors/visitors.module */ 43554)).then(m => m.VisitorsModule),
   canActivate: [_placeos_components__WEBPACK_IMPORTED_MODULE_0__.AuthorisedUserGuard],
   canLoad: [_placeos_components__WEBPACK_IMPORTED_MODULE_0__.AuthorisedUserGuard]
 }, {
@@ -86,7 +86,7 @@ const routes = [{
   canLoad: [_placeos_components__WEBPACK_IMPORTED_MODULE_0__.AuthorisedUserGuard]
 }, {
   path: 'book/parking',
-  loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-libs_users_src_lib_users_module_ts"), __webpack_require__.e("default-libs_bookings_src_index_ts-libs_bookings_src_lib_group-event-details-modal_component_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_tabs_mjs"), __webpack_require__.e("default-libs_explore_src_index_ts"), __webpack_require__.e("apps_concierge_src_app_parking_parking_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./parking/parking.module */ 33666)).then(m => m.AppParkingModule),
+  loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-libs_users_src_lib_users_module_ts"), __webpack_require__.e("default-libs_bookings_src_index_ts-libs_bookings_src_lib_group-event-details-modal_component_ts"), __webpack_require__.e("default-node_modules_angular_material_fesm2022_tabs_mjs"), __webpack_require__.e("default-libs_explore_src_index_ts"), __webpack_require__.e("default-apps_concierge_src_app_parking_parking-state_service_ts"), __webpack_require__.e("apps_concierge_src_app_parking_parking_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./parking/parking.module */ 33666)).then(m => m.AppParkingModule),
   canActivate: [_placeos_components__WEBPACK_IMPORTED_MODULE_0__.AuthorisedUserGuard],
   canLoad: [_placeos_components__WEBPACK_IMPORTED_MODULE_0__.AuthorisedUserGuard]
 }, {
@@ -12873,15 +12873,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "45a079a",
-  "hash": "45a079a",
+  "raw": "a7b8faf",
+  "hash": "a7b8faf",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "45a079a",
+  "suffix": "a7b8faf",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1717468693405
+  "time": 1717473921535
 };
 /* tslint:enable */
 
