@@ -427,7 +427,7 @@ class BookingFormModalComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE
       } else {
         i18n_4 = $localize`:␟3d8cf895dbf823bec6129c8d50a6ffdb3cd16110␟314609108888854870:${"\uFFFD#3\uFFFD"}:START_TAG_STRONG:Estimated Headcount:${"\uFFFD#4\uFFFD"}:START_TAG_SPAN:*${"\uFFFD/#4\uFFFD"}:CLOSE_TAG_SPAN:${"\uFFFD/#3\uFFFD"}:CLOSE_TAG_STRONG:`;
       }
-      return [i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, [1, "booking-form", 3, "formGroup"], [4, "ngIf"], [3, "hidden"], ["class", "notes", "matInput", "", "name", "notes", "placeholder", "Add notes here...", "formControlName", "notes", 4, "ngIf"], ["appearance", "outline"], ["matInput", "", "name", "title", "placeholder", "Enter here", "formControlName", "title"], ["for", "start-time"], ["name", "start-time", "formControlName", "date"], [2, "margin-top", "1.5em"], ["for", "duration"], ["name", "duration", "formControlName", "duration"], ["for", "organiser"], ["name", "organiser", "formControlName", "organiser"], ["matInput", "", "name", "notes", "placeholder", "Add notes here...", "formControlName", "notes", 1, "notes"], ["matInput", "", "name", "headcount", "placeholder", "Expected attendees here..", "formControlName", "head_count"]];
+      return [i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, [1, "booking-form", 3, "formGroup"], [4, "ngIf"], [3, "hidden"], ["class", "notes", "matInput", "", "name", "notes", "placeholder", "Add notes here...", "formControlName", "notes", 4, "ngIf"], ["appearance", "outline"], ["matInput", "", "name", "title", "placeholder", "Enter here", "formControlName", "title"], ["for", "start-time"], ["name", "start-time", "formControlName", "date"], [2, "margin-top", "1.5em"], ["for", "duration"], ["name", "duration", "formControlName", "duration"], ["for", "organiser"], ["name", "organiser", "formControlName", "organiser", 1, "mb-4"], ["matInput", "", "name", "notes", "placeholder", "Add notes here...", "formControlName", "notes", 1, "notes"], ["matInput", "", "name", "headcount", "placeholder", "Expected attendees here..", "formControlName", "head_count"]];
     },
     template: function BookingFormModalComponent_Template(rf, ctx) {
       if (rf & 1) {
@@ -8021,7 +8021,7 @@ function DeskConfirmModalComponent_ng_container_5_div_6_Template(rf, ctx) {
 function DeskConfirmModalComponent_ng_container_5_a_date_field_7_Template(rf, ctx) {
   if (rf & 1) {
     const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "a-date-field", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "a-date-field", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtwoWayListener"]("ngModelChange", function DeskConfirmModalComponent_ng_container_5_a_date_field_7_Template_a_date_field_ngModelChange_0_listener($event) {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r4);
       const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2);
@@ -8038,10 +8038,10 @@ function DeskConfirmModalComponent_ng_container_5_a_date_field_7_Template(rf, ct
 function DeskConfirmModalComponent_ng_container_5_div_8_Template(rf, ctx) {
   if (rf & 1) {
     const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 22)(1, "label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 23)(1, "label");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵi18n"](2, 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](3, "mat-form-field", 23)(4, "input", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](3, "mat-form-field", 24)(4, "input", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtwoWayListener"]("ngModelChange", function DeskConfirmModalComponent_ng_container_5_div_8_Template_input_ngModelChange_4_listener($event) {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r5);
       const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2);
@@ -8098,8 +8098,8 @@ function DeskConfirmModalComponent_ng_container_5_Template(rf, ctx) {
 }
 function DeskConfirmModalComponent_ng_template_6_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "main", 25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](1, "mat-spinner", 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "main", 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](1, "mat-spinner", 27);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "p");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
@@ -8221,7 +8221,7 @@ class DeskConfirmModalComponent {
       } else {
         i18n_5 = $localize`:␟4ba250869daa372b54d24fafc0ea934769ee4076␟4775550080689015987:Reason`;
       }
-      return [["load_state", ""], i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_5, [1, "flex-1"], ["icon", "", "mat-dialog-close", "", 4, "ngIf"], [4, "ngIf", "ngIfElse"], ["icon", "", "mat-dialog-close", ""], [1, "material-icons"], [1, "p-4"], ["host", "", "class", "flex flex-col", 4, "ngIf"], ["date", "", 1, "mb-4"], [4, "ngIf"], [3, "ngModel", "ngModelChange", 4, "ngIf"], ["reason", "", "class", "flex flex-col mb-4", 4, "ngIf"], [1, "flex", "items-center", "justify-center", "p-2"], ["btn", "", "matRipple", "", 3, "click"], ["host", "", 1, "flex", "flex-col"], [3, "ngModelChange", "ngModel"], ["reason", "", 1, "flex", "flex-col", "mb-4"], ["appearance", "outline"], ["matInput", "", "placeholder", "Reason", 3, "ngModelChange", "ngModel"], ["load", "", 1, "flex", "flex-col", "p-12", "items-center", "justify-center"], [1, "mb-4", 3, "diameter"]];
+      return [["load_state", ""], i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_5, [1, "flex-1"], ["icon", "", "mat-dialog-close", "", 4, "ngIf"], [4, "ngIf", "ngIfElse"], ["icon", "", "mat-dialog-close", ""], [1, "material-icons"], [1, "p-4"], ["host", "", "class", "flex flex-col", 4, "ngIf"], ["date", "", 1, "mb-4"], [4, "ngIf"], [3, "ngModel", "ngModelChange", 4, "ngIf"], ["reason", "", "class", "flex flex-col mb-4", 4, "ngIf"], [1, "flex", "items-center", "justify-center", "p-2"], ["btn", "", "matRipple", "", 3, "click"], ["host", "", 1, "flex", "flex-col"], [1, "mb-4", 3, "ngModelChange", "ngModel"], [3, "ngModelChange", "ngModel"], ["reason", "", 1, "flex", "flex-col", "mb-4"], ["appearance", "outline"], ["matInput", "", "placeholder", "Reason", 3, "ngModelChange", "ngModel"], ["load", "", 1, "flex", "flex-col", "p-12", "items-center", "justify-center"], [1, "mb-4", 3, "diameter"]];
     },
     template: function DeskConfirmModalComponent_Template(rf, ctx) {
       if (rf & 1) {
@@ -21171,15 +21171,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "45a079a",
-  "hash": "45a079a",
+  "raw": "da4afbb",
+  "hash": "da4afbb",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "45a079a",
+  "suffix": "da4afbb",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1717468694577
+  "time": 1717483423416
 };
 /* tslint:enable */
 
@@ -34183,7 +34183,7 @@ class ExploreBookingModalComponent {
       } else {
         i18n_6 = $localize`:␟e17a1d75189da843f541f7764f188f2b19a97df2␟4220765745195024064:Duration:`;
       }
-      return [["load_state", ""], i18n_0, i18n_1, i18n_3, i18n_4, i18n_5, i18n_6, [1, "flex-1"], ["icon", "", "matRipple", "", "mat-dialog-close", "", 4, "ngIf"], [4, "ngIf", "ngIfElse"], ["icon", "", "matRipple", "", "mat-dialog-close", ""], ["class", "p-4 max-w-[85vw]", 3, "formGroup", 4, "ngIf"], [1, "flex", "justify-center", "p-2", "border-t", "border-base-200"], ["btn", "", "matRipple", "", 1, "w-32", 3, "click"], [1, "p-4", "max-w-[85vw]", 3, "formGroup"], [1, "flex", "flex-col"], ["for", "title"], ["appearance", "outline"], ["matInput", "", "name", "title", "formControlName", "title", "placeholder", i18n_2], ["class", "flex flex-col", 4, "ngIf"], ["name", "space", 1, "px-4", "py-3", "border", "border-base-200", "rounded", "w-full", "mb-4"], [1, "flex", "sm:space-x-4", "flex-wrap"], ["class", "flex flex-col flex-1 w-full sm:w-auto", 4, "ngIf"], ["class", "flex flex-col w-full sm:w-auto", 4, "ngIf"], ["for", "host"], ["name", "host", "formControlName", "organiser"], [1, "flex", "flex-col", "flex-1", "w-full", "sm:w-auto"], [1, "px-4", "py-3", "border", "border-base-200", "rounded", "w-full", "mb-4"], [1, "flex", "flex-col", "w-full", "sm:w-auto"], ["formControlName", "duration", 1, "w-full", 3, "time", "max", "use_24hr"], ["load", "", 1, "h-64", "flex", "flex-col", "items-center", "justify-center"], [1, "m-4", 3, "diameter"]];
+      return [["load_state", ""], i18n_0, i18n_1, i18n_3, i18n_4, i18n_5, i18n_6, [1, "flex-1"], ["icon", "", "matRipple", "", "mat-dialog-close", "", 4, "ngIf"], [4, "ngIf", "ngIfElse"], ["icon", "", "matRipple", "", "mat-dialog-close", ""], ["class", "p-4 max-w-[85vw]", 3, "formGroup", 4, "ngIf"], [1, "flex", "justify-center", "p-2", "border-t", "border-base-200"], ["btn", "", "matRipple", "", 1, "w-32", 3, "click"], [1, "p-4", "max-w-[85vw]", 3, "formGroup"], [1, "flex", "flex-col"], ["for", "title"], ["appearance", "outline"], ["matInput", "", "name", "title", "formControlName", "title", "placeholder", i18n_2], ["class", "flex flex-col", 4, "ngIf"], ["name", "space", 1, "px-4", "py-3", "border", "border-base-200", "rounded", "w-full", "mb-4"], [1, "flex", "sm:space-x-4", "flex-wrap"], ["class", "flex flex-col flex-1 w-full sm:w-auto", 4, "ngIf"], ["class", "flex flex-col w-full sm:w-auto", 4, "ngIf"], ["for", "host"], ["name", "host", "formControlName", "organiser", 1, "mb-4"], [1, "flex", "flex-col", "flex-1", "w-full", "sm:w-auto"], [1, "px-4", "py-3", "border", "border-base-200", "rounded", "w-full", "mb-4"], [1, "flex", "flex-col", "w-full", "sm:w-auto"], ["formControlName", "duration", 1, "w-full", 3, "time", "max", "use_24hr"], ["load", "", 1, "h-64", "flex", "flex-col", "items-center", "justify-center"], [1, "m-4", 3, "diameter"]];
     },
     template: function ExploreBookingModalComponent_Template(rf, ctx) {
       if (rf & 1) {
@@ -37997,7 +37997,7 @@ class SetDatetimeModalComponent {
     selectors: [["set-datetime-modal"]],
     decls: 10,
     vars: 2,
-    consts: [["classs", "flex items-center justify-between"], ["icon", "", "mat-dialog-close", ""], ["class", "w-[24rem] max-w-[85vw] pt-4", 3, "formGroup", 4, "ngIf"], [1, "w-full", "p-2", "border-t", "border-base-200", "flex", "items-center", "justify-center"], ["btn", "", "matRipple", "", 1, "w-32", 3, "mat-dialog-close"], [1, "w-[24rem]", "max-w-[85vw]", "pt-4", 3, "formGroup"], ["class", "flex flex-col sm:flex-row space-x-0 sm:space-x-2 w-[640px] max-w-[calc(100%-2rem)] mx-auto", 4, "ngIf"], [1, "flex", "flex-col", "sm:flex-row", "space-x-0", "sm:space-x-2", "w-[640px]", "max-w-[calc(100%-2rem)]", "mx-auto"], [1, "flex", "flex-col", "flex-1", "w-full", "sm:w-1/4"], ["formControlName", "date", 3, "to"], [1, "flex", "flex-col", "flex-1", "w-full", "sm:w-1/3"], [3, "ngModelChange", "ngModel", "ngModelOptions", "use_24hr"], ["formControlName", "duration", 3, "time", "max", "min", "step", "use_24hr"], [1, "flex", "flex-col", "flex-1", "w-full", "sm:w-1/4", "mb-2"], [1, "px-4", "py-3", "border", "border-base-200", "rounded", "w-full", "mb-4"], ["formControlName", "user"]],
+    consts: [["classs", "flex items-center justify-between"], ["icon", "", "mat-dialog-close", ""], ["class", "w-[24rem] max-w-[85vw] pt-4", 3, "formGroup", 4, "ngIf"], [1, "w-full", "p-2", "border-t", "border-base-200", "flex", "items-center", "justify-center"], ["btn", "", "matRipple", "", 1, "w-32", 3, "mat-dialog-close"], [1, "w-[24rem]", "max-w-[85vw]", "pt-4", 3, "formGroup"], ["class", "flex flex-col sm:flex-row space-x-0 sm:space-x-2 w-[640px] max-w-[calc(100%-2rem)] mx-auto", 4, "ngIf"], [1, "flex", "flex-col", "sm:flex-row", "space-x-0", "sm:space-x-2", "w-[640px]", "max-w-[calc(100%-2rem)]", "mx-auto"], [1, "flex", "flex-col", "flex-1", "w-full", "sm:w-1/4"], ["formControlName", "date", 3, "to"], [1, "flex", "flex-col", "flex-1", "w-full", "sm:w-1/3"], [3, "ngModelChange", "ngModel", "ngModelOptions", "use_24hr"], ["formControlName", "duration", 3, "time", "max", "min", "step", "use_24hr"], [1, "flex", "flex-col", "flex-1", "w-full", "sm:w-1/4", "mb-2"], [1, "px-4", "py-3", "border", "border-base-200", "rounded", "w-full", "mb-4"], ["formControlName", "user", 1, "mb-4"]],
     template: function SetDatetimeModalComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "header", 0)(1, "h2");
@@ -43565,25 +43565,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const _c0 = ["input"];
-function UserSearchFieldComponent_mat_spinner_6_Template(rf, ctx) {
+function UserSearchFieldComponent_mat_spinner_5_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](0, "mat-spinner", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](0, "mat-spinner", 11);
   }
 }
-function UserSearchFieldComponent_mat_option_9_Template(rf, ctx) {
+function UserSearchFieldComponent_mat_option_8_Template(rf, ctx) {
   if (rf & 1) {
     const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-option", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function UserSearchFieldComponent_mat_option_9_Template_mat_option_click_0_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-option", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function UserSearchFieldComponent_mat_option_8_Template_mat_option_click_0_listener() {
       const option_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r2).$implicit;
       const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
       ctx_r3.setValue(option_r3);
       return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r3.blurInput());
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "div", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "div", 14);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
   }
@@ -43595,26 +43595,26 @@ function UserSearchFieldComponent_mat_option_9_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", option_r3.email, " ");
   }
 }
-function UserSearchFieldComponent_mat_option_10_Template(rf, ctx) {
+function UserSearchFieldComponent_mat_option_9_Template(rf, ctx) {
   if (rf & 1) {
     const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-option", 16)(1, "div", 17);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("mousedown", function UserSearchFieldComponent_mat_option_10_Template_div_mousedown_1_listener($event) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-option", 15)(1, "div", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("mousedown", function UserSearchFieldComponent_mat_option_9_Template_div_mousedown_1_listener($event) {
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r5);
       $event.stopPropagation();
       return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"]($event.preventDefault());
-    })("touchstart", function UserSearchFieldComponent_mat_option_10_Template_div_touchstart_1_listener($event) {
+    })("touchstart", function UserSearchFieldComponent_mat_option_9_Template_div_touchstart_1_listener($event) {
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r5);
       $event.stopPropagation();
       return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"]($event.preventDefault());
-    })("click", function UserSearchFieldComponent_mat_option_10_Template_div_click_1_listener($event) {
+    })("click", function UserSearchFieldComponent_mat_option_9_Template_div_click_1_listener($event) {
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r5);
       const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
       ctx_r3.setValue(ctx_r3.search_str);
       $event.stopPropagation();
       return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"]($event.preventDefault());
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "div", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "div", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18n"](3, 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()();
   }
@@ -43625,11 +43625,11 @@ function UserSearchFieldComponent_mat_option_10_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18nApply"](3);
   }
 }
-function UserSearchFieldComponent_mat_option_11_Template(rf, ctx) {
+function UserSearchFieldComponent_mat_option_10_Template(rf, ctx) {
   if (rf & 1) {
     const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-option", 19);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function UserSearchFieldComponent_mat_option_11_Template_mat_option_click_0_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-option", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function UserSearchFieldComponent_mat_option_10_Template_mat_option_click_0_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r6);
       const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r3.empty_fn());
@@ -43756,7 +43756,7 @@ class UserSearchFieldComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_
       useExisting: (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.forwardRef)(() => UserSearchFieldComponent),
       multi: true
     }]), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵInheritDefinitionFeature"]],
-    decls: 12,
+    decls: 11,
     vars: 8,
     consts: () => {
       let i18n_0;
@@ -43764,58 +43764,58 @@ class UserSearchFieldComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_
         /**
          * @suppress {msgDescriptions}
          */
-        const MSG_EXTERNAL_4284308487304616875$$LIBS_FORM_FIELDS_SRC_LIB_USER_SEARCH_FIELD_COMPONENT_TS_0 = goog.getMsg(" Add external attendee \"{$interpolation}\" ", {
+        const MSG_EXTERNAL_1390235508766899631$$LIBS_FORM_FIELDS_SRC_LIB_USER_SEARCH_FIELD_COMPONENT_TS_0 = goog.getMsg(" Add external attendee \"{$interpolation}\" ", {
           "interpolation": "\uFFFD0\uFFFD"
         }, {
           original_code: {
             "interpolation": "{{ search_str }}"
           }
         });
-        i18n_0 = MSG_EXTERNAL_4284308487304616875$$LIBS_FORM_FIELDS_SRC_LIB_USER_SEARCH_FIELD_COMPONENT_TS_0;
+        i18n_0 = MSG_EXTERNAL_1390235508766899631$$LIBS_FORM_FIELDS_SRC_LIB_USER_SEARCH_FIELD_COMPONENT_TS_0;
       } else {
-        i18n_0 = $localize`:␟27716a7b219c38733d3998f0a742dc0adf455d3d␟4284308487304616875: Add external attendee "${"\uFFFD0\uFFFD"}:INTERPOLATION:" `;
+        i18n_0 = $localize`:␟bda749fab8de2e52f25203a840d2aca70b8e5b4d␟1390235508766899631: Add external attendee "${"\uFFFD0\uFFFD"}:INTERPOLATION:" `;
       }
-      return [["input", ""], ["auto", "matAutocomplete"], i18n_0, ["form-field", "", 1, "user-search-field"], ["appearance", "outline"], ["matInput", "", "keyboard", "", "name", "user-search", 3, "ngModelChange", "keyup.enter", "blur", "focus", "ngModel", "disabled", "placeholder", "matAutocomplete"], ["matPrefix", "", 1, "text-2xl", "relative"], ["matSuffix", "", "diameter", "16", 4, "ngIf"], [3, "optionSelected"], [3, "click", 4, "ngFor", "ngForOf"], ["class", "relative pointer-events-none", 4, "ngIf"], [3, "disabled", "click", 4, "ngIf"], ["matSuffix", "", "diameter", "16"], [3, "click"], [1, "leading-tight"], [1, "text-xs", "opacity-60"], [1, "relative", "pointer-events-none"], [1, "absolute", "inset-0", "px-4", "pointer-events-auto", 3, "mousedown", "touchstart", "click"], [1, "pointer-events-none"], [3, "click", "disabled"]];
+      return [["input", ""], ["auto", "matAutocomplete"], i18n_0, ["appearance", "outline", 1, "w-full", "no-subscript"], ["matInput", "", "keyboard", "", "name", "user-search", 3, "ngModelChange", "keyup.enter", "blur", "focus", "ngModel", "disabled", "placeholder", "matAutocomplete"], ["matPrefix", "", 1, "text-2xl", "relative"], ["matSuffix", "", "diameter", "16", 4, "ngIf"], [3, "optionSelected"], [3, "click", 4, "ngFor", "ngForOf"], ["class", "relative pointer-events-none", 4, "ngIf"], [3, "disabled", "click", 4, "ngIf"], ["matSuffix", "", "diameter", "16"], [3, "click"], [1, "leading-tight"], [1, "text-xs", "opacity-60"], [1, "relative", "pointer-events-none"], [1, "absolute", "inset-0", "px-4", "pointer-events-auto", 3, "mousedown", "touchstart", "click"], [1, "pointer-events-none"], [3, "click", "disabled"]];
     },
     template: function UserSearchFieldComponent_Template(rf, ctx) {
       if (rf & 1) {
         const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 3)(1, "mat-form-field", 4)(2, "input", 5, 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtwoWayListener"]("ngModelChange", function UserSearchFieldComponent_Template_input_ngModelChange_2_listener($event) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-form-field", 3)(1, "input", 4, 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtwoWayListener"]("ngModelChange", function UserSearchFieldComponent_Template_input_ngModelChange_1_listener($event) {
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r1);
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtwoWayBindingSet"](ctx.search_str, $event) || (ctx.search_str = $event);
           return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"]($event);
         });
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function UserSearchFieldComponent_Template_input_ngModelChange_2_listener($event) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function UserSearchFieldComponent_Template_input_ngModelChange_1_listener($event) {
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r1);
           return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx.search$.next($event || ""));
-        })("keyup.enter", function UserSearchFieldComponent_Template_input_keyup_enter_2_listener() {
+        })("keyup.enter", function UserSearchFieldComponent_Template_input_keyup_enter_1_listener() {
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r1);
           return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx.validate && ctx.validate(ctx.search_str) ? ctx.setValue(ctx.search_str) : "");
-        })("blur", function UserSearchFieldComponent_Template_input_blur_2_listener() {
+        })("blur", function UserSearchFieldComponent_Template_input_blur_1_listener() {
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r1);
           return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx.resetSearchString());
-        })("focus", function UserSearchFieldComponent_Template_input_focus_2_listener() {
+        })("focus", function UserSearchFieldComponent_Template_input_focus_1_listener() {
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r1);
           return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx.cancelReset());
         });
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "app-icon", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](5, "search");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "app-icon", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](4, "search");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](6, UserSearchFieldComponent_mat_spinner_6_Template, 1, 0, "mat-spinner", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](5, UserSearchFieldComponent_mat_spinner_5_Template, 1, 0, "mat-spinner", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](7, "mat-autocomplete", 8, 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("optionSelected", function UserSearchFieldComponent_Template_mat_autocomplete_optionSelected_7_listener($event) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "mat-autocomplete", 7, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("optionSelected", function UserSearchFieldComponent_Template_mat_autocomplete_optionSelected_6_listener($event) {
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r1);
           return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx.setValue($event.option.value));
         });
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](9, UserSearchFieldComponent_mat_option_9_Template, 5, 2, "mat-option", 9)(10, UserSearchFieldComponent_mat_option_10_Template, 4, 1, "mat-option", 10)(11, UserSearchFieldComponent_mat_option_11_Template, 2, 3, "mat-option", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](8, UserSearchFieldComponent_mat_option_8_Template, 5, 2, "mat-option", 8)(9, UserSearchFieldComponent_mat_option_9_Template, 4, 1, "mat-option", 9)(10, UserSearchFieldComponent_mat_option_10_Template, 2, 3, "mat-option", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
       }
       if (rf & 2) {
-        const auto_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+        const auto_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtwoWayProperty"]("ngModel", ctx.search_str);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", ctx.disabled)("placeholder", ctx.placeholder || "Search for user...")("matAutocomplete", auto_r7);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
@@ -43828,7 +43828,7 @@ class UserSearchFieldComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !(ctx.user_list == null ? null : ctx.user_list.length) && (ctx.search_str || ctx.error));
       }
     },
-    styles: ["[_nghost-%COMP%], \n   mat-form-field[_ngcontent-%COMP%] {\n                width: 100%;\n            }\n\n            app-icon[_ngcontent-%COMP%] {\n                top: 0.15em;\n                left: -0.15em;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvZm9ybS1maWVsZHMvc3JjL2xpYi91c2VyLXNlYXJjaC1maWVsZC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZOztnQkFFSSxXQUFXO1lBQ2Y7O1lBRUE7Z0JBQ0ksV0FBVztnQkFDWCxhQUFhO1lBQ2pCIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCxcbiAgICAgICAgICAgIG1hdC1mb3JtLWZpZWxkIHtcbiAgICAgICAgICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgYXBwLWljb24ge1xuICAgICAgICAgICAgICAgIHRvcDogMC4xNWVtO1xuICAgICAgICAgICAgICAgIGxlZnQ6IC0wLjE1ZW07XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
+    styles: ["[_nghost-%COMP%] {\n                display: block;\n            }\n            app-icon[_ngcontent-%COMP%] {\n                top: 0.15em;\n                left: -0.15em;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvZm9ybS1maWVsZHMvc3JjL2xpYi91c2VyLXNlYXJjaC1maWVsZC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGNBQWM7WUFDbEI7WUFDQTtnQkFDSSxXQUFXO2dCQUNYLGFBQWE7WUFDakIiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBibG9jaztcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIGFwcC1pY29uIHtcbiAgICAgICAgICAgICAgICB0b3A6IDAuMTVlbTtcbiAgICAgICAgICAgICAgICBsZWZ0OiAtMC4xNWVtO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
   });
 }
 
