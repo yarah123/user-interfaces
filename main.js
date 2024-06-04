@@ -5269,6 +5269,7 @@ function queryAvailableAssets(query, ignore) {
 function queryGroupAvailability(query, ignore) {
   query.type = 'asset-request';
   return (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.combineLatest)([queryAssetGroupsExtended(query), (0,libs_bookings_src_lib_bookings_fn__WEBPACK_IMPORTED_MODULE_3__.queryBookings)(query)]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.map)(([products, bookings]) => {
+    bookings = bookings.filter(_ => _.status !== 'declined' && _.status !== 'cancelled');
     return products.map(product => ({
       ...product,
       assets: product.assets.filter(asset => ignore?.includes(asset.id) || !bookings.find(booking => !ignore.includes(booking.id) && (booking.asset_id === asset.id || booking.asset_ids?.includes(asset.id))))
@@ -6919,7 +6920,8 @@ class BookingFormService extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.As
         email: user_email,
         limit: 1000
       }).toPromise();
-      if (bookings.find(_ => _.asset_id === asset_id && id !== _.id)) {
+      let active_bookings = bookings.filter(_ => _.status !== 'declined' && _.status !== 'cancelled' && !_.rejected);
+      if (active_bookings.find(_ => _.asset_id === asset_id && id !== _.id)) {
         if (asset_id.includes('@')) {
           throw `${asset_id} already has an invite for the selected time`;
         } else {
@@ -6927,7 +6929,7 @@ class BookingFormService extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.As
         }
       }
       const allowed_bookings = _this5._settings.get(`app.bookings.allowed_daily_${type}_count`) ?? 1;
-      if (allowed_bookings > 0 && bookings.filter(_ => _.user_email.toLowerCase() === (user_email || (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.currentUser)()?.email).toLowerCase() && _.status !== 'declined' && _.id !== id).length >= allowed_bookings) {
+      if (allowed_bookings > 0 && active_bookings.filter(_ => _.user_email.toLowerCase() === (user_email || (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.currentUser)()?.email).toLowerCase() && _.id !== id).length >= allowed_bookings) {
         const current = user_email === (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.currentUser)()?.email;
         throw `${current ? 'You' : user_email} already ${current ? 'have' : 'has'} a booking at the selected time`;
       }
@@ -21146,15 +21148,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "44de142",
-  "hash": "44de142",
+  "raw": "ed308a0",
+  "hash": "ed308a0",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "44de142",
+  "suffix": "ed308a0",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1717372127354
+  "time": 1717463007776
 };
 /* tslint:enable */
 

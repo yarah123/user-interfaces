@@ -213,11 +213,12 @@ class ScheduleStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.
               const diff = (0,date_fns__WEBPACK_IMPORTED_MODULE_27__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_26__["default"])(booking.date, auto_release.time_after || 0), Date.now());
               if (diff > check_block || diff < 0) continue;
               const time = (0,date_fns__WEBPACK_IMPORTED_MODULE_26__["default"])(booking.date, auto_release.time_after || 0);
+              const wording = type === 'parking' ? 'reservation' : 'booking';
               const result = yield (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.openConfirmModal)({
-                title: `Keep ${type} booking`,
+                title: `Keep ${type} ${wording}`,
                 content: `You have indicated you are not in the office. 
-                                Your booking "<i>${booking.title}</i>" for ${(0,date_fns__WEBPACK_IMPORTED_MODULE_28__["default"])(booking.date, _this._settings.time_format)} will be cancelled at ${(0,date_fns__WEBPACK_IMPORTED_MODULE_28__["default"])(time, _this._settings.time_format)}.<br/><br/>
-                                Do you wish to keep this booking?`,
+                                Your  ${wording} for "<i>${booking.asset_name || booking.title}</i>" at ${(0,date_fns__WEBPACK_IMPORTED_MODULE_28__["default"])(booking.date, _this._settings.time_format)} will be cancelled at ${(0,date_fns__WEBPACK_IMPORTED_MODULE_28__["default"])(time, _this._settings.time_format)}.<br/><br/>
+                                Do you wish to keep this ${wording}?`,
                 icon: {
                   content: 'event_busy'
                 },
