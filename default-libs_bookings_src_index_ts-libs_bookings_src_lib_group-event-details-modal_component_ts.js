@@ -1430,7 +1430,8 @@ class BookingFormService extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.As
         email: user_email,
         limit: 1000
       }).toPromise();
-      if (bookings.find(_ => _.asset_id === asset_id && id !== _.id)) {
+      let active_bookings = bookings.filter(_ => _.status !== 'declined' && _.status !== 'cancelled' && !_.rejected);
+      if (active_bookings.find(_ => _.asset_id === asset_id && id !== _.id)) {
         if (asset_id.includes('@')) {
           throw `${asset_id} already has an invite for the selected time`;
         } else {
@@ -1438,7 +1439,7 @@ class BookingFormService extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.As
         }
       }
       const allowed_bookings = _this5._settings.get(`app.bookings.allowed_daily_${type}_count`) ?? 1;
-      if (allowed_bookings > 0 && bookings.filter(_ => _.user_email.toLowerCase() === (user_email || (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.currentUser)()?.email).toLowerCase() && _.status !== 'declined' && _.id !== id).length >= allowed_bookings) {
+      if (allowed_bookings > 0 && active_bookings.filter(_ => _.user_email.toLowerCase() === (user_email || (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.currentUser)()?.email).toLowerCase() && _.id !== id).length >= allowed_bookings) {
         const current = user_email === (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.currentUser)()?.email;
         throw `${current ? 'You' : user_email} already ${current ? 'have' : 'has'} a booking at the selected time`;
       }

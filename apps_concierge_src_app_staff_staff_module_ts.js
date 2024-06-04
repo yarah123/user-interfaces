@@ -871,9 +871,14 @@ class RoleManagementModalComponent {
     this.loading = false;
     this.data = (0,rxjs__WEBPACK_IMPORTED_MODULE_9__.combineLatest)([this._org.active_building, this._changes]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.filter)(([bld]) => !!bld), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.switchMap)(([bld]) => (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__.showMetadata)(bld.id, 'emergency_contacts')), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_12__.map)(({
       details
-    }) => details || {
-      roles: [],
-      contacts: []
+    }) => {
+      const value = details || {
+        roles: [],
+        contacts: []
+      };
+      if (!value.roles) value.roles = [];
+      if (!value.contacts) value.contacts = [];
+      return value;
     }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.shareReplay)(1));
     this.roles = this.data.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_12__.map)(_ => _.roles));
   }

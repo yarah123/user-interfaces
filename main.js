@@ -5798,6 +5798,7 @@ function queryAvailableAssets(query, ignore) {
 function queryGroupAvailability(query, ignore) {
   query.type = 'asset-request';
   return (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.combineLatest)([queryAssetGroupsExtended(query), (0,libs_bookings_src_lib_bookings_fn__WEBPACK_IMPORTED_MODULE_3__.queryBookings)(query)]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.map)(([products, bookings]) => {
+    bookings = bookings.filter(_ => _.status !== 'declined' && _.status !== 'cancelled');
     return products.map(product => ({
       ...product,
       assets: product.assets.filter(asset => ignore?.includes(asset.id) || !bookings.find(booking => !ignore.includes(booking.id) && (booking.asset_id === asset.id || booking.asset_ids?.includes(asset.id))))
@@ -12868,15 +12869,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "44de142",
-  "hash": "44de142",
+  "raw": "ed308a0",
+  "hash": "ed308a0",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "44de142",
+  "suffix": "ed308a0",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1717372126996
+  "time": 1717463012587
 };
 /* tslint:enable */
 
