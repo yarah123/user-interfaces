@@ -1595,6 +1595,9 @@ video {
 #placeos :is(.w-\[64rem\]) {
   width: 64rem;
 }
+#placeos :is(.w-\[7\.5rem\]) {
+  width: 7.5rem;
+}
 #placeos :is(.w-\[80rem\]) {
   width: 80rem;
 }
