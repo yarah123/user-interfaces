@@ -774,9 +774,6 @@ video {
 #placeos :is(.top-2) {
   top: 0.5rem;
 }
-#placeos :is(.top-24) {
-  top: 6rem;
-}
 #placeos :is(.top-4) {
   top: 1rem;
 }
