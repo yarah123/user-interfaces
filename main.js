@@ -5225,14 +5225,14 @@ var ScheduleStateService = /*#__PURE__*/function (_common_1$AsyncHandle) {
         var _ref33 = _slicedToArray(_ref32, 1),
           user = _ref33[0];
         return /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(_auto_release$resourc) {
-          var is_home, auto_release, _iterator, _step, type, bookings, check_block, _iterator2, _step2, booking, diff, time, result;
+          var is_home, auto_release, _iterator, _step, type, bookings, check_block, _iterator2, _step2, booking, diff, time, wording, result;
           return _regeneratorRuntime().wrap(function _callee2$(_context2) {
             while (1) switch (_context2.prev = _context2.next) {
               case 0:
                 is_home = user.location !== 'wfo';
                 auto_release = _this._settings.get('app.auto_release');
                 if (!(auto_release && is_home && (auto_release.time_after || auto_release.time_before) && (_auto_release$resourc = auto_release.resources) !== null && _auto_release$resourc !== void 0 && _auto_release$resourc.length)) {
-                  _context2.next = 54;
+                  _context2.next = 55;
                   break;
                 }
                 _iterator = _createForOfIteratorHelper(auto_release.resources);
@@ -5240,7 +5240,7 @@ var ScheduleStateService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                 _iterator.s();
               case 6:
                 if ((_step = _iterator.n()).done) {
-                  _context2.next = 46;
+                  _context2.next = 47;
                   break;
                 }
                 type = _step.value;
@@ -5258,7 +5258,7 @@ var ScheduleStateService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                 _iterator2.s();
               case 15:
                 if ((_step2 = _iterator2.n()).done) {
-                  _context2.next = 36;
+                  _context2.next = 37;
                   break;
                 }
                 booking = _step2.value;
@@ -5266,7 +5266,7 @@ var ScheduleStateService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                   _context2.next = 19;
                   break;
                 }
-                return _context2.abrupt("continue", 34);
+                return _context2.abrupt("continue", 35);
               case 19:
                 _this._dialog.closeAll();
                 diff = (0, date_fns_1.differenceInMinutes)((0, date_fns_1.addMinutes)(booking.date, auto_release.time_after || 0), Date.now());
@@ -5274,66 +5274,67 @@ var ScheduleStateService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                   _context2.next = 23;
                   break;
                 }
-                return _context2.abrupt("continue", 34);
+                return _context2.abrupt("continue", 35);
               case 23:
                 time = (0, date_fns_1.addMinutes)(booking.date, auto_release.time_after || 0);
-                _context2.next = 26;
+                wording = type === 'parking' ? 'reservation' : 'booking';
+                _context2.next = 27;
                 return (0, common_1.openConfirmModal)({
-                  title: "Keep ".concat(type, " booking"),
-                  content: "You have indicated you are not in the office. \n                                Your booking \"<i>".concat(booking.title, "</i>\" for ").concat((0, date_fns_1.format)(booking.date, _this._settings.time_format), " will be cancelled at ").concat((0, date_fns_1.format)(time, _this._settings.time_format), ".<br/><br/>\n                                Do you wish to keep this booking?"),
+                  title: "Keep ".concat(type, " ").concat(wording),
+                  content: "You have indicated you are not in the office. \n                                Your  ".concat(wording, " for \"<i>").concat(booking.asset_name || booking.title, "</i>\" at ").concat((0, date_fns_1.format)(booking.date, _this._settings.time_format), " will be cancelled at ").concat((0, date_fns_1.format)(time, _this._settings.time_format), ".<br/><br/>\n                                Do you wish to keep this ").concat(wording, "?"),
                   icon: {
                     content: 'event_busy'
                   },
                   confirm_text: 'Keep',
                   cancel_text: 'Dismiss'
                 }, _this._dialog);
-              case 26:
+              case 27:
                 result = _context2.sent;
                 if (!(result.reason !== 'done')) {
-                  _context2.next = 30;
+                  _context2.next = 31;
                   break;
                 }
                 _this._ignore_cancel.push(booking.id);
-                return _context2.abrupt("continue", 34);
-              case 30:
+                return _context2.abrupt("continue", 35);
+              case 31:
                 result.loading('Checking in booking...');
-                _context2.next = 33;
+                _context2.next = 34;
                 return (0, bookings_1.checkinBooking)(booking.id, true).toPromise();
-              case 33:
-                result.close();
               case 34:
+                result.close();
+              case 35:
                 _context2.next = 15;
                 break;
-              case 36:
-                _context2.next = 41;
+              case 37:
+                _context2.next = 42;
                 break;
-              case 38:
-                _context2.prev = 38;
+              case 39:
+                _context2.prev = 39;
                 _context2.t0 = _context2["catch"](13);
                 _iterator2.e(_context2.t0);
-              case 41:
-                _context2.prev = 41;
+              case 42:
+                _context2.prev = 42;
                 _iterator2.f();
-                return _context2.finish(41);
-              case 44:
+                return _context2.finish(42);
+              case 45:
                 _context2.next = 6;
                 break;
-              case 46:
-                _context2.next = 51;
+              case 47:
+                _context2.next = 52;
                 break;
-              case 48:
-                _context2.prev = 48;
+              case 49:
+                _context2.prev = 49;
                 _context2.t1 = _context2["catch"](4);
                 _iterator.e(_context2.t1);
-              case 51:
-                _context2.prev = 51;
+              case 52:
+                _context2.prev = 52;
                 _iterator.f();
-                return _context2.finish(51);
-              case 54:
+                return _context2.finish(52);
+              case 55:
               case "end":
                 return _context2.stop();
             }
-          }, _callee2, null, [[4, 48, 51, 54], [13, 38, 41, 44]]);
+          }, _callee2, null, [[4, 49, 52, 55], [13, 39, 42, 45]]);
         })();
       });
       return function (_x2) {
@@ -7950,6 +7951,9 @@ function queryGroupAvailability(query, ignore) {
     var _ref8 = _slicedToArray(_ref7, 2),
       products = _ref8[0],
       bookings = _ref8[1];
+    bookings = bookings.filter(function (_) {
+      return _.status !== 'declined' && _.status !== 'cancelled';
+    });
     return products.map(function (product) {
       return _objectSpread(_objectSpread({}, product), {}, {
         assets: product.assets.filter(function (asset) {
@@ -10023,7 +10027,7 @@ var BookingFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
           duration = _ref13.duration,
           user_email = _ref13.user_email;
         return /*#__PURE__*/_regeneratorRuntime().mark(function _callee5(_this5$_settings$get) {
-          var bookings, allowed_bookings, _ref15, current;
+          var bookings, active_bookings, allowed_bookings, _ref15, current;
           return _regeneratorRuntime().wrap(function _callee5$(_context5) {
             while (1) switch (_context5.prev = _context5.next) {
               case 0:
@@ -10049,33 +10053,36 @@ var BookingFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                 }).toPromise();
               case 6:
                 bookings = _context5.sent;
-                if (!bookings.find(function (_) {
+                active_bookings = bookings.filter(function (_) {
+                  return _.status !== 'declined' && _.status !== 'cancelled' && !_.rejected;
+                });
+                if (!active_bookings.find(function (_) {
                   return _.asset_id === asset_id && id !== _.id;
                 })) {
-                  _context5.next = 13;
+                  _context5.next = 14;
                   break;
                 }
                 if (!asset_id.includes('@')) {
-                  _context5.next = 12;
+                  _context5.next = 13;
                   break;
                 }
                 throw "".concat(asset_id, " already has an invite for the selected time");
-              case 12:
-                throw "".concat(asset_id, " is not available at the selected time");
               case 13:
+                throw "".concat(asset_id, " is not available at the selected time");
+              case 14:
                 allowed_bookings = (_this5$_settings$get = _this5._settings.get("app.bookings.allowed_daily_".concat(type, "_count"))) !== null && _this5$_settings$get !== void 0 ? _this5$_settings$get : 1;
-                if (!(allowed_bookings > 0 && bookings.filter(function (_) {
+                if (!(allowed_bookings > 0 && active_bookings.filter(function (_) {
                   var _ref14;
-                  return _.user_email.toLowerCase() === (user_email || ((_ref14 = (0, common_1.currentUser)()) === null || _ref14 === void 0 ? void 0 : _ref14.email)).toLowerCase() && _.status !== 'declined' && _.id !== id;
+                  return _.user_email.toLowerCase() === (user_email || ((_ref14 = (0, common_1.currentUser)()) === null || _ref14 === void 0 ? void 0 : _ref14.email)).toLowerCase() && _.id !== id;
                 }).length >= allowed_bookings)) {
-                  _context5.next = 17;
+                  _context5.next = 18;
                   break;
                 }
                 current = user_email === ((_ref15 = (0, common_1.currentUser)()) === null || _ref15 === void 0 ? void 0 : _ref15.email);
                 throw "".concat(current ? 'You' : user_email, " already ").concat(current ? 'have' : 'has', " a booking at the selected time");
-              case 17:
-                return _context5.abrupt("return", true);
               case 18:
+                return _context5.abrupt("return", true);
+              case 19:
               case "end":
                 return _context5.stop();
             }
@@ -32527,15 +32534,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "44de142",
-  "hash": "44de142",
+  "raw": "ed308a0",
+  "hash": "ed308a0",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "44de142",
+  "suffix": "ed308a0",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1717372126357
+  "time": 1717463012200
 };
 /* tslint:enable */
 
