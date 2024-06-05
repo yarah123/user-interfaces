@@ -207,6 +207,11 @@ class ParkingBookingModalComponent extends _placeos_common__WEBPACK_IMPORTED_MOD
         parent_id: this._data.link_id
       });
     }
+    if (this._data.space) {
+      this.form.patchValue({
+        resources: [this._data.space]
+      });
+    }
     if (this._data.date) {
       this.form.patchValue({
         date: this._data.date
@@ -683,8 +688,14 @@ class ParkingStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.A
       state.close();
     })();
   }
-  editReservation(reservation, user = null, link_id, date) {
+  editReservation(reservation, {
+    user,
+    link_id,
+    date,
+    space
+  } = {}) {
     var _this5 = this;
+    console.log('Reservation:', space);
     return new Promise( /*#__PURE__*/function () {
       var _ref = (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve) {
         const levels = yield _this5.levels.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_20__.take)(1)).toPromise();
@@ -694,7 +705,8 @@ class ParkingStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.A
             user,
             link_id,
             date,
-            level: levels[0]
+            level: levels[0],
+            space
           }
         });
         ref.afterClosed().subscribe(id => resolve(id));

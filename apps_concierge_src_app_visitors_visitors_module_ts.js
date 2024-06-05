@@ -598,10 +598,14 @@ class GuestListingComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__
   reserveParking(item) {
     var _this3 = this;
     return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const id = yield _this3._parking.editReservation(undefined, new _placeos_users__WEBPACK_IMPORTED_MODULE_7__.User({
-        email: item.asset_id,
-        name: item.asset_name
-      }), item.id, item.date);
+      const id = yield _this3._parking.editReservation(undefined, {
+        user: new _placeos_users__WEBPACK_IMPORTED_MODULE_7__.User({
+          email: item.asset_id,
+          name: item.asset_name
+        }),
+        link_id: item.id,
+        date: item.date
+      });
       if (id) {
         yield (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_3__.saveBooking)(new _placeos_bookings__WEBPACK_IMPORTED_MODULE_3__.Booking({
           ...item,
