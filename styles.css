@@ -702,6 +702,9 @@ video {
 #placeos :is(.left-0) {
   left: 0px;
 }
+#placeos :is(.left-0\.5) {
+  left: 0.125rem;
+}
 #placeos :is(.left-1) {
   left: 0.25rem;
 }
@@ -1649,6 +1652,9 @@ video {
 #placeos :is(.min-w-12) {
   min-width: 3rem;
 }
+#placeos :is(.min-w-24) {
+  min-width: 6rem;
+}
 #placeos :is(.min-w-48) {
   min-width: 12rem;
 }
@@ -2243,6 +2249,9 @@ video {
   border-top-left-radius: 0.375rem;
   border-top-right-radius: 0.375rem;
 }
+#placeos :is(.\!rounded-tl-none) {
+  border-top-left-radius: 0px !important;
+}
 #placeos :is(.rounded-br) {
   border-bottom-right-radius: 0.25rem;
 }
@@ -2421,6 +2430,9 @@ video {
 }
 #placeos :is(.\!bg-success) {
   background-color: var(--su) !important;
+}
+#placeos :is(.\!bg-warning) {
+  background-color: var(--wa) !important;
 }
 #placeos :is(.bg-\[\#0008\]) {
   background-color: #0008;
@@ -2901,6 +2913,9 @@ video {
 }
 #placeos :is(.\!text-success-content) {
   color: var(--suc) !important;
+}
+#placeos :is(.\!text-warning-content) {
+  color: var(--wac) !important;
 }
 #placeos :is(.\!text-white) {
   --tw-text-opacity: 1 !important;
