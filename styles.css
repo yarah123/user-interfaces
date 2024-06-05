@@ -2659,6 +2659,9 @@ video {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+#placeos :is(.pb-1) {
+  padding-bottom: 0.25rem;
+}
 #placeos :is(.pb-2) {
   padding-bottom: 0.5rem;
 }
@@ -2806,6 +2809,9 @@ video {
 #placeos :is(.text-8xl) {
   font-size: 6rem;
   line-height: 1;
+}
+#placeos :is(.text-\[0\.625rem\]) {
+  font-size: 0.625rem;
 }
 #placeos :is(.text-\[0\.6rem\]) {
   font-size: 0.6rem;
