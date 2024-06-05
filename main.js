@@ -21289,15 +21289,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "9ff8141",
-  "hash": "9ff8141",
+  "raw": "efcab9f",
+  "hash": "efcab9f",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "9ff8141",
+  "suffix": "efcab9f",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1717575927106
+  "time": 1717588591189
 };
 /* tslint:enable */
 
@@ -36188,6 +36188,7 @@ class ExploreParkingService extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__
     this._options = new rxjs__WEBPACK_IMPORTED_MODULE_11__.BehaviorSubject({});
     this._poll = new rxjs__WEBPACK_IMPORTED_MODULE_11__.BehaviorSubject(0);
     this.options = this._options.asObservable();
+    this.on_book = null;
     /** List of available parking levels for the active building */
     this.levels = this._org.active_levels.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_12__.map)(l => l.filter(_ => _.tags.includes('parking'))));
     /** List of current bookings for the current building */
@@ -36279,6 +36280,7 @@ class ExploreParkingService extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__
         if (!can_book) continue;
         const book_fn = /*#__PURE__*/function () {
           var _ref = (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+            if (_this.on_book) return _this.on_book(space);
             if (deny_parking_access) {
               return (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.notifyError)(`Your user account has been denied parking access to ${space.zone?.display_name || space.zone?.name}.`);
             }
