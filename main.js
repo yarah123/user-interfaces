@@ -14962,15 +14962,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/common */ 22797);
 /* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/organisation */ 2510);
 /* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/ts-client */ 35713);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 90521);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ 68824);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ 68757);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ 35443);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 8627);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 71963);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 66000);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ 7841);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 90521);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ 68824);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs */ 68757);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! rxjs */ 71536);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ 35443);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 8627);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 71963);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ 66000);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs/operators */ 7841);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! rxjs/operators */ 29314);
+/* harmony import */ var _bookings_fn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./bookings.fn */ 18026);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! date-fns */ 73725);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! date-fns */ 27419);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! date-fns */ 13264);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/core */ 37580);
+
+
 
 
 
@@ -14984,9 +14992,9 @@ class ParkingService extends _placeos_common__WEBPACK_IMPORTED_MODULE_0__.AsyncH
     super();
     this._org = _org;
     this._settings = _settings;
-    this._loading = new rxjs__WEBPACK_IMPORTED_MODULE_3__.BehaviorSubject([]);
+    this._loading = new rxjs__WEBPACK_IMPORTED_MODULE_4__.BehaviorSubject([]);
     this.loading = this._loading.asObservable(); /** List of available parking levels for the current building */
-    this.levels = this._org.level_list.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(_ => {
+    this.levels = this._org.level_list.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.map)(_ => {
       if (!this._settings.get('app.use_region')) {
         const blds = this._org.buildingsForRegion();
         const bld_ids = blds.map(bld => bld.id);
@@ -15000,26 +15008,31 @@ class ParkingService extends _placeos_common__WEBPACK_IMPORTED_MODULE_0__.AsyncH
       return _.filter(lvl => lvl.parent_id === this._org.building.id && lvl.tags.includes('parking'));
     }));
     /** List of parking spaces for the current building/level */
-    this.spaces = (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.combineLatest)([this.levels]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.filter)(([lvls]) => !!lvls[0]?.id), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.switchMap)(([levels]) => {
+    this.spaces = (0,rxjs__WEBPACK_IMPORTED_MODULE_6__.combineLatest)([this.levels]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.filter)(([lvls]) => !!lvls[0]?.id), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.switchMap)(([levels]) => {
       this._loading.next([...this._loading.getValue(), 'spaces']);
-      return (0,rxjs__WEBPACK_IMPORTED_MODULE_8__.forkJoin)(levels.map(lvl => (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_2__.showMetadata)(lvl.id, 'parking-spaces').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(d => (d.details instanceof Array ? d.details : []).map(s => ({
+      return (0,rxjs__WEBPACK_IMPORTED_MODULE_9__.forkJoin)(levels.map(lvl => (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_2__.showMetadata)(lvl.id, 'parking-spaces').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.map)(d => (d.details instanceof Array ? d.details : []).map(s => ({
         ...s,
         zone_id: lvl.id
       }))))));
-    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(list => (0,_placeos_common__WEBPACK_IMPORTED_MODULE_0__.flatten)(list)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(() => this._loading.next(this._loading.getValue().filter(_ => _ !== 'spaces'))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.shareReplay)(1));
+    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.map)(list => (0,_placeos_common__WEBPACK_IMPORTED_MODULE_0__.flatten)(list)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.tap)(() => this._loading.next(this._loading.getValue().filter(_ => _ !== 'spaces'))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.shareReplay)(1));
     /** List of parking spaces for the current building/level */
-    this.users = (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.combineLatest)([this._org.active_building]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.filter)(([bld]) => !!bld?.id), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.switchMap)(([bld]) => {
+    this.users = (0,rxjs__WEBPACK_IMPORTED_MODULE_6__.combineLatest)([this._org.active_building]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.filter)(([bld]) => !!bld?.id), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.switchMap)(([bld]) => {
       this._loading.next([...this._loading.getValue(), 'users']);
       return (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_2__.showMetadata)(bld.id, 'parking-users');
-    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(metadata => metadata.details instanceof Array ? metadata.details : []), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(() => this._loading.next(this._loading.getValue().filter(_ => _ !== 'users'))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.shareReplay)(1));
-    this.assigned_space = this.spaces.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(list => list.find(_ => _.assigned_to?.toLowerCase() === (0,_placeos_common__WEBPACK_IMPORTED_MODULE_0__.currentUser)().email?.toLowerCase())));
-    this.deny_parking_access = this.users.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(list => !!list.find(_ => _.email?.toLowerCase() === (0,_placeos_common__WEBPACK_IMPORTED_MODULE_0__.currentUser)().email?.toLowerCase())?.deny));
+    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.map)(metadata => metadata.details instanceof Array ? metadata.details : []), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.tap)(() => this._loading.next(this._loading.getValue().filter(_ => _ !== 'users'))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.shareReplay)(1));
+    this.assigned_space = this.spaces.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.map)(list => list.find(_ => _.assigned_to?.toLowerCase() === (0,_placeos_common__WEBPACK_IMPORTED_MODULE_0__.currentUser)().email?.toLowerCase())));
+    this.deny_parking_access = this.users.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.map)(list => !!list.find(_ => _.email?.toLowerCase() === (0,_placeos_common__WEBPACK_IMPORTED_MODULE_0__.currentUser)().email?.toLowerCase())?.deny));
+    this.booked_space = (0,rxjs__WEBPACK_IMPORTED_MODULE_6__.combineLatest)([this._org.active_building, this.spaces]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.map)(([_, spaces]) => (0,_bookings_fn__WEBPACK_IMPORTED_MODULE_3__.queryBookings)({
+      period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_13__["default"])(Date.now())),
+      period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_14__["default"])(Date.now())),
+      type: 'parking'
+    }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_15__.catchError)(() => (0,rxjs__WEBPACK_IMPORTED_MODULE_16__.of)([])), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.map)(booking_list => booking_list.map(booking => spaces.find(space => space.id === booking.asset_id)).filter(space => !!space)))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.map)(_ => _[0]), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.shareReplay)(1));
     this.subscription('spaces', this.assigned_space.subscribe());
   }
   static #_ = this.ɵfac = function ParkingService_Factory(t) {
-    return new (t || ParkingService)(_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵinject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_1__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵinject"](_placeos_common__WEBPACK_IMPORTED_MODULE_0__.SettingsService));
+    return new (t || ParkingService)(_angular_core__WEBPACK_IMPORTED_MODULE_17__["ɵɵinject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_1__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_17__["ɵɵinject"](_placeos_common__WEBPACK_IMPORTED_MODULE_0__.SettingsService));
   };
-  static #_2 = this.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineInjectable"]({
+  static #_2 = this.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_17__["ɵɵdefineInjectable"]({
     token: ParkingService,
     factory: ParkingService.ɵfac,
     providedIn: 'root'
@@ -19244,15 +19257,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "3a1c948",
-  "hash": "3a1c948",
+  "raw": "bf6e901",
+  "hash": "bf6e901",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "3a1c948",
+  "suffix": "bf6e901",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1717557641914
+  "time": 1717562666549
 };
 /* tslint:enable */
 
