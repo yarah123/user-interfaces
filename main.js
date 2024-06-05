@@ -3399,6 +3399,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   FAV_PARKING_KEY: () => (/* reexport safe */ _lib_parking_select_modal_parking_select_modal_component__WEBPACK_IMPORTED_MODULE_9__.FAV_PARKING_KEY),
 /* harmony export */   GroupEventDetailsModalComponent: () => (/* reexport safe */ _lib_group_event_details_modal_component__WEBPACK_IMPORTED_MODULE_10__.GroupEventDetailsModalComponent),
 /* harmony export */   LockersService: () => (/* reexport safe */ _lib_lockers_service__WEBPACK_IMPORTED_MODULE_6__.LockersService),
+/* harmony export */   ParkingService: () => (/* reexport safe */ _lib_parking_service__WEBPACK_IMPORTED_MODULE_11__.ParkingService),
 /* harmony export */   ParkingSpaceSelectModalComponent: () => (/* reexport safe */ _lib_parking_select_modal_parking_select_modal_component__WEBPACK_IMPORTED_MODULE_9__.ParkingSpaceSelectModalComponent),
 /* harmony export */   SharedBookingsModule: () => (/* reexport safe */ _lib_bookings_module__WEBPACK_IMPORTED_MODULE_0__.SharedBookingsModule),
 /* harmony export */   approveBooking: () => (/* reexport safe */ _lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.approveBooking),
@@ -3436,6 +3437,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_booking_card_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./lib/booking-card.component */ 27547);
 /* harmony import */ var _lib_parking_select_modal_parking_select_modal_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./lib/parking-select-modal/parking-select-modal.component */ 67642);
 /* harmony import */ var _lib_group_event_details_modal_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./lib/group-event-details-modal.component */ 30000);
+/* harmony import */ var _lib_parking_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./lib/parking.service */ 1593);
+
 
 
 
@@ -14946,6 +14949,85 @@ class ParkingSpaceListFieldComponent {
 
 /***/ }),
 
+/***/ 1593:
+/*!**************************************************!*\
+  !*** ./libs/bookings/src/lib/parking.service.ts ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ParkingService: () => (/* binding */ ParkingService)
+/* harmony export */ });
+/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/common */ 22797);
+/* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/organisation */ 2510);
+/* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/ts-client */ 35713);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 90521);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ 68824);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ 68757);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ 35443);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 8627);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 71963);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 66000);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ 7841);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 37580);
+
+
+
+
+
+
+
+
+class ParkingService extends _placeos_common__WEBPACK_IMPORTED_MODULE_0__.AsyncHandler {
+  constructor(_org, _settings) {
+    super();
+    this._org = _org;
+    this._settings = _settings;
+    this._loading = new rxjs__WEBPACK_IMPORTED_MODULE_3__.BehaviorSubject([]);
+    this.loading = this._loading.asObservable(); /** List of available parking levels for the current building */
+    this.levels = this._org.level_list.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(_ => {
+      if (!this._settings.get('app.use_region')) {
+        const blds = this._org.buildingsForRegion();
+        const bld_ids = blds.map(bld => bld.id);
+        const list = _.filter(lvl => bld_ids.includes(lvl.parent_id) && lvl.tags.includes('parking'));
+        list.map(lvl => ({
+          ...lvl,
+          display_name: `${blds.find(_ => _.id === lvl.parent_id)?.display_name} - ${lvl.display_name}`
+        }));
+        return list;
+      }
+      return _.filter(lvl => lvl.parent_id === this._org.building.id && lvl.tags.includes('parking'));
+    }));
+    /** List of parking spaces for the current building/level */
+    this.spaces = (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.combineLatest)([this.levels]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.filter)(([lvls]) => !!lvls[0]?.id), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.switchMap)(([levels]) => {
+      this._loading.next([...this._loading.getValue(), 'spaces']);
+      return (0,rxjs__WEBPACK_IMPORTED_MODULE_8__.forkJoin)(levels.map(lvl => (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_2__.showMetadata)(lvl.id, 'parking-spaces').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(d => (d.details instanceof Array ? d.details : []).map(s => ({
+        ...s,
+        zone_id: lvl.id
+      }))))));
+    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(list => (0,_placeos_common__WEBPACK_IMPORTED_MODULE_0__.flatten)(list)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(() => this._loading.next(this._loading.getValue().filter(_ => _ !== 'spaces'))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.shareReplay)(1));
+    /** List of parking spaces for the current building/level */
+    this.users = (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.combineLatest)([this._org.active_building]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.filter)(([bld]) => !!bld?.id), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.switchMap)(([bld]) => {
+      this._loading.next([...this._loading.getValue(), 'users']);
+      return (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_2__.showMetadata)(bld.id, 'parking-users');
+    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(metadata => metadata.details instanceof Array ? metadata.details : []), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(() => this._loading.next(this._loading.getValue().filter(_ => _ !== 'users'))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.shareReplay)(1));
+    this.assigned_space = this.spaces.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(list => list.find(_ => _.assigned_to?.toLowerCase() === (0,_placeos_common__WEBPACK_IMPORTED_MODULE_0__.currentUser)().email?.toLowerCase())));
+    this.deny_parking_access = this.users.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(list => !!list.find(_ => _.email?.toLowerCase() === (0,_placeos_common__WEBPACK_IMPORTED_MODULE_0__.currentUser)().email?.toLowerCase())?.deny));
+    this.subscription('spaces', this.assigned_space.subscribe());
+  }
+  static #_ = this.ɵfac = function ParkingService_Factory(t) {
+    return new (t || ParkingService)(_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵinject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_1__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵinject"](_placeos_common__WEBPACK_IMPORTED_MODULE_0__.SettingsService));
+  };
+  static #_2 = this.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineInjectable"]({
+    token: ParkingService,
+    factory: ParkingService.ɵfac,
+    providedIn: 'root'
+  });
+}
+
+/***/ }),
+
 /***/ 65772:
 /*!*************************************************!*\
   !*** ./libs/calendar/src/lib/calendar.class.ts ***!
@@ -19162,15 +19244,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "da4afbb",
-  "hash": "da4afbb",
+  "raw": "3a1c948",
+  "hash": "3a1c948",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "da4afbb",
+  "suffix": "3a1c948",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1717483424106
+  "time": 1717557641914
 };
 /* tslint:enable */
 
