@@ -8342,6 +8342,7 @@ tslib_1.__exportStar(__webpack_require__(/*! ./lib/booking-details-modal.compone
 tslib_1.__exportStar(__webpack_require__(/*! ./lib/booking-card.component */ 27547), exports);
 tslib_1.__exportStar(__webpack_require__(/*! ./lib/parking-select-modal/parking-select-modal.component */ 67642), exports);
 tslib_1.__exportStar(__webpack_require__(/*! ./lib/group-event-details-modal.component */ 30000), exports);
+tslib_1.__exportStar(__webpack_require__(/*! ./lib/parking.service */ 1593), exports);
 
 /***/ }),
 
@@ -21332,6 +21333,141 @@ exports.ParkingSpaceListFieldComponent = ParkingSpaceListFieldComponent;
 
 /***/ }),
 
+/***/ 1593:
+/*!**************************************************!*\
+  !*** ./libs/bookings/src/lib/parking.service.ts ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+
+var _toConsumableArray = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/toConsumableArray.js */ 86033)["default"]);
+var _slicedToArray = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/slicedToArray.js */ 6282)["default"]);
+var _objectSpread = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/objectSpread2.js */ 34092)["default"]);
+var _createClass = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/createClass.js */ 92974)["default"]);
+var _classCallCheck = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/classCallCheck.js */ 80912)["default"]);
+var _callSuper = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/callSuper.js */ 8513)["default"]);
+var _inherits = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/inherits.js */ 58160)["default"]);
+var _ParkingService;
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.ParkingService = void 0;
+var common_1 = __webpack_require__(/*! @placeos/common */ 22797);
+var organisation_1 = __webpack_require__(/*! @placeos/organisation */ 2510);
+var ts_client_1 = __webpack_require__(/*! @placeos/ts-client */ 35713);
+var rxjs_1 = __webpack_require__(/*! rxjs */ 15681);
+var operators_1 = __webpack_require__(/*! rxjs/operators */ 97303);
+var i0 = __webpack_require__(/*! @angular/core */ 37580);
+var i1 = __webpack_require__(/*! @placeos/organisation */ 2510);
+var i2 = __webpack_require__(/*! @placeos/common */ 22797);
+var ParkingService = /*#__PURE__*/function (_common_1$AsyncHandle) {
+  function ParkingService(_org, _settings) {
+    var _this;
+    _classCallCheck(this, ParkingService);
+    _this = _callSuper(this, ParkingService);
+    _this._org = _org;
+    _this._settings = _settings;
+    _this._loading = new rxjs_1.BehaviorSubject([]);
+    _this.loading = _this._loading.asObservable(); /** List of available parking levels for the current building */
+    _this.levels = _this._org.level_list.pipe((0, operators_1.map)(function (_) {
+      if (!_this._settings.get('app.use_region')) {
+        var blds = _this._org.buildingsForRegion();
+        var bld_ids = blds.map(function (bld) {
+          return bld.id;
+        });
+        var list = _.filter(function (lvl) {
+          return bld_ids.includes(lvl.parent_id) && lvl.tags.includes('parking');
+        });
+        list.map(function (lvl) {
+          var _blds$find;
+          return _objectSpread(_objectSpread({}, lvl), {}, {
+            display_name: "".concat((_blds$find = blds.find(function (_) {
+              return _.id === lvl.parent_id;
+            })) === null || _blds$find === void 0 ? void 0 : _blds$find.display_name, " - ").concat(lvl.display_name)
+          });
+        });
+        return list;
+      }
+      return _.filter(function (lvl) {
+        return lvl.parent_id === _this._org.building.id && lvl.tags.includes('parking');
+      });
+    }));
+    /** List of parking spaces for the current building/level */
+    _this.spaces = (0, rxjs_1.combineLatest)([_this.levels]).pipe((0, operators_1.filter)(function (_ref) {
+      var _lvls$;
+      var _ref2 = _slicedToArray(_ref, 1),
+        lvls = _ref2[0];
+      return !!((_lvls$ = lvls[0]) !== null && _lvls$ !== void 0 && _lvls$.id);
+    }), (0, operators_1.switchMap)(function (_ref3) {
+      var _ref4 = _slicedToArray(_ref3, 1),
+        levels = _ref4[0];
+      _this._loading.next([].concat(_toConsumableArray(_this._loading.getValue()), ['spaces']));
+      return (0, rxjs_1.forkJoin)(levels.map(function (lvl) {
+        return (0, ts_client_1.showMetadata)(lvl.id, 'parking-spaces').pipe((0, operators_1.map)(function (d) {
+          return (d.details instanceof Array ? d.details : []).map(function (s) {
+            return _objectSpread(_objectSpread({}, s), {}, {
+              zone_id: lvl.id
+            });
+          });
+        }));
+      }));
+    }), (0, operators_1.map)(function (list) {
+      return (0, common_1.flatten)(list);
+    }), (0, operators_1.tap)(function () {
+      return _this._loading.next(_this._loading.getValue().filter(function (_) {
+        return _ !== 'spaces';
+      }));
+    }), (0, operators_1.shareReplay)(1));
+    /** List of parking spaces for the current building/level */
+    _this.users = (0, rxjs_1.combineLatest)([_this._org.active_building]).pipe((0, operators_1.filter)(function (_ref5) {
+      var _ref6 = _slicedToArray(_ref5, 1),
+        bld = _ref6[0];
+      return !!(bld !== null && bld !== void 0 && bld.id);
+    }), (0, operators_1.switchMap)(function (_ref7) {
+      var _ref8 = _slicedToArray(_ref7, 1),
+        bld = _ref8[0];
+      _this._loading.next([].concat(_toConsumableArray(_this._loading.getValue()), ['users']));
+      return (0, ts_client_1.showMetadata)(bld.id, 'parking-users');
+    }), (0, operators_1.map)(function (metadata) {
+      return metadata.details instanceof Array ? metadata.details : [];
+    }), (0, operators_1.tap)(function () {
+      return _this._loading.next(_this._loading.getValue().filter(function (_) {
+        return _ !== 'users';
+      }));
+    }), (0, operators_1.shareReplay)(1));
+    _this.assigned_space = _this.spaces.pipe((0, operators_1.map)(function (list) {
+      return list.find(function (_) {
+        var _$assigned_to, _email;
+        return ((_$assigned_to = _.assigned_to) === null || _$assigned_to === void 0 ? void 0 : _$assigned_to.toLowerCase()) === ((_email = (0, common_1.currentUser)().email) === null || _email === void 0 ? void 0 : _email.toLowerCase());
+      });
+    }));
+    _this.deny_parking_access = _this.users.pipe((0, operators_1.map)(function (list) {
+      var _list$find;
+      return !!((_list$find = list.find(function (_) {
+        var _$email, _email2;
+        return ((_$email = _.email) === null || _$email === void 0 ? void 0 : _$email.toLowerCase()) === ((_email2 = (0, common_1.currentUser)().email) === null || _email2 === void 0 ? void 0 : _email2.toLowerCase());
+      })) !== null && _list$find !== void 0 && _list$find.deny);
+    }));
+    _this.subscription('spaces', _this.assigned_space.subscribe());
+    return _this;
+  }
+  _inherits(ParkingService, _common_1$AsyncHandle);
+  return _createClass(ParkingService);
+}(common_1.AsyncHandler);
+_ParkingService = ParkingService;
+_ParkingService.ɵfac = function ParkingService_Factory(t) {
+  return new (t || _ParkingService)(i0.ɵɵinject(i1.OrganisationService), i0.ɵɵinject(i2.SettingsService));
+};
+_ParkingService.ɵprov = /*@__PURE__*/i0.ɵɵdefineInjectable({
+  token: _ParkingService,
+  factory: _ParkingService.ɵfac,
+  providedIn: 'root'
+});
+exports.ParkingService = ParkingService;
+
+/***/ }),
+
 /***/ 65772:
 /*!*************************************************!*\
   !*** ./libs/calendar/src/lib/calendar.class.ts ***!
@@ -32557,15 +32693,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "da4afbb",
-  "hash": "da4afbb",
+  "raw": "3a1c948",
+  "hash": "3a1c948",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "da4afbb",
+  "suffix": "3a1c948",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1717483427800
+  "time": 1717557640842
 };
 /* tslint:enable */
 
@@ -49040,12 +49176,7 @@ var ExploreMapControlComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
     /** Currently active building */
     _this.building = _this._org.active_building;
     /** List of availabel levels */
-    _this.levels = _this._org.active_levels.pipe((0, operators_1.map)(function (_) {
-      return _.filter(function (lvl) {
-        var _lvl$tags;
-        return !((_lvl$tags = lvl.tags) !== null && _lvl$tags !== void 0 && _lvl$tags.includes('parking'));
-      });
-    }));
+    _this.levels = _this._org.active_levels;
     /** Currently active level */
     _this.level = _this._state.level;
     /** Set the currently active level */
@@ -49885,11 +50016,6 @@ var ExploreParkingService = /*#__PURE__*/function (_common_1$AsyncHandle) {
             })
           });
           if (!can_book) return 1; // continue
-          labels.push({
-            zoom_level: 1.1,
-            location: "".concat(space.map_id),
-            content: "".concat(space.name, "\nFree")
-          });
           var book_fn = /*#__PURE__*/function () {
             var _ref16 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
               var _space$groups, _this2$_options$getVa, _this2$_options$getVa2, _user, _space$zone, _space$zone2;
