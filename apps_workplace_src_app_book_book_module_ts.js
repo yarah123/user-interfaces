@@ -8730,17 +8730,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! date-fns */ 88402);
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! date-fns */ 30417);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs */ 90521);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs/operators */ 33602);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! rxjs/operators */ 57871);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs/operators */ 57871);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 37580);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/router */ 95072);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/router */ 95072);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/common */ 60316);
 /* harmony import */ var _libs_components_src_lib_interactive_map_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../libs/components/src/lib/interactive-map.component */ 24918);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/core */ 74646);
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/form-field */ 24950);
-/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/select */ 25175);
-/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/progress-spinner */ 41134);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/forms */ 34456);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/core */ 74646);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/form-field */ 24950);
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/select */ 25175);
+/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/progress-spinner */ 41134);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/forms */ 34456);
 /* harmony import */ var _libs_explore_src_lib_explore_zoom_control_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../../libs/explore/src/lib/explore-zoom-control.component */ 69801);
 
 
@@ -9032,9 +9031,7 @@ class ParkingFlowMapComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2
     }
   }
   constructor(_state, _parking, _org, _booking, _router) {
-    var _this;
     super();
-    _this = this;
     this._state = _state;
     this._parking = _parking;
     this._org = _org;
@@ -9056,9 +9053,8 @@ class ParkingFlowMapComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2
     this.level = this._state.level;
     this.levels = this._parking.levels;
     this.available = this._parking.available_spaces;
-    this.counts = this._parking.week_availablility;
+    // public readonly counts = this._parking.week_availablility;
     this.options = this._parking.options;
-    this.existing = this._parking.existing_event;
     this.loading = this._booking.loading;
     this.active_space = new rxjs__WEBPACK_IMPORTED_MODULE_9__.BehaviorSubject(null);
     this.dates = new Array(7).fill(0).map((_, idx) => ({
@@ -9071,32 +9067,32 @@ class ParkingFlowMapComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2
     });
     this.setLevel = l => this._state.setLevel(l);
     this.reserveSpace = /*#__PURE__*/(0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const events = yield _this._parking.existing_event.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.take)(1)).toPromise();
-      if (events.length) _this._booking.form.patchValue({
-        id: events[0].id
-      }); // Prevent booking duplicate parking spaces
-      yield _this._booking.postForm();
-      _this._router.navigate(['book', 'parking', 'success']);
+      // const events = await this._parking.user_events
+      //     .pipe(take(1))
+      //     .toPromise();
+      // if (events.length) this._booking.form.patchValue({ id: events[0].id }); // Prevent booking duplicate parking spaces
+      // await this._booking.postForm();
+      // this._router.navigate(['book', 'parking', 'success']);
     });
   }
   ngOnInit() {
-    var _this2 = this;
+    var _this = this;
     return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      yield _this2._org.initialised.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_14__.first)(_ => _)).toPromise();
-      _this2._state.reset();
-      _this2.subscription('levels', _this2._parking.levels.subscribe(levels => {
-        _this2._state.setLevel(levels[0]?.id);
+      yield _this._org.initialised.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.first)(_ => _)).toPromise();
+      _this._state.reset();
+      _this.subscription('levels', _this._parking.levels.subscribe(levels => {
+        _this._state.setLevel(levels[0]?.id);
       }));
-      _this2.subscription('spaces', _this2._parking.available_spaces.subscribe(spaces => {
-        _this2._state.setActions('parking_spaces', (spaces || []).map(_ => ({
+      _this.subscription('spaces', _this._parking.available_spaces.subscribe(spaces => {
+        _this._state.setActions('parking_spaces', (spaces || []).map(_ => ({
           id: _.map_id,
           action: 'click',
-          callback: () => _this2.setActive(_)
+          callback: () => _this.setActive(_)
         })));
       }));
-      _this2.subscription('active_space', _this2.active_space.subscribe(space => {
-        if (!space) return _this2._state.setFeatures('parking_space', []);
-        _this2._state.setFeatures('parking_space', [{
+      _this.subscription('active_space', _this.active_space.subscribe(space => {
+        if (!space) return _this._state.setFeatures('parking_space', []);
+        _this._state.setFeatures('parking_space', [{
           location: space.map_id,
           content: SpacePingComponent,
           full_size: true,
@@ -9106,7 +9102,7 @@ class ParkingFlowMapComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2
     })();
   }
   static #_ = this.ɵfac = function ParkingFlowMapComponent_Factory(t) {
-    return new (t || ParkingFlowMapComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdirectiveInject"](_placeos_explore__WEBPACK_IMPORTED_MODULE_4__.ExploreStateService), _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdirectiveInject"](_placeos_explore__WEBPACK_IMPORTED_MODULE_4__.ExploreParkingService), _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdirectiveInject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_5__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdirectiveInject"](_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.BookingFormService), _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_15__.Router));
+    return new (t || ParkingFlowMapComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdirectiveInject"](_placeos_explore__WEBPACK_IMPORTED_MODULE_4__.ExploreStateService), _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdirectiveInject"](_placeos_explore__WEBPACK_IMPORTED_MODULE_4__.ExploreParkingService), _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdirectiveInject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_5__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdirectiveInject"](_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.BookingFormService), _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_14__.Router));
   };
   static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineComponent"]({
     type: ParkingFlowMapComponent,
@@ -9126,7 +9122,7 @@ class ParkingFlowMapComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("ngIf", !_angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpipeBind1"](1, 2, ctx.loading))("ngIfElse", load_state_r9);
       }
     },
-    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_16__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_16__.NgIf, _libs_components_src_lib_interactive_map_component__WEBPACK_IMPORTED_MODULE_6__.InteractiveMapComponent, _angular_material_core__WEBPACK_IMPORTED_MODULE_17__.MatOption, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_18__.MatFormField, _angular_material_select__WEBPACK_IMPORTED_MODULE_19__.MatSelect, _angular_material_core__WEBPACK_IMPORTED_MODULE_17__.MatRipple, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_20__.MatProgressSpinner, _angular_forms__WEBPACK_IMPORTED_MODULE_21__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_21__.NgModel, _libs_explore_src_lib_explore_zoom_control_component__WEBPACK_IMPORTED_MODULE_7__.ExploreZoomControlComponent, _angular_common__WEBPACK_IMPORTED_MODULE_16__.AsyncPipe],
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_15__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_15__.NgIf, _libs_components_src_lib_interactive_map_component__WEBPACK_IMPORTED_MODULE_6__.InteractiveMapComponent, _angular_material_core__WEBPACK_IMPORTED_MODULE_16__.MatOption, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__.MatFormField, _angular_material_select__WEBPACK_IMPORTED_MODULE_18__.MatSelect, _angular_material_core__WEBPACK_IMPORTED_MODULE_16__.MatRipple, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_19__.MatProgressSpinner, _angular_forms__WEBPACK_IMPORTED_MODULE_20__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_20__.NgModel, _libs_explore_src_lib_explore_zoom_control_component__WEBPACK_IMPORTED_MODULE_7__.ExploreZoomControlComponent, _angular_common__WEBPACK_IMPORTED_MODULE_15__.AsyncPipe],
     styles: [".active[_ngcontent-%COMP%] {\n                background-color: var(--s) !important;\n                color: #fff;\n            }\n\n            .selected[_ngcontent-%COMP%] {\n                background-color: #fff !important;\n                color: #000d;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvd29ya3BsYWNlL3NyYy9hcHAvYm9vay9wYXJraW5nLWZsb3cvcGFya2luZy1mbG93LW1hcC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLHFDQUFxQztnQkFDckMsV0FBVztZQUNmOztZQUVBO2dCQUNJLGlDQUFpQztnQkFDakMsWUFBWTtZQUNoQiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgLmFjdGl2ZSB7XG4gICAgICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tcykgIWltcG9ydGFudDtcbiAgICAgICAgICAgICAgICBjb2xvcjogI2ZmZjtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgLnNlbGVjdGVkIHtcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmICFpbXBvcnRhbnQ7XG4gICAgICAgICAgICAgICAgY29sb3I6ICMwMDBkO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
   });
 }
