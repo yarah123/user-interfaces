@@ -4932,7 +4932,7 @@ var i2 = __webpack_require__(/*! @placeos/organisation */ 2510);
 var i3 = __webpack_require__(/*! @placeos/bookings */ 85616);
 var i4 = __webpack_require__(/*! @angular/material/dialog */ 12587);
 var ScheduleStateService = /*#__PURE__*/function (_common_1$AsyncHandle) {
-  function ScheduleStateService(_settings, _org, _lockers, _dialog) {
+  function ScheduleStateService(_settings, _org, _lockers, _dialog, _parking) {
     var _this;
     _classCallCheck(this, ScheduleStateService);
     _this = _callSuper(this, ScheduleStateService);
@@ -4940,6 +4940,7 @@ var ScheduleStateService = /*#__PURE__*/function (_common_1$AsyncHandle) {
     _this._org = _org;
     _this._lockers = _lockers;
     _this._dialog = _dialog;
+    _this._parking = _parking;
     _this._poll = new rxjs_1.BehaviorSubject(0);
     _this._poll_type = new rxjs_1.BehaviorSubject('api');
     _this._loading = new rxjs_1.BehaviorSubject(false);
@@ -5183,19 +5184,19 @@ var ScheduleStateService = /*#__PURE__*/function (_common_1$AsyncHandle) {
     /** List of events and bookings for the selected date */
     _this.bookings = (0, rxjs_1.combineLatest)([_this.events, _this.visitors, _this.desks, _this.parking, _this.lockers, _this.group_events]).pipe((0, operators_1.map)(function (_ref25) {
       var _ref26 = _slicedToArray(_ref25, 6),
-        e = _ref26[0],
-        v = _ref26[1],
-        d = _ref26[2],
-        p = _ref26[3],
-        l = _ref26[4],
-        ge = _ref26[5];
-      var filtered_events = e.filter(function (ev) {
+        events = _ref26[0],
+        visitors = _ref26[1],
+        desks = _ref26[2],
+        parking = _ref26[3],
+        lockers = _ref26[4],
+        group_events = _ref26[5];
+      var filtered_events = events.filter(function (ev) {
         var _ev$linked_bookings$;
-        return !d.find(function (bkn) {
+        return !desks.find(function (bkn) {
           return "".concat(ev.meeting_id) === "".concat(bkn.id);
         }) && ((_ev$linked_bookings$ = ev.linked_bookings[0]) === null || _ev$linked_bookings$ === void 0 ? void 0 : _ev$linked_bookings$.booking_type) !== 'group-event';
       });
-      return [].concat(_toConsumableArray(filtered_events), _toConsumableArray(v), _toConsumableArray(d), _toConsumableArray(p), _toConsumableArray(l), _toConsumableArray(ge)).sort(function (a, b) {
+      return [].concat(_toConsumableArray(filtered_events), _toConsumableArray(visitors), _toConsumableArray(desks), _toConsumableArray(parking), _toConsumableArray(lockers), _toConsumableArray(group_events)).sort(function (a, b) {
         return a.date - b.date;
       });
     }));
@@ -5433,7 +5434,7 @@ var ScheduleStateService = /*#__PURE__*/function (_common_1$AsyncHandle) {
 }(common_1.AsyncHandler);
 _ScheduleStateService = ScheduleStateService;
 _ScheduleStateService.ɵfac = function ScheduleStateService_Factory(t) {
-  return new (t || _ScheduleStateService)(i0.ɵɵinject(i1.SettingsService), i0.ɵɵinject(i2.OrganisationService), i0.ɵɵinject(i3.LockersService), i0.ɵɵinject(i4.MatDialog));
+  return new (t || _ScheduleStateService)(i0.ɵɵinject(i1.SettingsService), i0.ɵɵinject(i2.OrganisationService), i0.ɵɵinject(i3.LockersService), i0.ɵɵinject(i4.MatDialog), i0.ɵɵinject(i3.ParkingService));
 };
 _ScheduleStateService.ɵprov = /*@__PURE__*/i0.ɵɵdefineInjectable({
   token: _ScheduleStateService,
@@ -8373,14 +8374,17 @@ var booking_details_modal_component_1 = __webpack_require__(/*! ./booking-detail
 var async_handler_class_1 = __webpack_require__(/*! libs/common/src/lib/async-handler.class */ 75354);
 var organisation_service_1 = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
 var group_event_details_modal_component_1 = __webpack_require__(/*! ./group-event-details-modal.component */ 30000);
+var parking_service_1 = __webpack_require__(/*! ./parking.service */ 1593);
+var operators_1 = __webpack_require__(/*! rxjs/operators */ 97303);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
 var i1 = __webpack_require__(/*! @angular/material/dialog */ 12587);
 var i2 = __webpack_require__(/*! @angular/router */ 95072);
 var i3 = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
 var i4 = __webpack_require__(/*! @placeos/common */ 22797);
-var i5 = __webpack_require__(/*! @angular/common */ 60316);
-var i6 = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
-var i7 = __webpack_require__(/*! ../../../components/src/lib/status-pill.component */ 50907);
+var i5 = __webpack_require__(/*! ./parking.service */ 1593);
+var i6 = __webpack_require__(/*! @angular/common */ 60316);
+var i7 = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
+var i8 = __webpack_require__(/*! ../../../components/src/lib/status-pill.component */ 50907);
 var _c0 = function _c0() {
   return ["./"];
 };
@@ -8463,6 +8467,18 @@ function BookingCardComponent_a_1_div_16_Template(rf, ctx) {
     i0.ɵɵelementEnd();
   }
 }
+function BookingCardComponent_a_1_div_17_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 21);
+    i0.ɵɵtext(1);
+    i0.ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    var ctx_r0 = i0.ɵɵnextContext(2);
+    i0.ɵɵadvance();
+    i0.ɵɵtextInterpolate1(" ", ctx_r0.booking.status !== "cancelled" ? "RESERVED" : "RELEASED", " ");
+  }
+}
 function BookingCardComponent_a_1_Template(rf, ctx) {
   if (rf & 1) {
     var _r2 = i0.ɵɵgetCurrentView();
@@ -8488,13 +8504,14 @@ function BookingCardComponent_a_1_Template(rf, ctx) {
     i0.ɵɵelementStart(13, "app-icon", 17);
     i0.ɵɵtext(14, " chevron_right ");
     i0.ɵɵelementEnd();
-    i0.ɵɵtemplate(15, BookingCardComponent_a_1_div_15_Template, 2, 0, "div", 18)(16, BookingCardComponent_a_1_div_16_Template, 2, 0, "div", 18);
+    i0.ɵɵtemplate(15, BookingCardComponent_a_1_div_15_Template, 2, 0, "div", 18)(16, BookingCardComponent_a_1_div_16_Template, 2, 0, "div", 18)(17, BookingCardComponent_a_1_div_17_Template, 2, 1, "div", 18);
+    i0.ɵɵpipe(18, "async");
     i0.ɵɵelementEnd()();
   }
   if (rf & 2) {
     var ctx_r0 = i0.ɵɵnextContext();
     var desk_icon_r3 = i0.ɵɵreference(3);
-    i0.ɵɵproperty("routerLink", i0.ɵɵpureFunction0(11, _c0))("queryParams", i0.ɵɵpureFunction1(12, _c1, ctx_r0.booking == null ? null : ctx_r0.booking.id));
+    i0.ɵɵproperty("routerLink", i0.ɵɵpureFunction0(14, _c0))("queryParams", i0.ɵɵpureFunction1(15, _c1, ctx_r0.booking == null ? null : ctx_r0.booking.id));
     i0.ɵɵadvance(3);
     i0.ɵɵtextInterpolate(ctx_r0.booking == null ? null : ctx_r0.booking.title);
     i0.ɵɵadvance(2);
@@ -8511,6 +8528,8 @@ function BookingCardComponent_a_1_Template(rf, ctx) {
     i0.ɵɵproperty("ngIf", !ctx_r0.for_current_user && (ctx_r0.booking == null ? null : ctx_r0.booking.booking_type) !== "group-event");
     i0.ɵɵadvance();
     i0.ɵɵproperty("ngIf", (ctx_r0.booking == null ? null : ctx_r0.booking.booking_type) === "group-event");
+    i0.ɵɵadvance();
+    i0.ɵɵproperty("ngIf", i0.ɵɵpipeBind1(18, 12, ctx_r0.is_reserved_parking_space));
   }
 }
 function BookingCardComponent_ng_template_2_Template(rf, ctx) {
@@ -8519,7 +8538,7 @@ function BookingCardComponent_ng_template_2_Template(rf, ctx) {
   }
 }
 var BookingCardComponent = /*#__PURE__*/function (_async_handler_class_) {
-  function BookingCardComponent(_dialog, _route, _org, _settings) {
+  function BookingCardComponent(_dialog, _route, _org, _settings, _parking) {
     var _this;
     _classCallCheck(this, BookingCardComponent);
     _this = _callSuper(this, BookingCardComponent);
@@ -8527,11 +8546,15 @@ var BookingCardComponent = /*#__PURE__*/function (_async_handler_class_) {
     _this._route = _route;
     _this._org = _org;
     _this._settings = _settings;
+    _this._parking = _parking;
     _this.show_day = false;
     _this.edit = new core_1.EventEmitter();
     _this.remove = new core_1.EventEmitter();
     _this.end = new core_1.EventEmitter();
     _this.raw_description = '';
+    _this.is_reserved_parking_space = _this._parking.assigned_space.pipe((0, operators_1.map)(function (space) {
+      return _this.booking.booking_type === 'parking' && space && _this.booking.asset_id === space.id;
+    }));
     return _this;
   }
   _inherits(BookingCardComponent, _async_handler_class_);
@@ -8647,7 +8670,7 @@ var BookingCardComponent = /*#__PURE__*/function (_async_handler_class_) {
 }(async_handler_class_1.AsyncHandler);
 _BookingCardComponent = BookingCardComponent;
 _BookingCardComponent.ɵfac = function BookingCardComponent_Factory(t) {
-  return new (t || _BookingCardComponent)(i0.ɵɵdirectiveInject(i1.MatDialog), i0.ɵɵdirectiveInject(i2.ActivatedRoute), i0.ɵɵdirectiveInject(i3.OrganisationService), i0.ɵɵdirectiveInject(i4.SettingsService));
+  return new (t || _BookingCardComponent)(i0.ɵɵdirectiveInject(i1.MatDialog), i0.ɵɵdirectiveInject(i2.ActivatedRoute), i0.ɵɵdirectiveInject(i3.OrganisationService), i0.ɵɵdirectiveInject(i4.SettingsService), i0.ɵɵdirectiveInject(i5.ParkingService));
 };
 _BookingCardComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
   type: _BookingCardComponent,
@@ -8667,7 +8690,7 @@ _BookingCardComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
   consts: [["desk_icon", ""], ["class", "mb-2 flex items-center", 4, "ngIf"], ["name", "view-booking-details", "class", "w-full cursor-pointer overflow-hidden relative", 3, "routerLink", "queryParams", "click", 4, "ngIf"], [1, "mb-2", "flex", "items-center"], ["day", "", 4, "ngIf"], [1, "text-xs", "px-2"], ["day", ""], ["name", "view-booking-details", 1, "w-full", "cursor-pointer", "overflow-hidden", "relative", 3, "click", "routerLink", "queryParams"], [1, "w-full", "bg-base-100", "border", "border-base-300", "rounded-xl", "shadow", "py-4", "relative"], [1, "px-4", "text-lg"], [1, "flex", "mx-4", "my-2"], [3, "status"], [1, "flex", "flex-wrap", "flex-col", "sm:flex-row", "sm:divide-x", "divide-base-200-500", "py-2", "space-y-2", "sm:space-y-0"], [1, "flex", "items-center", "px-4", "max-w-[33%]"], [4, "ngIf", "ngIfElse"], [1, "mx-2", "truncate", "flex-1", "w-1/2"], ["class", "flex items-center px-4", 4, "ngIf"], [1, "absolute", "top-1/2", "right-1", "text-4xl", "-translate-y-1/2"], ["class", "absolute top-2 right-2 bg-warning/50 rounded-xl px-2 py-1 text-xs", 4, "ngIf"], [1, "flex", "items-center", "px-4"], [1, "mx-2", "truncate"], [1, "absolute", "top-2", "right-2", "bg-warning/50", "rounded-xl", "px-2", "py-1", "text-xs"], ["src", "assets/icons/desk-outline.svg", 1, "w-5", "h-5"]],
   template: function BookingCardComponent_Template(rf, ctx) {
     if (rf & 1) {
-      i0.ɵɵtemplate(0, BookingCardComponent_h4_0_Template, 7, 9, "h4", 1)(1, BookingCardComponent_a_1_Template, 17, 14, "a", 2)(2, BookingCardComponent_ng_template_2_Template, 1, 0, "ng-template", null, 0, i0.ɵɵtemplateRefExtractor);
+      i0.ɵɵtemplate(0, BookingCardComponent_h4_0_Template, 7, 9, "h4", 1)(1, BookingCardComponent_a_1_Template, 19, 17, "a", 2)(2, BookingCardComponent_ng_template_2_Template, 1, 0, "ng-template", null, 0, i0.ɵɵtemplateRefExtractor);
     }
     if (rf & 2) {
       i0.ɵɵproperty("ngIf", ctx.booking);
@@ -8675,7 +8698,7 @@ _BookingCardComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵproperty("ngIf", ctx.booking);
     }
   },
-  dependencies: [i5.NgIf, i6.IconComponent, i7.StatusPillComponent, i5.DatePipe],
+  dependencies: [i6.NgIf, i7.IconComponent, i8.StatusPillComponent, i6.AsyncPipe, i6.DatePipe],
   styles: ["[_nghost-%COMP%] {\n                display: block;\n                width: 100%;\n                position: relative;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvYm9va2luZ3Mvc3JjL2xpYi9ib29raW5nLWNhcmQuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxjQUFjO2dCQUNkLFdBQVc7Z0JBQ1gsa0JBQWtCO1lBQ3RCIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogYmxvY2s7XG4gICAgICAgICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
 });
 exports.BookingCardComponent = BookingCardComponent;
@@ -21444,12 +21467,14 @@ var ParkingService = /*#__PURE__*/function (_common_1$AsyncHandle) {
         return ((_$assigned_to = _.assigned_to) === null || _$assigned_to === void 0 ? void 0 : _$assigned_to.toLowerCase()) === ((_email = (0, common_1.currentUser)().email) === null || _email === void 0 ? void 0 : _email.toLowerCase());
       });
     }));
-    _this.deny_parking_access = _this.users.pipe((0, operators_1.map)(function (list) {
-      var _list$find;
-      return !!((_list$find = list.find(function (_) {
+    _this.user_details = _this.users.pipe((0, operators_1.map)(function (list) {
+      return list.find(function (_) {
         var _$email, _email2;
         return ((_$email = _.email) === null || _$email === void 0 ? void 0 : _$email.toLowerCase()) === ((_email2 = (0, common_1.currentUser)().email) === null || _email2 === void 0 ? void 0 : _email2.toLowerCase());
-      })) !== null && _list$find !== void 0 && _list$find.deny);
+      });
+    }));
+    _this.deny_parking_access = _this.user_details.pipe((0, operators_1.map)(function (details) {
+      return !!(details !== null && details !== void 0 && details.deny);
     }));
     _this.booked_space = (0, rxjs_1.combineLatest)([_this._org.active_building, _this.spaces]).pipe((0, operators_1.map)(function (_ref9) {
       var _ref10 = _slicedToArray(_ref9, 2),
@@ -32717,15 +32742,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "bf6e901",
-  "hash": "bf6e901",
+  "raw": "85c829d",
+  "hash": "85c829d",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "bf6e901",
+  "suffix": "85c829d",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1717562668374
+  "time": 1717571827677
 };
 /* tslint:enable */
 
