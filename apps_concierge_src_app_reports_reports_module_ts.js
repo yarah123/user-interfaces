@@ -1270,7 +1270,6 @@ class ReportDesksChartsComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
       series: [list.map(_ => _.utilisation)]
     };
     this._day_chart = new chartist__WEBPACK_IMPORTED_MODULE_7__.LineChart('#day-chart', data);
-    console.log('Day Chart:', this._day_chart, data);
   }
   updateLevelChart(mapping, count) {
     let {
