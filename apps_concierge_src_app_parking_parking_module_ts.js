@@ -455,6 +455,7 @@ class ParkingMapComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0__.A
       const zone = _.zones[0] || this._org.levelsForBuilding()[0].id;
       this._explore.setLevel(_.zones[0]);
     }));
+    this.subscription('parking_poll', this._ex_parking.startPolling());
   }
   static #_ = this.ɵfac = function ParkingMapComponent_Factory(t) {
     return new (t || ParkingMapComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_placeos_explore__WEBPACK_IMPORTED_MODULE_1__.ExploreStateService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_placeos_explore__WEBPACK_IMPORTED_MODULE_1__.ExploreParkingService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_parking_state_service__WEBPACK_IMPORTED_MODULE_2__.ParkingStateService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_3__.OrganisationService));
