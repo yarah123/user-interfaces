@@ -21358,6 +21358,8 @@ var organisation_1 = __webpack_require__(/*! @placeos/organisation */ 2510);
 var ts_client_1 = __webpack_require__(/*! @placeos/ts-client */ 35713);
 var rxjs_1 = __webpack_require__(/*! rxjs */ 15681);
 var operators_1 = __webpack_require__(/*! rxjs/operators */ 97303);
+var bookings_fn_1 = __webpack_require__(/*! ./bookings.fn */ 18026);
+var date_fns_1 = __webpack_require__(/*! date-fns */ 21097);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
 var i1 = __webpack_require__(/*! @placeos/organisation */ 2510);
 var i2 = __webpack_require__(/*! @placeos/common */ 22797);
@@ -21449,6 +21451,28 @@ var ParkingService = /*#__PURE__*/function (_common_1$AsyncHandle) {
         return ((_$email = _.email) === null || _$email === void 0 ? void 0 : _$email.toLowerCase()) === ((_email2 = (0, common_1.currentUser)().email) === null || _email2 === void 0 ? void 0 : _email2.toLowerCase());
       })) !== null && _list$find !== void 0 && _list$find.deny);
     }));
+    _this.booked_space = (0, rxjs_1.combineLatest)([_this._org.active_building, _this.spaces]).pipe((0, operators_1.map)(function (_ref9) {
+      var _ref10 = _slicedToArray(_ref9, 2),
+        _ = _ref10[0],
+        spaces = _ref10[1];
+      return (0, bookings_fn_1.queryBookings)({
+        period_start: (0, date_fns_1.getUnixTime)((0, date_fns_1.startOfDay)(Date.now())),
+        period_end: (0, date_fns_1.getUnixTime)((0, date_fns_1.endOfDay)(Date.now())),
+        type: 'parking'
+      }).pipe((0, operators_1.catchError)(function () {
+        return (0, rxjs_1.of)([]);
+      }), (0, operators_1.map)(function (booking_list) {
+        return booking_list.map(function (booking) {
+          return spaces.find(function (space) {
+            return space.id === booking.asset_id;
+          });
+        }).filter(function (space) {
+          return !!space;
+        });
+      }));
+    }), (0, operators_1.map)(function (_) {
+      return _[0];
+    }), (0, operators_1.shareReplay)(1));
     _this.subscription('spaces', _this.assigned_space.subscribe());
     return _this;
   }
@@ -32693,15 +32717,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "3a1c948",
-  "hash": "3a1c948",
+  "raw": "bf6e901",
+  "hash": "bf6e901",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "3a1c948",
+  "suffix": "bf6e901",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1717557640842
+  "time": 1717562668374
 };
 /* tslint:enable */
 
@@ -49803,6 +49827,68 @@ exports.ExploreMapViewComponent = ExploreMapViewComponent;
 
 /***/ }),
 
+/***/ 17889:
+/*!****************************************************************!*\
+  !*** ./libs/explore/src/lib/explore-parking-info.component.ts ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+
+var _createClass = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/createClass.js */ 92974)["default"]);
+var _classCallCheck = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/classCallCheck.js */ 80912)["default"]);
+var _ExploreParkingInfoComponent;
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.ExploreParkingInfoComponent = void 0;
+var core_1 = __webpack_require__(/*! @angular/core */ 37580);
+var components_1 = __webpack_require__(/*! @placeos/components */ 51588);
+var i0 = __webpack_require__(/*! @angular/core */ 37580);
+var ExploreParkingInfoComponent = /*#__PURE__*/_createClass(function ExploreParkingInfoComponent(_data, _element) {
+  _classCallCheck(this, ExploreParkingInfoComponent);
+  this._data = _data;
+  this._element = _element;
+  this.status = this._data.user ? 'reserved' : this._data.status;
+  this.user = this._data.user;
+  this.name = this._data.name;
+  this.map_id = this._data.map_id;
+});
+_ExploreParkingInfoComponent = ExploreParkingInfoComponent;
+_ExploreParkingInfoComponent.ɵfac = function ExploreParkingInfoComponent_Factory(t) {
+  return new (t || _ExploreParkingInfoComponent)(i0.ɵɵdirectiveInject(components_1.MAP_FEATURE_DATA), i0.ɵɵdirectiveInject(i0.ElementRef));
+};
+_ExploreParkingInfoComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
+  type: _ExploreParkingInfoComponent,
+  selectors: [["explore-parking-info"]],
+  decls: 7,
+  vars: 14,
+  consts: [[1, "absolute", "bg-base-300", "px-3", "py-2", "rounded-lg", "!rounded-tl-none", "shadow", "top-1/2", "left-1/2", "text-left"], [1, "absolute", "top-0.5", "left-0.5", "triangle"], [1, "flex", "flex-col", "leading-tight", "min-w-24"], [1, "whitespace-nowrap"], [1, "capitalize", "text-sm", "font-medium"]],
+  template: function ExploreParkingInfoComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      i0.ɵɵelementStart(0, "div", 0);
+      i0.ɵɵelement(1, "div", 1);
+      i0.ɵɵelementStart(2, "div", 2)(3, "div", 3);
+      i0.ɵɵtext(4);
+      i0.ɵɵelementEnd();
+      i0.ɵɵelementStart(5, "div", 4);
+      i0.ɵɵtext(6);
+      i0.ɵɵelementEnd()()();
+    }
+    if (rf & 2) {
+      i0.ɵɵclassProp("!bg-error", ctx.status === "busy")("!text-error-content", ctx.status === "busy")("!bg-warning", ctx.status === "reserved")("!text-warning-content", ctx.status === "reserved")("!bg-success", ctx.status === "free")("!text-success-content", ctx.status === "free");
+      i0.ɵɵadvance(4);
+      i0.ɵɵtextInterpolate(ctx.name);
+      i0.ɵɵadvance(2);
+      i0.ɵɵtextInterpolate(ctx.status);
+    }
+  },
+  styles: [".triangle[_ngcontent-%COMP%] {\n                width: 0px;\n                height: 0px;\n                border-style: solid;\n                border-width: 0.5rem 0.5rem 0 0;\n                border-color: currentColor transparent transparent transparent;\n                transform: rotate(0deg);\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvZXhwbG9yZS9zcmMvbGliL2V4cGxvcmUtcGFya2luZy1pbmZvLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksVUFBVTtnQkFDVixXQUFXO2dCQUNYLG1CQUFtQjtnQkFDbkIsK0JBQStCO2dCQUMvQiw4REFBOEQ7Z0JBQzlELHVCQUF1QjtZQUMzQiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgLnRyaWFuZ2xlIHtcbiAgICAgICAgICAgICAgICB3aWR0aDogMHB4O1xuICAgICAgICAgICAgICAgIGhlaWdodDogMHB4O1xuICAgICAgICAgICAgICAgIGJvcmRlci1zdHlsZTogc29saWQ7XG4gICAgICAgICAgICAgICAgYm9yZGVyLXdpZHRoOiAwLjVyZW0gMC41cmVtIDAgMDtcbiAgICAgICAgICAgICAgICBib3JkZXItY29sb3I6IGN1cnJlbnRDb2xvciB0cmFuc3BhcmVudCB0cmFuc3BhcmVudCB0cmFuc3BhcmVudDtcbiAgICAgICAgICAgICAgICB0cmFuc2Zvcm06IHJvdGF0ZSgwZGVnKTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
+});
+exports.ExploreParkingInfoComponent = ExploreParkingInfoComponent;
+
+/***/ }),
+
 /***/ 34498:
 /*!*********************************************************!*\
   !*** ./libs/explore/src/lib/explore-parking.service.ts ***!
@@ -49812,8 +49898,8 @@ exports.ExploreMapViewComponent = ExploreMapViewComponent;
 
 
 var _regeneratorRuntime = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/regeneratorRuntime.js */ 8698)["default"]);
-var _asyncToGenerator = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/asyncToGenerator.js */ 95386)["default"]);
 var _createForOfIteratorHelper = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/createForOfIteratorHelper.js */ 36350)["default"]);
+var _asyncToGenerator = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/asyncToGenerator.js */ 95386)["default"]);
 var _objectSpread = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/objectSpread2.js */ 34092)["default"]);
 var _slicedToArray = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/slicedToArray.js */ 6282)["default"]);
 var _classCallCheck = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/classCallCheck.js */ 80912)["default"]);
@@ -49825,6 +49911,7 @@ Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 exports.ExploreParkingService = void 0;
+var dialog_1 = __webpack_require__(/*! @angular/material/dialog */ 12587);
 var common_1 = __webpack_require__(/*! @placeos/common */ 22797);
 var ts_client_1 = __webpack_require__(/*! @placeos/ts-client */ 35713);
 var date_fns_1 = __webpack_require__(/*! date-fns */ 21097);
@@ -49836,16 +49923,17 @@ var explore_state_service_1 = __webpack_require__(/*! ./explore-state.service */
 var explore_spaces_service_1 = __webpack_require__(/*! ./explore-spaces.service */ 65897);
 var booking_form_service_1 = __webpack_require__(/*! libs/bookings/src/lib/booking-form.service */ 18379);
 var set_datetime_modal_component_1 = __webpack_require__(/*! ./set-datetime-modal.component */ 27146);
-var dialog_1 = __webpack_require__(/*! @angular/material/dialog */ 12587);
-var explore_desk_info_component_1 = __webpack_require__(/*! ./explore-desk-info.component */ 82882);
+var explore_parking_info_component_1 = __webpack_require__(/*! ./explore-parking-info.component */ 17889);
+var parking_service_1 = __webpack_require__(/*! libs/bookings/src/lib/parking.service */ 1593);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
 var i1 = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
 var i2 = __webpack_require__(/*! ./explore-state.service */ 12455);
 var i3 = __webpack_require__(/*! @placeos/common */ 22797);
 var i4 = __webpack_require__(/*! libs/bookings/src/lib/booking-form.service */ 18379);
-var i5 = __webpack_require__(/*! @angular/material/dialog */ 12587);
+var i5 = __webpack_require__(/*! libs/bookings/src/lib/parking.service */ 1593);
+var i6 = __webpack_require__(/*! @angular/material/dialog */ 12587);
 var ExploreParkingService = /*#__PURE__*/function (_common_1$AsyncHandle) {
-  function ExploreParkingService(_org, _state, _settings, _bookings, _dialog) {
+  function ExploreParkingService(_org, _state, _settings, _bookings, _parking, _dialog) {
     var _this;
     _classCallCheck(this, ExploreParkingService);
     _this = _callSuper(this, ExploreParkingService);
@@ -49853,6 +49941,7 @@ var ExploreParkingService = /*#__PURE__*/function (_common_1$AsyncHandle) {
     _this._state = _state;
     _this._settings = _settings;
     _this._bookings = _bookings;
+    _this._parking = _parking;
     _this._dialog = _dialog;
     _this._options = new rxjs_1.BehaviorSubject({});
     _this._poll = new rxjs_1.BehaviorSubject(0);
@@ -49982,133 +50071,210 @@ var ExploreParkingService = /*#__PURE__*/function (_common_1$AsyncHandle) {
     }
   }, {
     key: "_updateParkingSpaces",
-    value: function _updateParkingSpaces(spaces, available) {
-      var _this2 = this;
-      var styles = {};
-      var features = [];
-      var labels = [];
-      var actions = [];
-      var colours = this._settings.get('app.explore.colors') || {};
-      var options = this._options.getValue();
-      var _iterator = _createForOfIteratorHelper(spaces),
-        _step;
-      try {
-        var _loop2 = function _loop2() {
-          var space = _step.value;
-          var can_book = !!available.find(function (_) {
-            return _.id === space.id;
-          });
-          var status = can_book ? 'free' : 'busy';
-          styles["#".concat(space.map_id)] = {
-            fill: colours["parking-".concat(status)] || colours["".concat(status)] || explore_spaces_service_1.DEFAULT_COLOURS["".concat(status)],
-            opacity: 0.6
-          };
-          features.push({
-            track_id: "parking:hover:".concat(space.map_id),
-            location: "".concat(space.map_id),
-            content: explore_desk_info_component_1.ExploreDeskInfoComponent,
-            full_size: true,
-            no_scale: true,
-            z_index: 20,
-            data: _objectSpread(_objectSpread({}, space), {}, {
-              user: _this2._users[space.id],
-              status: status
-            })
-          });
-          if (!can_book) return 1; // continue
-          var book_fn = /*#__PURE__*/function () {
-            var _ref16 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-              var _space$groups, _this2$_options$getVa, _this2$_options$getVa2, _user, _space$zone, _space$zone2;
-              var _yield$_this2$_setBoo, date, duration, user, user_email, lvl;
-              return _regeneratorRuntime().wrap(function _callee$(_context) {
-                while (1) switch (_context.prev = _context.next) {
-                  case 0:
-                    if (!(status !== 'free')) {
-                      _context.next = 2;
-                      break;
-                    }
-                    return _context.abrupt("return", (0, common_1.notifyError)("".concat(space.name || 'Parking Space', " is unavailable at this time.")));
-                  case 2:
-                    if (!((_space$groups = space.groups) !== null && _space$groups !== void 0 && _space$groups.length && !space.groups.find(function (_) {
-                      return (0, common_1.currentUser)().groups.includes(_);
-                    }))) {
-                      _context.next = 4;
-                      break;
-                    }
-                    return _context.abrupt("return", (0, common_1.notifyError)("You are not allowed to book ".concat(space.name, ".")));
-                  case 4:
-                    _this2._bookings.newForm();
-                    _this2._bookings.setOptions({
-                      type: 'parking'
-                    });
-                    if (options.date) {
-                      _this2._bookings.form.patchValue({
-                        date: options.date
+    value: function () {
+      var _updateParkingSpaces2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(spaces, available) {
+        var _this2 = this;
+        var styles, features, actions, colours, options, assigned_space, deny_parking_access, booked_space, _iterator, _step, _loop2;
+        return _regeneratorRuntime().wrap(function _callee2$(_context3) {
+          while (1) switch (_context3.prev = _context3.next) {
+            case 0:
+              styles = {};
+              features = [];
+              actions = [];
+              colours = this._settings.get('app.explore.colors') || {};
+              options = this._options.getValue();
+              _context3.next = 7;
+              return this._parking.assigned_space.pipe((0, operators_1.take)(1)).toPromise();
+            case 7:
+              assigned_space = _context3.sent;
+              _context3.next = 10;
+              return this._parking.deny_parking_access.pipe((0, operators_1.take)(1)).toPromise();
+            case 10:
+              deny_parking_access = _context3.sent;
+              _context3.next = 13;
+              return this._parking.booked_space.pipe((0, operators_1.take)(1)).toPromise();
+            case 13:
+              booked_space = _context3.sent;
+              _iterator = _createForOfIteratorHelper(spaces);
+              _context3.prev = 15;
+              _loop2 = /*#__PURE__*/_regeneratorRuntime().mark(function _loop2() {
+                var space, can_book, status, book_fn;
+                return _regeneratorRuntime().wrap(function _loop2$(_context2) {
+                  while (1) switch (_context2.prev = _context2.next) {
+                    case 0:
+                      space = _step.value;
+                      can_book = !!available.find(function (_) {
+                        return _.id === space.id;
                       });
-                      _this2._bookings.form.patchValue({
-                        all_day: !!options.all_day
+                      status = can_book ? 'free' : 'busy';
+                      styles["#".concat(space.map_id)] = {
+                        fill: colours["parking-".concat(status)] || colours["".concat(status)] || explore_spaces_service_1.DEFAULT_COLOURS["".concat(status)],
+                        opacity: 0.6
+                      };
+                      features.push({
+                        location: "".concat(space.map_id),
+                        content: explore_parking_info_component_1.ExploreParkingInfoComponent,
+                        z_index: 20,
+                        hover: true,
+                        data: _objectSpread(_objectSpread({}, space), {}, {
+                          user: _this2._users[space.id],
+                          status: status
+                        })
                       });
-                    }
-                    _context.next = 9;
-                    return _this2._setBookingTime(_this2._bookings.form.value.date, _this2._bookings.form.value.duration, (_this2$_options$getVa = (_this2$_options$getVa2 = _this2._options.getValue()) === null || _this2$_options$getVa2 === void 0 ? void 0 : _this2$_options$getVa2.custom) !== null && _this2$_options$getVa !== void 0 ? _this2$_options$getVa : false, space);
-                  case 9:
-                    _yield$_this2$_setBoo = _context.sent;
-                    date = _yield$_this2$_setBoo.date;
-                    duration = _yield$_this2$_setBoo.duration;
-                    user = _yield$_this2$_setBoo.user;
-                    user = user || options.host || (0, common_1.currentUser)();
-                    user_email = (_user = user) === null || _user === void 0 ? void 0 : _user.email;
-                    lvl = _this2._state.active_level;
-                    _this2._bookings.form.patchValue({
-                      resources: [space],
-                      asset_id: space.id,
-                      asset_name: space.name,
-                      date: date,
-                      duration: options.all_day ? 12 * 60 : duration,
-                      map_id: (space === null || space === void 0 ? void 0 : space.map_id) || (space === null || space === void 0 ? void 0 : space.id),
-                      description: space.name,
-                      user: user,
-                      user_email: user_email,
-                      booking_type: 'parking',
-                      zones: space.zone ? [(_space$zone = space.zone) === null || _space$zone === void 0 ? void 0 : _space$zone.parent_id, (_space$zone2 = space.zone) === null || _space$zone2 === void 0 ? void 0 : _space$zone2.id] : [lvl.parent_id, lvl.id]
-                    });
-                    _context.next = 19;
-                    return _this2._bookings.confirmPost()["catch"](function (e) {
-                      console.log(e);
-                      (0, common_1.notifyError)("Failed to book parking space ".concat(space.name || space.id, ". ").concat(e.message || e.error || e));
-                      throw e;
-                    });
-                  case 19:
-                    (0, common_1.notifySuccess)("Successfully booked parking space ".concat(space.name || space.id));
-                  case 20:
-                  case "end":
-                    return _context.stop();
-                }
-              }, _callee);
-            }));
-            return function book_fn() {
-              return _ref16.apply(this, arguments);
-            };
-          }();
-          actions.push({
-            id: (space === null || space === void 0 ? void 0 : space.map_id) || (space === null || space === void 0 ? void 0 : space.id),
-            action: 'click',
-            priority: 10,
-            callback: book_fn
-          });
-        };
-        for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          if (_loop2()) continue;
-        }
-      } catch (err) {
-        _iterator.e(err);
-      } finally {
-        _iterator.f();
+                      if (can_book) {
+                        _context2.next = 7;
+                        break;
+                      }
+                      return _context2.abrupt("return", 1);
+                    case 7:
+                      book_fn = /*#__PURE__*/function () {
+                        var _ref16 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+                          var _space$groups, _this2$_options$getVa, _this2$_options$getVa2, _user, _space$zone3, _space$zone4;
+                          var _space$zone, _space$zone2, _yield$_this2$_setBoo, date, duration, user, user_email, lvl;
+                          return _regeneratorRuntime().wrap(function _callee$(_context) {
+                            while (1) switch (_context.prev = _context.next) {
+                              case 0:
+                                if (!deny_parking_access) {
+                                  _context.next = 2;
+                                  break;
+                                }
+                                return _context.abrupt("return", (0, common_1.notifyError)("Your user account has been denied parking access to ".concat(((_space$zone = space.zone) === null || _space$zone === void 0 ? void 0 : _space$zone.display_name) || ((_space$zone2 = space.zone) === null || _space$zone2 === void 0 ? void 0 : _space$zone2.name), ".")));
+                              case 2:
+                                if (!assigned_space) {
+                                  _context.next = 4;
+                                  break;
+                                }
+                                return _context.abrupt("return", (0, common_1.notifyError)("You are already assigned to parking space \"".concat(space.name || space.id, "\".")));
+                              case 4:
+                                if (!booked_space.find(function (_) {
+                                  return _.id === space.id;
+                                })) {
+                                  _context.next = 6;
+                                  break;
+                                }
+                                return _context.abrupt("return", (0, common_1.notifyError)("You already have a parking space booked for the selected time."));
+                              case 6:
+                                if (!(status !== 'free')) {
+                                  _context.next = 8;
+                                  break;
+                                }
+                                return _context.abrupt("return", (0, common_1.notifyError)("".concat(space.name || 'Parking Space', " is unavailable at this time.")));
+                              case 8:
+                                if (!((_space$groups = space.groups) !== null && _space$groups !== void 0 && _space$groups.length && !space.groups.find(function (_) {
+                                  return (0, common_1.currentUser)().groups.includes(_);
+                                }))) {
+                                  _context.next = 10;
+                                  break;
+                                }
+                                return _context.abrupt("return", (0, common_1.notifyError)("You are not allowed to book ".concat(space.name, ".")));
+                              case 10:
+                                _this2._bookings.newForm();
+                                _this2._bookings.setOptions({
+                                  type: 'parking'
+                                });
+                                if (options.date) {
+                                  _this2._bookings.form.patchValue({
+                                    date: options.date
+                                  });
+                                  _this2._bookings.form.patchValue({
+                                    all_day: !!options.all_day
+                                  });
+                                }
+                                _context.next = 15;
+                                return _this2._setBookingTime(_this2._bookings.form.value.date, _this2._bookings.form.value.duration, (_this2$_options$getVa = (_this2$_options$getVa2 = _this2._options.getValue()) === null || _this2$_options$getVa2 === void 0 ? void 0 : _this2$_options$getVa2.custom) !== null && _this2$_options$getVa !== void 0 ? _this2$_options$getVa : false, space);
+                              case 15:
+                                _yield$_this2$_setBoo = _context.sent;
+                                date = _yield$_this2$_setBoo.date;
+                                duration = _yield$_this2$_setBoo.duration;
+                                user = _yield$_this2$_setBoo.user;
+                                user = user || options.host || (0, common_1.currentUser)();
+                                user_email = (_user = user) === null || _user === void 0 ? void 0 : _user.email;
+                                lvl = _this2._state.active_level;
+                                _this2._bookings.form.patchValue({
+                                  resources: [space],
+                                  asset_id: space.id,
+                                  asset_name: space.name,
+                                  date: date,
+                                  duration: options.all_day ? 12 * 60 : duration,
+                                  map_id: (space === null || space === void 0 ? void 0 : space.map_id) || (space === null || space === void 0 ? void 0 : space.id),
+                                  description: space.name,
+                                  user: user,
+                                  user_email: user_email,
+                                  booking_type: 'parking',
+                                  zones: space.zone ? [(_space$zone3 = space.zone) === null || _space$zone3 === void 0 ? void 0 : _space$zone3.parent_id, (_space$zone4 = space.zone) === null || _space$zone4 === void 0 ? void 0 : _space$zone4.id] : [lvl.parent_id, lvl.id]
+                                });
+                                _context.next = 25;
+                                return _this2._bookings.confirmPost()["catch"](function (e) {
+                                  console.log(e);
+                                  (0, common_1.notifyError)("Failed to book parking space ".concat(space.name || space.id, ". ").concat(e.message || e.error || e));
+                                  throw e;
+                                });
+                              case 25:
+                                (0, common_1.notifySuccess)("Successfully booked parking space ".concat(space.name || space.id));
+                              case 26:
+                              case "end":
+                                return _context.stop();
+                            }
+                          }, _callee);
+                        }));
+                        return function book_fn() {
+                          return _ref16.apply(this, arguments);
+                        };
+                      }();
+                      actions.push({
+                        id: (space === null || space === void 0 ? void 0 : space.map_id) || (space === null || space === void 0 ? void 0 : space.id),
+                        action: 'click',
+                        priority: 10,
+                        callback: book_fn
+                      });
+                    case 9:
+                    case "end":
+                      return _context2.stop();
+                  }
+                }, _loop2);
+              });
+              _iterator.s();
+            case 18:
+              if ((_step = _iterator.n()).done) {
+                _context3.next = 24;
+                break;
+              }
+              return _context3.delegateYield(_loop2(), "t0", 20);
+            case 20:
+              if (!_context3.t0) {
+                _context3.next = 22;
+                break;
+              }
+              return _context3.abrupt("continue", 22);
+            case 22:
+              _context3.next = 18;
+              break;
+            case 24:
+              _context3.next = 29;
+              break;
+            case 26:
+              _context3.prev = 26;
+              _context3.t1 = _context3["catch"](15);
+              _iterator.e(_context3.t1);
+            case 29:
+              _context3.prev = 29;
+              _iterator.f();
+              return _context3.finish(29);
+            case 32:
+              this._state.setActions('parking', options.enable_booking ? actions : []);
+              this._state.setStyles('parking', styles);
+              this._state.setFeatures('parking', features);
+            case 35:
+            case "end":
+              return _context3.stop();
+          }
+        }, _callee2, this, [[15, 26, 29, 32]]);
+      }));
+      function _updateParkingSpaces(_x, _x2) {
+        return _updateParkingSpaces2.apply(this, arguments);
       }
-      this._state.setActions('parking', options.enable_booking ? actions : []);
-      this._state.setStyles('parking', styles);
-      this._state.setLabels('parking', labels);
-    }
+      return _updateParkingSpaces;
+    }()
   }, {
     key: "_setBookingTime",
     value: function () {
@@ -50116,14 +50282,14 @@ var ExploreParkingService = /*#__PURE__*/function (_common_1$AsyncHandle) {
         var _this3 = this;
         var host = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
         var resource = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
-        return /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+        return /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
           var user, until, ref, details;
-          return _regeneratorRuntime().wrap(function _callee2$(_context2) {
-            while (1) switch (_context2.prev = _context2.next) {
+          return _regeneratorRuntime().wrap(function _callee3$(_context4) {
+            while (1) switch (_context4.prev = _context4.next) {
               case 0:
                 user = null;
                 if (!_this3._settings.get('app.parking.allow_time_changes')) {
-                  _context2.next = 12;
+                  _context4.next = 12;
                   break;
                 }
                 until = (0, date_fns_1.endOfDay)((0, date_fns_1.addDays)(Date.now(), _this3._settings.get('app.parking.available_period') || 90));
@@ -50136,12 +50302,12 @@ var ExploreParkingService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                     resource: resource
                   }
                 });
-                _context2.next = 6;
+                _context4.next = 6;
                 return ref.afterClosed().toPromise();
               case 6:
-                details = _context2.sent;
+                details = _context4.sent;
                 if (details) {
-                  _context2.next = 9;
+                  _context4.next = 9;
                   break;
                 }
                 throw 'User cancelled';
@@ -50150,19 +50316,19 @@ var ExploreParkingService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                 duration = details.duration;
                 user = details.user;
               case 12:
-                return _context2.abrupt("return", {
+                return _context4.abrupt("return", {
                   date: date,
                   duration: duration,
                   user: user
                 });
               case 13:
               case "end":
-                return _context2.stop();
+                return _context4.stop();
             }
-          }, _callee2);
+          }, _callee3);
         })();
       });
-      function _setBookingTime(_x, _x2) {
+      function _setBookingTime(_x3, _x4) {
         return _setBookingTime2.apply(this, arguments);
       }
       return _setBookingTime;
@@ -50171,7 +50337,7 @@ var ExploreParkingService = /*#__PURE__*/function (_common_1$AsyncHandle) {
 }(common_1.AsyncHandler);
 _ExploreParkingService = ExploreParkingService;
 _ExploreParkingService.ɵfac = function ExploreParkingService_Factory(t) {
-  return new (t || _ExploreParkingService)(i0.ɵɵinject(i1.OrganisationService), i0.ɵɵinject(i2.ExploreStateService), i0.ɵɵinject(i3.SettingsService), i0.ɵɵinject(i4.BookingFormService), i0.ɵɵinject(i5.MatDialog));
+  return new (t || _ExploreParkingService)(i0.ɵɵinject(i1.OrganisationService), i0.ɵɵinject(i2.ExploreStateService), i0.ɵɵinject(i3.SettingsService), i0.ɵɵinject(i4.BookingFormService), i0.ɵɵinject(i5.ParkingService), i0.ɵɵinject(i6.MatDialog));
 };
 _ExploreParkingService.ɵprov = /*@__PURE__*/i0.ɵɵdefineInjectable({
   token: _ExploreParkingService,
@@ -52265,8 +52431,9 @@ var explore_book_qr_component_1 = __webpack_require__(/*! ./explore-book-qr.comp
 var explore_sensor_info_component_1 = __webpack_require__(/*! ./explore-sensor-info.component */ 79303);
 var explore_locker_bank_info_component_1 = __webpack_require__(/*! ./explore-locker-bank-info.component */ 84810);
 var explore_locker_bank_modal_component_1 = __webpack_require__(/*! ./explore-locker-bank-modal.component */ 50795);
+var explore_parking_info_component_1 = __webpack_require__(/*! ./explore-parking-info.component */ 17889);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
-var COMPONENTS = [explore_map_control_component_1.ExploreMapControlComponent, explore_map_view_component_1.ExploreMapViewComponent, explore_search_component_1.ExploreSearchComponent, explore_space_info_component_1.ExploreSpaceInfoComponent, explore_device_info_component_1.ExploreDeviceInfoComponent, explore_desk_info_component_1.ExploreDeskInfoComponent, explore_zoom_control_component_1.ExploreZoomControlComponent, explore_booking_modal_component_1.ExploreBookingModalComponent, set_datetime_modal_component_1.SetDatetimeModalComponent, explore_book_qr_component_1.ExploreBookQrComponent, explore_sensor_info_component_1.ExploreSensorInfoComponent, explore_locker_bank_info_component_1.ExploreLockerBankInfoComponent, explore_locker_bank_modal_component_1.ExploreLockerBankModalComponent];
+var COMPONENTS = [explore_map_control_component_1.ExploreMapControlComponent, explore_map_view_component_1.ExploreMapViewComponent, explore_search_component_1.ExploreSearchComponent, explore_space_info_component_1.ExploreSpaceInfoComponent, explore_device_info_component_1.ExploreDeviceInfoComponent, explore_desk_info_component_1.ExploreDeskInfoComponent, explore_zoom_control_component_1.ExploreZoomControlComponent, explore_booking_modal_component_1.ExploreBookingModalComponent, set_datetime_modal_component_1.SetDatetimeModalComponent, explore_book_qr_component_1.ExploreBookQrComponent, explore_sensor_info_component_1.ExploreSensorInfoComponent, explore_locker_bank_info_component_1.ExploreLockerBankInfoComponent, explore_locker_bank_modal_component_1.ExploreLockerBankModalComponent, explore_parking_info_component_1.ExploreParkingInfoComponent];
 var SharedExploreModule = /*#__PURE__*/_createClass(function SharedExploreModule() {
   _classCallCheck(this, SharedExploreModule);
 });
@@ -52283,9 +52450,9 @@ _SharedExploreModule.ɵinj = /*@__PURE__*/i0.ɵɵdefineInjector({
 exports.SharedExploreModule = SharedExploreModule;
 (function () {
   (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(SharedExploreModule, {
-    declarations: [explore_map_control_component_1.ExploreMapControlComponent, explore_map_view_component_1.ExploreMapViewComponent, explore_search_component_1.ExploreSearchComponent, explore_space_info_component_1.ExploreSpaceInfoComponent, explore_device_info_component_1.ExploreDeviceInfoComponent, explore_desk_info_component_1.ExploreDeskInfoComponent, explore_zoom_control_component_1.ExploreZoomControlComponent, explore_booking_modal_component_1.ExploreBookingModalComponent, set_datetime_modal_component_1.SetDatetimeModalComponent, explore_book_qr_component_1.ExploreBookQrComponent, explore_sensor_info_component_1.ExploreSensorInfoComponent, explore_locker_bank_info_component_1.ExploreLockerBankInfoComponent, explore_locker_bank_modal_component_1.ExploreLockerBankModalComponent],
+    declarations: [explore_map_control_component_1.ExploreMapControlComponent, explore_map_view_component_1.ExploreMapViewComponent, explore_search_component_1.ExploreSearchComponent, explore_space_info_component_1.ExploreSpaceInfoComponent, explore_device_info_component_1.ExploreDeviceInfoComponent, explore_desk_info_component_1.ExploreDeskInfoComponent, explore_zoom_control_component_1.ExploreZoomControlComponent, explore_booking_modal_component_1.ExploreBookingModalComponent, set_datetime_modal_component_1.SetDatetimeModalComponent, explore_book_qr_component_1.ExploreBookQrComponent, explore_sensor_info_component_1.ExploreSensorInfoComponent, explore_locker_bank_info_component_1.ExploreLockerBankInfoComponent, explore_locker_bank_modal_component_1.ExploreLockerBankModalComponent, explore_parking_info_component_1.ExploreParkingInfoComponent],
     imports: [common_1.CommonModule, components_1.ComponentsModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, slide_toggle_1.MatSlideToggleModule, overlay_1.OverlayModule, portal_1.PortalModule, form_fields_module_1.FormFieldsModule, bookings_module_1.SharedBookingsModule],
-    exports: [explore_map_control_component_1.ExploreMapControlComponent, explore_map_view_component_1.ExploreMapViewComponent, explore_search_component_1.ExploreSearchComponent, explore_space_info_component_1.ExploreSpaceInfoComponent, explore_device_info_component_1.ExploreDeviceInfoComponent, explore_desk_info_component_1.ExploreDeskInfoComponent, explore_zoom_control_component_1.ExploreZoomControlComponent, explore_booking_modal_component_1.ExploreBookingModalComponent, set_datetime_modal_component_1.SetDatetimeModalComponent, explore_book_qr_component_1.ExploreBookQrComponent, explore_sensor_info_component_1.ExploreSensorInfoComponent, explore_locker_bank_info_component_1.ExploreLockerBankInfoComponent, explore_locker_bank_modal_component_1.ExploreLockerBankModalComponent]
+    exports: [explore_map_control_component_1.ExploreMapControlComponent, explore_map_view_component_1.ExploreMapViewComponent, explore_search_component_1.ExploreSearchComponent, explore_space_info_component_1.ExploreSpaceInfoComponent, explore_device_info_component_1.ExploreDeviceInfoComponent, explore_desk_info_component_1.ExploreDeskInfoComponent, explore_zoom_control_component_1.ExploreZoomControlComponent, explore_booking_modal_component_1.ExploreBookingModalComponent, set_datetime_modal_component_1.SetDatetimeModalComponent, explore_book_qr_component_1.ExploreBookQrComponent, explore_sensor_info_component_1.ExploreSensorInfoComponent, explore_locker_bank_info_component_1.ExploreLockerBankInfoComponent, explore_locker_bank_modal_component_1.ExploreLockerBankModalComponent, explore_parking_info_component_1.ExploreParkingInfoComponent]
   });
 })();
 
