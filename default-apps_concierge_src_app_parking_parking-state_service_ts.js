@@ -553,11 +553,11 @@ class ParkingStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.A
         period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_16__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_17__["default"])(options.date)),
         period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_16__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_18__["default"])(options.date)),
         type: 'parking',
-        zones: options.zones?.length ? options.zones.join(',') : (this._settings.get('app.use_region') ? this._org.region?.id : '') || bld?.id
+        zones: options.zones?.length ? options.zones.join(',') : (this._settings.get('app.use_region') ? this._org.region?.id : '') || bld?.id,
+        include_checked_out: true
       }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.map)(list => {
         for (const booking of list) {
           const user = users.find(_ => _.email.toLowerCase() === booking.user_email.toLowerCase());
-          console.log('User:', user, users);
           if (user) {
             booking.extension_data.plate_number = booking.extension_data.plate_number || user.plate_number;
           }
