@@ -7377,6 +7377,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37580);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 95072);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/core */ 74646);
 /* harmony import */ var _parking_flow_parking_flow_confirm_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parking-flow/parking-flow-confirm.component */ 58681);
 /* harmony import */ var _new_parking_flow_parking_flow_form_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./new-parking-flow/parking-flow-form.component */ 42564);
 /* harmony import */ var _new_parking_flow_parking_flow_success_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./new-parking-flow/parking-flow-success.component */ 59101);
@@ -7390,19 +7391,83 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function NewParkingFlowComponent_parking_flow_success_1_Template(rf, ctx) {
+
+const _c0 = () => ["/your-bookings"];
+function NewParkingFlowComponent_ng_container_0_ng_container_1_parking_flow_success_2_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](0, "parking-flow-success");
   }
 }
-function NewParkingFlowComponent_parking_flow_confirm_2_Template(rf, ctx) {
+function NewParkingFlowComponent_ng_container_0_ng_container_1_parking_flow_confirm_3_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](0, "parking-flow-confirm");
   }
 }
-function NewParkingFlowComponent_parking_flow_form_3_Template(rf, ctx) {
+function NewParkingFlowComponent_ng_container_0_ng_container_1_parking_flow_form_4_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](0, "parking-flow-form");
+  }
+}
+function NewParkingFlowComponent_ng_container_0_ng_container_1_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](2, NewParkingFlowComponent_ng_container_0_ng_container_1_parking_flow_success_2_Template, 1, 0, "parking-flow-success", 4)(3, NewParkingFlowComponent_ng_container_0_ng_container_1_parking_flow_confirm_3_Template, 1, 0, "parking-flow-confirm", 4)(4, NewParkingFlowComponent_ng_container_0_ng_container_1_parking_flow_form_4_Template, 1, 0, "parking-flow-form", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngSwitch", ctx_r0.view);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngSwitchCase", "success");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngSwitchCase", "confirm");
+  }
+}
+function NewParkingFlowComponent_ng_container_0_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, NewParkingFlowComponent_ng_container_0_ng_container_1_Template, 5, 3, "ng-container", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](2, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+    const assigned_state_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](2, 2, ctx_r0.assigned_space))("ngIfElse", assigned_state_r2);
+  }
+}
+function NewParkingFlowComponent_ng_template_2_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "img", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](4, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "a", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](6, " View Your Bookings ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+  }
+  if (rf & 2) {
+    let tmp_3_0;
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" You are already assigned to parking space \"", (tmp_3_0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](4, 2, ctx_r0.assigned_space)) == null ? null : tmp_3_0.name, "\" ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](4, _c0));
+  }
+}
+function NewParkingFlowComponent_ng_template_4_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](1, "img", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, " Your user account is not allowed to book parking in this building. ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
   }
 }
 class NewParkingFlowComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.AsyncHandler {
@@ -7412,10 +7477,13 @@ class NewParkingFlowComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1
   get last_success() {
     return this._state.last_success;
   }
-  constructor(_state, _route) {
+  constructor(_state, _route, _parking) {
     super();
     this._state = _state;
     this._route = _route;
+    this._parking = _parking;
+    this.deny_parking_access = this._parking.deny_parking_access;
+    this.assigned_space = this._parking.assigned_space;
   }
   ngOnInit() {
     this._state.loadForm();
@@ -7434,30 +7502,27 @@ class NewParkingFlowComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1
     }));
   }
   static #_ = this.ɵfac = function NewParkingFlowComponent_Factory(t) {
-    return new (t || NewParkingFlowComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_placeos_bookings__WEBPACK_IMPORTED_MODULE_0__.BookingFormService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_6__.ActivatedRoute));
+    return new (t || NewParkingFlowComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_placeos_bookings__WEBPACK_IMPORTED_MODULE_0__.BookingFormService), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_6__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_placeos_bookings__WEBPACK_IMPORTED_MODULE_0__.ParkingService));
   };
   static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
     type: NewParkingFlowComponent,
     selectors: [["placeos-new-parking-flow"]],
     features: [_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵInheritDefinitionFeature"]],
-    decls: 4,
-    vars: 3,
-    consts: [[1, "bg-base-100", "h-full", "w-full", "z-50", 3, "ngSwitch"], [4, "ngSwitchCase"], [4, "ngSwitchDefault"]],
+    decls: 6,
+    vars: 4,
+    consts: [["assigned_state", ""], ["deny_state", ""], [4, "ngIf", "ngIfElse"], [1, "bg-base-100", "h-full", "w-full", "z-50", 3, "ngSwitch"], [4, "ngSwitchCase"], [4, "ngSwitchDefault"], [1, "bg-base-100", "flex", "flex-col", "items-center", "justify-center", "h-full", "w-full", "z-50", "space-y-4"], ["src", "assets/icons/parking-success.svg", 1, "w-64", "h-64"], ["btn", "", "matRipple", "", 1, "w-48", 3, "routerLink"], ["src", "assets/img/parking-space.svg", 1, "w-64", "h-64"]],
     template: function NewParkingFlowComponent_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, NewParkingFlowComponent_parking_flow_success_1_Template, 1, 0, "parking-flow-success", 1)(2, NewParkingFlowComponent_parking_flow_confirm_2_Template, 1, 0, "parking-flow-confirm", 1)(3, NewParkingFlowComponent_parking_flow_form_3_Template, 1, 0, "parking-flow-form", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](0, NewParkingFlowComponent_ng_container_0_Template, 3, 4, "ng-container", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](1, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](2, NewParkingFlowComponent_ng_template_2_Template, 7, 5, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"])(4, NewParkingFlowComponent_ng_template_4_Template, 4, 0, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"]);
       }
       if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngSwitch", ctx.view);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngSwitchCase", "success");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngSwitchCase", "confirm");
+        const deny_state_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](1, 2, ctx.deny_parking_access))("ngIfElse", deny_state_r3);
       }
     },
-    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.NgSwitch, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgSwitchCase, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgSwitchDefault, _parking_flow_parking_flow_confirm_component__WEBPACK_IMPORTED_MODULE_2__.ParkingFlowConfirmComponent, _new_parking_flow_parking_flow_form_component__WEBPACK_IMPORTED_MODULE_3__.ParkingFlowFormComponent, _new_parking_flow_parking_flow_success_component__WEBPACK_IMPORTED_MODULE_4__.ParkingFlowSuccessComponent],
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgSwitch, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgSwitchCase, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgSwitchDefault, _angular_material_core__WEBPACK_IMPORTED_MODULE_8__.MatRipple, _angular_router__WEBPACK_IMPORTED_MODULE_6__.RouterLink, _parking_flow_parking_flow_confirm_component__WEBPACK_IMPORTED_MODULE_2__.ParkingFlowConfirmComponent, _new_parking_flow_parking_flow_form_component__WEBPACK_IMPORTED_MODULE_3__.ParkingFlowFormComponent, _new_parking_flow_parking_flow_success_component__WEBPACK_IMPORTED_MODULE_4__.ParkingFlowSuccessComponent, _angular_common__WEBPACK_IMPORTED_MODULE_7__.AsyncPipe],
     styles: ["[_nghost-%COMP%] {\n                height: 100%;\n                width: 100%;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvd29ya3BsYWNlL3NyYy9hcHAvYm9vay9uZXctcGFya2luZy1mbG93LmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksWUFBWTtnQkFDWixXQUFXO1lBQ2YiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICAgICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
   });
 }
