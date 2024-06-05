@@ -3619,6 +3619,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: h
   #placeos :is(.print\:overflow-visible) {
     overflow: visible;
   }
+
+  #placeos :is(.print\:text-sm) {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
 }
 
 /*!******************************************************************************************************************************************************************************************************************************!*\
