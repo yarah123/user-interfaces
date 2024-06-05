@@ -32742,15 +32742,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "9ff8141",
-  "hash": "9ff8141",
+  "raw": "efcab9f",
+  "hash": "efcab9f",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "9ff8141",
+  "suffix": "efcab9f",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1717575927059
+  "time": 1717588594478
 };
 /* tslint:enable */
 
@@ -50005,6 +50005,7 @@ var ExploreParkingService = /*#__PURE__*/function (_common_1$AsyncHandle) {
     _this._options = new rxjs_1.BehaviorSubject({});
     _this._poll = new rxjs_1.BehaviorSubject(0);
     _this.options = _this._options.asObservable();
+    _this.on_book = null;
     /** List of available parking levels for the active building */
     _this.levels = _this._org.active_levels.pipe((0, operators_1.map)(function (l) {
       return l.filter(function (_) {
@@ -50177,40 +50178,46 @@ var ExploreParkingService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                           return _regeneratorRuntime().wrap(function _callee$(_context) {
                             while (1) switch (_context.prev = _context.next) {
                               case 0:
-                                if (!deny_parking_access) {
+                                if (!_this3.on_book) {
                                   _context.next = 2;
                                   break;
                                 }
-                                return _context.abrupt("return", (0, common_1.notifyError)("Your user account has been denied parking access to ".concat(((_space$zone = space.zone) === null || _space$zone === void 0 ? void 0 : _space$zone.display_name) || ((_space$zone2 = space.zone) === null || _space$zone2 === void 0 ? void 0 : _space$zone2.name), ".")));
+                                return _context.abrupt("return", _this3.on_book(space));
                               case 2:
-                                if (!assigned_space) {
+                                if (!deny_parking_access) {
                                   _context.next = 4;
                                   break;
                                 }
-                                return _context.abrupt("return", (0, common_1.notifyError)("You are already assigned to parking space \"".concat(space.name || space.id, "\".")));
+                                return _context.abrupt("return", (0, common_1.notifyError)("Your user account has been denied parking access to ".concat(((_space$zone = space.zone) === null || _space$zone === void 0 ? void 0 : _space$zone.display_name) || ((_space$zone2 = space.zone) === null || _space$zone2 === void 0 ? void 0 : _space$zone2.name), ".")));
                               case 4:
-                                if (!(booked_space !== null && booked_space !== void 0 && booked_space.find(function (_) {
-                                  return _.id === space.id;
-                                }))) {
+                                if (!assigned_space) {
                                   _context.next = 6;
                                   break;
                                 }
-                                return _context.abrupt("return", (0, common_1.notifyError)("You already have a parking space booked for the selected time."));
+                                return _context.abrupt("return", (0, common_1.notifyError)("You are already assigned to parking space \"".concat(space.name || space.id, "\".")));
                               case 6:
-                                if (!(status !== 'free')) {
+                                if (!(booked_space !== null && booked_space !== void 0 && booked_space.find(function (_) {
+                                  return _.id === space.id;
+                                }))) {
                                   _context.next = 8;
                                   break;
                                 }
-                                return _context.abrupt("return", (0, common_1.notifyError)("".concat(space.name || 'Parking Space', " is unavailable at this time.")));
+                                return _context.abrupt("return", (0, common_1.notifyError)("You already have a parking space booked for the selected time."));
                               case 8:
-                                if (!((_space$groups = space.groups) !== null && _space$groups !== void 0 && _space$groups.length && !space.groups.find(function (_) {
-                                  return (0, common_1.currentUser)().groups.includes(_);
-                                }))) {
+                                if (!(status !== 'free')) {
                                   _context.next = 10;
                                   break;
                                 }
-                                return _context.abrupt("return", (0, common_1.notifyError)("You are not allowed to book ".concat(space.name, ".")));
+                                return _context.abrupt("return", (0, common_1.notifyError)("".concat(space.name || 'Parking Space', " is unavailable at this time.")));
                               case 10:
+                                if (!((_space$groups = space.groups) !== null && _space$groups !== void 0 && _space$groups.length && !space.groups.find(function (_) {
+                                  return (0, common_1.currentUser)().groups.includes(_);
+                                }))) {
+                                  _context.next = 12;
+                                  break;
+                                }
+                                return _context.abrupt("return", (0, common_1.notifyError)("You are not allowed to book ".concat(space.name, ".")));
+                              case 12:
                                 _this3._bookings.newForm();
                                 _this3._bookings.setOptions({
                                   type: 'parking'
@@ -50223,9 +50230,9 @@ var ExploreParkingService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                                     all_day: !!options.all_day
                                   });
                                 }
-                                _context.next = 15;
+                                _context.next = 17;
                                 return _this3._setBookingTime(_this3._bookings.form.value.date, _this3._bookings.form.value.duration, (_this3$_options$getVa = (_this3$_options$getVa2 = _this3._options.getValue()) === null || _this3$_options$getVa2 === void 0 ? void 0 : _this3$_options$getVa2.custom) !== null && _this3$_options$getVa !== void 0 ? _this3$_options$getVa : false, space);
-                              case 15:
+                              case 17:
                                 _yield$_this3$_setBoo = _context.sent;
                                 date = _yield$_this3$_setBoo.date;
                                 duration = _yield$_this3$_setBoo.duration;
@@ -50246,15 +50253,15 @@ var ExploreParkingService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                                   booking_type: 'parking',
                                   zones: space.zone ? [(_space$zone3 = space.zone) === null || _space$zone3 === void 0 ? void 0 : _space$zone3.parent_id, (_space$zone4 = space.zone) === null || _space$zone4 === void 0 ? void 0 : _space$zone4.id] : [lvl.parent_id, lvl.id]
                                 });
-                                _context.next = 25;
+                                _context.next = 27;
                                 return _this3._bookings.confirmPost()["catch"](function (e) {
                                   if (e === 'User cancelled') throw e;
                                   (0, common_1.notifyError)("Failed to book parking space ".concat(space.name || space.id, ". ").concat(e.message || e.error || e));
                                   throw e;
                                 });
-                              case 25:
+                              case 27:
                                 (0, common_1.notifySuccess)("Successfully booked parking space ".concat(space.name || space.id));
-                              case 26:
+                              case 28:
                               case "end":
                                 return _context.stop();
                             }
