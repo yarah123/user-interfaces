@@ -953,9 +953,6 @@ video {
 #placeos :is(.mb-4) {
   margin-bottom: 1rem;
 }
-#placeos :is(.mb-5) {
-  margin-bottom: 1.25rem;
-}
 #placeos :is(.mb-8) {
   margin-bottom: 2rem;
 }

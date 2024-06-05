@@ -59,7 +59,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class ScheduleStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.AsyncHandler {
-  constructor(_settings, _org, _lockers, _dialog) {
+  constructor(_settings, _org, _lockers, _dialog, _parking) {
     var _this;
     super();
     _this = this;
@@ -67,6 +67,7 @@ class ScheduleStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.
     this._org = _org;
     this._lockers = _lockers;
     this._dialog = _dialog;
+    this._parking = _parking;
     this._poll = new rxjs__WEBPACK_IMPORTED_MODULE_7__.BehaviorSubject(0);
     this._poll_type = new rxjs__WEBPACK_IMPORTED_MODULE_7__.BehaviorSubject('api');
     this._loading = new rxjs__WEBPACK_IMPORTED_MODULE_7__.BehaviorSubject(false);
@@ -180,9 +181,9 @@ class ScheduleStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.
       return (0,rxjs__WEBPACK_IMPORTED_MODULE_17__.of)([]);
     }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.tap)(() => this.timeout('end_loading', () => this._loading.next(false))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_18__.shareReplay)(1));
     /** List of events and bookings for the selected date */
-    this.bookings = (0,rxjs__WEBPACK_IMPORTED_MODULE_8__.combineLatest)([this.events, this.visitors, this.desks, this.parking, this.lockers, this.group_events]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_15__.map)(([e, v, d, p, l, ge]) => {
-      const filtered_events = e.filter(ev => !d.find(bkn => `${ev.meeting_id}` === `${bkn.id}`) && ev.linked_bookings[0]?.booking_type !== 'group-event');
-      return [...filtered_events, ...v, ...d, ...p, ...l, ...ge].sort((a, b) => a.date - b.date);
+    this.bookings = (0,rxjs__WEBPACK_IMPORTED_MODULE_8__.combineLatest)([this.events, this.visitors, this.desks, this.parking, this.lockers, this.group_events]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_15__.map)(([events, visitors, desks, parking, lockers, group_events]) => {
+      const filtered_events = events.filter(ev => !desks.find(bkn => `${ev.meeting_id}` === `${bkn.id}`) && ev.linked_bookings[0]?.booking_type !== 'group-event');
+      return [...filtered_events, ...visitors, ...desks, ...parking, ...lockers, ...group_events].sort((a, b) => a.date - b.date);
     }));
     /** Filtered list of events and bookings for the selected date */
     this.filtered_bookings = (0,rxjs__WEBPACK_IMPORTED_MODULE_8__.combineLatest)([this.bookings, this._filters]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_15__.map)(([bkns, filters]) => bkns.filter(_ => !this._deleted.includes(_.id) && _ instanceof _placeos_events__WEBPACK_IMPORTED_MODULE_3__.CalendarEvent && filters?.shown_types?.includes('event') || filters?.shown_types?.includes(_.booking_type))));
@@ -289,7 +290,7 @@ class ScheduleStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.
     })();
   }
   static #_ = this.ɵfac = function ScheduleStateService_Factory(t) {
-    return new (t || ScheduleStateService)(_angular_core__WEBPACK_IMPORTED_MODULE_29__["ɵɵinject"](_placeos_common__WEBPACK_IMPORTED_MODULE_2__.SettingsService), _angular_core__WEBPACK_IMPORTED_MODULE_29__["ɵɵinject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_4__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_29__["ɵɵinject"](_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.LockersService), _angular_core__WEBPACK_IMPORTED_MODULE_29__["ɵɵinject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_30__.MatDialog));
+    return new (t || ScheduleStateService)(_angular_core__WEBPACK_IMPORTED_MODULE_29__["ɵɵinject"](_placeos_common__WEBPACK_IMPORTED_MODULE_2__.SettingsService), _angular_core__WEBPACK_IMPORTED_MODULE_29__["ɵɵinject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_4__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_29__["ɵɵinject"](_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.LockersService), _angular_core__WEBPACK_IMPORTED_MODULE_29__["ɵɵinject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_30__.MatDialog), _angular_core__WEBPACK_IMPORTED_MODULE_29__["ɵɵinject"](_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.ParkingService));
   };
   static #_2 = this.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_29__["ɵɵdefineInjectable"]({
     token: ScheduleStateService,

@@ -7854,17 +7854,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ParkingFlowFormComponent: () => (/* binding */ ParkingFlowFormComponent)
 /* harmony export */ });
-/* harmony import */ var _placeos_bookings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/bookings */ 85616);
-/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 22797);
-/* harmony import */ var _parking_flow_confirm_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parking-flow-confirm.component */ 22338);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 37580);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 95072);
-/* harmony import */ var _angular_material_bottom_sheet__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/bottom-sheet */ 15244);
-/* harmony import */ var _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../libs/components/src/lib/icon.component */ 69434);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/core */ 74646);
-/* harmony import */ var _libs_bookings_src_lib_parking_space_list_field_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../libs/bookings/src/lib/parking-space-list-field.component */ 24844);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/forms */ 34456);
-/* harmony import */ var _parking_form_details_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./parking-form-details.component */ 94054);
+/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
+/* harmony import */ var _placeos_bookings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/bookings */ 85616);
+/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/common */ 22797);
+/* harmony import */ var _parking_flow_confirm_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./parking-flow-confirm.component */ 22338);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 33602);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ 95072);
+/* harmony import */ var _angular_material_bottom_sheet__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/bottom-sheet */ 15244);
+/* harmony import */ var _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../libs/components/src/lib/icon.component */ 69434);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/core */ 74646);
+/* harmony import */ var _libs_bookings_src_lib_parking_space_list_field_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../libs/bookings/src/lib/parking-space-list-field.component */ 24844);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/forms */ 34456);
+/* harmony import */ var _parking_form_details_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./parking-form-details.component */ 94054);
 
 
 
@@ -7880,21 +7882,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-class ParkingFlowFormComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.AsyncHandler {
+
+
+class ParkingFlowFormComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.AsyncHandler {
   get form() {
     return this._state.form;
   }
-  constructor(_state, _settings, _router, _bottom_sheet) {
+  constructor(_state, _settings, _router, _bottom_sheet, _parking) {
     super();
     this._state = _state;
     this._settings = _settings;
     this._router = _router;
     this._bottom_sheet = _bottom_sheet;
+    this._parking = _parking;
     this.hide_block = {};
     this.clearForm = () => this._state.resetForm();
     this.viewConfirm = () => {
-      if (!this.form.valid) return (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.notifyError)(`Some fields are invalid. [${(0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.getInvalidFields)(this.form).join(', ')}]`);
-      this.sheet_ref = this._bottom_sheet.open(_parking_flow_confirm_component__WEBPACK_IMPORTED_MODULE_2__.NewParkingFlowConfirmComponent);
+      if (!this.form.valid) return (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.notifyError)(`Some fields are invalid. [${(0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.getInvalidFields)(this.form).join(', ')}]`);
+      this.sheet_ref = this._bottom_sheet.open(_parking_flow_confirm_component__WEBPACK_IMPORTED_MODULE_3__.NewParkingFlowConfirmComponent);
       this.sheet_ref.instance.show_close = true;
       this.sheet_ref.afterDismissed().subscribe(value => {
         if (value) {
@@ -7905,17 +7910,29 @@ class ParkingFlowFormComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_
     };
   }
   ngOnInit() {
-    this._state.setOptions({
-      type: 'parking'
-    });
+    var _this = this;
+    return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      _this._state.setOptions({
+        type: 'parking'
+      });
+      _this.form.patchValue({
+        all_day: true
+      });
+      const user = yield _this._parking.user_details.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.take)(1)).toPromise();
+      if (user?.email) {
+        _this.form.patchValue({
+          plate_number: user.plate_number
+        });
+      }
+    })();
   }
   static #_ = this.ɵfac = function ParkingFlowFormComponent_Factory(t) {
-    return new (t || ParkingFlowFormComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_placeos_bookings__WEBPACK_IMPORTED_MODULE_0__.BookingFormService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_placeos_common__WEBPACK_IMPORTED_MODULE_1__.SettingsService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_7__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_material_bottom_sheet__WEBPACK_IMPORTED_MODULE_8__.MatBottomSheet));
+    return new (t || ParkingFlowFormComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdirectiveInject"](_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.BookingFormService), _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdirectiveInject"](_placeos_common__WEBPACK_IMPORTED_MODULE_2__.SettingsService), _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_9__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdirectiveInject"](_angular_material_bottom_sheet__WEBPACK_IMPORTED_MODULE_10__.MatBottomSheet), _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdirectiveInject"](_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.ParkingService));
   };
-  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({
+  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineComponent"]({
     type: ParkingFlowFormComponent,
     selectors: [["parking-flow-form"]],
-    features: [_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵInheritDefinitionFeature"]],
+    features: [_angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵInheritDefinitionFeature"]],
     decls: 34,
     vars: 8,
     consts: () => {
@@ -7985,80 +8002,80 @@ class ParkingFlowFormComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_
     },
     template: function ParkingFlowFormComponent_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 5)(1, "div", 6)(2, "h2", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵi18n"](3, 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](4, "form", 8)(5, "section", 9)(6, "h3", 10)(7, "div", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](8, " 1 ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](9, "div", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵi18n"](10, 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](11, "div", 13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](12, "button", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ParkingFlowFormComponent_Template_button_click_12_listener() {
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](0, "div", 5)(1, "div", 6)(2, "h2", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵi18n"](3, 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](4, "form", 8)(5, "section", 9)(6, "h3", 10)(7, "div", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](8, " 1 ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](9, "div", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵi18n"](10, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](11, "div", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](12, "button", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function ParkingFlowFormComponent_Template_button_click_12_listener() {
           return ctx.hide_block.details = !ctx.hide_block.details;
         });
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](13, "app-icon");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](15, "div", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](16, "parking-form-details", 16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](17, "section", 9)(18, "h3", 10)(19, "div", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](20, " 2 ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](21, "div", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵi18n"](22, 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](23, "div", 13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](24, "button", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ParkingFlowFormComponent_Template_button_click_24_listener() {
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](13, "app-icon");
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](15, "div", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](16, "parking-form-details", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](17, "section", 9)(18, "h3", 10)(19, "div", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](20, " 2 ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](21, "div", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵi18n"](22, 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](23, "div", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](24, "button", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function ParkingFlowFormComponent_Template_button_click_24_listener() {
           return ctx.hide_block.space = !ctx.hide_block.space;
         });
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](25, "app-icon");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](26);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](27, "div", 15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](28, "parking-space-list-field", 17);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](29, "section", 18)(30, "button", 19);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ParkingFlowFormComponent_Template_button_click_30_listener() {
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](25, "app-icon");
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtext"](26);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](27, "div", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelement"](28, "parking-space-list-field", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](29, "section", 18)(30, "button", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function ParkingFlowFormComponent_Template_button_click_30_listener() {
           return ctx.viewConfirm();
         });
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵi18n"](31, 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](32, "button", 20);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("click", function ParkingFlowFormComponent_Template_button_click_32_listener() {
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵi18n"](31, 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementStart"](32, "button", 20);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵlistener"]("click", function ParkingFlowFormComponent_Template_button_click_32_listener() {
           return ctx.clearForm();
         });
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵi18n"](33, 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵi18n"](33, 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵelementEnd"]()()()()();
       }
       if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵi18nExp"](ctx.form.value.id ? "Edit" : "Book");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵi18nApply"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("formGroup", ctx.form);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx.hide_block.details ? "expand_more" : "expand_less");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("@show", ctx.hide_block.details ? "hide" : "show");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("form", ctx.form);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx.hide_block.space ? "expand_more" : "expand_less");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("@show", ctx.hide_block.space ? "hide" : "show");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵi18nExp"](ctx.form.value.id ? "Reset" : "Clear");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵi18nApply"](33);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵi18nExp"](ctx.form.value.id ? "Edit" : "Book");
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵi18nApply"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("formGroup", ctx.form);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtextInterpolate"](ctx.hide_block.details ? "expand_more" : "expand_less");
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("@show", ctx.hide_block.details ? "hide" : "show");
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("form", ctx.form);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtextInterpolate"](ctx.hide_block.space ? "expand_more" : "expand_less");
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("@show", ctx.hide_block.space ? "hide" : "show");
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵi18nExp"](ctx.form.value.id ? "Reset" : "Clear");
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵi18nApply"](33);
       }
     },
-    dependencies: [_libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_3__.IconComponent, _angular_material_core__WEBPACK_IMPORTED_MODULE_9__.MatRipple, _libs_bookings_src_lib_parking_space_list_field_component__WEBPACK_IMPORTED_MODULE_4__.ParkingSpaceListFieldComponent, _angular_forms__WEBPACK_IMPORTED_MODULE_10__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_10__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.FormControlName, _parking_form_details_component__WEBPACK_IMPORTED_MODULE_5__.ParkingFormDetailsComponent],
+    dependencies: [_libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_4__.IconComponent, _angular_material_core__WEBPACK_IMPORTED_MODULE_11__.MatRipple, _libs_bookings_src_lib_parking_space_list_field_component__WEBPACK_IMPORTED_MODULE_5__.ParkingSpaceListFieldComponent, _angular_forms__WEBPACK_IMPORTED_MODULE_12__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_12__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_12__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_12__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_12__.FormControlName, _parking_form_details_component__WEBPACK_IMPORTED_MODULE_6__.ParkingFormDetailsComponent],
     data: {
-      animation: [_placeos_common__WEBPACK_IMPORTED_MODULE_1__.ANIMATION_SHOW_CONTRACT_EXPAND]
+      animation: [_placeos_common__WEBPACK_IMPORTED_MODULE_2__.ANIMATION_SHOW_CONTRACT_EXPAND]
     }
   });
 }
@@ -8242,7 +8259,7 @@ const _c0 = () => ({
 });
 function ParkingFormDetailsComponent_div_0_mat_option_9_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-option", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-option", 26);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
   }
@@ -8253,88 +8270,107 @@ function ParkingFormDetailsComponent_div_0_mat_option_9_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", bld_r3.display_name || bld_r3.name, " ");
   }
 }
-function ParkingFormDetailsComponent_div_0_mat_checkbox_39_Template(rf, ctx) {
+function ParkingFormDetailsComponent_div_0_div_28_mat_checkbox_11_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-checkbox", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18n"](1, 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "mat-checkbox", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18n"](1, 10);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+  }
+}
+function ParkingFormDetailsComponent_div_0_div_28_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 27)(1, "div", 28)(2, "label", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18nStart"](3, 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](4, "span");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18nEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "a-time-field", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function ParkingFormDetailsComponent_div_0_div_28_Template_a_time_field_ngModelChange_5_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r4);
+      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r1.form.patchValue({
+        date: $event
+      }));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "div", 31)(7, "label", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18nStart"](8, 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](9, "span");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18nEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](10, "a-duration-field", 33);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](11, ParkingFormDetailsComponent_div_0_div_28_mat_checkbox_11_Template, 2, 0, "mat-checkbox", 34);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx_r1.form.value.date)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](7, _c0))("use_24hr", ctx_r1.use_24hr);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("time", ctx_r1.form == null ? null : ctx_r1.form.value == null ? null : ctx_r1.form.value.date)("max", ctx_r1.max_duration)("use_24hr", ctx_r1.use_24hr);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r1.allow_all_day);
   }
 }
 function ParkingFormDetailsComponent_div_0_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 10)(1, "div", 11)(2, "div", 12)(3, "label", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 12)(1, "div", 13)(2, "div", 14)(3, "label", 15);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18nStart"](4, 0);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](5, "span");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18nEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "mat-form-field", 14)(7, "mat-select", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](6, "mat-form-field", 16)(7, "mat-select", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](8, "async");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function ParkingFormDetailsComponent_div_0_Template_mat_select_ngModelChange_7_listener($event) {
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r1);
       const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r1.setBuilding($event));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](9, ParkingFormDetailsComponent_div_0_mat_option_9_Template, 2, 2, "mat-option", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](9, ParkingFormDetailsComponent_div_0_mat_option_9_Template, 2, 2, "mat-option", 18);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](10, "async");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](11, "mat-error");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18n"](12, 1);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](13, "div", 11)(14, "div", 12)(15, "label", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](13, "div", 13)(14, "div", 14)(15, "label", 15);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18nStart"](16, 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](17, "span");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18nEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](18, "mat-form-field", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](19, "input", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](18, "mat-form-field", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](19, "input", 19);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](20, "mat-error");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18n"](21, 3);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](22, "div", 12)(23, "label", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](22, "div", 14)(23, "label", 20);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18nStart"](24, 4);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](25, "span");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18nEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](26, "a-date-field", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](26, "a-date-field", 21);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18n"](27, 5);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](28, "div", 20)(29, "div", 21)(30, "label", 22);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18nStart"](31, 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](32, "span");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18nEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](28, ParkingFormDetailsComponent_div_0_div_28_Template, 12, 8, "div", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](29, "div", 23)(30, "label", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18n"](31, 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](33, "a-time-field", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("ngModelChange", function ParkingFormDetailsComponent_div_0_Template_a_time_field_ngModelChange_33_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r1);
-      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r1.form.patchValue({
-        date: $event
-      }));
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](34, "div", 24)(35, "label", 25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18nStart"](36, 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](37, "span");
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18nEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](38, "a-duration-field", 26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](39, ParkingFormDetailsComponent_div_0_mat_checkbox_39_Template, 2, 0, "mat-checkbox", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](32, "mat-form-field", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](33, "input", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](34, "mat-error");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵi18n"](35, 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()()();
   }
   if (rf & 2) {
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("formGroup", ctx_r1.form);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](8, 11, ctx_r1.building))("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](15, _c0));
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](8, 5, ctx_r1.building))("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](9, _c0));
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](10, 13, ctx_r1.building_list));
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](24);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngModel", ctx_r1.form.value.date)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](16, _c0))("use_24hr", ctx_r1.use_24hr);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("time", ctx_r1.form == null ? null : ctx_r1.form.value == null ? null : ctx_r1.form.value.date)("max", ctx_r1.max_duration)("use_24hr", ctx_r1.use_24hr);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx_r1.allow_all_day);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](10, 7, ctx_r1.building_list));
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", false);
   }
 }
 class ParkingFormDetailsComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0__.AsyncHandler {
@@ -8457,52 +8493,72 @@ class ParkingFormDetailsComponent extends _placeos_common__WEBPACK_IMPORTED_MODU
         /**
          * @suppress {msgDescriptions}
          */
-        const MSG_EXTERNAL_3039786638368843634$$APPS_WORKPLACE_SRC_APP_BOOK_NEW_PARKING_FLOW_PARKING_FORM_DETAILS_COMPONENT_TS_6 = goog.getMsg("Start Time{$startTagSpan}*{$closeTagSpan}", {
-          "closeTagSpan": "\uFFFD/#32\uFFFD",
-          "startTagSpan": "\uFFFD#32\uFFFD"
-        }, {
-          original_code: {
-            "closeTagSpan": "</span>",
-            "startTagSpan": "<span>"
-          }
-        });
-        i18n_6 = MSG_EXTERNAL_3039786638368843634$$APPS_WORKPLACE_SRC_APP_BOOK_NEW_PARKING_FLOW_PARKING_FORM_DETAILS_COMPONENT_TS_6;
+        const MSG_EXTERNAL_5747385394555874763$$APPS_WORKPLACE_SRC_APP_BOOK_NEW_PARKING_FLOW_PARKING_FORM_DETAILS_COMPONENT_TS_6 = goog.getMsg("Plate Number");
+        i18n_6 = MSG_EXTERNAL_5747385394555874763$$APPS_WORKPLACE_SRC_APP_BOOK_NEW_PARKING_FLOW_PARKING_FORM_DETAILS_COMPONENT_TS_6;
       } else {
-        i18n_6 = $localize`:␟34a7595cdc15925514038224946986bfd90dc0ed␟3039786638368843634:Start Time${"\uFFFD#32\uFFFD"}:START_TAG_SPAN:*${"\uFFFD/#32\uFFFD"}:CLOSE_TAG_SPAN:`;
+        i18n_6 = $localize`:␟d5473a2aa472440f24311ad6332d64db12494000␟5747385394555874763:Plate Number`;
       }
       let i18n_7;
       if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
         /**
          * @suppress {msgDescriptions}
          */
-        const MSG_EXTERNAL_5960185837188220843$$APPS_WORKPLACE_SRC_APP_BOOK_NEW_PARKING_FLOW_PARKING_FORM_DETAILS_COMPONENT_TS_7 = goog.getMsg("End Time{$startTagSpan}*{$closeTagSpan}", {
-          "closeTagSpan": "\uFFFD/#37\uFFFD",
-          "startTagSpan": "\uFFFD#37\uFFFD"
-        }, {
-          original_code: {
-            "closeTagSpan": "</span>",
-            "startTagSpan": "<span>"
-          }
-        });
-        i18n_7 = MSG_EXTERNAL_5960185837188220843$$APPS_WORKPLACE_SRC_APP_BOOK_NEW_PARKING_FLOW_PARKING_FORM_DETAILS_COMPONENT_TS_7;
+        const MSG_EXTERNAL_5975259136075044626$$APPS_WORKPLACE_SRC_APP_BOOK_NEW_PARKING_FLOW_PARKING_FORM_DETAILS_COMPONENT_TS_7 = goog.getMsg("A plate number is required");
+        i18n_7 = MSG_EXTERNAL_5975259136075044626$$APPS_WORKPLACE_SRC_APP_BOOK_NEW_PARKING_FLOW_PARKING_FORM_DETAILS_COMPONENT_TS_7;
       } else {
-        i18n_7 = $localize`:␟85d5c3a89bab9a7475a7db095089e161586cb7a1␟5960185837188220843:End Time${"\uFFFD#37\uFFFD"}:START_TAG_SPAN:*${"\uFFFD/#37\uFFFD"}:CLOSE_TAG_SPAN:`;
+        i18n_7 = $localize`:␟67a1cab5c1af58222266fc484c6171104287abdc␟5975259136075044626:A plate number is required`;
       }
       let i18n_8;
       if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
         /**
          * @suppress {msgDescriptions}
          */
-        const MSG_EXTERNAL_835486935962207481$$APPS_WORKPLACE_SRC_APP_BOOK_NEW_PARKING_FLOW_PARKING_FORM_DETAILS_COMPONENT_TS_8 = goog.getMsg(" All Day ");
-        i18n_8 = MSG_EXTERNAL_835486935962207481$$APPS_WORKPLACE_SRC_APP_BOOK_NEW_PARKING_FLOW_PARKING_FORM_DETAILS_COMPONENT_TS_8;
+        const MSG_EXTERNAL_3039786638368843634$$APPS_WORKPLACE_SRC_APP_BOOK_NEW_PARKING_FLOW_PARKING_FORM_DETAILS_COMPONENT_TS_8 = goog.getMsg("Start Time{$startTagSpan}*{$closeTagSpan}", {
+          "closeTagSpan": "\uFFFD/#4\uFFFD",
+          "startTagSpan": "\uFFFD#4\uFFFD"
+        }, {
+          original_code: {
+            "closeTagSpan": "</span>",
+            "startTagSpan": "<span>"
+          }
+        });
+        i18n_8 = MSG_EXTERNAL_3039786638368843634$$APPS_WORKPLACE_SRC_APP_BOOK_NEW_PARKING_FLOW_PARKING_FORM_DETAILS_COMPONENT_TS_8;
       } else {
-        i18n_8 = $localize`:␟d7f43e20f3a729fa3de32bc7a1f709ccd722eae5␟835486935962207481: All Day `;
+        i18n_8 = $localize`:␟34a7595cdc15925514038224946986bfd90dc0ed␟3039786638368843634:Start Time${"\uFFFD#4\uFFFD"}:START_TAG_SPAN:*${"\uFFFD/#4\uFFFD"}:CLOSE_TAG_SPAN:`;
       }
-      return [i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_5, i18n_6, i18n_7, i18n_8, [3, "formGroup", 4, "ngIf"], [3, "formGroup"], [1, "flex", "items-center", "flex-wrap", "sm:space-x-2"], [1, "flex-1", "min-w-[256px]"], ["for", "title"], ["appearance", "outline", 1, "w-full"], [3, "ngModelChange", "ngModel", "ngModelOptions"], [3, "value", 4, "ngFor", "ngForOf"], ["matInput", "", "name", "title", "formControlName", "title", "placeholder", "e.g. Team Meeting"], ["for", "date"], ["name", "date", "formControlName", "date"], [1, "flex", "items-center", "space-x-2"], [1, "flex-1", "w-1/3"], ["for", "start-time"], ["name", "start-time", 3, "ngModelChange", "ngModel", "ngModelOptions", "use_24hr"], [1, "flex-1", "w-1/3", "relative"], ["for", "end-time"], ["name", "end-time", "formControlName", "duration", 3, "time", "max", "use_24hr"], ["formControlName", "all_day", "class", "absolute -top-2 right-0", 4, "ngIf"], [3, "value"], ["formControlName", "all_day", 1, "absolute", "-top-2", "right-0"]];
+      let i18n_9;
+      if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        /**
+         * @suppress {msgDescriptions}
+         */
+        const MSG_EXTERNAL_5960185837188220843$$APPS_WORKPLACE_SRC_APP_BOOK_NEW_PARKING_FLOW_PARKING_FORM_DETAILS_COMPONENT_TS_9 = goog.getMsg("End Time{$startTagSpan}*{$closeTagSpan}", {
+          "closeTagSpan": "\uFFFD/#9\uFFFD",
+          "startTagSpan": "\uFFFD#9\uFFFD"
+        }, {
+          original_code: {
+            "closeTagSpan": "</span>",
+            "startTagSpan": "<span>"
+          }
+        });
+        i18n_9 = MSG_EXTERNAL_5960185837188220843$$APPS_WORKPLACE_SRC_APP_BOOK_NEW_PARKING_FLOW_PARKING_FORM_DETAILS_COMPONENT_TS_9;
+      } else {
+        i18n_9 = $localize`:␟85d5c3a89bab9a7475a7db095089e161586cb7a1␟5960185837188220843:End Time${"\uFFFD#9\uFFFD"}:START_TAG_SPAN:*${"\uFFFD/#9\uFFFD"}:CLOSE_TAG_SPAN:`;
+      }
+      let i18n_10;
+      if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+        /**
+         * @suppress {msgDescriptions}
+         */
+        const MSG_EXTERNAL_835486935962207481$$APPS_WORKPLACE_SRC_APP_BOOK_NEW_PARKING_FLOW_PARKING_FORM_DETAILS_COMPONENT_TS_10 = goog.getMsg(" All Day ");
+        i18n_10 = MSG_EXTERNAL_835486935962207481$$APPS_WORKPLACE_SRC_APP_BOOK_NEW_PARKING_FLOW_PARKING_FORM_DETAILS_COMPONENT_TS_10;
+      } else {
+        i18n_10 = $localize`:␟d7f43e20f3a729fa3de32bc7a1f709ccd722eae5␟835486935962207481: All Day `;
+      }
+      return [i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_5, i18n_6, i18n_7, i18n_8, i18n_9, i18n_10, [3, "formGroup", 4, "ngIf"], [3, "formGroup"], [1, "flex", "items-center", "flex-wrap", "sm:space-x-2"], [1, "flex-1", "min-w-[256px]"], ["for", "title"], ["appearance", "outline", 1, "w-full"], [3, "ngModelChange", "ngModel", "ngModelOptions"], [3, "value", 4, "ngFor", "ngForOf"], ["matInput", "", "name", "title", "formControlName", "title", "placeholder", "e.g. Team Meeting"], ["for", "date"], ["name", "date", "formControlName", "date"], ["class", "flex items-center space-x-2", 4, "ngIf"], [1, "flex", "flex-col"], ["for", "plate-number"], ["matInput", "", "name", "plate-number", "formControlName", "plate_number", "placeholder", "e.g. ABC123"], [3, "value"], [1, "flex", "items-center", "space-x-2"], [1, "flex-1", "w-1/3"], ["for", "start-time"], ["name", "start-time", 3, "ngModelChange", "ngModel", "ngModelOptions", "use_24hr"], [1, "flex-1", "w-1/3", "relative"], ["for", "end-time"], ["name", "end-time", "formControlName", "duration", 3, "time", "max", "use_24hr"], ["formControlName", "all_day", "class", "absolute -top-2 right-0", 4, "ngIf"], ["formControlName", "all_day", 1, "absolute", "-top-2", "right-0"]];
     },
     template: function ParkingFormDetailsComponent_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](0, ParkingFormDetailsComponent_div_0_Template, 40, 17, "div", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](0, ParkingFormDetailsComponent_div_0_Template, 36, 10, "div", 11);
       }
       if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", ctx.form);
