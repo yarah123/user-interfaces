@@ -2663,9 +2663,6 @@ video {
 #placeos :is(.pb-2) {
   padding-bottom: 0.5rem;
 }
-#placeos :is(.pb-20) {
-  padding-bottom: 5rem;
-}
 #placeos :is(.pb-3) {
   padding-bottom: 0.75rem;
 }

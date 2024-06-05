@@ -32742,15 +32742,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "efcab9f",
-  "hash": "efcab9f",
+  "raw": "c63e78f",
+  "hash": "c63e78f",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "efcab9f",
+  "suffix": "c63e78f",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1717588594478
+  "time": 1717589753233
 };
 /* tslint:enable */
 
@@ -41752,7 +41752,7 @@ _SimpleTableComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
   features: [i0.ɵɵNgOnChangesFeature],
   decls: 7,
   vars: 10,
-  consts: [["role", "table", 1, "grid", "border", "border-base-200", 3, "click", "touchend", "mouseleave"], ["id", "column-selector", "class", "sticky top-0 flex items-center justify-between px-2 border-r border-base-200 bg-base-300 min-h-full", 3, "gridArea", 4, "ngIf"], ["header", "", "matRipple", "", "class", "sticky top-0 flex items-center justify-between p-4 border-base-200 bg-base-300 min-h-full", 3, "id", "gridArea", "pointer-events-none", "active", "border-r", "width", "click", 4, "ngFor", "ngForOf"], [4, "ngFor", "ngForOf"], ["class", "flex items-center justify-center p-8 opacity-30", 3, "gridColumnStart", 4, "ngIf"], ["id", "column-selector", 1, "sticky", "top-0", "flex", "items-center", "justify-between", "px-2", "border-r", "border-base-200", "bg-base-300", "min-h-full"], [3, "change", "checked", "indeterminate"], ["header", "", "matRipple", "", 1, "sticky", "top-0", "flex", "items-center", "justify-between", "p-4", "border-base-200", "bg-base-300", "min-h-full", 3, "click", "id"], [1, "font-medium"], ["class", "text-[1.25em]", 4, "ngIf"], [1, "text-[1.25em]"], ["id", "column-selector", "class", "flex items-center justify-between px-2 border-r border-base-200 min-h-full", 3, "gridArea", "border-b", "mouseenter", "touchstart", 4, "ngIf"], ["class", "flex items-center justify-between border-base-200 min-h-full", 3, "gridArea", "border-b", "border-r", "width", "mouseenter", "touchstart", 4, "ngFor", "ngForOf"], ["id", "column-selector", 1, "flex", "items-center", "justify-between", "px-2", "border-r", "border-base-200", "min-h-full", 3, "mouseenter", "touchstart"], [3, "change", "checked"], [1, "flex", "items-center", "justify-between", "border-base-200", "min-h-full", 3, "mouseenter", "touchstart"], [3, "ngSwitch"], ["class", "p-4", 4, "ngSwitchDefault"], [4, "ngSwitchCase"], [1, "p-4"], ["class", "opacity-30", 4, "ngIf"], [1, "opacity-30"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "flex", "items-center", "justify-center", "p-8", "opacity-30"]],
+  consts: [["role", "table", 1, "grid", "border", "border-base-200", 3, "click", "touchend", "mouseleave"], ["id", "column-selector", "class", "sticky top-0 flex items-center justify-between px-2 border-r border-base-200 bg-base-300 min-h-full z-10", 3, "gridArea", 4, "ngIf"], ["header", "", "matRipple", "", "class", "sticky top-0 flex items-center justify-between p-4 border-base-200 bg-base-300 min-h-full z-10", 3, "id", "gridArea", "pointer-events-none", "active", "border-r", "width", "click", 4, "ngFor", "ngForOf"], [4, "ngFor", "ngForOf"], ["class", "flex items-center justify-center p-8 opacity-30", 3, "gridColumnStart", 4, "ngIf"], ["id", "column-selector", 1, "sticky", "top-0", "flex", "items-center", "justify-between", "px-2", "border-r", "border-base-200", "bg-base-300", "min-h-full", "z-10"], [3, "change", "checked", "indeterminate"], ["header", "", "matRipple", "", 1, "sticky", "top-0", "flex", "items-center", "justify-between", "p-4", "border-base-200", "bg-base-300", "min-h-full", "z-10", 3, "click", "id"], [1, "font-medium"], ["class", "text-[1.25em]", 4, "ngIf"], [1, "text-[1.25em]"], ["id", "column-selector", "class", "flex items-center justify-between px-2 border-r border-base-200 min-h-full z-0", 3, "gridArea", "border-b", "mouseenter", "touchstart", 4, "ngIf"], ["class", "flex items-center justify-between border-base-200 min-h-full z-0", 3, "gridArea", "border-b", "border-r", "width", "mouseenter", "touchstart", 4, "ngFor", "ngForOf"], ["id", "column-selector", 1, "flex", "items-center", "justify-between", "px-2", "border-r", "border-base-200", "min-h-full", "z-0", 3, "mouseenter", "touchstart"], [3, "change", "checked"], [1, "flex", "items-center", "justify-between", "border-base-200", "min-h-full", "z-0", 3, "mouseenter", "touchstart"], [3, "ngSwitch"], ["class", "p-4", 4, "ngSwitchDefault"], [4, "ngSwitchCase"], [1, "p-4"], ["class", "opacity-30", 4, "ngIf"], [1, "opacity-30"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "flex", "items-center", "justify-center", "p-8", "opacity-30"]],
   template: function SimpleTableComponent_Template(rf, ctx) {
     if (rf & 1) {
       i0.ɵɵelementStart(0, "div", 0);
