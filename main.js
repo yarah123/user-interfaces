@@ -5226,14 +5226,14 @@ var ScheduleStateService = /*#__PURE__*/function (_common_1$AsyncHandle) {
         var _ref33 = _slicedToArray(_ref32, 1),
           user = _ref33[0];
         return /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(_auto_release$resourc) {
-          var is_home, auto_release, _iterator, _step, type, bookings, check_block, _iterator2, _step2, booking, diff, time, wording, result;
+          var is_home, auto_release, _iterator, _step, type, bookings, check_block, _iterator2, _step2, booking, diff, time, close_after, wording, result;
           return _regeneratorRuntime().wrap(function _callee2$(_context2) {
             while (1) switch (_context2.prev = _context2.next) {
               case 0:
                 is_home = user.location !== 'wfo';
                 auto_release = _this._settings.get('app.auto_release');
                 if (!(auto_release && is_home && (auto_release.time_after || auto_release.time_before) && (_auto_release$resourc = auto_release.resources) !== null && _auto_release$resourc !== void 0 && _auto_release$resourc.length)) {
-                  _context2.next = 55;
+                  _context2.next = 56;
                   break;
                 }
                 _iterator = _createForOfIteratorHelper(auto_release.resources);
@@ -5241,7 +5241,7 @@ var ScheduleStateService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                 _iterator.s();
               case 6:
                 if ((_step = _iterator.n()).done) {
-                  _context2.next = 47;
+                  _context2.next = 48;
                   break;
                 }
                 type = _step.value;
@@ -5259,7 +5259,7 @@ var ScheduleStateService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                 _iterator2.s();
               case 15:
                 if ((_step2 = _iterator2.n()).done) {
-                  _context2.next = 37;
+                  _context2.next = 38;
                   break;
                 }
                 booking = _step2.value;
@@ -5267,7 +5267,7 @@ var ScheduleStateService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                   _context2.next = 19;
                   break;
                 }
-                return _context2.abrupt("continue", 35);
+                return _context2.abrupt("continue", 36);
               case 19:
                 _this._dialog.closeAll();
                 diff = (0, date_fns_1.differenceInMinutes)((0, date_fns_1.addMinutes)(booking.date, auto_release.time_after || 0), Date.now());
@@ -5275,11 +5275,12 @@ var ScheduleStateService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                   _context2.next = 23;
                   break;
                 }
-                return _context2.abrupt("continue", 35);
+                return _context2.abrupt("continue", 36);
               case 23:
                 time = (0, date_fns_1.addMinutes)(booking.date, auto_release.time_after || 0);
+                close_after = (0, date_fns_1.differenceInMilliseconds)(time.getTime() + 60 * 1000, Date.now());
                 wording = type === 'parking' ? 'reservation' : 'booking';
-                _context2.next = 27;
+                _context2.next = 28;
                 return (0, common_1.openConfirmModal)({
                   title: "Keep ".concat(type, " ").concat(wording),
                   content: "You have indicated you are not in the office. \n                                Your  ".concat(wording, " for \"<i>").concat(booking.asset_name || booking.title, "</i>\" at ").concat((0, date_fns_1.format)(booking.date, _this._settings.time_format), " will be cancelled at ").concat((0, date_fns_1.format)(time, _this._settings.time_format), ".<br/><br/>\n                                Do you wish to keep this ").concat(wording, "?"),
@@ -5287,55 +5288,56 @@ var ScheduleStateService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                     content: 'event_busy'
                   },
                   confirm_text: 'Keep',
-                  cancel_text: 'Dismiss'
+                  cancel_text: 'Dismiss',
+                  close_delay: close_after
                 }, _this._dialog);
-              case 27:
+              case 28:
                 result = _context2.sent;
                 if (!(result.reason !== 'done')) {
-                  _context2.next = 31;
+                  _context2.next = 32;
                   break;
                 }
                 _this._ignore_cancel.push(booking.id);
-                return _context2.abrupt("continue", 35);
-              case 31:
+                return _context2.abrupt("continue", 36);
+              case 32:
                 result.loading('Checking in booking...');
-                _context2.next = 34;
+                _context2.next = 35;
                 return (0, bookings_1.checkinBooking)(booking.id, true).toPromise();
-              case 34:
-                result.close();
               case 35:
+                result.close();
+              case 36:
                 _context2.next = 15;
                 break;
-              case 37:
-                _context2.next = 42;
+              case 38:
+                _context2.next = 43;
                 break;
-              case 39:
-                _context2.prev = 39;
+              case 40:
+                _context2.prev = 40;
                 _context2.t0 = _context2["catch"](13);
                 _iterator2.e(_context2.t0);
-              case 42:
-                _context2.prev = 42;
+              case 43:
+                _context2.prev = 43;
                 _iterator2.f();
-                return _context2.finish(42);
-              case 45:
+                return _context2.finish(43);
+              case 46:
                 _context2.next = 6;
                 break;
-              case 47:
-                _context2.next = 52;
+              case 48:
+                _context2.next = 53;
                 break;
-              case 49:
-                _context2.prev = 49;
+              case 50:
+                _context2.prev = 50;
                 _context2.t1 = _context2["catch"](4);
                 _iterator.e(_context2.t1);
-              case 52:
-                _context2.prev = 52;
+              case 53:
+                _context2.prev = 53;
                 _iterator.f();
-                return _context2.finish(52);
-              case 55:
+                return _context2.finish(53);
+              case 56:
               case "end":
                 return _context2.stop();
             }
-          }, _callee2, null, [[4, 49, 52, 55], [13, 39, 42, 45]]);
+          }, _callee2, null, [[4, 50, 53, 56], [13, 40, 43, 46]]);
         })();
       });
       return function (_x2) {
@@ -14722,7 +14724,7 @@ function GroupEventCardComponent_ng_template_1_Template(rf, ctx) {
     i0.ɵɵpipe(22, "date");
     i0.ɵɵpipe(23, "date");
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(24, "div", 30)(25, "p", 9);
+    i0.ɵɵelementStart(24, "div", 30)(25, "p", 31);
     i0.ɵɵtext(26);
     i0.ɵɵelementEnd()();
     i0.ɵɵelementStart(27, "div", 10)(28, "app-icon", 11);
@@ -14736,7 +14738,7 @@ function GroupEventCardComponent_ng_template_1_Template(rf, ctx) {
     i0.ɵɵelementStart(35, "div", 14);
     i0.ɵɵtext(36);
     i0.ɵɵelementEnd()()()();
-    i0.ɵɵelementStart(37, "div", 31);
+    i0.ɵɵelementStart(37, "div", 32);
     i0.ɵɵtext(38, " View Details ");
     i0.ɵɵelementEnd()();
   }
@@ -14832,7 +14834,7 @@ _GroupEventCardComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
   },
   decls: 3,
   vars: 2,
-  consts: [["featured_card", ""], ["matRipple", "", "class", "border border-base-300 hover:border-info flex flex-col bg-base-100 rounded-xl shadow hover:shadow-2xl overflow-hidden w-60 h-[20rem]", 3, "click", 4, "ngIf", "ngIfElse"], ["matRipple", "", 1, "border", "border-base-300", "hover:border-info", "flex", "flex-col", "bg-base-100", "rounded-xl", "shadow", "hover:shadow-2xl", "overflow-hidden", "w-60", "h-[20rem]", 3, "click"], [1, "relative", "flex", "items-center", "justify-between", "h-28", "w-full", "bg-base-200", "overflow-hidden"], ["auth", "", "class", "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover min-h-full min-w-full", 3, "source", 4, "ngIf"], [1, "p-4", "flex-1", "h-1/2", "w-full"], [1, "opacity-60", "text-sm", "text-left"], [1, "text-xl", "mb-2", "text-left", "truncate", "w-full", 3, "title"], [1, "opacity-60", "text-xs", "flex-1", "overflow-hidden", "h-[4.5rem]", "mb-2", "text-left"], [1, "line-clamp-4"], [1, "flex", "items-center", "space-x-2", "text-sm"], [1, "text-info"], ["class", "opacity-60", 4, "ngIf"], ["class", "opacity-30", 4, "ngIf"], [1, ""], ["auth", "", 1, "absolute", "top-1/2", "left-1/2", "-translate-x-1/2", "-translate-y-1/2", "object-cover", "min-h-full", "min-w-full", 3, "source"], [1, "opacity-60"], [1, "opacity-30"], ["matRipple", "", 1, "border", "border-base-300", "hover:border-info", "flex", "bg-base-100", "rounded-xl", "shadow", "hover:shadow-2xl", "overflow-hidden", "w-[63rem]", "max-w-full", "h-56", "mx-auto", 3, "click"], [1, "relative", "flex", "items-center", "justify-between", "h-full", "w-1/2", "max-w-[20rem]", "bg-base-200", "overflow-hidden"], [1, "absolute", "top-0", "left-0", "rounded-br-xl", "py-2", "pl-2", "pr-4", "space-x-2", "bg-info", "text-info-content", "flex", "items-center", "text-sm"], [1, "text-base"], [1, "uppercase"], ["details", "", 1, "flex", "px-8", "py-4", "space-x-4"], [1, "flex", "flex-col", "items-center"], [1, "text-sm", "opacity-30"], [1, "text-lg"], [1, "flex", "flex-col", "space-y-2"], [1, "text-left"], ["time", "", 1, "text-sm", "opacity-30"], [1, "h-20", "overflow-hidden", "text-left"], [1, "absolute", "top-4", "right-4", "bg-secondary", "text-secondary-content", "rounded", "px-4", "py-2", "w-32", "text-center", "truncate"]],
+  consts: [["featured_card", ""], ["matRipple", "", "class", "border border-base-300 hover:border-info flex flex-col bg-base-100 rounded-xl shadow hover:shadow-2xl overflow-hidden w-60 h-[20rem]", 3, "click", 4, "ngIf", "ngIfElse"], ["matRipple", "", 1, "border", "border-base-300", "hover:border-info", "flex", "flex-col", "bg-base-100", "rounded-xl", "shadow", "hover:shadow-2xl", "overflow-hidden", "w-60", "h-[20rem]", 3, "click"], [1, "relative", "flex", "items-center", "justify-between", "h-28", "min-h-28", "w-full", "bg-base-200", "overflow-hidden", "border-b", "border-base-200"], ["auth", "", "class", "absolute top-0 left-0 h-full w-full object-center object-cover", 3, "source", 4, "ngIf"], [1, "p-4", "flex-1", "h-1/2", "w-full"], [1, "opacity-60", "text-sm", "text-left"], [1, "text-xl", "mb-2", "text-left", "truncate", "w-full", 3, "title"], [1, "opacity-60", "text-xs", "flex-1", "overflow-hidden", "h-[4.5rem]", "mb-2", "text-left"], [1, "line-clamp-4"], [1, "flex", "items-center", "space-x-2", "text-sm"], [1, "text-info"], ["class", "opacity-60", 4, "ngIf"], ["class", "opacity-30", 4, "ngIf"], [1, ""], ["auth", "", 1, "absolute", "top-0", "left-0", "h-full", "w-full", "object-center", "object-cover", 3, "source"], [1, "opacity-60"], [1, "opacity-30"], ["matRipple", "", 1, "border", "border-base-300", "hover:border-info", "flex", "bg-base-100", "rounded-xl", "shadow", "hover:shadow-2xl", "overflow-hidden", "w-[63rem]", "max-w-full", "h-56", "mx-auto", 3, "click"], [1, "relative", "flex", "items-center", "justify-between", "h-full", "min-w-56", "w-1/2", "max-w-[20rem]", "bg-base-200", "overflow-hidden", "border-r", "border-base-200"], [1, "absolute", "top-0", "left-0", "rounded-br-xl", "py-2", "pl-2", "pr-4", "space-x-2", "bg-info", "text-info-content", "flex", "items-center", "text-sm"], [1, "text-base"], [1, "uppercase"], ["details", "", 1, "flex", "px-8", "py-4", "space-x-4"], [1, "flex", "flex-col", "items-center"], [1, "text-sm", "opacity-30"], [1, "text-lg"], [1, "flex", "flex-col", "space-y-2"], [1, "text-left"], ["time", "", 1, "text-sm", "opacity-30", "text-left"], [1, "h-20", "overflow-hidden", "text-left"], [1, "line-clamp-3"], [1, "absolute", "top-4", "right-4", "bg-secondary", "text-secondary-content", "rounded", "px-4", "py-2", "w-32", "text-center", "truncate"]],
   template: function GroupEventCardComponent_Template(rf, ctx) {
     if (rf & 1) {
       i0.ɵɵtemplate(0, GroupEventCardComponent_button_0_Template, 23, 15, "button", 1)(1, GroupEventCardComponent_ng_template_1_Template, 39, 26, "ng-template", null, 0, i0.ɵɵtemplateRefExtractor);
@@ -14891,7 +14893,7 @@ var i12 = __webpack_require__(/*! ../../../components/src/lib/sanitise.pipe */ 5
 var i13 = __webpack_require__(/*! ../../../spaces/src/lib/space.pipe */ 22011);
 function GroupEventDetailsModalComponent_img_2_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelement(0, "img", 34);
+    i0.ɵɵelement(0, "img", 36);
   }
   if (rf & 2) {
     var ctx_r1 = i0.ɵɵnextContext();
@@ -14900,27 +14902,27 @@ function GroupEventDetailsModalComponent_img_2_Template(rf, ctx) {
 }
 function GroupEventDetailsModalComponent_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 35)(1, "app-icon", 36);
+    i0.ɵɵelementStart(0, "div", 37)(1, "app-icon", 38);
     i0.ɵɵtext(2, "star");
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(3, "div", 37);
+    i0.ɵɵelementStart(3, "div", 39);
     i0.ɵɵtext(4, "Featured");
     i0.ɵɵelementEnd()();
   }
 }
-function GroupEventDetailsModalComponent_ng_container_11_Template(rf, ctx) {
+function GroupEventDetailsModalComponent_ng_container_12_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelementContainerStart(0);
-    i0.ɵɵelementStart(1, "div", 38)(2, "app-icon");
+    i0.ɵɵelementStart(1, "div", 40)(2, "app-icon");
     i0.ɵɵtext(3, "star");
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(4, "div", 39);
+    i0.ɵɵelementStart(4, "div", 41);
     i0.ɵɵtext(5);
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(6, "div", 38)(7, "app-icon");
+    i0.ɵɵelementStart(6, "div", 40)(7, "app-icon");
     i0.ɵɵtext(8, "help");
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(9, "div", 39);
+    i0.ɵɵelementStart(9, "div", 41);
     i0.ɵɵtext(10);
     i0.ɵɵelementEnd()();
     i0.ɵɵelementContainerEnd();
@@ -14937,7 +14939,7 @@ function GroupEventDetailsModalComponent_ng_container_11_Template(rf, ctx) {
     i0.ɵɵtextInterpolate1(" ", ctx_r1.is_going ? "" : "Not ", "Going ");
   }
 }
-function GroupEventDetailsModalComponent_div_82_Template(rf, ctx) {
+function GroupEventDetailsModalComponent_div_83_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelementStart(0, "div");
     i0.ɵɵtext(1);
@@ -14952,9 +14954,9 @@ function GroupEventDetailsModalComponent_div_82_Template(rf, ctx) {
     i0.ɵɵtextInterpolate1(" ", (tmp_3_0 = i0.ɵɵpipeBind1(3, 3, i0.ɵɵpipeBind1(2, 1, ctx_r1.system_id))) == null ? null : tmp_3_0.display_name, " ");
   }
 }
-function GroupEventDetailsModalComponent_div_83_Template(rf, ctx) {
+function GroupEventDetailsModalComponent_div_84_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 40);
+    i0.ɵɵelementStart(0, "div", 42);
     i0.ɵɵtext(1);
     i0.ɵɵelementEnd();
   }
@@ -14964,30 +14966,30 @@ function GroupEventDetailsModalComponent_div_83_Template(rf, ctx) {
     i0.ɵɵtextInterpolate1(" ", ctx_r1.is_onsite ? "Can be attended online" : "Remote Event", " ");
   }
 }
-function GroupEventDetailsModalComponent_span_95_Template(rf, ctx) {
+function GroupEventDetailsModalComponent_span_96_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "span", 40);
+    i0.ɵɵelementStart(0, "span", 42);
     i0.ɵɵtext(1, " No description ");
     i0.ɵɵelementEnd();
   }
 }
-function GroupEventDetailsModalComponent_div_96_interactive_map_3_Template(rf, ctx) {
+function GroupEventDetailsModalComponent_div_98_interactive_map_3_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelement(0, "interactive-map", 51);
+    i0.ɵɵelement(0, "interactive-map", 53);
   }
   if (rf & 2) {
     var ctx_r1 = i0.ɵɵnextContext(2);
     i0.ɵɵproperty("src", ctx_r1.level == null ? null : ctx_r1.level.map_id)("features", ctx_r1.features)("styles", ctx_r1.styles);
   }
 }
-function GroupEventDetailsModalComponent_div_96_span_9_Template(rf, ctx) {
+function GroupEventDetailsModalComponent_div_98_span_9_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "span", 40);
+    i0.ɵɵelementStart(0, "span", 42);
     i0.ɵɵtext(1, " Remote Event ");
     i0.ɵɵelementEnd();
   }
 }
-function GroupEventDetailsModalComponent_div_96_span_13_Template(rf, ctx) {
+function GroupEventDetailsModalComponent_div_98_span_13_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelementStart(0, "span");
     i0.ɵɵtext(1);
@@ -14999,42 +15001,42 @@ function GroupEventDetailsModalComponent_div_96_span_13_Template(rf, ctx) {
     i0.ɵɵtextInterpolate2(" ", ctx_r1.building.display_name || ctx_r1.building.name, ", ", (ctx_r1.level == null ? null : ctx_r1.level.display_name) || (ctx_r1.level == null ? null : ctx_r1.level.name), " ");
   }
 }
-function GroupEventDetailsModalComponent_div_96_span_14_Template(rf, ctx) {
+function GroupEventDetailsModalComponent_div_98_span_14_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "span", 40);
+    i0.ɵɵelementStart(0, "span", 42);
     i0.ɵɵtext(1, " No location set for this event ");
     i0.ɵɵelementEnd();
   }
 }
-function GroupEventDetailsModalComponent_div_96_Template(rf, ctx) {
+function GroupEventDetailsModalComponent_div_98_Template(rf, ctx) {
   if (rf & 1) {
     var _r3 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "div", 41)(1, "div", 42)(2, "button", 43);
-    i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_div_96_Template_button_click_2_listener() {
+    i0.ɵɵelementStart(0, "div", 43)(1, "div", 44)(2, "button", 45);
+    i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_div_98_Template_button_click_2_listener() {
       i0.ɵɵrestoreView(_r3);
       var ctx_r1 = i0.ɵɵnextContext();
       return i0.ɵɵresetView(ctx_r1.viewLocation());
     });
-    i0.ɵɵtemplate(3, GroupEventDetailsModalComponent_div_96_interactive_map_3_Template, 1, 3, "interactive-map", 44);
+    i0.ɵɵtemplate(3, GroupEventDetailsModalComponent_div_98_interactive_map_3_Template, 1, 3, "interactive-map", 46);
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(4, "div", 45)(5, "div");
+    i0.ɵɵelementStart(4, "div", 47)(5, "div");
     i0.ɵɵtext(6);
     i0.ɵɵpipe(7, "space");
     i0.ɵɵpipe(8, "async");
-    i0.ɵɵtemplate(9, GroupEventDetailsModalComponent_div_96_span_9_Template, 2, 0, "span", 28);
+    i0.ɵɵtemplate(9, GroupEventDetailsModalComponent_div_98_span_9_Template, 2, 0, "span", 30);
     i0.ɵɵpipe(10, "space");
     i0.ɵɵpipe(11, "async");
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(12, "div", 46);
-    i0.ɵɵtemplate(13, GroupEventDetailsModalComponent_div_96_span_13_Template, 2, 2, "span", 10)(14, GroupEventDetailsModalComponent_div_96_span_14_Template, 2, 0, "span", 28);
+    i0.ɵɵelementStart(12, "div", 48);
+    i0.ɵɵtemplate(13, GroupEventDetailsModalComponent_div_98_span_13_Template, 2, 2, "span", 12)(14, GroupEventDetailsModalComponent_div_98_span_14_Template, 2, 0, "span", 30);
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(15, "div", 47)(16, "div", 48)(17, "app-icon", 12);
+    i0.ɵɵelementStart(15, "div", 49)(16, "div", 50)(17, "app-icon", 14);
     i0.ɵɵtext(18, "wifi");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(19, "div", 49)(20, "app-icon", 12);
+    i0.ɵɵelementStart(19, "div", 51)(20, "app-icon", 14);
     i0.ɵɵtext(21, "local_cafe");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(22, "div", 50)(23, "app-icon", 12);
+    i0.ɵɵelementStart(22, "div", 52)(23, "app-icon", 14);
     i0.ɵɵtext(24, "chat");
     i0.ɵɵelementEnd()()()()()();
   }
@@ -15054,18 +15056,18 @@ function GroupEventDetailsModalComponent_div_96_Template(rf, ctx) {
     i0.ɵɵproperty("ngIf", !ctx_r1.building || !ctx_r1.level);
   }
 }
-function GroupEventDetailsModalComponent_div_97_Template(rf, ctx) {
+function GroupEventDetailsModalComponent_div_99_Template(rf, ctx) {
   if (rf & 1) {
     var _r4 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "div", 52)(1, "button", 53);
-    i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_div_97_Template_button_click_1_listener() {
+    i0.ɵɵelementStart(0, "div", 54)(1, "button", 55);
+    i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_div_99_Template_button_click_1_listener() {
       i0.ɵɵrestoreView(_r4);
       var ctx_r1 = i0.ɵɵnextContext();
       return i0.ɵɵresetView(ctx_r1.show_attendees = false);
     });
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(2, "div", 54)(3, "attendee-list", 55);
-    i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_div_97_Template_attendee_list_click_3_listener() {
+    i0.ɵɵelementStart(2, "div", 56)(3, "attendee-list", 57);
+    i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_div_99_Template_attendee_list_click_3_listener() {
       i0.ɵɵrestoreView(_r4);
       var ctx_r1 = i0.ɵɵnextContext();
       return i0.ɵɵresetView(ctx_r1.show_attendees = false);
@@ -15319,9 +15321,9 @@ _GroupEventDetailsModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
     edit: "edit",
     remove: "remove"
   },
-  decls: 98,
+  decls: 100,
   vars: 37,
-  consts: [["concierge_menu", "matMenu"], ["menu", "matMenu"], [1, "relative", "w-[48rem]", "max-w-[calc(100vw-1rem)]", "max-h-[80vh]", "overflow-hidden"], [1, "relative", "flex", "items-center", "justify-between", "h-52", "w-full", "bg-base-200", "overflow-hidden"], ["auth", "", "class", "absolute top-1/2 left-1/2 min-h-full min-w-full object-cover -translate-x-1/2 -translate-y-1/2", 3, "source", 4, "ngIf"], ["class", "absolute top-0 left-0 rounded-br py-2 pl-2 pr-4 space-x-2 bg-info text-info-content flex items-center text-sm", 4, "ngIf"], ["icon", "", "mat-dialog-close", "", 1, "absolute", "top-1", "right-1"], [1, "flex", "items-center", "justify-between", "py-4", "px-8", "border-b", "border-base-200"], [1, "text-left", "text-xl"], [1, "flex", "items-center", "space-x-2"], [4, "ngIf"], ["btn", "", "matRipple", "", 1, "clear", "bg-base-200", "text-base-content", "w-[2.75rem]", 3, "disabled", "matMenuTriggerFor"], [1, "text-2xl"], ["mat-menu-item", "", 3, "disabled"], [1, "mr-2"], ["mat-menu-item", "", "mat-dialog-close", "", 3, "click"], ["mat-menu-item", "", 3, "click"], [1, "text-2xl", "text-error"], ["mat-menu-item", "", 1, "flex", "items-center", "space-x-2", 3, "click"], [1, "flex", "flex-1", "max-h-[calc(80vh-18rem)]", "overflow-y-auto", "overflow-x-hidden", "p-8", "space-x-6"], [1, "flex", "flex-1", "flex-col", "space-y-2", "w-1/3"], [1, "flex", "items-center", "space-x-4"], [1, "flex", "items-center", "justify-center", "w-10", "h-10", "bg-base-200", "rounded-full"], [1, "font-medium", "pt-4"], [1, "flex", "flex-col"], [1, "text-sm"], [1, "text-sm", "opacity-30"], [1, "flex", "flex-col", "text-sm"], ["class", "opacity-30", 4, "ngIf"], ["matRipple", "", 1, "flex", "items-center", "space-x-4", "rounded", "min-h-12", 3, "click"], [1, "text-sm", "pb-4"], [3, "innerHTML"], ["class", "flex w-[20rem]", 4, "ngIf"], ["class", "absolute inset-0 z-50", 4, "ngIf"], ["auth", "", 1, "absolute", "top-1/2", "left-1/2", "min-h-full", "min-w-full", "object-cover", "-translate-x-1/2", "-translate-y-1/2", 3, "source"], [1, "absolute", "top-0", "left-0", "rounded-br", "py-2", "pl-2", "pr-4", "space-x-2", "bg-info", "text-info-content", "flex", "items-center", "text-sm"], [1, "text-base"], [1, "uppercase"], ["btn", "", 1, "flex", "items-center", "px-4", "h-10", "rounded", "space-x-2"], [1, "pr-2"], [1, "opacity-30"], [1, "flex", "w-[20rem]"], [1, "border", "border-base-300", "w-full"], ["matRipple", "", 1, "relative", "w-full", "h-40", "bg-base-200", 3, "click"], [3, "src", "features", "styles", 4, "ngIf"], [1, "p-4", "space-y-2"], [1, "opacity-30", "text-sm"], [1, "flex", "items-center", "space-x-2", "pt-4"], ["matTooltip", "WiFi available", 1, "flex", "items-center", "justify-center", "h-10", "w-10", "rounded-full", "bg-base-200"], ["matTooltip", "Cafe available", 1, "flex", "items-center", "justify-center", "h-10", "w-10", "rounded-full", "bg-base-200"], ["matTooltip", "Open spaces nearby", 1, "flex", "items-center", "justify-center", "h-10", "w-10", "rounded-full", "bg-base-200"], [3, "src", "features", "styles"], [1, "absolute", "inset-0", "z-50"], [1, "absolute", "inset-0", "bg-base-content", "opacity-60", 3, "click"], [1, "absolute", "left-1/2", "-translate-x-1/2", "w-[24rem]", "inset-y-8", "rounded", "shadow", "overflow-hidden"], [3, "click", "list", "host"]],
+  consts: [["concierge_menu", "matMenu"], ["menu", "matMenu"], [1, "relative", "w-[48rem]", "max-w-[calc(100vw-1rem)]", "max-h-[80vh]", "overflow-hidden"], [1, "relative", "flex", "items-center", "justify-between", "h-52", "w-full", "bg-base-200", "overflow-hidden"], ["auth", "", "class", "absolute top-1/2 left-1/2 min-h-full min-w-full object-cover -translate-x-1/2 -translate-y-1/2", 3, "source", 4, "ngIf"], ["class", "absolute top-0 left-0 rounded-br py-2 pl-2 pr-4 space-x-2 bg-info text-info-content flex items-center text-sm", 4, "ngIf"], ["icon", "", "mat-dialog-close", "", 1, "absolute", "top-1", "right-1", "overflow-hidden"], [1, "absolute", "inset-0", "bg-base-100", "opacity-30", "z-0"], [1, "z-10"], [1, "flex", "items-center", "justify-between", "py-4", "px-8", "border-b", "border-base-200"], [1, "text-left", "text-xl"], [1, "flex", "items-center", "space-x-2"], [4, "ngIf"], ["btn", "", "matRipple", "", 1, "clear", "bg-base-200", "text-base-content", "w-[2.75rem]", 3, "disabled", "matMenuTriggerFor"], [1, "text-2xl"], ["mat-menu-item", "", 3, "disabled"], [1, "mr-2"], ["mat-menu-item", "", "mat-dialog-close", "", 3, "click"], ["mat-menu-item", "", 3, "click"], [1, "text-2xl", "text-error"], ["mat-menu-item", "", 1, "flex", "items-center", "space-x-2", 3, "click"], [1, "flex", "flex-1", "max-h-[calc(80vh-18rem)]", "overflow-y-auto", "overflow-x-hidden", "p-8", "space-x-6"], [1, "flex", "flex-1", "flex-col", "space-y-2", "w-1/3"], [1, "flex", "items-center", "space-x-4"], [1, "flex", "items-center", "justify-center", "w-10", "h-10", "bg-base-200", "rounded-full"], [1, "font-medium", "pt-4"], [1, "flex", "flex-col"], [1, "text-sm"], [1, "text-sm", "opacity-30"], [1, "flex", "flex-col", "text-sm"], ["class", "opacity-30", 4, "ngIf"], ["matRipple", "", 1, "flex", "items-center", "space-x-4", "rounded", "min-h-12", 3, "click"], [1, "text-sm", "pb-4"], [3, "innerHTML"], ["class", "flex w-[20rem]", 4, "ngIf"], ["class", "absolute inset-0 z-50", 4, "ngIf"], ["auth", "", 1, "absolute", "top-1/2", "left-1/2", "min-h-full", "min-w-full", "object-cover", "-translate-x-1/2", "-translate-y-1/2", 3, "source"], [1, "absolute", "top-0", "left-0", "rounded-br", "py-2", "pl-2", "pr-4", "space-x-2", "bg-info", "text-info-content", "flex", "items-center", "text-sm"], [1, "text-base"], [1, "uppercase"], ["btn", "", 1, "flex", "items-center", "px-4", "h-10", "rounded", "space-x-2"], [1, "pr-2"], [1, "opacity-30"], [1, "flex", "w-[20rem]"], [1, "border", "border-base-300", "w-full"], ["matRipple", "", 1, "relative", "w-full", "h-40", "bg-base-200", 3, "click"], [3, "src", "features", "styles", 4, "ngIf"], [1, "p-4", "space-y-2"], [1, "opacity-30", "text-sm"], [1, "flex", "items-center", "space-x-2", "pt-4"], ["matTooltip", "WiFi available", 1, "flex", "items-center", "justify-center", "h-10", "w-10", "rounded-full", "bg-base-200"], ["matTooltip", "Cafe available", 1, "flex", "items-center", "justify-center", "h-10", "w-10", "rounded-full", "bg-base-200"], ["matTooltip", "Open spaces nearby", 1, "flex", "items-center", "justify-center", "h-10", "w-10", "rounded-full", "bg-base-200"], [3, "src", "features", "styles"], [1, "absolute", "inset-0", "z-50"], [1, "absolute", "inset-0", "bg-base-content", "opacity-60", 3, "click"], [1, "absolute", "left-1/2", "-translate-x-1/2", "w-[24rem]", "inset-y-8", "rounded", "shadow", "overflow-hidden"], [3, "click", "list", "host"]],
   template: function GroupEventDetailsModalComponent_Template(rf, ctx) {
     if (rf & 1) {
       var _r1 = i0.ɵɵgetCurrentView();
@@ -15329,131 +15331,134 @@ _GroupEventDetailsModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵtemplate(2, GroupEventDetailsModalComponent_img_2_Template, 1, 1, "img", 4);
       i0.ɵɵelementEnd();
       i0.ɵɵtemplate(3, GroupEventDetailsModalComponent_div_3_Template, 5, 0, "div", 5);
-      i0.ɵɵelementStart(4, "button", 6)(5, "app-icon");
-      i0.ɵɵtext(6, "close");
+      i0.ɵɵelementStart(4, "button", 6);
+      i0.ɵɵelement(5, "div", 7);
+      i0.ɵɵelementStart(6, "app-icon", 8);
+      i0.ɵɵtext(7, "close");
       i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(7, "div", 7)(8, "h3", 8);
-      i0.ɵɵtext(9);
+      i0.ɵɵelementStart(8, "div", 9)(9, "h3", 10);
+      i0.ɵɵtext(10);
       i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(10, "div", 9);
-      i0.ɵɵtemplate(11, GroupEventDetailsModalComponent_ng_container_11_Template, 11, 26, "ng-container", 10);
-      i0.ɵɵelementStart(12, "button", 11)(13, "app-icon", 12);
-      i0.ɵɵtext(14, "more_horiz");
+      i0.ɵɵelementStart(11, "div", 11);
+      i0.ɵɵtemplate(12, GroupEventDetailsModalComponent_ng_container_12_Template, 11, 26, "ng-container", 12);
+      i0.ɵɵelementStart(13, "button", 13)(14, "app-icon", 14);
+      i0.ɵɵtext(15, "more_horiz");
       i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(15, "mat-menu", null, 0)(17, "button", 13)(18, "div", 9)(19, "app-icon", 12);
-      i0.ɵɵtext(20, " confirmation_number ");
+      i0.ɵɵelementStart(16, "mat-menu", null, 0)(18, "button", 15)(19, "div", 11)(20, "app-icon", 14);
+      i0.ɵɵtext(21, " confirmation_number ");
       i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(21, "div", 14);
-      i0.ɵɵtext(22, "Promote Event");
+      i0.ɵɵelementStart(22, "div", 16);
+      i0.ɵɵtext(23, "Promote Event");
       i0.ɵɵelementEnd()()();
-      i0.ɵɵelementStart(23, "button", 15);
-      i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_Template_button_click_23_listener() {
+      i0.ɵɵelementStart(24, "button", 17);
+      i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_Template_button_click_24_listener() {
         i0.ɵɵrestoreView(_r1);
         return i0.ɵɵresetView(ctx.edit.emit());
       });
-      i0.ɵɵelementStart(24, "div", 9)(25, "app-icon", 12);
-      i0.ɵɵtext(26, "edit");
+      i0.ɵɵelementStart(25, "div", 11)(26, "app-icon", 14);
+      i0.ɵɵtext(27, "edit");
       i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(27, "div", 14);
-      i0.ɵɵtext(28, "Edit Event");
+      i0.ɵɵelementStart(28, "div", 16);
+      i0.ɵɵtext(29, "Edit Event");
       i0.ɵɵelementEnd()()();
-      i0.ɵɵelementStart(29, "button", 13)(30, "div", 9)(31, "app-icon", 12);
-      i0.ɵɵtext(32, "content_copy");
+      i0.ɵɵelementStart(30, "button", 15)(31, "div", 11)(32, "app-icon", 14);
+      i0.ɵɵtext(33, "content_copy");
       i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(33, "div", 14);
-      i0.ɵɵtext(34, "Copy URL");
+      i0.ɵɵelementStart(34, "div", 16);
+      i0.ɵɵtext(35, "Copy URL");
       i0.ɵɵelementEnd()()();
-      i0.ɵɵelementStart(35, "button", 16);
-      i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_Template_button_click_35_listener() {
+      i0.ɵɵelementStart(36, "button", 18);
+      i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_Template_button_click_36_listener() {
         i0.ɵɵrestoreView(_r1);
         return i0.ɵɵresetView(ctx.remove.emit());
       });
-      i0.ɵɵelementStart(36, "div", 9)(37, "app-icon", 17);
-      i0.ɵɵtext(38, " delete ");
+      i0.ɵɵelementStart(37, "div", 11)(38, "app-icon", 19);
+      i0.ɵɵtext(39, " delete ");
       i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(39, "div", 14);
-      i0.ɵɵtext(40, "Delete Event");
+      i0.ɵɵelementStart(40, "div", 16);
+      i0.ɵɵtext(41, "Delete Event");
       i0.ɵɵelementEnd()()()();
-      i0.ɵɵelementStart(41, "mat-menu", null, 1)(43, "button", 18);
-      i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_Template_button_click_43_listener() {
+      i0.ɵɵelementStart(42, "mat-menu", null, 1)(44, "button", 20);
+      i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_Template_button_click_44_listener() {
         i0.ɵɵrestoreView(_r1);
         return i0.ɵɵresetView(ctx.toggleInterest());
       });
-      i0.ɵɵelementStart(44, "div", 9)(45, "app-icon");
-      i0.ɵɵtext(46, " star ");
+      i0.ɵɵelementStart(45, "div", 11)(46, "app-icon");
+      i0.ɵɵtext(47, " star ");
       i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(47, "span");
-      i0.ɵɵtext(48);
+      i0.ɵɵelementStart(48, "span");
+      i0.ɵɵtext(49);
       i0.ɵɵelementEnd()()();
-      i0.ɵɵelementStart(49, "button", 16);
-      i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_Template_button_click_49_listener() {
+      i0.ɵɵelementStart(50, "button", 18);
+      i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_Template_button_click_50_listener() {
         i0.ɵɵrestoreView(_r1);
         return i0.ɵɵresetView(ctx.toggleAttendance());
       });
-      i0.ɵɵelementStart(50, "div", 9)(51, "app-icon");
-      i0.ɵɵtext(52, " help ");
+      i0.ɵɵelementStart(51, "div", 11)(52, "app-icon");
+      i0.ɵɵtext(53, " help ");
       i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(53, "span");
-      i0.ɵɵtext(54);
+      i0.ɵɵelementStart(54, "span");
+      i0.ɵɵtext(55);
       i0.ɵɵelementEnd()()()()()();
-      i0.ɵɵelementStart(55, "div", 19)(56, "div", 20)(57, "div", 21)(58, "div", 22)(59, "app-icon");
-      i0.ɵɵtext(60, "person");
+      i0.ɵɵelementStart(56, "div", 21)(57, "div", 22)(58, "div", 23)(59, "div", 24)(60, "app-icon");
+      i0.ɵɵtext(61, "person");
       i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(61, "div");
-      i0.ɵɵtext(62);
+      i0.ɵɵelementStart(62, "div");
+      i0.ɵɵtext(63);
       i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(63, "h3", 23);
-      i0.ɵɵtext(64, "When and where");
+      i0.ɵɵelementStart(64, "h3", 25);
+      i0.ɵɵtext(65, "When and where");
       i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(65, "div", 21)(66, "div", 22)(67, "app-icon");
-      i0.ɵɵtext(68, "calendar_today");
+      i0.ɵɵelementStart(66, "div", 23)(67, "div", 24)(68, "app-icon");
+      i0.ɵɵtext(69, "calendar_today");
       i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(69, "div", 24)(70, "div", 25);
-      i0.ɵɵtext(71, "Date and Time");
+      i0.ɵɵelementStart(70, "div", 26)(71, "div", 27);
+      i0.ɵɵtext(72, "Date and Time");
       i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(72, "div", 26);
-      i0.ɵɵtext(73);
-      i0.ɵɵpipe(74, "date");
+      i0.ɵɵelementStart(73, "div", 28);
+      i0.ɵɵtext(74);
       i0.ɵɵpipe(75, "date");
       i0.ɵɵpipe(76, "date");
+      i0.ɵɵpipe(77, "date");
       i0.ɵɵelementEnd()()();
-      i0.ɵɵelementStart(77, "div", 21)(78, "div", 22)(79, "app-icon");
-      i0.ɵɵtext(80, "place");
+      i0.ɵɵelementStart(78, "div", 23)(79, "div", 24)(80, "app-icon");
+      i0.ɵɵtext(81, "place");
       i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(81, "div", 27);
-      i0.ɵɵtemplate(82, GroupEventDetailsModalComponent_div_82_Template, 4, 5, "div", 10)(83, GroupEventDetailsModalComponent_div_83_Template, 2, 1, "div", 28);
+      i0.ɵɵelementStart(82, "div", 29);
+      i0.ɵɵtemplate(83, GroupEventDetailsModalComponent_div_83_Template, 4, 5, "div", 12)(84, GroupEventDetailsModalComponent_div_84_Template, 2, 1, "div", 30);
       i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(84, "button", 29);
-      i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_Template_button_click_84_listener() {
+      i0.ɵɵelementStart(85, "button", 31);
+      i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_Template_button_click_85_listener() {
         i0.ɵɵrestoreView(_r1);
         return i0.ɵɵresetView(ctx.show_attendees = true);
       });
-      i0.ɵɵelementStart(85, "div", 22)(86, "app-icon");
-      i0.ɵɵtext(87, "person");
+      i0.ɵɵelementStart(86, "div", 24)(87, "app-icon");
+      i0.ɵɵtext(88, "person");
       i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(88, "div");
-      i0.ɵɵtext(89);
+      i0.ɵɵelementStart(89, "div");
+      i0.ɵɵtext(90);
       i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(90, "h3", 23);
-      i0.ɵɵtext(91, "About this event");
+      i0.ɵɵelementStart(91, "h3", 25);
+      i0.ɵɵtext(92, "About this event");
       i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(92, "div", 30);
-      i0.ɵɵelement(93, "span", 31);
-      i0.ɵɵpipe(94, "sanitize");
-      i0.ɵɵtemplate(95, GroupEventDetailsModalComponent_span_95_Template, 2, 0, "span", 28);
+      i0.ɵɵelementStart(93, "div", 32);
+      i0.ɵɵelement(94, "span", 33);
+      i0.ɵɵpipe(95, "sanitize");
+      i0.ɵɵtemplate(96, GroupEventDetailsModalComponent_span_96_Template, 2, 0, "span", 30);
       i0.ɵɵelementEnd()();
-      i0.ɵɵtemplate(96, GroupEventDetailsModalComponent_div_96_Template, 25, 13, "div", 32);
-      i0.ɵɵelementEnd()();
-      i0.ɵɵtemplate(97, GroupEventDetailsModalComponent_div_97_Template, 4, 2, "div", 33);
+      i0.ɵɵelementStart(97, "div");
+      i0.ɵɵtemplate(98, GroupEventDetailsModalComponent_div_98_Template, 25, 13, "div", 34);
+      i0.ɵɵelementEnd()()();
+      i0.ɵɵtemplate(99, GroupEventDetailsModalComponent_div_99_Template, 4, 2, "div", 35);
     }
     if (rf & 2) {
-      var concierge_menu_r5 = i0.ɵɵreference(16);
-      var menu_r6 = i0.ɵɵreference(42);
+      var concierge_menu_r5 = i0.ɵɵreference(17);
+      var menu_r6 = i0.ɵɵreference(43);
       i0.ɵɵadvance(2);
       i0.ɵɵproperty("ngIf", ctx.booking.images == null ? null : ctx.booking.images.length);
       i0.ɵɵadvance();
       i0.ɵɵproperty("ngIf", ctx.featured);
-      i0.ɵɵadvance(6);
+      i0.ɵɵadvance(7);
       i0.ɵɵtextInterpolate1(" ", ctx.booking.title, " ");
       i0.ɵɵadvance(2);
       i0.ɵɵproperty("ngIf", !ctx.concierge);
@@ -15474,7 +15479,7 @@ _GroupEventDetailsModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵadvance(8);
       i0.ɵɵtextInterpolate1("Event by ", ctx.booking.user_name, "");
       i0.ɵɵadvance(11);
-      i0.ɵɵtextInterpolate3(" ", i0.ɵɵpipeBind2(74, 26, ctx.booking.date, "EEEE, d MMMM, yyyy"), " . ", i0.ɵɵpipeBind2(75, 29, ctx.booking.date, ctx.time_format), " - ", i0.ɵɵpipeBind2(76, 32, ctx.booking.date + ctx.booking.duration * 60 * 1000, ctx.time_format), " ");
+      i0.ɵɵtextInterpolate3(" ", i0.ɵɵpipeBind2(75, 26, ctx.booking.date, "EEEE, d MMMM, yyyy"), " . ", i0.ɵɵpipeBind2(76, 29, ctx.booking.date, ctx.time_format), " - ", i0.ɵɵpipeBind2(77, 32, ctx.booking.date + ctx.booking.duration * 60 * 1000, ctx.time_format), " ");
       i0.ɵɵadvance(9);
       i0.ɵɵproperty("ngIf", ctx.is_onsite);
       i0.ɵɵadvance();
@@ -15482,10 +15487,10 @@ _GroupEventDetailsModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵadvance(6);
       i0.ɵɵtextInterpolate2(" ", ctx.attendance, " going, ", ctx.booking.attendees == null ? null : ctx.booking.attendees.length, " interested ");
       i0.ɵɵadvance(4);
-      i0.ɵɵproperty("innerHTML", i0.ɵɵpipeBind1(94, 35, ctx.booking.description), i0.ɵɵsanitizeHtml);
+      i0.ɵɵproperty("innerHTML", i0.ɵɵpipeBind1(95, 35, ctx.booking.description), i0.ɵɵsanitizeHtml);
       i0.ɵɵadvance(2);
       i0.ɵɵproperty("ngIf", !ctx.booking.description);
-      i0.ɵɵadvance();
+      i0.ɵɵadvance(2);
       i0.ɵɵproperty("ngIf", ctx.level);
       i0.ɵɵadvance();
       i0.ɵɵproperty("ngIf", ctx.show_attendees);
@@ -31212,19 +31217,20 @@ function _getShortUrlQRCode() {
             return _context.abrupt("return", QR_STORE.get(key));
           case 3:
             tkn = (0, ts_client_1.token)();
+            console.log('Token:', tkn);
             document.cookie = "".concat(tkn === 'x-api-key' ? 'api-key=' + encodeURIComponent((0, ts_client_1.apiKey)()) : 'bearer_token=' + encodeURIComponent(tkn), ";max-age=60;path=/api/;samesite=strict;").concat(location.protocol === 'https:' ? 'secure;' : '');
-            _context.next = 7;
+            _context.next = 8;
             return fetch("".concat(ENDPOINT, "/").concat(id, "/qr_code.").concat(format));
-          case 7:
+          case 8:
             response = _context.sent;
-            _context.next = 10;
+            _context.next = 11;
             return response.blob();
-          case 10:
+          case 11:
             blob = _context.sent;
             url = URL.createObjectURL(blob);
             QR_STORE.set(key, url);
             return _context.abrupt("return", url);
-          case 14:
+          case 15:
           case "end":
             return _context.stop();
         }
@@ -32742,15 +32748,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "3a8146e",
-  "hash": "3a8146e",
+  "raw": "42ff08e",
+  "hash": "42ff08e",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "3a8146e",
+  "suffix": "42ff08e",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1717632988927
+  "time": 1717634442601
 };
 /* tslint:enable */
 
@@ -33636,19 +33642,20 @@ var AuthenticatedImageDirective = /*#__PURE__*/function (_common_1$AsyncHandle) 
               return _context.abrupt("return");
             case 8:
               tkn = (0, ts_client_1.token)();
+              console.log('Image Token:', tkn);
               document.cookie = "".concat(tkn === 'x-api-key' ? 'api-key=' + encodeURIComponent((0, ts_client_1.apiKey)()) : 'bearer_token=' + encodeURIComponent(tkn), ";max-age=60;path=/api/;samesite=strict;").concat(location.protocol === 'https:' ? 'secure;' : '');
-              _context.next = 12;
+              _context.next = 13;
               return fetch(this.source);
-            case 12:
+            case 13:
               response = _context.sent;
-              _context.next = 15;
+              _context.next = 16;
               return response.blob();
-            case 15:
+            case 16:
               blob = _context.sent;
               url = URL.createObjectURL(blob);
               IMAGE_STORE.set(this.source, url);
               this._image_el.nativeElement.src = url;
-            case 19:
+            case 20:
             case "end":
               return _context.stop();
           }
@@ -35351,6 +35358,8 @@ i0.ɵɵsetComponentScope(user_controls_component_1.UserControlsComponent, functi
 
 var _classCallCheck = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/classCallCheck.js */ 80912)["default"]);
 var _createClass = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/createClass.js */ 92974)["default"]);
+var _callSuper = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/callSuper.js */ 8513)["default"]);
+var _inherits = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/inherits.js */ 58160)["default"]);
 var _ConfirmModalComponent;
 Object.defineProperty(exports, "__esModule", ({
   value: true
@@ -35358,6 +35367,7 @@ Object.defineProperty(exports, "__esModule", ({
 exports.ConfirmModalComponent = exports.CONFIRM_METADATA = void 0;
 var core_1 = __webpack_require__(/*! @angular/core */ 37580);
 var dialog_1 = __webpack_require__(/*! @angular/material/dialog */ 12587);
+var async_handler_class_1 = __webpack_require__(/*! libs/common/src/lib/async-handler.class */ 75354);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
 var i1 = __webpack_require__(/*! @angular/material/dialog */ 12587);
 var i2 = __webpack_require__(/*! @angular/common */ 60316);
@@ -35421,38 +35431,51 @@ exports.CONFIRM_METADATA = {
   maxHeight: 'calc(100vh - 2em)',
   maxWidth: 'calc(100vw - 2em)'
 };
-var ConfirmModalComponent = /*#__PURE__*/function () {
+var ConfirmModalComponent = /*#__PURE__*/function (_async_handler_class_) {
   function ConfirmModalComponent(_dialog_ref, _data) {
-    var _this = this;
+    var _this;
     _classCallCheck(this, ConfirmModalComponent);
-    this._dialog_ref = _dialog_ref;
-    this._data = _data;
+    _this = _callSuper(this, ConfirmModalComponent);
+    _this._dialog_ref = _dialog_ref;
+    _this._data = _data;
     /** Emitter for user action on the modal */
-    this.event = new core_1.EventEmitter();
+    _this.event = new core_1.EventEmitter();
     /** Title of the confirm modal */
-    this.title = this._data.title || 'Confirm';
+    _this.title = _this._data.title || 'Confirm';
     /** Body of the confirm modal */
-    this.content = this._data.content || 'Are you sure?';
+    _this.content = _this._data.content || 'Are you sure?';
     /** Display text on the confirm button */
-    this.confirm_text = this._data.confirm_text || 'Accept';
+    _this.confirm_text = _this._data.confirm_text || 'Accept';
     /** Display text on the cancel button */
-    this.cancel_text = this._data.cancel_text || 'Cancel';
+    _this.cancel_text = _this._data.cancel_text || 'Cancel';
     /** Display icon properties */
-    this.icon = this._data.icon || {
+    _this.icon = _this._data.icon || {
       "class": 'material-icons',
       content: 'done'
     };
     /** Prevent user from closing the modal */
-    this.disableClose = function () {
+    _this.disableClose = function () {
       return _this._dialog_ref.disableClose = true;
     };
     /** Allow the user to close the modal */
-    this.enableClose = function () {
+    _this.enableClose = function () {
       return _this._dialog_ref.disableClose = false;
     };
+    return _this;
   }
-  /** User confirmation of the content of the modal */
+  _inherits(ConfirmModalComponent, _async_handler_class_);
   return _createClass(ConfirmModalComponent, [{
+    key: "ngOnInit",
+    value: function ngOnInit() {
+      var _this2 = this;
+      if (this._data.close_delay) {
+        this.timeout('close', function () {
+          return _this2._dialog_ref.close();
+        }, this._data.close_delay);
+      }
+    }
+    /** User confirmation of the content of the modal */
+  }, {
     key: "onConfirm",
     value: function onConfirm() {
       this.event.emit({
@@ -35460,7 +35483,7 @@ var ConfirmModalComponent = /*#__PURE__*/function () {
       });
     }
   }]);
-}();
+}(async_handler_class_1.AsyncHandler);
 _ConfirmModalComponent = ConfirmModalComponent;
 _ConfirmModalComponent.ɵfac = function ConfirmModalComponent_Factory(t) {
   return new (t || _ConfirmModalComponent)(i0.ɵɵdirectiveInject(i1.MatDialogRef), i0.ɵɵdirectiveInject(dialog_1.MAT_DIALOG_DATA));
@@ -35471,6 +35494,7 @@ _ConfirmModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
   outputs: {
     event: "event"
   },
+  features: [i0.ɵɵInheritDefinitionFeature],
   decls: 7,
   vars: 4,
   consts: [["load_state", ""], ["class", "flex flex-col items-center space-y-2 p-4", 4, "ngIf", "ngIfElse"], ["class", "flex items-center justify-center p-2 space-x-2", 4, "ngIf"], [1, "flex", "flex-col", "items-center", "space-y-2", "p-4"], [1, "text-5xl", 3, "icon"], ["content", "", 1, "text-center", "text-sm", "w-[22rem]", 3, "innerHTML"], [1, "flex", "items-center", "justify-center", "p-2", "space-x-2"], ["btn", "", "matRipple", "", "mat-dialog-close", "", 1, "inverse", "w-32"], ["btn", "", "matRipple", "", "name", "accept", 1, "w-32", 3, "click"], ["loading", ""], [1, "w-full", "h-48", "flex", "flex-col", "items-center", "justify-center", "space-y-2"], ["diameter", "32"]],
@@ -39793,7 +39817,7 @@ var MapRendererComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
               return _context.abrupt("return");
             case 5:
               if (!(this.src && (_this$_outlet_el = this._outlet_el) !== null && _this$_outlet_el !== void 0 && _this$_outlet_el.nativeElement && !this.loading)) {
-                _context.next = 21;
+                _context.next = 22;
                 break;
               }
               this.loading = true;
@@ -39809,8 +39833,9 @@ var MapRendererComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
               }
               this.updateFeatureList();
               tkn = (0, ts_client_1.token)();
+              console.log('Map Token:', tkn);
               document.cookie = "".concat(tkn === 'x-api-key' ? 'api-key=' + encodeURIComponent((0, ts_client_1.apiKey)()) : 'bearer_token=' + encodeURIComponent(tkn), ";max-age=60;path=/api/;samesite=strict;").concat(location.protocol === 'https:' ? 'secure;' : '');
-              _context.next = 13;
+              _context.next = 14;
               return (0, svg_viewer_1.createViewer)({
                 element: (_this$_outlet_el2 = this._outlet_el) === null || _this$_outlet_el2 === void 0 ? void 0 : _this$_outlet_el2.nativeElement,
                 url: this.src,
@@ -39823,7 +39848,7 @@ var MapRendererComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
                 actions: this.actions,
                 options: this.options
               });
-            case 13:
+            case 14:
               this.viewer = _context.sent;
               this.loading = false;
               this.subscription('view_changes', (_ref = (0, svg_viewer_1.listenToViewerChanges)(this.viewer)) === null || _ref === void 0 ? void 0 : _ref.subscribe(function (v) {
@@ -39835,9 +39860,9 @@ var MapRendererComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
               viewer = (0, svg_viewer_1.getViewer)(this.viewer);
               this.mapInfo.emit(viewer.mappings);
               if (this.focus) this.focusOn(this.focus);
-              _context.next = 22;
+              _context.next = 23;
               break;
-            case 21:
+            case 22:
               if (this.src && !((_this$_outlet_el3 = this._outlet_el) !== null && _this$_outlet_el3 !== void 0 && _this$_outlet_el3.nativeElement) || this.loading) {
                 this.timeout('create_view', function () {
                   return _this4.createView()["catch"](function (e) {
@@ -39845,7 +39870,7 @@ var MapRendererComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
                   });
                 });
               }
-            case 22:
+            case 23:
             case "end":
               return _context.stop();
           }

@@ -1018,6 +1018,12 @@ video {
 #placeos :is(.mt-auto) {
   margin-top: auto;
 }
+#placeos :is(.line-clamp-3) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
 #placeos :is(.line-clamp-4) {
   overflow: hidden;
   display: -webkit-box;
@@ -1326,6 +1332,9 @@ video {
 }
 #placeos :is(.min-h-16) {
   min-height: 4rem;
+}
+#placeos :is(.min-h-28) {
+  min-height: 7rem;
 }
 #placeos :is(.min-h-\[100\%\]) {
   min-height: 100%;
@@ -1653,6 +1662,9 @@ video {
 }
 #placeos :is(.min-w-48) {
   min-width: 12rem;
+}
+#placeos :is(.min-w-56) {
+  min-width: 14rem;
 }
 #placeos :is(.min-w-64) {
   min-width: 16rem;
@@ -2453,6 +2465,9 @@ video {
 #placeos :is(.bg-base-300) {
   background-color: var(--b3);
 }
+#placeos :is(.bg-base-400) {
+  background-color: var(--b4);
+}
 #placeos :is(.bg-base-content) {
   background-color: var(--bc);
 }
@@ -2949,6 +2964,9 @@ video {
 }
 #placeos :is(.text-neutral) {
   color: var(--n);
+}
+#placeos :is(.text-neutral-content) {
+  color: var(--nc);
 }
 #placeos :is(.text-primary) {
   color: var(--p);
