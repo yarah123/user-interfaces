@@ -13960,7 +13960,7 @@ _DeskMapComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
     } else {
       i18n_0 = $localize(_templateObject || (_templateObject = _taggedTemplateLiteral([":\u241F50407595967bf29832e873b41f9de3502d5c3e03\u241F7323982518822503502:Any Level"])));
     }
-    return [[1, "bg-base-100", "p-2", "border-b", "border-base-200", "w-full"], ["appearance", "outline", "class", "w-full", 4, "ngIf"], [1, "relative", "flex-1", "w-full"], [3, "zoomChange", "centerChange", "src", "zoom", "center", "styles", "features", "actions", "options"], ["appearance", "outline", 1, "w-full"], ["name", "location", "placeholder", i18n_0, 3, "ngModelChange", "ngModel", "ngModelOptions"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], [1, "flex", "flex-col-reverse"], ["class", "opacity-30 text-xs", 4, "ngIf"], [1, "opacity-30", "text-xs"], [1, "opacity-0"]];
+    return [[1, "bg-base-100", "p-2", "border-b", "border-base-200", "w-full"], ["levels", "", "appearance", "outline", "class", "w-full", 4, "ngIf"], [1, "relative", "flex-1", "w-full"], [3, "zoomChange", "centerChange", "src", "zoom", "center", "styles", "features", "actions", "options"], ["levels", "", "appearance", "outline", 1, "w-full"], ["name", "location", "placeholder", i18n_0, 3, "ngModelChange", "ngModel", "ngModelOptions"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], [1, "flex", "flex-col-reverse"], ["class", "opacity-30 text-xs", 4, "ngIf"], [1, "opacity-30", "text-xs"], [1, "opacity-0"]];
   },
   template: function DeskMapComponent_Template(rf, ctx) {
     if (rf & 1) {
@@ -32742,15 +32742,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "c63e78f",
-  "hash": "c63e78f",
+  "raw": "3a8146e",
+  "hash": "3a8146e",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "c63e78f",
+  "suffix": "3a8146e",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1717589753233
+  "time": 1717632988927
 };
 /* tslint:enable */
 
