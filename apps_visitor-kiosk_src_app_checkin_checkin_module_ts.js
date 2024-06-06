@@ -498,7 +498,7 @@ class CheckinInductionComponent {
         (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.notifyError)('Error declining induction', err);
         throw err;
       });
-      _this2._checkin.setError('You have declined the induction');
+      _this2._checkin.setError('You have declined the induction.');
       (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.notifyInfo)('Induction declined successfully');
       _this2._router.navigate(['/checkin', 'error']);
     })();
@@ -528,7 +528,7 @@ class CheckinInductionComponent {
     template: function CheckinInductionComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0)(1, "p", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, " Please read the induction information below before proceeding. ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, " Please read the induction information below before proceeding ");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](4);
@@ -1253,7 +1253,8 @@ class CheckinResultsComponent {
       if (!template) template = DEFAULT_TEMPLATE;
       let updated_template = template.replace(/{{ title }}/g, event?.title || '').replace(/{{ room_name }}/g, event.extension_data?.location_id || '').replace(/{{ host_name }}/g, event?.user_name || '').replace(/{{ host_email }}/g, event?.user_email || '').replace(/{{ visitor_name }}/g, guest?.name || '').replace(/{{ visitor_email }}/g, guest?.email || '').replace(/{{ can_use_lift }}/g, event.extension_data.can_use_lift ? `Please use the vistor access lift over there` : `Please wait in the lobby.`);
       try {
-        updated_template = updated_template.replace(/{{ date }}/g, this._date.transform(event.date || this.now, 'mediumDate')).replace(/{{ time }}/g, this._date.transform(event.date || this.now, this.time_format));
+        const date = event.date || event.event_start * 1000 || event.booking_start * 1000 || (0,date_fns__WEBPACK_IMPORTED_MODULE_7__["default"])(Date.now());
+        updated_template = updated_template.replace(/{{ date }}/g, this._date.transform(date, 'mediumDate')).replace(/{{ time }}/g, this._date.transform(date, this.time_format));
       } catch {}
       return updated_template;
     }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_12__.startWith)(DEFAULT_TEMPLATE));
