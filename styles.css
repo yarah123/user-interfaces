@@ -1259,6 +1259,9 @@ video {
 #placeos :is(.h-\[calc\(100\%-1rem\)\]) {
   height: calc(100% - 1rem);
 }
+#placeos :is(.h-\[calc\(100\%-2rem\)\]) {
+  height: calc(100% - 2rem);
+}
 #placeos :is(.h-\[calc\(100vh-4rem\)\]) {
   height: calc(100vh - 4rem);
 }

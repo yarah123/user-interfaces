@@ -894,7 +894,7 @@ class SignageMediaComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__
     features: [_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵInheritDefinitionFeature"]],
     decls: 8,
     vars: 5,
-    consts: [["empty_template", ""], ["load_template", ""], [1, "relative", "bg-base-200", "min-h-full", "w-full", 3, "dragenter", "drop"], [4, "ngIf", "ngIfElse"], ["class", "absolute inset-0", 4, "ngIf"], [1, "flex", "flex-wrap", "items-start", "justify-start", "w-full", "p-2"], ["class", "m-2 p-2 bg-base-100 rounded-lg overflow-hidden h-[13rem] w-[17rem] border border-base-300 shadow", 4, "ngFor", "ngForOf"], [1, "m-2", "p-2", "bg-base-100", "rounded-lg", "overflow-hidden", "h-[13rem]", "w-[17rem]", "border", "border-base-300", "shadow"], [1, "w-64", "h-36", "overflow-hidden", "bg-base-200", "rounded", "m-0", "p-0", "relative", 3, "click"], ["class", "object-contain w-full h-full", 3, "src", 4, "ngIf"], [1, "absolute", "top-2", "left-2", "flex", "items-center", "justify-center", "rounded", "overflow-hidden"], [1, "absolute", "inset-0", "bg-base-content", "opacity-60", "z-0"], [1, "relative", "text-base-100", "z-10", "px-2", "py-1", "text-xs"], [1, "absolute", "top-2", "right-2", "flex", "items-center", "justify-center", "rounded", "overflow-hidden"], ["class", "absolute bottom-2 right-2 flex items-center justify-center rounded overflow-hidden", 4, "ngIf"], [1, "flex", "items-center", "justify-between", "space-x-2"], [1, "truncate", "flex-1", "w-1/2", "px-2"], ["icon", "", "matRipple", ""], [1, "object-contain", "w-full", "h-full", 3, "src"], [1, "absolute", "bottom-2", "right-2", "flex", "items-center", "justify-center", "rounded", "overflow-hidden"], [1, "absolute", "inset-0"], [1, "absolute", "inset-0", "bg-base-200"], [1, "absolute", "inset-0", "bg-base-content", "opacity-70"], [1, "absolute", "inset-4", "border-4", "border-dashed", "border-neutral", "text-base-100", "rounded-xl", "flex", "flex-col", "items-center", "justify-center"], [1, "text-8xl"], ["type", "file", 1, "absolute", "inset-0", "w-full", "opacity-0", 3, "change"], [1, "absolute", "inset-0", "flex", "flex-col", "items-center", "justify-center", "space-y-2", "opacity-30"], [1, "absolute", "inset-0", "flex", "flex-col", "items-center", "justify-center", "space-y-2"], ["diameter", "32"]],
+    consts: [["empty_template", ""], ["load_template", ""], [1, "relative", "bg-base-200", "flex-1", "h-[calc(100%-2rem)]", "w-full", "my-4", "rounded-lg", "overflow-auto", 3, "dragenter", "drop"], [4, "ngIf", "ngIfElse"], ["class", "absolute inset-0", 4, "ngIf"], [1, "flex", "flex-wrap", "items-start", "justify-start", "w-full", "p-2"], ["class", "m-2 p-2 bg-base-100 rounded-lg overflow-hidden h-[13rem] w-[17rem] border border-base-300", 4, "ngFor", "ngForOf"], [1, "m-2", "p-2", "bg-base-100", "rounded-lg", "overflow-hidden", "h-[13rem]", "w-[17rem]", "border", "border-base-300"], [1, "w-64", "h-36", "overflow-hidden", "bg-base-200", "rounded", "m-0", "p-0", "relative", 3, "click"], ["class", "object-contain w-full h-full", 3, "src", 4, "ngIf"], [1, "absolute", "top-2", "left-2", "flex", "items-center", "justify-center", "rounded", "overflow-hidden"], [1, "absolute", "inset-0", "bg-base-content", "opacity-60", "z-0"], [1, "relative", "text-base-100", "z-10", "px-2", "py-1", "text-xs"], [1, "absolute", "top-2", "right-2", "flex", "items-center", "justify-center", "rounded", "overflow-hidden"], ["class", "absolute bottom-2 right-2 flex items-center justify-center rounded overflow-hidden", 4, "ngIf"], [1, "flex", "items-center", "justify-between", "space-x-2"], [1, "truncate", "flex-1", "w-1/2", "px-2"], ["icon", "", "matRipple", ""], [1, "object-contain", "w-full", "h-full", 3, "src"], [1, "absolute", "bottom-2", "right-2", "flex", "items-center", "justify-center", "rounded", "overflow-hidden"], [1, "absolute", "inset-0"], [1, "absolute", "inset-0", "bg-base-200"], [1, "absolute", "inset-0", "bg-base-content", "opacity-70"], [1, "absolute", "inset-4", "border-4", "border-dashed", "border-neutral", "text-base-100", "rounded-xl", "flex", "flex-col", "items-center", "justify-center"], [1, "text-8xl"], ["type", "file", 1, "absolute", "inset-0", "w-full", "opacity-0", 3, "change"], [1, "absolute", "inset-0", "flex", "flex-col", "items-center", "justify-center", "space-y-2", "opacity-30"], [1, "absolute", "inset-0", "flex", "flex-col", "items-center", "justify-center", "space-y-2"], ["diameter", "32"]],
     template: function SignageMediaComponent_Template(rf, ctx) {
       if (rf & 1) {
         const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
@@ -2181,7 +2181,7 @@ class SignageComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.Asyn
     this._state = _state;
     this._router = _router;
     this.loading = this._state.loading;
-    this.links = ['Playlists', 'Media', 'Displays', 'Zones', 'Triggers'];
+    this.links = ['Media', 'Playlists', 'Displays'];
     this.active_link = this.links[0];
   }
   ngOnInit() {
@@ -2201,7 +2201,7 @@ class SignageComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.Asyn
     features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵInheritDefinitionFeature"]],
     attrs: _c0,
     decls: 15,
-    vars: 3,
+    vars: 2,
     consts: [["tabPanel", ""], [1, "flex", "flex-1", "h-px"], [1, "flex", "flex-col", "flex-1", "w-1/2", "h-full"], [1, "p-8", "h-28", "flex", "items-center", "justify-between"], [1, "text-2xl", "font-medium"], ["btn", "", "matRipple", "", "class", "w-32", 3, "click", 4, "ngIf"], [1, "px-8"], ["mat-tab-nav-bar", "", 3, "tabPanel"], ["mat-tab-link", "", 3, "routerLink", "active"], [1, "flex-1", "h-1/2", "overflow-auto", "px-8"], ["btn", "", "matRipple", "", 1, "w-32", 3, "click"], ["mat-tab-link", "", 3, "click", "routerLink", "active"]],
     template: function SignageComponent_Template(rf, ctx) {
       if (rf & 1) {
@@ -2209,7 +2209,7 @@ class SignageComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.Asyn
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](2, "app-sidebar");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "main", 2)(4, "div", 3)(5, "h2", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](6, " Digital Signage Management ");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](7, SignageComponent_button_7_Template, 2, 1, "button", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
@@ -2222,9 +2222,7 @@ class SignageComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.Asyn
       }
       if (rf & 2) {
         const tabPanel_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵreference"](13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" Signage - ", ctx.active_link, " ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](7);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx.active_link !== "Media");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("tabPanel", tabPanel_r5);
@@ -2291,14 +2289,14 @@ const ROUTES = [{
   component: _signage_component__WEBPACK_IMPORTED_MODULE_1__.SignageComponent,
   children: [{
     path: '',
-    redirectTo: 'playlists',
+    redirectTo: 'media',
     pathMatch: 'full'
-  }, {
-    path: 'playlists',
-    component: _signage_playlists_component__WEBPACK_IMPORTED_MODULE_3__.SignagePlaylistsComponent
   }, {
     path: 'media',
     component: _signage_media_component__WEBPACK_IMPORTED_MODULE_7__.SignageMediaComponent
+  }, {
+    path: 'playlists',
+    component: _signage_playlists_component__WEBPACK_IMPORTED_MODULE_3__.SignagePlaylistsComponent
   }, {
     path: 'displays',
     component: _signage_displays_component__WEBPACK_IMPORTED_MODULE_4__.SignageDisplaysComponent
@@ -2310,7 +2308,7 @@ const ROUTES = [{
     component: _signage_triggers_component__WEBPACK_IMPORTED_MODULE_6__.SignageTriggersComponent
   }, {
     path: '*',
-    redirectTo: 'playlists',
+    redirectTo: 'media',
     pathMatch: 'full'
   }]
 }];
