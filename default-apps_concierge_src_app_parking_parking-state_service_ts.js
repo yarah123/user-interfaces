@@ -412,10 +412,13 @@ class ParkingSpaceModalComponent {
   postForm() {
     if (!this.form.valid) return;
     this.loading = true;
-    const value = this.form.value;
+    const value = {
+      ...this.form.getRawValue()
+    };
     if (value.assigned_user) {
       value.assigned_to = value.assigned_user.email;
       value.assigned_name = value.assigned_user.name;
+      delete value.assigned_user;
     }
     this._dialog_ref.disableClose = true;
     this.event.emit({
