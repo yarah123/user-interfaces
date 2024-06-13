@@ -464,18 +464,150 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   PanelViewComponent: () => (/* binding */ PanelViewComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/common */ 22797);
+/* harmony import */ var libs_components_src_lib_chat_chat_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! libs/components/src/lib/chat/chat.service */ 45632);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 95072);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 60316);
 
-class PanelViewComponent {
+
+
+
+
+
+
+function PanelViewComponent_div_3_div_1_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Speech Recognition is not supported ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+  }
+}
+function PanelViewComponent_div_3_div_2_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Speech Synthesis is not supported ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+  }
+}
+function PanelViewComponent_div_3_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, PanelViewComponent_div_3_div_1_Template, 2, 0, "div", 5)(2, PanelViewComponent_div_3_div_2_Template, 2, 0, "div", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx_r0.error.speech_recognition);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx_r0.error.speech_synthesis);
+  }
+}
+class PanelViewComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0__.AsyncHandler {
+  constructor(_route, _chat) {
+    super();
+    this._route = _route;
+    this._chat = _chat;
+    this.scale = 1;
+    this.error = {};
+    this._time = 0;
+    this._last_message = '';
+    this.startListening = () => {
+      this._recognition.start();
+      this.interval('scale', () => {
+        this.scale = (Math.sin(++this._time / 5 / Math.PI) + 1) / 2 + 1;
+      }, 16);
+    };
+  }
+  ngOnInit() {
+    this._setupVoiceRecognition();
+    this.subscription('chat.messages', this._chat.messages.subscribe(list => {
+      if (list.length < 1 || this._last_message === list[0].id) return;
+      this._last_message = list[0].id;
+      this._speakText(list[0].message);
+    }));
+  }
+  _setupVoiceRecognition() {
+    console.log('Setup Speech Recognition');
+    if (!('SpeechRecognition' in window || 'webkitSpeechRecognition' in window)) {
+      this.error.speech_recognition = true;
+      return;
+    }
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+    recognition.interimResults = true;
+    recognition.lang = 'en-US';
+    recognition.onresult = event => {
+      console.log('Result:', event.results);
+      if (!event.results) return;
+      const {
+        transcript
+      } = event.results[0][0];
+      // do something with transcript
+      console.log('Result:', transcript);
+    };
+    recognition.onend = event => {
+      console.log('OnEnd:', event.results);
+      this.clearInterval('scale');
+      this.scale = 1;
+      if (!event.results) return;
+      const {
+        transcript
+      } = event.results[0][0];
+      this._chat.sendMessage(transcript);
+    };
+    console.log('Set Speech Recognition');
+    this._recognition = recognition;
+  }
+  _speakText(text) {
+    console.log('Speak Text:', text);
+    if (!('speechSynthesis' in window && 'SpeechSynthesisUtterance' in window)) {
+      this.error.speech_synthesis = true;
+      return;
+    }
+    const synth = window.speechSynthesis;
+    const voices = synth.getVoices();
+    const preferredVoice = voices.find(voice => voice.voiceURI === 'Karen');
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.rate = 1;
+    utterance.pitch = 1;
+    if (preferredVoice) {
+      utterance.voice = preferredVoice;
+    }
+    utterance.onend = () => {
+      // do something once all the text has been spoken
+    };
+    window.speechSynthesis.speak(utterance);
+  }
   static #_ = this.ɵfac = function PanelViewComponent_Factory(t) {
-    return new (t || PanelViewComponent)();
+    return new (t || PanelViewComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](libs_components_src_lib_chat_chat_service__WEBPACK_IMPORTED_MODULE_1__.ChatService));
   };
-  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
     type: PanelViewComponent,
     selectors: [["app-panel-view"]],
-    decls: 0,
-    vars: 0,
-    template: function PanelViewComponent_Template(rf, ctx) {}
+    features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵInheritDefinitionFeature"]],
+    decls: 4,
+    vars: 3,
+    consts: [[1, "absolute", "inset-0", "bg-base-200", "p-8", "flex", "items-center", "justify-center", 3, "click"], [1, "h-[18vmin]", "w-[18vmin]", "m-4", "rounded-full", "bg-base-content"], [1, "absolute", "bottom-0", "inset-x-0", "p-4", "text-center"], ["class", "absolute top-2 left-1/2 -translate-x-1/2 p-4 text-center rounded-3xl bg-error text-error-content text-xs", 4, "ngIf"], [1, "absolute", "top-2", "left-1/2", "-translate-x-1/2", "p-4", "text-center", "rounded-3xl", "bg-error", "text-error-content", "text-xs"], ["class", "flex items-center justify-center w-full h-full", 4, "ngIf"], [1, "flex", "items-center", "justify-center", "w-full", "h-full"]],
+    template: function PanelViewComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "button", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function PanelViewComponent_Template_button_click_0_listener() {
+          return ctx.startListening();
+        });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "div", 1)(2, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](3, PanelViewComponent_div_3_Template, 3, 2, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      }
+      if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵstyleProp"]("transform", "scale(" + ctx.scale + ")");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.error.speech_recognition || ctx.error.speech_synthesis);
+      }
+    },
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.NgIf]
   });
 }
 
@@ -16870,15 +17002,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "942e8f8",
-  "hash": "942e8f8",
+  "raw": "6ea359a",
+  "hash": "6ea359a",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "942e8f8",
+  "suffix": "6ea359a",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1718239212800
+  "time": 1718254629439
 };
 /* tslint:enable */
 
