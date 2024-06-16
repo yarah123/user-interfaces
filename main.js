@@ -32566,15 +32566,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "ead8e9e",
-  "hash": "ead8e9e",
+  "raw": "97aa3d1",
+  "hash": "97aa3d1",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "ead8e9e",
+  "suffix": "97aa3d1",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1718416377635
+  "time": 1718512544161
 };
 /* tslint:enable */
 
@@ -41431,15 +41431,20 @@ function SimpleTableComponent_ng_container_3_div_1_Template(rf, ctx) {
 function SimpleTableComponent_ng_container_3_div_2_div_3_span_2_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelementStart(0, "span", 23);
-    i0.ɵɵtext(1, " N/A ");
+    i0.ɵɵtext(1);
     i0.ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    var column_r9 = i0.ɵɵnextContext(2).$implicit;
+    i0.ɵɵadvance();
+    i0.ɵɵtextInterpolate1(" ", column_r9.empty || "N/A", " ");
   }
 }
 function SimpleTableComponent_ng_container_3_div_2_div_3_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelementStart(0, "div", 21);
     i0.ɵɵtext(1);
-    i0.ɵɵtemplate(2, SimpleTableComponent_ng_container_3_div_2_div_3_span_2_Template, 2, 0, "span", 22);
+    i0.ɵɵtemplate(2, SimpleTableComponent_ng_container_3_div_2_div_3_span_2_Template, 2, 1, "span", 22);
     i0.ɵɵelementEnd();
   }
   if (rf & 2) {
