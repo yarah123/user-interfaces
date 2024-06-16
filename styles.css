@@ -914,6 +914,10 @@ video {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
+#placeos :is(.my-8) {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 #placeos :is(.\!ml-8) {
   margin-left: 2rem !important;
 }
