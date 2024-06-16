@@ -23954,15 +23954,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "ead8e9e",
-  "hash": "ead8e9e",
+  "raw": "97aa3d1",
+  "hash": "97aa3d1",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "ead8e9e",
+  "suffix": "97aa3d1",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1718416378914
+  "time": 1718512544627
 };
 /* tslint:enable */
 
@@ -31641,15 +31641,20 @@ function SimpleTableComponent_ng_container_3_div_1_Template(rf, ctx) {
 function SimpleTableComponent_ng_container_3_div_2_div_3_span_2_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "span", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, " N/A ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const column_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2).$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"](" ", column_r9.empty || "N/A", " ");
   }
 }
 function SimpleTableComponent_ng_container_3_div_2_div_3_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 21);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](2, SimpleTableComponent_ng_container_3_div_2_div_3_span_2_Template, 2, 0, "span", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](2, SimpleTableComponent_ng_container_3_div_2_div_3_span_2_Template, 2, 1, "span", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
