@@ -1186,6 +1186,9 @@ video {
 #placeos :is(.h-\[18rem\]) {
   height: 18rem;
 }
+#placeos :is(.h-\[18vmin\]) {
+  height: 18vmin;
+}
 #placeos :is(.h-\[1em\]) {
   height: 1em;
 }
@@ -1533,6 +1536,9 @@ video {
 }
 #placeos :is(.w-\[18rem\]) {
   width: 18rem;
+}
+#placeos :is(.w-\[18vmin\]) {
+  width: 18vmin;
 }
 #placeos :is(.w-\[19rem\]) {
   width: 19rem;
