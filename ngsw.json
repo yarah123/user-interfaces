@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1718239273703,
+  "timestamp": 1718585254414,
   "index": "./index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "./favicon.ico",
         "./index.html",
-        "./main.0a2a3b588f6ad613.js",
+        "./main.aee55f1ba60365e6.js",
         "./manifest.webmanifest",
         "./polyfills.01aea152e0ed16ba.js",
         "./runtime.c3f557512ddddd50.js",
-        "./styles.82955642e974a80d.css"
+        "./styles.725c90901ad63bed.css"
       ],
       "patterns": []
     },
@@ -168,7 +168,7 @@
     "./assets/locale/ar.json": "9d39f81ce08112ff2e2c8c9d392e763f1c48083b",
     "./assets/locale/en-GB.json": "74ffa5ff586701de9b95a574fc8b17bdb897eb37",
     "./assets/locale/en-US.json": "3841f63e329be78a64979b096660841f14ad2507",
-    "./assets/locale/en.json": "259496d0f45eaf63a5a07a4009d7081473701976",
+    "./assets/locale/en.json": "5adb05ab8c2b9c88f30254f8c44c3ef13ceb4d1f",
     "./assets/locale/es.json": "12fcaef177f45954851f4dbfddb85122b91b0207",
     "./assets/locale/fr.json": "7beffd170a366f52b07f51eb5dc99984816391f7",
     "./assets/locale/pt.json": "0015e70d7d1cae1bfa3b79623656d0d33a6e26de",
@@ -190,8 +190,8 @@
     "./assets/support/opera-logo.svg": "23f8e25409598ac843eefe81ea3c09b4f460844d",
     "./assets/support/safari-logo.svg": "1c510b0c330f84f6662351e4a0abd7fb8af2f678",
     "./favicon.ico": "4e23d0f9b6ddaf3c9ddef90dbaed2342941297b5",
-    "./index.html": "76b1dcf268523fee4ad2fc65ae7c47eb9e3c9c36",
-    "./main.0a2a3b588f6ad613.js": "e8b0e926ddc062b58287629d121b03f4b60ec914",
+    "./index.html": "8dfb3338601440721209e447e54ad7e161326578",
+    "./main.aee55f1ba60365e6.js": "cd06c6b177834492da7349ee04184f94aaeecf3a",
     "./manifest.webmanifest": "f23567bd46672c5628059833da39da05adf508d6",
     "./material-icons-outlined.f86cb7b0aa53f0fe.woff2": "2f9e28ab559782402f27332633c843c40209d95a",
     "./material-icons-round.b10ec9db5b7fbc74.woff2": "abe05e0641f1050fbe00ef0dbb10c5ea72c26cff",
@@ -203,7 +203,7 @@
     "./material-symbols-sharp.2bac22456edcc5ba.woff2": "518c8895fddc0ea0951192d60e314be1d6824ba7",
     "./polyfills.01aea152e0ed16ba.js": "ddb4efeb70eddbd96a2f0fc66e31741a4283c933",
     "./runtime.c3f557512ddddd50.js": "1da75464266a00534cebb98116da36fa788329b2",
-    "./styles.82955642e974a80d.css": "a51145f2cdd04cbe105100594a2b59ecd313f459"
+    "./styles.725c90901ad63bed.css": "bce8c0d0c8d485b5cd0404eb6f940c0242f2246a"
   },
   "navigationUrls": [
     {
