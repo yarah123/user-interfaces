@@ -691,42 +691,35 @@ class PanelViewComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.As
       _this._model = yield _tensorflow_tfjs__WEBPACK_IMPORTED_MODULE_4__.loadGraphModel(`${location.origin}${location.pathname}assets/yolov8x_web_model/model.json`);
     })();
   }
-  _runModel(tensor) {
+  _processWebcamFrame() {
     var _this2 = this;
     return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       if (!_this2._model) yield _this2._loadModel();
-      return _this2._model.predict(tensor);
-    })();
-  }
-  _processWebcamFrame() {
-    var _this3 = this;
-    return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const tensor = yield _this3._webcamToTensor();
-      const predictions = yield _this3._runModel(tensor);
-      const detections = _this3._processPredictions(predictions, {
-        0: 'person'
-      });
-      _this3.listening = false;
-      for (const {
-        box,
-        label
-      } of detections) {
-        if (label === 'person') {
-          _this3.listening = true;
-          return;
+      _tensorflow_tfjs__WEBPACK_IMPORTED_MODULE_4__.tidy(() => {
+        const tensor = _this2._webcamToTensor();
+        const predictions = _this2._model.predict(tensor);
+        const detections = _this2._processPredictions(predictions, {
+          0: 'person'
+        });
+        _this2.listening = false;
+        for (const {
+          box,
+          label
+        } of detections) {
+          if (label === 'person') {
+            _this2.listening = true;
+            return;
+          }
         }
-      }
+      });
     })();
   }
   _webcamToTensor() {
-    var _this4 = this;
-    return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const videoElement = _this4._video_el.nativeElement;
-      _this4._context.drawImage(videoElement, 0, 0, 640, 640);
-      const imageData = _this4._context.getImageData(0, 0, 640, 640);
-      const tensor = _tensorflow_tfjs__WEBPACK_IMPORTED_MODULE_4__.browser.fromPixels(imageData);
-      return _tensorflow_tfjs__WEBPACK_IMPORTED_MODULE_4__.cast(tensor, 'float32').div(_tensorflow_tfjs__WEBPACK_IMPORTED_MODULE_4__.scalar(255)).expandDims(0);
-    })();
+    const videoElement = this._video_el.nativeElement;
+    this._context.drawImage(videoElement, 0, 0, 640, 640);
+    const imageData = this._context.getImageData(0, 0, 640, 640);
+    const tensor = _tensorflow_tfjs__WEBPACK_IMPORTED_MODULE_4__.browser.fromPixels(imageData);
+    return _tensorflow_tfjs__WEBPACK_IMPORTED_MODULE_4__.cast(tensor, 'float32').div(_tensorflow_tfjs__WEBPACK_IMPORTED_MODULE_4__.scalar(255)).expandDims(0);
   }
   _processPredictions(predictions, classNames) {
     return _tensorflow_tfjs__WEBPACK_IMPORTED_MODULE_4__.tidy(() => {
@@ -753,20 +746,20 @@ class PanelViewComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.As
     return _tensorflow_tfjs__WEBPACK_IMPORTED_MODULE_4__.concat([topLeftX, topLeftY, width, height], 2).squeeze();
   }
   _setupWebcam() {
-    var _this5 = this;
+    var _this3 = this;
     return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         const stream = yield navigator.mediaDevices.getUserMedia({
           video: true
         });
-        _this5._video_el.nativeElement.srcObject = stream;
+        _this3._video_el.nativeElement.srcObject = stream;
       } else {
         console.error('getUserMedia is not supported');
       }
     })();
   }
   _setupVoiceRecognition() {
-    var _this6 = this;
+    var _this4 = this;
     return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       console.log('Setup Speech Recognition');
       // Make sure sample rate matches that in the training data
@@ -790,19 +783,19 @@ class PanelViewComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.As
       // Listen for result and partial result
       recognizer.addEventListener('result', ev => {
         console.log('Result:', ev.detail);
-        _this6.last_text = ev.detail;
-        _this6.current_text = '';
-        _this6.listening = false;
-        _this6.clearInterval('scale');
-        _this6.scale = 1;
-        console.log('Last message:', _this6.last_text);
-        if (_this6.last_text.length <= 3) return;
-        console.log('Sending message:', _this6.last_text);
-        _this6._chat.sendMessage(_this6.last_text);
+        _this4.last_text = ev.detail;
+        _this4.current_text = '';
+        _this4.listening = false;
+        _this4.clearInterval('scale');
+        _this4.scale = 1;
+        console.log('Last message:', _this4.last_text);
+        if (_this4.last_text.length <= 3) return;
+        console.log('Sending message:', _this4.last_text);
+        _this4._chat.sendMessage(_this4.last_text);
       });
       recognizer.addEventListener('partialResult', ev => {
         console.log('Partial result:', ev.detail);
-        _this6.current_text = ev.detail;
+        _this4.current_text = ev.detail;
       });
       // Create a transferer node to get audio data on the main thread
       let transferer = yield module.createTransferer(ctx, 128 * 150);
@@ -17375,15 +17368,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "06feecf",
-  "hash": "06feecf",
+  "raw": "faeb520",
+  "hash": "faeb520",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "06feecf",
+  "suffix": "faeb520",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1718591251051
+  "time": 1718602646177
 };
 /* tslint:enable */
 
