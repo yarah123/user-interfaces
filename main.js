@@ -793,21 +793,16 @@ class PanelViewComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.As
       recognizer.addEventListener('result', ev => {
         const {
           text
-        } = ev.detail || {
-          text: ''
-        };
-        // console.log('Result:', text);
+        } = JSON.parse(ev.detail || '{ "text": "" }');
         _this4.last_text = text || '';
         _this4.current_text = '';
         _this4.clearInterval('scale');
         _this4.scale = 1;
-        // console.log('Last message:', this.last_text);
         if (_this4.last_text.length <= 3) return;
         console.log('Sending message:', _this4.last_text);
         _this4._chat.sendMessage(_this4.last_text);
       });
       recognizer.addEventListener('partialResult', ev => {
-        // console.log('Partial result:', ev.detail);
         _this4.current_text = ev.detail?.partial || '';
       });
       // Create a transferer node to get audio data on the main thread
@@ -17386,15 +17381,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "c4e9975",
-  "hash": "c4e9975",
+  "raw": "95962d1",
+  "hash": "95962d1",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "c4e9975",
+  "suffix": "95962d1",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1718693306972
+  "time": 1718693594344
 };
 /* tslint:enable */
 
