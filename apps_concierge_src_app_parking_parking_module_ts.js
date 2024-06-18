@@ -184,7 +184,8 @@ const _c4 = a0 => ({
   key: "plate_number",
   name: "Plate Number",
   content: a0,
-  size: "10rem"
+  size: "10rem",
+  sortable: false
 });
 const _c5 = a0 => ({
   key: "status",
