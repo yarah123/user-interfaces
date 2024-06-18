@@ -778,7 +778,7 @@ class PanelViewComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.As
       }));
       // Load Vosklet module, model and recognizer
       let module = yield vosklet__WEBPACK_IMPORTED_MODULE_3__();
-      let model = yield module.createModel('https://github.com/msqr1/Vosklet/raw/main/examples/en-model.tgz', 'model', 'ID');
+      let model = yield module.createModel(`${location.origin}${location.pathname}assets/vosk-model-small-en-us-0.15.tar.gz`, 'model', 'ID');
       let recognizer = yield module.createRecognizer(model, 16000);
       // Listen for result and partial result
       recognizer.addEventListener('result', ev => {
@@ -17368,15 +17368,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "faeb520",
-  "hash": "faeb520",
+  "raw": "ec0dc20",
+  "hash": "ec0dc20",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "faeb520",
+  "suffix": "ec0dc20",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1718602646177
+  "time": 1718669874666
 };
 /* tslint:enable */
 
