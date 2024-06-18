@@ -172,7 +172,7 @@ const _c1 = () => ({
 });
 const _c2 = a0 => ({
   key: "user_name",
-  name: "Reverved For",
+  name: "Reserved For",
   content: a0
 });
 const _c3 = a0 => ({
@@ -954,7 +954,7 @@ class ParkingTopbarComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1_
       if (rf & 2) {
         let tmp_1_0;
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtextInterpolate1"](" ", ctx.path === "events" ? "Parking Management" : "Parking Reservations", " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵtextInterpolate1"](" ", ctx.path !== "events" ? "Parking Management" : "Parking Reservations", " ");
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵproperty"]("model", (tmp_1_0 = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵpipeBind1"](5, 8, ctx.options)) == null ? null : tmp_1_0.search);
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵadvance"](2);
