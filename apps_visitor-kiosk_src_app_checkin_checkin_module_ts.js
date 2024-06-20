@@ -926,6 +926,11 @@ class CheckinQRScanComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1_
           throw err;
         });
         const event = yield _this._checkin.event.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.take)(1)).toPromise();
+        if (event.rejected) {
+          _this.handleError('Your meeting has been rejected.');
+          _this.checking_code = false;
+          return;
+        }
         if (_this.is_induction_enabled && !event?.induction) {
           _this._router.navigate(['/checkin', 'induction']);
         } else {
