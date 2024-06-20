@@ -91,10 +91,11 @@ const _c0 = () => ({
   name: "Name"
 });
 const _c1 = a0 => ({
-  key: "level",
+  key: "level_id",
   name: "Level",
   content: a0,
-  size: "12rem"
+  size: "12rem",
+  sortable: false
 });
 const _c2 = () => ({
   key: "location",

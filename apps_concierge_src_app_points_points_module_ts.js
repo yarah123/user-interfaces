@@ -318,7 +318,7 @@ class PointsAssetModalComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE
     features: [_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵInheritDefinitionFeature"]],
     decls: 9,
     vars: 3,
-    consts: [["auto", "matAutocomplete"], [1, "text-lg"], ["class", "min-w-[24rem] overflow-hidden", 3, "formGroup", 4, "ngIf"], [1, "flex", "items-center", "justify-center", "p-2", "space-x-2", "border-t", "border-base-200"], ["btn", "", "matRipple", "", "mat-dialog-close", "", 1, "inverse", "flex-1"], ["matRipple", "", 1, "flex-1", 3, "click", "disabled"], [1, "min-w-[24rem]", "overflow-hidden", 3, "formGroup"], [1, "p-2"], [1, "flex", "items-center"], [1, "w-24"], ["appearance", "outline", 1, "flex-1", "h-[3.25rem]"], ["formControlName", "type", "placeholder", "Select asset type"], ["value", "space"], ["value", "desk"], ["matPrefix", "", 1, "text-2xl"], ["matInput", "", "formControlName", "name", "placeholder", "Search for asset...", 3, "matAutocomplete"], ["matSuffix", "", 3, "diameter", 4, "ngIf"], [3, "value", 4, "ngFor", "ngForOf"], [3, "disabled", 4, "ngIf"], [1, "border-t", "border-base-200", "p-2"], [1, "flex-1"], ["formControlName", "unit_price", 1, "border", "border-base-200", "rounded", 3, "min", "max", "step", "render_fn"], [1, ""], ["rule", "", "class", "flex items-center", 4, "ngFor", "ngForOf"], ["btn", "", "matRipple", "", 1, "clear", "w-full", 3, "click"], [1, "flex", "items-center", "justify-center", "w-full"], [1, "underline"], ["formControlName", "accept_points"], ["formControlName", "discount_cap", 1, "border", "border-base-200", "rounded", 3, "min", "max", "step", "render_fn"], ["matSuffix", "", 3, "diameter"], [3, "value"], [3, "disabled"], ["rule", "", 1, "flex", "items-center"], [1, "flex", "items-center", "flex-1", "w-1/2", "space-x-2"], ["appearance", "outline", 1, "flex-2", "h-[3.25rem]", "w-32"], [3, "ngModelChange", "ngModel", "ngModelOptions"], ["value", "before"], ["value", "between"], ["value", "after"], [1, "flex-1", "mt-2", "w-40", 3, "ngModelChange", "ngModel", "ngModelOptions"], ["class", "flex-1 mt-2 w-40", 3, "ngModel", "from", "ngModelOptions", "ngModelChange", 4, "ngIf"], [1, "mx-2"], [1, "border", "border-base-200", "rounded", 3, "ngModelChange", "ngModel", "ngModelOptions", "min", "max", "step", "render_fn"], [1, "flex-1", "mt-2", "w-40", 3, "ngModelChange", "ngModel", "from", "ngModelOptions"]],
+    consts: [["auto", "matAutocomplete"], [1, "text-lg"], ["class", "min-w-[24rem] overflow-hidden", 3, "formGroup", 4, "ngIf"], [1, "flex", "items-center", "justify-end", "p-2", "space-x-2", "border-t", "border-base-200"], ["btn", "", "matRipple", "", "mat-dialog-close", "", 1, "inverse", "w-32"], ["btn", "", "matRipple", "", 1, "w-32", 3, "click", "disabled"], [1, "min-w-[24rem]", "overflow-hidden", 3, "formGroup"], [1, "p-2"], [1, "flex", "items-center"], [1, "w-24"], ["appearance", "outline", 1, "flex-1", "h-[3.25rem]"], ["formControlName", "type", "placeholder", "Select asset type"], ["value", "space"], ["value", "desk"], ["matPrefix", "", 1, "text-2xl"], ["matInput", "", "formControlName", "name", "placeholder", "Search for asset...", 3, "matAutocomplete"], ["matSuffix", "", 3, "diameter", 4, "ngIf"], [3, "value", 4, "ngFor", "ngForOf"], [3, "disabled", 4, "ngIf"], [1, "border-t", "border-base-200", "p-2"], [1, "flex-1"], ["formControlName", "unit_price", 1, "border", "border-base-200", "rounded", 3, "min", "max", "step", "render_fn"], [1, ""], ["rule", "", "class", "flex items-center", 4, "ngFor", "ngForOf"], ["btn", "", "matRipple", "", 1, "clear", "w-full", 3, "click"], [1, "flex", "items-center", "justify-center", "w-full"], [1, "underline"], ["formControlName", "accept_points"], ["formControlName", "discount_cap", 1, "border", "border-base-200", "rounded", 3, "min", "max", "step", "render_fn"], ["matSuffix", "", 3, "diameter"], [3, "value"], [3, "disabled"], ["rule", "", 1, "flex", "items-center"], [1, "flex", "items-center", "flex-1", "w-1/2", "space-x-2"], ["appearance", "outline", 1, "flex-2", "h-[3.25rem]", "w-32"], [3, "ngModelChange", "ngModel", "ngModelOptions"], ["value", "before"], ["value", "between"], ["value", "after"], [1, "flex-1", "mt-2", "w-40", 3, "ngModelChange", "ngModel", "ngModelOptions"], ["class", "flex-1 mt-2 w-40", 3, "ngModel", "from", "ngModelOptions", "ngModelChange", 4, "ngIf"], [1, "mx-2"], [1, "border", "border-base-200", "rounded", 3, "ngModelChange", "ngModel", "ngModelOptions", "min", "max", "step", "render_fn"], [1, "flex-1", "mt-2", "w-40", 3, "ngModelChange", "ngModel", "from", "ngModelOptions"]],
     template: function PointsAssetModalComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "header")(1, "h2", 1);
@@ -499,35 +499,38 @@ const _c2 = a0 => ({
 });
 const _c3 = a0 => ({
   key: "accept_points",
-  name: "Accept Points",
-  content: a0
+  name: "Points",
+  content: a0,
+  size: "5.5rem"
 });
 const _c4 = a0 => ({
   key: "discount_cap",
   name: "Discount %",
-  content: a0
+  content: a0,
+  size: "9rem"
 });
 const _c5 = a0 => ({
   key: "actions",
   name: " ",
-  content: a0
+  content: a0,
+  size: "6.5rem"
 });
 const _c6 = (a0, a1, a2, a3, a4, a5) => [a0, a1, a2, a3, a4, a5];
 function PointsAssetsComponent_ng_template_1_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "span", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 6)(1, "span", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
     const data_r1 = ctx.data;
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](data_r1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", data_r1, " ");
   }
 }
 function PointsAssetsComponent_ng_template_3_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "span", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "span", 8);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](2, "currency");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
@@ -536,12 +539,12 @@ function PointsAssetsComponent_ng_template_3_Template(rf, ctx) {
     const data_r2 = ctx.data;
     const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](2, 1, data_r2 / 100, ctx_r2.code), " per hour ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind2"](2, 1, data_r2 / 100, ctx_r2.code), " p/h ");
   }
 }
 function PointsAssetsComponent_ng_template_5_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 8)(1, "app-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 9)(1, "app-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
   }
@@ -554,7 +557,7 @@ function PointsAssetsComponent_ng_template_5_Template(rf, ctx) {
 }
 function PointsAssetsComponent_ng_template_7_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 10);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
   }
@@ -567,7 +570,7 @@ function PointsAssetsComponent_ng_template_7_Template(rf, ctx) {
 function PointsAssetsComponent_ng_template_9_Template(rf, ctx) {
   if (rf & 1) {
     const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 10)(1, "button", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 11)(1, "button", 12);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function PointsAssetsComponent_ng_template_9_Template_button_click_1_listener() {
       const row_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r6).row;
       const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
@@ -576,13 +579,13 @@ function PointsAssetsComponent_ng_template_9_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "app-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "edit");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "button", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "button", 12);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function PointsAssetsComponent_ng_template_9_Template_button_click_4_listener() {
       const row_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r6).row;
       const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r2.remove(row_r7));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "app-icon", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "app-icon", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](6, "delete");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
   }
@@ -606,11 +609,11 @@ class PointsAssetsComponent {
     selectors: [["points-assets"]],
     decls: 11,
     vars: 21,
-    consts: [["type_template", ""], ["price_template", ""], ["bool_template", ""], ["discount_template", ""], ["action_template", ""], ["empty_message", "No priced assets", 1, "block", "min-w-[32rem]", "w-full", 3, "data", "columns", "sortable"], [1, "bg-base-200", "rounded", "capitalize", "p-4"], [1, "text-xs", "p-4"], [1, "rounded", "h-8", "w-8", "flex", "items-center", "justify-center", "text-2xl", "text-white", "mx-auto"], [1, "text-right", "p-4"], [1, "flex", "items-center", "justify-end", "p-2"], ["icon", "", "matRipple", "", 3, "click"], [1, "text-error"]],
+    consts: [["type_template", ""], ["price_template", ""], ["bool_template", ""], ["discount_template", ""], ["action_template", ""], ["empty_message", "No priced assets", 1, "block", "min-w-[32rem]", "w-full", 3, "data", "columns", "sortable"], [1, "p-2"], [1, "bg-base-200", "rounded", "capitalize", "px-2", "py-1", "text-sm"], [1, "text-xs", "p-4", "font-mono"], [1, "rounded", "h-8", "w-8", "flex", "items-center", "justify-center", "text-2xl", "text-white", "mx-auto"], [1, "text-right", "p-4"], [1, "flex", "items-center", "justify-end", "p-2", "mx-auto"], ["icon", "", "matRipple", "", 3, "click"], [1, "text-error"]],
     template: function PointsAssetsComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](0, "simple-table", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](1, PointsAssetsComponent_ng_template_1_Template, 2, 1, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplateRefExtractor"])(3, PointsAssetsComponent_ng_template_3_Template, 3, 4, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplateRefExtractor"])(5, PointsAssetsComponent_ng_template_5_Template, 3, 5, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplateRefExtractor"])(7, PointsAssetsComponent_ng_template_7_Template, 2, 1, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplateRefExtractor"])(9, PointsAssetsComponent_ng_template_9_Template, 7, 0, "ng-template", null, 4, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](1, PointsAssetsComponent_ng_template_1_Template, 3, 1, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplateRefExtractor"])(3, PointsAssetsComponent_ng_template_3_Template, 3, 4, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplateRefExtractor"])(5, PointsAssetsComponent_ng_template_5_Template, 3, 5, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplateRefExtractor"])(7, PointsAssetsComponent_ng_template_7_Template, 2, 1, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplateRefExtractor"])(9, PointsAssetsComponent_ng_template_9_Template, 7, 0, "ng-template", null, 4, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplateRefExtractor"]);
       }
       if (rf & 2) {
         const type_template_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵreference"](2);

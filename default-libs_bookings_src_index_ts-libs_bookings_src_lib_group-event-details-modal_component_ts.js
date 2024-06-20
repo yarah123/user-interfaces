@@ -1299,6 +1299,7 @@ class BookingFormService extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.As
         user_id: (!value.user?.id?.includes('@') ? value?.user?.id : '') || (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.currentUser)()?.id,
         extension_data: {
           ...(value.extension_data || {}),
+          group: value.group,
           phone: value.phone,
           department: value.user?.department || (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.currentUser)()?.department
         },

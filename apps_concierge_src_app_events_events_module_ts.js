@@ -267,37 +267,42 @@ const _c1 = a0 => ({
   key: "level",
   name: "Level",
   content: a0,
-  size: "12rem"
+  size: "8rem",
+  sortable: false
 });
 const _c2 = a0 => ({
   key: "room",
   name: "Room",
   content: a0,
-  size: "12rem"
+  size: "12rem",
+  sortable: false
 });
 const _c3 = a0 => ({
   key: "interested",
   name: "Interested",
   content: a0,
-  size: "6rem"
+  size: "6rem",
+  sortable: false
 });
 const _c4 = a0 => ({
   key: "attending",
   name: "Attending",
   content: a0,
-  size: "6rem"
+  size: "6rem",
+  sortable: false
 });
 const _c5 = a0 => ({
-  key: "status",
+  key: "state",
   name: "Status",
   content: a0,
-  size: "9rem"
+  size: "8.5rem"
 });
 const _c6 = a0 => ({
   key: "permissions",
   name: "Published",
   content: a0,
-  size: "6rem"
+  size: "6rem",
+  sortable: false
 });
 const _c7 = a0 => ({
   key: "actions",
@@ -588,7 +593,7 @@ class EventListingComponent {
     selectors: [["event-listing"]],
     decls: 18,
     vars: 28,
-    consts: [["event_template", ""], ["level_template", ""], ["room_template", ""], ["interested_template", ""], ["attending_template", ""], ["published_template", ""], ["status_template", ""], ["actions_template", ""], ["view_attendees", ""], ["menu", "matMenu"], ["empty_message", "No Regions", 1, "min-w-[80rem]", "block", "text-sm", 3, "data", "columns", "sortable"], [1, "w-full", "h-20"], [1, "flex", "items-center", "space-x-2", "px-3", "py-2"], ["date", "", 1, "flex", "flex-col", "items-center", "leading-tight", "w-8"], ["month", "", 1, "text-sm", "font-medium", "relative", "top-0.5", "opacity-60"], ["day", "", 1, "text-2xl", "font-light", "relative", "-top-0.5"], [1, "flex", "items-center", "justify-center", "h-12", "w-12", "rounded", "overflow-hidden", "bg-base-200", "border", "border-base-200"], ["auth", "", "class", "min-h-full min-w-full object-cover", 3, "source", 4, "ngIf"], ["details", "", 1, "flex", "flex-col"], [1, "text-sm"], [1, "text-xs", "opacity-40"], [1, "text-xs"], ["auth", "", 1, "min-h-full", "min-w-full", "object-cover", 3, "source"], [1, "p-4"], ["class", "opacity-30", 4, "ngIf"], [1, "opacity-30"], ["icon", "", "matRipple", "", "customTooltip", "", 1, "rounded", "h-12", "w-12", "mx-auto", 3, "content", "disabled"], [1, "relative", "w-[20rem]", "h-[28rem]", "overflow-auto", "bg-white", "rounded", "shadow"], [3, "list", "host", "hide_close", "custom_title"], [3, "list", "host", "hide_close"], ["class", "rounded h-8 w-8 flex items-center justify-center text-2xl bg-success text-success-content mx-auto", 4, "ngIf"], [1, "rounded", "h-8", "w-8", "flex", "items-center", "justify-center", "text-2xl", "bg-success", "text-success-content", "mx-auto"], [1, "px-4", "py-1", "rounded-full"], ["icon", "", "matRipple", "", 1, "h-12", "w-12", "rounded", "mx-2", 3, "matMenuTriggerFor", "disabled"], ["mat-menu-item", "", 3, "disabled"], [1, "flex", "items-center", "space-x-2"], [1, "text-2xl"], [1, "mr-2"], ["mat-menu-item", "", 3, "click"], ["mat-menu-item", "", 3, "routerLink"], [1, "text-2xl", "text-error"]],
+    consts: [["event_template", ""], ["level_template", ""], ["room_template", ""], ["interested_template", ""], ["attending_template", ""], ["published_template", ""], ["status_template", ""], ["actions_template", ""], ["view_attendees", ""], ["menu", "matMenu"], ["empty_message", "No Regions", 1, "min-w-[72rem]", "w-full", "block", "text-sm", 3, "data", "columns", "sortable"], [1, "w-full", "h-20"], [1, "flex", "items-center", "space-x-2", "px-3", "py-2"], ["date", "", 1, "flex", "flex-col", "items-center", "leading-tight", "w-8"], ["month", "", 1, "text-sm", "font-medium", "relative", "top-0.5", "opacity-60"], ["day", "", 1, "text-2xl", "font-light", "relative", "-top-0.5"], [1, "flex", "items-center", "justify-center", "h-12", "w-12", "rounded", "overflow-hidden", "bg-base-200", "border", "border-base-200"], ["auth", "", "class", "min-h-full min-w-full object-cover", 3, "source", 4, "ngIf"], ["details", "", 1, "flex", "flex-col"], [1, "text-sm"], [1, "text-xs", "opacity-40"], [1, "text-xs"], ["auth", "", 1, "min-h-full", "min-w-full", "object-cover", 3, "source"], [1, "p-4"], ["class", "opacity-30", 4, "ngIf"], [1, "opacity-30"], ["icon", "", "matRipple", "", "customTooltip", "", 1, "rounded", "h-12", "w-12", "mx-auto", 3, "content", "disabled"], [1, "relative", "w-[20rem]", "h-[28rem]", "overflow-auto", "bg-white", "rounded", "shadow"], [3, "list", "host", "hide_close", "custom_title"], [3, "list", "host", "hide_close"], ["class", "rounded h-8 w-8 flex items-center justify-center text-2xl bg-success text-success-content mx-auto", 4, "ngIf"], [1, "rounded", "h-8", "w-8", "flex", "items-center", "justify-center", "text-2xl", "bg-success", "text-success-content", "mx-auto"], [1, "px-4", "py-1", "rounded-full"], ["icon", "", "matRipple", "", 1, "h-12", "w-12", "rounded", "mx-2", 3, "matMenuTriggerFor", "disabled"], ["mat-menu-item", "", 3, "disabled"], [1, "flex", "items-center", "space-x-2"], [1, "text-2xl"], [1, "mr-2"], ["mat-menu-item", "", 3, "click"], ["mat-menu-item", "", 3, "routerLink"], [1, "text-2xl", "text-error"]],
     template: function EventListingComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵelement"](0, "simple-table", 10)(1, "div", 11);
@@ -1265,7 +1270,9 @@ class EventManageComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.
       // Remove Old Event if linked
       if (booking?.id && (booking.linked_event || _this2.form.getRawValue().secondary_resource)) {
         if (booking.linked_event) {
-          yield (0,_placeos_events__WEBPACK_IMPORTED_MODULE_5__.removeEvent)(booking.linked_event.event_id).toPromise().catch(e => {
+          yield (0,_placeos_events__WEBPACK_IMPORTED_MODULE_5__.removeEvent)(booking.linked_event.event_id, {
+            system_id: booking.linked_event.system_id
+          }).toPromise().catch(e => {
             (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.notifyError)(e);
             _this2.loading = false;
             throw e;

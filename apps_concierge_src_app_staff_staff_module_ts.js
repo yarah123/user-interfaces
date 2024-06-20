@@ -417,20 +417,22 @@ __webpack_require__.r(__webpack_exports__);
 const _c0 = ["app-emergency-contacts", ""];
 const _c1 = () => [];
 const _c2 = a0 => ({
-  key: "person",
+  key: "name",
   name: "Person",
   content: a0
 });
 const _c3 = a0 => ({
   key: "roles",
   name: "Roles",
-  content: a0
+  content: a0,
+  sortable: false
 });
 const _c4 = a0 => ({
   key: "zone",
   name: "Zone",
   content: a0,
-  size: "10rem"
+  size: "8rem",
+  sortable: false
 });
 const _c5 = a0 => ({
   key: "actions",
@@ -607,7 +609,7 @@ class EmergencyContactsComponent {
     attrs: _c0,
     decls: 40,
     vars: 24,
-    consts: [["person_template", ""], ["roles_template", ""], ["zone_template", ""], ["actions_template", ""], [1, "flex", "flex-1", "h-px"], [1, "flex", "flex-col", "flex-1", "w-1/2", "h-full"], ["topbar", "", 1, "px-8", "py-4", "flex", "flex-col"], [1, "flex", "items-center", "justify-between"], [1, "text-2xl", "font-medium"], [1, "flex", "items-center", "space-x-2"], ["appearance", "outline", 1, "no-subscript"], ["matPrefix", "", 1, "text-2xl"], ["matInput", "", "placeholder", "Filter contacts...", 3, "ngModelChange", "ngModel"], ["btn", "", "matRipple", "", 1, "space-x-2", 3, "click"], [1, "text-2xl"], [1, "pr-2"], [1, "flex", "items-center", "justify-between", "py-2", "mt-2"], ["placeholder", "All Roles", 3, "ngModelChange", "ngModel"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], ["icon", "", "matRipple", "", "matTooltip", "Manage Roles", 1, "h-12", "w-12", "bg-secondary", "text-secondary-content", "rounded", 3, "click"], [1, "w-full", "h-1/2", "flex-1", "overflow-auto", "px-8"], [1, "min-w-[56rem]", "block", "text-sm", 3, "data", "filter", "empty_message", "columns", "sortable"], [1, "w-full", "h-20"], [3, "value"], [1, "px-4", "py-2", "text-left", "leading-tight", 3, "click"], [1, ""], [1, "text-[0.625rem]", "opacity-30", "font-mono"], [1, "flex", "flex-wrap", "p-2"], ["class", "m-1 py-1 px-2 rounded-2xl text-xs font-mono bg-info text-info-content", 4, "ngFor", "ngForOf"], [1, "m-1", "py-1", "px-2", "rounded-2xl", "text-xs", "font-mono", "bg-info", "text-info-content"], [1, "p-4"], [1, "flex", "items-center", "justify-end", "w-full", "space-x-2", "p-2"], ["icon", "", "matRipple", "", "matTooltip", "Edit Emergency Contact", 3, "click"], ["icon", "", "matRipple", "", "matTooltip", "Remove Emergency Contact", 1, "text-error", 3, "click"]],
+    consts: [["person_template", ""], ["roles_template", ""], ["zone_template", ""], ["actions_template", ""], [1, "flex", "flex-1", "h-px"], [1, "flex", "flex-col", "flex-1", "w-1/2", "h-full"], ["topbar", "", 1, "px-8", "py-4", "flex", "flex-col"], [1, "flex", "items-center", "justify-between"], [1, "text-2xl", "font-medium"], [1, "flex", "items-center", "space-x-2"], ["appearance", "outline", 1, "no-subscript"], ["matPrefix", "", 1, "text-2xl"], ["matInput", "", "placeholder", "Filter contacts...", 3, "ngModelChange", "ngModel"], ["btn", "", "matRipple", "", 1, "space-x-2", 3, "click"], [1, "text-2xl"], [1, "pr-2"], [1, "flex", "items-center", "justify-between", "py-2", "mt-2"], ["placeholder", "All Roles", 3, "ngModelChange", "ngModel"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], ["icon", "", "matRipple", "", "matTooltip", "Manage Roles", 1, "h-12", "w-12", "bg-secondary", "text-secondary-content", "rounded", 3, "click"], [1, "w-full", "h-1/2", "flex-1", "overflow-auto", "px-8"], [1, "min-w-[52rem]", "block", "text-sm", 3, "data", "filter", "empty_message", "columns", "sortable"], [1, "w-full", "h-12"], [3, "value"], [1, "px-4", "py-2", "text-left", "leading-tight", 3, "click"], [1, ""], [1, "text-[0.625rem]", "opacity-30", "font-mono"], [1, "flex", "flex-wrap", "p-2"], ["class", "m-1 py-1 px-2 rounded-2xl text-xs font-mono bg-info text-info-content", 4, "ngFor", "ngForOf"], [1, "m-1", "py-1", "px-2", "rounded-2xl", "text-xs", "font-mono", "bg-info", "text-info-content"], [1, "p-4"], [1, "flex", "items-center", "justify-end", "w-full", "space-x-2", "p-2"], ["icon", "", "matRipple", "", "matTooltip", "Edit Emergency Contact", 3, "click"], ["icon", "", "matRipple", "", "matTooltip", "Remove Emergency Contact", 1, "text-error", 3, "click"]],
     template: function EmergencyContactsComponent_Template(rf, ctx) {
       if (rf & 1) {
         const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵgetCurrentView"]();

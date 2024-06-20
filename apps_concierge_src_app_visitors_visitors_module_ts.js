@@ -418,7 +418,10 @@ class GuestListingComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__
     this.setExt = (u, f, v) => this._state.setExt(u, f, v);
     this.checkin = /*#__PURE__*/function () {
       var _ref = (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (item) {
-        yield _this._state.setCheckinState(item, true);
+        yield _this._state.setCheckinState(item, true).catch(e => {
+          (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.notifyError)(e);
+          throw e;
+        });
         _this._state.poll();
       });
       return function (_x) {
@@ -1002,15 +1005,22 @@ class VisitorsStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.
         }
       });
       const result = yield ref.afterClosed().toPromise();
-      if (!result) throw 'User declined';
+      if (!result) {
+        yield (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_3__.setBookingState)(item.id, 'declined_induction').toPromise();
+        throw 'User declined';
+      }
       yield (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_3__.setBookingState)(item.id, 'inducted').toPromise();
     })();
   }
   setCheckinState(item, state = true) {
     var _this5 = this;
     return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      if (item.rejected) throw 'You cannot check in a rejected meeting';
       if (state === true) {
         yield _this5.requestInduction(item);
+      }
+      if (!item.approved && state === true) {
+        yield (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_3__.approveBooking)(item.id).toPromise();
       }
       const new_user = yield (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_3__.checkinBooking)(item.id, state).toPromise().catch(e => {
         (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.notifyError)(`Error checking ${state ? 'in' : 'out'} ${item.asset_name || item.asset_id} for ${item.user_name}'s meeting`);

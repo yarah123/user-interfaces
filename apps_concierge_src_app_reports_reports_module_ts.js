@@ -112,8 +112,8 @@ class CateringReportItemsComponent {
       print: "print"
     },
     decls: 9,
-    vars: 17,
-    consts: [["option_template", ""], ["cost_template", ""], [1, "w-[64rem]", "max-w-[calc(100%-2rem)]", "rounded", "overflow-hidden", "bg-base-100", "border", "border-base-200", "mx-auto", "my-2"], [1, "border-b", "border-base-200", "flex", "items-center", "justify-between", "px-4"], [1, "py-2", "text-xl", "font-medium"], ["empty_message", "No orders for selected period", 1, "w-full", "block", "text-sm", 3, "data", "columns", "page_size"], [1, "p-4"], ["class", "text-xs px-2 py-1 rounded bg-base-200", 3, "matTooltip", 4, "ngIf"], [1, "text-xs", "px-2", "py-1", "rounded", "bg-base-200", 3, "matTooltip"]],
+    vars: 18,
+    consts: [["option_template", ""], ["cost_template", ""], [1, "w-[64rem]", "max-w-[calc(100%-2rem)]", "rounded", "overflow-hidden", "bg-base-100", "border", "border-base-200", "mx-auto", "my-2"], [1, "border-b", "border-base-200", "flex", "items-center", "justify-between", "px-4"], [1, "py-2", "text-xl", "font-medium"], ["empty_message", "No orders for selected period", 1, "w-full", "block", "text-sm", 3, "data", "columns", "page_size", "sortable"], [1, "p-4"], ["class", "text-xs px-2 py-1 rounded bg-base-200", 3, "matTooltip", 4, "ngIf"], [1, "text-xs", "px-2", "py-1", "rounded", "bg-base-200", 3, "matTooltip"]],
     template: function CateringReportItemsComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 2)(1, "div", 3)(2, "h2", 4);
@@ -127,7 +127,7 @@ class CateringReportItemsComponent {
         const option_template_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵreference"](6);
         const cost_template_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵreference"](8);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("data", ctx.items)("columns", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction5"](11, _c5, _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](3, _c0), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction1"](4, _c1, option_template_r4), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](6, _c2), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction1"](7, _c3, cost_template_r5), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction1"](9, _c4, cost_template_r5)))("page_size", ctx.print ? 0 : 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("data", ctx.items)("columns", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction5"](12, _c5, _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](4, _c0), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction1"](5, _c1, option_template_r4), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](7, _c2), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction1"](8, _c3, cost_template_r5), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction1"](10, _c4, cost_template_r5)))("page_size", ctx.print ? 0 : 10)("sortable", true);
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.NgIf, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_5__.MatTooltip, _libs_components_src_lib_simple_table_component__WEBPACK_IMPORTED_MODULE_2__.SimpleTableComponent, _angular_common__WEBPACK_IMPORTED_MODULE_4__.CurrencyPipe]
@@ -1481,8 +1481,8 @@ class ReportDesksLevelListComponent {
       print: "print"
     },
     decls: 9,
-    vars: 16,
-    consts: [["percent_view", ""], [1, "px-4", "pb-2", "w-full"], [1, "rounded", "bg-base-100", "border", "border-base-200", "overflow-hidden", "w-full"], [1, "border-b", "border-base-200", "p-4", "flex", "items-center"], [1, "font-bold", "text-xl", "flex-1"], ["icon", "", "matRipple", "", 3, "click", 4, "ngIf"], [1, "w-full", "block", "text-sm", 3, "data", "columns", "page_size"], ["icon", "", "matRipple", "", 3, "click"], [1, "p-4"]],
+    vars: 17,
+    consts: [["percent_view", ""], [1, "px-4", "pb-2", "w-full"], [1, "rounded", "bg-base-100", "border", "border-base-200", "overflow-hidden", "w-full"], [1, "border-b", "border-base-200", "p-4", "flex", "items-center"], [1, "font-bold", "text-xl", "flex-1"], ["icon", "", "matRipple", "", 3, "click", 4, "ngIf"], [1, "w-full", "block", "text-sm", 3, "data", "columns", "page_size", "sortable"], ["icon", "", "matRipple", "", 3, "click"], [1, "p-4"]],
     template: function ReportDesksLevelListComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 1)(1, "div", 2)(2, "div", 3)(3, "h3", 4);
@@ -1499,7 +1499,7 @@ class ReportDesksLevelListComponent {
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", !ctx.print);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("data", ctx.level_list)("columns", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction5"](10, _c5, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](4, _c0), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](5, _c1), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](6, _c2), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](7, _c3), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction1"](8, _c4, percent_view_r4)))("page_size", ctx.print ? 0 : 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("data", ctx.level_list)("columns", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction5"](11, _c5, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](5, _c0), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](6, _c1), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](7, _c2), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](8, _c3), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction1"](9, _c4, percent_view_r4)))("page_size", ctx.print ? 0 : 10)("sortable", true);
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_12__.NgIf, _angular_material_core__WEBPACK_IMPORTED_MODULE_13__.MatRipple, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_4__.IconComponent, _libs_components_src_lib_simple_table_component__WEBPACK_IMPORTED_MODULE_5__.SimpleTableComponent],
@@ -1623,8 +1623,8 @@ class ReportDesksOverallListComponent {
       print: "print"
     },
     decls: 11,
-    vars: 15,
-    consts: [["date_template", ""], ["percent_template", ""], [1, "pb-2", "w-full"], [1, "m-4", "rounded", "bg-base-100", "border", "border-base-200", "overflow-hidden"], [1, "border-b", "border-base-200", "p-4", "flex", "items-center"], [1, "font-bold", "text-xl", "flex-1"], ["icon", "", "matRipple", "", 3, "click", 4, "ngIf"], [1, "w-full", "block", "text-sm", 3, "data", "columns", "page_size"], ["icon", "", "matRipple", "", 3, "click"], [1, "p-4"]],
+    vars: 16,
+    consts: [["date_template", ""], ["percent_template", ""], [1, "pb-2", "w-full"], [1, "m-4", "rounded", "bg-base-100", "border", "border-base-200", "overflow-hidden"], [1, "border-b", "border-base-200", "p-4", "flex", "items-center"], [1, "font-bold", "text-xl", "flex-1"], ["icon", "", "matRipple", "", 3, "click", 4, "ngIf"], [1, "w-full", "block", "text-sm", 3, "data", "columns", "page_size", "sortable"], ["icon", "", "matRipple", "", 3, "click"], [1, "p-4"]],
     template: function ReportDesksOverallListComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 2)(1, "div", 3)(2, "div", 4)(3, "h3", 5);
@@ -1642,7 +1642,7 @@ class ReportDesksOverallListComponent {
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !ctx.print);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("data", ctx.day_list)("columns", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction4"](10, _c4, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](4, _c0, date_template_r5), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](6, _c1), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](7, _c2), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](8, _c3, percent_template_r6)))("page_size", ctx.print ? 0 : 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("data", ctx.day_list)("columns", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction4"](11, _c4, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](5, _c0, date_template_r5), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](7, _c1), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](8, _c2), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](9, _c3, percent_template_r6)))("page_size", ctx.print ? 0 : 10)("sortable", true);
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _angular_material_core__WEBPACK_IMPORTED_MODULE_9__.MatRipple, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_3__.IconComponent, _libs_components_src_lib_simple_table_component__WEBPACK_IMPORTED_MODULE_4__.SimpleTableComponent, _angular_common__WEBPACK_IMPORTED_MODULE_8__.DatePipe],
