@@ -51,7 +51,7 @@ const _c0 = a0 => ({
   key: "state",
   name: "Checked In",
   content: a0,
-  size: "5.5rem",
+  size: "6.5rem",
   sortable: false
 });
 const _c1 = a0 => ({
