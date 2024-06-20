@@ -5353,6 +5353,7 @@ class BookingFormService extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.As
         user_id: (!value.user?.id?.includes('@') ? value?.user?.id : '') || (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.currentUser)()?.id,
         extension_data: {
           ...(value.extension_data || {}),
+          group: value.group,
           phone: value.phone,
           department: value.user?.department || (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.currentUser)()?.department
         },
@@ -18205,7 +18206,7 @@ function _getShortUrlQRCode() {
     if (QR_STORE.has(key)) return QR_STORE.get(key);
     const tkn = (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_1__.token)();
     console.log('Token:', tkn);
-    document.cookie = `${tkn === 'x-api-key' ? 'api-key=' + encodeURIComponent((0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_1__.apiKey)()) : 'bearer_token=' + encodeURIComponent(tkn)};max-age=60;path=/api/;samesite=strict;${location.protocol === 'https:' ? 'secure;' : ''}`;
+    document.cookie = `${tkn === 'x-api-key' ? 'api-key=' + encodeURIComponent((0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_1__.apiKey)()) : 'bearer_token=' + encodeURIComponent(tkn)};max-age=30;path=/api/engine/v2/short_url/;samesite=strict;${location.protocol === 'https:' ? 'secure;' : ''}`;
     const response = yield fetch(`${ENDPOINT}/${id}/qr_code.${format}`);
     const blob = yield response.blob();
     const url = URL.createObjectURL(blob);
@@ -19593,15 +19594,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "6b3a656",
-  "hash": "6b3a656",
+  "raw": "296d374",
+  "hash": "296d374",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "6b3a656",
+  "suffix": "296d374",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1718516854988
+  "time": 1718859338880
 };
 /* tslint:enable */
 
@@ -20756,7 +20757,7 @@ class AuthenticatedImageDirective extends _placeos_common__WEBPACK_IMPORTED_MODU
       }
       const tkn = (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_2__.token)();
       console.log('Image Token:', tkn);
-      document.cookie = `${tkn === 'x-api-key' ? 'api-key=' + encodeURIComponent((0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_2__.apiKey)()) : 'bearer_token=' + encodeURIComponent(tkn)};max-age=60;path=/api/;samesite=strict;${location.protocol === 'https:' ? 'secure;' : ''}`;
+      document.cookie = `${tkn === 'x-api-key' ? 'api-key=' + encodeURIComponent((0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_2__.apiKey)()) : 'bearer_token=' + encodeURIComponent(tkn)};max-age=30;path=/api/engine/v2/uploads;samesite=strict;${location.protocol === 'https:' ? 'secure;' : ''}`;
       const response = yield fetch(_this.source);
       const blob = yield response.blob();
       const url = URL.createObjectURL(blob);
@@ -25950,7 +25951,7 @@ class MapRendererComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.
         _this.updateFeatureList();
         const tkn = (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__.token)();
         console.log('Map Token:', tkn);
-        document.cookie = `${tkn === 'x-api-key' ? 'api-key=' + encodeURIComponent((0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__.apiKey)()) : 'bearer_token=' + encodeURIComponent(tkn)};max-age=60;path=/api/;samesite=strict;${location.protocol === 'https:' ? 'secure;' : ''}`;
+        document.cookie = `${tkn === 'x-api-key' ? 'api-key=' + encodeURIComponent((0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__.apiKey)()) : 'bearer_token=' + encodeURIComponent(tkn)};max-age=30;path=/api/engine/v2/uploads;samesite=strict;${location.protocol === 'https:' ? 'secure;' : ''}`;
         _this.viewer = yield (0,_placeos_svg_viewer__WEBPACK_IMPORTED_MODULE_2__.createViewer)({
           element: _this._outlet_el?.nativeElement,
           url: _this.src,
@@ -26405,15 +26406,7 @@ class MapsIndoorsComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.
           polygonZoomFrom: 16,
           polygonZoomTo: 22,
           visible: true,
-          polygonFillColor: styles[id].fill
-        });
-        _this4._services.mapsindoors.overrideDisplayRule(resource.id, {
-          polygonVisible: true,
-          polygonFillOpacity: 0.6,
-          polygonZoomFrom: 16,
-          polygonZoomTo: 22,
-          visible: true,
-          polygonFillColor: styles[id].fill
+          polygonFillColor: '#ff69b4'
         });
       }
     })();
@@ -27526,7 +27519,7 @@ class SimpleTableComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.
           data = data.filter(_ => Object.values(_).some(i => JSON.stringify(i).toLowerCase().includes(filter.toLowerCase())));
         }
         if (sort && data.length) {
-          const type = data[0][sort.key];
+          const type = typeof data[0][sort.key];
           if (type === 'number') {
             data = data.sort((a, b) => {
               const result = a[sort.key] - b[sort.key];
@@ -27534,8 +27527,8 @@ class SimpleTableComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.
             });
           } else {
             data = data.sort((a, b) => {
-              const a_value = JSON.stringify(a[sort.key]);
-              const b_value = JSON.stringify(b[sort.key]);
+              const a_value = JSON.stringify(a[sort.key] || '');
+              const b_value = JSON.stringify(b[sort.key] || '');
               const result = a_value.localeCompare(b_value);
               return sort.reverse ? -result : result;
             });
@@ -27614,7 +27607,7 @@ class SimpleTableComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.
     features: [_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵInheritDefinitionFeature"], _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵNgOnChangesFeature"]],
     decls: 9,
     vars: 15,
-    consts: [["role", "table", 1, "grid", "border", "border-base-200", 3, "click", "touchend", "mouseleave"], ["id", "column-selector", "class", "sticky top-0 flex items-center justify-between px-2 border-r border-b border-base-200 bg-base-300 min-h-full z-20", 3, "gridColumn", 4, "ngIf"], ["header", "", "matRipple", "", "class", "sticky top-0 flex items-center justify-between p-4 border-b border-base-200 bg-base-300 min-h-full z-20", 3, "id", "gridColumn", "pointer-events-none", "active", "border-r", "width", "click", 4, "ngFor", "ngForOf"], [4, "ngFor", "ngForOf"], ["class", "flex items-center justify-center p-8 opacity-30", 3, "gridColumnStart", 4, "ngIf"], ["class", "sticky bottom-0 w-full flex items-center justify-end space-x-2 p-2 bg-base-200", 4, "ngIf"], ["id", "column-selector", 1, "sticky", "top-0", "flex", "items-center", "justify-between", "px-2", "border-r", "border-b", "border-base-200", "bg-base-300", "min-h-full", "z-20"], [3, "change", "checked", "indeterminate"], ["header", "", "matRipple", "", 1, "sticky", "top-0", "flex", "items-center", "justify-between", "p-4", "border-b", "border-base-200", "bg-base-300", "min-h-full", "z-20", 3, "click", "id"], [1, "font-medium"], ["class", "text-[1.25em]", 4, "ngIf"], [1, "text-[1.25em]"], ["id", "column-selector", "class", "flex items-center justify-between px-2 border-r border-base-200 min-h-full z-10", 3, "gridColumn", "border-b", "mouseenter", "touchstart", 4, "ngIf"], ["class", "flex items-center justify-between border-base-200 min-h-full z-10", 3, "gridColumn", "border-b", "border-r", "width", "mouseenter", "touchstart", 4, "ngFor", "ngForOf"], ["child-node", "", "class", "border-b last:border-t last:border-b-0 border-base-200", 3, "gridColumn", 4, "ngIf"], ["id", "column-selector", 1, "flex", "items-center", "justify-between", "px-2", "border-r", "border-base-200", "min-h-full", "z-10", 3, "mouseenter", "touchstart"], [3, "change", "checked"], [1, "flex", "items-center", "justify-between", "border-base-200", "min-h-full", "z-10", 3, "mouseenter", "touchstart"], [3, "ngSwitch"], ["class", "p-4", 4, "ngSwitchDefault"], [4, "ngSwitchCase"], [1, "p-4"], ["class", "opacity-30", 4, "ngIf"], [1, "opacity-30"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], ["child-node", "", 1, "border-b", "last:border-t", "last:border-b-0", "border-base-200"], [1, "flex", "items-center", "justify-center", "p-8", "opacity-30"], [1, "sticky", "bottom-0", "w-full", "flex", "items-center", "justify-end", "space-x-2", "p-2", "bg-base-200"], [1, "px-4", "py-2"], ["icon", "", "matRipple", "", 3, "click", "disabled"]],
+    consts: [["role", "table", 1, "grid", "border", "border-base-300", 3, "click", "touchend", "mouseleave"], ["id", "column-selector", "class", "sticky top-0 flex items-center justify-between px-2 border-r border-b border-base-200 bg-base-300 min-h-full z-20", 3, "gridColumn", 4, "ngIf"], ["header", "", "matRipple", "", "class", "sticky top-0 flex items-center justify-between p-4 border-b border-base-200 bg-base-300 min-h-full z-20", 3, "id", "gridColumn", "pointer-events-none", "active", "border-r", "width", "click", 4, "ngFor", "ngForOf"], [4, "ngFor", "ngForOf"], ["class", "flex items-center justify-center p-8 opacity-30", 3, "gridColumnStart", 4, "ngIf"], ["class", "sticky bottom-0 w-full flex items-center justify-end space-x-2 p-2 bg-base-200", 4, "ngIf"], ["id", "column-selector", 1, "sticky", "top-0", "flex", "items-center", "justify-between", "px-2", "border-r", "border-b", "border-base-200", "bg-base-300", "min-h-full", "z-20"], [3, "change", "checked", "indeterminate"], ["header", "", "matRipple", "", 1, "sticky", "top-0", "flex", "items-center", "justify-between", "p-4", "border-b", "border-base-200", "bg-base-300", "min-h-full", "z-20", 3, "click", "id"], [1, "font-medium"], ["class", "text-[1.25em]", 4, "ngIf"], [1, "text-[1.25em]"], ["id", "column-selector", "class", "flex items-center justify-between px-2 border-r border-base-200 min-h-full z-10", 3, "gridColumn", "border-b", "mouseenter", "touchstart", 4, "ngIf"], ["class", "flex items-center justify-between border-base-200 min-h-full z-10", 3, "gridColumn", "border-b", "border-r", "width", "mouseenter", "touchstart", 4, "ngFor", "ngForOf"], ["child-node", "", "class", "border-b last:border-t last:border-b-0 border-base-200", 3, "gridColumn", 4, "ngIf"], ["id", "column-selector", 1, "flex", "items-center", "justify-between", "px-2", "border-r", "border-base-200", "min-h-full", "z-10", 3, "mouseenter", "touchstart"], [3, "change", "checked"], [1, "flex", "items-center", "justify-between", "border-base-200", "min-h-full", "z-10", 3, "mouseenter", "touchstart"], [3, "ngSwitch"], ["class", "p-4", 4, "ngSwitchDefault"], [4, "ngSwitchCase"], [1, "p-4"], ["class", "opacity-30", 4, "ngIf"], [1, "opacity-30"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], ["child-node", "", 1, "border-b", "last:border-t", "last:border-b-0", "border-base-200"], [1, "flex", "items-center", "justify-center", "p-8", "opacity-30"], [1, "sticky", "bottom-0", "w-full", "flex", "items-center", "justify-end", "space-x-2", "p-2", "bg-base-200"], [1, "px-4", "py-2"], ["icon", "", "matRipple", "", 3, "click", "disabled"]],
     template: function SimpleTableComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0);
@@ -39352,7 +39345,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const USER_LIST = [];
-const EMPTY_USER = new _users_src_lib_user_class__WEBPACK_IMPORTED_MODULE_1__.User();
+const EMPTY_USER = new _users_src_lib_user_class__WEBPACK_IMPORTED_MODULE_1__.StaffUser();
 class PlaceUserPipe {
   /**
    * Get details of the user with the given ID
