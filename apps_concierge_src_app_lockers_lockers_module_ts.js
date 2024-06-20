@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/tooltip */ 80640);
 /* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/core */ 74646);
 /* harmony import */ var _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/icon.component */ 69434);
-/* harmony import */ var _libs_components_src_lib_custom_table_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/custom-table.component */ 12993);
+/* harmony import */ var _libs_components_src_lib_simple_table_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/simple-table.component */ 88328);
 
 
 
@@ -35,19 +35,48 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const _c0 = () => ["date", "period", "user_name", "group", "asset_name", "approver_name", "status", "checked_in"];
-const _c1 = () => ["Date", "Period", "Person", "Group", "Locker", "Approver", "Status", "Checked In"];
-const _c2 = () => ["4r", "10r", "flex", "10r", "10r", "10r", "8r", "7r"];
-const _c3 = (a0, a1, a2, a3, a4, a5, a6) => ({
-  user_name: a0,
-  asset_name: a1,
-  date: a2,
-  period: a3,
-  status: a4,
-  checked_in: a5,
-  access: a6
+const _c0 = a0 => ({
+  key: "date",
+  name: "Date",
+  content: a0
 });
-function LockerBookingsComponent_ng_template_5_Template(rf, ctx) {
+const _c1 = a0 => ({
+  key: "period",
+  name: "Period",
+  content: a0
+});
+const _c2 = a0 => ({
+  key: "user_name",
+  name: "Person",
+  content: a0
+});
+const _c3 = () => ({
+  key: "group",
+  name: "Group"
+});
+const _c4 = a0 => ({
+  key: "asset_name",
+  name: "Locker",
+  content: a0
+});
+const _c5 = () => ({
+  key: "approver_name",
+  name: "Approver"
+});
+const _c6 = a0 => ({
+  key: "status",
+  name: "Status",
+  content: a0,
+  size: "11rem"
+});
+const _c7 = a0 => ({
+  key: "checked_in",
+  name: "Checked In",
+  content: a0,
+  size: "5.5rem"
+});
+const _c8 = (a0, a1, a2, a3, a4, a5, a6, a7) => [a0, a1, a2, a3, a4, a5, a6, a7];
+function LockerBookingsComponent_ng_template_4_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 15)(1, "div", 16);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
@@ -66,7 +95,7 @@ function LockerBookingsComponent_ng_template_5_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind2"](6, 5, date_r2, "dd"));
   }
 }
-function LockerBookingsComponent_ng_template_7_ng_container_0_ng_container_1_Template(rf, ctx) {
+function LockerBookingsComponent_ng_template_6_ng_container_0_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1);
@@ -81,17 +110,17 @@ function LockerBookingsComponent_ng_template_7_ng_container_0_ng_container_1_Tem
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate2"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind2"](2, 2, row_r3.date, ctx_r3.time_format), " \u2013 ", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind2"](3, 5, row_r3.end, ctx_r3.time_format), " ");
   }
 }
-function LockerBookingsComponent_ng_template_7_ng_container_0_ng_container_2_Template(rf, ctx) {
+function LockerBookingsComponent_ng_template_6_ng_container_0_ng_container_2_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1, "All Day");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerEnd"]();
   }
 }
-function LockerBookingsComponent_ng_template_7_ng_container_0_Template(rf, ctx) {
+function LockerBookingsComponent_ng_template_6_ng_container_0_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, LockerBookingsComponent_ng_template_7_ng_container_0_ng_container_1_Template, 4, 8, "ng-container", 18)(2, LockerBookingsComponent_ng_template_7_ng_container_0_ng_container_2_Template, 2, 0, "ng-container", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, LockerBookingsComponent_ng_template_6_ng_container_0_ng_container_1_Template, 4, 8, "ng-container", 18)(2, LockerBookingsComponent_ng_template_6_ng_container_0_ng_container_2_Template, 2, 0, "ng-container", 18);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
@@ -102,7 +131,7 @@ function LockerBookingsComponent_ng_template_7_ng_container_0_Template(rf, ctx) 
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", row_r3.all_day);
   }
 }
-function LockerBookingsComponent_ng_template_7_ng_container_1_Template(rf, ctx) {
+function LockerBookingsComponent_ng_template_6_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerStart"](0);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 19);
@@ -111,9 +140,9 @@ function LockerBookingsComponent_ng_template_7_ng_container_1_Template(rf, ctx) 
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementContainerEnd"]();
   }
 }
-function LockerBookingsComponent_ng_template_7_Template(rf, ctx) {
+function LockerBookingsComponent_ng_template_6_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](0, LockerBookingsComponent_ng_template_7_ng_container_0_Template, 3, 2, "ng-container", 18)(1, LockerBookingsComponent_ng_template_7_ng_container_1_Template, 3, 0, "ng-container", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](0, LockerBookingsComponent_ng_template_6_ng_container_0_Template, 3, 2, "ng-container", 18)(1, LockerBookingsComponent_ng_template_6_ng_container_1_Template, 3, 0, "ng-container", 18);
   }
   if (rf & 2) {
     const row_r3 = ctx.row;
@@ -122,18 +151,21 @@ function LockerBookingsComponent_ng_template_7_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", row_r3.status === "declined" || row_r3.deleted);
   }
 }
-function LockerBookingsComponent_ng_template_9_Template(rf, ctx) {
+function LockerBookingsComponent_ng_template_8_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
     const row_r5 = ctx.row;
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", row_r5.asset_name || row_r5.asset_id, " ");
   }
 }
-function LockerBookingsComponent_ng_template_11_div_3_Template(rf, ctx) {
+function LockerBookingsComponent_ng_template_10_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 24);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
   }
@@ -143,12 +175,12 @@ function LockerBookingsComponent_ng_template_11_div_3_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", row_r6.user_email, " ");
   }
 }
-function LockerBookingsComponent_ng_template_11_Template(rf, ctx) {
+function LockerBookingsComponent_ng_template_10_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 20)(1, "div", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 21)(1, "div", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](3, LockerBookingsComponent_ng_template_11_div_3_Template, 2, 1, "div", 22);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](3, LockerBookingsComponent_ng_template_10_div_3_Template, 2, 1, "div", 23);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
@@ -159,34 +191,34 @@ function LockerBookingsComponent_ng_template_11_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", row_r6.user_name);
   }
 }
-function LockerBookingsComponent_ng_template_13_Template(rf, ctx) {
+function LockerBookingsComponent_ng_template_12_Template(rf, ctx) {
   if (rf & 1) {
     const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 24)(1, "div", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 25)(1, "div", 26);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "app-icon", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](4, "arrow_drop_down");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "mat-menu", null, 7)(7, "button", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function LockerBookingsComponent_ng_template_13_Template_button_click_7_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function LockerBookingsComponent_ng_template_12_Template_button_click_7_listener() {
       const row_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r7).row;
       const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r3.approve(row_r8));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "div", 26)(9, "app-icon", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "div", 27)(9, "app-icon", 28);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](10, "event_available");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](11, "div");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](12, "Approve Locker");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](13, "button", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function LockerBookingsComponent_ng_template_13_Template_button_click_13_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function LockerBookingsComponent_ng_template_12_Template_button_click_13_listener() {
       const row_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r7).row;
       const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r3.reject(row_r8));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](14, "div", 26)(15, "app-icon", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](14, "div", 27)(15, "app-icon", 28);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](16, "event_busy");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](17, "div");
@@ -202,34 +234,34 @@ function LockerBookingsComponent_ng_template_13_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", row_r8.approved ? "Approved" : row_r8.rejected ? "Declined" : "Tentative", " ");
   }
 }
-function LockerBookingsComponent_ng_template_15_Template(rf, ctx) {
+function LockerBookingsComponent_ng_template_14_Template(rf, ctx) {
   if (rf & 1) {
     const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 28)(1, "div", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 29)(1, "div", 26);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "app-icon", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](4, "arrow_drop_down");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](5, "mat-menu", null, 8)(7, "button", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function LockerBookingsComponent_ng_template_15_Template_button_click_7_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function LockerBookingsComponent_ng_template_14_Template_button_click_7_listener() {
       const row_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r10).row;
       const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r3.checkin(row_r11, true));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "div", 26)(9, "app-icon", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](8, "div", 27)(9, "app-icon", 28);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](10, "check");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](11, "div");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](12, "Check-in");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](13, "button", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function LockerBookingsComponent_ng_template_15_Template_button_click_13_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function LockerBookingsComponent_ng_template_14_Template_button_click_13_listener() {
       const row_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r10).row;
       const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r3.checkin(row_r11, false));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](14, "div", 26)(15, "app-icon", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](14, "div", 27)(15, "app-icon", 28);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](16, "cancel");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](17, "div");
@@ -246,11 +278,11 @@ function LockerBookingsComponent_ng_template_15_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](data_r12 ? "Yes" : "No");
   }
 }
-function LockerBookingsComponent_button_17_Template(rf, ctx) {
+function LockerBookingsComponent_button_16_Template(rf, ctx) {
   if (rf & 1) {
     const _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function LockerBookingsComponent_button_17_Template_button_click_0_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function LockerBookingsComponent_button_16_Template_button_click_0_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r14);
       const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r3.loadMore());
@@ -300,51 +332,49 @@ class LockerBookingsComponent {
   static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
     type: LockerBookingsComponent,
     selectors: [["locker-bookings"]],
-    decls: 26,
-    vars: 26,
-    consts: [["date_template", ""], ["period_template", ""], ["locker_template", ""], ["user_template", ""], ["status_template", ""], ["option_template", ""], ["menu", "matMenu"], ["statusMenu", "matMenu"], ["checkinMenu", "matMenu"], [1, "w-full", "h-4"], [1, "overflow-auto", "h-full", "w-full", "px-4", "pb-4"], [1, "min-w-[76rem]", "block", 3, "dataSource", "filter", "columns", "display_column", "column_size", "template", "empty"], ["btn", "", "matRipple", "", "class", "absolute bottom-2 left-2 w-32 mx-auto my-4", 3, "click", 4, "ngIf"], ["icon", "", "matRipple", "", 1, "absolute", "bottom-2", "right-2", "bg-base-100", "shadow", 3, "matMenuTriggerFor"], ["mat-menu-item", "", 3, "click"], [1, "flex", "flex-col", "items-center", "justify-center", "w-full"], [1, "opacity-60"], [1, "text-xl"], [4, "ngIf"], [1, "text-xs", "py-1", "px-2", "bg-error", "rounded-2xl", "text-white"], [1, "flex", "flex-col", "justify-center"], [1, "select-all"], ["class", "text-xs opacity-30 select-all", 4, "ngIf"], [1, "text-xs", "opacity-30", "select-all"], ["matRipple", "", 1, "rounded-3xl", "px-2", "py-1", "flex", "items-center", "space-x-2", "capitalize", 3, "matMenuTriggerFor"], [1, "ml-2"], [1, "flex", "items-center", "space-x-2"], [1, "text-2xl"], ["matRipple", "", 1, "rounded-3xl", "px-2", "py-1", "text-white", "flex", "items-center", "space-x-2", 3, "matMenuTriggerFor", "disabled", "matTooltip"], ["btn", "", "matRipple", "", 1, "absolute", "bottom-2", "left-2", "w-32", "mx-auto", "my-4", 3, "click"]],
+    decls: 25,
+    vars: 33,
+    consts: [["date_template", ""], ["period_template", ""], ["locker_template", ""], ["user_template", ""], ["status_template", ""], ["option_template", ""], ["menu", "matMenu"], ["statusMenu", "matMenu"], ["checkinMenu", "matMenu"], [1, "w-full", "h-4"], [1, "overflow-auto", "h-full", "w-full", "px-4", "pb-4"], [1, "min-w-[76rem]", "block", "text-sm", "w-full", 3, "data", "columns", "sortable", "empty_message"], ["btn", "", "matRipple", "", "class", "absolute bottom-2 left-2 w-32 mx-auto my-4", 3, "click", 4, "ngIf"], ["icon", "", "matRipple", "", 1, "absolute", "bottom-2", "right-2", "bg-base-100", "shadow", 3, "matMenuTriggerFor"], ["mat-menu-item", "", 3, "click"], [1, "flex", "flex-col", "items-center", "justify-center", "w-full", "px-4", "py-2"], [1, "opacity-60"], [1, "text-xl"], [4, "ngIf"], [1, "text-xs", "py-1", "px-2", "bg-error", "rounded-2xl", "text-white"], [1, "p-4"], [1, "flex", "flex-col", "justify-center", "px-4", "py-2"], [1, "select-all"], ["class", "text-xs opacity-30 select-all", 4, "ngIf"], [1, "text-xs", "opacity-30", "select-all"], ["matRipple", "", 1, "rounded-3xl", "px-2", "py-1", "flex", "items-center", "space-x-2", "capitalize", 3, "matMenuTriggerFor"], [1, "ml-2"], [1, "flex", "items-center", "space-x-2"], [1, "text-2xl"], ["matRipple", "", 1, "rounded-3xl", "px-2", "py-1", "text-white", "flex", "items-center", "space-x-2", 3, "matMenuTriggerFor", "disabled", "matTooltip"], ["btn", "", "matRipple", "", 1, "absolute", "bottom-2", "left-2", "w-32", "mx-auto", "my-4", 3, "click"]],
     template: function LockerBookingsComponent_Template(rf, ctx) {
       if (rf & 1) {
         const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](0, "div", 9);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "div", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](2, "custom-table", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](2, "simple-table", 11);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](3, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](4, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](5, LockerBookingsComponent_ng_template_5_Template, 7, 8, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"])(7, LockerBookingsComponent_ng_template_7_Template, 2, 2, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"])(9, LockerBookingsComponent_ng_template_9_Template, 1, 1, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"])(11, LockerBookingsComponent_ng_template_11_Template, 4, 2, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"])(13, LockerBookingsComponent_ng_template_13_Template, 19, 12, "ng-template", null, 4, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"])(15, LockerBookingsComponent_ng_template_15_Template, 19, 10, "ng-template", null, 5, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](4, LockerBookingsComponent_ng_template_4_Template, 7, 8, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"])(6, LockerBookingsComponent_ng_template_6_Template, 2, 2, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"])(8, LockerBookingsComponent_ng_template_8_Template, 2, 1, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"])(10, LockerBookingsComponent_ng_template_10_Template, 4, 2, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"])(12, LockerBookingsComponent_ng_template_12_Template, 19, 12, "ng-template", null, 4, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"])(14, LockerBookingsComponent_ng_template_14_Template, 19, 10, "ng-template", null, 5, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"]);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](17, LockerBookingsComponent_button_17_Template, 2, 0, "button", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](18, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](19, "button", 13)(20, "app-icon");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](21, "more_vert");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](16, LockerBookingsComponent_button_16_Template, 2, 0, "button", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](17, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](18, "button", 13)(19, "app-icon");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](20, "more_vert");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](22, "mat-menu", null, 6)(24, "button", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function LockerBookingsComponent_Template_button_click_24_listener() {
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](21, "mat-menu", null, 6)(23, "button", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function LockerBookingsComponent_Template_button_click_23_listener() {
           _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r1);
           return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx.rejectAll());
         });
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](25, "Reject All");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](24, "Reject All");
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
       }
       if (rf & 2) {
-        let tmp_8_0;
-        let tmp_13_0;
-        const date_template_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](6);
-        const period_template_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](8);
-        const locker_template_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](10);
-        const user_template_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](12);
-        const status_template_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](14);
-        const option_template_r20 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](16);
-        const menu_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](23);
+        let tmp_10_0;
+        const date_template_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](5);
+        const period_template_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](7);
+        const locker_template_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](9);
+        const user_template_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](11);
+        const status_template_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](13);
+        const option_template_r20 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](15);
+        const menu_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](22);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("dataSource", ctx.bookings)("filter", (tmp_8_0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](3, 9, ctx.filters)) == null ? null : tmp_8_0.search)("columns", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](15, _c0))("display_column", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](16, _c1))("column_size", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](17, _c2))("template", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction7"](18, _c3, user_template_r18, locker_template_r17, date_template_r15, period_template_r16, status_template_r19, option_template_r20, option_template_r20))("empty", ((tmp_13_0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](4, 11, ctx.filters)) == null ? null : tmp_13_0.search) ? "No matching locker bookings" : "There are no locker booking for the currently selected date.");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](15);
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !ctx.loading && _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](18, 13, ctx.has_more_pages));
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("data", ctx.bookings)("columns", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction8"](24, _c8, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](10, _c0, date_template_r15), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](12, _c1, period_template_r16), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](14, _c2, user_template_r18), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](16, _c3), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](17, _c4, locker_template_r17), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](19, _c5), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](20, _c6, status_template_r19), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](22, _c7, option_template_r20)))("sortable", true)("empty_message", ((tmp_10_0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](3, 6, ctx.filters)) == null ? null : tmp_10_0.search) ? "No matching locker bookings" : "There are no locker booking for the currently selected date.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !ctx.loading && _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](17, 8, ctx.has_more_pages));
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("matMenuTriggerFor", menu_r21);
       }
     },
-    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _angular_material_menu__WEBPACK_IMPORTED_MODULE_8__.MatMenu, _angular_material_menu__WEBPACK_IMPORTED_MODULE_8__.MatMenuItem, _angular_material_menu__WEBPACK_IMPORTED_MODULE_8__.MatMenuTrigger, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_9__.MatTooltip, _angular_material_core__WEBPACK_IMPORTED_MODULE_10__.MatRipple, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_3__.IconComponent, _libs_components_src_lib_custom_table_component__WEBPACK_IMPORTED_MODULE_4__.CustomTableComponent, _angular_common__WEBPACK_IMPORTED_MODULE_7__.AsyncPipe, _angular_common__WEBPACK_IMPORTED_MODULE_7__.DatePipe],
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _angular_material_menu__WEBPACK_IMPORTED_MODULE_8__.MatMenu, _angular_material_menu__WEBPACK_IMPORTED_MODULE_8__.MatMenuItem, _angular_material_menu__WEBPACK_IMPORTED_MODULE_8__.MatMenuTrigger, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_9__.MatTooltip, _angular_material_core__WEBPACK_IMPORTED_MODULE_10__.MatRipple, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_3__.IconComponent, _libs_components_src_lib_simple_table_component__WEBPACK_IMPORTED_MODULE_4__.SimpleTableComponent, _angular_common__WEBPACK_IMPORTED_MODULE_7__.AsyncPipe, _angular_common__WEBPACK_IMPORTED_MODULE_7__.DatePipe],
     styles: ["[_nghost-%COMP%] {\n                position: relative;\n                display: flex;\n                flex-direction: column;\n                height: 100%;\n                width: 100%;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvbG9ja2Vycy9sb2NrZXItYm9va2luZ3MuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxrQkFBa0I7Z0JBQ2xCLGFBQWE7Z0JBQ2Isc0JBQXNCO2dCQUN0QixZQUFZO2dCQUNaLFdBQVc7WUFDZiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgOmhvc3Qge1xuICAgICAgICAgICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
   });
 }
