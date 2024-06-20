@@ -19335,15 +19335,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "048cf05",
-  "hash": "048cf05",
+  "raw": "ff7c65c",
+  "hash": "ff7c65c",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "048cf05",
+  "suffix": "ff7c65c",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1718857778518
+  "time": 1718869239906
 };
 /* tslint:enable */
 
@@ -26907,6 +26907,12 @@ const _c0 = (a0, a1, a2, a3, a4, a5, a6) => ({
   key: a5,
   name: a6
 });
+const _c1 = (a0, a1, a2, a3) => ({
+  first: a0,
+  last: a1,
+  index: a2,
+  row: a3
+});
 function SimpleTableComponent_div_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
@@ -26924,7 +26930,7 @@ function SimpleTableComponent_div_1_Template(rf, ctx) {
     let tmp_2_0;
     let tmp_3_0;
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵstyleProp"]("grid-area", ctx_r1.gridSquare(1, 1));
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵstyleProp"]("grid-column", "1 / 2");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("checked", ctx_r1.selected.length === ((tmp_2_0 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind1"](2, 4, ctx_r1.data_view$)) == null ? null : tmp_2_0.length))("indeterminate", ctx_r1.selected.length > 0 && ctx_r1.selected.length < ((tmp_3_0 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind1"](3, 6, ctx_r1.data_view$)) == null ? null : tmp_3_0.length));
   }
@@ -26961,7 +26967,7 @@ function SimpleTableComponent_button_2_Template(rf, ctx) {
     const column_r4 = ctx.$implicit;
     const i_r5 = ctx.index;
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵstyleProp"]("grid-area", ctx_r1.gridSquare(1, 1 + i_r5 + (ctx_r1.selectable ? 1 : 0)));
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵstyleProp"]("grid-column", 1 + i_r5 + (ctx_r1.selectable ? 1 : 0) + " / " + (2 + i_r5 + (ctx_r1.selectable ? 1 : 0)));
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵclassProp"]("pointer-events-none", !ctx_r1.sortable || column_r4.sortable === false)("active", (ctx_r1.sort == null ? null : ctx_r1.sort.key) === column_r4.key)("border-r", i_r5 !== ctx_r1.active_columns.length - 1)("width", column_r4.size);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("id", "column-" + column_r4.key);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
@@ -26973,7 +26979,7 @@ function SimpleTableComponent_button_2_Template(rf, ctx) {
 function SimpleTableComponent_ng_container_3_div_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 15);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipe"](1, "async");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("mouseenter", function SimpleTableComponent_ng_container_3_div_1_Template_div_mouseenter_0_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r6);
@@ -26986,7 +26992,7 @@ function SimpleTableComponent_ng_container_3_div_1_Template(rf, ctx) {
       const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r1.active_row = i_r7);
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "mat-checkbox", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "mat-checkbox", 16);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("change", function SimpleTableComponent_ng_container_3_div_1_Template_mat_checkbox_change_2_listener($event) {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r6);
       const i_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]().index;
@@ -26999,7 +27005,7 @@ function SimpleTableComponent_ng_container_3_div_1_Template(rf, ctx) {
     let tmp_5_0;
     const i_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]().index;
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵstyleProp"]("grid-area", ctx_r1.gridSquare(2 + i_r7, 1));
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵstyleProp"]("grid-column", "1 / 2");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵclassProp"]("border-b", i_r7 !== ((tmp_5_0 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind1"](1, 5, ctx_r1.data_view$)) == null ? null : tmp_5_0.length) - 1);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("checked", ctx_r1.selected.includes(i_r7));
@@ -27007,16 +27013,21 @@ function SimpleTableComponent_ng_container_3_div_1_Template(rf, ctx) {
 }
 function SimpleTableComponent_ng_container_3_div_2_div_3_span_2_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "span", 22);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, " N/A ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "span", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const column_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2).$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"](" ", column_r9.empty || "N/A", " ");
   }
 }
 function SimpleTableComponent_ng_container_3_div_2_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 21);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](2, SimpleTableComponent_ng_container_3_div_2_div_3_span_2_Template, 2, 0, "span", 21);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](2, SimpleTableComponent_ng_container_3_div_2_div_3_span_2_Template, 2, 1, "span", 22);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
@@ -27036,7 +27047,7 @@ function SimpleTableComponent_ng_container_3_div_2_ng_container_4_ng_container_1
 function SimpleTableComponent_ng_container_3_div_2_ng_container_4_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, SimpleTableComponent_ng_container_3_div_2_ng_container_4_ng_container_1_Template, 1, 0, "ng-container", 23);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, SimpleTableComponent_ng_container_3_div_2_ng_container_4_ng_container_1_Template, 1, 0, "ng-container", 24);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipe"](2, "async");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipe"](3, "async");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementContainerEnd"]();
@@ -27055,7 +27066,7 @@ function SimpleTableComponent_ng_container_3_div_2_ng_container_4_Template(rf, c
 function SimpleTableComponent_ng_container_3_div_2_Template(rf, ctx) {
   if (rf & 1) {
     const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipe"](1, "async");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("mouseenter", function SimpleTableComponent_ng_container_3_div_2_Template_div_mouseenter_0_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r8);
@@ -27068,8 +27079,8 @@ function SimpleTableComponent_ng_container_3_div_2_Template(rf, ctx) {
       const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r1.active_row = i_r7);
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementContainerStart"](2, 17);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](3, SimpleTableComponent_ng_container_3_div_2_div_3_Template, 3, 2, "div", 18)(4, SimpleTableComponent_ng_container_3_div_2_ng_container_4_Template, 4, 14, "ng-container", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementContainerStart"](2, 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](3, SimpleTableComponent_ng_container_3_div_2_div_3_Template, 3, 2, "div", 19)(4, SimpleTableComponent_ng_container_3_div_2_ng_container_4_Template, 4, 14, "ng-container", 20);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementContainerEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
   }
@@ -27079,7 +27090,7 @@ function SimpleTableComponent_ng_container_3_div_2_Template(rf, ctx) {
     const j_r12 = ctx.index;
     const i_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]().index;
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵstyleProp"]("grid-area", ctx_r1.gridSquare(2 + i_r7, 1 + j_r12 + (ctx_r1.selectable ? 1 : 0)));
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵstyleProp"]("grid-column", 1 + j_r12 + (ctx_r1.selectable ? 1 : 0) + " / " + (2 + j_r12 + (ctx_r1.selectable ? 1 : 0)));
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵclassProp"]("border-b", i_r7 !== ((tmp_7_0 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind1"](1, 10, ctx_r1.data_view$)) == null ? null : tmp_7_0.length) - 1)("border-r", j_r12 !== ctx_r1.active_columns.length - 1)("width", column_r9.size);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngSwitch", ctx_r1.columnType(column_r9));
@@ -27087,23 +27098,50 @@ function SimpleTableComponent_ng_container_3_div_2_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngSwitchCase", "template");
   }
 }
+function SimpleTableComponent_ng_container_3_div_3_ng_container_1_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementContainer"](0);
+  }
+}
+function SimpleTableComponent_ng_container_3_div_3_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 25);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, SimpleTableComponent_ng_container_3_div_3_ng_container_1_Template, 1, 0, "ng-container", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipe"](2, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipe"](3, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    let tmp_6_0;
+    const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+    const row_r10 = ctx_r10.$implicit;
+    const i_r7 = ctx_r10.index;
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵstyleProp"]("grid-column", "span " + ctx_r1.active_columns.length);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngTemplateOutlet", ctx_r1.child_template)("ngTemplateOutletContext", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction4"](8, _c1, i_r7 === 0, i_r7 === ((tmp_6_0 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind1"](2, 4, ctx_r1.data_view$)) == null ? null : tmp_6_0.length) - 1 || i_r7 === ((tmp_6_0 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind1"](3, 6, ctx_r1.data_view$)) == null ? null : tmp_6_0.length) - 1, i_r7, row_r10));
+  }
+}
 function SimpleTableComponent_ng_container_3_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, SimpleTableComponent_ng_container_3_div_1_Template, 3, 7, "div", 12)(2, SimpleTableComponent_ng_container_3_div_2_Template, 5, 12, "div", 13);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, SimpleTableComponent_ng_container_3_div_1_Template, 3, 7, "div", 12)(2, SimpleTableComponent_ng_container_3_div_2_Template, 5, 12, "div", 13)(3, SimpleTableComponent_ng_container_3_div_3_Template, 4, 13, "div", 14);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
+    const row_r10 = ctx.$implicit;
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx_r1.selectable);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngForOf", ctx_r1.active_columns);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx_r1.show_children[row_r10.id] && ctx_r1.child_template);
   }
 }
 function SimpleTableComponent_div_6_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 26);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
   }
@@ -27117,10 +27155,10 @@ function SimpleTableComponent_div_6_Template(rf, ctx) {
 function SimpleTableComponent_div_8_Template(rf, ctx) {
   if (rf & 1) {
     const _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 25)(1, "div", 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 27)(1, "div", 28);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](3, "button", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](3, "button", 29);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function SimpleTableComponent_div_8_Template_button_click_3_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r13);
       const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
@@ -27129,7 +27167,7 @@ function SimpleTableComponent_div_8_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](4, "app-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](5, "chevron_left");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](6, "button", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](6, "button", 29);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function SimpleTableComponent_div_8_Template_button_click_6_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r13);
       const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
@@ -27138,7 +27176,7 @@ function SimpleTableComponent_div_8_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](7, "app-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](8, "chevron_right");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](9, "button", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](9, "button", 29);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function SimpleTableComponent_div_8_Template_button_click_9_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r13);
       const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
@@ -27147,7 +27185,7 @@ function SimpleTableComponent_div_8_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](10, "app-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](11, "first_page");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](12, "button", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](12, "button", 29);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function SimpleTableComponent_div_8_Template_button_click_12_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r13);
       const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
@@ -27181,6 +27219,8 @@ class SimpleTableComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.
     this.selected = [];
     this.page_size = 0;
     this.empty_message = 'No data to list';
+    this.child_template = null;
+    this.show_children = {};
     this.selectedChange = new _angular_core__WEBPACK_IMPORTED_MODULE_3__.EventEmitter();
     this.rowClicked = new _angular_core__WEBPACK_IMPORTED_MODULE_3__.EventEmitter();
     this.page = 0;
@@ -27297,7 +27337,9 @@ class SimpleTableComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.
       sortable: "sortable",
       selected: "selected",
       page_size: "page_size",
-      empty_message: "empty_message"
+      empty_message: "empty_message",
+      child_template: "child_template",
+      show_children: "show_children"
     },
     outputs: {
       selectedChange: "selectedChange",
@@ -27306,7 +27348,7 @@ class SimpleTableComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.
     features: [_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵInheritDefinitionFeature"], _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵNgOnChangesFeature"]],
     decls: 9,
     vars: 15,
-    consts: [["role", "table", 1, "grid", "border", "border-base-300", 3, "click", "touchend", "mouseleave"], ["id", "column-selector", "class", "sticky top-0 flex items-center justify-between px-2 border-r border-b border-base-300 bg-base-400 min-h-full z-10", 3, "gridArea", 4, "ngIf"], ["header", "", "matRipple", "", "class", "sticky top-0 flex items-center justify-between p-4 border-b border-base-300 bg-base-400 min-h-full z-10", 3, "id", "gridArea", "pointer-events-none", "active", "border-r", "width", "click", 4, "ngFor", "ngForOf"], [4, "ngFor", "ngForOf"], ["class", "flex items-center justify-center p-8 opacity-30", 3, "gridColumnStart", 4, "ngIf"], ["class", "sticky bottom-0 w-full flex items-center justify-end space-x-2 p-2 bg-base-200", 4, "ngIf"], ["id", "column-selector", 1, "sticky", "top-0", "flex", "items-center", "justify-between", "px-2", "border-r", "border-b", "border-base-300", "bg-base-400", "min-h-full", "z-10"], [3, "change", "checked", "indeterminate"], ["header", "", "matRipple", "", 1, "sticky", "top-0", "flex", "items-center", "justify-between", "p-4", "border-b", "border-base-300", "bg-base-400", "min-h-full", "z-10", 3, "click", "id"], [1, "font-medium"], ["class", "text-[1.25em]", 4, "ngIf"], [1, "text-[1.25em]"], ["id", "column-selector", "class", "flex items-center justify-between px-2 border-r border-base-300 min-h-full z-0", 3, "gridArea", "border-b", "mouseenter", "touchstart", 4, "ngIf"], ["class", "flex items-center justify-between border-base-300 min-h-full z-0 overflow-hidden", 3, "gridArea", "border-b", "border-r", "width", "mouseenter", "touchstart", 4, "ngFor", "ngForOf"], ["id", "column-selector", 1, "flex", "items-center", "justify-between", "px-2", "border-r", "border-base-300", "min-h-full", "z-0", 3, "mouseenter", "touchstart"], [3, "change", "checked"], [1, "flex", "items-center", "justify-between", "border-base-300", "min-h-full", "z-0", "overflow-hidden", 3, "mouseenter", "touchstart"], [3, "ngSwitch"], ["class", "p-4", 4, "ngSwitchDefault"], [4, "ngSwitchCase"], [1, "p-4"], ["class", "opacity-30", 4, "ngIf"], [1, "opacity-30"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "flex", "items-center", "justify-center", "p-8", "opacity-30"], [1, "sticky", "bottom-0", "w-full", "flex", "items-center", "justify-end", "space-x-2", "p-2", "bg-base-200"], [1, "px-4", "py-2"], ["icon", "", "matRipple", "", 3, "click", "disabled"]],
+    consts: [["role", "table", 1, "grid", "border", "border-base-300", 3, "click", "touchend", "mouseleave"], ["id", "column-selector", "class", "sticky top-0 flex items-center justify-between px-2 border-r border-b border-base-200 bg-base-300 min-h-full z-20", 3, "gridColumn", 4, "ngIf"], ["header", "", "matRipple", "", "class", "sticky top-0 flex items-center justify-between p-4 border-b border-base-200 bg-base-300 min-h-full z-20", 3, "id", "gridColumn", "pointer-events-none", "active", "border-r", "width", "click", 4, "ngFor", "ngForOf"], [4, "ngFor", "ngForOf"], ["class", "flex items-center justify-center p-8 opacity-30", 3, "gridColumnStart", 4, "ngIf"], ["class", "sticky bottom-0 w-full flex items-center justify-end space-x-2 p-2 bg-base-200", 4, "ngIf"], ["id", "column-selector", 1, "sticky", "top-0", "flex", "items-center", "justify-between", "px-2", "border-r", "border-b", "border-base-200", "bg-base-300", "min-h-full", "z-20"], [3, "change", "checked", "indeterminate"], ["header", "", "matRipple", "", 1, "sticky", "top-0", "flex", "items-center", "justify-between", "p-4", "border-b", "border-base-200", "bg-base-300", "min-h-full", "z-20", 3, "click", "id"], [1, "font-medium"], ["class", "text-[1.25em]", 4, "ngIf"], [1, "text-[1.25em]"], ["id", "column-selector", "class", "flex items-center justify-between px-2 border-r border-base-200 min-h-full z-10", 3, "gridColumn", "border-b", "mouseenter", "touchstart", 4, "ngIf"], ["class", "flex items-center justify-between border-base-200 min-h-full z-10", 3, "gridColumn", "border-b", "border-r", "width", "mouseenter", "touchstart", 4, "ngFor", "ngForOf"], ["child-node", "", "class", "border-b last:border-t last:border-b-0 border-base-200", 3, "gridColumn", 4, "ngIf"], ["id", "column-selector", 1, "flex", "items-center", "justify-between", "px-2", "border-r", "border-base-200", "min-h-full", "z-10", 3, "mouseenter", "touchstart"], [3, "change", "checked"], [1, "flex", "items-center", "justify-between", "border-base-200", "min-h-full", "z-10", 3, "mouseenter", "touchstart"], [3, "ngSwitch"], ["class", "p-4", 4, "ngSwitchDefault"], [4, "ngSwitchCase"], [1, "p-4"], ["class", "opacity-30", 4, "ngIf"], [1, "opacity-30"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], ["child-node", "", 1, "border-b", "last:border-t", "last:border-b-0", "border-base-200"], [1, "flex", "items-center", "justify-center", "p-8", "opacity-30"], [1, "sticky", "bottom-0", "w-full", "flex", "items-center", "justify-end", "space-x-2", "p-2", "bg-base-200"], [1, "px-4", "py-2"], ["icon", "", "matRipple", "", 3, "click", "disabled"]],
     template: function SimpleTableComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0);
@@ -27317,7 +27359,7 @@ class SimpleTableComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.
         })("mouseleave", function SimpleTableComponent_Template_div_mouseleave_0_listener() {
           return ctx.active_row = -1;
         });
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, SimpleTableComponent_div_1_Template, 4, 8, "div", 1)(2, SimpleTableComponent_button_2_Template, 4, 13, "button", 2)(3, SimpleTableComponent_ng_container_3_Template, 3, 2, "ng-container", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, SimpleTableComponent_div_1_Template, 4, 8, "div", 1)(2, SimpleTableComponent_button_2_Template, 4, 13, "button", 2)(3, SimpleTableComponent_ng_container_3_Template, 4, 3, "ng-container", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipe"](4, "async");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipe"](5, "slice");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](6, SimpleTableComponent_div_6_Template, 2, 3, "div", 4);
