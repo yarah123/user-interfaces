@@ -9783,6 +9783,7 @@ var BookingFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                   user_name: (_value$user = value.user) === null || _value$user === void 0 ? void 0 : _value$user.name,
                   user_id: (!((_value$user2 = value.user) !== null && _value$user2 !== void 0 && (_value$user2 = _value$user2.id) !== null && _value$user2 !== void 0 && _value$user2.includes('@')) ? value === null || value === void 0 || (_value$user3 = value.user) === null || _value$user3 === void 0 ? void 0 : _value$user3.id : '') || ((_ref11 = (0, common_1.currentUser)()) === null || _ref11 === void 0 ? void 0 : _ref11.id),
                   extension_data: _objectSpread(_objectSpread({}, value.extension_data || {}), {}, {
+                    group: value.group,
                     phone: value.phone,
                     department: ((_value$user4 = value.user) === null || _value$user4 === void 0 ? void 0 : _value$user4.department) || ((_ref12 = (0, common_1.currentUser)()) === null || _ref12 === void 0 ? void 0 : _ref12.department)
                   }),
@@ -30913,7 +30914,7 @@ function _getShortUrlQRCode() {
           case 3:
             tkn = (0, ts_client_1.token)();
             console.log('Token:', tkn);
-            document.cookie = "".concat(tkn === 'x-api-key' ? 'api-key=' + encodeURIComponent((0, ts_client_1.apiKey)()) : 'bearer_token=' + encodeURIComponent(tkn), ";max-age=60;path=/api/;samesite=strict;").concat(location.protocol === 'https:' ? 'secure;' : '');
+            document.cookie = "".concat(tkn === 'x-api-key' ? 'api-key=' + encodeURIComponent((0, ts_client_1.apiKey)()) : 'bearer_token=' + encodeURIComponent(tkn), ";max-age=30;path=/api/engine/v2/short_url/;samesite=strict;").concat(location.protocol === 'https:' ? 'secure;' : '');
             _context.next = 8;
             return fetch("".concat(ENDPOINT, "/").concat(id, "/qr_code.").concat(format));
           case 8:
@@ -32443,15 +32444,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "6b3a656",
-  "hash": "6b3a656",
+  "raw": "296d374",
+  "hash": "296d374",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "6b3a656",
+  "suffix": "296d374",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1718516856792
+  "time": 1718859342192
 };
 /* tslint:enable */
 
@@ -33338,7 +33339,7 @@ var AuthenticatedImageDirective = /*#__PURE__*/function (_common_1$AsyncHandle) 
             case 8:
               tkn = (0, ts_client_1.token)();
               console.log('Image Token:', tkn);
-              document.cookie = "".concat(tkn === 'x-api-key' ? 'api-key=' + encodeURIComponent((0, ts_client_1.apiKey)()) : 'bearer_token=' + encodeURIComponent(tkn), ";max-age=60;path=/api/;samesite=strict;").concat(location.protocol === 'https:' ? 'secure;' : '');
+              document.cookie = "".concat(tkn === 'x-api-key' ? 'api-key=' + encodeURIComponent((0, ts_client_1.apiKey)()) : 'bearer_token=' + encodeURIComponent(tkn), ";max-age=30;path=/api/engine/v2/uploads;samesite=strict;").concat(location.protocol === 'https:' ? 'secure;' : '');
               _context.next = 13;
               return fetch(this.source);
             case 13:
@@ -39529,7 +39530,7 @@ var MapRendererComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
               this.updateFeatureList();
               tkn = (0, ts_client_1.token)();
               console.log('Map Token:', tkn);
-              document.cookie = "".concat(tkn === 'x-api-key' ? 'api-key=' + encodeURIComponent((0, ts_client_1.apiKey)()) : 'bearer_token=' + encodeURIComponent(tkn), ";max-age=60;path=/api/;samesite=strict;").concat(location.protocol === 'https:' ? 'secure;' : '');
+              document.cookie = "".concat(tkn === 'x-api-key' ? 'api-key=' + encodeURIComponent((0, ts_client_1.apiKey)()) : 'bearer_token=' + encodeURIComponent(tkn), ";max-age=30;path=/api/engine/v2/uploads;samesite=strict;").concat(location.protocol === 'https:' ? 'secure;' : '');
               _context.next = 14;
               return (0, svg_viewer_1.createViewer)({
                 element: (_this$_outlet_el2 = this._outlet_el) === null || _this$_outlet_el2 === void 0 ? void 0 : _this$_outlet_el2.nativeElement,
@@ -40228,17 +40229,9 @@ var MapsIndoorsComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
                         polygonZoomFrom: 16,
                         polygonZoomTo: 22,
                         visible: true,
-                        polygonFillColor: styles[id].fill
+                        polygonFillColor: '#ff69b4'
                       });
-                      _this7._services.mapsindoors.overrideDisplayRule(resource.id, {
-                        polygonVisible: true,
-                        polygonFillOpacity: 0.6,
-                        polygonZoomFrom: 16,
-                        polygonZoomTo: 22,
-                        visible: true,
-                        polygonFillColor: styles[id].fill
-                      });
-                    case 17:
+                    case 16:
                     case "end":
                       return _context5.stop();
                   }
@@ -41581,7 +41574,7 @@ var SimpleTableComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
             });
           }
           if (sort && data.length) {
-            var type = data[0][sort.key];
+            var type = typeof data[0][sort.key];
             if (type === 'number') {
               data = data.sort(function (a, b) {
                 var result = a[sort.key] - b[sort.key];
@@ -41589,8 +41582,8 @@ var SimpleTableComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
               });
             } else {
               data = data.sort(function (a, b) {
-                var a_value = JSON.stringify(a[sort.key]);
-                var b_value = JSON.stringify(b[sort.key]);
+                var a_value = JSON.stringify(a[sort.key] || '');
+                var b_value = JSON.stringify(b[sort.key] || '');
                 var result = a_value.localeCompare(b_value);
                 return sort.reverse ? -result : result;
               });
@@ -41706,7 +41699,7 @@ _SimpleTableComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
   features: [i0.ɵɵInheritDefinitionFeature, i0.ɵɵNgOnChangesFeature],
   decls: 9,
   vars: 15,
-  consts: [["role", "table", 1, "grid", "border", "border-base-200", 3, "click", "touchend", "mouseleave"], ["id", "column-selector", "class", "sticky top-0 flex items-center justify-between px-2 border-r border-b border-base-200 bg-base-300 min-h-full z-20", 3, "gridColumn", 4, "ngIf"], ["header", "", "matRipple", "", "class", "sticky top-0 flex items-center justify-between p-4 border-b border-base-200 bg-base-300 min-h-full z-20", 3, "id", "gridColumn", "pointer-events-none", "active", "border-r", "width", "click", 4, "ngFor", "ngForOf"], [4, "ngFor", "ngForOf"], ["class", "flex items-center justify-center p-8 opacity-30", 3, "gridColumnStart", 4, "ngIf"], ["class", "sticky bottom-0 w-full flex items-center justify-end space-x-2 p-2 bg-base-200", 4, "ngIf"], ["id", "column-selector", 1, "sticky", "top-0", "flex", "items-center", "justify-between", "px-2", "border-r", "border-b", "border-base-200", "bg-base-300", "min-h-full", "z-20"], [3, "change", "checked", "indeterminate"], ["header", "", "matRipple", "", 1, "sticky", "top-0", "flex", "items-center", "justify-between", "p-4", "border-b", "border-base-200", "bg-base-300", "min-h-full", "z-20", 3, "click", "id"], [1, "font-medium"], ["class", "text-[1.25em]", 4, "ngIf"], [1, "text-[1.25em]"], ["id", "column-selector", "class", "flex items-center justify-between px-2 border-r border-base-200 min-h-full z-10", 3, "gridColumn", "border-b", "mouseenter", "touchstart", 4, "ngIf"], ["class", "flex items-center justify-between border-base-200 min-h-full z-10", 3, "gridColumn", "border-b", "border-r", "width", "mouseenter", "touchstart", 4, "ngFor", "ngForOf"], ["child-node", "", "class", "border-b last:border-t last:border-b-0 border-base-200", 3, "gridColumn", 4, "ngIf"], ["id", "column-selector", 1, "flex", "items-center", "justify-between", "px-2", "border-r", "border-base-200", "min-h-full", "z-10", 3, "mouseenter", "touchstart"], [3, "change", "checked"], [1, "flex", "items-center", "justify-between", "border-base-200", "min-h-full", "z-10", 3, "mouseenter", "touchstart"], [3, "ngSwitch"], ["class", "p-4", 4, "ngSwitchDefault"], [4, "ngSwitchCase"], [1, "p-4"], ["class", "opacity-30", 4, "ngIf"], [1, "opacity-30"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], ["child-node", "", 1, "border-b", "last:border-t", "last:border-b-0", "border-base-200"], [1, "flex", "items-center", "justify-center", "p-8", "opacity-30"], [1, "sticky", "bottom-0", "w-full", "flex", "items-center", "justify-end", "space-x-2", "p-2", "bg-base-200"], [1, "px-4", "py-2"], ["icon", "", "matRipple", "", 3, "click", "disabled"]],
+  consts: [["role", "table", 1, "grid", "border", "border-base-300", 3, "click", "touchend", "mouseleave"], ["id", "column-selector", "class", "sticky top-0 flex items-center justify-between px-2 border-r border-b border-base-200 bg-base-300 min-h-full z-20", 3, "gridColumn", 4, "ngIf"], ["header", "", "matRipple", "", "class", "sticky top-0 flex items-center justify-between p-4 border-b border-base-200 bg-base-300 min-h-full z-20", 3, "id", "gridColumn", "pointer-events-none", "active", "border-r", "width", "click", 4, "ngFor", "ngForOf"], [4, "ngFor", "ngForOf"], ["class", "flex items-center justify-center p-8 opacity-30", 3, "gridColumnStart", 4, "ngIf"], ["class", "sticky bottom-0 w-full flex items-center justify-end space-x-2 p-2 bg-base-200", 4, "ngIf"], ["id", "column-selector", 1, "sticky", "top-0", "flex", "items-center", "justify-between", "px-2", "border-r", "border-b", "border-base-200", "bg-base-300", "min-h-full", "z-20"], [3, "change", "checked", "indeterminate"], ["header", "", "matRipple", "", 1, "sticky", "top-0", "flex", "items-center", "justify-between", "p-4", "border-b", "border-base-200", "bg-base-300", "min-h-full", "z-20", 3, "click", "id"], [1, "font-medium"], ["class", "text-[1.25em]", 4, "ngIf"], [1, "text-[1.25em]"], ["id", "column-selector", "class", "flex items-center justify-between px-2 border-r border-base-200 min-h-full z-10", 3, "gridColumn", "border-b", "mouseenter", "touchstart", 4, "ngIf"], ["class", "flex items-center justify-between border-base-200 min-h-full z-10", 3, "gridColumn", "border-b", "border-r", "width", "mouseenter", "touchstart", 4, "ngFor", "ngForOf"], ["child-node", "", "class", "border-b last:border-t last:border-b-0 border-base-200", 3, "gridColumn", 4, "ngIf"], ["id", "column-selector", 1, "flex", "items-center", "justify-between", "px-2", "border-r", "border-base-200", "min-h-full", "z-10", 3, "mouseenter", "touchstart"], [3, "change", "checked"], [1, "flex", "items-center", "justify-between", "border-base-200", "min-h-full", "z-10", 3, "mouseenter", "touchstart"], [3, "ngSwitch"], ["class", "p-4", 4, "ngSwitchDefault"], [4, "ngSwitchCase"], [1, "p-4"], ["class", "opacity-30", 4, "ngIf"], [1, "opacity-30"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], ["child-node", "", 1, "border-b", "last:border-t", "last:border-b-0", "border-base-200"], [1, "flex", "items-center", "justify-center", "p-8", "opacity-30"], [1, "sticky", "bottom-0", "w-full", "flex", "items-center", "justify-end", "space-x-2", "p-2", "bg-base-200"], [1, "px-4", "py-2"], ["icon", "", "matRipple", "", 3, "click", "disabled"]],
   template: function SimpleTableComponent_Template(rf, ctx) {
     if (rf & 1) {
       i0.ɵɵelementStart(0, "div", 0);
@@ -55532,7 +55525,7 @@ var user_class_1 = __webpack_require__(/*! ../../../users/src/lib/user.class */ 
 var ts_client_1 = __webpack_require__(/*! @placeos/ts-client */ 35713);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
 var USER_LIST = [];
-var EMPTY_USER = new user_class_1.User();
+var EMPTY_USER = new user_class_1.StaffUser();
 var PlaceUserPipe = /*#__PURE__*/function () {
   function PlaceUserPipe() {
     _classCallCheck(this, PlaceUserPipe);
