@@ -14444,9 +14444,9 @@ var DeskSettingsModalComponent = /*#__PURE__*/function () {
               }
               return _context.abrupt("return", this._dialog_ref.close());
             case 3:
-              module = (0, ts_client_1.getModule)(sys_id, 'Desk');
+              module = (0, ts_client_1.getModule)(sys_id, 'DeskControl');
               _context.next = 6;
-              return module.execute('set_height', [this.desk_id, this.height])["catch"](function (_) {
+              return module.execute('set_desk_height', [this.desk_id, this.height])["catch"](function (_) {
                 (0, common_1.notifyError)('Error setting desk height.' + _);
                 throw _;
               });
@@ -32707,15 +32707,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "e737146",
-  "hash": "e737146",
+  "raw": "99cdb17",
+  "hash": "99cdb17",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "e737146",
+  "suffix": "99cdb17",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1718868650342
+  "time": 1718868808006
 };
 /* tslint:enable */
 
