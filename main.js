@@ -12180,8 +12180,8 @@ class DeskSettingsModalComponent {
     return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const sys_id = _this._org.binding('desks');
       if (!sys_id) return _this._dialog_ref.close();
-      const module = (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__.getModule)(sys_id, 'Desk');
-      yield module.execute('set_height', [_this.desk_id, _this.height]).catch(_ => {
+      const module = (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__.getModule)(sys_id, 'DeskControl');
+      yield module.execute('set_desk_height', [_this.desk_id, _this.height]).catch(_ => {
         (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.notifyError)('Error setting desk height.' + _);
         throw _;
       });
@@ -22530,15 +22530,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "e737146",
-  "hash": "e737146",
+  "raw": "99cdb17",
+  "hash": "99cdb17",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "e737146",
+  "suffix": "99cdb17",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1718868651012
+  "time": 1718868816730
 };
 /* tslint:enable */
 
