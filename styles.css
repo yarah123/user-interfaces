@@ -726,9 +726,6 @@ video {
 #placeos :is(.left-4) {
   left: 1rem;
 }
-#placeos :is(.left-64) {
-  left: 16rem;
-}
 #placeos :is(.right-0) {
   right: 0px;
 }
@@ -1015,6 +1012,9 @@ video {
 }
 #placeos :is(.mt-6) {
   margin-top: 1.5rem;
+}
+#placeos :is(.mt-8) {
+  margin-top: 2rem;
 }
 #placeos :is(.mt-auto) {
   margin-top: auto;
@@ -1619,6 +1619,9 @@ video {
 #placeos :is(.w-\[calc\(100\%-0\.5rem\)\]) {
   width: calc(100% - 0.5rem);
 }
+#placeos :is(.w-\[calc\(100\%-18rem\)\]) {
+  width: calc(100% - 18rem);
+}
 #placeos :is(.w-\[calc\(100\%-1rem\)\]) {
   width: calc(100% - 1rem);
 }
@@ -1660,6 +1663,9 @@ video {
 }
 #placeos :is(.min-w-24) {
   min-width: 6rem;
+}
+#placeos :is(.min-w-32) {
+  min-width: 8rem;
 }
 #placeos :is(.min-w-48) {
   min-width: 12rem;
@@ -1703,9 +1709,6 @@ video {
 #placeos :is(.min-w-\[256px\]) {
   min-width: 256px;
 }
-#placeos :is(.min-w-\[28rem\]) {
-  min-width: 28rem;
-}
 #placeos :is(.min-w-\[300px\]) {
   min-width: 300px;
 }
@@ -1717,6 +1720,9 @@ video {
 }
 #placeos :is(.min-w-\[33\%\]) {
   min-width: 33%;
+}
+#placeos :is(.min-w-\[36rem\]) {
+  min-width: 36rem;
 }
 #placeos :is(.min-w-\[40\%\]) {
   min-width: 40%;
@@ -1750,6 +1756,9 @@ video {
 }
 #placeos :is(.min-w-\[60vw\]) {
   min-width: 60vw;
+}
+#placeos :is(.min-w-\[62rem\]) {
+  min-width: 62rem;
 }
 #placeos :is(.min-w-\[64rem\]) {
   min-width: 64rem;
@@ -1811,6 +1820,9 @@ video {
 #placeos :is(.max-w-\[375px\]) {
   max-width: 375px;
 }
+#placeos :is(.max-w-\[44rem\]) {
+  max-width: 44rem;
+}
 #placeos :is(.max-w-\[48rem\]) {
   max-width: 48rem;
 }
@@ -1825,9 +1837,6 @@ video {
 }
 #placeos :is(.max-w-\[68rem\]) {
   max-width: 68rem;
-}
-#placeos :is(.max-w-\[70rem\]) {
-  max-width: 70rem;
 }
 #placeos :is(.max-w-\[768px\]) {
   max-width: 768px;
@@ -2138,6 +2147,9 @@ video {
 }
 #placeos :is(.overflow-visible) {
   overflow: visible;
+}
+#placeos :is(.overflow-x-auto) {
+  overflow-x: auto;
 }
 #placeos :is(.overflow-y-auto) {
   overflow-y: auto;
@@ -3960,9 +3972,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   --tf: hsl(237, 37%, 10%); /* Lighter shade (Hover etc.) */
   --tc: hsl(0, 0%, 100%); /* White content(text) for contrast */
   /* Ternary */
-  --t: hsl(206, 23%, 85%); /* #E5E5EA */
-  --tf: hsl(206, 23%, 72%); /* Darker shade */
-  --tc: hsl(0, 0%, 0%); /* Black content for contrast */
+  --t: hsl(206, 23%, 30%); /* #E5E5EA */
+  --tf: hsl(206, 23%, 24%); /* Darker shade */
+  --tc: hsl(0, 0%, 80%); /* Black content for contrast */
   /* Accent */
   --a: hsl(156, 57%, 28%); /* Darker shade of complementary color */
   --af: hsl(158, 17%, 9%); /* Even darker shade */
@@ -3974,8 +3986,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   /* Base */
   --b1: hsl(0, 0%, 10%); /* Near Black */
   --b2: hsl(0, 0%, 15%); /* Dark Grey */
-  --b3: hsl(0, 0%, 24%); /* Mid-Dark Grey */
-  --b3: hsl(0, 0%, 32%); /* Mid Grey */
+  --b3: hsl(0, 0%, 20%); /* Mid-Dark Grey */
+  --b4: hsl(0, 0%, 25%); /* Mid Grey */
   --bc: hsl(0, 0%, 80%); /* Light grey text for contrast */
   /* Info */
   --in: hsla(217, 91%, 60%, 1); /* Blue */
