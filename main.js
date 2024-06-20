@@ -9420,7 +9420,7 @@ var BookingFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
       try {
         for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
           var rules = _step2.value;
-          rules[rules.id] = rules.details instanceof Array ? rules.details : [];
+          mapping[rules.id] = rules.details instanceof Array ? rules.details : [];
         }
       } catch (err) {
         _iterator2.e(err);
@@ -9464,18 +9464,18 @@ var BookingFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
           return _this._resource_use[_.asset_id] = _.user_name;
         });
         var available = resources.filter(function (asset) {
-          var _asset$zone, _asset$groups, _options$features, _asset$zone2, _asset$zone3;
+          var _asset$zone, _asset$zone2, _asset$groups, _options$features, _asset$zone3, _asset$zone4;
           var is_restricted = (0, common_1.rulesForResource)({
             date: date,
             duration: duration,
             resource: asset,
             host: user || (0, common_1.currentUser)()
-          }, restrictions[((_asset$zone = asset.zone) === null || _asset$zone === void 0 ? void 0 : _asset$zone.id) || _this._org.building.id] || []).hidden;
+          }, restrictions[(_asset$zone = asset.zone) === null || _asset$zone === void 0 ? void 0 : _asset$zone.id] || restrictions[(_asset$zone2 = asset.zone) === null || _asset$zone2 === void 0 ? void 0 : _asset$zone2.parent_id] || restrictions[_this._org.building.id] || []).hidden;
           return !is_restricted && (!((_asset$groups = asset.groups) !== null && _asset$groups !== void 0 && _asset$groups.length) || asset.groups.some(function (grp) {
             return (0, common_1.currentUser)().groups.includes(grp);
           })) && asset.bookable !== false && (!options.features || ((_options$features = options.features) === null || _options$features === void 0 ? void 0 : _options$features.every(function (_) {
             return asset.features.includes(_);
-          }))) && (!options.zone_id || options.zone_id === ((_asset$zone2 = asset.zone) === null || _asset$zone2 === void 0 ? void 0 : _asset$zone2.id) || options.zone_id === ((_asset$zone3 = asset.zone) === null || _asset$zone3 === void 0 ? void 0 : _asset$zone3.parent_id)) && !bookings.find(function (bkn) {
+          }))) && (!options.zone_id || options.zone_id === ((_asset$zone3 = asset.zone) === null || _asset$zone3 === void 0 ? void 0 : _asset$zone3.id) || options.zone_id === ((_asset$zone4 = asset.zone) === null || _asset$zone4 === void 0 ? void 0 : _asset$zone4.parent_id)) && !bookings.find(function (bkn) {
             return bkn.asset_id === asset.id && bkn.status !== 'declined';
           }) && !asset.assigned_to;
         });
@@ -9502,8 +9502,8 @@ var BookingFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
         var asset = asset_list.pop();
         while (group.length < members.length) {
           if (group.length && !group.find(function (_) {
-            var _$zone, _asset$zone4;
-            return ((_$zone = _.zone) === null || _$zone === void 0 ? void 0 : _$zone.id) === ((_asset$zone4 = asset.zone) === null || _asset$zone4 === void 0 ? void 0 : _asset$zone4.id);
+            var _$zone, _asset$zone5;
+            return ((_$zone = _.zone) === null || _$zone === void 0 ? void 0 : _$zone.id) === ((_asset$zone5 = asset.zone) === null || _asset$zone5 === void 0 ? void 0 : _asset$zone5.id);
           })) {
             break;
           }
@@ -9807,6 +9807,7 @@ var BookingFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                   user_name: (_value$user = value.user) === null || _value$user === void 0 ? void 0 : _value$user.name,
                   user_id: (!((_value$user2 = value.user) !== null && _value$user2 !== void 0 && (_value$user2 = _value$user2.id) !== null && _value$user2 !== void 0 && _value$user2.includes('@')) ? value === null || value === void 0 || (_value$user3 = value.user) === null || _value$user3 === void 0 ? void 0 : _value$user3.id : '') || ((_ref11 = (0, common_1.currentUser)()) === null || _ref11 === void 0 ? void 0 : _ref11.id),
                   extension_data: _objectSpread(_objectSpread({}, value.extension_data || {}), {}, {
+                    group: value.group,
                     phone: value.phone,
                     department: ((_value$user4 = value.user) === null || _value$user4 === void 0 ? void 0 : _value$user4.department) || ((_ref12 = (0, common_1.currentUser)()) === null || _ref12 === void 0 ? void 0 : _ref12.department)
                   }),
@@ -9882,7 +9883,7 @@ var BookingFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
       var _postFormForGroup = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
         var _active_resource$zone,
           _this4 = this;
-        var _this$_options$getVal2, members, group, type, extra_members, form, asset_list, active_resource, level, resources, group_members, available, unavailable, group_name, id, i, _asset$zone5, _asset$zone6, user, asset, bkn, _unavailable$map;
+        var _this$_options$getVal2, members, group, type, extra_members, form, asset_list, active_resource, level, resources, group_members, available, unavailable, group_name, id, i, _asset$zone6, _asset$zone7, user, asset, bkn, _unavailable$map;
         return _regeneratorRuntime().wrap(function _callee3$(_context3) {
           while (1) switch (_context3.prev = _context3.next) {
             case 0:
@@ -9958,7 +9959,7 @@ var BookingFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                 description: asset.name,
                 map_id: (asset === null || asset === void 0 ? void 0 : asset.map_id) || (asset === null || asset === void 0 ? void 0 : asset.id),
                 group: group_name,
-                zones: asset.zone ? (0, common_1.unique)([this._org.organisation.id, (_asset$zone5 = asset.zone) === null || _asset$zone5 === void 0 ? void 0 : _asset$zone5.parent_id, (_asset$zone6 = asset.zone) === null || _asset$zone6 === void 0 ? void 0 : _asset$zone6.id]) : [this._org.organisation.id]
+                zones: asset.zone ? (0, common_1.unique)([this._org.organisation.id, (_asset$zone6 = asset.zone) === null || _asset$zone6 === void 0 ? void 0 : _asset$zone6.parent_id, (_asset$zone7 = asset.zone) === null || _asset$zone7 === void 0 ? void 0 : _asset$zone7.id]) : [this._org.organisation.id]
               }));
               _context3.next = 35;
               return this.postForm(true);
@@ -14587,9 +14588,16 @@ function GroupEventCardComponent_button_0_img_2_Template(rf, ctx) {
     i0.ɵɵproperty("source", ctx_r1.event.images[0]);
   }
 }
-function GroupEventCardComponent_button_0_div_16_Template(rf, ctx) {
+function GroupEventCardComponent_button_0_p_13_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 16);
+    i0.ɵɵelementStart(0, "p", 16);
+    i0.ɵɵtext(1, " No description ");
+    i0.ɵɵelementEnd();
+  }
+}
+function GroupEventCardComponent_button_0_div_17_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div");
     i0.ɵɵtext(1);
     i0.ɵɵelementEnd();
   }
@@ -14599,9 +14607,16 @@ function GroupEventCardComponent_button_0_div_16_Template(rf, ctx) {
     i0.ɵɵtextInterpolate1(" ", ctx_r1.space.display_name || ctx_r1.space.name || "", " ");
   }
 }
-function GroupEventCardComponent_button_0_div_17_Template(rf, ctx) {
+function GroupEventCardComponent_button_0_div_18_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 17);
+    i0.ɵɵelementStart(0, "div", 16);
+    i0.ɵɵtext(1, " Room to be confirmed ");
+    i0.ɵɵelementEnd();
+  }
+}
+function GroupEventCardComponent_button_0_div_19_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 16);
     i0.ɵɵtext(1, " Remote event ");
     i0.ɵɵelementEnd();
   }
@@ -14628,17 +14643,19 @@ function GroupEventCardComponent_button_0_Template(rf, ctx) {
     i0.ɵɵelementEnd();
     i0.ɵɵelementStart(10, "div", 8)(11, "p", 9);
     i0.ɵɵtext(12);
-    i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(13, "div", 10)(14, "app-icon", 11);
-    i0.ɵɵtext(15, "place");
     i0.ɵɵelementEnd();
-    i0.ɵɵtemplate(16, GroupEventCardComponent_button_0_div_16_Template, 2, 1, "div", 12)(17, GroupEventCardComponent_button_0_div_17_Template, 2, 0, "div", 13);
+    i0.ɵɵtemplate(13, GroupEventCardComponent_button_0_p_13_Template, 2, 0, "p", 10);
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(18, "div", 10)(19, "app-icon", 11);
-    i0.ɵɵtext(20, "people");
+    i0.ɵɵelementStart(14, "div", 11)(15, "app-icon", 12);
+    i0.ɵɵtext(16, "place");
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(21, "div", 14);
-    i0.ɵɵtext(22);
+    i0.ɵɵtemplate(17, GroupEventCardComponent_button_0_div_17_Template, 2, 1, "div", 13)(18, GroupEventCardComponent_button_0_div_18_Template, 2, 0, "div", 10)(19, GroupEventCardComponent_button_0_div_19_Template, 2, 0, "div", 10);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(20, "div", 11)(21, "app-icon", 12);
+    i0.ɵɵtext(22, "people");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(23, "div", 14);
+    i0.ɵɵtext(24);
     i0.ɵɵelementEnd()()()();
   }
   if (rf & 2) {
@@ -14646,17 +14663,21 @@ function GroupEventCardComponent_button_0_Template(rf, ctx) {
     i0.ɵɵadvance(2);
     i0.ɵɵproperty("ngIf", ctx_r1.event.images == null ? null : ctx_r1.event.images.length);
     i0.ɵɵadvance(3);
-    i0.ɵɵtextInterpolate2(" ", i0.ɵɵpipeBind2(6, 9, ctx_r1.event.date, "EEE d MMM"), ", ", i0.ɵɵpipeBind2(7, 12, ctx_r1.event.date, ctx_r1.time_format), " ");
+    i0.ɵɵtextInterpolate2(" ", i0.ɵɵpipeBind2(6, 11, ctx_r1.event.date, "EEE d MMM"), ", ", i0.ɵɵpipeBind2(7, 14, ctx_r1.event.date, ctx_r1.time_format), " ");
     i0.ɵɵadvance(3);
     i0.ɵɵproperty("title", ctx_r1.event.title);
     i0.ɵɵadvance();
     i0.ɵɵtextInterpolate1(" ", ctx_r1.event.title, " ");
     i0.ɵɵadvance(3);
     i0.ɵɵtextInterpolate(ctx_r1.raw_description);
-    i0.ɵɵadvance(4);
-    i0.ɵɵproperty("ngIf", ctx_r1.space == null ? null : ctx_r1.space.id);
     i0.ɵɵadvance();
-    i0.ɵɵproperty("ngIf", !(ctx_r1.space == null ? null : ctx_r1.space.id));
+    i0.ɵɵproperty("ngIf", !ctx_r1.raw_description.trim());
+    i0.ɵɵadvance(4);
+    i0.ɵɵproperty("ngIf", ctx_r1.is_onsite && ctx_r1.has_space);
+    i0.ɵɵadvance();
+    i0.ɵɵproperty("ngIf", ctx_r1.is_onsite && !ctx_r1.has_space);
+    i0.ɵɵadvance();
+    i0.ɵɵproperty("ngIf", !ctx_r1.is_onsite);
     i0.ɵɵadvance(5);
     i0.ɵɵtextInterpolate1(" ", (ctx_r1.event.attendees == null ? null : ctx_r1.event.attendees.length) || "0", " attending ");
   }
@@ -14670,9 +14691,16 @@ function GroupEventCardComponent_ng_template_1_img_2_Template(rf, ctx) {
     i0.ɵɵproperty("source", ctx_r1.event.images[0]);
   }
 }
-function GroupEventCardComponent_ng_template_1_div_30_Template(rf, ctx) {
+function GroupEventCardComponent_ng_template_1_p_27_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 16);
+    i0.ɵɵelementStart(0, "p", 16);
+    i0.ɵɵtext(1, " No description ");
+    i0.ɵɵelementEnd();
+  }
+}
+function GroupEventCardComponent_ng_template_1_div_31_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div");
     i0.ɵɵtext(1);
     i0.ɵɵelementEnd();
   }
@@ -14682,9 +14710,16 @@ function GroupEventCardComponent_ng_template_1_div_30_Template(rf, ctx) {
     i0.ɵɵtextInterpolate1(" ", ctx_r1.space.display_name || ctx_r1.space.name || "", " ");
   }
 }
-function GroupEventCardComponent_ng_template_1_div_31_Template(rf, ctx) {
+function GroupEventCardComponent_ng_template_1_div_32_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 17);
+    i0.ɵɵelementStart(0, "div", 16);
+    i0.ɵɵtext(1, " Room to be confirmed ");
+    i0.ɵɵelementEnd();
+  }
+}
+function GroupEventCardComponent_ng_template_1_div_33_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 16);
     i0.ɵɵtext(1, " Remote event ");
     i0.ɵɵelementEnd();
   }
@@ -14692,54 +14727,56 @@ function GroupEventCardComponent_ng_template_1_div_31_Template(rf, ctx) {
 function GroupEventCardComponent_ng_template_1_Template(rf, ctx) {
   if (rf & 1) {
     var _r3 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "button", 18);
+    i0.ɵɵelementStart(0, "button", 17);
     i0.ɵɵlistener("click", function GroupEventCardComponent_ng_template_1_Template_button_click_0_listener() {
       i0.ɵɵrestoreView(_r3);
       var ctx_r1 = i0.ɵɵnextContext();
       return i0.ɵɵresetView(ctx_r1.viewDetails());
     });
-    i0.ɵɵelementStart(1, "div", 19);
+    i0.ɵɵelementStart(1, "div", 18);
     i0.ɵɵtemplate(2, GroupEventCardComponent_ng_template_1_img_2_Template, 1, 1, "img", 4);
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(3, "div", 20)(4, "app-icon", 21);
+    i0.ɵɵelementStart(3, "div", 19)(4, "app-icon", 20);
     i0.ɵɵtext(5, "star");
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(6, "div", 22);
+    i0.ɵɵelementStart(6, "div", 21);
     i0.ɵɵtext(7, "Featured");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(8, "div", 23)(9, "div", 24)(10, "div", 25);
+    i0.ɵɵelementStart(8, "div", 22)(9, "div", 23)(10, "div", 24);
     i0.ɵɵtext(11);
     i0.ɵɵpipe(12, "date");
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(13, "div", 26);
+    i0.ɵɵelementStart(13, "div", 25);
     i0.ɵɵtext(14);
     i0.ɵɵpipe(15, "date");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(16, "div", 27)(17, "h3", 28);
+    i0.ɵɵelementStart(16, "div", 26)(17, "h3", 27);
     i0.ɵɵtext(18);
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(19, "div", 29);
+    i0.ɵɵelementStart(19, "div", 28);
     i0.ɵɵtext(20);
     i0.ɵɵpipe(21, "date");
     i0.ɵɵpipe(22, "date");
     i0.ɵɵpipe(23, "date");
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(24, "div", 30)(25, "p", 31);
+    i0.ɵɵelementStart(24, "div", 29)(25, "p", 30);
     i0.ɵɵtext(26);
-    i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(27, "div", 10)(28, "app-icon", 11);
-    i0.ɵɵtext(29, "place");
     i0.ɵɵelementEnd();
-    i0.ɵɵtemplate(30, GroupEventCardComponent_ng_template_1_div_30_Template, 2, 1, "div", 12)(31, GroupEventCardComponent_ng_template_1_div_31_Template, 2, 0, "div", 13);
+    i0.ɵɵtemplate(27, GroupEventCardComponent_ng_template_1_p_27_Template, 2, 0, "p", 10);
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(32, "div", 10)(33, "app-icon", 11);
-    i0.ɵɵtext(34, "people");
+    i0.ɵɵelementStart(28, "div", 11)(29, "app-icon", 12);
+    i0.ɵɵtext(30, "place");
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(35, "div", 14);
-    i0.ɵɵtext(36);
+    i0.ɵɵtemplate(31, GroupEventCardComponent_ng_template_1_div_31_Template, 2, 1, "div", 13)(32, GroupEventCardComponent_ng_template_1_div_32_Template, 2, 0, "div", 10)(33, GroupEventCardComponent_ng_template_1_div_33_Template, 2, 0, "div", 10);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(34, "div", 11)(35, "app-icon", 12);
+    i0.ɵɵtext(36, "people");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(37, "div", 14);
+    i0.ɵɵtext(38);
     i0.ɵɵelementEnd()()()();
-    i0.ɵɵelementStart(37, "div", 32);
-    i0.ɵɵtext(38, " View Details ");
+    i0.ɵɵelementStart(39, "div", 31);
+    i0.ɵɵtext(40, " View Details ");
     i0.ɵɵelementEnd()();
   }
   if (rf & 2) {
@@ -14747,19 +14784,23 @@ function GroupEventCardComponent_ng_template_1_Template(rf, ctx) {
     i0.ɵɵadvance(2);
     i0.ɵɵproperty("ngIf", ctx_r1.event.images == null ? null : ctx_r1.event.images.length);
     i0.ɵɵadvance(9);
-    i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind2(12, 11, ctx_r1.event.date, "MMM"), " ");
+    i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind2(12, 13, ctx_r1.event.date, "MMM"), " ");
     i0.ɵɵadvance(3);
-    i0.ɵɵtextInterpolate(i0.ɵɵpipeBind2(15, 14, ctx_r1.event.date, "d"));
+    i0.ɵɵtextInterpolate(i0.ɵɵpipeBind2(15, 16, ctx_r1.event.date, "d"));
     i0.ɵɵadvance(4);
     i0.ɵɵtextInterpolate(ctx_r1.event.title);
     i0.ɵɵadvance(2);
-    i0.ɵɵtextInterpolate3(" ", i0.ɵɵpipeBind2(21, 17, ctx_r1.event.date, "EEEE"), " ", i0.ɵɵpipeBind2(22, 20, ctx_r1.event.date, ctx_r1.time_format), " - ", i0.ɵɵpipeBind2(23, 23, ctx_r1.event.date + ctx_r1.event.duration * 60 * 1000, ctx_r1.time_format), " ");
+    i0.ɵɵtextInterpolate3(" ", i0.ɵɵpipeBind2(21, 19, ctx_r1.event.date, "EEEE"), " ", i0.ɵɵpipeBind2(22, 22, ctx_r1.event.date, ctx_r1.time_format), " - ", i0.ɵɵpipeBind2(23, 25, ctx_r1.event.date + ctx_r1.event.duration * 60 * 1000, ctx_r1.time_format), " ");
     i0.ɵɵadvance(6);
     i0.ɵɵtextInterpolate(ctx_r1.raw_description);
-    i0.ɵɵadvance(4);
-    i0.ɵɵproperty("ngIf", ctx_r1.space == null ? null : ctx_r1.space.id);
     i0.ɵɵadvance();
-    i0.ɵɵproperty("ngIf", !(ctx_r1.space == null ? null : ctx_r1.space.id));
+    i0.ɵɵproperty("ngIf", !ctx_r1.raw_description.trim());
+    i0.ɵɵadvance(4);
+    i0.ɵɵproperty("ngIf", ctx_r1.is_onsite && ctx_r1.has_space);
+    i0.ɵɵadvance();
+    i0.ɵɵproperty("ngIf", ctx_r1.is_onsite && !ctx_r1.has_space);
+    i0.ɵɵadvance();
+    i0.ɵɵproperty("ngIf", !ctx_r1.is_onsite);
     i0.ɵɵadvance(5);
     i0.ɵɵtextInterpolate1(" ", (ctx_r1.event.attendees == null ? null : ctx_r1.event.attendees.length) || "0", " attending ");
   }
@@ -14776,6 +14817,24 @@ var GroupEventCardComponent = /*#__PURE__*/function () {
     key: "time_format",
     get: function get() {
       return this._settings.time_format;
+    }
+  }, {
+    key: "is_onsite",
+    get: function get() {
+      var _this$event;
+      return ((_this$event = this.event) === null || _this$event === void 0 ? void 0 : _this$event.extension_data.attendance_type) !== 'ONLINE';
+    }
+  }, {
+    key: "has_space",
+    get: function get() {
+      var _this$event2;
+      return !!((_this$event2 = this.event) !== null && _this$event2 !== void 0 && (_this$event2 = _this$event2.linked_event) !== null && _this$event2 !== void 0 && _this$event2.system_id);
+    }
+  }, {
+    key: "is_online",
+    get: function get() {
+      var _this$event3;
+      return !this.is_onsite || ((_this$event3 = this.event) === null || _this$event3 === void 0 ? void 0 : _this$event3.extension_data.attendance_type) === 'ANY';
     }
   }, {
     key: "ngOnInit",
@@ -14834,10 +14893,10 @@ _GroupEventCardComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
   },
   decls: 3,
   vars: 2,
-  consts: [["featured_card", ""], ["matRipple", "", "class", "border border-base-300 hover:border-info flex flex-col bg-base-100 rounded-xl shadow hover:shadow-2xl overflow-hidden w-60 h-[20rem]", 3, "click", 4, "ngIf", "ngIfElse"], ["matRipple", "", 1, "border", "border-base-300", "hover:border-info", "flex", "flex-col", "bg-base-100", "rounded-xl", "shadow", "hover:shadow-2xl", "overflow-hidden", "w-60", "h-[20rem]", 3, "click"], [1, "relative", "flex", "items-center", "justify-between", "h-28", "min-h-28", "w-full", "bg-base-200", "overflow-hidden", "border-b", "border-base-200"], ["auth", "", "class", "absolute top-0 left-0 h-full w-full object-center object-cover", 3, "source", 4, "ngIf"], [1, "p-4", "flex-1", "h-1/2", "w-full"], [1, "opacity-60", "text-sm", "text-left"], [1, "text-xl", "mb-2", "text-left", "truncate", "w-full", 3, "title"], [1, "opacity-60", "text-xs", "flex-1", "overflow-hidden", "h-[4.5rem]", "mb-2", "text-left"], [1, "line-clamp-4"], [1, "flex", "items-center", "space-x-2", "text-sm"], [1, "text-info"], ["class", "opacity-60", 4, "ngIf"], ["class", "opacity-30", 4, "ngIf"], [1, ""], ["auth", "", 1, "absolute", "top-0", "left-0", "h-full", "w-full", "object-center", "object-cover", 3, "source"], [1, "opacity-60"], [1, "opacity-30"], ["matRipple", "", 1, "border", "border-base-300", "hover:border-info", "flex", "bg-base-100", "rounded-xl", "shadow", "hover:shadow-2xl", "overflow-hidden", "w-[63rem]", "max-w-full", "h-56", "mx-auto", 3, "click"], [1, "relative", "flex", "items-center", "justify-between", "h-full", "min-w-56", "w-1/2", "max-w-[20rem]", "bg-base-200", "overflow-hidden", "border-r", "border-base-200"], [1, "absolute", "top-0", "left-0", "rounded-br-xl", "py-2", "pl-2", "pr-4", "space-x-2", "bg-info", "text-info-content", "flex", "items-center", "text-sm"], [1, "text-base"], [1, "uppercase"], ["details", "", 1, "flex", "px-8", "py-4", "space-x-4"], [1, "flex", "flex-col", "items-center"], [1, "text-sm", "opacity-30"], [1, "text-lg"], [1, "flex", "flex-col", "space-y-2"], [1, "text-left"], ["time", "", 1, "text-sm", "opacity-30", "text-left"], [1, "h-20", "overflow-hidden", "text-left"], [1, "line-clamp-3"], [1, "absolute", "top-4", "right-4", "bg-secondary", "text-secondary-content", "rounded", "px-4", "py-2", "w-32", "text-center", "truncate"]],
+  consts: [["featured_card", ""], ["matRipple", "", "class", "border border-base-300 hover:border-info flex flex-col bg-base-100 rounded-xl shadow hover:shadow-2xl overflow-hidden w-60 h-[20rem]", 3, "click", 4, "ngIf", "ngIfElse"], ["matRipple", "", 1, "border", "border-base-300", "hover:border-info", "flex", "flex-col", "bg-base-100", "rounded-xl", "shadow", "hover:shadow-2xl", "overflow-hidden", "w-60", "h-[20rem]", 3, "click"], [1, "relative", "flex", "items-center", "justify-between", "h-28", "min-h-28", "w-full", "bg-base-200", "overflow-hidden", "border-b", "border-base-200"], ["auth", "", "class", "absolute top-0 left-0 h-full w-full object-center object-cover", 3, "source", 4, "ngIf"], [1, "p-4", "flex-1", "h-1/2", "w-full"], [1, "opacity-60", "text-sm", "text-left"], [1, "text-xl", "mb-2", "text-left", "truncate", "w-full", 3, "title"], [1, "opacity-60", "text-xs", "flex-1", "overflow-hidden", "h-[4.5rem]", "mb-2", "text-left"], [1, "line-clamp-4"], ["class", "opacity-30", 4, "ngIf"], [1, "flex", "items-center", "space-x-2", "text-sm"], [1, "text-info"], [4, "ngIf"], [1, ""], ["auth", "", 1, "absolute", "top-0", "left-0", "h-full", "w-full", "object-center", "object-cover", 3, "source"], [1, "opacity-30"], ["matRipple", "", 1, "border", "border-base-300", "hover:border-info", "flex", "bg-base-100", "rounded-xl", "shadow", "hover:shadow-2xl", "overflow-hidden", "w-[63rem]", "max-w-full", "h-56", "mx-auto", 3, "click"], [1, "relative", "flex", "items-center", "justify-between", "h-full", "min-w-56", "w-1/2", "max-w-[20rem]", "bg-base-200", "overflow-hidden", "border-r", "border-base-200"], [1, "absolute", "top-0", "left-0", "rounded-br-xl", "py-2", "pl-2", "pr-4", "space-x-2", "bg-info", "text-info-content", "flex", "items-center", "text-sm"], [1, "text-base"], [1, "uppercase"], ["details", "", 1, "flex", "px-8", "py-4", "space-x-4"], [1, "flex", "flex-col", "items-center"], [1, "text-sm", "opacity-30"], [1, "text-lg"], [1, "flex", "flex-col", "space-y-2"], [1, "text-left"], ["time", "", 1, "text-sm", "opacity-30", "text-left"], [1, "h-20", "overflow-hidden", "text-left"], [1, "line-clamp-3"], [1, "absolute", "top-4", "right-4", "bg-secondary", "text-secondary-content", "rounded", "px-4", "py-2", "w-32", "text-center", "truncate"]],
   template: function GroupEventCardComponent_Template(rf, ctx) {
     if (rf & 1) {
-      i0.ɵɵtemplate(0, GroupEventCardComponent_button_0_Template, 23, 15, "button", 1)(1, GroupEventCardComponent_ng_template_1_Template, 39, 26, "ng-template", null, 0, i0.ɵɵtemplateRefExtractor);
+      i0.ɵɵtemplate(0, GroupEventCardComponent_button_0_Template, 25, 17, "button", 1)(1, GroupEventCardComponent_ng_template_1_Template, 41, 28, "ng-template", null, 0, i0.ɵɵtemplateRefExtractor);
     }
     if (rf & 2) {
       var featured_card_r4 = i0.ɵɵreference(2);
@@ -14887,10 +14946,9 @@ var i6 = __webpack_require__(/*! ../../../components/src/lib/interactive-map.com
 var i7 = __webpack_require__(/*! ../../../components/src/lib/authenticated-image.directive */ 93208);
 var i8 = __webpack_require__(/*! @angular/material/menu */ 31034);
 var i9 = __webpack_require__(/*! @angular/material/core */ 74646);
-var i10 = __webpack_require__(/*! @angular/material/tooltip */ 80640);
-var i11 = __webpack_require__(/*! ../../../events/src/lib/attendee-list.component */ 47249);
-var i12 = __webpack_require__(/*! ../../../components/src/lib/sanitise.pipe */ 54616);
-var i13 = __webpack_require__(/*! ../../../spaces/src/lib/space.pipe */ 22011);
+var i10 = __webpack_require__(/*! ../../../events/src/lib/attendee-list.component */ 47249);
+var i11 = __webpack_require__(/*! ../../../components/src/lib/sanitise.pipe */ 54616);
+var i12 = __webpack_require__(/*! ../../../spaces/src/lib/space.pipe */ 22011);
 function GroupEventDetailsModalComponent_img_2_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelement(0, "img", 36);
@@ -14957,6 +15015,13 @@ function GroupEventDetailsModalComponent_div_83_Template(rf, ctx) {
 function GroupEventDetailsModalComponent_div_84_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelementStart(0, "div", 42);
+    i0.ɵɵtext(1, " Room to be confirmed ");
+    i0.ɵɵelementEnd();
+  }
+}
+function GroupEventDetailsModalComponent_div_85_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 42);
     i0.ɵɵtext(1);
     i0.ɵɵelementEnd();
   }
@@ -14966,30 +15031,30 @@ function GroupEventDetailsModalComponent_div_84_Template(rf, ctx) {
     i0.ɵɵtextInterpolate1(" ", ctx_r1.is_onsite ? "Can be attended online" : "Remote Event", " ");
   }
 }
-function GroupEventDetailsModalComponent_span_96_Template(rf, ctx) {
+function GroupEventDetailsModalComponent_span_97_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelementStart(0, "span", 42);
     i0.ɵɵtext(1, " No description ");
     i0.ɵɵelementEnd();
   }
 }
-function GroupEventDetailsModalComponent_div_98_interactive_map_3_Template(rf, ctx) {
+function GroupEventDetailsModalComponent_div_99_interactive_map_3_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelement(0, "interactive-map", 53);
+    i0.ɵɵelement(0, "interactive-map", 49);
   }
   if (rf & 2) {
     var ctx_r1 = i0.ɵɵnextContext(2);
     i0.ɵɵproperty("src", ctx_r1.level == null ? null : ctx_r1.level.map_id)("features", ctx_r1.features)("styles", ctx_r1.styles);
   }
 }
-function GroupEventDetailsModalComponent_div_98_span_9_Template(rf, ctx) {
+function GroupEventDetailsModalComponent_div_99_span_9_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelementStart(0, "span", 42);
     i0.ɵɵtext(1, " Remote Event ");
     i0.ɵɵelementEnd();
   }
 }
-function GroupEventDetailsModalComponent_div_98_span_13_Template(rf, ctx) {
+function GroupEventDetailsModalComponent_div_99_span_13_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelementStart(0, "span");
     i0.ɵɵtext(1);
@@ -15001,44 +15066,35 @@ function GroupEventDetailsModalComponent_div_98_span_13_Template(rf, ctx) {
     i0.ɵɵtextInterpolate2(" ", ctx_r1.building.display_name || ctx_r1.building.name, ", ", (ctx_r1.level == null ? null : ctx_r1.level.display_name) || (ctx_r1.level == null ? null : ctx_r1.level.name), " ");
   }
 }
-function GroupEventDetailsModalComponent_div_98_span_14_Template(rf, ctx) {
+function GroupEventDetailsModalComponent_div_99_span_14_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelementStart(0, "span", 42);
     i0.ɵɵtext(1, " No location set for this event ");
     i0.ɵɵelementEnd();
   }
 }
-function GroupEventDetailsModalComponent_div_98_Template(rf, ctx) {
+function GroupEventDetailsModalComponent_div_99_Template(rf, ctx) {
   if (rf & 1) {
     var _r3 = i0.ɵɵgetCurrentView();
     i0.ɵɵelementStart(0, "div", 43)(1, "div", 44)(2, "button", 45);
-    i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_div_98_Template_button_click_2_listener() {
+    i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_div_99_Template_button_click_2_listener() {
       i0.ɵɵrestoreView(_r3);
       var ctx_r1 = i0.ɵɵnextContext();
       return i0.ɵɵresetView(ctx_r1.viewLocation());
     });
-    i0.ɵɵtemplate(3, GroupEventDetailsModalComponent_div_98_interactive_map_3_Template, 1, 3, "interactive-map", 46);
+    i0.ɵɵtemplate(3, GroupEventDetailsModalComponent_div_99_interactive_map_3_Template, 1, 3, "interactive-map", 46);
     i0.ɵɵelementEnd();
     i0.ɵɵelementStart(4, "div", 47)(5, "div");
     i0.ɵɵtext(6);
     i0.ɵɵpipe(7, "space");
     i0.ɵɵpipe(8, "async");
-    i0.ɵɵtemplate(9, GroupEventDetailsModalComponent_div_98_span_9_Template, 2, 0, "span", 30);
+    i0.ɵɵtemplate(9, GroupEventDetailsModalComponent_div_99_span_9_Template, 2, 0, "span", 30);
     i0.ɵɵpipe(10, "space");
     i0.ɵɵpipe(11, "async");
     i0.ɵɵelementEnd();
     i0.ɵɵelementStart(12, "div", 48);
-    i0.ɵɵtemplate(13, GroupEventDetailsModalComponent_div_98_span_13_Template, 2, 2, "span", 12)(14, GroupEventDetailsModalComponent_div_98_span_14_Template, 2, 0, "span", 30);
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(15, "div", 49)(16, "div", 50)(17, "app-icon", 14);
-    i0.ɵɵtext(18, "wifi");
-    i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(19, "div", 51)(20, "app-icon", 14);
-    i0.ɵɵtext(21, "local_cafe");
-    i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(22, "div", 52)(23, "app-icon", 14);
-    i0.ɵɵtext(24, "chat");
-    i0.ɵɵelementEnd()()()()()();
+    i0.ɵɵtemplate(13, GroupEventDetailsModalComponent_div_99_span_13_Template, 2, 2, "span", 12)(14, GroupEventDetailsModalComponent_div_99_span_14_Template, 2, 0, "span", 30);
+    i0.ɵɵelementEnd()()()();
   }
   if (rf & 2) {
     var tmp_4_0;
@@ -15056,18 +15112,18 @@ function GroupEventDetailsModalComponent_div_98_Template(rf, ctx) {
     i0.ɵɵproperty("ngIf", !ctx_r1.building || !ctx_r1.level);
   }
 }
-function GroupEventDetailsModalComponent_div_99_Template(rf, ctx) {
+function GroupEventDetailsModalComponent_div_100_Template(rf, ctx) {
   if (rf & 1) {
     var _r4 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "div", 54)(1, "button", 55);
-    i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_div_99_Template_button_click_1_listener() {
+    i0.ɵɵelementStart(0, "div", 50)(1, "button", 51);
+    i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_div_100_Template_button_click_1_listener() {
       i0.ɵɵrestoreView(_r4);
       var ctx_r1 = i0.ɵɵnextContext();
       return i0.ɵɵresetView(ctx_r1.show_attendees = false);
     });
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(2, "div", 56)(3, "attendee-list", 57);
-    i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_div_99_Template_attendee_list_click_3_listener() {
+    i0.ɵɵelementStart(2, "div", 52)(3, "attendee-list", 53);
+    i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_div_100_Template_attendee_list_click_3_listener() {
       i0.ɵɵrestoreView(_r4);
       var ctx_r1 = i0.ɵɵnextContext();
       return i0.ɵɵresetView(ctx_r1.show_attendees = false);
@@ -15112,8 +15168,13 @@ var GroupEventDetailsModalComponent = /*#__PURE__*/function () {
   }, {
     key: "is_onsite",
     get: function get() {
+      return this.booking.extension_data.attendance_type !== 'ONLINE';
+    }
+  }, {
+    key: "has_space",
+    get: function get() {
       var _this$booking$linked_;
-      return (_this$booking$linked_ = this.booking.linked_event) === null || _this$booking$linked_ === void 0 ? void 0 : _this$booking$linked_.system_id;
+      return !!((_this$booking$linked_ = this.booking.linked_event) !== null && _this$booking$linked_ !== void 0 && _this$booking$linked_.system_id);
     }
   }, {
     key: "is_online",
@@ -15321,9 +15382,9 @@ _GroupEventDetailsModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
     edit: "edit",
     remove: "remove"
   },
-  decls: 100,
-  vars: 37,
-  consts: [["concierge_menu", "matMenu"], ["menu", "matMenu"], [1, "relative", "w-[48rem]", "max-w-[calc(100vw-1rem)]", "max-h-[80vh]", "overflow-hidden"], [1, "relative", "flex", "items-center", "justify-between", "h-52", "w-full", "bg-base-200", "overflow-hidden"], ["auth", "", "class", "absolute top-1/2 left-1/2 min-h-full min-w-full object-cover -translate-x-1/2 -translate-y-1/2", 3, "source", 4, "ngIf"], ["class", "absolute top-0 left-0 rounded-br py-2 pl-2 pr-4 space-x-2 bg-info text-info-content flex items-center text-sm", 4, "ngIf"], ["icon", "", "mat-dialog-close", "", 1, "absolute", "top-1", "right-1", "overflow-hidden"], [1, "absolute", "inset-0", "bg-base-100", "opacity-30", "z-0"], [1, "z-10"], [1, "flex", "items-center", "justify-between", "py-4", "px-8", "border-b", "border-base-200"], [1, "text-left", "text-xl"], [1, "flex", "items-center", "space-x-2"], [4, "ngIf"], ["btn", "", "matRipple", "", 1, "clear", "bg-base-200", "text-base-content", "w-[2.75rem]", 3, "disabled", "matMenuTriggerFor"], [1, "text-2xl"], ["mat-menu-item", "", 3, "disabled"], [1, "mr-2"], ["mat-menu-item", "", "mat-dialog-close", "", 3, "click"], ["mat-menu-item", "", 3, "click"], [1, "text-2xl", "text-error"], ["mat-menu-item", "", 1, "flex", "items-center", "space-x-2", 3, "click"], [1, "flex", "flex-1", "max-h-[calc(80vh-18rem)]", "overflow-y-auto", "overflow-x-hidden", "p-8", "space-x-6"], [1, "flex", "flex-1", "flex-col", "space-y-2", "w-1/3"], [1, "flex", "items-center", "space-x-4"], [1, "flex", "items-center", "justify-center", "w-10", "h-10", "bg-base-200", "rounded-full"], [1, "font-medium", "pt-4"], [1, "flex", "flex-col"], [1, "text-sm"], [1, "text-sm", "opacity-30"], [1, "flex", "flex-col", "text-sm"], ["class", "opacity-30", 4, "ngIf"], ["matRipple", "", 1, "flex", "items-center", "space-x-4", "rounded", "min-h-12", 3, "click"], [1, "text-sm", "pb-4"], [3, "innerHTML"], ["class", "flex w-[20rem]", 4, "ngIf"], ["class", "absolute inset-0 z-50", 4, "ngIf"], ["auth", "", 1, "absolute", "top-1/2", "left-1/2", "min-h-full", "min-w-full", "object-cover", "-translate-x-1/2", "-translate-y-1/2", 3, "source"], [1, "absolute", "top-0", "left-0", "rounded-br", "py-2", "pl-2", "pr-4", "space-x-2", "bg-info", "text-info-content", "flex", "items-center", "text-sm"], [1, "text-base"], [1, "uppercase"], ["btn", "", 1, "flex", "items-center", "px-4", "h-10", "rounded", "space-x-2"], [1, "pr-2"], [1, "opacity-30"], [1, "flex", "w-[20rem]"], [1, "border", "border-base-300", "w-full"], ["matRipple", "", 1, "relative", "w-full", "h-40", "bg-base-200", 3, "click"], [3, "src", "features", "styles", 4, "ngIf"], [1, "p-4", "space-y-2"], [1, "opacity-30", "text-sm"], [1, "flex", "items-center", "space-x-2", "pt-4"], ["matTooltip", "WiFi available", 1, "flex", "items-center", "justify-center", "h-10", "w-10", "rounded-full", "bg-base-200"], ["matTooltip", "Cafe available", 1, "flex", "items-center", "justify-center", "h-10", "w-10", "rounded-full", "bg-base-200"], ["matTooltip", "Open spaces nearby", 1, "flex", "items-center", "justify-center", "h-10", "w-10", "rounded-full", "bg-base-200"], [3, "src", "features", "styles"], [1, "absolute", "inset-0", "z-50"], [1, "absolute", "inset-0", "bg-base-content", "opacity-60", 3, "click"], [1, "absolute", "left-1/2", "-translate-x-1/2", "w-[24rem]", "inset-y-8", "rounded", "shadow", "overflow-hidden"], [3, "click", "list", "host"]],
+  decls: 101,
+  vars: 38,
+  consts: [["concierge_menu", "matMenu"], ["menu", "matMenu"], [1, "relative", "w-[48rem]", "max-w-[calc(100vw-1rem)]", "max-h-[80vh]", "overflow-hidden"], [1, "relative", "flex", "items-center", "justify-between", "h-52", "w-full", "bg-base-200", "overflow-hidden"], ["auth", "", "class", "absolute top-1/2 left-1/2 min-h-full min-w-full object-cover -translate-x-1/2 -translate-y-1/2", 3, "source", 4, "ngIf"], ["class", "absolute top-0 left-0 rounded-br py-2 pl-2 pr-4 space-x-2 bg-info text-info-content flex items-center text-sm", 4, "ngIf"], ["icon", "", "mat-dialog-close", "", 1, "absolute", "top-1", "right-1", "overflow-hidden"], [1, "absolute", "inset-0", "bg-base-100", "opacity-30", "z-0"], [1, "z-10"], [1, "flex", "items-center", "justify-between", "py-4", "px-8", "border-b", "border-base-200"], [1, "text-left", "text-xl"], [1, "flex", "items-center", "space-x-2"], [4, "ngIf"], ["btn", "", "matRipple", "", 1, "clear", "bg-base-200", "text-base-content", "w-[2.75rem]", 3, "disabled", "matMenuTriggerFor"], [1, "text-2xl"], ["mat-menu-item", "", 3, "disabled"], [1, "mr-2"], ["mat-menu-item", "", "mat-dialog-close", "", 3, "click"], ["mat-menu-item", "", 3, "click"], [1, "text-2xl", "text-error"], ["mat-menu-item", "", 1, "flex", "items-center", "space-x-2", 3, "click"], [1, "flex", "flex-1", "max-h-[calc(80vh-18rem)]", "overflow-y-auto", "overflow-x-hidden", "p-8", "space-x-6"], [1, "flex", "flex-1", "flex-col", "space-y-2", "w-1/3"], [1, "flex", "items-center", "space-x-4"], [1, "flex", "items-center", "justify-center", "w-10", "h-10", "bg-base-200", "rounded-full"], [1, "font-medium", "pt-4"], [1, "flex", "flex-col"], [1, "text-sm"], [1, "text-sm", "opacity-30"], [1, "flex", "flex-col", "text-sm"], ["class", "opacity-30", 4, "ngIf"], ["matRipple", "", 1, "flex", "items-center", "space-x-4", "rounded", "min-h-12", 3, "click"], [1, "text-sm", "pb-4"], [3, "innerHTML"], ["class", "flex w-[20rem]", 4, "ngIf"], ["class", "absolute inset-0 z-50", 4, "ngIf"], ["auth", "", 1, "absolute", "top-1/2", "left-1/2", "min-h-full", "min-w-full", "object-cover", "-translate-x-1/2", "-translate-y-1/2", 3, "source"], [1, "absolute", "top-0", "left-0", "rounded-br", "py-2", "pl-2", "pr-4", "space-x-2", "bg-info", "text-info-content", "flex", "items-center", "text-sm"], [1, "text-base"], [1, "uppercase"], ["btn", "", 1, "flex", "items-center", "px-4", "h-10", "rounded", "space-x-2"], [1, "pr-2"], [1, "opacity-30"], [1, "flex", "w-[20rem]"], [1, "border", "border-base-300", "w-full"], ["matRipple", "", 1, "relative", "w-full", "h-40", "bg-base-200", 3, "click"], [3, "src", "features", "styles", 4, "ngIf"], [1, "p-4", "space-y-2"], [1, "opacity-30", "text-sm"], [3, "src", "features", "styles"], [1, "absolute", "inset-0", "z-50"], [1, "absolute", "inset-0", "bg-base-content", "opacity-60", 3, "click"], [1, "absolute", "left-1/2", "-translate-x-1/2", "w-[24rem]", "inset-y-8", "rounded", "shadow", "overflow-hidden"], [3, "click", "list", "host"]],
   template: function GroupEventDetailsModalComponent_Template(rf, ctx) {
     if (rf & 1) {
       var _r1 = i0.ɵɵgetCurrentView();
@@ -15425,31 +15486,31 @@ _GroupEventDetailsModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵtext(81, "place");
       i0.ɵɵelementEnd()();
       i0.ɵɵelementStart(82, "div", 29);
-      i0.ɵɵtemplate(83, GroupEventDetailsModalComponent_div_83_Template, 4, 5, "div", 12)(84, GroupEventDetailsModalComponent_div_84_Template, 2, 1, "div", 30);
+      i0.ɵɵtemplate(83, GroupEventDetailsModalComponent_div_83_Template, 4, 5, "div", 12)(84, GroupEventDetailsModalComponent_div_84_Template, 2, 0, "div", 30)(85, GroupEventDetailsModalComponent_div_85_Template, 2, 1, "div", 30);
       i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(85, "button", 31);
-      i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_Template_button_click_85_listener() {
+      i0.ɵɵelementStart(86, "button", 31);
+      i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_Template_button_click_86_listener() {
         i0.ɵɵrestoreView(_r1);
         return i0.ɵɵresetView(ctx.show_attendees = true);
       });
-      i0.ɵɵelementStart(86, "div", 24)(87, "app-icon");
-      i0.ɵɵtext(88, "person");
+      i0.ɵɵelementStart(87, "div", 24)(88, "app-icon");
+      i0.ɵɵtext(89, "person");
       i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(89, "div");
-      i0.ɵɵtext(90);
+      i0.ɵɵelementStart(90, "div");
+      i0.ɵɵtext(91);
       i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(91, "h3", 25);
-      i0.ɵɵtext(92, "About this event");
+      i0.ɵɵelementStart(92, "h3", 25);
+      i0.ɵɵtext(93, "About this event");
       i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(93, "div", 32);
-      i0.ɵɵelement(94, "span", 33);
-      i0.ɵɵpipe(95, "sanitize");
-      i0.ɵɵtemplate(96, GroupEventDetailsModalComponent_span_96_Template, 2, 0, "span", 30);
+      i0.ɵɵelementStart(94, "div", 32);
+      i0.ɵɵelement(95, "span", 33);
+      i0.ɵɵpipe(96, "sanitize");
+      i0.ɵɵtemplate(97, GroupEventDetailsModalComponent_span_97_Template, 2, 0, "span", 30);
       i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(97, "div");
-      i0.ɵɵtemplate(98, GroupEventDetailsModalComponent_div_98_Template, 25, 13, "div", 34);
+      i0.ɵɵelementStart(98, "div");
+      i0.ɵɵtemplate(99, GroupEventDetailsModalComponent_div_99_Template, 15, 13, "div", 34);
       i0.ɵɵelementEnd()()();
-      i0.ɵɵtemplate(99, GroupEventDetailsModalComponent_div_99_Template, 4, 2, "div", 35);
+      i0.ɵɵtemplate(100, GroupEventDetailsModalComponent_div_100_Template, 4, 2, "div", 35);
     }
     if (rf & 2) {
       var concierge_menu_r5 = i0.ɵɵreference(17);
@@ -15479,24 +15540,26 @@ _GroupEventDetailsModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵadvance(8);
       i0.ɵɵtextInterpolate1("Event by ", ctx.booking.user_name, "");
       i0.ɵɵadvance(11);
-      i0.ɵɵtextInterpolate3(" ", i0.ɵɵpipeBind2(75, 26, ctx.booking.date, "EEEE, d MMMM, yyyy"), " . ", i0.ɵɵpipeBind2(76, 29, ctx.booking.date, ctx.time_format), " - ", i0.ɵɵpipeBind2(77, 32, ctx.booking.date + ctx.booking.duration * 60 * 1000, ctx.time_format), " ");
+      i0.ɵɵtextInterpolate3(" ", i0.ɵɵpipeBind2(75, 27, ctx.booking.date, "EEEE, d MMMM, yyyy"), " . ", i0.ɵɵpipeBind2(76, 30, ctx.booking.date, ctx.time_format), " - ", i0.ɵɵpipeBind2(77, 33, ctx.booking.date + ctx.booking.duration * 60 * 1000, ctx.time_format), " ");
       i0.ɵɵadvance(9);
-      i0.ɵɵproperty("ngIf", ctx.is_onsite);
+      i0.ɵɵproperty("ngIf", ctx.is_onsite && ctx.has_space);
+      i0.ɵɵadvance();
+      i0.ɵɵproperty("ngIf", ctx.is_onsite && !ctx.has_space);
       i0.ɵɵadvance();
       i0.ɵɵproperty("ngIf", ctx.is_online);
       i0.ɵɵadvance(6);
       i0.ɵɵtextInterpolate2(" ", ctx.attendance, " going, ", ctx.booking.attendees == null ? null : ctx.booking.attendees.length, " interested ");
       i0.ɵɵadvance(4);
-      i0.ɵɵproperty("innerHTML", i0.ɵɵpipeBind1(95, 35, ctx.booking.description), i0.ɵɵsanitizeHtml);
+      i0.ɵɵproperty("innerHTML", i0.ɵɵpipeBind1(96, 36, ctx.booking.description), i0.ɵɵsanitizeHtml);
       i0.ɵɵadvance(2);
-      i0.ɵɵproperty("ngIf", !ctx.booking.description);
+      i0.ɵɵproperty("ngIf", !ctx.booking.description.trim());
       i0.ɵɵadvance(2);
       i0.ɵɵproperty("ngIf", ctx.level);
       i0.ɵɵadvance();
       i0.ɵɵproperty("ngIf", ctx.show_attendees);
     }
   },
-  dependencies: [i4.NgIf, i3.MatDialogClose, i5.IconComponent, i6.InteractiveMapComponent, i7.AuthenticatedImageDirective, i8.MatMenu, i8.MatMenuItem, i8.MatMenuTrigger, i9.MatRipple, i10.MatTooltip, i11.AttendeeListComponent, i4.AsyncPipe, i4.DatePipe, i12.SanitizePipe, i13.SpacePipe]
+  dependencies: [i4.NgIf, i3.MatDialogClose, i5.IconComponent, i6.InteractiveMapComponent, i7.AuthenticatedImageDirective, i8.MatMenu, i8.MatMenuItem, i8.MatMenuTrigger, i9.MatRipple, i10.AttendeeListComponent, i4.AsyncPipe, i4.DatePipe, i11.SanitizePipe, i12.SpacePipe]
 });
 exports.GroupEventDetailsModalComponent = GroupEventDetailsModalComponent;
 
@@ -30139,7 +30202,7 @@ var MapsPeopleService = /*#__PURE__*/function (_async_handler_class_) {
       if (!mapsindoors) return;
       if (mapsindoors && !this._injected.mapsindoors) {
         var script = document.createElement('script');
-        script.src = "https://app.mapsindoors.com/mapsindoors/js/sdk/4.31.0/mapsindoors-4.31.0.js.gz?apikey=".concat(mapsindoors);
+        script.src = "https://app.mapsindoors.com/mapsindoors/js/sdk/4.35.0/mapsindoors-4.35.0.js.gz?apikey=".concat(mapsindoors);
         document.body.appendChild(script);
         this._injected.mapsindoors = true;
       }
@@ -31218,7 +31281,7 @@ function _getShortUrlQRCode() {
           case 3:
             tkn = (0, ts_client_1.token)();
             console.log('Token:', tkn);
-            document.cookie = "".concat(tkn === 'x-api-key' ? 'api-key=' + encodeURIComponent((0, ts_client_1.apiKey)()) : 'bearer_token=' + encodeURIComponent(tkn), ";max-age=60;path=/api/;samesite=strict;").concat(location.protocol === 'https:' ? 'secure;' : '');
+            document.cookie = "".concat(tkn === 'x-api-key' ? 'api-key=' + encodeURIComponent((0, ts_client_1.apiKey)()) : 'bearer_token=' + encodeURIComponent(tkn), ";max-age=30;path=/api/engine/v2/short_url/;samesite=strict;").concat(location.protocol === 'https:' ? 'secure;' : '');
             _context.next = 8;
             return fetch("".concat(ENDPOINT, "/").concat(id, "/qr_code.").concat(format));
           case 8:
@@ -32748,15 +32811,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "42ff08e",
-  "hash": "42ff08e",
+  "raw": "048cf05",
+  "hash": "048cf05",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "42ff08e",
+  "suffix": "048cf05",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1717634442601
+  "time": 1718857777809
 };
 /* tslint:enable */
 
@@ -33643,7 +33706,7 @@ var AuthenticatedImageDirective = /*#__PURE__*/function (_common_1$AsyncHandle) 
             case 8:
               tkn = (0, ts_client_1.token)();
               console.log('Image Token:', tkn);
-              document.cookie = "".concat(tkn === 'x-api-key' ? 'api-key=' + encodeURIComponent((0, ts_client_1.apiKey)()) : 'bearer_token=' + encodeURIComponent(tkn), ";max-age=60;path=/api/;samesite=strict;").concat(location.protocol === 'https:' ? 'secure;' : '');
+              document.cookie = "".concat(tkn === 'x-api-key' ? 'api-key=' + encodeURIComponent((0, ts_client_1.apiKey)()) : 'bearer_token=' + encodeURIComponent(tkn), ";max-age=30;path=/api/engine/v2/uploads;samesite=strict;").concat(location.protocol === 'https:' ? 'secure;' : '');
               _context.next = 13;
               return fetch(this.source);
             case 13:
@@ -39834,7 +39897,7 @@ var MapRendererComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
               this.updateFeatureList();
               tkn = (0, ts_client_1.token)();
               console.log('Map Token:', tkn);
-              document.cookie = "".concat(tkn === 'x-api-key' ? 'api-key=' + encodeURIComponent((0, ts_client_1.apiKey)()) : 'bearer_token=' + encodeURIComponent(tkn), ";max-age=60;path=/api/;samesite=strict;").concat(location.protocol === 'https:' ? 'secure;' : '');
+              document.cookie = "".concat(tkn === 'x-api-key' ? 'api-key=' + encodeURIComponent((0, ts_client_1.apiKey)()) : 'bearer_token=' + encodeURIComponent(tkn), ";max-age=30;path=/api/engine/v2/uploads;samesite=strict;").concat(location.protocol === 'https:' ? 'secure;' : '');
               _context.next = 14;
               return (0, svg_viewer_1.createViewer)({
                 element: (_this$_outlet_el2 = this._outlet_el) === null || _this$_outlet_el2 === void 0 ? void 0 : _this$_outlet_el2.nativeElement,
@@ -40070,6 +40133,7 @@ function MapsIndoorsComponent_button_2_Template(rf, ctx) {
   }
 }
 var DEFAULT_ZOOM = 18.5;
+var RESOURCE_MAP = {};
 var MapsIndoorsComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
   function MapsIndoorsComponent(_maps_people, _org) {
     var _this;
@@ -40086,6 +40150,13 @@ var MapsIndoorsComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
     _this.ignore_zoom = false;
     _this._floor_list = [];
     _this._added_floor_selector = false;
+    var data = sessionStorage.getItem('PLACEOS.mapsindoors.resources') || '{}';
+    var value = JSON.parse(data);
+    for (var key in value) {
+      if (value.hasOwnProperty(key)) {
+        RESOURCE_MAP[key] = value[key];
+      }
+    }
     return _this;
   }
   _inherits(MapsIndoorsComponent, _common_1$AsyncHandle);
@@ -40126,6 +40197,14 @@ var MapsIndoorsComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
       if (changes.options) {
         this._addFloorSelector();
       }
+    }
+  }, {
+    key: "_setResource",
+    value: function _setResource(id, resource) {
+      RESOURCE_MAP[id] = resource;
+      this.timeout('set_resource', function () {
+        sessionStorage.setItem('PLACEOS.mapsindoors.resources', JSON.stringify(RESOURCE_MAP));
+      });
     }
   }, {
     key: "_initialiseServices",
@@ -40180,6 +40259,7 @@ var MapsIndoorsComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
           mapsIndoors: maps_indoors
         })
       };
+      console.log('Resource:', this._services.mapsindoors);
       this._initialised.next(true);
       if (this.zone) this._centerOnZone();
       this._addFloorSelector();
@@ -40455,53 +40535,135 @@ var MapsIndoorsComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
     }()
   }, {
     key: "_updateMapStyling",
-    value: function _updateMapStyling() {
-      var _this$metadata2;
-      if (!this._services) return;
-      var styles = ((_this$metadata2 = this.metadata) === null || _this$metadata2 === void 0 ? void 0 : _this$metadata2.styles) || {};
-      for (var id in styles) {
-        if (!styles[id].fill) continue;
-        this._services.mapsindoors.setDisplayRule(id, {
-          polygonVisible: true,
-          polygonFillOpacity: 0.6,
-          polygonZoomFrom: 16,
-          polygonZoomTo: 22,
-          visible: true,
-          polygonFillColor: styles[id].fill
-        });
+    value: function () {
+      var _updateMapStyling2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5() {
+        var _this$metadata2,
+          _this7 = this;
+        var styles, _loop, _ret, id;
+        return _regeneratorRuntime().wrap(function _callee5$(_context6) {
+          while (1) switch (_context6.prev = _context6.next) {
+            case 0:
+              if (this._services) {
+                _context6.next = 2;
+                break;
+              }
+              return _context6.abrupt("return");
+            case 2:
+              styles = ((_this$metadata2 = this.metadata) === null || _this$metadata2 === void 0 ? void 0 : _this$metadata2.styles) || {};
+              _loop = /*#__PURE__*/_regeneratorRuntime().mark(function _loop() {
+                var resource, id_simple, list;
+                return _regeneratorRuntime().wrap(function _loop$(_context5) {
+                  while (1) switch (_context5.prev = _context5.next) {
+                    case 0:
+                      if (styles[id].fill) {
+                        _context5.next = 2;
+                        break;
+                      }
+                      return _context5.abrupt("return", 0);
+                    case 2:
+                      resource = RESOURCE_MAP[id];
+                      if (resource) {
+                        _context5.next = 12;
+                        break;
+                      }
+                      id_simple = id.replace(/#/, '');
+                      _context5.next = 7;
+                      return _this7._search(id_simple);
+                    case 7:
+                      list = _context5.sent;
+                      if (list.length) {
+                        _context5.next = 10;
+                        break;
+                      }
+                      return _context5.abrupt("return", 0);
+                    case 10:
+                      resource = list.find(function (_) {
+                        var _$properties, _$properties2;
+                        return ((_$properties = _.properties) === null || _$properties === void 0 ? void 0 : _$properties.externalId) === id_simple || ((_$properties2 = _.properties) === null || _$properties2 === void 0 ? void 0 : _$properties2.roomId) === id_simple || _.id === id_simple;
+                      });
+                      if (resource) _this7._setResource(id, resource);
+                    case 12:
+                      if (resource) {
+                        _context5.next = 14;
+                        break;
+                      }
+                      return _context5.abrupt("return", 0);
+                    case 14:
+                      (0, common_1.log)('MapsPeople', 'Resource:', [resource, _this7._services.mapsindoors, styles[id]]);
+                      _this7._services.mapsindoors.setDisplayRule(resource.id, {
+                        polygonVisible: true,
+                        polygonFillOpacity: 0.6,
+                        polygonZoomFrom: 16,
+                        polygonZoomTo: 22,
+                        visible: true,
+                        polygonFillColor: '#ff69b4'
+                      });
+                    case 16:
+                    case "end":
+                      return _context5.stop();
+                  }
+                }, _loop);
+              });
+              _context6.t0 = _regeneratorRuntime().keys(styles);
+            case 5:
+              if ((_context6.t1 = _context6.t0()).done) {
+                _context6.next = 13;
+                break;
+              }
+              id = _context6.t1.value;
+              return _context6.delegateYield(_loop(), "t2", 8);
+            case 8:
+              _ret = _context6.t2;
+              if (!(_ret === 0)) {
+                _context6.next = 11;
+                break;
+              }
+              return _context6.abrupt("continue", 5);
+            case 11:
+              _context6.next = 5;
+              break;
+            case 13:
+            case "end":
+              return _context6.stop();
+          }
+        }, _callee5, this);
+      }));
+      function _updateMapStyling() {
+        return _updateMapStyling2.apply(this, arguments);
       }
-    }
+      return _updateMapStyling;
+    }()
   }, {
     key: "_focusOnLocation",
     value: function () {
-      var _focusOnLocation2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5() {
-        var _this7 = this,
+      var _focusOnLocation2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6() {
+        var _this8 = this,
           _item$properties2,
           _item$properties3;
         var items, item, _ref4, _ref5, lng, lat;
-        return _regeneratorRuntime().wrap(function _callee5$(_context5) {
-          while (1) switch (_context5.prev = _context5.next) {
+        return _regeneratorRuntime().wrap(function _callee6$(_context7) {
+          while (1) switch (_context7.prev = _context7.next) {
             case 0:
               if (this.focus) {
-                _context5.next = 2;
+                _context7.next = 2;
                 break;
               }
-              return _context5.abrupt("return");
+              return _context7.abrupt("return");
             case 2:
-              _context5.next = 4;
+              _context7.next = 4;
               return this._search(this.focus);
             case 4:
-              items = _context5.sent;
+              items = _context7.sent;
               if (items !== null && items !== void 0 && items.length) {
-                _context5.next = 8;
+                _context7.next = 8;
                 break;
               }
               (0, common_1.notifyError)('Failed to find location.');
-              return _context5.abrupt("return");
+              return _context7.abrupt("return");
             case 8:
               item = items.find(function (_) {
-                var _$properties;
-                return ((_$properties = _.properties) === null || _$properties === void 0 ? void 0 : _$properties.externalId) === _this7.focus;
+                var _$properties3;
+                return ((_$properties3 = _.properties) === null || _$properties3 === void 0 ? void 0 : _$properties3.externalId) === _this8.focus;
               }) || items[0];
               _ref4 = ((_item$properties2 = item.properties) === null || _item$properties2 === void 0 || (_item$properties2 = _item$properties2.anchor) === null || _item$properties2 === void 0 ? void 0 : _item$properties2.coordinates) || [0, 0], _ref5 = _slicedToArray(_ref4, 2), lng = _ref5[0], lat = _ref5[1];
               this._services.map.setZoom(DEFAULT_ZOOM);
@@ -40513,9 +40675,9 @@ var MapsIndoorsComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
               this._services.mapsindoors.highlight([item.id]);
             case 14:
             case "end":
-              return _context5.stop();
+              return _context7.stop();
           }
-        }, _callee5, this);
+        }, _callee6, this);
       }));
       function _focusOnLocation() {
         return _focusOnLocation2.apply(this, arguments);
@@ -40525,23 +40687,23 @@ var MapsIndoorsComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
   }, {
     key: "_centerOnZone",
     value: function _centerOnZone() {
-      var _this8 = this;
+      var _this9 = this;
       if (!this._services || !this.zone) return;
       this.timeout('set_center', function () {
-        var bld = _this8._org.buildings.find(function (bld) {
-          return bld.id === _this8.zone.parent_id;
+        var bld = _this9._org.buildings.find(function (bld) {
+          return bld.id === _this9.zone.parent_id;
         });
         if (!bld) return;
         var _bld$location$split = bld === null || bld === void 0 ? void 0 : bld.location.split(','),
           _bld$location$split2 = _slicedToArray(_bld$location$split, 2),
           lat = _bld$location$split2[0],
           _long2 = _bld$location$split2[1];
-        _this8._services.map.setZoom(DEFAULT_ZOOM);
-        _this8._services.map.setCenter({
+        _this9._services.map.setZoom(DEFAULT_ZOOM);
+        _this9._services.map.setCenter({
           lat: parseFloat(lat),
           lng: parseFloat(_long2)
         });
-        _this8._setFloorFromZone();
+        _this9._setFloorFromZone();
       });
     }
   }, {
@@ -41370,12 +41532,15 @@ var _toConsumableArray = (__webpack_require__(/*! ./node_modules/@babel/runtime/
 var _slicedToArray = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/slicedToArray.js */ 6282)["default"]);
 var _classCallCheck = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/classCallCheck.js */ 80912)["default"]);
 var _createClass = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/createClass.js */ 92974)["default"]);
+var _callSuper = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/callSuper.js */ 8513)["default"]);
+var _inherits = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/inherits.js */ 58160)["default"]);
 var _SimpleTableComponent;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 exports.SimpleTableComponent = void 0;
 var core_1 = __webpack_require__(/*! @angular/core */ 37580);
+var common_1 = __webpack_require__(/*! @placeos/common */ 22797);
 var rxjs_1 = __webpack_require__(/*! rxjs */ 15681);
 var operators_1 = __webpack_require__(/*! rxjs/operators */ 97303);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
@@ -41397,7 +41562,7 @@ var _c0 = function _c0(a0, a1, a2, a3, a4, a5, a6) {
 function SimpleTableComponent_div_1_Template(rf, ctx) {
   if (rf & 1) {
     var _r1 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "div", 5)(1, "mat-checkbox", 6);
+    i0.ɵɵelementStart(0, "div", 6)(1, "mat-checkbox", 7);
     i0.ɵɵpipe(2, "async");
     i0.ɵɵpipe(3, "async");
     i0.ɵɵlistener("change", function SimpleTableComponent_div_1_Template_mat_checkbox_change_1_listener($event) {
@@ -41408,15 +41573,17 @@ function SimpleTableComponent_div_1_Template(rf, ctx) {
     i0.ɵɵelementEnd()();
   }
   if (rf & 2) {
+    var tmp_2_0;
+    var tmp_3_0;
     var ctx_r1 = i0.ɵɵnextContext();
     i0.ɵɵstyleProp("grid-area", ctx_r1.gridSquare(1, 1));
     i0.ɵɵadvance();
-    i0.ɵɵproperty("checked", ctx_r1.selected.length === i0.ɵɵpipeBind1(2, 4, ctx_r1.data_view$).length)("indeterminate", ctx_r1.selected.length > 0 && ctx_r1.selected.length < i0.ɵɵpipeBind1(3, 6, ctx_r1.data_view$).length);
+    i0.ɵɵproperty("checked", ctx_r1.selected.length === ((tmp_2_0 = i0.ɵɵpipeBind1(2, 4, ctx_r1.data_view$)) == null ? null : tmp_2_0.length))("indeterminate", ctx_r1.selected.length > 0 && ctx_r1.selected.length < ((tmp_3_0 = i0.ɵɵpipeBind1(3, 6, ctx_r1.data_view$)) == null ? null : tmp_3_0.length));
   }
 }
 function SimpleTableComponent_button_2_app_icon_3_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "app-icon", 10);
+    i0.ɵɵelementStart(0, "app-icon", 11);
     i0.ɵɵtext(1);
     i0.ɵɵelementEnd();
   }
@@ -41430,16 +41597,16 @@ function SimpleTableComponent_button_2_app_icon_3_Template(rf, ctx) {
 function SimpleTableComponent_button_2_Template(rf, ctx) {
   if (rf & 1) {
     var _r3 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "button", 7);
+    i0.ɵɵelementStart(0, "button", 8);
     i0.ɵɵlistener("click", function SimpleTableComponent_button_2_Template_button_click_0_listener() {
       var column_r4 = i0.ɵɵrestoreView(_r3).$implicit;
       var ctx_r1 = i0.ɵɵnextContext();
       return i0.ɵɵresetView(ctx_r1.setSort(column_r4.key));
     });
-    i0.ɵɵelementStart(1, "div", 8);
+    i0.ɵɵelementStart(1, "div", 9);
     i0.ɵɵtext(2);
     i0.ɵɵelementEnd();
-    i0.ɵɵtemplate(3, SimpleTableComponent_button_2_app_icon_3_Template, 2, 1, "app-icon", 9);
+    i0.ɵɵtemplate(3, SimpleTableComponent_button_2_app_icon_3_Template, 2, 1, "app-icon", 10);
     i0.ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -41458,7 +41625,7 @@ function SimpleTableComponent_button_2_Template(rf, ctx) {
 function SimpleTableComponent_ng_container_3_div_1_Template(rf, ctx) {
   if (rf & 1) {
     var _r6 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "div", 13);
+    i0.ɵɵelementStart(0, "div", 14);
     i0.ɵɵpipe(1, "async");
     i0.ɵɵlistener("mouseenter", function SimpleTableComponent_ng_container_3_div_1_Template_div_mouseenter_0_listener() {
       i0.ɵɵrestoreView(_r6);
@@ -41471,7 +41638,7 @@ function SimpleTableComponent_ng_container_3_div_1_Template(rf, ctx) {
       var ctx_r1 = i0.ɵɵnextContext();
       return i0.ɵɵresetView(ctx_r1.active_row = i_r7);
     });
-    i0.ɵɵelementStart(2, "mat-checkbox", 14);
+    i0.ɵɵelementStart(2, "mat-checkbox", 15);
     i0.ɵɵlistener("change", function SimpleTableComponent_ng_container_3_div_1_Template_mat_checkbox_change_2_listener($event) {
       i0.ɵɵrestoreView(_r6);
       var i_r7 = i0.ɵɵnextContext().index;
@@ -41481,26 +41648,27 @@ function SimpleTableComponent_ng_container_3_div_1_Template(rf, ctx) {
     i0.ɵɵelementEnd()();
   }
   if (rf & 2) {
+    var tmp_5_0;
     var i_r7 = i0.ɵɵnextContext().index;
     var ctx_r1 = i0.ɵɵnextContext();
     i0.ɵɵstyleProp("grid-area", ctx_r1.gridSquare(2 + i_r7, 1));
-    i0.ɵɵclassProp("border-b", i_r7 !== i0.ɵɵpipeBind1(1, 5, ctx_r1.data_view$).length - 1);
+    i0.ɵɵclassProp("border-b", i_r7 !== ((tmp_5_0 = i0.ɵɵpipeBind1(1, 5, ctx_r1.data_view$)) == null ? null : tmp_5_0.length) - 1);
     i0.ɵɵadvance(2);
     i0.ɵɵproperty("checked", ctx_r1.selected.includes(i_r7));
   }
 }
 function SimpleTableComponent_ng_container_3_div_2_div_3_span_2_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "span", 21);
+    i0.ɵɵelementStart(0, "span", 22);
     i0.ɵɵtext(1, " N/A ");
     i0.ɵɵelementEnd();
   }
 }
 function SimpleTableComponent_ng_container_3_div_2_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 19);
+    i0.ɵɵelementStart(0, "div", 20);
     i0.ɵɵtext(1);
-    i0.ɵɵtemplate(2, SimpleTableComponent_ng_container_3_div_2_div_3_span_2_Template, 2, 0, "span", 20);
+    i0.ɵɵtemplate(2, SimpleTableComponent_ng_container_3_div_2_div_3_span_2_Template, 2, 0, "span", 21);
     i0.ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -41509,7 +41677,7 @@ function SimpleTableComponent_ng_container_3_div_2_div_3_Template(rf, ctx) {
     i0.ɵɵadvance();
     i0.ɵɵtextInterpolate1(" ", row_r10[column_r9.key], " ");
     i0.ɵɵadvance();
-    i0.ɵɵproperty("ngIf", !row_r10[column_r9.key]);
+    i0.ɵɵproperty("ngIf", row_r10[column_r9.key] == null);
   }
 }
 function SimpleTableComponent_ng_container_3_div_2_ng_container_4_ng_container_1_Template(rf, ctx) {
@@ -41520,25 +41688,26 @@ function SimpleTableComponent_ng_container_3_div_2_ng_container_4_ng_container_1
 function SimpleTableComponent_ng_container_3_div_2_ng_container_4_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelementContainerStart(0);
-    i0.ɵɵtemplate(1, SimpleTableComponent_ng_container_3_div_2_ng_container_4_ng_container_1_Template, 1, 0, "ng-container", 22);
+    i0.ɵɵtemplate(1, SimpleTableComponent_ng_container_3_div_2_ng_container_4_ng_container_1_Template, 1, 0, "ng-container", 23);
     i0.ɵɵpipe(2, "async");
     i0.ɵɵpipe(3, "async");
     i0.ɵɵelementContainerEnd();
   }
   if (rf & 2) {
+    var tmp_8_0;
     var column_r9 = i0.ɵɵnextContext().$implicit;
     var ctx_r10 = i0.ɵɵnextContext();
     var row_r10 = ctx_r10.$implicit;
     var i_r7 = ctx_r10.index;
     var ctx_r1 = i0.ɵɵnextContext();
     i0.ɵɵadvance();
-    i0.ɵɵproperty("ngTemplateOutlet", column_r9.content)("ngTemplateOutletContext", i0.ɵɵpureFunction7(6, _c0, i_r7 === 0, i_r7 === i0.ɵɵpipeBind1(2, 2, ctx_r1.data_view$).length - 1 || i_r7 === i0.ɵɵpipeBind1(3, 4, ctx_r1.data_view$).length - 1, i_r7, row_r10[column_r9.key], row_r10, column_r9.key, column_r9.name || column_r9.key));
+    i0.ɵɵproperty("ngTemplateOutlet", column_r9.content)("ngTemplateOutletContext", i0.ɵɵpureFunction7(6, _c0, i_r7 === 0, i_r7 === ((tmp_8_0 = i0.ɵɵpipeBind1(2, 2, ctx_r1.data_view$)) == null ? null : tmp_8_0.length) - 1 || i_r7 === ((tmp_8_0 = i0.ɵɵpipeBind1(3, 4, ctx_r1.data_view$)) == null ? null : tmp_8_0.length) - 1, i_r7, row_r10[column_r9.key], row_r10, column_r9.key, column_r9.name || column_r9.key));
   }
 }
 function SimpleTableComponent_ng_container_3_div_2_Template(rf, ctx) {
   if (rf & 1) {
     var _r8 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "div", 15);
+    i0.ɵɵelementStart(0, "div", 16);
     i0.ɵɵpipe(1, "async");
     i0.ɵɵlistener("mouseenter", function SimpleTableComponent_ng_container_3_div_2_Template_div_mouseenter_0_listener() {
       i0.ɵɵrestoreView(_r8);
@@ -41551,18 +41720,19 @@ function SimpleTableComponent_ng_container_3_div_2_Template(rf, ctx) {
       var ctx_r1 = i0.ɵɵnextContext();
       return i0.ɵɵresetView(ctx_r1.active_row = i_r7);
     });
-    i0.ɵɵelementContainerStart(2, 16);
-    i0.ɵɵtemplate(3, SimpleTableComponent_ng_container_3_div_2_div_3_Template, 3, 2, "div", 17)(4, SimpleTableComponent_ng_container_3_div_2_ng_container_4_Template, 4, 14, "ng-container", 18);
+    i0.ɵɵelementContainerStart(2, 17);
+    i0.ɵɵtemplate(3, SimpleTableComponent_ng_container_3_div_2_div_3_Template, 3, 2, "div", 18)(4, SimpleTableComponent_ng_container_3_div_2_ng_container_4_Template, 4, 14, "ng-container", 19);
     i0.ɵɵelementContainerEnd();
     i0.ɵɵelementEnd();
   }
   if (rf & 2) {
+    var tmp_7_0;
     var column_r9 = ctx.$implicit;
     var j_r12 = ctx.index;
     var i_r7 = i0.ɵɵnextContext().index;
     var ctx_r1 = i0.ɵɵnextContext();
     i0.ɵɵstyleProp("grid-area", ctx_r1.gridSquare(2 + i_r7, 1 + j_r12 + (ctx_r1.selectable ? 1 : 0)));
-    i0.ɵɵclassProp("border-b", i_r7 !== i0.ɵɵpipeBind1(1, 10, ctx_r1.data_view$).length - 1)("border-r", j_r12 !== ctx_r1.active_columns.length - 1)("width", column_r9.size);
+    i0.ɵɵclassProp("border-b", i_r7 !== ((tmp_7_0 = i0.ɵɵpipeBind1(1, 10, ctx_r1.data_view$)) == null ? null : tmp_7_0.length) - 1)("border-r", j_r12 !== ctx_r1.active_columns.length - 1)("width", column_r9.size);
     i0.ɵɵadvance(2);
     i0.ɵɵproperty("ngSwitch", ctx_r1.columnType(column_r9));
     i0.ɵɵadvance(2);
@@ -41572,7 +41742,7 @@ function SimpleTableComponent_ng_container_3_div_2_Template(rf, ctx) {
 function SimpleTableComponent_ng_container_3_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelementContainerStart(0);
-    i0.ɵɵtemplate(1, SimpleTableComponent_ng_container_3_div_1_Template, 3, 7, "div", 11)(2, SimpleTableComponent_ng_container_3_div_2_Template, 5, 12, "div", 12);
+    i0.ɵɵtemplate(1, SimpleTableComponent_ng_container_3_div_1_Template, 3, 7, "div", 12)(2, SimpleTableComponent_ng_container_3_div_2_Template, 5, 12, "div", 13);
     i0.ɵɵelementContainerEnd();
   }
   if (rf & 2) {
@@ -41583,9 +41753,9 @@ function SimpleTableComponent_ng_container_3_Template(rf, ctx) {
     i0.ɵɵproperty("ngForOf", ctx_r1.active_columns);
   }
 }
-function SimpleTableComponent_div_5_Template(rf, ctx) {
+function SimpleTableComponent_div_6_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 23);
+    i0.ɵɵelementStart(0, "div", 24);
     i0.ɵɵtext(1);
     i0.ɵɵelementEnd();
   }
@@ -41596,26 +41766,89 @@ function SimpleTableComponent_div_5_Template(rf, ctx) {
     i0.ɵɵtextInterpolate1(" ", ctx_r1.empty_message, " ");
   }
 }
-var SimpleTableComponent = /*#__PURE__*/function () {
-  function SimpleTableComponent() {
-    _classCallCheck(this, SimpleTableComponent);
-    this.columns = [];
-    this.selectable = false;
-    this.filter = '';
-    this.sortable = false;
-    this.selected = [];
-    this.page_size = -1;
-    this.empty_message = 'No data to list';
-    this.selectedChange = new core_1.EventEmitter();
-    this.rowClicked = new core_1.EventEmitter();
-    this.page = 0;
-    this.active_row = -1;
-    this.active_columns = [];
-    this._data$ = new rxjs_1.BehaviorSubject([]);
-    this._filter$ = new rxjs_1.BehaviorSubject('');
-    this._sort$ = new rxjs_1.BehaviorSubject(null);
-    this.data_view$ = null;
+function SimpleTableComponent_div_8_Template(rf, ctx) {
+  if (rf & 1) {
+    var _r13 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "div", 25)(1, "div", 26);
+    i0.ɵɵtext(2);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(3, "button", 27);
+    i0.ɵɵlistener("click", function SimpleTableComponent_div_8_Template_button_click_3_listener() {
+      i0.ɵɵrestoreView(_r13);
+      var ctx_r1 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r1.setPage(ctx_r1.page - 1));
+    });
+    i0.ɵɵelementStart(4, "app-icon");
+    i0.ɵɵtext(5, "chevron_left");
+    i0.ɵɵelementEnd()();
+    i0.ɵɵelementStart(6, "button", 27);
+    i0.ɵɵlistener("click", function SimpleTableComponent_div_8_Template_button_click_6_listener() {
+      i0.ɵɵrestoreView(_r13);
+      var ctx_r1 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r1.setPage(ctx_r1.page + 1));
+    });
+    i0.ɵɵelementStart(7, "app-icon");
+    i0.ɵɵtext(8, "chevron_right");
+    i0.ɵɵelementEnd()();
+    i0.ɵɵelementStart(9, "button", 27);
+    i0.ɵɵlistener("click", function SimpleTableComponent_div_8_Template_button_click_9_listener() {
+      i0.ɵɵrestoreView(_r13);
+      var ctx_r1 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r1.setPage(0));
+    });
+    i0.ɵɵelementStart(10, "app-icon");
+    i0.ɵɵtext(11, "first_page");
+    i0.ɵɵelementEnd()();
+    i0.ɵɵelementStart(12, "button", 27);
+    i0.ɵɵlistener("click", function SimpleTableComponent_div_8_Template_button_click_12_listener() {
+      i0.ɵɵrestoreView(_r13);
+      var ctx_r1 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r1.setPage(ctx_r1.total_pages - 1));
+    });
+    i0.ɵɵelementStart(13, "app-icon");
+    i0.ɵɵtext(14, "last_page");
+    i0.ɵɵelementEnd()()();
   }
+  if (rf & 2) {
+    var ctx_r1 = i0.ɵɵnextContext();
+    i0.ɵɵadvance(2);
+    i0.ɵɵtextInterpolate3(" ", ctx_r1.page * (ctx_r1.page_size || 9999) + 1, " \u2013 ", (ctx_r1.page + 1) * (ctx_r1.page_size || 9999) > ctx_r1.total_count ? ctx_r1.total_count : (ctx_r1.page + 1) * (ctx_r1.page_size || 9999), " of ", ctx_r1.total_count, " ");
+    i0.ɵɵadvance();
+    i0.ɵɵproperty("disabled", ctx_r1.page === 0);
+    i0.ɵɵadvance(3);
+    i0.ɵɵproperty("disabled", ctx_r1.page === ctx_r1.total_pages - 1);
+    i0.ɵɵadvance(3);
+    i0.ɵɵproperty("disabled", ctx_r1.page === 0);
+    i0.ɵɵadvance(3);
+    i0.ɵɵproperty("disabled", ctx_r1.page === ctx_r1.total_pages - 1);
+  }
+}
+var SimpleTableComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
+  function SimpleTableComponent() {
+    var _this;
+    _classCallCheck(this, SimpleTableComponent);
+    _this = _callSuper(this, SimpleTableComponent, arguments);
+    _this.columns = [];
+    _this.selectable = false;
+    _this.filter = '';
+    _this.sortable = false;
+    _this.selected = [];
+    _this.page_size = 0;
+    _this.empty_message = 'No data to list';
+    _this.selectedChange = new core_1.EventEmitter();
+    _this.rowClicked = new core_1.EventEmitter();
+    _this.page = 0;
+    _this.total_count = 0;
+    _this.total_pages = 0;
+    _this.active_row = -1;
+    _this.active_columns = [];
+    _this._data$ = new rxjs_1.BehaviorSubject([]);
+    _this._filter$ = new rxjs_1.BehaviorSubject('');
+    _this._sort$ = new rxjs_1.BehaviorSubject(null);
+    _this.data_view$ = null;
+    return _this;
+  }
+  _inherits(SimpleTableComponent, _common_1$AsyncHandle);
   return _createClass(SimpleTableComponent, [{
     key: "sort",
     get: function get() {
@@ -41640,12 +41873,9 @@ var SimpleTableComponent = /*#__PURE__*/function () {
       return this.selectable ? "3.5rem ".concat(template) : template;
     }
   }, {
-    key: "ngOnInit",
-    value: function ngOnInit() {}
-  }, {
     key: "ngOnChanges",
     value: function ngOnChanges(changes) {
-      var _this = this;
+      var _this2 = this;
       if (changes.filter) {
         this._filter$.next(this.filter);
       }
@@ -41655,7 +41885,7 @@ var SimpleTableComponent = /*#__PURE__*/function () {
         });
       }
       if (changes.data) {
-        this.data_view$ = (0, rxjs_1.combineLatest)([this.data$, this._filter$, this._sort$]).pipe((0, operators_1.map)(function (_ref) {
+        this.data_view$ = (0, rxjs_1.combineLatest)([this.data$, this._filter$, this._sort$]).pipe((0, operators_1.debounceTime)(300), (0, operators_1.map)(function (_ref) {
           var _ref2 = _slicedToArray(_ref, 3),
             data = _ref2[0],
             filter = _ref2[1],
@@ -41669,7 +41899,7 @@ var SimpleTableComponent = /*#__PURE__*/function () {
             });
           }
           if (sort && data.length) {
-            var type = data[0][sort.key];
+            var type = typeof data[0][sort.key];
             if (type === 'number') {
               data = data.sort(function (a, b) {
                 var result = a[sort.key] - b[sort.key];
@@ -41677,17 +41907,21 @@ var SimpleTableComponent = /*#__PURE__*/function () {
               });
             } else {
               data = data.sort(function (a, b) {
-                var a_value = JSON.stringify(a[sort.key]);
-                var b_value = JSON.stringify(b[sort.key]);
+                var a_value = JSON.stringify(a[sort.key] || '');
+                var b_value = JSON.stringify(b[sort.key] || '');
                 var result = a_value.localeCompare(b_value);
                 return sort.reverse ? -result : result;
               });
             }
           }
-          _this.selected = [];
-          _this.page = 0;
+          _this2.selected = [];
+          _this2.page = 0;
+          if (_this2.page_size) {
+            _this2.total_count = data.length;
+            _this2.total_pages = Math.ceil(_this2.total_count / _this2.page_size);
+          }
           return data;
-        }));
+        }), (0, operators_1.shareReplay)(1));
       }
     }
   }, {
@@ -41751,12 +41985,23 @@ var SimpleTableComponent = /*#__PURE__*/function () {
         this._sort$.next(null);
       }
     }
+  }, {
+    key: "setPage",
+    value: function setPage(page) {
+      var _this3 = this;
+      this.timeout('set_page', function () {
+        return _this3.page = page;
+      }, 100);
+    }
   }]);
-}();
+}(common_1.AsyncHandler);
 _SimpleTableComponent = SimpleTableComponent;
-_SimpleTableComponent.ɵfac = function SimpleTableComponent_Factory(t) {
-  return new (t || _SimpleTableComponent)();
-};
+_SimpleTableComponent.ɵfac = /*@__PURE__*/function () {
+  var ɵSimpleTableComponent_BaseFactory;
+  return function SimpleTableComponent_Factory(t) {
+    return (ɵSimpleTableComponent_BaseFactory || (ɵSimpleTableComponent_BaseFactory = i0.ɵɵgetInheritedFactory(_SimpleTableComponent)))(t || _SimpleTableComponent);
+  };
+}();
 _SimpleTableComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
   type: _SimpleTableComponent,
   selectors: [["simple-table"]],
@@ -41774,10 +42019,10 @@ _SimpleTableComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
     selectedChange: "selectedChange",
     rowClicked: "rowClicked"
   },
-  features: [i0.ɵɵNgOnChangesFeature],
-  decls: 7,
-  vars: 10,
-  consts: [["role", "table", 1, "grid", "border", "border-base-200", 3, "click", "touchend", "mouseleave"], ["id", "column-selector", "class", "sticky top-0 flex items-center justify-between px-2 border-r border-base-200 bg-base-300 min-h-full z-10", 3, "gridArea", 4, "ngIf"], ["header", "", "matRipple", "", "class", "sticky top-0 flex items-center justify-between p-4 border-base-200 bg-base-300 min-h-full z-10", 3, "id", "gridArea", "pointer-events-none", "active", "border-r", "width", "click", 4, "ngFor", "ngForOf"], [4, "ngFor", "ngForOf"], ["class", "flex items-center justify-center p-8 opacity-30", 3, "gridColumnStart", 4, "ngIf"], ["id", "column-selector", 1, "sticky", "top-0", "flex", "items-center", "justify-between", "px-2", "border-r", "border-base-200", "bg-base-300", "min-h-full", "z-10"], [3, "change", "checked", "indeterminate"], ["header", "", "matRipple", "", 1, "sticky", "top-0", "flex", "items-center", "justify-between", "p-4", "border-base-200", "bg-base-300", "min-h-full", "z-10", 3, "click", "id"], [1, "font-medium"], ["class", "text-[1.25em]", 4, "ngIf"], [1, "text-[1.25em]"], ["id", "column-selector", "class", "flex items-center justify-between px-2 border-r border-base-200 min-h-full z-0", 3, "gridArea", "border-b", "mouseenter", "touchstart", 4, "ngIf"], ["class", "flex items-center justify-between border-base-200 min-h-full z-0", 3, "gridArea", "border-b", "border-r", "width", "mouseenter", "touchstart", 4, "ngFor", "ngForOf"], ["id", "column-selector", 1, "flex", "items-center", "justify-between", "px-2", "border-r", "border-base-200", "min-h-full", "z-0", 3, "mouseenter", "touchstart"], [3, "change", "checked"], [1, "flex", "items-center", "justify-between", "border-base-200", "min-h-full", "z-0", 3, "mouseenter", "touchstart"], [3, "ngSwitch"], ["class", "p-4", 4, "ngSwitchDefault"], [4, "ngSwitchCase"], [1, "p-4"], ["class", "opacity-30", 4, "ngIf"], [1, "opacity-30"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "flex", "items-center", "justify-center", "p-8", "opacity-30"]],
+  features: [i0.ɵɵInheritDefinitionFeature, i0.ɵɵNgOnChangesFeature],
+  decls: 9,
+  vars: 15,
+  consts: [["role", "table", 1, "grid", "border", "border-base-300", 3, "click", "touchend", "mouseleave"], ["id", "column-selector", "class", "sticky top-0 flex items-center justify-between px-2 border-r border-b border-base-300 bg-base-400 min-h-full z-10", 3, "gridArea", 4, "ngIf"], ["header", "", "matRipple", "", "class", "sticky top-0 flex items-center justify-between p-4 border-b border-base-300 bg-base-400 min-h-full z-10", 3, "id", "gridArea", "pointer-events-none", "active", "border-r", "width", "click", 4, "ngFor", "ngForOf"], [4, "ngFor", "ngForOf"], ["class", "flex items-center justify-center p-8 opacity-30", 3, "gridColumnStart", 4, "ngIf"], ["class", "sticky bottom-0 w-full flex items-center justify-end space-x-2 p-2 bg-base-200", 4, "ngIf"], ["id", "column-selector", 1, "sticky", "top-0", "flex", "items-center", "justify-between", "px-2", "border-r", "border-b", "border-base-300", "bg-base-400", "min-h-full", "z-10"], [3, "change", "checked", "indeterminate"], ["header", "", "matRipple", "", 1, "sticky", "top-0", "flex", "items-center", "justify-between", "p-4", "border-b", "border-base-300", "bg-base-400", "min-h-full", "z-10", 3, "click", "id"], [1, "font-medium"], ["class", "text-[1.25em]", 4, "ngIf"], [1, "text-[1.25em]"], ["id", "column-selector", "class", "flex items-center justify-between px-2 border-r border-base-300 min-h-full z-0", 3, "gridArea", "border-b", "mouseenter", "touchstart", 4, "ngIf"], ["class", "flex items-center justify-between border-base-300 min-h-full z-0 overflow-hidden", 3, "gridArea", "border-b", "border-r", "width", "mouseenter", "touchstart", 4, "ngFor", "ngForOf"], ["id", "column-selector", 1, "flex", "items-center", "justify-between", "px-2", "border-r", "border-base-300", "min-h-full", "z-0", 3, "mouseenter", "touchstart"], [3, "change", "checked"], [1, "flex", "items-center", "justify-between", "border-base-300", "min-h-full", "z-0", "overflow-hidden", 3, "mouseenter", "touchstart"], [3, "ngSwitch"], ["class", "p-4", 4, "ngSwitchDefault"], [4, "ngSwitchCase"], [1, "p-4"], ["class", "opacity-30", 4, "ngIf"], [1, "opacity-30"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "flex", "items-center", "justify-center", "p-8", "opacity-30"], [1, "sticky", "bottom-0", "w-full", "flex", "items-center", "justify-end", "space-x-2", "p-2", "bg-base-200"], [1, "px-4", "py-2"], ["icon", "", "matRipple", "", 3, "click", "disabled"]],
   template: function SimpleTableComponent_Template(rf, ctx) {
     if (rf & 1) {
       i0.ɵɵelementStart(0, "div", 0);
@@ -41790,9 +42035,11 @@ _SimpleTableComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       });
       i0.ɵɵtemplate(1, SimpleTableComponent_div_1_Template, 4, 8, "div", 1)(2, SimpleTableComponent_button_2_Template, 4, 13, "button", 2)(3, SimpleTableComponent_ng_container_3_Template, 3, 2, "ng-container", 3);
       i0.ɵɵpipe(4, "async");
-      i0.ɵɵtemplate(5, SimpleTableComponent_div_5_Template, 2, 3, "div", 4);
-      i0.ɵɵpipe(6, "async");
+      i0.ɵɵpipe(5, "slice");
+      i0.ɵɵtemplate(6, SimpleTableComponent_div_6_Template, 2, 3, "div", 4);
+      i0.ɵɵpipe(7, "async");
       i0.ɵɵelementEnd();
+      i0.ɵɵtemplate(8, SimpleTableComponent_div_8_Template, 15, 7, "div", 5);
     }
     if (rf & 2) {
       var tmp_4_0;
@@ -41802,12 +42049,14 @@ _SimpleTableComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵadvance();
       i0.ɵɵproperty("ngForOf", ctx.active_columns);
       i0.ɵɵadvance();
-      i0.ɵɵproperty("ngForOf", i0.ɵɵpipeBind1(4, 6, ctx.data_view$));
+      i0.ɵɵproperty("ngForOf", i0.ɵɵpipeBind3(5, 9, i0.ɵɵpipeBind1(4, 7, ctx.data_view$), ctx.page * (ctx.page_size || 9999), (ctx.page + 1) * (ctx.page_size || 9999)));
+      i0.ɵɵadvance(3);
+      i0.ɵɵproperty("ngIf", !((tmp_4_0 = i0.ɵɵpipeBind1(7, 13, ctx.data_view$)) == null ? null : tmp_4_0.length));
       i0.ɵɵadvance(2);
-      i0.ɵɵproperty("ngIf", !((tmp_4_0 = i0.ɵɵpipeBind1(6, 8, ctx.data_view$)) == null ? null : tmp_4_0.length));
+      i0.ɵɵproperty("ngIf", ctx.page_size);
     }
   },
-  dependencies: [i1.NgForOf, i1.NgIf, i1.NgTemplateOutlet, i1.NgSwitch, i1.NgSwitchCase, i1.NgSwitchDefault, i2.MatRipple, i3.MatCheckbox, i4.IconComponent, i1.AsyncPipe],
+  dependencies: [i1.NgForOf, i1.NgIf, i1.NgTemplateOutlet, i1.NgSwitch, i1.NgSwitchCase, i1.NgSwitchDefault, i2.MatRipple, i3.MatCheckbox, i4.IconComponent, i1.AsyncPipe, i1.SlicePipe],
   styles: ["[_nghost-%COMP%], \n   [_nghost-%COMP%]    > button[_ngcontent-%COMP%] {\n                min-width: 100%;\n            }\n\n            [header][_ngcontent-%COMP%]   app-icon[_ngcontent-%COMP%] {\n                opacity: 0;\n            }\n            [header][_ngcontent-%COMP%]:hover   app-icon[_ngcontent-%COMP%] {\n                opacity: 0.3;\n            }\n            [header][_ngcontent-%COMP%]:hover.pointer-events-none   app-icon[_ngcontent-%COMP%] {\n                opacity: 0;\n            }\n            [header].active[_ngcontent-%COMP%]   app-icon[_ngcontent-%COMP%] {\n                opacity: 1;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvY29tcG9uZW50cy9zcmMvbGliL3NpbXBsZS10YWJsZS5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZOztnQkFFSSxlQUFlO1lBQ25COztZQUVBO2dCQUNJLFVBQVU7WUFDZDtZQUNBO2dCQUNJLFlBQVk7WUFDaEI7WUFDQTtnQkFDSSxVQUFVO1lBQ2Q7WUFDQTtnQkFDSSxVQUFVO1lBQ2QiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0LFxuICAgICAgICAgICAgOmhvc3QgPiBidXR0b24ge1xuICAgICAgICAgICAgICAgIG1pbi13aWR0aDogMTAwJTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgW2hlYWRlcl0gYXBwLWljb24ge1xuICAgICAgICAgICAgICAgIG9wYWNpdHk6IDA7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBbaGVhZGVyXTpob3ZlciBhcHAtaWNvbiB7XG4gICAgICAgICAgICAgICAgb3BhY2l0eTogMC4zO1xuICAgICAgICAgICAgfVxuICAgICAgICAgICAgW2hlYWRlcl06aG92ZXIucG9pbnRlci1ldmVudHMtbm9uZSBhcHAtaWNvbiB7XG4gICAgICAgICAgICAgICAgb3BhY2l0eTogMDtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIFtoZWFkZXJdLmFjdGl2ZSBhcHAtaWNvbiB7XG4gICAgICAgICAgICAgICAgb3BhY2l0eTogMTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
 });
 exports.SimpleTableComponent = SimpleTableComponent;
@@ -44806,7 +45055,7 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
       try {
         for (_iterator.s(); !(_step = _iterator.n()).done;) {
           var rules = _step.value;
-          rules[rules.id] = rules.details instanceof Array ? rules.details : [];
+          mapping[rules.id] = rules.details instanceof Array ? rules.details : [];
         }
       } catch (err) {
         _iterator.e(err);
@@ -55757,7 +56006,7 @@ var user_class_1 = __webpack_require__(/*! ../../../users/src/lib/user.class */ 
 var ts_client_1 = __webpack_require__(/*! @placeos/ts-client */ 35713);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
 var USER_LIST = [];
-var EMPTY_USER = new user_class_1.User();
+var EMPTY_USER = new user_class_1.StaffUser();
 var PlaceUserPipe = /*#__PURE__*/function () {
   function PlaceUserPipe() {
     _classCallCheck(this, PlaceUserPipe);
@@ -63256,7 +63505,7 @@ var OrganisationService = /*#__PURE__*/function () {
         _ = _ref4[0],
         bld = _ref4[1];
       return bld ? _this.levelsForBuilding(bld) : [];
-    }), (0, operators_1.shareReplay)());
+    }), (0, operators_1.shareReplay)(1));
     /** Mapping of organisation settings overrides */
     this._settings = [];
     /** Mapping of regions to settings overrides */
