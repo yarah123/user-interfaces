@@ -22926,284 +22926,6 @@ exports.CateringListFieldComponent = CateringListFieldComponent;
 
 /***/ }),
 
-/***/ 71853:
-/*!***************************************************************!*\
-  !*** ./libs/catering/src/lib/catering-menu-item.component.ts ***!
-  \***************************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-
-var _objectSpread = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/objectSpread2.js */ 34092)["default"]);
-var _toConsumableArray = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/toConsumableArray.js */ 86033)["default"]);
-var _classCallCheck = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/classCallCheck.js */ 80912)["default"]);
-var _createClass = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/createClass.js */ 92974)["default"]);
-var _CateringMenuItemComponent;
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports.CateringMenuItemComponent = void 0;
-var common_1 = __webpack_require__(/*! @placeos/common */ 22797);
-var catering_item_class_1 = __webpack_require__(/*! ./catering-item.class */ 25892);
-var catering_state_service_1 = __webpack_require__(/*! ./catering-state.service */ 52201);
-var i0 = __webpack_require__(/*! @angular/core */ 37580);
-var i1 = __webpack_require__(/*! ./catering-state.service */ 52201);
-var i2 = __webpack_require__(/*! @angular/common */ 60316);
-var i3 = __webpack_require__(/*! @angular/material/menu */ 31034);
-var i4 = __webpack_require__(/*! @angular/material/checkbox */ 97024);
-var i5 = __webpack_require__(/*! @angular/material/tooltip */ 80640);
-var i6 = __webpack_require__(/*! @angular/forms */ 34456);
-var i7 = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
-var i8 = __webpack_require__(/*! @angular/material/core */ 74646);
-var _c0 = ["catering-menu-item", ""];
-function CateringMenuItemComponent_div_1_button_12_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "button", 14)(1, "app-icon");
-    i0.ɵɵtext(2, "more_vert");
-    i0.ɵɵelementEnd()();
-  }
-  if (rf & 2) {
-    i0.ɵɵnextContext(2);
-    var menu_r4 = i0.ɵɵreference(4);
-    i0.ɵɵproperty("matMenuTriggerFor", menu_r4);
-  }
-}
-function CateringMenuItemComponent_div_1_Template(rf, ctx) {
-  if (rf & 1) {
-    var _r2 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "div", 6)(1, "mat-checkbox", 7);
-    i0.ɵɵtwoWayListener("ngModelChange", function CateringMenuItemComponent_div_1_Template_mat_checkbox_ngModelChange_1_listener($event) {
-      i0.ɵɵrestoreView(_r2);
-      var ctx_r2 = i0.ɵɵnextContext();
-      i0.ɵɵtwoWayBindingSet(ctx_r2.is_enabled, $event) || (ctx_r2.is_enabled = $event);
-      return i0.ɵɵresetView($event);
-    });
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(2, "div", 8)(3, "div", 9)(4, "div");
-    i0.ɵɵtext(5);
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(6, "div", 10);
-    i0.ɵɵtext(7);
-    i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(8, "div", 11);
-    i0.ɵɵtext(9);
-    i0.ɵɵpipe(10, "async");
-    i0.ɵɵpipe(11, "currency");
-    i0.ɵɵelementEnd()();
-    i0.ɵɵtemplate(12, CateringMenuItemComponent_div_1_button_12_Template, 3, 1, "button", 12);
-    i0.ɵɵelementStart(13, "button", 13);
-    i0.ɵɵlistener("click", function CateringMenuItemComponent_div_1_Template_button_click_13_listener() {
-      i0.ɵɵrestoreView(_r2);
-      var ctx_r2 = i0.ɵɵnextContext();
-      return i0.ɵɵresetView(ctx_r2.show_options = !ctx_r2.show_options);
-    });
-    i0.ɵɵelementStart(14, "app-icon");
-    i0.ɵɵtext(15, "expand_more");
-    i0.ɵɵelementEnd()()();
-  }
-  if (rf & 2) {
-    var ctx_r2 = i0.ɵɵnextContext();
-    i0.ɵɵadvance();
-    i0.ɵɵtwoWayProperty("ngModel", ctx_r2.is_enabled);
-    i0.ɵɵadvance(4);
-    i0.ɵɵtextInterpolate(ctx_r2.item.name);
-    i0.ɵɵadvance(2);
-    i0.ɵɵtextInterpolate1(" ", ctx_r2.item.category, " ");
-    i0.ɵɵadvance(2);
-    i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind2(11, 8, ctx_r2.item.unit_price / 100, i0.ɵɵpipeBind1(10, 6, ctx_r2.symbol)), " ");
-    i0.ɵɵadvance(3);
-    i0.ɵɵproperty("ngIf", ctx_r2.can_edit);
-    i0.ɵɵadvance();
-    i0.ɵɵproperty("disabled", !ctx_r2.item.options.length);
-  }
-}
-function CateringMenuItemComponent_div_2_div_1_button_7_Template(rf, ctx) {
-  if (rf & 1) {
-    var _r5 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "button", 23);
-    i0.ɵɵlistener("click", function CateringMenuItemComponent_div_2_div_1_button_7_Template_button_click_0_listener() {
-      i0.ɵɵrestoreView(_r5);
-      var option_r6 = i0.ɵɵnextContext().$implicit;
-      var ctx_r2 = i0.ɵɵnextContext(2);
-      return i0.ɵɵresetView(ctx_r2.editOption(option_r6));
-    });
-    i0.ɵɵelementStart(1, "app-icon");
-    i0.ɵɵtext(2, "edit");
-    i0.ɵɵelementEnd()();
-  }
-}
-function CateringMenuItemComponent_div_2_div_1_button_8_Template(rf, ctx) {
-  if (rf & 1) {
-    var _r7 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "button", 24);
-    i0.ɵɵlistener("click", function CateringMenuItemComponent_div_2_div_1_button_8_Template_button_click_0_listener() {
-      i0.ɵɵrestoreView(_r7);
-      var option_r6 = i0.ɵɵnextContext().$implicit;
-      var ctx_r2 = i0.ɵɵnextContext(2);
-      return i0.ɵɵresetView(ctx_r2.removeOption(option_r6));
-    });
-    i0.ɵɵelementStart(1, "app-icon");
-    i0.ɵɵtext(2, "delete");
-    i0.ɵɵelementEnd()();
-  }
-}
-function CateringMenuItemComponent_div_2_div_1_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 17);
-    i0.ɵɵelement(1, "div", 18);
-    i0.ɵɵelementStart(2, "div", 19)(3, "div", 20);
-    i0.ɵɵtext(4);
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(5, "div", 10);
-    i0.ɵɵtext(6);
-    i0.ɵɵelementEnd()();
-    i0.ɵɵtemplate(7, CateringMenuItemComponent_div_2_div_1_button_7_Template, 3, 0, "button", 21)(8, CateringMenuItemComponent_div_2_div_1_button_8_Template, 3, 0, "button", 22);
-    i0.ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    var option_r6 = ctx.$implicit;
-    var ctx_r2 = i0.ɵɵnextContext(2);
-    i0.ɵɵadvance(4);
-    i0.ɵɵtextInterpolate(option_r6.name);
-    i0.ɵɵadvance(2);
-    i0.ɵɵtextInterpolate1(" ", option_r6.group, " ");
-    i0.ɵɵadvance();
-    i0.ɵɵproperty("ngIf", ctx_r2.can_edit);
-    i0.ɵɵadvance();
-    i0.ɵɵproperty("ngIf", ctx_r2.can_edit);
-  }
-}
-function CateringMenuItemComponent_div_2_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 15);
-    i0.ɵɵtemplate(1, CateringMenuItemComponent_div_2_div_1_Template, 9, 4, "div", 16);
-    i0.ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    var ctx_r2 = i0.ɵɵnextContext();
-    i0.ɵɵstyleProp("height", ctx_r2.show_options ? ctx_r2.item.options.length * 3.5 + "rem" : "0");
-    i0.ɵɵadvance();
-    i0.ɵɵproperty("ngForOf", ctx_r2.item.options);
-  }
-}
-var CateringMenuItemComponent = /*#__PURE__*/function () {
-  function CateringMenuItemComponent(_catering) {
-    var _this = this;
-    _classCallCheck(this, CateringMenuItemComponent);
-    this._catering = _catering;
-    /** Whether to show item options */
-    this.show_options = false;
-    this.addOption = function () {
-      return _this._catering.addOption(_this.item);
-    };
-    this.editOption = function (option) {
-      return _this._catering.addOption(_this.item, option);
-    };
-    this.removeOption = function (option) {
-      return _this._catering.deleteOption(_this.item, option);
-    };
-    this.editItem = function () {
-      return _this._catering.addItem(_this.item);
-    };
-    this.removeItem = function () {
-      return _this._catering.deleteItem(_this.item);
-    };
-  }
-  return _createClass(CateringMenuItemComponent, [{
-    key: "can_edit",
-    get: function get() {
-      return this._catering.is_editable;
-    }
-  }, {
-    key: "is_enabled",
-    get: function get() {
-      return !this.item.hide_for_zones.includes(this._catering.zone);
-    },
-    set: function set(state) {
-      var _this2 = this;
-      var list = this.item.hide_for_zones;
-      if (!state) list = (0, common_1.unique)([].concat(_toConsumableArray(list), [this._catering.zone]));else list = list.filter(function (_) {
-        return _ !== _this2._catering.zone;
-      });
-      this._catering.updateItem(new catering_item_class_1.CateringItem(_objectSpread(_objectSpread({}, this.item), {}, {
-        hide_for_zones: list
-      })));
-    }
-    /** Currency symbol for active menu */
-  }, {
-    key: "symbol",
-    get: function get() {
-      return this._catering.currency;
-    }
-  }]);
-}();
-_CateringMenuItemComponent = CateringMenuItemComponent;
-_CateringMenuItemComponent.ɵfac = function CateringMenuItemComponent_Factory(t) {
-  return new (t || _CateringMenuItemComponent)(i0.ɵɵdirectiveInject(i1.CateringStateService));
-};
-_CateringMenuItemComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
-  type: _CateringMenuItemComponent,
-  selectors: [["", "catering-menu-item", ""]],
-  inputs: {
-    item: "item"
-  },
-  attrs: _c0,
-  decls: 20,
-  vars: 2,
-  consts: [["menu", "matMenu"], [1, "w-full", "h-full", "bg-base-100", "border", "border-base-200", "overflow-hidden", "rounded"], ["item", "", "class", "flex items-center px-2", 4, "ngIf"], ["options", "", "class", "bg-base-200 overflow-hidden", 3, "height", 4, "ngIf"], ["mat-menu-item", "", 1, "flex", "items-center", 3, "click"], [1, "ml-2"], ["item", "", 1, "flex", "items-center", "px-2"], ["matTooltip", "Allow Ordering Item", 1, "mr-2", 3, "ngModelChange", "ngModel"], [1, "flex", "items-center", "p-2", "flex-1"], [1, "flex-1"], [1, "text-xs", "opacity-60"], [1, "p-2", "m-2", "text-xs", "font-bold", "text-secondary-content", "rounded", "bg-secondary"], ["icon", "", "matRipple", "", 3, "matMenuTriggerFor", 4, "ngIf"], ["icon", "", "matRipple", "", 3, "click", "disabled"], ["icon", "", "matRipple", "", 3, "matMenuTriggerFor"], ["options", "", 1, "bg-base-200", "overflow-hidden"], ["class", "flex p-2 items-center border-t border-solid border-base-200 relative", 4, "ngFor", "ngForOf"], [1, "flex", "p-2", "items-center", "border-t", "border-solid", "border-base-200", "relative"], [1, "absolute", "inset-y-0", "left-0", "w-2", "bg-black", "opacity-10"], [1, "flex-1", "pl-4", "pr-2"], [1, "text"], ["edit", "", "icon", "", "matRipple", "", "class", "mx-2", 3, "click", 4, "ngIf"], ["remove", "", "icon", "", "matRipple", "", "class", "mx-2", 3, "click", 4, "ngIf"], ["edit", "", "icon", "", "matRipple", "", 1, "mx-2", 3, "click"], ["remove", "", "icon", "", "matRipple", "", 1, "mx-2", 3, "click"]],
-  template: function CateringMenuItemComponent_Template(rf, ctx) {
-    if (rf & 1) {
-      var _r1 = i0.ɵɵgetCurrentView();
-      i0.ɵɵelementStart(0, "div", 1);
-      i0.ɵɵtemplate(1, CateringMenuItemComponent_div_1_Template, 16, 11, "div", 2)(2, CateringMenuItemComponent_div_2_Template, 2, 3, "div", 3);
-      i0.ɵɵelementStart(3, "mat-menu", null, 0)(5, "button", 4);
-      i0.ɵɵlistener("click", function CateringMenuItemComponent_Template_button_click_5_listener() {
-        i0.ɵɵrestoreView(_r1);
-        return i0.ɵɵresetView(ctx.addOption());
-      });
-      i0.ɵɵelementStart(6, "app-icon");
-      i0.ɵɵtext(7, "add");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(8, "div", 5);
-      i0.ɵɵtext(9, "Add Option");
-      i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(10, "button", 4);
-      i0.ɵɵlistener("click", function CateringMenuItemComponent_Template_button_click_10_listener() {
-        i0.ɵɵrestoreView(_r1);
-        return i0.ɵɵresetView(ctx.editItem());
-      });
-      i0.ɵɵelementStart(11, "app-icon");
-      i0.ɵɵtext(12, "edit");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(13, "div", 5);
-      i0.ɵɵtext(14, "Edit Item");
-      i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(15, "button", 4);
-      i0.ɵɵlistener("click", function CateringMenuItemComponent_Template_button_click_15_listener() {
-        i0.ɵɵrestoreView(_r1);
-        return i0.ɵɵresetView(ctx.removeItem());
-      });
-      i0.ɵɵelementStart(16, "app-icon");
-      i0.ɵɵtext(17, "delete");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(18, "div", 5);
-      i0.ɵɵtext(19, "Remove Item");
-      i0.ɵɵelementEnd()()()();
-    }
-    if (rf & 2) {
-      i0.ɵɵadvance();
-      i0.ɵɵproperty("ngIf", ctx.item);
-      i0.ɵɵadvance();
-      i0.ɵɵproperty("ngIf", ctx.item);
-    }
-  },
-  dependencies: [i2.NgForOf, i2.NgIf, i3.MatMenu, i3.MatMenuItem, i3.MatMenuTrigger, i4.MatCheckbox, i5.MatTooltip, i6.NgControlStatus, i6.NgModel, i7.IconComponent, i8.MatRipple, i2.AsyncPipe, i2.CurrencyPipe],
-  styles: ["[_nghost-%COMP%] {\n                overflow: hidden;\n                width: 48rem;\n                margin: 0.5rem auto;\n                max-width: calc(100vw - 1rem);\n            }\n\n            button[mat-menu-item][_ngcontent-%COMP%] {\n                display: flex;\n            }\n\n            [options][_ngcontent-%COMP%] {\n                transition: height 200ms;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvY2F0ZXJpbmcvc3JjL2xpYi9jYXRlcmluZy1tZW51LWl0ZW0uY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxnQkFBZ0I7Z0JBQ2hCLFlBQVk7Z0JBQ1osbUJBQW1CO2dCQUNuQiw2QkFBNkI7WUFDakM7O1lBRUE7Z0JBQ0ksYUFBYTtZQUNqQjs7WUFFQTtnQkFDSSx3QkFBd0I7WUFDNUIiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBvdmVyZmxvdzogaGlkZGVuO1xuICAgICAgICAgICAgICAgIHdpZHRoOiA0OHJlbTtcbiAgICAgICAgICAgICAgICBtYXJnaW46IDAuNXJlbSBhdXRvO1xuICAgICAgICAgICAgICAgIG1heC13aWR0aDogY2FsYygxMDB2dyAtIDFyZW0pO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICBidXR0b25bbWF0LW1lbnUtaXRlbV0ge1xuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIFtvcHRpb25zXSB7XG4gICAgICAgICAgICAgICAgdHJhbnNpdGlvbjogaGVpZ2h0IDIwMG1zO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
-});
-exports.CateringMenuItemComponent = CateringMenuItemComponent;
-
-/***/ }),
-
 /***/ 48519:
 /*!**********************************************************!*\
   !*** ./libs/catering/src/lib/catering-menu.component.ts ***!
@@ -23212,7 +22934,8 @@ exports.CateringMenuItemComponent = CateringMenuItemComponent;
 
 
 
-var _createForOfIteratorHelper = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/createForOfIteratorHelper.js */ 36350)["default"]);
+var _objectSpread = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/objectSpread2.js */ 34092)["default"]);
+var _toConsumableArray = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/toConsumableArray.js */ 86033)["default"]);
 var _classCallCheck = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/classCallCheck.js */ 80912)["default"]);
 var _createClass = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/createClass.js */ 92974)["default"]);
 var _CateringMenuComponent;
@@ -23220,153 +22943,309 @@ Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 exports.CateringMenuComponent = void 0;
-var rxjs_1 = __webpack_require__(/*! rxjs */ 15681);
-var operators_1 = __webpack_require__(/*! rxjs/operators */ 97303);
 var catering_state_service_1 = __webpack_require__(/*! ./catering-state.service */ 52201);
+var catering_item_class_1 = __webpack_require__(/*! ./catering-item.class */ 25892);
+var common_1 = __webpack_require__(/*! @placeos/common */ 22797);
+var catering_orders_service_1 = __webpack_require__(/*! ./catering-orders.service */ 98197);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
 var i1 = __webpack_require__(/*! ./catering-state.service */ 52201);
-var i2 = __webpack_require__(/*! @angular/common */ 60316);
-var i3 = __webpack_require__(/*! @angular/material/tabs */ 38223);
-var i4 = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
-var i5 = __webpack_require__(/*! ./catering-menu-item.component */ 71853);
-function CateringMenuComponent_ng_container_2_ng_container_1_Template(rf, ctx) {
+var i2 = __webpack_require__(/*! ./catering-orders.service */ 98197);
+var i3 = __webpack_require__(/*! @angular/common */ 60316);
+var i4 = __webpack_require__(/*! @angular/material/menu */ 31034);
+var i5 = __webpack_require__(/*! @angular/material/checkbox */ 97024);
+var i6 = __webpack_require__(/*! @angular/material/tooltip */ 80640);
+var i7 = __webpack_require__(/*! @angular/forms */ 34456);
+var i8 = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
+var i9 = __webpack_require__(/*! ../../../components/src/lib/simple-table.component */ 88328);
+var i10 = __webpack_require__(/*! @angular/material/core */ 74646);
+var _c0 = function _c0(a0) {
+  return {
+    key: "active",
+    name: " ",
+    content: a0,
+    size: "3.5rem",
+    sortable: false
+  };
+};
+var _c1 = function _c1() {
+  return {
+    key: "name",
+    name: "Name"
+  };
+};
+var _c2 = function _c2() {
+  return {
+    key: "category",
+    name: "Category"
+  };
+};
+var _c3 = function _c3(a0) {
+  return {
+    key: "unit_price",
+    name: "Price",
+    content: a0,
+    size: "6rem"
+  };
+};
+var _c4 = function _c4(a0) {
+  return {
+    key: "actions",
+    name: " ",
+    content: a0,
+    size: "6.5rem",
+    sortable: false
+  };
+};
+var _c5 = function _c5(a0, a1, a2, a3, a4) {
+  return [a0, a1, a2, a3, a4];
+};
+function CateringMenuComponent_ng_template_1_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementContainerStart(0);
-    i0.ɵɵelement(1, "div", 6);
-    i0.ɵɵelementContainerEnd();
-  }
-  if (rf & 2) {
-    var item_r2 = ctx.$implicit;
-    i0.ɵɵadvance();
-    i0.ɵɵproperty("item", item_r2);
-  }
-}
-function CateringMenuComponent_ng_container_2_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementContainerStart(0);
-    i0.ɵɵtemplate(1, CateringMenuComponent_ng_container_2_ng_container_1_Template, 2, 1, "ng-container", 5);
-    i0.ɵɵpipe(2, "async");
-    i0.ɵɵelementContainerEnd();
-  }
-  if (rf & 2) {
-    var ctx_r2 = i0.ɵɵnextContext();
-    i0.ɵɵadvance();
-    i0.ɵɵproperty("ngForOf", i0.ɵɵpipeBind1(2, 1, ctx_r2.menu));
-  }
-}
-function CateringMenuComponent_mat_tab_4_ng_container_1_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementContainerStart(0);
-    i0.ɵɵelement(1, "div", 6);
-    i0.ɵɵelementContainerEnd();
-  }
-  if (rf & 2) {
-    var item_r4 = ctx.$implicit;
-    i0.ɵɵadvance();
-    i0.ɵɵproperty("item", item_r4);
-  }
-}
-function CateringMenuComponent_mat_tab_4_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "mat-tab", 7);
-    i0.ɵɵtemplate(1, CateringMenuComponent_mat_tab_4_ng_container_1_Template, 2, 1, "ng-container", 5);
-    i0.ɵɵpipe(2, "async");
+    var _r1 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "mat-checkbox", 6);
+    i0.ɵɵlistener("ngModelChange", function CateringMenuComponent_ng_template_1_Template_mat_checkbox_ngModelChange_0_listener($event) {
+      var row_r2 = i0.ɵɵrestoreView(_r1).row;
+      var ctx_r2 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r2.setEnabled(row_r2, $event));
+    });
     i0.ɵɵelementEnd();
   }
   if (rf & 2) {
-    var group_r5 = ctx.$implicit;
+    var row_r2 = ctx.row;
     var ctx_r2 = i0.ɵɵnextContext();
-    i0.ɵɵproperty("label", group_r5);
-    i0.ɵɵattribute("label", group_r5);
+    i0.ɵɵproperty("ngModel", ctx_r2.isEnabled(row_r2));
+  }
+}
+function CateringMenuComponent_ng_template_3_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 7);
+    i0.ɵɵtext(1);
+    i0.ɵɵpipe(2, "async");
+    i0.ɵɵpipe(3, "currency");
+    i0.ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    var data_r4 = ctx.data;
+    var ctx_r2 = i0.ɵɵnextContext();
     i0.ɵɵadvance();
-    i0.ɵɵproperty("ngForOf", i0.ɵɵpipeBind1(2, 3, ctx_r2.tab_menu)[group_r5]);
+    i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind2(3, 3, data_r4 / 100, i0.ɵɵpipeBind1(2, 1, ctx_r2.symbol)), " ");
   }
 }
 function CateringMenuComponent_ng_template_5_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 8)(1, "app-icon");
-    i0.ɵɵtext(2, "close");
+    var _r5 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "div", 8)(1, "button", 9)(2, "app-icon");
+    i0.ɵɵtext(3, "more_vert");
+    i0.ɵɵelementEnd()();
+    i0.ɵɵelementStart(4, "mat-menu", null, 4)(6, "button", 10);
+    i0.ɵɵlistener("click", function CateringMenuComponent_ng_template_5_Template_button_click_6_listener() {
+      var row_r6 = i0.ɵɵrestoreView(_r5).row;
+      var ctx_r2 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r2.addOption(row_r6));
+    });
+    i0.ɵɵelementStart(7, "div", 11)(8, "app-icon");
+    i0.ɵɵtext(9, "add");
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(3, "p");
-    i0.ɵɵtext(4, "No items in menu");
+    i0.ɵɵelementStart(10, "div");
+    i0.ɵɵtext(11, "Add Option");
+    i0.ɵɵelementEnd()()();
+    i0.ɵɵelementStart(12, "button", 10);
+    i0.ɵɵlistener("click", function CateringMenuComponent_ng_template_5_Template_button_click_12_listener() {
+      var row_r6 = i0.ɵɵrestoreView(_r5).row;
+      var ctx_r2 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r2.editItem(row_r6));
+    });
+    i0.ɵɵelementStart(13, "div", 11)(14, "app-icon");
+    i0.ɵɵtext(15, "edit");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(16, "div");
+    i0.ɵɵtext(17, "Edit Item");
+    i0.ɵɵelementEnd()()();
+    i0.ɵɵelementStart(18, "button", 10);
+    i0.ɵɵlistener("click", function CateringMenuComponent_ng_template_5_Template_button_click_18_listener() {
+      var row_r6 = i0.ɵɵrestoreView(_r5).row;
+      var ctx_r2 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r2.removeItem(row_r6));
+    });
+    i0.ɵɵelementStart(19, "div", 11)(20, "app-icon", 12);
+    i0.ɵɵtext(21, "delete");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(22, "div");
+    i0.ɵɵtext(23, "Remove Item");
+    i0.ɵɵelementEnd()()()();
+    i0.ɵɵelementStart(24, "button", 13);
+    i0.ɵɵlistener("click", function CateringMenuComponent_ng_template_5_Template_button_click_24_listener() {
+      var row_r6 = i0.ɵɵrestoreView(_r5).row;
+      var ctx_r2 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r2.show_children[row_r6.id] = !ctx_r2.show_children[row_r6.id]);
+    });
+    i0.ɵɵelementStart(25, "app-icon");
+    i0.ɵɵtext(26);
+    i0.ɵɵelementEnd()()();
+  }
+  if (rf & 2) {
+    var row_r6 = ctx.row;
+    var menu_r7 = i0.ɵɵreference(5);
+    var ctx_r2 = i0.ɵɵnextContext();
+    i0.ɵɵadvance();
+    i0.ɵɵclassProp("opacity-0", !ctx_r2.can_edit);
+    i0.ɵɵproperty("disabled", !ctx_r2.can_edit)("matMenuTriggerFor", menu_r7);
+    i0.ɵɵadvance(23);
+    i0.ɵɵproperty("disabled", !(row_r6.options == null ? null : row_r6.options.length))("matTooltip", (row_r6.options == null ? null : row_r6.options.length) ? (ctx_r2.show_children[row_r6.id] ? "Hide" : "Show") + " Menu Item Options" : "");
+    i0.ɵɵadvance(2);
+    i0.ɵɵtextInterpolate1(" ", ctx_r2.show_children[row_r6.id] ? "keyboard_arrow_down" : "chevron_right", " ");
+  }
+}
+function CateringMenuComponent_ng_template_7_div_0_button_7_Template(rf, ctx) {
+  if (rf & 1) {
+    var _r8 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "button", 22);
+    i0.ɵɵlistener("click", function CateringMenuComponent_ng_template_7_div_0_button_7_Template_button_click_0_listener() {
+      i0.ɵɵrestoreView(_r8);
+      var option_r9 = i0.ɵɵnextContext().$implicit;
+      var row_r10 = i0.ɵɵnextContext().row;
+      var ctx_r2 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r2.editOption(row_r10, option_r9));
+    });
+    i0.ɵɵelementStart(1, "app-icon");
+    i0.ɵɵtext(2, "edit");
     i0.ɵɵelementEnd()();
   }
 }
+function CateringMenuComponent_ng_template_7_div_0_button_8_Template(rf, ctx) {
+  if (rf & 1) {
+    var _r11 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "button", 23);
+    i0.ɵɵlistener("click", function CateringMenuComponent_ng_template_7_div_0_button_8_Template_button_click_0_listener() {
+      i0.ɵɵrestoreView(_r11);
+      var option_r9 = i0.ɵɵnextContext().$implicit;
+      var row_r10 = i0.ɵɵnextContext().row;
+      var ctx_r2 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r2.removeOption(row_r10, option_r9));
+    });
+    i0.ɵɵelementStart(1, "app-icon", 12);
+    i0.ɵɵtext(2, "delete");
+    i0.ɵɵelementEnd()();
+  }
+}
+function CateringMenuComponent_ng_template_7_div_0_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 15);
+    i0.ɵɵelement(1, "div", 16);
+    i0.ɵɵelementStart(2, "div", 17)(3, "div", 18);
+    i0.ɵɵtext(4);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(5, "div", 19);
+    i0.ɵɵtext(6);
+    i0.ɵɵelementEnd()();
+    i0.ɵɵtemplate(7, CateringMenuComponent_ng_template_7_div_0_button_7_Template, 3, 0, "button", 20)(8, CateringMenuComponent_ng_template_7_div_0_button_8_Template, 3, 0, "button", 21);
+    i0.ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    var option_r9 = ctx.$implicit;
+    var ctx_r2 = i0.ɵɵnextContext(2);
+    i0.ɵɵadvance(4);
+    i0.ɵɵtextInterpolate(option_r9.name);
+    i0.ɵɵadvance(2);
+    i0.ɵɵtextInterpolate1(" ", option_r9.group, " ");
+    i0.ɵɵadvance();
+    i0.ɵɵproperty("ngIf", ctx_r2.can_edit);
+    i0.ɵɵadvance();
+    i0.ɵɵproperty("ngIf", ctx_r2.can_edit);
+  }
+}
+function CateringMenuComponent_ng_template_7_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵtemplate(0, CateringMenuComponent_ng_template_7_div_0_Template, 9, 4, "div", 14);
+  }
+  if (rf & 2) {
+    var row_r10 = ctx.row;
+    i0.ɵɵproperty("ngForOf", row_r10.options);
+  }
+}
 var CateringMenuComponent = /*#__PURE__*/function () {
-  function CateringMenuComponent(_catering) {
+  function CateringMenuComponent(_catering, _orders) {
     var _this = this;
     _classCallCheck(this, CateringMenuComponent);
     this._catering = _catering;
+    this._orders = _orders;
+    this.show_children = {};
     /** Observable for the currently active menu */
     this.menu = this._catering.menu;
-    /** Store for the currently selected tab */
-    this.shown_tab = new rxjs_1.BehaviorSubject('');
-    /** Observable for the menu list for the selected tab */
-    this.tab_menu = this.menu.pipe((0, operators_1.map)(function (menu) {
-      var menu_map = {};
-      var _iterator = _createForOfIteratorHelper(_this.categories),
-        _step;
-      try {
-        var _loop = function _loop() {
-          var group = _step.value;
-          menu_map[group] = menu.filter(function (item) {
-            return item.category === group;
-          });
-        };
-        for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          _loop();
-        }
-      } catch (err) {
-        _iterator.e(err);
-      } finally {
-        _iterator.f();
-      }
-      return menu_map;
-    }));
+    this.addOption = function (item) {
+      return _this._catering.addOption(item);
+    };
+    this.editOption = function (item, option) {
+      return _this._catering.addOption(item, option);
+    };
+    this.removeOption = function (item, option) {
+      return _this._catering.deleteOption(item, option);
+    };
+    this.editItem = function (item) {
+      return _this._catering.addItem(item);
+    };
+    this.removeItem = function (item) {
+      return _this._catering.deleteItem(item);
+    };
   }
   return _createClass(CateringMenuComponent, [{
+    key: "filters",
+    get: function get() {
+      return this._orders.filters;
+    }
+  }, {
+    key: "can_edit",
+    get: function get() {
+      return this._catering.is_editable;
+    }
+  }, {
     key: "categories",
     get: function get() {
       return this._catering.categories;
+    }
+  }, {
+    key: "isEnabled",
+    value: function isEnabled(item) {
+      return !item.hide_for_zones.includes(this._catering.zone);
+    }
+  }, {
+    key: "setEnabled",
+    value: function setEnabled(item, state) {
+      var _this2 = this;
+      var list = item.hide_for_zones;
+      if (!state) list = (0, common_1.unique)([].concat(_toConsumableArray(list), [this._catering.zone]));else list = list.filter(function (_) {
+        return _ !== _this2._catering.zone;
+      });
+      this._catering.updateItem(new catering_item_class_1.CateringItem(_objectSpread(_objectSpread({}, item), {}, {
+        hide_for_zones: list
+      })));
     }
   }]);
 }();
 _CateringMenuComponent = CateringMenuComponent;
 _CateringMenuComponent.ɵfac = function CateringMenuComponent_Factory(t) {
-  return new (t || _CateringMenuComponent)(i0.ɵɵdirectiveInject(i1.CateringStateService));
+  return new (t || _CateringMenuComponent)(i0.ɵɵdirectiveInject(i1.CateringStateService), i0.ɵɵdirectiveInject(i2.CateringOrdersService));
 };
 _CateringMenuComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
   type: _CateringMenuComponent,
   selectors: [["catering-menu"]],
-  decls: 7,
-  vars: 5,
-  consts: [["empty_state", ""], [1, "h-full", 3, "selectedIndexChange"], ["label", "All Items"], [4, "ngIf", "ngIfElse"], [3, "label", 4, "ngFor", "ngForOf"], [4, "ngFor", "ngForOf"], ["catering-menu-item", "", 3, "item"], [3, "label"], [1, "flex", "flex-col", "items-center", "p-8", "space-y-2"]],
+  decls: 9,
+  vars: 20,
+  consts: [["active_template", ""], ["price_template", ""], ["actions_template", ""], ["child_template", ""], ["menu", "matMenu"], ["empty_message", "No Items in Menu", 1, "w-full", "min-w-[32rem]", "block", "text-sm", 3, "data", "columns", "filter", "show_children", "child_template", "sortable"], ["matTooltip", "Allow Ordering Item for this zone", "matTooltipPosition", "right", 1, "mx-auto", 3, "ngModelChange", "ngModel"], [1, "px-2", "py-1", "font-mono", "text-xs", "flex", "items-center", "mx-auto", "bg-secondary", "text-secondary-content", "rounded"], [1, "p-2", "flex", "items-center", "mx-auto", "space-x-2"], ["icon", "", "matRipple", "", 3, "disabled", "matMenuTriggerFor"], ["mat-menu-item", "", 1, "flex", "items-center", 3, "click"], [1, "flex", "items-center", "space-x-2", "pr-2"], [1, "text-error"], ["icon", "", "matRipple", "", 3, "click", "disabled", "matTooltip"], ["class", "flex p-2 items-center border-b border-solid border-base-200 relative space-x-2", 4, "ngFor", "ngForOf"], [1, "flex", "p-2", "items-center", "border-b", "border-solid", "border-base-200", "relative", "space-x-2"], [1, "absolute", "inset-y-0", "left-0", "w-2", "bg-black", "opacity-10"], [1, "flex-1", "pl-4", "pr-2"], [1, "text"], [1, "text-xs", "opacity-60"], ["icon", "", "matRipple", "", "matTooltip", "Edit Menu Item Option", 3, "click", 4, "ngIf"], ["icon", "", "matRipple", "", "class", "!mr-1", "matTooltip", "Remove Menu Item Option", 3, "click", 4, "ngIf"], ["icon", "", "matRipple", "", "matTooltip", "Edit Menu Item Option", 3, "click"], ["icon", "", "matRipple", "", "matTooltip", "Remove Menu Item Option", 1, "!mr-1", 3, "click"]],
   template: function CateringMenuComponent_Template(rf, ctx) {
     if (rf & 1) {
-      var _r1 = i0.ɵɵgetCurrentView();
-      i0.ɵɵelementStart(0, "mat-tab-group", 1);
-      i0.ɵɵlistener("selectedIndexChange", function CateringMenuComponent_Template_mat_tab_group_selectedIndexChange_0_listener($event) {
-        i0.ɵɵrestoreView(_r1);
-        return i0.ɵɵresetView(ctx.shown_tab.next($event === 0 ? "" : ctx.categories[$event - 1]));
-      });
-      i0.ɵɵelementStart(1, "mat-tab", 2);
-      i0.ɵɵtemplate(2, CateringMenuComponent_ng_container_2_Template, 3, 3, "ng-container", 3);
-      i0.ɵɵpipe(3, "async");
-      i0.ɵɵelementEnd();
-      i0.ɵɵtemplate(4, CateringMenuComponent_mat_tab_4_Template, 3, 5, "mat-tab", 4);
-      i0.ɵɵelementEnd();
-      i0.ɵɵtemplate(5, CateringMenuComponent_ng_template_5_Template, 5, 0, "ng-template", null, 0, i0.ɵɵtemplateRefExtractor);
+      i0.ɵɵelement(0, "simple-table", 5);
+      i0.ɵɵtemplate(1, CateringMenuComponent_ng_template_1_Template, 1, 1, "ng-template", null, 0, i0.ɵɵtemplateRefExtractor)(3, CateringMenuComponent_ng_template_3_Template, 4, 6, "ng-template", null, 1, i0.ɵɵtemplateRefExtractor)(5, CateringMenuComponent_ng_template_5_Template, 27, 7, "ng-template", null, 2, i0.ɵɵtemplateRefExtractor)(7, CateringMenuComponent_ng_template_7_Template, 1, 1, "ng-template", null, 3, i0.ɵɵtemplateRefExtractor);
     }
     if (rf & 2) {
-      var tmp_1_0;
-      var empty_state_r6 = i0.ɵɵreference(6);
-      i0.ɵɵadvance(2);
-      i0.ɵɵproperty("ngIf", (tmp_1_0 = i0.ɵɵpipeBind1(3, 3, ctx.menu)) == null ? null : tmp_1_0.length)("ngIfElse", empty_state_r6);
-      i0.ɵɵadvance(2);
-      i0.ɵɵproperty("ngForOf", ctx.categories);
+      var active_template_r12 = i0.ɵɵreference(2);
+      var price_template_r13 = i0.ɵɵreference(4);
+      var actions_template_r14 = i0.ɵɵreference(6);
+      var child_template_r15 = i0.ɵɵreference(8);
+      i0.ɵɵproperty("data", ctx.menu)("columns", i0.ɵɵpureFunction5(14, _c5, i0.ɵɵpureFunction1(6, _c0, active_template_r12), i0.ɵɵpureFunction0(8, _c1), i0.ɵɵpureFunction0(9, _c2), i0.ɵɵpureFunction1(10, _c3, price_template_r13), i0.ɵɵpureFunction1(12, _c4, actions_template_r14)))("filter", ctx.filters == null ? null : ctx.filters.search)("show_children", ctx.show_children)("child_template", child_template_r15)("sortable", true);
     }
   },
-  dependencies: [i2.NgForOf, i2.NgIf, i3.MatTab, i3.MatTabGroup, i4.IconComponent, i5.CateringMenuItemComponent, i2.AsyncPipe],
+  dependencies: [i3.NgForOf, i3.NgIf, i4.MatMenu, i4.MatMenuItem, i4.MatMenuTrigger, i5.MatCheckbox, i6.MatTooltip, i7.NgControlStatus, i7.NgModel, i8.IconComponent, i9.SimpleTableComponent, i10.MatRipple, i3.AsyncPipe, i3.CurrencyPipe],
   styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n                height: 90%;\n                width: 100%;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvY2F0ZXJpbmcvc3JjL2xpYi9jYXRlcmluZy1tZW51LmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksYUFBYTtnQkFDYixzQkFBc0I7Z0JBQ3RCLFdBQVc7Z0JBQ1gsV0FBVztZQUNmIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgICAgICAgIGhlaWdodDogOTAlO1xuICAgICAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
 });
 exports.CateringMenuComponent = CateringMenuComponent;
@@ -23687,12 +23566,12 @@ function CateringOrderItemComponent_ng_container_0_Template(rf, ctx) {
     i0.ɵɵelementStart(5, "app-icon");
     i0.ɵɵtext(6);
     i0.ɵɵelementEnd()()();
-    i0.ɵɵelementStart(7, "div", 5)(8, "div", 6);
-    i0.ɵɵtext(9);
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(10, "div", 7)(11, "div", 8);
-    i0.ɵɵtext(12);
+    i0.ɵɵelementStart(7, "div", 5)(8, "div", 6)(9, "div", 7);
+    i0.ɵɵtext(10);
     i0.ɵɵelementEnd()();
+    i0.ɵɵelementStart(11, "div", 8);
+    i0.ɵɵtext(12);
+    i0.ɵɵelementEnd();
     i0.ɵɵelementStart(13, "div", 9);
     i0.ɵɵtemplate(14, CateringOrderItemComponent_ng_container_0_ng_container_14_Template, 2, 1, "ng-container", 10);
     i0.ɵɵelementEnd()();
@@ -23704,10 +23583,10 @@ function CateringOrderItemComponent_ng_container_0_Template(rf, ctx) {
     i0.ɵɵclassProp("bg-success", ctx_r1.active)("text-white", ctx_r1.active)("border-solid", ctx_r1.active);
     i0.ɵɵadvance(2);
     i0.ɵɵtextInterpolate(ctx_r1.active ? "done" : "local_pizza");
-    i0.ɵɵadvance(3);
-    i0.ɵɵtextInterpolate(ctx_r1.item == null ? null : ctx_r1.item.name);
-    i0.ɵɵadvance(3);
+    i0.ɵɵadvance(4);
     i0.ɵɵtextInterpolate1(" \u2A2F", (ctx_r1.item == null ? null : ctx_r1.item.amount) || (ctx_r1.item == null ? null : ctx_r1.item.quantity) || 1, " ");
+    i0.ɵɵadvance(2);
+    i0.ɵɵtextInterpolate(ctx_r1.item == null ? null : ctx_r1.item.name);
     i0.ɵɵadvance(2);
     i0.ɵɵproperty("ngForOf", ctx_r1.item.option_list);
   }
@@ -23756,7 +23635,7 @@ _CateringOrderItemComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
   attrs: _c0,
   decls: 1,
   vars: 1,
-  consts: [[4, "ngIf"], [1, "w-20", "text-right", "h-14", "relative"], [1, "border-b-2", "border-l-2", "border-base-200", "w-4", "h-16", "absolute", "top-1/2", "left-1/2", "-translate-y-full"], [1, "w-12", "mr-4"], ["action", "", "icon", "", "matRipple", "", 1, "border", "border-base-200", "border-dashed", "text-xl", "text-dark-fade", "p-2", 3, "click"], [1, "flex", "flex-1", "border-b", "border-base-200", "border-solid", "py-4", "space-x-2"], [1, ""], [1, "flex-1"], [1, "p-1", "rounded-full", "bg-neutral", "w-8", "h-8", "flex", "items-center", "justify-center"], [1, "flex", "space-x-2", "mr-2"], [4, "ngFor", "ngForOf"], ["class", "text-xs py-1 px-2 bg-warning text-black rounded-2xl shadow", 4, "ngIf"], [1, "text-xs", "py-1", "px-2", "bg-warning", "text-black", "rounded-2xl", "shadow"]],
+  consts: [[4, "ngIf"], [1, "w-16", "text-right", "h-14", "relative"], ["arm", "", 1, "border-b-2", "border-l-2", "border-base-200", "w-4", "h-16", "absolute", "top-1/2", "left-1/2", "-translate-y-full", "-translate-x-px"], [1, "w-12", "mr-4"], ["action", "", "icon", "", "matRipple", "", 1, "border-2", "border-base-200", "border-dashed", "text-xl", "text-dark-fade", "p-2", 3, "click"], [1, "flex", "flex-1", "items-center", "border-b", "border-base-200", "border-solid", "py-4", "space-x-4"], [1, ""], [1, "p-1", "rounded-full", "bg-base-400", "w-8", "h-8", "flex", "items-center", "justify-center"], [1, "flex-1"], [1, "flex", "space-x-2", "mr-2", "px-4"], [4, "ngFor", "ngForOf"], ["class", "text-xs py-1 px-2 bg-warning text-warning-content rounded-2xl shadow", 4, "ngIf"], [1, "text-xs", "py-1", "px-2", "bg-warning", "text-warning-content", "rounded-2xl", "shadow"]],
   template: function CateringOrderItemComponent_Template(rf, ctx) {
     if (rf & 1) {
       i0.ɵɵtemplate(0, CateringOrderItemComponent_ng_container_0_Template, 15, 10, "ng-container", 0);
@@ -23780,52 +23659,342 @@ exports.CateringOrderItemComponent = CateringOrderItemComponent;
 
 
 
+var _regeneratorRuntime = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/regeneratorRuntime.js */ 8698)["default"]);
+var _asyncToGenerator = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/asyncToGenerator.js */ 95386)["default"]);
 var _classCallCheck = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/classCallCheck.js */ 80912)["default"]);
 var _createClass = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/createClass.js */ 92974)["default"]);
+var _callSuper = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/callSuper.js */ 8513)["default"]);
+var _inherits = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/inherits.js */ 58160)["default"]);
 var _CateringOrderListComponent;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 exports.CateringOrderListComponent = void 0;
 var catering_orders_service_1 = __webpack_require__(/*! ./catering-orders.service */ 98197);
+var common_1 = __webpack_require__(/*! @placeos/common */ 22797);
+var catering_vars_1 = __webpack_require__(/*! ./catering.vars */ 91074);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
 var i1 = __webpack_require__(/*! ./catering-orders.service */ 98197);
-var i2 = __webpack_require__(/*! @angular/common */ 60316);
-var i3 = __webpack_require__(/*! ./catering-order.component */ 98832);
-function CateringOrderListComponent_li_20_Template(rf, ctx) {
+var i2 = __webpack_require__(/*! @placeos/common */ 22797);
+var i3 = __webpack_require__(/*! @angular/common */ 60316);
+var i4 = __webpack_require__(/*! @angular/material/menu */ 31034);
+var i5 = __webpack_require__(/*! @angular/material/tooltip */ 80640);
+var i6 = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
+var i7 = __webpack_require__(/*! ../../../components/src/lib/simple-table.component */ 88328);
+var i8 = __webpack_require__(/*! @angular/material/core */ 74646);
+var i9 = __webpack_require__(/*! ./catering-order-item.component */ 3872);
+var _c0 = function _c0(a0) {
+  return {
+    key: "state",
+    name: " ",
+    size: "4rem",
+    sortable: false,
+    content: a0
+  };
+};
+var _c1 = function _c1(a0) {
+  return {
+    key: "deliver_at",
+    name: "Time",
+    content: a0
+  };
+};
+var _c2 = function _c2(a0) {
+  return {
+    key: "event",
+    name: "Meeting Time",
+    content: a0
+  };
+};
+var _c3 = function _c3(a0) {
+  return {
+    key: "event",
+    name: "Location",
+    content: a0
+  };
+};
+var _c4 = function _c4(a0) {
+  return {
+    key: "event",
+    name: "Host",
+    content: a0
+  };
+};
+var _c5 = function _c5() {
+  return {
+    key: "charge_code",
+    name: "Charge Code"
+  };
+};
+var _c6 = function _c6() {
+  return {
+    key: "invoice_number",
+    name: "Invoice No."
+  };
+};
+var _c7 = function _c7(a0) {
+  return {
+    key: "status",
+    name: "Status",
+    content: a0,
+    size: "11rem"
+  };
+};
+var _c8 = function _c8(a0) {
+  return {
+    key: "actions",
+    name: " ",
+    size: "6.5rem",
+    content: a0,
+    sortable: false
+  };
+};
+var _c9 = function _c9(a0, a1, a2, a3, a4, a5, a6, a7, a8) {
+  return [a0, a1, a2, a3, a4, a5, a6, a7, a8];
+};
+function CateringOrderListComponent_ng_template_2_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "li", 12);
-    i0.ɵɵelement(1, "catering-order", 13);
+    i0.ɵɵelementStart(0, "div", 11)(1, "div", 12)(2, "app-icon");
+    i0.ɵɵtext(3, "room_service");
+    i0.ɵɵelementEnd()()();
+  }
+}
+function CateringOrderListComponent_ng_template_4_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 13);
+    i0.ɵɵtext(1);
+    i0.ɵɵpipe(2, "date");
     i0.ɵɵelementEnd();
   }
   if (rf & 2) {
-    var order_r1 = ctx.$implicit;
+    var data_r1 = ctx.data;
+    var ctx_r1 = i0.ɵɵnextContext();
     i0.ɵɵadvance();
-    i0.ɵɵproperty("order", order_r1);
+    i0.ɵɵtextInterpolate(i0.ɵɵpipeBind2(2, 1, data_r1, ctx_r1.time_format));
   }
 }
-function CateringOrderListComponent_div_22_Template(rf, ctx) {
+function CateringOrderListComponent_ng_template_6_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 14)(1, "p", 15);
-    i0.ɵɵtext(2, "No Catering Orders");
+    i0.ɵɵelementStart(0, "div", 14);
+    i0.ɵɵtext(1);
+    i0.ɵɵpipe(2, "date");
+    i0.ɵɵpipe(3, "date");
+    i0.ɵɵelement(4, "br");
+    i0.ɵɵtext(5);
+    i0.ɵɵpipe(6, "date");
+    i0.ɵɵpipe(7, "date");
+    i0.ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    var data_r3 = ctx.data;
+    var ctx_r1 = i0.ɵɵnextContext();
+    i0.ɵɵadvance();
+    i0.ɵɵtextInterpolate2(" ", i0.ɵɵpipeBind2(2, 4, data_r3 == null ? null : data_r3.date, "MMM d"), ", ", i0.ɵɵpipeBind2(3, 7, data_r3 == null ? null : data_r3.date, ctx_r1.time_format), " ");
+    i0.ɵɵadvance(4);
+    i0.ɵɵtextInterpolate2(" ", i0.ɵɵpipeBind2(6, 10, data_r3 == null ? null : data_r3.date_end, "MMM d"), ", ", i0.ɵɵpipeBind2(7, 13, data_r3 == null ? null : data_r3.date_end, ctx_r1.time_format), " ");
+  }
+}
+function CateringOrderListComponent_ng_template_8_span_2_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "span", 16);
+    i0.ɵɵtext(1, " No Location ");
+    i0.ɵɵelementEnd();
+  }
+}
+function CateringOrderListComponent_ng_template_8_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 13);
+    i0.ɵɵtext(1);
+    i0.ɵɵtemplate(2, CateringOrderListComponent_ng_template_8_span_2_Template, 2, 0, "span", 15);
+    i0.ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    var data_r4 = ctx.data;
+    i0.ɵɵadvance();
+    i0.ɵɵtextInterpolate1(" ", (data_r4 == null ? null : data_r4.space == null ? null : data_r4.space.display_name) || (data_r4 == null ? null : data_r4.space == null ? null : data_r4.space.name) || "", " ");
+    i0.ɵɵadvance();
+    i0.ɵɵproperty("ngIf", !((data_r4 == null ? null : data_r4.space == null ? null : data_r4.space.display_name) || (data_r4 == null ? null : data_r4.space == null ? null : data_r4.space.name)));
+  }
+}
+function CateringOrderListComponent_ng_template_10_span_2_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "span", 16);
+    i0.ɵɵtext(1, " Unknown Host ");
+    i0.ɵɵelementEnd();
+  }
+}
+function CateringOrderListComponent_ng_template_10_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 13);
+    i0.ɵɵtext(1);
+    i0.ɵɵtemplate(2, CateringOrderListComponent_ng_template_10_span_2_Template, 2, 0, "span", 15);
+    i0.ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    var data_r5 = ctx.data;
+    i0.ɵɵadvance();
+    i0.ɵɵtextInterpolate1(" ", (data_r5 == null ? null : data_r5.organiser == null ? null : data_r5.organiser.name) || (data_r5 == null ? null : data_r5.host) || "", " ");
+    i0.ɵɵadvance();
+    i0.ɵɵproperty("ngIf", !((data_r5 == null ? null : data_r5.organiser == null ? null : data_r5.organiser.name) || (data_r5 == null ? null : data_r5.host)));
+  }
+}
+function CateringOrderListComponent_ng_template_12_button_8_Template(rf, ctx) {
+  if (rf & 1) {
+    var _r6 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "button", 22);
+    i0.ɵɵlistener("click", function CateringOrderListComponent_ng_template_12_button_8_Template_button_click_0_listener() {
+      var status_r7 = i0.ɵɵrestoreView(_r6).$implicit;
+      var row_r8 = i0.ɵɵnextContext().row;
+      var ctx_r1 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r1.updateStatus(row_r8, status_r7.id));
+    });
+    i0.ɵɵelementStart(1, "div", 23);
+    i0.ɵɵelement(2, "div", 24);
+    i0.ɵɵelementStart(3, "span", 25);
+    i0.ɵɵtext(4);
+    i0.ɵɵelementEnd()()();
+  }
+  if (rf & 2) {
+    var status_r7 = ctx.$implicit;
+    i0.ɵɵadvance(2);
+    i0.ɵɵstyleProp("background-color", status_r7.colour);
+    i0.ɵɵadvance(2);
+    i0.ɵɵtextInterpolate(status_r7.name);
+  }
+}
+function CateringOrderListComponent_ng_template_12_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 17)(1, "button", 18)(2, "div", 19);
+    i0.ɵɵtext(3);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(4, "app-icon", 20);
+    i0.ɵɵtext(5, "arrow_drop_down");
+    i0.ɵɵelementEnd()()();
+    i0.ɵɵelementStart(6, "mat-menu", null, 8);
+    i0.ɵɵtemplate(8, CateringOrderListComponent_ng_template_12_button_8_Template, 5, 3, "button", 21);
+    i0.ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    var tmp_12_0;
+    var tmp_14_0;
+    var data_r9 = ctx.data;
+    var menu_r10 = i0.ɵɵreference(7);
+    var ctx_r1 = i0.ɵɵnextContext();
+    i0.ɵɵadvance();
+    i0.ɵɵstyleProp("background", (tmp_12_0 = ctx_r1.status(data_r9)) == null ? null : tmp_12_0.colour);
+    i0.ɵɵproperty("matMenuTriggerFor", menu_r10);
+    i0.ɵɵadvance(2);
+    i0.ɵɵtextInterpolate1(" ", (tmp_14_0 = ctx_r1.status(data_r9)) == null ? null : tmp_14_0.name, " ");
+    i0.ɵɵadvance(5);
+    i0.ɵɵproperty("ngForOf", ctx_r1.statuses);
+  }
+}
+function CateringOrderListComponent_ng_template_14_Template(rf, ctx) {
+  if (rf & 1) {
+    var _r11 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "div", 26)(1, "button", 27)(2, "app-icon");
+    i0.ɵɵtext(3, "description");
     i0.ɵɵelementEnd()();
+    i0.ɵɵelementStart(4, "button", 28);
+    i0.ɵɵlistener("click", function CateringOrderListComponent_ng_template_14_Template_button_click_4_listener() {
+      var row_r12 = i0.ɵɵrestoreView(_r11).row;
+      var ctx_r1 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r1.show_children[row_r12.id] = !ctx_r1.show_children[row_r12.id]);
+    });
+    i0.ɵɵelementStart(5, "app-icon");
+    i0.ɵɵtext(6);
+    i0.ɵɵelementEnd()()();
+  }
+  if (rf & 2) {
+    var row_r12 = ctx.row;
+    var ctx_r1 = i0.ɵɵnextContext();
+    i0.ɵɵadvance();
+    i0.ɵɵproperty("matTooltip", row_r12.notes);
+    i0.ɵɵadvance(5);
+    i0.ɵɵtextInterpolate1(" ", ctx_r1.show_children[row_r12.id] ? "keyboard_arrow_down" : "chevron_right", " ");
   }
 }
-function CateringOrderListComponent_mat_progress_bar_24_Template(rf, ctx) {
+function CateringOrderListComponent_ng_template_16_ul_0_li_1_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelement(0, "mat-progress-bar", 16);
+    i0.ɵɵelement(0, "li", 32);
+  }
+  if (rf & 2) {
+    var item_r13 = ctx.$implicit;
+    var row_r14 = i0.ɵɵnextContext(2).row;
+    i0.ɵɵproperty("order_id", row_r14 == null ? null : row_r14.id)("item", item_r13);
   }
 }
-var CateringOrderListComponent = /*#__PURE__*/function () {
-  function CateringOrderListComponent(_orders) {
-    _classCallCheck(this, CateringOrderListComponent);
-    this._orders = _orders;
-    /** List of filtered orders */
-    this.order_list = this._orders.filtered;
-    /** Whether order list is loading */
-    this.loading = this._orders.loading;
+function CateringOrderListComponent_ng_template_16_ul_0_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "ul", 30);
+    i0.ɵɵtemplate(1, CateringOrderListComponent_ng_template_16_ul_0_li_1_Template, 1, 2, "li", 31);
+    i0.ɵɵelementEnd();
   }
+  if (rf & 2) {
+    var row_r14 = i0.ɵɵnextContext().row;
+    i0.ɵɵadvance();
+    i0.ɵɵproperty("ngForOf", row_r14.items);
+  }
+}
+function CateringOrderListComponent_ng_template_16_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵtemplate(0, CateringOrderListComponent_ng_template_16_ul_0_Template, 2, 1, "ul", 29);
+  }
+  if (rf & 2) {
+    var row_r14 = ctx.row;
+    i0.ɵɵproperty("ngIf", row_r14 == null ? null : row_r14.items.length);
+  }
+}
+var CateringOrderListComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
+  function CateringOrderListComponent(_orders, _settings) {
+    var _this;
+    _classCallCheck(this, CateringOrderListComponent);
+    _this = _callSuper(this, CateringOrderListComponent);
+    _this._orders = _orders;
+    _this._settings = _settings;
+    /** List of filtered orders */
+    _this.order_list = _this._orders.filtered;
+    /** Whether order list is loading */
+    _this.loading = _this._orders.loading;
+    _this.statuses = catering_vars_1.CATERING_STATUSES;
+    _this.show_children = {};
+    _this.updateStatus = /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(order, s) {
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return _this._orders.updateStatus(order, s);
+            case 2:
+              _this.timeout('status-change', function () {
+                return order.status = s;
+              });
+            case 3:
+            case "end":
+              return _context.stop();
+          }
+        }, _callee);
+      }));
+      return function (_x, _x2) {
+        return _ref.apply(this, arguments);
+      };
+    }();
+    return _this;
+  }
+  _inherits(CateringOrderListComponent, _common_1$AsyncHandle);
   return _createClass(CateringOrderListComponent, [{
+    key: "time_format",
+    get: function get() {
+      return this._settings.time_format;
+    }
+  }, {
+    key: "status",
+    value: function status(value) {
+      return catering_vars_1.CATERING_STATUSES.find(function (i) {
+        return i.id === value;
+      });
+    }
+  }, {
     key: "ngOnInit",
     value: function ngOnInit() {
       this._orders.startPolling();
@@ -23842,67 +24011,39 @@ var CateringOrderListComponent = /*#__PURE__*/function () {
       return order ? order.id : undefined;
     }
   }]);
-}();
+}(common_1.AsyncHandler);
 _CateringOrderListComponent = CateringOrderListComponent;
 _CateringOrderListComponent.ɵfac = function CateringOrderListComponent_Factory(t) {
-  return new (t || _CateringOrderListComponent)(i0.ɵɵdirectiveInject(i1.CateringOrdersService));
+  return new (t || _CateringOrderListComponent)(i0.ɵɵdirectiveInject(i1.CateringOrdersService), i0.ɵɵdirectiveInject(i2.SettingsService));
 };
 _CateringOrderListComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
   type: _CateringOrderListComponent,
   selectors: [["catering-order-list"]],
-  decls: 26,
-  vars: 10,
-  consts: [[1, "sticky", "top-0", "w-full", "text-sm", "font-medium", "flex", "items-center", "py-4", "border-solid", "border-b", "border-base-200", "bg-base-100"], [1, "w-20"], [1, "w-24"], [1, "w-36"], [1, "flex-1"], [1, "w-56"], [1, "w-28"], [1, "w-12"], [1, "list-none", "p-0", "m-0", "w-full", "flex-1", "overflow-auto"], ["class", "border-solid border-b border-base-200", 4, "ngFor", "ngForOf", "ngForTrackBy"], ["empty", "", "class", "info-block opacity-30", 4, "ngIf"], ["class", "w-full", "mode", "indeterminate", 4, "ngIf"], [1, "border-solid", "border-b", "border-base-200"], [3, "order"], ["empty", "", 1, "info-block", "opacity-30"], [1, "p-4", "text-center"], ["mode", "indeterminate", 1, "w-full"]],
+  features: [i0.ɵɵInheritDefinitionFeature],
+  decls: 18,
+  vars: 31,
+  consts: [["state_template", ""], ["time_template", ""], ["event_time_template", ""], ["location_template", ""], ["host_template", ""], ["status_template", ""], ["actions_template", ""], ["child_template", ""], ["menu", "matMenu"], [1, "flex", "flex-col", "h-full", "w-full", "overflow-auto"], ["empty_message", "No Catering Orders", 1, "min-w-[80rem]", "w-full", "block", "text-sm", 3, "data", "columns", "sortable", "show_children", "child_template"], [1, "p-2"], [1, "rounded-full", "bg-base-300", "p-2", "text-2xl", "text-base-content", "opacity-60", "flex", "items-center", "justify-center"], [1, "p-4"], [1, "px-4", "py-2", "text-sm"], ["class", "opacity-30", 4, "ngIf"], [1, "opacity-30"], [1, "px-4", "py-2"], ["status", "", "matRipple", "", 1, "rounded-3xl", "text-base", "border-none", "h-10", "px-4", "flex", "items-center", "text-white", "w-36", 3, "matMenuTriggerFor"], [1, "flex", "text-center", "capitalize", "mx-2"], [1, "pl-2"], ["mat-menu-item", "", "class", "flex items-center", 3, "click", 4, "ngFor", "ngForOf"], ["mat-menu-item", "", 1, "flex", "items-center", 3, "click"], [1, "flex", "items-center", "space-x-2"], [1, "rounded-full", "h-4", "w-4", "mr-2"], [1, "mr-2", "w-20"], [1, "flex", "items-center", "space-x-2", "p-2", "mx-auto"], ["icon", "", "matRipple", "", 3, "matTooltip"], ["icon", "", "matRipple", "", 3, "click"], ["class", "list-none p-0 m-0 w-full relative z-0", 4, "ngIf"], [1, "list-none", "p-0", "m-0", "w-full", "relative", "z-0"], ["catering-order-item", "", "class", "flex items-center", 3, "order_id", "item", 4, "ngFor", "ngForOf"], ["catering-order-item", "", 1, "flex", "items-center", 3, "order_id", "item"]],
   template: function CateringOrderListComponent_Template(rf, ctx) {
     if (rf & 1) {
-      i0.ɵɵelementStart(0, "div", 0);
-      i0.ɵɵelement(1, "div", 1);
-      i0.ɵɵelementStart(2, "div", 2);
-      i0.ɵɵtext(3, "Time");
+      i0.ɵɵelementStart(0, "div", 9);
+      i0.ɵɵelement(1, "simple-table", 10);
+      i0.ɵɵtemplate(2, CateringOrderListComponent_ng_template_2_Template, 4, 0, "ng-template", null, 0, i0.ɵɵtemplateRefExtractor)(4, CateringOrderListComponent_ng_template_4_Template, 3, 4, "ng-template", null, 1, i0.ɵɵtemplateRefExtractor)(6, CateringOrderListComponent_ng_template_6_Template, 8, 16, "ng-template", null, 2, i0.ɵɵtemplateRefExtractor)(8, CateringOrderListComponent_ng_template_8_Template, 3, 2, "ng-template", null, 3, i0.ɵɵtemplateRefExtractor)(10, CateringOrderListComponent_ng_template_10_Template, 3, 2, "ng-template", null, 4, i0.ɵɵtemplateRefExtractor)(12, CateringOrderListComponent_ng_template_12_Template, 9, 5, "ng-template", null, 5, i0.ɵɵtemplateRefExtractor)(14, CateringOrderListComponent_ng_template_14_Template, 7, 2, "ng-template", null, 6, i0.ɵɵtemplateRefExtractor)(16, CateringOrderListComponent_ng_template_16_Template, 1, 1, "ng-template", null, 7, i0.ɵɵtemplateRefExtractor);
       i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(4, "div", 3);
-      i0.ɵɵtext(5, "Meeting Time");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(6, "div", 4);
-      i0.ɵɵtext(7, "Location");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(8, "div", 5);
-      i0.ɵɵtext(9, "Host");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(10, "div", 6);
-      i0.ɵɵtext(11, "Charge Code");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(12, "div", 2);
-      i0.ɵɵtext(13, "Notes");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(14, "div", 6);
-      i0.ɵɵtext(15, "Invoice No.");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(16, "div", 3);
-      i0.ɵɵtext(17, "Status");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelement(18, "div", 7);
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(19, "ul", 8);
-      i0.ɵɵtemplate(20, CateringOrderListComponent_li_20_Template, 2, 1, "li", 9);
-      i0.ɵɵpipe(21, "async");
-      i0.ɵɵtemplate(22, CateringOrderListComponent_div_22_Template, 3, 0, "div", 10);
-      i0.ɵɵpipe(23, "async");
-      i0.ɵɵelementEnd();
-      i0.ɵɵtemplate(24, CateringOrderListComponent_mat_progress_bar_24_Template, 1, 0, "mat-progress-bar", 11);
-      i0.ɵɵpipe(25, "async");
     }
     if (rf & 2) {
-      var tmp_2_0;
-      i0.ɵɵadvance(20);
-      i0.ɵɵproperty("ngForOf", i0.ɵɵpipeBind1(21, 4, ctx.order_list))("ngForTrackBy", ctx.trackByFn);
-      i0.ɵɵadvance(2);
-      i0.ɵɵproperty("ngIf", !((tmp_2_0 = i0.ɵɵpipeBind1(23, 6, ctx.order_list)) == null ? null : tmp_2_0.length));
-      i0.ɵɵadvance(2);
-      i0.ɵɵproperty("ngIf", i0.ɵɵpipeBind1(25, 8, ctx.loading));
+      var state_template_r15 = i0.ɵɵreference(3);
+      var time_template_r16 = i0.ɵɵreference(5);
+      var event_time_template_r17 = i0.ɵɵreference(7);
+      var location_template_r18 = i0.ɵɵreference(9);
+      var host_template_r19 = i0.ɵɵreference(11);
+      var status_template_r20 = i0.ɵɵreference(13);
+      var actions_template_r21 = i0.ɵɵreference(15);
+      var child_template_r22 = i0.ɵɵreference(17);
+      i0.ɵɵadvance();
+      i0.ɵɵproperty("data", ctx.order_list)("columns", i0.ɵɵpureFunctionV(21, _c9, [i0.ɵɵpureFunction1(5, _c0, state_template_r15), i0.ɵɵpureFunction1(7, _c1, time_template_r16), i0.ɵɵpureFunction1(9, _c2, event_time_template_r17), i0.ɵɵpureFunction1(11, _c3, location_template_r18), i0.ɵɵpureFunction1(13, _c4, host_template_r19), i0.ɵɵpureFunction0(15, _c5), i0.ɵɵpureFunction0(16, _c6), i0.ɵɵpureFunction1(17, _c7, status_template_r20), i0.ɵɵpureFunction1(19, _c8, actions_template_r21)]))("sortable", true)("show_children", ctx.show_children)("child_template", child_template_r22);
     }
   },
-  dependencies: [i2.NgForOf, i2.NgIf, i3.CateringOrderComponent, i2.AsyncPipe],
+  dependencies: [i3.NgForOf, i3.NgIf, i4.MatMenu, i4.MatMenuItem, i4.MatMenuTrigger, i5.MatTooltip, i6.IconComponent, i7.SimpleTableComponent, i8.MatRipple, i9.CateringOrderItemComponent, i3.DatePipe],
   styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n                height: 100%;\n                width: 100%;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvY2F0ZXJpbmcvc3JjL2xpYi9jYXRlcmluZy1vcmRlci1saXN0LmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksYUFBYTtnQkFDYixzQkFBc0I7Z0JBQ3RCLFlBQVk7Z0JBQ1osV0FBVztZQUNmIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
 });
 exports.CateringOrderListComponent = CateringOrderListComponent;
@@ -26599,295 +26740,6 @@ exports.CateringOrder = CateringOrder;
 
 /***/ }),
 
-/***/ 98832:
-/*!***********************************************************!*\
-  !*** ./libs/catering/src/lib/catering-order.component.ts ***!
-  \***********************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-
-var _regeneratorRuntime = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/regeneratorRuntime.js */ 8698)["default"]);
-var _asyncToGenerator = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/asyncToGenerator.js */ 95386)["default"]);
-var _classCallCheck = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/classCallCheck.js */ 80912)["default"]);
-var _createClass = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/createClass.js */ 92974)["default"]);
-var _callSuper = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/callSuper.js */ 8513)["default"]);
-var _inherits = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/inherits.js */ 58160)["default"]);
-var _CateringOrderComponent;
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports.CateringOrderComponent = void 0;
-var common_1 = __webpack_require__(/*! @placeos/common */ 22797);
-var catering_orders_service_1 = __webpack_require__(/*! ./catering-orders.service */ 98197);
-var catering_order_class_1 = __webpack_require__(/*! ./catering-order.class */ 75555);
-var catering_vars_1 = __webpack_require__(/*! ./catering.vars */ 91074);
-var i0 = __webpack_require__(/*! @angular/core */ 37580);
-var i1 = __webpack_require__(/*! ./catering-orders.service */ 98197);
-var i2 = __webpack_require__(/*! @placeos/common */ 22797);
-var i3 = __webpack_require__(/*! @angular/common */ 60316);
-var i4 = __webpack_require__(/*! @angular/material/menu */ 31034);
-var i5 = __webpack_require__(/*! @angular/material/tooltip */ 80640);
-var i6 = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
-var i7 = __webpack_require__(/*! @angular/material/core */ 74646);
-var i8 = __webpack_require__(/*! ./catering-order-item.component */ 3872);
-function CateringOrderComponent_div_0_span_18_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "span", 21);
-    i0.ɵɵtext(1, " No Location ");
-    i0.ɵɵelementEnd();
-  }
-}
-function CateringOrderComponent_div_0_span_21_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "span", 21);
-    i0.ɵɵtext(1, " Unknown Host ");
-    i0.ɵɵelementEnd();
-  }
-}
-function CateringOrderComponent_div_0_button_25_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "button", 22);
-    i0.ɵɵtext(1, " View ");
-    i0.ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    var ctx_r1 = i0.ɵɵnextContext(2);
-    i0.ɵɵproperty("matTooltip", ctx_r1.order.notes);
-  }
-}
-function CateringOrderComponent_div_0_span_28_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "span", 21);
-    i0.ɵɵtext(1, " No Invoice ");
-    i0.ɵɵelementEnd();
-  }
-}
-function CateringOrderComponent_div_0_Template(rf, ctx) {
-  if (rf & 1) {
-    var _r1 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "div", 4)(1, "div", 5)(2, "div", 6)(3, "app-icon");
-    i0.ɵɵtext(4, "room_service");
-    i0.ɵɵelementEnd()()();
-    i0.ɵɵelementStart(5, "div", 7);
-    i0.ɵɵtext(6);
-    i0.ɵɵpipe(7, "date");
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(8, "div", 8);
-    i0.ɵɵtext(9);
-    i0.ɵɵpipe(10, "date");
-    i0.ɵɵpipe(11, "date");
-    i0.ɵɵelement(12, "br");
-    i0.ɵɵtext(13);
-    i0.ɵɵpipe(14, "date");
-    i0.ɵɵpipe(15, "date");
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(16, "div", 9);
-    i0.ɵɵtext(17);
-    i0.ɵɵtemplate(18, CateringOrderComponent_div_0_span_18_Template, 2, 0, "span", 10);
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(19, "div", 11);
-    i0.ɵɵtext(20);
-    i0.ɵɵtemplate(21, CateringOrderComponent_div_0_span_21_Template, 2, 0, "span", 10);
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(22, "div", 12);
-    i0.ɵɵtext(23);
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(24, "div", 13);
-    i0.ɵɵtemplate(25, CateringOrderComponent_div_0_button_25_Template, 2, 1, "button", 14);
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(26, "div", 12);
-    i0.ɵɵtext(27);
-    i0.ɵɵtemplate(28, CateringOrderComponent_div_0_span_28_Template, 2, 0, "span", 10);
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(29, "div", 15)(30, "button", 16)(31, "div", 17);
-    i0.ɵɵtext(32);
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(33, "app-icon", 18);
-    i0.ɵɵtext(34, "arrow_drop_down");
-    i0.ɵɵelementEnd()()();
-    i0.ɵɵelementStart(35, "div", 19)(36, "button", 20);
-    i0.ɵɵlistener("click", function CateringOrderComponent_div_0_Template_button_click_36_listener() {
-      i0.ɵɵrestoreView(_r1);
-      var ctx_r1 = i0.ɵɵnextContext();
-      return i0.ɵɵresetView(ctx_r1.show_items = !ctx_r1.show_items);
-    });
-    i0.ɵɵelementStart(37, "app-icon");
-    i0.ɵɵtext(38);
-    i0.ɵɵelementEnd()()()();
-  }
-  if (rf & 2) {
-    var ctx_r1 = i0.ɵɵnextContext();
-    var menu_r3 = i0.ɵɵreference(3);
-    i0.ɵɵclassProp("bg-base-200", !ctx_r1.show_items)("bg-base-200", ctx_r1.show_items);
-    i0.ɵɵadvance();
-    i0.ɵɵclassProp("bg-base-200", ctx_r1.show_items)("dark:bg-neutral-700", ctx_r1.show_items);
-    i0.ɵɵadvance(5);
-    i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind2(7, 26, ctx_r1.order.deliver_at, ctx_r1.time_format), " ");
-    i0.ɵɵadvance(3);
-    i0.ɵɵtextInterpolate2(" ", i0.ɵɵpipeBind2(10, 29, ctx_r1.order.event == null ? null : ctx_r1.order.event.date, "MMM d"), ", ", i0.ɵɵpipeBind2(11, 32, ctx_r1.order.event == null ? null : ctx_r1.order.event.date, ctx_r1.time_format), " ");
-    i0.ɵɵadvance(4);
-    i0.ɵɵtextInterpolate2(" ", i0.ɵɵpipeBind2(14, 35, ctx_r1.order.event == null ? null : ctx_r1.order.event.date_end, "MMM d"), ", ", i0.ɵɵpipeBind2(15, 38, ctx_r1.order.event == null ? null : ctx_r1.order.event.date_end, ctx_r1.time_format), " ");
-    i0.ɵɵadvance(4);
-    i0.ɵɵtextInterpolate1(" ", (ctx_r1.order.event == null ? null : ctx_r1.order.event.space == null ? null : ctx_r1.order.event.space.display_name) || (ctx_r1.order.event == null ? null : ctx_r1.order.event.space == null ? null : ctx_r1.order.event.space.name) || "", " ");
-    i0.ɵɵadvance();
-    i0.ɵɵproperty("ngIf", !((ctx_r1.order.event == null ? null : ctx_r1.order.event.space == null ? null : ctx_r1.order.event.space.display_name) || (ctx_r1.order.event == null ? null : ctx_r1.order.event.space == null ? null : ctx_r1.order.event.space.name)));
-    i0.ɵɵadvance(2);
-    i0.ɵɵtextInterpolate1(" ", (ctx_r1.order.event == null ? null : ctx_r1.order.event.organiser == null ? null : ctx_r1.order.event.organiser.name) || (ctx_r1.order.event == null ? null : ctx_r1.order.event.host) || "", " ");
-    i0.ɵɵadvance();
-    i0.ɵɵproperty("ngIf", !((ctx_r1.order.event == null ? null : ctx_r1.order.event.organiser == null ? null : ctx_r1.order.event.organiser.name) || (ctx_r1.order.event == null ? null : ctx_r1.order.event.host)));
-    i0.ɵɵadvance(2);
-    i0.ɵɵtextInterpolate(ctx_r1.order.charge_code || "~ No Code ~");
-    i0.ɵɵadvance(2);
-    i0.ɵɵproperty("ngIf", ctx_r1.order.notes);
-    i0.ɵɵadvance(2);
-    i0.ɵɵtextInterpolate1(" ", ctx_r1.order.invoice_number || "", " ");
-    i0.ɵɵadvance();
-    i0.ɵɵproperty("ngIf", !ctx_r1.order.invoice_number);
-    i0.ɵɵadvance(2);
-    i0.ɵɵstyleProp("background", ctx_r1.status == null ? null : ctx_r1.status.colour);
-    i0.ɵɵproperty("matMenuTriggerFor", menu_r3);
-    i0.ɵɵadvance(2);
-    i0.ɵɵtextInterpolate1(" ", ctx_r1.status == null ? null : ctx_r1.status.name, " ");
-    i0.ɵɵadvance(6);
-    i0.ɵɵtextInterpolate(ctx_r1.show_items ? "keyboard_arrow_down" : "keyboard_arrow_right");
-  }
-}
-function CateringOrderComponent_ul_1_li_1_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelement(0, "li", 25);
-  }
-  if (rf & 2) {
-    var item_r4 = ctx.$implicit;
-    var ctx_r1 = i0.ɵɵnextContext(2);
-    i0.ɵɵproperty("order_id", ctx_r1.order == null ? null : ctx_r1.order.id)("item", item_r4);
-  }
-}
-function CateringOrderComponent_ul_1_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "ul", 23);
-    i0.ɵɵtemplate(1, CateringOrderComponent_ul_1_li_1_Template, 1, 2, "li", 24);
-    i0.ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    var ctx_r1 = i0.ɵɵnextContext();
-    i0.ɵɵclassProp("shown", ctx_r1.show_items);
-    i0.ɵɵproperty("@show", ctx_r1.show_items ? "show" : "hide");
-    i0.ɵɵadvance();
-    i0.ɵɵproperty("ngForOf", ctx_r1.order.items);
-  }
-}
-function CateringOrderComponent_button_4_Template(rf, ctx) {
-  if (rf & 1) {
-    var _r5 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "button", 26);
-    i0.ɵɵlistener("click", function CateringOrderComponent_button_4_Template_button_click_0_listener() {
-      var status_r6 = i0.ɵɵrestoreView(_r5).$implicit;
-      var ctx_r1 = i0.ɵɵnextContext();
-      return i0.ɵɵresetView(ctx_r1.updateStatus(status_r6.id));
-    });
-    i0.ɵɵelement(1, "div", 27);
-    i0.ɵɵelementStart(2, "span", 28);
-    i0.ɵɵtext(3);
-    i0.ɵɵelementEnd()();
-  }
-  if (rf & 2) {
-    var status_r6 = ctx.$implicit;
-    i0.ɵɵadvance();
-    i0.ɵɵstyleProp("background-color", status_r6.colour);
-    i0.ɵɵadvance(2);
-    i0.ɵɵtextInterpolate(status_r6.name);
-  }
-}
-var CateringOrderComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
-  function CateringOrderComponent(_orders, _settings) {
-    var _this;
-    _classCallCheck(this, CateringOrderComponent);
-    _this = _callSuper(this, CateringOrderComponent);
-    _this._orders = _orders;
-    _this._settings = _settings;
-    /** Whether to show the items in the catering order */
-    _this.show_items = false;
-    /** List of status available to select */
-    _this.statuses = catering_vars_1.CATERING_STATUSES;
-    _this.updateStatus = /*#__PURE__*/function () {
-      var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(s) {
-        return _regeneratorRuntime().wrap(function _callee$(_context) {
-          while (1) switch (_context.prev = _context.next) {
-            case 0:
-              _context.next = 2;
-              return _this._orders.updateStatus(_this.order, s);
-            case 2:
-              _this.timeout('status-change', function () {
-                return _this.order.status = s;
-              });
-            case 3:
-            case "end":
-              return _context.stop();
-          }
-        }, _callee);
-      }));
-      return function (_x) {
-        return _ref.apply(this, arguments);
-      };
-    }();
-    return _this;
-  }
-  _inherits(CateringOrderComponent, _common_1$AsyncHandle);
-  return _createClass(CateringOrderComponent, [{
-    key: "status",
-    get: function get() {
-      var _this2 = this;
-      return this.statuses.find(function (i) {
-        return i.id === _this2.order.status;
-      });
-    }
-  }, {
-    key: "time_format",
-    get: function get() {
-      return this._settings.time_format;
-    }
-  }]);
-}(common_1.AsyncHandler);
-_CateringOrderComponent = CateringOrderComponent;
-_CateringOrderComponent.ɵfac = function CateringOrderComponent_Factory(t) {
-  return new (t || _CateringOrderComponent)(i0.ɵɵdirectiveInject(i1.CateringOrdersService), i0.ɵɵdirectiveInject(i2.SettingsService));
-};
-_CateringOrderComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
-  type: _CateringOrderComponent,
-  selectors: [["catering-order"]],
-  inputs: {
-    order: "order"
-  },
-  features: [i0.ɵɵInheritDefinitionFeature],
-  decls: 5,
-  vars: 3,
-  consts: [["menu", "matMenu"], ["class", "w-full flex items-center py-2", 3, "bg-base-200", 4, "ngIf"], ["class", "list-none p-0 m-0 w-full relative z-0", 3, "shown", 4, "ngIf"], ["mat-menu-item", "", "class", "flex items-center", 3, "click", 4, "ngFor", "ngForOf"], [1, "w-full", "flex", "items-center", "py-2"], [1, "w-20", "flex", "items-center", "justify-center", "z-20", "h-full"], [1, "rounded-full", "bg-base-300", "p-2", "text-2xl", "text-black", "opacity-60", "flex", "items-center", "justify-center"], ["time", "", 1, "w-24"], ["time", "", 1, "w-36", "text-sm"], [1, "flex-1"], ["class", "opacity-30", 4, "ngIf"], [1, "w-56"], [1, "w-28"], [1, "w-24"], ["class", "clear underline", 3, "matTooltip", 4, "ngIf"], [1, "w-36"], ["name", "status", "matRipple", "", 1, "text-base", "border-none", "h-10", "px-4", "flex", "items-center", "text-white", "w-36", 3, "matMenuTriggerFor"], [1, "flex", "text-center", "capitalize", "mx-2"], [1, "pl-2"], [1, "w-12"], ["icon", "", 3, "click"], [1, "opacity-30"], [1, "clear", "underline", 3, "matTooltip"], [1, "list-none", "p-0", "m-0", "w-full", "relative", "z-0"], ["catering-order-item", "", "class", "flex items-center", 3, "order_id", "item", 4, "ngFor", "ngForOf"], ["catering-order-item", "", 1, "flex", "items-center", 3, "order_id", "item"], ["mat-menu-item", "", 1, "flex", "items-center", 3, "click"], [1, "rounded-full", "h-4", "w-4", "mr-2"], [1, "mr-2", "w-20"]],
-  template: function CateringOrderComponent_Template(rf, ctx) {
-    if (rf & 1) {
-      i0.ɵɵtemplate(0, CateringOrderComponent_div_0_Template, 39, 41, "div", 1)(1, CateringOrderComponent_ul_1_Template, 2, 4, "ul", 2);
-      i0.ɵɵelementStart(2, "mat-menu", null, 0);
-      i0.ɵɵtemplate(4, CateringOrderComponent_button_4_Template, 4, 3, "button", 3);
-      i0.ɵɵelementEnd();
-    }
-    if (rf & 2) {
-      i0.ɵɵproperty("ngIf", ctx.order);
-      i0.ɵɵadvance();
-      i0.ɵɵproperty("ngIf", ctx.order == null ? null : ctx.order.items.length);
-      i0.ɵɵadvance(3);
-      i0.ɵɵproperty("ngForOf", ctx.statuses);
-    }
-  },
-  dependencies: [i3.NgForOf, i3.NgIf, i4.MatMenu, i4.MatMenuItem, i4.MatMenuTrigger, i5.MatTooltip, i6.IconComponent, i7.MatRipple, i8.CateringOrderItemComponent, i3.DatePipe],
-  styles: ["[name='status'][_ngcontent-%COMP%] {\n                border-radius: 1.55rem;\n            }\n\n            button[mat-menu-item][_ngcontent-%COMP%] {\n                display: flex;\n            }\n\n            [name='bar'][_ngcontent-%COMP%] {\n                width: 2px;\n                top: -0.5rem;\n                left: calc(2.5rem - 1px);\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvY2F0ZXJpbmcvc3JjL2xpYi9jYXRlcmluZy1vcmRlci5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLHNCQUFzQjtZQUMxQjs7WUFFQTtnQkFDSSxhQUFhO1lBQ2pCOztZQUVBO2dCQUNJLFVBQVU7Z0JBQ1YsWUFBWTtnQkFDWix3QkFBd0I7WUFDNUIiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIFtuYW1lPSdzdGF0dXMnXSB7XG4gICAgICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMS41NXJlbTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgYnV0dG9uW21hdC1tZW51LWl0ZW1dIHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICBbbmFtZT0nYmFyJ10ge1xuICAgICAgICAgICAgICAgIHdpZHRoOiAycHg7XG4gICAgICAgICAgICAgICAgdG9wOiAtMC41cmVtO1xuICAgICAgICAgICAgICAgIGxlZnQ6IGNhbGMoMi41cmVtIC0gMXB4KTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"],
-  data: {
-    animation: [common_1.ANIMATION_SHOW_CONTRACT_EXPAND]
-  }
-});
-exports.CateringOrderComponent = CateringOrderComponent;
-
-/***/ }),
-
 /***/ 98197:
 /*!**********************************************************!*\
   !*** ./libs/catering/src/lib/catering-orders.service.ts ***!
@@ -27806,14 +27658,12 @@ var form_field_1 = __webpack_require__(/*! @angular/material/form-field */ 24950
 var form_fields_1 = __webpack_require__(/*! @placeos/form-fields */ 63046);
 var components_module_1 = __webpack_require__(/*! libs/components/src/lib/components.module */ 14974);
 var catering_item_modal_component_1 = __webpack_require__(/*! ./catering-item-modal.component */ 30807);
-var catering_menu_item_component_1 = __webpack_require__(/*! ./catering-menu-item.component */ 71853);
 var catering_menu_component_1 = __webpack_require__(/*! ./catering-menu.component */ 48519);
 var catering_option_modal_component_1 = __webpack_require__(/*! ./catering-option-modal.component */ 37053);
 var catering_order_item_component_1 = __webpack_require__(/*! ./catering-order-item.component */ 3872);
 var catering_order_list_component_1 = __webpack_require__(/*! ./catering-order-list.component */ 41623);
 var catering_order_modal_component_1 = __webpack_require__(/*! ./catering-order-modal.component */ 82912);
 var catering_order_options_modal_component_1 = __webpack_require__(/*! ./catering-order-options-modal.component */ 17707);
-var catering_order_component_1 = __webpack_require__(/*! ./catering-order.component */ 98832);
 var catering_import_menu_modal_component_1 = __webpack_require__(/*! ./catering-import-menu-modal.component */ 76095);
 var new_catering_order_modal_component_1 = __webpack_require__(/*! ./catering-order-modal/new-catering-order-modal.component */ 11732);
 var catering_item_list_component_1 = __webpack_require__(/*! ./catering-order-modal/catering-item-list.component */ 32499);
@@ -27822,8 +27672,9 @@ var catering_item_filters_component_1 = __webpack_require__(/*! ./catering-order
 var catering_list_field_component_1 = __webpack_require__(/*! ./catering-list-field.component */ 61601);
 var charge_code_list_modal_component_1 = __webpack_require__(/*! ./charge-code-list-modal.component */ 96861);
 var catering_item_list_item_component_1 = __webpack_require__(/*! ./catering-order-modal/catering-item-list-item.component */ 89505);
+var progress_spinner_1 = __webpack_require__(/*! @angular/material/progress-spinner */ 41134);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
-var COMPONENTS = [catering_order_options_modal_component_1.CateringOrderOptionsModalComponent, catering_order_modal_component_1.CateringOrderModalComponent, catering_item_modal_component_1.CateringItemModalComponent, catering_menu_component_1.CateringMenuComponent, catering_menu_item_component_1.CateringMenuItemComponent, catering_option_modal_component_1.CateringItemOptionModalComponent, catering_order_list_component_1.CateringOrderListComponent, catering_order_component_1.CateringOrderComponent, catering_order_item_component_1.CateringOrderItemComponent, catering_import_menu_modal_component_1.CateringImportMenuModalComponent, catering_list_field_component_1.CateringListFieldComponent, new_catering_order_modal_component_1.NewCateringOrderModalComponent, catering_item_list_component_1.CateringItemListComponent, catering_item_details_component_1.CateringItemDetailsComponent, catering_item_filters_component_1.CateringItemFiltersComponent, catering_item_list_item_component_1.CateringItemListItemComponent, charge_code_list_modal_component_1.ChargeCodeListModalComponent];
+var COMPONENTS = [catering_order_options_modal_component_1.CateringOrderOptionsModalComponent, catering_order_modal_component_1.CateringOrderModalComponent, catering_item_modal_component_1.CateringItemModalComponent, catering_menu_component_1.CateringMenuComponent, catering_option_modal_component_1.CateringItemOptionModalComponent, catering_order_list_component_1.CateringOrderListComponent, catering_order_item_component_1.CateringOrderItemComponent, catering_import_menu_modal_component_1.CateringImportMenuModalComponent, catering_list_field_component_1.CateringListFieldComponent, new_catering_order_modal_component_1.NewCateringOrderModalComponent, catering_item_list_component_1.CateringItemListComponent, catering_item_details_component_1.CateringItemDetailsComponent, catering_item_filters_component_1.CateringItemFiltersComponent, catering_item_list_item_component_1.CateringItemListItemComponent, charge_code_list_modal_component_1.ChargeCodeListModalComponent];
 var SharedCateringModule = /*#__PURE__*/_createClass(function SharedCateringModule() {
   _classCallCheck(this, SharedCateringModule);
 });
@@ -27835,14 +27686,14 @@ _SharedCateringModule.ɵmod = /*@__PURE__*/i0.ɵɵdefineNgModule({
   type: _SharedCateringModule
 });
 _SharedCateringModule.ɵinj = /*@__PURE__*/i0.ɵɵdefineInjector({
-  imports: [common_1.CommonModule, menu_1.MatMenuModule, tabs_1.MatTabsModule, autocomplete_1.MatAutocompleteModule, dialog_1.MatDialogModule, checkbox_1.MatCheckboxModule, radio_1.MatRadioModule, tooltip_1.MatTooltipModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, components_module_1.ComponentsModule, form_field_1.MatFormFieldModule, form_fields_1.FormFieldsModule]
+  imports: [common_1.CommonModule, menu_1.MatMenuModule, tabs_1.MatTabsModule, autocomplete_1.MatAutocompleteModule, dialog_1.MatDialogModule, checkbox_1.MatCheckboxModule, radio_1.MatRadioModule, tooltip_1.MatTooltipModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, components_module_1.ComponentsModule, form_field_1.MatFormFieldModule, form_fields_1.FormFieldsModule, progress_spinner_1.MatProgressSpinnerModule]
 });
 exports.SharedCateringModule = SharedCateringModule;
 (function () {
   (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(SharedCateringModule, {
-    declarations: [catering_order_options_modal_component_1.CateringOrderOptionsModalComponent, catering_order_modal_component_1.CateringOrderModalComponent, catering_item_modal_component_1.CateringItemModalComponent, catering_menu_component_1.CateringMenuComponent, catering_menu_item_component_1.CateringMenuItemComponent, catering_option_modal_component_1.CateringItemOptionModalComponent, catering_order_list_component_1.CateringOrderListComponent, catering_order_component_1.CateringOrderComponent, catering_order_item_component_1.CateringOrderItemComponent, catering_import_menu_modal_component_1.CateringImportMenuModalComponent, catering_list_field_component_1.CateringListFieldComponent, new_catering_order_modal_component_1.NewCateringOrderModalComponent, catering_item_list_component_1.CateringItemListComponent, catering_item_details_component_1.CateringItemDetailsComponent, catering_item_filters_component_1.CateringItemFiltersComponent, catering_item_list_item_component_1.CateringItemListItemComponent, charge_code_list_modal_component_1.ChargeCodeListModalComponent],
-    imports: [common_1.CommonModule, menu_1.MatMenuModule, tabs_1.MatTabsModule, autocomplete_1.MatAutocompleteModule, dialog_1.MatDialogModule, checkbox_1.MatCheckboxModule, radio_1.MatRadioModule, tooltip_1.MatTooltipModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, components_module_1.ComponentsModule, form_field_1.MatFormFieldModule, form_fields_1.FormFieldsModule],
-    exports: [catering_order_options_modal_component_1.CateringOrderOptionsModalComponent, catering_order_modal_component_1.CateringOrderModalComponent, catering_item_modal_component_1.CateringItemModalComponent, catering_menu_component_1.CateringMenuComponent, catering_menu_item_component_1.CateringMenuItemComponent, catering_option_modal_component_1.CateringItemOptionModalComponent, catering_order_list_component_1.CateringOrderListComponent, catering_order_component_1.CateringOrderComponent, catering_order_item_component_1.CateringOrderItemComponent, catering_import_menu_modal_component_1.CateringImportMenuModalComponent, catering_list_field_component_1.CateringListFieldComponent, new_catering_order_modal_component_1.NewCateringOrderModalComponent, catering_item_list_component_1.CateringItemListComponent, catering_item_details_component_1.CateringItemDetailsComponent, catering_item_filters_component_1.CateringItemFiltersComponent, catering_item_list_item_component_1.CateringItemListItemComponent, charge_code_list_modal_component_1.ChargeCodeListModalComponent]
+    declarations: [catering_order_options_modal_component_1.CateringOrderOptionsModalComponent, catering_order_modal_component_1.CateringOrderModalComponent, catering_item_modal_component_1.CateringItemModalComponent, catering_menu_component_1.CateringMenuComponent, catering_option_modal_component_1.CateringItemOptionModalComponent, catering_order_list_component_1.CateringOrderListComponent, catering_order_item_component_1.CateringOrderItemComponent, catering_import_menu_modal_component_1.CateringImportMenuModalComponent, catering_list_field_component_1.CateringListFieldComponent, new_catering_order_modal_component_1.NewCateringOrderModalComponent, catering_item_list_component_1.CateringItemListComponent, catering_item_details_component_1.CateringItemDetailsComponent, catering_item_filters_component_1.CateringItemFiltersComponent, catering_item_list_item_component_1.CateringItemListItemComponent, charge_code_list_modal_component_1.ChargeCodeListModalComponent],
+    imports: [common_1.CommonModule, menu_1.MatMenuModule, tabs_1.MatTabsModule, autocomplete_1.MatAutocompleteModule, dialog_1.MatDialogModule, checkbox_1.MatCheckboxModule, radio_1.MatRadioModule, tooltip_1.MatTooltipModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, components_module_1.ComponentsModule, form_field_1.MatFormFieldModule, form_fields_1.FormFieldsModule, progress_spinner_1.MatProgressSpinnerModule],
+    exports: [catering_order_options_modal_component_1.CateringOrderOptionsModalComponent, catering_order_modal_component_1.CateringOrderModalComponent, catering_item_modal_component_1.CateringItemModalComponent, catering_menu_component_1.CateringMenuComponent, catering_option_modal_component_1.CateringItemOptionModalComponent, catering_order_list_component_1.CateringOrderListComponent, catering_order_item_component_1.CateringOrderItemComponent, catering_import_menu_modal_component_1.CateringImportMenuModalComponent, catering_list_field_component_1.CateringListFieldComponent, new_catering_order_modal_component_1.NewCateringOrderModalComponent, catering_item_list_component_1.CateringItemListComponent, catering_item_details_component_1.CateringItemDetailsComponent, catering_item_filters_component_1.CateringItemFiltersComponent, catering_item_list_item_component_1.CateringItemListItemComponent, charge_code_list_modal_component_1.ChargeCodeListModalComponent]
   });
 })();
 
@@ -27864,11 +27715,9 @@ tslib_1.__exportStar(__webpack_require__(/*! ./catering-order-options-modal.comp
 tslib_1.__exportStar(__webpack_require__(/*! ./catering-order-modal.component */ 82912), exports);
 tslib_1.__exportStar(__webpack_require__(/*! ./catering-item-modal.component */ 30807), exports);
 tslib_1.__exportStar(__webpack_require__(/*! ./catering-item.class */ 25892), exports);
-tslib_1.__exportStar(__webpack_require__(/*! ./catering-menu-item.component */ 71853), exports);
 tslib_1.__exportStar(__webpack_require__(/*! ./catering-menu.component */ 48519), exports);
 tslib_1.__exportStar(__webpack_require__(/*! ./catering-option-modal.component */ 37053), exports);
 tslib_1.__exportStar(__webpack_require__(/*! ./catering-order-item.component */ 3872), exports);
-tslib_1.__exportStar(__webpack_require__(/*! ./catering-order.component */ 98832), exports);
 tslib_1.__exportStar(__webpack_require__(/*! ./catering-order-list.component */ 41623), exports);
 tslib_1.__exportStar(__webpack_require__(/*! ./catering-order.class */ 75555), exports);
 tslib_1.__exportStar(__webpack_require__(/*! ./catering-orders.service */ 98197), exports);
@@ -32811,15 +32660,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "048cf05",
-  "hash": "048cf05",
+  "raw": "ff7c65c",
+  "hash": "ff7c65c",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "048cf05",
+  "suffix": "ff7c65c",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1718857777809
+  "time": 1718869237793
 };
 /* tslint:enable */
 
@@ -41559,6 +41408,14 @@ var _c0 = function _c0(a0, a1, a2, a3, a4, a5, a6) {
     name: a6
   };
 };
+var _c1 = function _c1(a0, a1, a2, a3) {
+  return {
+    first: a0,
+    last: a1,
+    index: a2,
+    row: a3
+  };
+};
 function SimpleTableComponent_div_1_Template(rf, ctx) {
   if (rf & 1) {
     var _r1 = i0.ɵɵgetCurrentView();
@@ -41576,7 +41433,7 @@ function SimpleTableComponent_div_1_Template(rf, ctx) {
     var tmp_2_0;
     var tmp_3_0;
     var ctx_r1 = i0.ɵɵnextContext();
-    i0.ɵɵstyleProp("grid-area", ctx_r1.gridSquare(1, 1));
+    i0.ɵɵstyleProp("grid-column", "1 / 2");
     i0.ɵɵadvance();
     i0.ɵɵproperty("checked", ctx_r1.selected.length === ((tmp_2_0 = i0.ɵɵpipeBind1(2, 4, ctx_r1.data_view$)) == null ? null : tmp_2_0.length))("indeterminate", ctx_r1.selected.length > 0 && ctx_r1.selected.length < ((tmp_3_0 = i0.ɵɵpipeBind1(3, 6, ctx_r1.data_view$)) == null ? null : tmp_3_0.length));
   }
@@ -41613,7 +41470,7 @@ function SimpleTableComponent_button_2_Template(rf, ctx) {
     var column_r4 = ctx.$implicit;
     var i_r5 = ctx.index;
     var ctx_r1 = i0.ɵɵnextContext();
-    i0.ɵɵstyleProp("grid-area", ctx_r1.gridSquare(1, 1 + i_r5 + (ctx_r1.selectable ? 1 : 0)));
+    i0.ɵɵstyleProp("grid-column", 1 + i_r5 + (ctx_r1.selectable ? 1 : 0) + " / " + (2 + i_r5 + (ctx_r1.selectable ? 1 : 0)));
     i0.ɵɵclassProp("pointer-events-none", !ctx_r1.sortable || column_r4.sortable === false)("active", (ctx_r1.sort == null ? null : ctx_r1.sort.key) === column_r4.key)("border-r", i_r5 !== ctx_r1.active_columns.length - 1)("width", column_r4.size);
     i0.ɵɵproperty("id", "column-" + column_r4.key);
     i0.ɵɵadvance(2);
@@ -41625,7 +41482,7 @@ function SimpleTableComponent_button_2_Template(rf, ctx) {
 function SimpleTableComponent_ng_container_3_div_1_Template(rf, ctx) {
   if (rf & 1) {
     var _r6 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "div", 14);
+    i0.ɵɵelementStart(0, "div", 15);
     i0.ɵɵpipe(1, "async");
     i0.ɵɵlistener("mouseenter", function SimpleTableComponent_ng_container_3_div_1_Template_div_mouseenter_0_listener() {
       i0.ɵɵrestoreView(_r6);
@@ -41638,7 +41495,7 @@ function SimpleTableComponent_ng_container_3_div_1_Template(rf, ctx) {
       var ctx_r1 = i0.ɵɵnextContext();
       return i0.ɵɵresetView(ctx_r1.active_row = i_r7);
     });
-    i0.ɵɵelementStart(2, "mat-checkbox", 15);
+    i0.ɵɵelementStart(2, "mat-checkbox", 16);
     i0.ɵɵlistener("change", function SimpleTableComponent_ng_container_3_div_1_Template_mat_checkbox_change_2_listener($event) {
       i0.ɵɵrestoreView(_r6);
       var i_r7 = i0.ɵɵnextContext().index;
@@ -41651,7 +41508,7 @@ function SimpleTableComponent_ng_container_3_div_1_Template(rf, ctx) {
     var tmp_5_0;
     var i_r7 = i0.ɵɵnextContext().index;
     var ctx_r1 = i0.ɵɵnextContext();
-    i0.ɵɵstyleProp("grid-area", ctx_r1.gridSquare(2 + i_r7, 1));
+    i0.ɵɵstyleProp("grid-column", "1 / 2");
     i0.ɵɵclassProp("border-b", i_r7 !== ((tmp_5_0 = i0.ɵɵpipeBind1(1, 5, ctx_r1.data_view$)) == null ? null : tmp_5_0.length) - 1);
     i0.ɵɵadvance(2);
     i0.ɵɵproperty("checked", ctx_r1.selected.includes(i_r7));
@@ -41659,16 +41516,21 @@ function SimpleTableComponent_ng_container_3_div_1_Template(rf, ctx) {
 }
 function SimpleTableComponent_ng_container_3_div_2_div_3_span_2_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "span", 22);
-    i0.ɵɵtext(1, " N/A ");
+    i0.ɵɵelementStart(0, "span", 23);
+    i0.ɵɵtext(1);
     i0.ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    var column_r9 = i0.ɵɵnextContext(2).$implicit;
+    i0.ɵɵadvance();
+    i0.ɵɵtextInterpolate1(" ", column_r9.empty || "N/A", " ");
   }
 }
 function SimpleTableComponent_ng_container_3_div_2_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 20);
+    i0.ɵɵelementStart(0, "div", 21);
     i0.ɵɵtext(1);
-    i0.ɵɵtemplate(2, SimpleTableComponent_ng_container_3_div_2_div_3_span_2_Template, 2, 0, "span", 21);
+    i0.ɵɵtemplate(2, SimpleTableComponent_ng_container_3_div_2_div_3_span_2_Template, 2, 1, "span", 22);
     i0.ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -41688,7 +41550,7 @@ function SimpleTableComponent_ng_container_3_div_2_ng_container_4_ng_container_1
 function SimpleTableComponent_ng_container_3_div_2_ng_container_4_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelementContainerStart(0);
-    i0.ɵɵtemplate(1, SimpleTableComponent_ng_container_3_div_2_ng_container_4_ng_container_1_Template, 1, 0, "ng-container", 23);
+    i0.ɵɵtemplate(1, SimpleTableComponent_ng_container_3_div_2_ng_container_4_ng_container_1_Template, 1, 0, "ng-container", 24);
     i0.ɵɵpipe(2, "async");
     i0.ɵɵpipe(3, "async");
     i0.ɵɵelementContainerEnd();
@@ -41707,7 +41569,7 @@ function SimpleTableComponent_ng_container_3_div_2_ng_container_4_Template(rf, c
 function SimpleTableComponent_ng_container_3_div_2_Template(rf, ctx) {
   if (rf & 1) {
     var _r8 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "div", 16);
+    i0.ɵɵelementStart(0, "div", 17);
     i0.ɵɵpipe(1, "async");
     i0.ɵɵlistener("mouseenter", function SimpleTableComponent_ng_container_3_div_2_Template_div_mouseenter_0_listener() {
       i0.ɵɵrestoreView(_r8);
@@ -41720,8 +41582,8 @@ function SimpleTableComponent_ng_container_3_div_2_Template(rf, ctx) {
       var ctx_r1 = i0.ɵɵnextContext();
       return i0.ɵɵresetView(ctx_r1.active_row = i_r7);
     });
-    i0.ɵɵelementContainerStart(2, 17);
-    i0.ɵɵtemplate(3, SimpleTableComponent_ng_container_3_div_2_div_3_Template, 3, 2, "div", 18)(4, SimpleTableComponent_ng_container_3_div_2_ng_container_4_Template, 4, 14, "ng-container", 19);
+    i0.ɵɵelementContainerStart(2, 18);
+    i0.ɵɵtemplate(3, SimpleTableComponent_ng_container_3_div_2_div_3_Template, 3, 2, "div", 19)(4, SimpleTableComponent_ng_container_3_div_2_ng_container_4_Template, 4, 14, "ng-container", 20);
     i0.ɵɵelementContainerEnd();
     i0.ɵɵelementEnd();
   }
@@ -41731,7 +41593,7 @@ function SimpleTableComponent_ng_container_3_div_2_Template(rf, ctx) {
     var j_r12 = ctx.index;
     var i_r7 = i0.ɵɵnextContext().index;
     var ctx_r1 = i0.ɵɵnextContext();
-    i0.ɵɵstyleProp("grid-area", ctx_r1.gridSquare(2 + i_r7, 1 + j_r12 + (ctx_r1.selectable ? 1 : 0)));
+    i0.ɵɵstyleProp("grid-column", 1 + j_r12 + (ctx_r1.selectable ? 1 : 0) + " / " + (2 + j_r12 + (ctx_r1.selectable ? 1 : 0)));
     i0.ɵɵclassProp("border-b", i_r7 !== ((tmp_7_0 = i0.ɵɵpipeBind1(1, 10, ctx_r1.data_view$)) == null ? null : tmp_7_0.length) - 1)("border-r", j_r12 !== ctx_r1.active_columns.length - 1)("width", column_r9.size);
     i0.ɵɵadvance(2);
     i0.ɵɵproperty("ngSwitch", ctx_r1.columnType(column_r9));
@@ -41739,23 +41601,50 @@ function SimpleTableComponent_ng_container_3_div_2_Template(rf, ctx) {
     i0.ɵɵproperty("ngSwitchCase", "template");
   }
 }
+function SimpleTableComponent_ng_container_3_div_3_ng_container_1_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementContainer(0);
+  }
+}
+function SimpleTableComponent_ng_container_3_div_3_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 25);
+    i0.ɵɵtemplate(1, SimpleTableComponent_ng_container_3_div_3_ng_container_1_Template, 1, 0, "ng-container", 24);
+    i0.ɵɵpipe(2, "async");
+    i0.ɵɵpipe(3, "async");
+    i0.ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    var tmp_6_0;
+    var ctx_r10 = i0.ɵɵnextContext();
+    var row_r10 = ctx_r10.$implicit;
+    var i_r7 = ctx_r10.index;
+    var ctx_r1 = i0.ɵɵnextContext();
+    i0.ɵɵstyleProp("grid-column", "span " + ctx_r1.active_columns.length);
+    i0.ɵɵadvance();
+    i0.ɵɵproperty("ngTemplateOutlet", ctx_r1.child_template)("ngTemplateOutletContext", i0.ɵɵpureFunction4(8, _c1, i_r7 === 0, i_r7 === ((tmp_6_0 = i0.ɵɵpipeBind1(2, 4, ctx_r1.data_view$)) == null ? null : tmp_6_0.length) - 1 || i_r7 === ((tmp_6_0 = i0.ɵɵpipeBind1(3, 6, ctx_r1.data_view$)) == null ? null : tmp_6_0.length) - 1, i_r7, row_r10));
+  }
+}
 function SimpleTableComponent_ng_container_3_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelementContainerStart(0);
-    i0.ɵɵtemplate(1, SimpleTableComponent_ng_container_3_div_1_Template, 3, 7, "div", 12)(2, SimpleTableComponent_ng_container_3_div_2_Template, 5, 12, "div", 13);
+    i0.ɵɵtemplate(1, SimpleTableComponent_ng_container_3_div_1_Template, 3, 7, "div", 12)(2, SimpleTableComponent_ng_container_3_div_2_Template, 5, 12, "div", 13)(3, SimpleTableComponent_ng_container_3_div_3_Template, 4, 13, "div", 14);
     i0.ɵɵelementContainerEnd();
   }
   if (rf & 2) {
+    var row_r10 = ctx.$implicit;
     var ctx_r1 = i0.ɵɵnextContext();
     i0.ɵɵadvance();
     i0.ɵɵproperty("ngIf", ctx_r1.selectable);
     i0.ɵɵadvance();
     i0.ɵɵproperty("ngForOf", ctx_r1.active_columns);
+    i0.ɵɵadvance();
+    i0.ɵɵproperty("ngIf", ctx_r1.show_children[row_r10.id] && ctx_r1.child_template);
   }
 }
 function SimpleTableComponent_div_6_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 24);
+    i0.ɵɵelementStart(0, "div", 26);
     i0.ɵɵtext(1);
     i0.ɵɵelementEnd();
   }
@@ -41769,10 +41658,10 @@ function SimpleTableComponent_div_6_Template(rf, ctx) {
 function SimpleTableComponent_div_8_Template(rf, ctx) {
   if (rf & 1) {
     var _r13 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "div", 25)(1, "div", 26);
+    i0.ɵɵelementStart(0, "div", 27)(1, "div", 28);
     i0.ɵɵtext(2);
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(3, "button", 27);
+    i0.ɵɵelementStart(3, "button", 29);
     i0.ɵɵlistener("click", function SimpleTableComponent_div_8_Template_button_click_3_listener() {
       i0.ɵɵrestoreView(_r13);
       var ctx_r1 = i0.ɵɵnextContext();
@@ -41781,7 +41670,7 @@ function SimpleTableComponent_div_8_Template(rf, ctx) {
     i0.ɵɵelementStart(4, "app-icon");
     i0.ɵɵtext(5, "chevron_left");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(6, "button", 27);
+    i0.ɵɵelementStart(6, "button", 29);
     i0.ɵɵlistener("click", function SimpleTableComponent_div_8_Template_button_click_6_listener() {
       i0.ɵɵrestoreView(_r13);
       var ctx_r1 = i0.ɵɵnextContext();
@@ -41790,7 +41679,7 @@ function SimpleTableComponent_div_8_Template(rf, ctx) {
     i0.ɵɵelementStart(7, "app-icon");
     i0.ɵɵtext(8, "chevron_right");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(9, "button", 27);
+    i0.ɵɵelementStart(9, "button", 29);
     i0.ɵɵlistener("click", function SimpleTableComponent_div_8_Template_button_click_9_listener() {
       i0.ɵɵrestoreView(_r13);
       var ctx_r1 = i0.ɵɵnextContext();
@@ -41799,7 +41688,7 @@ function SimpleTableComponent_div_8_Template(rf, ctx) {
     i0.ɵɵelementStart(10, "app-icon");
     i0.ɵɵtext(11, "first_page");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(12, "button", 27);
+    i0.ɵɵelementStart(12, "button", 29);
     i0.ɵɵlistener("click", function SimpleTableComponent_div_8_Template_button_click_12_listener() {
       i0.ɵɵrestoreView(_r13);
       var ctx_r1 = i0.ɵɵnextContext();
@@ -41835,6 +41724,8 @@ var SimpleTableComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
     _this.selected = [];
     _this.page_size = 0;
     _this.empty_message = 'No data to list';
+    _this.child_template = null;
+    _this.show_children = {};
     _this.selectedChange = new core_1.EventEmitter();
     _this.rowClicked = new core_1.EventEmitter();
     _this.page = 0;
@@ -42013,7 +41904,9 @@ _SimpleTableComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
     sortable: "sortable",
     selected: "selected",
     page_size: "page_size",
-    empty_message: "empty_message"
+    empty_message: "empty_message",
+    child_template: "child_template",
+    show_children: "show_children"
   },
   outputs: {
     selectedChange: "selectedChange",
@@ -42022,7 +41915,7 @@ _SimpleTableComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
   features: [i0.ɵɵInheritDefinitionFeature, i0.ɵɵNgOnChangesFeature],
   decls: 9,
   vars: 15,
-  consts: [["role", "table", 1, "grid", "border", "border-base-300", 3, "click", "touchend", "mouseleave"], ["id", "column-selector", "class", "sticky top-0 flex items-center justify-between px-2 border-r border-b border-base-300 bg-base-400 min-h-full z-10", 3, "gridArea", 4, "ngIf"], ["header", "", "matRipple", "", "class", "sticky top-0 flex items-center justify-between p-4 border-b border-base-300 bg-base-400 min-h-full z-10", 3, "id", "gridArea", "pointer-events-none", "active", "border-r", "width", "click", 4, "ngFor", "ngForOf"], [4, "ngFor", "ngForOf"], ["class", "flex items-center justify-center p-8 opacity-30", 3, "gridColumnStart", 4, "ngIf"], ["class", "sticky bottom-0 w-full flex items-center justify-end space-x-2 p-2 bg-base-200", 4, "ngIf"], ["id", "column-selector", 1, "sticky", "top-0", "flex", "items-center", "justify-between", "px-2", "border-r", "border-b", "border-base-300", "bg-base-400", "min-h-full", "z-10"], [3, "change", "checked", "indeterminate"], ["header", "", "matRipple", "", 1, "sticky", "top-0", "flex", "items-center", "justify-between", "p-4", "border-b", "border-base-300", "bg-base-400", "min-h-full", "z-10", 3, "click", "id"], [1, "font-medium"], ["class", "text-[1.25em]", 4, "ngIf"], [1, "text-[1.25em]"], ["id", "column-selector", "class", "flex items-center justify-between px-2 border-r border-base-300 min-h-full z-0", 3, "gridArea", "border-b", "mouseenter", "touchstart", 4, "ngIf"], ["class", "flex items-center justify-between border-base-300 min-h-full z-0 overflow-hidden", 3, "gridArea", "border-b", "border-r", "width", "mouseenter", "touchstart", 4, "ngFor", "ngForOf"], ["id", "column-selector", 1, "flex", "items-center", "justify-between", "px-2", "border-r", "border-base-300", "min-h-full", "z-0", 3, "mouseenter", "touchstart"], [3, "change", "checked"], [1, "flex", "items-center", "justify-between", "border-base-300", "min-h-full", "z-0", "overflow-hidden", 3, "mouseenter", "touchstart"], [3, "ngSwitch"], ["class", "p-4", 4, "ngSwitchDefault"], [4, "ngSwitchCase"], [1, "p-4"], ["class", "opacity-30", 4, "ngIf"], [1, "opacity-30"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "flex", "items-center", "justify-center", "p-8", "opacity-30"], [1, "sticky", "bottom-0", "w-full", "flex", "items-center", "justify-end", "space-x-2", "p-2", "bg-base-200"], [1, "px-4", "py-2"], ["icon", "", "matRipple", "", 3, "click", "disabled"]],
+  consts: [["role", "table", 1, "grid", "border", "border-base-300", 3, "click", "touchend", "mouseleave"], ["id", "column-selector", "class", "sticky top-0 flex items-center justify-between px-2 border-r border-b border-base-200 bg-base-300 min-h-full z-20", 3, "gridColumn", 4, "ngIf"], ["header", "", "matRipple", "", "class", "sticky top-0 flex items-center justify-between p-4 border-b border-base-200 bg-base-300 min-h-full z-20", 3, "id", "gridColumn", "pointer-events-none", "active", "border-r", "width", "click", 4, "ngFor", "ngForOf"], [4, "ngFor", "ngForOf"], ["class", "flex items-center justify-center p-8 opacity-30", 3, "gridColumnStart", 4, "ngIf"], ["class", "sticky bottom-0 w-full flex items-center justify-end space-x-2 p-2 bg-base-200", 4, "ngIf"], ["id", "column-selector", 1, "sticky", "top-0", "flex", "items-center", "justify-between", "px-2", "border-r", "border-b", "border-base-200", "bg-base-300", "min-h-full", "z-20"], [3, "change", "checked", "indeterminate"], ["header", "", "matRipple", "", 1, "sticky", "top-0", "flex", "items-center", "justify-between", "p-4", "border-b", "border-base-200", "bg-base-300", "min-h-full", "z-20", 3, "click", "id"], [1, "font-medium"], ["class", "text-[1.25em]", 4, "ngIf"], [1, "text-[1.25em]"], ["id", "column-selector", "class", "flex items-center justify-between px-2 border-r border-base-200 min-h-full z-10", 3, "gridColumn", "border-b", "mouseenter", "touchstart", 4, "ngIf"], ["class", "flex items-center justify-between border-base-200 min-h-full z-10", 3, "gridColumn", "border-b", "border-r", "width", "mouseenter", "touchstart", 4, "ngFor", "ngForOf"], ["child-node", "", "class", "border-b last:border-t last:border-b-0 border-base-200", 3, "gridColumn", 4, "ngIf"], ["id", "column-selector", 1, "flex", "items-center", "justify-between", "px-2", "border-r", "border-base-200", "min-h-full", "z-10", 3, "mouseenter", "touchstart"], [3, "change", "checked"], [1, "flex", "items-center", "justify-between", "border-base-200", "min-h-full", "z-10", 3, "mouseenter", "touchstart"], [3, "ngSwitch"], ["class", "p-4", 4, "ngSwitchDefault"], [4, "ngSwitchCase"], [1, "p-4"], ["class", "opacity-30", 4, "ngIf"], [1, "opacity-30"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], ["child-node", "", 1, "border-b", "last:border-t", "last:border-b-0", "border-base-200"], [1, "flex", "items-center", "justify-center", "p-8", "opacity-30"], [1, "sticky", "bottom-0", "w-full", "flex", "items-center", "justify-end", "space-x-2", "p-2", "bg-base-200"], [1, "px-4", "py-2"], ["icon", "", "matRipple", "", 3, "click", "disabled"]],
   template: function SimpleTableComponent_Template(rf, ctx) {
     if (rf & 1) {
       i0.ɵɵelementStart(0, "div", 0);
@@ -42033,7 +41926,7 @@ _SimpleTableComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       })("mouseleave", function SimpleTableComponent_Template_div_mouseleave_0_listener() {
         return ctx.active_row = -1;
       });
-      i0.ɵɵtemplate(1, SimpleTableComponent_div_1_Template, 4, 8, "div", 1)(2, SimpleTableComponent_button_2_Template, 4, 13, "button", 2)(3, SimpleTableComponent_ng_container_3_Template, 3, 2, "ng-container", 3);
+      i0.ɵɵtemplate(1, SimpleTableComponent_div_1_Template, 4, 8, "div", 1)(2, SimpleTableComponent_button_2_Template, 4, 13, "button", 2)(3, SimpleTableComponent_ng_container_3_Template, 4, 3, "ng-container", 3);
       i0.ɵɵpipe(4, "async");
       i0.ɵɵpipe(5, "slice");
       i0.ɵɵtemplate(6, SimpleTableComponent_div_6_Template, 2, 3, "div", 4);
