@@ -31576,15 +31576,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "6e58ae9",
-  "hash": "6e58ae9",
+  "raw": "b3cfa43",
+  "hash": "b3cfa43",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "6e58ae9",
+  "suffix": "b3cfa43",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1718851706322
+  "time": 1719205825697
 };
 /* tslint:enable */
 
@@ -44233,9 +44233,10 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
     value: function postForm() {
       var _this7 = this;
       var force = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      var ignore_space_check = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
       return new Promise( /*#__PURE__*/function () {
         var _ref18 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(resolve, reject) {
-          var _this7$event, _form$get, _form$get2, _ref19, _ref20, _spaces$, _this7$event2, _this7$event3, _this7$event4, _value$organiser, _ref21, _value$organiser2, _ref22, _ref23, _event$extension_data2;
+          var _this7$event, _form$get, _form$get2, _form$get3, _ref19, _ref20, _spaces$, _this7$event2, _this7$event3, _this7$event4, _value$organiser, _ref21, _value$organiser2, _ref22, _ref23, _event$extension_data2;
           var form, event, ical_uid, value, _value, id, host, date, duration, creator, all_day, assets, recurrence, spaces, catering, changed_times, changed_spaces, is_owner, space, attendees, message, space_id, query, receipt, d, _iterator2, _step2, order, setup, breakdown, _iterator3, _step3, _space, overflow, processed_assets, result, domain, visitors, creating_assets, on_error, _spaces$2, _spaces$3, _spaces$4, _spaces$5, _spaces$6, _this7$_org$building, requests;
           return _regeneratorRuntime().wrap(function _callee3$(_context3) {
             while (1) switch (_context3.prev = _context3.next) {
@@ -44255,6 +44256,11 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                 value = _this7._form.getRawValue();
                 _value = value, id = _value.id, host = _value.host, date = _value.date, duration = _value.duration, creator = _value.creator, all_day = _value.all_day, assets = _value.assets, recurrence = _value.recurrence;
                 spaces = ((_form$get = form.get('resources')) === null || _form$get === void 0 ? void 0 : _form$get.value) || [];
+                if (ignore_space_check.length) {
+                  spaces = spaces.filter(function (_) {
+                    return !ignore_space_check.includes(_.email) && !ignore_space_check.includes(_.id);
+                  });
+                }
                 catering = ((_form$get2 = form.get('catering')) === null || _form$get2 === void 0 ? void 0 : _form$get2.value) || [];
                 if (recurrence !== null && recurrence !== void 0 && recurrence._pattern && (recurrence === null || recurrence === void 0 ? void 0 : recurrence._pattern) !== 'none') {
                   _this7.form.patchValue({
@@ -44270,50 +44276,51 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                   }));
                 });
                 if (!((!id || date !== event.date || duration !== event.duration) && spaces.length)) {
-                  _context3.next = 19;
+                  _context3.next = 20;
                   break;
                 }
                 changed_times = true;
-                _context3.next = 19;
+                _context3.next = 20;
                 return _this7.checkSelectedSpacesAreAvailable(spaces, all_day ? (0, date_fns_1.startOfDay)(date).valueOf() : date, all_day ? Math.max(24 * 60, duration) : duration, ical_uid || id || '')["catch"](function (_) {
                   _this7._loading.next('');
                   reject(_);
                   throw _;
                 });
-              case 19:
+              case 20:
+                spaces = ((_form$get3 = form.get('resources')) === null || _form$get3 === void 0 ? void 0 : _form$get3.value) || [];
                 is_owner = host === ((_ref19 = (0, common_1.currentUser)()) === null || _ref19 === void 0 ? void 0 : _ref19.email) || creator === ((_ref20 = (0, common_1.currentUser)()) === null || _ref20 === void 0 ? void 0 : _ref20.email);
                 if (!(!spaces.length && _this7._settings.get('app.events.no_space_resource'))) {
-                  _context3.next = 25;
+                  _context3.next = 27;
                   break;
                 }
-                _context3.next = 23;
+                _context3.next = 25;
                 return _this7._space_pipe.transform(_this7._settings.get('app.events.no_space_resource'));
-              case 23:
+              case 25:
                 space = _context3.sent;
                 spaces.push(space);
-              case 25:
+              case 27:
                 attendees = (0, common_1.unique)([].concat(_toConsumableArray(value.attendees), [value.organiser || (0, common_1.currentUser)()]), 'email');
                 if (!(!spaces.length && attendees.find(function (_) {
                   return _.is_external;
                 }))) {
-                  _context3.next = 31;
+                  _context3.next = 33;
                   break;
                 }
                 _this7._loading.next('');
                 message = 'External attendees require a space to be booked';
                 reject(message);
                 throw message;
-              case 31:
+              case 33:
                 space_id = (_spaces$ = spaces[0]) === null || _spaces$ === void 0 ? void 0 : _spaces$.id;
                 query = id ? {
                   system_id: ((_this7$event2 = _this7.event) === null || _this7$event2 === void 0 || (_this7$event2 = _this7$event2.resources[0]) === null || _this7$event2 === void 0 ? void 0 : _this7$event2.id) || ((_this7$event3 = _this7.event) === null || _this7$event3 === void 0 || (_this7$event3 = _this7$event3.system) === null || _this7$event3 === void 0 ? void 0 : _this7$event3.id) || space_id
                 } : {};
                 if (is_owner) query.calendar = host || creator;
                 if (!(_this7._payments.payment_module && spaces.length)) {
-                  _context3.next = 41;
+                  _context3.next = 43;
                   break;
                 }
-                _context3.next = 37;
+                _context3.next = 39;
                 return _this7._payments.makePayment({
                   type: 'space',
                   resource_name: spaces[0].display_name || spaces[0].name,
@@ -44321,19 +44328,19 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                   duration: duration,
                   all_day: all_day
                 });
-              case 37:
+              case 39:
                 receipt = _context3.sent;
                 if (receipt !== null && receipt !== void 0 && receipt.success) {
-                  _context3.next = 40;
+                  _context3.next = 42;
                   break;
                 }
                 return _context3.abrupt("return", _this7._loading.next(''));
-              case 40:
+              case 42:
                 value.extension_data = {
                   invoice: receipt,
                   invoice_id: receipt.invoice_id
                 };
-              case 41:
+              case 43:
                 d = value.date;
                 _iterator2 = _createForOfIteratorHelper(catering);
                 try {
@@ -44368,7 +44375,7 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                 processed_assets = (assets || []).map(function (_) {
                   return new asset_request_class_1.AssetRequest(_).toJSON();
                 });
-                _context3.next = 48;
+                _context3.next = 50;
                 return _this7._makeBooking(new event_class_1.CalendarEvent(_objectSpread(_objectSpread({}, value), {}, {
                   old_system: (_this7$event4 = _this7.event) === null || _this7$event4 === void 0 ? void 0 : _this7$event4.system,
                   host: _this7._settings.get('app.events.force_host') || (_this7._settings.get('app.events.room_as_host') ? value.resources[0].email : '') || value.host,
@@ -44392,7 +44399,7 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                   _this7._loading.next('');
                   throw e;
                 });
-              case 48:
+              case 50:
                 result = _context3.sent;
                 domain = (((_ref23 = (0, common_1.currentUser)()) === null || _ref23 === void 0 ? void 0 : _ref23.email) || '@').split('@')[1];
                 visitors = attendees.filter(function (user) {
@@ -44442,18 +44449,18 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                   };
                 }();
                 if (!visitors.length) {
-                  _context3.next = 56;
+                  _context3.next = 58;
                   break;
                 }
-                _context3.next = 56;
+                _context3.next = 58;
                 return (0, bookings_fn_1.createBookingsForEvent)(result, 'visitor', visitors)["catch"](on_error);
-              case 56:
+              case 58:
                 if (!(assets !== null && assets !== void 0 && assets.length || (_event$extension_data2 = event.extension_data.assets) !== null && _event$extension_data2 !== void 0 && _event$extension_data2.length)) {
-                  _context3.next = 66;
+                  _context3.next = 68;
                   break;
                 }
                 creating_assets = true;
-                _context3.next = 60;
+                _context3.next = 62;
                 return (0, assets_fn_1.validateAssetRequestsForResource)(result, {
                   date: date,
                   duration: duration,
@@ -44464,19 +44471,19 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                   zones: (_spaces$5 = spaces[0]) !== null && _spaces$5 !== void 0 && (_spaces$5 = _spaces$5.level) !== null && _spaces$5 !== void 0 && _spaces$5.parent_id ? [(_spaces$6 = spaces[0]) === null || _spaces$6 === void 0 || (_spaces$6 = _spaces$6.level) === null || _spaces$6 === void 0 ? void 0 : _spaces$6.parent_id] : [(_this7$_org$building = _this7._org.building) === null || _this7$_org$building === void 0 ? void 0 : _this7$_org$building.id],
                   reset_state: changed_times
                 }, assets, changed_spaces || changed_times)["catch"](on_error);
-              case 60:
+              case 62:
                 requests = _context3.sent;
                 if (requests) {
-                  _context3.next = 63;
+                  _context3.next = 65;
                   break;
                 }
                 throw 'Unable to validate asset requests';
-              case 63:
-                _context3.next = 65;
-                return requests();
               case 65:
+                _context3.next = 67;
+                return requests();
+              case 67:
                 creating_assets = false;
-              case 66:
+              case 68:
                 _this7.clearForm();
                 _this7.last_success = result;
                 sessionStorage.setItem('PLACEOS.last_booked_event', JSON.stringify(result));
@@ -44486,7 +44493,7 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                 });
                 resolve(result);
                 _this7._loading.next('');
-              case 73:
+              case 75:
               case "end":
                 return _context3.stop();
             }
