@@ -12953,15 +12953,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "6e58ae9",
-  "hash": "6e58ae9",
+  "raw": "b3cfa43",
+  "hash": "b3cfa43",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "6e58ae9",
+  "suffix": "b3cfa43",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1718851704465
+  "time": 1719205824917
 };
 /* tslint:enable */
 
@@ -23985,7 +23985,7 @@ class EventFormService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.Asyn
     });
     ref.afterClosed().subscribe(d => d ? this._router.navigate(['/']) : '');
   }
-  postForm(force = false) {
+  postForm(force = false, ignore_space_check = []) {
     var _this2 = this;
     return new Promise( /*#__PURE__*/function () {
       var _ref = (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (resolve, reject) {
@@ -24009,7 +24009,10 @@ class EventFormService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.Asyn
           assets,
           recurrence
         } = value;
-        const spaces = form.get('resources')?.value || [];
+        let spaces = form.get('resources')?.value || [];
+        if (ignore_space_check.length) {
+          spaces = spaces.filter(_ => !ignore_space_check.includes(_.email) && !ignore_space_check.includes(_.id));
+        }
         let catering = form.get('catering')?.value || [];
         if (recurrence?._pattern && recurrence?._pattern !== 'none') {
           _this2.form.patchValue({
@@ -24027,6 +24030,7 @@ class EventFormService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.Asyn
             throw _;
           });
         }
+        spaces = form.get('resources')?.value || [];
         const is_owner = host === (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.currentUser)()?.email || creator === (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.currentUser)()?.email;
         if (!spaces.length && _this2._settings.get('app.events.no_space_resource')) {
           const space = yield _this2._space_pipe.transform(_this2._settings.get('app.events.no_space_resource'));
