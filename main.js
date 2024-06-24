@@ -22247,15 +22247,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "8d17fc1",
-  "hash": "8d17fc1",
+  "raw": "1316972",
+  "hash": "1316972",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "8d17fc1",
+  "suffix": "1316972",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1718587265448
+  "time": 1719212912738
 };
 /* tslint:enable */
 
@@ -24830,9 +24830,7 @@ class ComponentsModule {
 })();
 _angular_core__WEBPACK_IMPORTED_MODULE_72__["ɵɵsetComponentScope"](_user_avatar_component__WEBPACK_IMPORTED_MODULE_4__.UserAvatarComponent, function () {
   return [_angular_common__WEBPACK_IMPORTED_MODULE_74__.NgIf, _authenticated_image_directive__WEBPACK_IMPORTED_MODULE_34__.AuthenticatedImageDirective];
-}, function () {
-  return [_safe_pipe__WEBPACK_IMPORTED_MODULE_11__.SafePipe];
-});
+}, []);
 _angular_core__WEBPACK_IMPORTED_MODULE_72__["ɵɵsetComponentScope"](_interactive_map_component__WEBPACK_IMPORTED_MODULE_6__.InteractiveMapComponent, function () {
   return [_angular_common__WEBPACK_IMPORTED_MODULE_74__.NgIf, _angular_material_core__WEBPACK_IMPORTED_MODULE_54__.MatRipple, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_66__.MatTooltip, _icon_component__WEBPACK_IMPORTED_MODULE_2__.IconComponent, _map_renderer_component__WEBPACK_IMPORTED_MODULE_45__.MapRendererComponent, _maps_indoors_component__WEBPACK_IMPORTED_MODULE_46__.MapsIndoorsComponent];
 }, function () {
@@ -30720,11 +30718,10 @@ function UserAvatarComponent_div_0_Template(rf, ctx) {
 function UserAvatarComponent_ng_template_1_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "img", 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](1, "safe");
   }
   if (rf & 2) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("source", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind2"](1, 1, ctx_r0.user.photo, "resource"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("source", ctx_r0.user.photo);
   }
 }
 class UserAvatarComponent {
@@ -30748,7 +30745,7 @@ class UserAvatarComponent {
     consts: [["image_state", ""], ["class", "flex items-center justify-center rounded-full overflow-hidden", 4, "ngIf"], [1, "flex", "items-center", "justify-center", "rounded-full", "overflow-hidden"], ["initials", "", "class", "text-base-content text-opacity-80 uppercase", 4, "ngIf", "ngIfElse"], ["initials", "", 1, "text-base-content", "text-opacity-80", "uppercase"], ["auth", "", 1, "h-full", "w-full", 3, "source"]],
     template: function UserAvatarComponent_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](0, UserAvatarComponent_div_0_Template, 2, 3, "div", 1)(1, UserAvatarComponent_ng_template_1_Template, 2, 4, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](0, UserAvatarComponent_div_0_Template, 2, 3, "div", 1)(1, UserAvatarComponent_ng_template_1_Template, 1, 1, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplateRefExtractor"]);
       }
       if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.user);
