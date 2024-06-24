@@ -32532,15 +32532,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "8d17fc1",
-  "hash": "8d17fc1",
+  "raw": "1316972",
+  "hash": "1316972",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "8d17fc1",
+  "suffix": "1316972",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1718587265568
+  "time": 1719212902556
 };
 /* tslint:enable */
 
@@ -35105,9 +35105,7 @@ exports.ComponentsModule = ComponentsModule;
 })();
 i0.ɵɵsetComponentScope(user_avatar_component_1.UserAvatarComponent, function () {
   return [i2.NgIf, authenticated_image_directive_1.AuthenticatedImageDirective];
-}, function () {
-  return [safe_pipe_1.SafePipe];
-});
+}, []);
 i0.ɵɵsetComponentScope(interactive_map_component_1.InteractiveMapComponent, function () {
   return [i2.NgIf, i3.MatRipple, i4.MatTooltip, icon_component_1.IconComponent, map_renderer_component_1.MapRendererComponent, maps_indoors_component_1.MapsIndoorsComponent];
 }, function () {
@@ -42283,11 +42281,10 @@ function UserAvatarComponent_div_0_Template(rf, ctx) {
 function UserAvatarComponent_ng_template_1_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelement(0, "img", 5);
-    i0.ɵɵpipe(1, "safe");
   }
   if (rf & 2) {
     var ctx_r0 = i0.ɵɵnextContext();
-    i0.ɵɵproperty("source", i0.ɵɵpipeBind2(1, 1, ctx_r0.user.photo, "resource"));
+    i0.ɵɵproperty("source", ctx_r0.user.photo);
   }
 }
 var UserAvatarComponent = /*#__PURE__*/function () {
@@ -42319,7 +42316,7 @@ _UserAvatarComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
   consts: [["image_state", ""], ["class", "flex items-center justify-center rounded-full overflow-hidden", 4, "ngIf"], [1, "flex", "items-center", "justify-center", "rounded-full", "overflow-hidden"], ["initials", "", "class", "text-base-content text-opacity-80 uppercase", 4, "ngIf", "ngIfElse"], ["initials", "", 1, "text-base-content", "text-opacity-80", "uppercase"], ["auth", "", 1, "h-full", "w-full", 3, "source"]],
   template: function UserAvatarComponent_Template(rf, ctx) {
     if (rf & 1) {
-      i0.ɵɵtemplate(0, UserAvatarComponent_div_0_Template, 2, 3, "div", 1)(1, UserAvatarComponent_ng_template_1_Template, 2, 4, "ng-template", null, 0, i0.ɵɵtemplateRefExtractor);
+      i0.ɵɵtemplate(0, UserAvatarComponent_div_0_Template, 2, 3, "div", 1)(1, UserAvatarComponent_ng_template_1_Template, 1, 1, "ng-template", null, 0, i0.ɵɵtemplateRefExtractor);
     }
     if (rf & 2) {
       i0.ɵɵproperty("ngIf", ctx.user);
