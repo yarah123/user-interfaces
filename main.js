@@ -4073,6 +4073,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   LockersService: () => (/* reexport safe */ _lib_lockers_service__WEBPACK_IMPORTED_MODULE_6__.LockersService),
 /* harmony export */   ParkingService: () => (/* reexport safe */ _lib_parking_service__WEBPACK_IMPORTED_MODULE_11__.ParkingService),
 /* harmony export */   ParkingSpaceSelectModalComponent: () => (/* reexport safe */ _lib_parking_select_modal_parking_select_modal_component__WEBPACK_IMPORTED_MODULE_9__.ParkingSpaceSelectModalComponent),
+/* harmony export */   RecurrenceDays: () => (/* reexport safe */ _lib_booking_class__WEBPACK_IMPORTED_MODULE_2__.RecurrenceDays),
 /* harmony export */   SharedBookingsModule: () => (/* reexport safe */ _lib_bookings_module__WEBPACK_IMPORTED_MODULE_0__.SharedBookingsModule),
 /* harmony export */   approveBooking: () => (/* reexport safe */ _lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.approveBooking),
 /* harmony export */   bookingAddGuest: () => (/* reexport safe */ _lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.bookingAddGuest),
@@ -5708,7 +5709,8 @@ class BookingLinkModalComponent {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Booking: () => (/* binding */ Booking)
+/* harmony export */   Booking: () => (/* binding */ Booking),
+/* harmony export */   RecurrenceDays: () => (/* binding */ RecurrenceDays)
 /* harmony export */ });
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/common */ 22797);
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! date-fns */ 53838);
@@ -5727,6 +5729,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const IGNORE_EXT_KEYS = ['user', 'booked_by', 'resources', 'assets', 'members'];
+var RecurrenceDays;
+(function (RecurrenceDays) {
+  RecurrenceDays[RecurrenceDays["SUNDAY"] = 1] = "SUNDAY";
+  RecurrenceDays[RecurrenceDays["MONDAY"] = 2] = "MONDAY";
+  RecurrenceDays[RecurrenceDays["TUESDAY"] = 4] = "TUESDAY";
+  RecurrenceDays[RecurrenceDays["WEDNESDAY"] = 8] = "WEDNESDAY";
+  RecurrenceDays[RecurrenceDays["THURSDAY"] = 16] = "THURSDAY";
+  RecurrenceDays[RecurrenceDays["FRIDAY"] = 32] = "FRIDAY";
+  RecurrenceDays[RecurrenceDays["SATURDAY"] = 64] = "SATURDAY";
+})(RecurrenceDays || (RecurrenceDays = {}));
 /** General purpose booking class */
 class Booking {
   get group() {
@@ -5807,6 +5819,12 @@ class Booking {
     this.images = data.images || [];
     this.status = this.checked_out_at > 0 ? 'ended' : this.rejected ? 'declined' : this.approved ? 'approved' : 'tentative';
     this.process_state = data.process_state || 'pending';
+    this.recurrence_type = data.recurrence_type || 'none';
+    this.recurrence_days = data.recurrence_days;
+    this.recurrence_week_of_month = data.recurrence_week_of_month;
+    this.recurrence_interval = data.recurrence_interval;
+    this.recurrence_end = data.recurrence_end;
+    this.instance = data.instance;
     for (const key in data) {
       if (!(key in this) && !IGNORE_EXT_KEYS.includes(key) && data[key]) {
         this.extension_data[key] = data[key] || this.extension_data[key];
@@ -5966,7 +5984,12 @@ function generateBookingForm(booking = new _booking_class__WEBPACK_IMPORTED_MODU
     permission: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(booking.permission || 'PRIVATE'),
     images: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(booking.images || []),
     tags: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(booking.tags || []),
-    plate_number: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(booking.extension_data.plate_number || '')
+    plate_number: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(booking.extension_data.plate_number || ''),
+    recurrence_type: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(booking.recurrence_type || 'none'),
+    recurrence_days: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(booking.recurrence_days),
+    recurrence_week_of_month: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(booking.recurrence_week_of_month),
+    recurrence_interval: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(booking.recurrence_interval),
+    recurrence_end: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(booking.recurrence_end)
   });
   form.valueChanges.subscribe(v => {
     const user = v.user;
@@ -19742,15 +19765,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "ff7c65c",
-  "hash": "ff7c65c",
+  "raw": "9c1925b",
+  "hash": "9c1925b",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "ff7c65c",
+  "suffix": "9c1925b",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1718869235669
+  "time": 1719375119485
 };
 /* tslint:enable */
 
@@ -26401,7 +26424,10 @@ class MapsIndoorsComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.
     };
     console.log('Resource:', this._services.mapsindoors);
     this._initialised.next(true);
-    if (this.zone) this._centerOnZone();
+    if (this.zone) {
+      this._services.map.setZoom(DEFAULT_ZOOM);
+      this._centerOnZone();
+    }
     this._addFloorSelector();
     // Add Events listenders
     this._services.mapsindoors.addListener('building_changed', e => this._handleBuildingChange(e));
@@ -26409,6 +26435,7 @@ class MapsIndoorsComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.
     this._services.mapsindoors.addListener('zoom_changed', e => this._handleZoomChange(e));
     this._services.mapsindoors.addListener('click', e => this._handleUserClick(e));
     this.timeout('resize', () => window.dispatchEvent(new Event('resize')), 100);
+    window.maps_indoors = this._services;
     this.timeout('focus', () => this._focusOnLocation());
     this.timeout('init_zoom', () => this._handleZoomChange(DEFAULT_ZOOM));
   }
@@ -26547,15 +26574,13 @@ class MapsIndoorsComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.
           if (resource) _this4._setResource(id, resource);
         }
         if (!resource) continue;
-        (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.log)('MapsPeople', 'Resource:', [resource, _this4._services.mapsindoors, styles[id]]);
-        _this4._services.mapsindoors.setDisplayRule(resource.id, {
+        const value = {
+          extrusionHeight: 0,
+          extrusionVisible: false,
           polygonVisible: true,
-          polygonFillOpacity: 0.6,
-          polygonZoomFrom: 16,
-          polygonZoomTo: 22,
-          visible: true,
-          polygonFillColor: '#ff69b4'
-        });
+          polygonFillColor: styles[id].fill
+        };
+        _this4._services.mapsindoors.setDisplayRule(resource.id, value);
       }
     })();
   }
@@ -26585,7 +26610,6 @@ class MapsIndoorsComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.
       const bld = this._org.buildings.find(bld => bld.id === this.zone.parent_id);
       if (!bld) return;
       const [lat, long] = bld?.location.split(',');
-      this._services.map.setZoom(DEFAULT_ZOOM);
       this._services.map.setCenter({
         lat: parseFloat(lat),
         lng: parseFloat(long)
@@ -27443,7 +27467,7 @@ function SimpleTableComponent_ng_container_3_div_2_div_3_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"](" ", row_r10[column_r9.key], " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", row_r10[column_r9.key] == null);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", row_r10[column_r9.key] == null || row_r10[column_r9.key] === "");
   }
 }
 function SimpleTableComponent_ng_container_3_div_2_ng_container_4_ng_container_1_Template(rf, ctx) {
