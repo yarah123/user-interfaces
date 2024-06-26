@@ -606,6 +606,30 @@ class ParkingStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.A
       };
       const spaces = yield _this.spaces.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_20__.take)(1)).toPromise();
       const idx = spaces.findIndex(_ => _.id === new_space.id);
+      if (space.assigned_to && space.assigned_to !== new_space.assigned_to) {
+        const booking_list = yield (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.queryBookings)({
+          period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_16__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_17__["default"])(Date.now())),
+          period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_16__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_18__["default"])(Date.now())),
+          type: 'parking',
+          email: new_space.assigned_to
+        }).toPromise();
+        const filtered = booking_list.filter(_ => _.asset_id === space.id);
+        yield Promise.all(filtered.map(_ => (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.removeBooking)(_.id).toPromise()));
+      }
+      if (space.assigned_to !== new_space.assigned_to && new_space.assigned_to) {
+        yield (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.saveBooking)(new _placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.Booking({
+          user_id: new_space.assigned_to,
+          user_email: new_space.assigned_to,
+          booking_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_16__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_17__["default"])(Date.now())),
+          booking_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_16__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_18__["default"])(Date.now())),
+          type: 'parking',
+          booking_type: 'parking',
+          asset_id: new_space.id,
+          asset_name: new_space.name,
+          recurrence_type: 'daily',
+          recurrence_days: _placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.RecurrenceDays.MONDAY | _placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.RecurrenceDays.TUESDAY | _placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.RecurrenceDays.WEDNESDAY | _placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.RecurrenceDays.THURSDAY | _placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.RecurrenceDays.FRIDAY
+        })).toPromise();
+      }
       if (idx >= 0) spaces[idx] = new_space;else spaces.push(new_space);
       const new_space_list = spaces;
       yield (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_4__.updateMetadata)(zone, {

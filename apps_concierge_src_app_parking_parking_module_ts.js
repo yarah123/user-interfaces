@@ -503,12 +503,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 22797);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ 68824);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 37580);
-/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/tooltip */ 80640);
-/* harmony import */ var _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/progress-bar */ 26354);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/core */ 74646);
+/* harmony import */ var _angular_cdk_clipboard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/cdk/clipboard */ 52352);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/tooltip */ 80640);
+/* harmony import */ var _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/progress-bar */ 26354);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/core */ 74646);
 /* harmony import */ var _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/icon.component */ 69434);
 /* harmony import */ var _libs_components_src_lib_simple_table_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/simple-table.component */ 88328);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ 60316);
 
 
 
@@ -520,41 +521,40 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const _c0 = () => ({
+
+
+const _c0 = a0 => ({
   key: "name",
-  name: "Name"
+  name: "Parking Bay",
+  content: a0
 });
 const _c1 = a0 => ({
-  key: "map_id",
-  name: "Bay Number",
+  key: "assigned_to",
+  name: "Assigned",
   content: a0
 });
 const _c2 = () => ({
-  key: "assigned_to",
-  name: "Assigned"
-});
-const _c3 = () => ({
   key: "notes",
   name: "Notes"
 });
-const _c4 = a0 => ({
+const _c3 = a0 => ({
   key: "status",
-  name: "Status Today",
+  name: "Status",
   content: a0,
   sortable: false,
   size: "4.5rem"
 });
-const _c5 = a0 => ({
+const _c4 = a0 => ({
   key: "actions",
   name: " ",
   content: a0,
   sortable: false,
-  size: "7.5rem"
+  size: "6.5rem"
 });
-const _c6 = (a0, a1, a2, a3, a4, a5) => [a0, a1, a2, a3, a4, a5];
+const _c5 = (a0, a1, a2, a3, a4) => [a0, a1, a2, a3, a4];
 function ParkingSpaceListComponent_ng_template_4_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 6)(1, "app-icon", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 7)(1, "app-icon", 8);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
   }
@@ -569,33 +569,102 @@ function ParkingSpaceListComponent_ng_template_4_Template(rf, ctx) {
 }
 function ParkingSpaceListComponent_ng_template_6_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "span", 8);
+    const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "button", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ParkingSpaceListComponent_ng_template_6_Template_button_click_0_listener() {
+      const row_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r3).row;
+      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r1.copyToClipboard(row_r4.id));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "div", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
+  }
+  if (rf & 2) {
+    const row_r4 = ctx.row;
+    const data_r5 = ctx.data;
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](data_r5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", row_r4.id, " ");
+  }
+}
+function ParkingSpaceListComponent_ng_template_8_div_0_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1, "No Assigned User");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+  }
+}
+function ParkingSpaceListComponent_ng_template_8_button_1_div_3_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const data_r3 = ctx.data;
+    const data_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](2).data;
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](data_r3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", data_r7, " ");
+  }
+}
+function ParkingSpaceListComponent_ng_template_8_button_1_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "button", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ParkingSpaceListComponent_ng_template_8_button_1_Template_button_click_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r6);
+      const data_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]().data;
+      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r1.copyToClipboard(data_r7, "assigned"));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](3, ParkingSpaceListComponent_ng_template_8_button_1_div_3_Template, 2, 1, "div", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+    const row_r9 = ctx_r7.row;
+    const data_r7 = ctx_r7.data;
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](row_r9.assigned_name || data_r7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", row_r9.assigned_name);
   }
 }
 function ParkingSpaceListComponent_ng_template_8_Template(rf, ctx) {
   if (rf & 1) {
-    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 9)(1, "button", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ParkingSpaceListComponent_ng_template_8_Template_button_click_1_listener() {
-      const row_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r4).row;
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](0, ParkingSpaceListComponent_ng_template_8_div_0_Template, 2, 0, "div", 12)(1, ParkingSpaceListComponent_ng_template_8_button_1_Template, 4, 2, "button", 13);
+  }
+  if (rf & 2) {
+    const data_r7 = ctx.data;
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", !data_r7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", data_r7);
+  }
+}
+function ParkingSpaceListComponent_ng_template_10_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 16)(1, "button", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ParkingSpaceListComponent_ng_template_10_Template_button_click_1_listener() {
+      const row_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r10).row;
       const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r1.editSpace(row_r5));
+      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r1.editSpace(row_r11));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "app-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "edit");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "button", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ParkingSpaceListComponent_ng_template_8_Template_button_click_4_listener() {
-      const row_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r4).row;
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "button", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ParkingSpaceListComponent_ng_template_10_Template_button_click_4_listener() {
+      const row_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r10).row;
       const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r1.removeSpace(row_r5));
+      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r1.removeSpace(row_r11));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "app-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](6, "delete");
@@ -603,9 +672,10 @@ function ParkingSpaceListComponent_ng_template_8_Template(rf, ctx) {
   }
 }
 class ParkingSpaceListComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.AsyncHandler {
-  constructor(_state) {
+  constructor(_state, _clipboard) {
     super();
     this._state = _state;
+    this._clipboard = _clipboard;
     this.spaces = this._state.spaces;
     this.options = this._state.options;
     this.loading = this._state.loading;
@@ -616,6 +686,10 @@ class ParkingSpaceListComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE
   }
   ngOnInit() {
     this.subscription('bookings', (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.combineLatest)([this.spaces, this.bookings]).subscribe(([spaces, bookings]) => this._updateStatusList(spaces, bookings)));
+  }
+  copyToClipboard(id, type) {
+    const success = this._clipboard.copy(id);
+    if (success) (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.notifySuccess)(type ? 'Assigned user email copied to clipboard.' : 'Parking Bay ID copied to clipboard.');
   }
   statusTooltip(status) {
     switch (status) {
@@ -647,39 +721,39 @@ class ParkingSpaceListComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE
         this.space_status[space.id] = 'free';
       }
     }
-    console.log('Space Status:', this.space_status);
   }
   static #_ = this.ɵfac = function ParkingSpaceListComponent_Factory(t) {
-    return new (t || ParkingSpaceListComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_parking_state_service__WEBPACK_IMPORTED_MODULE_0__.ParkingStateService));
+    return new (t || ParkingSpaceListComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_parking_state_service__WEBPACK_IMPORTED_MODULE_0__.ParkingStateService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_clipboard__WEBPACK_IMPORTED_MODULE_6__.Clipboard));
   };
   static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
     type: ParkingSpaceListComponent,
     selectors: [["parking-space-list"]],
     features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵInheritDefinitionFeature"]],
-    decls: 11,
-    vars: 26,
-    consts: [["status_template", ""], ["id_template", ""], ["action_template", ""], [1, "w-full"], [1, "min-w-[76rem]", "block", "text-sm", 3, "data", "columns", "filter", "sortable"], [1, "w-full", "h-20"], ["matTooltipPosition", "left", 1, "flex", "items-center", "justify-center", "h-8", "w-8", "rounded", "bg-warning", "text-warning-content", "mx-auto", 3, "matTooltip"], [1, "text-2xl"], [1, "font-mono", "text-sm", "p-4"], [1, "w-full", "flex", "items-center", "justify-end", "space-x-2", "px-4"], ["icon", "", "matRipple", "", "matTooltip", "Edit Parking Space", 3, "click"], ["icon", "", "matRipple", "", "matTooltip", "Remove Parking Space", 1, "text-error", 3, "click"]],
+    decls: 13,
+    vars: 25,
+    consts: [["status_template", ""], ["name_template", ""], ["assigned_template", ""], ["action_template", ""], [1, "w-full"], [1, "min-w-[52rem]", "block", "text-sm", 3, "data", "columns", "filter", "sortable"], [1, "w-full", "h-20"], ["matTooltipPosition", "left", 1, "flex", "items-center", "justify-center", "h-8", "w-8", "rounded", "bg-warning", "text-warning-content", "mx-auto", 3, "matTooltip"], [1, "text-2xl"], [1, "px-4", "py-2", "text-left", "leading-tight", 3, "click"], [1, ""], [1, "text-[0.625rem]", "opacity-30", "font-mono"], ["class", "p-4 opacity-30", 4, "ngIf"], ["class", "px-4 py-2 text-left leading-tight", 3, "click", 4, "ngIf"], [1, "p-4", "opacity-30"], ["class", "text-[0.625rem] opacity-30 font-mono", 4, "ngIf"], [1, "flex", "items-center", "space-x-2", "mx-auto"], ["icon", "", "matRipple", "", "matTooltip", "Edit Parking Space", 3, "click"], ["icon", "", "matRipple", "", "matTooltip", "Remove Parking Space", 1, "text-error", 3, "click"]],
     template: function ParkingSpaceListComponent_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](0, "mat-progress-bar", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](0, "mat-progress-bar", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](1, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](2, "simple-table", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](2, "simple-table", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](3, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](4, ParkingSpaceListComponent_ng_template_4_Template, 3, 10, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplateRefExtractor"])(6, ParkingSpaceListComponent_ng_template_6_Template, 2, 1, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplateRefExtractor"])(8, ParkingSpaceListComponent_ng_template_8_Template, 7, 0, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](10, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](4, ParkingSpaceListComponent_ng_template_4_Template, 3, 10, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplateRefExtractor"])(6, ParkingSpaceListComponent_ng_template_6_Template, 5, 2, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplateRefExtractor"])(8, ParkingSpaceListComponent_ng_template_8_Template, 2, 2, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplateRefExtractor"])(10, ParkingSpaceListComponent_ng_template_10_Template, 7, 0, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](12, "div", 6);
       }
       if (rf & 2) {
-        let tmp_3_0;
-        let tmp_6_0;
-        const status_template_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵreference"](5);
-        const id_template_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵreference"](7);
-        const action_template_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵreference"](9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("opacity-0", !((tmp_3_0 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](1, 6, ctx.loading)) == null ? null : tmp_3_0.includes("spaces")));
+        let tmp_4_0;
+        let tmp_7_0;
+        const status_template_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵreference"](5);
+        const name_template_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵreference"](7);
+        const assigned_template_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵreference"](9);
+        const action_template_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵreference"](11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("opacity-0", !((tmp_4_0 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](1, 6, ctx.loading)) == null ? null : tmp_4_0.includes("spaces")));
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("data", ctx.spaces)("columns", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction6"](19, _c6, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](10, _c0), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction1"](11, _c1, id_template_r7), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](13, _c2), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](14, _c3), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction1"](15, _c4, status_template_r6), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction1"](17, _c5, action_template_r8)))("filter", (tmp_6_0 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](3, 8, ctx.options)) == null ? null : tmp_6_0.search)("sortable", true);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("data", ctx.spaces)("columns", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction5"](19, _c5, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction1"](10, _c0, name_template_r13), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction1"](12, _c1, assigned_template_r14), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](14, _c2), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction1"](15, _c3, status_template_r12), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction1"](17, _c4, action_template_r15)))("filter", (tmp_7_0 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](3, 8, ctx.options)) == null ? null : tmp_7_0.search)("sortable", true);
       }
     },
-    dependencies: [_angular_material_tooltip__WEBPACK_IMPORTED_MODULE_6__.MatTooltip, _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_7__.MatProgressBar, _angular_material_core__WEBPACK_IMPORTED_MODULE_8__.MatRipple, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_2__.IconComponent, _libs_components_src_lib_simple_table_component__WEBPACK_IMPORTED_MODULE_3__.SimpleTableComponent, _angular_common__WEBPACK_IMPORTED_MODULE_9__.AsyncPipe],
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_8__.MatTooltip, _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_9__.MatProgressBar, _angular_material_core__WEBPACK_IMPORTED_MODULE_10__.MatRipple, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_2__.IconComponent, _libs_components_src_lib_simple_table_component__WEBPACK_IMPORTED_MODULE_3__.SimpleTableComponent, _angular_common__WEBPACK_IMPORTED_MODULE_7__.AsyncPipe],
     encapsulation: 2
   });
 }
@@ -1007,100 +1081,122 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const _c0 = () => ({
+const _c0 = a0 => ({
   key: "name",
-  name: "Name"
+  name: "User",
+  content: a0
 });
 const _c1 = () => ({
-  key: "email",
-  name: "Email"
-});
-const _c2 = () => ({
   key: "car_color",
   name: "Car Colour"
 });
-const _c3 = a0 => ({
+const _c2 = a0 => ({
   key: "plate_number",
   name: "Plate Number",
   content: a0
 });
-const _c4 = () => ({
+const _c3 = () => ({
   key: "phone",
   name: "Phone"
 });
-const _c5 = () => ({
+const _c4 = () => ({
   key: "notes",
   name: "Notes"
 });
-const _c6 = a0 => ({
+const _c5 = a0 => ({
   key: "deny",
   name: "Deny",
   size: "4.5rem",
   content: a0
 });
-const _c7 = a0 => ({
+const _c6 = a0 => ({
   key: "actions",
   name: " ",
   content: a0,
   sortable: false,
-  size: "7.5rem"
+  size: "6.5rem"
 });
-const _c8 = (a0, a1, a2, a3, a4, a5, a6, a7) => [a0, a1, a2, a3, a4, a5, a6, a7];
-function ParkingUsersListComponent_ng_template_4_div_0_Template(rf, ctx) {
+const _c7 = (a0, a1, a2, a3, a4, a5, a6) => [a0, a1, a2, a3, a4, a5, a6];
+function ParkingUsersListComponent_ng_template_4_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 7)(1, "app-icon");
+    const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "button", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function ParkingUsersListComponent_ng_template_4_Template_button_click_0_listener() {
+      const row_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r1).row;
+      const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r2.copyToClipboard(row_r2.id));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "div", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](3, "div", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
+  }
+  if (rf & 2) {
+    const row_r2 = ctx.row;
+    const data_r4 = ctx.data;
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](data_r4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"](" ", row_r2.email, " ");
+  }
+}
+function ParkingUsersListComponent_ng_template_6_div_0_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 11)(1, "app-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2, "close");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
   }
 }
-function ParkingUsersListComponent_ng_template_4_Template(rf, ctx) {
+function ParkingUsersListComponent_ng_template_6_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](0, ParkingUsersListComponent_ng_template_4_div_0_Template, 3, 0, "div", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](0, ParkingUsersListComponent_ng_template_6_div_0_Template, 3, 0, "div", 10);
   }
   if (rf & 2) {
-    const data_r1 = ctx.data;
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", data_r1);
+    const data_r5 = ctx.data;
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", data_r5);
   }
 }
-function ParkingUsersListComponent_ng_template_6_span_2_Template(rf, ctx) {
+function ParkingUsersListComponent_ng_template_8_span_2_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "span", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "span", 14);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, "N/A");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
   }
 }
-function ParkingUsersListComponent_ng_template_6_Template(rf, ctx) {
+function ParkingUsersListComponent_ng_template_8_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 12);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](2, ParkingUsersListComponent_ng_template_6_span_2_Template, 2, 0, "span", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](2, ParkingUsersListComponent_ng_template_8_span_2_Template, 2, 0, "span", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const data_r2 = ctx.data;
+    const data_r6 = ctx.data;
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"](" ", data_r2, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"](" ", data_r6, " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", !data_r2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", !data_r6);
   }
 }
-function ParkingUsersListComponent_ng_template_8_Template(rf, ctx) {
+function ParkingUsersListComponent_ng_template_10_Template(rf, ctx) {
   if (rf & 1) {
-    const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 11)(1, "button", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function ParkingUsersListComponent_ng_template_8_Template_button_click_1_listener() {
-      const row_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r3).row;
-      const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r4.editUser(row_r4));
+    const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 15)(1, "button", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function ParkingUsersListComponent_ng_template_10_Template_button_click_1_listener() {
+      const row_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r7).row;
+      const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r2.editUser(row_r8));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "app-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](3, "edit");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](4, "button", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function ParkingUsersListComponent_ng_template_8_Template_button_click_4_listener() {
-      const row_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r3).row;
-      const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r4.removeUser(row_r4));
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](4, "button", 17);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function ParkingUsersListComponent_ng_template_10_Template_button_click_4_listener() {
+      const row_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r7).row;
+      const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r2.removeUser(row_r8));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](5, "app-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](6, "delete");
@@ -1123,27 +1219,28 @@ class ParkingUsersListComponent {
   static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({
     type: ParkingUsersListComponent,
     selectors: [["parking-users-list"]],
-    decls: 11,
-    vars: 30,
-    consts: [["denied_template", ""], ["plate_template", ""], ["action_template", ""], [1, "w-full"], [1, "min-w-[76rem]", "block", "text-sm", 3, "data", "columns", "filter", "sortable"], [1, "w-full", "h-20"], ["class", "rounded h-8 w-8 flex items-center justify-center text-2xl bg-error text-error-content mx-auto", 4, "ngIf"], [1, "rounded", "h-8", "w-8", "flex", "items-center", "justify-center", "text-2xl", "bg-error", "text-error-content", "mx-auto"], [1, "p-4", "font-mono", "text-sm"], ["class", "opacity-30", 4, "ngIf"], [1, "opacity-30"], [1, "w-full", "flex", "items-center", "justify-end", "space-x-2", "px-4"], ["icon", "", "matRipple", "", "matTooltip", "Edit User", 3, "click"], ["icon", "", "matTooltip", "Remove User", 1, "text-error", 3, "click"]],
+    decls: 13,
+    vars: 29,
+    consts: [["name_template", ""], ["denied_template", ""], ["plate_template", ""], ["action_template", ""], [1, "w-full"], [1, "min-w-[68rem]", "block", "text-sm", 3, "data", "columns", "filter", "sortable"], [1, "w-full", "h-20"], [1, "px-4", "py-2", "text-left", "leading-tight", 3, "click"], [1, ""], [1, "text-[0.625rem]", "opacity-30", "font-mono"], ["class", "rounded h-8 w-8 flex items-center justify-center text-2xl bg-error text-error-content mx-auto", 4, "ngIf"], [1, "rounded", "h-8", "w-8", "flex", "items-center", "justify-center", "text-2xl", "bg-error", "text-error-content", "mx-auto"], [1, "p-4", "font-mono", "text-sm"], ["class", "opacity-30", 4, "ngIf"], [1, "opacity-30"], [1, "flex", "items-center", "space-x-2", "mx-auto"], ["icon", "", "matRipple", "", "matTooltip", "Edit User", 3, "click"], ["icon", "", "matTooltip", "Remove User", 1, "text-error", 3, "click"]],
     template: function ParkingUsersListComponent_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](0, "mat-progress-bar", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](0, "mat-progress-bar", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipe"](1, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](2, "simple-table", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](2, "simple-table", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipe"](3, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](4, ParkingUsersListComponent_ng_template_4_Template, 1, 1, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplateRefExtractor"])(6, ParkingUsersListComponent_ng_template_6_Template, 3, 2, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplateRefExtractor"])(8, ParkingUsersListComponent_ng_template_8_Template, 7, 0, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplateRefExtractor"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](10, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](4, ParkingUsersListComponent_ng_template_4_Template, 5, 2, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplateRefExtractor"])(6, ParkingUsersListComponent_ng_template_6_Template, 1, 1, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplateRefExtractor"])(8, ParkingUsersListComponent_ng_template_8_Template, 3, 2, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplateRefExtractor"])(10, ParkingUsersListComponent_ng_template_10_Template, 7, 0, "ng-template", null, 3, _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](12, "div", 6);
       }
       if (rf & 2) {
-        let tmp_3_0;
-        let tmp_6_0;
-        const denied_template_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵreference"](5);
-        const plate_template_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵreference"](7);
-        const action_template_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵreference"](9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵclassProp"]("opacity-0", !((tmp_3_0 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind1"](1, 6, ctx.loading)) == null ? null : tmp_3_0.includes("users")));
+        let tmp_4_0;
+        let tmp_7_0;
+        const name_template_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵreference"](5);
+        const denied_template_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵreference"](7);
+        const plate_template_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵreference"](9);
+        const action_template_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵreference"](11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵclassProp"]("opacity-0", !((tmp_4_0 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind1"](1, 6, ctx.loading)) == null ? null : tmp_4_0.includes("users")));
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("data", ctx.user_list)("columns", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction8"](21, _c8, _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](10, _c0), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](11, _c1), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](12, _c2), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction1"](13, _c3, plate_template_r7), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](15, _c4), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](16, _c5), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction1"](17, _c6, denied_template_r6), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction1"](19, _c7, action_template_r8)))("filter", (tmp_6_0 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind1"](3, 8, ctx.options)) == null ? null : tmp_6_0.search)("sortable", true);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("data", ctx.user_list)("columns", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction7"](21, _c7, _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction1"](10, _c0, name_template_r9), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](12, _c1), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction1"](13, _c2, plate_template_r11), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](15, _c3), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](16, _c4), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction1"](17, _c5, denied_template_r10), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction1"](19, _c6, action_template_r12)))("filter", (tmp_7_0 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind1"](3, 8, ctx.options)) == null ? null : tmp_7_0.search)("sortable", true);
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_6__.MatTooltip, _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_7__.MatProgressBar, _angular_material_core__WEBPACK_IMPORTED_MODULE_8__.MatRipple, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_1__.IconComponent, _libs_components_src_lib_simple_table_component__WEBPACK_IMPORTED_MODULE_2__.SimpleTableComponent, _angular_common__WEBPACK_IMPORTED_MODULE_5__.AsyncPipe]

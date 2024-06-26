@@ -202,7 +202,7 @@ class RoomListComponent {
     selectors: [["room-list"]],
     decls: 11,
     vars: 20,
-    consts: [["name_template", ""], ["level_template", ""], ["bool_template", ""], ["action_template", ""], [1, "absolute", "inset-0", "overflow-auto", "px-8"], ["empty_message", "No rooms for selected level or building", 1, "min-w-[48rem]", "block", "text-sm", 3, "data", "columns", "sortable"], [1, "w-full", "h-20"], [1, "px-4", "py-2", "text-left", "leading-tight", 3, "click"], [1, ""], [1, "text-[0.625rem]", "opacity-30", "font-mono"], [1, "p-4"], [1, "rounded", "h-8", "w-8", "flex", "items-center", "justify-center", "text-2xl", "text-white", "mx-auto"], [1, "w-full", "flex", "justify-end", "space-x-2", "p-2"], ["btn", "", "icon", "", "matRipple", "", "matTooltip", "Edit Room", 3, "click"]],
+    consts: [["name_template", ""], ["level_template", ""], ["bool_template", ""], ["action_template", ""], [1, "absolute", "inset-0", "overflow-auto", "px-8"], ["empty_message", "No rooms for selected level or building", 1, "min-w-[48rem]", "block", "text-sm", 3, "data", "columns", "sortable"], [1, "w-full", "h-20"], [1, "px-4", "py-2", "text-left", "leading-tight", 3, "click"], [1, ""], [1, "text-[0.625rem]", "opacity-30", "font-mono"], [1, "p-4"], [1, "rounded", "h-8", "w-8", "flex", "items-center", "justify-center", "text-2xl", "text-white", "mx-auto"], [1, "flex", "items-center", "space-x-2", "p-2", "mx-auto"], ["btn", "", "icon", "", "matRipple", "", "matTooltip", "Edit Room", 3, "click"]],
     template: function RoomListComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 4);
