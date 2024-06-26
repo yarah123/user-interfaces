@@ -5081,7 +5081,8 @@ var ScheduleStateService = /*#__PURE__*/function (_common_1$AsyncHandle) {
       return (0, bookings_1.queryBookings)({
         period_start: (0, date_fns_1.getUnixTime)((0, date_fns_1.startOfDay)(date)),
         period_end: (0, date_fns_1.getUnixTime)((0, date_fns_1.endOfDay)(date)),
-        type: 'parking'
+        type: 'parking',
+        include_deleted: 'recurring'
       }).pipe((0, operators_1.catchError)(function (_) {
         return (0, rxjs_1.of)([]);
       }));
@@ -10456,7 +10457,7 @@ var Booking = /*#__PURE__*/function () {
     this.linked_event = data.linked_event || null;
     this.linked_bookings = data.linked_bookings || [];
     this.images = data.images || [];
-    this.status = this.checked_out_at > 0 ? 'ended' : this.rejected ? 'declined' : this.approved ? 'approved' : 'tentative';
+    this.status = this.checked_out_at > 0 ? 'ended' : this.rejected || this.deleted ? 'declined' : this.approved ? 'approved' : 'tentative';
     this.process_state = data.process_state || 'pending';
     this.recurrence_type = data.recurrence_type || 'none';
     this.recurrence_days = data.recurrence_days;
@@ -32687,15 +32688,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "9c1925b",
-  "hash": "9c1925b",
+  "raw": "03db4c0",
+  "hash": "03db4c0",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "9c1925b",
+  "suffix": "03db4c0",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1719375115812
+  "time": 1719375279659
 };
 /* tslint:enable */
 
