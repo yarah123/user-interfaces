@@ -10375,11 +10375,21 @@ var _createClass = (__webpack_require__(/*! ./node_modules/@babel/runtime/helper
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.Booking = void 0;
+exports.Booking = exports.RecurrenceDays = void 0;
 var common_1 = __webpack_require__(/*! @placeos/common */ 22797);
 var date_fns_1 = __webpack_require__(/*! date-fns */ 21097);
 var asset_request_class_1 = __webpack_require__(/*! libs/assets/src/lib/asset-request.class */ 33747);
 var IGNORE_EXT_KEYS = ['user', 'booked_by', 'resources', 'assets', 'members'];
+var RecurrenceDays;
+(function (RecurrenceDays) {
+  RecurrenceDays[RecurrenceDays["SUNDAY"] = 1] = "SUNDAY";
+  RecurrenceDays[RecurrenceDays["MONDAY"] = 2] = "MONDAY";
+  RecurrenceDays[RecurrenceDays["TUESDAY"] = 4] = "TUESDAY";
+  RecurrenceDays[RecurrenceDays["WEDNESDAY"] = 8] = "WEDNESDAY";
+  RecurrenceDays[RecurrenceDays["THURSDAY"] = 16] = "THURSDAY";
+  RecurrenceDays[RecurrenceDays["FRIDAY"] = 32] = "FRIDAY";
+  RecurrenceDays[RecurrenceDays["SATURDAY"] = 64] = "SATURDAY";
+})(RecurrenceDays || (exports.RecurrenceDays = RecurrenceDays = {}));
 /** General purpose booking class */
 var Booking = /*#__PURE__*/function () {
   function Booking() {
@@ -10448,6 +10458,12 @@ var Booking = /*#__PURE__*/function () {
     this.images = data.images || [];
     this.status = this.checked_out_at > 0 ? 'ended' : this.rejected ? 'declined' : this.approved ? 'approved' : 'tentative';
     this.process_state = data.process_state || 'pending';
+    this.recurrence_type = data.recurrence_type || 'none';
+    this.recurrence_days = data.recurrence_days;
+    this.recurrence_week_of_month = data.recurrence_week_of_month;
+    this.recurrence_interval = data.recurrence_interval;
+    this.recurrence_end = data.recurrence_end;
+    this.instance = data.instance;
     for (var key in data) {
       if (!(key in this) && !IGNORE_EXT_KEYS.includes(key) && data[key]) {
         this.extension_data[key] = data[key] || this.extension_data[key];
@@ -10651,7 +10667,12 @@ function generateBookingForm() {
     permission: new forms_1.FormControl(booking.permission || 'PRIVATE'),
     images: new forms_1.FormControl(booking.images || []),
     tags: new forms_1.FormControl(booking.tags || []),
-    plate_number: new forms_1.FormControl(booking.extension_data.plate_number || '')
+    plate_number: new forms_1.FormControl(booking.extension_data.plate_number || ''),
+    recurrence_type: new forms_1.FormControl(booking.recurrence_type || 'none'),
+    recurrence_days: new forms_1.FormControl(booking.recurrence_days),
+    recurrence_week_of_month: new forms_1.FormControl(booking.recurrence_week_of_month),
+    recurrence_interval: new forms_1.FormControl(booking.recurrence_interval),
+    recurrence_end: new forms_1.FormControl(booking.recurrence_end)
   });
   form.valueChanges.subscribe(function (v) {
     var user = v.user;
@@ -23584,7 +23605,7 @@ function CateringOrderItemComponent_ng_container_0_Template(rf, ctx) {
     i0.ɵɵadvance(2);
     i0.ɵɵtextInterpolate(ctx_r1.active ? "done" : "local_pizza");
     i0.ɵɵadvance(4);
-    i0.ɵɵtextInterpolate1(" \u2A2F", (ctx_r1.item == null ? null : ctx_r1.item.amount) || (ctx_r1.item == null ? null : ctx_r1.item.quantity) || 1, " ");
+    i0.ɵɵtextInterpolate1(" ", (ctx_r1.item == null ? null : ctx_r1.item.amount) || (ctx_r1.item == null ? null : ctx_r1.item.quantity) || 1, "\xD7 ");
     i0.ɵɵadvance(2);
     i0.ɵɵtextInterpolate(ctx_r1.item == null ? null : ctx_r1.item.name);
     i0.ɵɵadvance(2);
@@ -23635,7 +23656,7 @@ _CateringOrderItemComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
   attrs: _c0,
   decls: 1,
   vars: 1,
-  consts: [[4, "ngIf"], [1, "w-16", "text-right", "h-14", "relative"], ["arm", "", 1, "border-b-2", "border-l-2", "border-base-200", "w-4", "h-16", "absolute", "top-1/2", "left-1/2", "-translate-y-full", "-translate-x-px"], [1, "w-12", "mr-4"], ["action", "", "icon", "", "matRipple", "", 1, "border-2", "border-base-200", "border-dashed", "text-xl", "text-dark-fade", "p-2", 3, "click"], [1, "flex", "flex-1", "items-center", "border-b", "border-base-200", "border-solid", "py-4", "space-x-4"], [1, ""], [1, "p-1", "rounded-full", "bg-base-400", "w-8", "h-8", "flex", "items-center", "justify-center"], [1, "flex-1"], [1, "flex", "space-x-2", "mr-2", "px-4"], [4, "ngFor", "ngForOf"], ["class", "text-xs py-1 px-2 bg-warning text-warning-content rounded-2xl shadow", 4, "ngIf"], [1, "text-xs", "py-1", "px-2", "bg-warning", "text-warning-content", "rounded-2xl", "shadow"]],
+  consts: [[4, "ngIf"], [1, "w-16", "text-right", "h-14", "relative"], ["arm", "", 1, "border-b-2", "border-l-2", "border-base-200", "w-4", "h-16", "absolute", "top-1/2", "left-1/2", "-translate-y-full", "-translate-x-px"], [1, "w-12", "mr-4"], ["action", "", "icon", "", "matRipple", "", 1, "border-2", "border-base-200", "border-dashed", "text-xl", "text-dark-fade", "p-2", 3, "click"], [1, "flex", "flex-1", "items-center", "border-b", "border-base-200", "border-solid", "py-4", "space-x-4"], [1, ""], [1, "p-1", "rounded-full", "bg-base-300", "w-10", "h-10", "flex", "items-center", "justify-center", "font-mono", "text-sm"], [1, "flex-1"], [1, "flex", "space-x-2", "mr-2", "px-4"], [4, "ngFor", "ngForOf"], ["class", "text-xs py-1 px-2 bg-warning text-warning-content rounded-2xl shadow", 4, "ngIf"], [1, "text-xs", "py-1", "px-2", "bg-warning", "text-warning-content", "rounded-2xl", "shadow"]],
   template: function CateringOrderItemComponent_Template(rf, ctx) {
     if (rf & 1) {
       i0.ɵɵtemplate(0, CateringOrderItemComponent_ng_container_0_Template, 15, 10, "ng-container", 0);
@@ -23678,8 +23699,8 @@ var i1 = __webpack_require__(/*! ./catering-orders.service */ 98197);
 var i2 = __webpack_require__(/*! @placeos/common */ 22797);
 var i3 = __webpack_require__(/*! @angular/common */ 60316);
 var i4 = __webpack_require__(/*! @angular/material/menu */ 31034);
-var i5 = __webpack_require__(/*! @angular/material/tooltip */ 80640);
-var i6 = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
+var i5 = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
+var i6 = __webpack_require__(/*! ../../../components/src/lib/custom-tooltip.component */ 22238);
 var i7 = __webpack_require__(/*! ../../../components/src/lib/simple-table.component */ 88328);
 var i8 = __webpack_require__(/*! @angular/material/core */ 74646);
 var i9 = __webpack_require__(/*! ./catering-order-item.component */ 3872);
@@ -23702,37 +23723,33 @@ var _c1 = function _c1(a0) {
 var _c2 = function _c2(a0) {
   return {
     key: "event",
-    name: "Meeting Time",
-    content: a0
+    name: "Location",
+    content: a0,
+    sortable: false
   };
 };
 var _c3 = function _c3(a0) {
   return {
     key: "event",
-    name: "Location",
-    content: a0
-  };
-};
-var _c4 = function _c4(a0) {
-  return {
-    key: "event",
     name: "Host",
-    content: a0
+    content: a0,
+    sortable: false
   };
 };
-var _c5 = function _c5() {
+var _c4 = function _c4() {
   return {
     key: "charge_code",
     name: "Charge Code"
   };
 };
-var _c6 = function _c6() {
+var _c5 = function _c5() {
   return {
     key: "invoice_number",
-    name: "Invoice No."
+    name: "Invoice No.",
+    empty: "No Invoice"
   };
 };
-var _c7 = function _c7(a0) {
+var _c6 = function _c6(a0) {
   return {
     key: "status",
     name: "Status",
@@ -23740,7 +23757,7 @@ var _c7 = function _c7(a0) {
     size: "11rem"
   };
 };
-var _c8 = function _c8(a0) {
+var _c7 = function _c7(a0) {
   return {
     key: "actions",
     name: " ",
@@ -23749,8 +23766,8 @@ var _c8 = function _c8(a0) {
     sortable: false
   };
 };
-var _c9 = function _c9(a0, a1, a2, a3, a4, a5, a6, a7, a8) {
-  return [a0, a1, a2, a3, a4, a5, a6, a7, a8];
+var _c8 = function _c8(a0, a1, a2, a3, a4, a5, a6, a7) {
+  return [a0, a1, a2, a3, a4, a5, a6, a7];
 };
 function CateringOrderListComponent_ng_template_2_Template(rf, ctx) {
   if (rf & 1) {
@@ -23761,51 +23778,40 @@ function CateringOrderListComponent_ng_template_2_Template(rf, ctx) {
 }
 function CateringOrderListComponent_ng_template_4_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 13);
-    i0.ɵɵtext(1);
-    i0.ɵɵpipe(2, "date");
-    i0.ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    var data_r1 = ctx.data;
-    var ctx_r1 = i0.ɵɵnextContext();
-    i0.ɵɵadvance();
-    i0.ɵɵtextInterpolate(i0.ɵɵpipeBind2(2, 1, data_r1, ctx_r1.time_format));
-  }
-}
-function CateringOrderListComponent_ng_template_6_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 14);
-    i0.ɵɵtext(1);
-    i0.ɵɵpipe(2, "date");
+    i0.ɵɵelementStart(0, "div", 13)(1, "div");
+    i0.ɵɵtext(2);
     i0.ɵɵpipe(3, "date");
-    i0.ɵɵelement(4, "br");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(4, "div", 14);
     i0.ɵɵtext(5);
     i0.ɵɵpipe(6, "date");
     i0.ɵɵpipe(7, "date");
-    i0.ɵɵelementEnd();
+    i0.ɵɵpipe(8, "date");
+    i0.ɵɵpipe(9, "date");
+    i0.ɵɵelementEnd()();
   }
   if (rf & 2) {
-    var data_r3 = ctx.data;
-    var ctx_r1 = i0.ɵɵnextContext();
-    i0.ɵɵadvance();
-    i0.ɵɵtextInterpolate2(" ", i0.ɵɵpipeBind2(2, 4, data_r3 == null ? null : data_r3.date, "MMM d"), ", ", i0.ɵɵpipeBind2(3, 7, data_r3 == null ? null : data_r3.date, ctx_r1.time_format), " ");
-    i0.ɵɵadvance(4);
-    i0.ɵɵtextInterpolate2(" ", i0.ɵɵpipeBind2(6, 10, data_r3 == null ? null : data_r3.date_end, "MMM d"), ", ", i0.ɵɵpipeBind2(7, 13, data_r3 == null ? null : data_r3.date_end, ctx_r1.time_format), " ");
+    var data_r1 = ctx.data;
+    var row_r2 = ctx.row;
+    var ctx_r2 = i0.ɵɵnextContext();
+    i0.ɵɵadvance(2);
+    i0.ɵɵtextInterpolate1("Deliver at ", i0.ɵɵpipeBind2(3, 5, data_r1, ctx_r2.time_format), "");
+    i0.ɵɵadvance(3);
+    i0.ɵɵtextInterpolate4(" ", i0.ɵɵpipeBind2(6, 8, row_r2 == null ? null : row_r2.event == null ? null : row_r2.event.date, "MMM d"), ", ", i0.ɵɵpipeBind2(7, 11, row_r2 == null ? null : row_r2.event == null ? null : row_r2.event.date, ctx_r2.time_format), " - ", i0.ɵɵpipeBind2(8, 14, row_r2 == null ? null : row_r2.event == null ? null : row_r2.event.date_end, "MMM d"), ", ", i0.ɵɵpipeBind2(9, 17, row_r2 == null ? null : row_r2.event == null ? null : row_r2.event.date_end, ctx_r2.time_format), " ");
   }
 }
-function CateringOrderListComponent_ng_template_8_span_2_Template(rf, ctx) {
+function CateringOrderListComponent_ng_template_6_span_2_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "span", 16);
+    i0.ɵɵelementStart(0, "span", 17);
     i0.ɵɵtext(1, " No Location ");
     i0.ɵɵelementEnd();
   }
 }
-function CateringOrderListComponent_ng_template_8_Template(rf, ctx) {
+function CateringOrderListComponent_ng_template_6_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 13);
+    i0.ɵɵelementStart(0, "div", 15);
     i0.ɵɵtext(1);
-    i0.ɵɵtemplate(2, CateringOrderListComponent_ng_template_8_span_2_Template, 2, 0, "span", 15);
+    i0.ɵɵtemplate(2, CateringOrderListComponent_ng_template_6_span_2_Template, 2, 0, "span", 16);
     i0.ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -23816,37 +23822,42 @@ function CateringOrderListComponent_ng_template_8_Template(rf, ctx) {
     i0.ɵɵproperty("ngIf", !((data_r4 == null ? null : data_r4.space == null ? null : data_r4.space.display_name) || (data_r4 == null ? null : data_r4.space == null ? null : data_r4.space.name)));
   }
 }
-function CateringOrderListComponent_ng_template_10_span_2_Template(rf, ctx) {
+function CateringOrderListComponent_ng_template_8_span_3_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "span", 16);
+    i0.ɵɵelementStart(0, "span", 17);
     i0.ɵɵtext(1, " Unknown Host ");
     i0.ɵɵelementEnd();
   }
 }
-function CateringOrderListComponent_ng_template_10_Template(rf, ctx) {
+function CateringOrderListComponent_ng_template_8_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 13);
-    i0.ɵɵtext(1);
-    i0.ɵɵtemplate(2, CateringOrderListComponent_ng_template_10_span_2_Template, 2, 0, "span", 15);
+    i0.ɵɵelementStart(0, "div", 15)(1, "div");
+    i0.ɵɵtext(2);
+    i0.ɵɵtemplate(3, CateringOrderListComponent_ng_template_8_span_3_Template, 2, 0, "span", 16);
     i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(4, "div", 14);
+    i0.ɵɵtext(5);
+    i0.ɵɵelementEnd()();
   }
   if (rf & 2) {
     var data_r5 = ctx.data;
-    i0.ɵɵadvance();
+    i0.ɵɵadvance(2);
     i0.ɵɵtextInterpolate1(" ", (data_r5 == null ? null : data_r5.organiser == null ? null : data_r5.organiser.name) || (data_r5 == null ? null : data_r5.host) || "", " ");
     i0.ɵɵadvance();
     i0.ɵɵproperty("ngIf", !((data_r5 == null ? null : data_r5.organiser == null ? null : data_r5.organiser.name) || (data_r5 == null ? null : data_r5.host)));
+    i0.ɵɵadvance(2);
+    i0.ɵɵtextInterpolate1(" ", (data_r5 == null ? null : data_r5.organiser == null ? null : data_r5.organiser.email) || (data_r5 == null ? null : data_r5.host), " ");
   }
 }
-function CateringOrderListComponent_ng_template_12_button_8_Template(rf, ctx) {
+function CateringOrderListComponent_ng_template_10_button_8_Template(rf, ctx) {
   if (rf & 1) {
     var _r6 = i0.ɵɵgetCurrentView();
     i0.ɵɵelementStart(0, "button", 22);
-    i0.ɵɵlistener("click", function CateringOrderListComponent_ng_template_12_button_8_Template_button_click_0_listener() {
+    i0.ɵɵlistener("click", function CateringOrderListComponent_ng_template_10_button_8_Template_button_click_0_listener() {
       var status_r7 = i0.ɵɵrestoreView(_r6).$implicit;
       var row_r8 = i0.ɵɵnextContext().row;
-      var ctx_r1 = i0.ɵɵnextContext();
-      return i0.ɵɵresetView(ctx_r1.updateStatus(row_r8, status_r7.id));
+      var ctx_r2 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r2.updateStatus(row_r8, status_r7.id));
     });
     i0.ɵɵelementStart(1, "div", 23);
     i0.ɵɵelement(2, "div", 24);
@@ -23862,87 +23873,104 @@ function CateringOrderListComponent_ng_template_12_button_8_Template(rf, ctx) {
     i0.ɵɵtextInterpolate(status_r7.name);
   }
 }
-function CateringOrderListComponent_ng_template_12_Template(rf, ctx) {
+function CateringOrderListComponent_ng_template_10_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 17)(1, "button", 18)(2, "div", 19);
+    i0.ɵɵelementStart(0, "div", 15)(1, "button", 18)(2, "div", 19);
     i0.ɵɵtext(3);
     i0.ɵɵelementEnd();
     i0.ɵɵelementStart(4, "app-icon", 20);
     i0.ɵɵtext(5, "arrow_drop_down");
     i0.ɵɵelementEnd()()();
-    i0.ɵɵelementStart(6, "mat-menu", null, 8);
-    i0.ɵɵtemplate(8, CateringOrderListComponent_ng_template_12_button_8_Template, 5, 3, "button", 21);
+    i0.ɵɵelementStart(6, "mat-menu", null, 7);
+    i0.ɵɵtemplate(8, CateringOrderListComponent_ng_template_10_button_8_Template, 5, 3, "button", 21);
     i0.ɵɵelementEnd();
   }
   if (rf & 2) {
-    var tmp_12_0;
-    var tmp_14_0;
+    var tmp_11_0;
+    var tmp_13_0;
     var data_r9 = ctx.data;
     var menu_r10 = i0.ɵɵreference(7);
-    var ctx_r1 = i0.ɵɵnextContext();
+    var ctx_r2 = i0.ɵɵnextContext();
     i0.ɵɵadvance();
-    i0.ɵɵstyleProp("background", (tmp_12_0 = ctx_r1.status(data_r9)) == null ? null : tmp_12_0.colour);
+    i0.ɵɵstyleProp("background", (tmp_11_0 = ctx_r2.status(data_r9)) == null ? null : tmp_11_0.colour);
     i0.ɵɵproperty("matMenuTriggerFor", menu_r10);
     i0.ɵɵadvance(2);
-    i0.ɵɵtextInterpolate1(" ", (tmp_14_0 = ctx_r1.status(data_r9)) == null ? null : tmp_14_0.name, " ");
+    i0.ɵɵtextInterpolate1(" ", (tmp_13_0 = ctx_r2.status(data_r9)) == null ? null : tmp_13_0.name, " ");
     i0.ɵɵadvance(5);
-    i0.ɵɵproperty("ngForOf", ctx_r1.statuses);
+    i0.ɵɵproperty("ngForOf", ctx_r2.statuses);
   }
 }
-function CateringOrderListComponent_ng_template_14_Template(rf, ctx) {
+function CateringOrderListComponent_ng_template_12_ng_template_4_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 29)(1, "div", 30);
+    i0.ɵɵtext(2, "Notes");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(3, "p", 31);
+    i0.ɵɵtext(4);
+    i0.ɵɵelementEnd()();
+  }
+  if (rf & 2) {
+    var row_r12 = i0.ɵɵnextContext().row;
+    i0.ɵɵadvance(4);
+    i0.ɵɵtextInterpolate1(" ", row_r12.notes, " ");
+  }
+}
+function CateringOrderListComponent_ng_template_12_Template(rf, ctx) {
   if (rf & 1) {
     var _r11 = i0.ɵɵgetCurrentView();
     i0.ɵɵelementStart(0, "div", 26)(1, "button", 27)(2, "app-icon");
     i0.ɵɵtext(3, "description");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(4, "button", 28);
-    i0.ɵɵlistener("click", function CateringOrderListComponent_ng_template_14_Template_button_click_4_listener() {
+    i0.ɵɵtemplate(4, CateringOrderListComponent_ng_template_12_ng_template_4_Template, 5, 1, "ng-template", null, 8, i0.ɵɵtemplateRefExtractor);
+    i0.ɵɵelementStart(6, "button", 28);
+    i0.ɵɵlistener("click", function CateringOrderListComponent_ng_template_12_Template_button_click_6_listener() {
       var row_r12 = i0.ɵɵrestoreView(_r11).row;
-      var ctx_r1 = i0.ɵɵnextContext();
-      return i0.ɵɵresetView(ctx_r1.show_children[row_r12.id] = !ctx_r1.show_children[row_r12.id]);
+      var ctx_r2 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r2.show_children[row_r12.id] = !ctx_r2.show_children[row_r12.id]);
     });
-    i0.ɵɵelementStart(5, "app-icon");
-    i0.ɵɵtext(6);
+    i0.ɵɵelementStart(7, "app-icon");
+    i0.ɵɵtext(8);
     i0.ɵɵelementEnd()()();
   }
   if (rf & 2) {
     var row_r12 = ctx.row;
-    var ctx_r1 = i0.ɵɵnextContext();
+    var notes_template_r13 = i0.ɵɵreference(5);
+    var ctx_r2 = i0.ɵɵnextContext();
     i0.ɵɵadvance();
-    i0.ɵɵproperty("matTooltip", row_r12.notes);
-    i0.ɵɵadvance(5);
-    i0.ɵɵtextInterpolate1(" ", ctx_r1.show_children[row_r12.id] ? "keyboard_arrow_down" : "chevron_right", " ");
+    i0.ɵɵproperty("hover", true)("content", notes_template_r13)("disabled", !row_r12.notes);
+    i0.ɵɵadvance(7);
+    i0.ɵɵtextInterpolate1(" ", ctx_r2.show_children[row_r12.id] ? "keyboard_arrow_down" : "chevron_right", " ");
   }
 }
-function CateringOrderListComponent_ng_template_16_ul_0_li_1_Template(rf, ctx) {
+function CateringOrderListComponent_ng_template_14_ul_0_li_1_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelement(0, "li", 32);
+    i0.ɵɵelement(0, "li", 35);
   }
   if (rf & 2) {
-    var item_r13 = ctx.$implicit;
-    var row_r14 = i0.ɵɵnextContext(2).row;
-    i0.ɵɵproperty("order_id", row_r14 == null ? null : row_r14.id)("item", item_r13);
+    var item_r14 = ctx.$implicit;
+    var row_r15 = i0.ɵɵnextContext(2).row;
+    i0.ɵɵproperty("order_id", row_r15 == null ? null : row_r15.id)("item", item_r14);
   }
 }
-function CateringOrderListComponent_ng_template_16_ul_0_Template(rf, ctx) {
+function CateringOrderListComponent_ng_template_14_ul_0_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "ul", 30);
-    i0.ɵɵtemplate(1, CateringOrderListComponent_ng_template_16_ul_0_li_1_Template, 1, 2, "li", 31);
+    i0.ɵɵelementStart(0, "ul", 33);
+    i0.ɵɵtemplate(1, CateringOrderListComponent_ng_template_14_ul_0_li_1_Template, 1, 2, "li", 34);
     i0.ɵɵelementEnd();
   }
   if (rf & 2) {
-    var row_r14 = i0.ɵɵnextContext().row;
+    var row_r15 = i0.ɵɵnextContext().row;
     i0.ɵɵadvance();
-    i0.ɵɵproperty("ngForOf", row_r14.items);
+    i0.ɵɵproperty("ngForOf", row_r15.items);
   }
 }
-function CateringOrderListComponent_ng_template_16_Template(rf, ctx) {
+function CateringOrderListComponent_ng_template_14_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵtemplate(0, CateringOrderListComponent_ng_template_16_ul_0_Template, 2, 1, "ul", 29);
+    i0.ɵɵtemplate(0, CateringOrderListComponent_ng_template_14_ul_0_Template, 2, 1, "ul", 32);
   }
   if (rf & 2) {
-    var row_r14 = ctx.row;
-    i0.ɵɵproperty("ngIf", row_r14 == null ? null : row_r14.items.length);
+    var row_r15 = ctx.row;
+    i0.ɵɵproperty("ngIf", row_r15 == null ? null : row_r15.items.length);
   }
 }
 var CateringOrderListComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
@@ -24020,30 +24048,29 @@ _CateringOrderListComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
   type: _CateringOrderListComponent,
   selectors: [["catering-order-list"]],
   features: [i0.ɵɵInheritDefinitionFeature],
-  decls: 18,
-  vars: 31,
-  consts: [["state_template", ""], ["time_template", ""], ["event_time_template", ""], ["location_template", ""], ["host_template", ""], ["status_template", ""], ["actions_template", ""], ["child_template", ""], ["menu", "matMenu"], [1, "flex", "flex-col", "h-full", "w-full", "overflow-auto"], ["empty_message", "No Catering Orders", 1, "min-w-[80rem]", "w-full", "block", "text-sm", 3, "data", "columns", "sortable", "show_children", "child_template"], [1, "p-2"], [1, "rounded-full", "bg-base-300", "p-2", "text-2xl", "text-base-content", "opacity-60", "flex", "items-center", "justify-center"], [1, "p-4"], [1, "px-4", "py-2", "text-sm"], ["class", "opacity-30", 4, "ngIf"], [1, "opacity-30"], [1, "px-4", "py-2"], ["status", "", "matRipple", "", 1, "rounded-3xl", "text-base", "border-none", "h-10", "px-4", "flex", "items-center", "text-white", "w-36", 3, "matMenuTriggerFor"], [1, "flex", "text-center", "capitalize", "mx-2"], [1, "pl-2"], ["mat-menu-item", "", "class", "flex items-center", 3, "click", 4, "ngFor", "ngForOf"], ["mat-menu-item", "", 1, "flex", "items-center", 3, "click"], [1, "flex", "items-center", "space-x-2"], [1, "rounded-full", "h-4", "w-4", "mr-2"], [1, "mr-2", "w-20"], [1, "flex", "items-center", "space-x-2", "p-2", "mx-auto"], ["icon", "", "matRipple", "", 3, "matTooltip"], ["icon", "", "matRipple", "", 3, "click"], ["class", "list-none p-0 m-0 w-full relative z-0", 4, "ngIf"], [1, "list-none", "p-0", "m-0", "w-full", "relative", "z-0"], ["catering-order-item", "", "class", "flex items-center", 3, "order_id", "item", 4, "ngFor", "ngForOf"], ["catering-order-item", "", 1, "flex", "items-center", 3, "order_id", "item"]],
+  decls: 16,
+  vars: 28,
+  consts: [["state_template", ""], ["time_template", ""], ["location_template", ""], ["host_template", ""], ["status_template", ""], ["actions_template", ""], ["child_template", ""], ["menu", "matMenu"], ["notes_template", ""], [1, "flex", "flex-col", "h-full", "w-full", "overflow-auto"], ["empty_message", "No Catering Orders", 1, "min-w-[72rem]", "w-full", "block", "text-sm", 3, "data", "columns", "sortable", "show_children", "child_template"], [1, "p-2"], [1, "rounded-full", "bg-base-200", "p-2", "text-2xl", "flex", "items-center", "justify-center"], [1, "p-4"], [1, "text-xs", "opacity-30"], [1, "px-4", "py-2"], ["class", "opacity-30", 4, "ngIf"], [1, "opacity-30"], ["status", "", "matRipple", "", 1, "rounded-3xl", "text-base", "border-none", "h-10", "px-4", "flex", "items-center", "text-white", "w-36", 3, "matMenuTriggerFor"], [1, "flex", "text-center", "capitalize", "mx-2"], [1, "pl-2"], ["mat-menu-item", "", "class", "flex items-center", 3, "click", 4, "ngFor", "ngForOf"], ["mat-menu-item", "", 1, "flex", "items-center", 3, "click"], [1, "flex", "items-center", "space-x-2"], [1, "rounded-full", "h-4", "w-4", "mr-2"], [1, "mr-2", "w-20"], [1, "flex", "items-center", "space-x-2", "p-2", "mx-auto"], ["icon", "", "matRipple", "", "customTooltip", "", "xPosition", "end", "yPosition", "top", 3, "hover", "content", "disabled"], ["icon", "", "matRipple", "", 3, "click"], [1, "p-2", "rounded-lg", "bg-base-100", "text-base-content", "max-w-[32rem]", "min-w-[8rem]", "shadow", "border", "border-base-200"], [1, "mb-2"], [1, "text-sm", "px-4", "py-2", "bg-base-200", "rounded"], ["class", "list-none p-0 m-0 w-full relative z-0", 4, "ngIf"], [1, "list-none", "p-0", "m-0", "w-full", "relative", "z-0"], ["catering-order-item", "", "class", "flex items-center", 3, "order_id", "item", 4, "ngFor", "ngForOf"], ["catering-order-item", "", 1, "flex", "items-center", 3, "order_id", "item"]],
   template: function CateringOrderListComponent_Template(rf, ctx) {
     if (rf & 1) {
       i0.ɵɵelementStart(0, "div", 9);
       i0.ɵɵelement(1, "simple-table", 10);
-      i0.ɵɵtemplate(2, CateringOrderListComponent_ng_template_2_Template, 4, 0, "ng-template", null, 0, i0.ɵɵtemplateRefExtractor)(4, CateringOrderListComponent_ng_template_4_Template, 3, 4, "ng-template", null, 1, i0.ɵɵtemplateRefExtractor)(6, CateringOrderListComponent_ng_template_6_Template, 8, 16, "ng-template", null, 2, i0.ɵɵtemplateRefExtractor)(8, CateringOrderListComponent_ng_template_8_Template, 3, 2, "ng-template", null, 3, i0.ɵɵtemplateRefExtractor)(10, CateringOrderListComponent_ng_template_10_Template, 3, 2, "ng-template", null, 4, i0.ɵɵtemplateRefExtractor)(12, CateringOrderListComponent_ng_template_12_Template, 9, 5, "ng-template", null, 5, i0.ɵɵtemplateRefExtractor)(14, CateringOrderListComponent_ng_template_14_Template, 7, 2, "ng-template", null, 6, i0.ɵɵtemplateRefExtractor)(16, CateringOrderListComponent_ng_template_16_Template, 1, 1, "ng-template", null, 7, i0.ɵɵtemplateRefExtractor);
+      i0.ɵɵtemplate(2, CateringOrderListComponent_ng_template_2_Template, 4, 0, "ng-template", null, 0, i0.ɵɵtemplateRefExtractor)(4, CateringOrderListComponent_ng_template_4_Template, 10, 20, "ng-template", null, 1, i0.ɵɵtemplateRefExtractor)(6, CateringOrderListComponent_ng_template_6_Template, 3, 2, "ng-template", null, 2, i0.ɵɵtemplateRefExtractor)(8, CateringOrderListComponent_ng_template_8_Template, 6, 3, "ng-template", null, 3, i0.ɵɵtemplateRefExtractor)(10, CateringOrderListComponent_ng_template_10_Template, 9, 5, "ng-template", null, 4, i0.ɵɵtemplateRefExtractor)(12, CateringOrderListComponent_ng_template_12_Template, 9, 4, "ng-template", null, 5, i0.ɵɵtemplateRefExtractor)(14, CateringOrderListComponent_ng_template_14_Template, 1, 1, "ng-template", null, 6, i0.ɵɵtemplateRefExtractor);
       i0.ɵɵelementEnd();
     }
     if (rf & 2) {
-      var state_template_r15 = i0.ɵɵreference(3);
-      var time_template_r16 = i0.ɵɵreference(5);
-      var event_time_template_r17 = i0.ɵɵreference(7);
-      var location_template_r18 = i0.ɵɵreference(9);
-      var host_template_r19 = i0.ɵɵreference(11);
-      var status_template_r20 = i0.ɵɵreference(13);
-      var actions_template_r21 = i0.ɵɵreference(15);
-      var child_template_r22 = i0.ɵɵreference(17);
+      var state_template_r16 = i0.ɵɵreference(3);
+      var time_template_r17 = i0.ɵɵreference(5);
+      var location_template_r18 = i0.ɵɵreference(7);
+      var host_template_r19 = i0.ɵɵreference(9);
+      var status_template_r20 = i0.ɵɵreference(11);
+      var actions_template_r21 = i0.ɵɵreference(13);
+      var child_template_r22 = i0.ɵɵreference(15);
       i0.ɵɵadvance();
-      i0.ɵɵproperty("data", ctx.order_list)("columns", i0.ɵɵpureFunctionV(21, _c9, [i0.ɵɵpureFunction1(5, _c0, state_template_r15), i0.ɵɵpureFunction1(7, _c1, time_template_r16), i0.ɵɵpureFunction1(9, _c2, event_time_template_r17), i0.ɵɵpureFunction1(11, _c3, location_template_r18), i0.ɵɵpureFunction1(13, _c4, host_template_r19), i0.ɵɵpureFunction0(15, _c5), i0.ɵɵpureFunction0(16, _c6), i0.ɵɵpureFunction1(17, _c7, status_template_r20), i0.ɵɵpureFunction1(19, _c8, actions_template_r21)]))("sortable", true)("show_children", ctx.show_children)("child_template", child_template_r22);
+      i0.ɵɵproperty("data", ctx.order_list)("columns", i0.ɵɵpureFunction8(19, _c8, i0.ɵɵpureFunction1(5, _c0, state_template_r16), i0.ɵɵpureFunction1(7, _c1, time_template_r17), i0.ɵɵpureFunction1(9, _c2, location_template_r18), i0.ɵɵpureFunction1(11, _c3, host_template_r19), i0.ɵɵpureFunction0(13, _c4), i0.ɵɵpureFunction0(14, _c5), i0.ɵɵpureFunction1(15, _c6, status_template_r20), i0.ɵɵpureFunction1(17, _c7, actions_template_r21)))("sortable", true)("show_children", ctx.show_children)("child_template", child_template_r22);
     }
   },
-  dependencies: [i3.NgForOf, i3.NgIf, i4.MatMenu, i4.MatMenuItem, i4.MatMenuTrigger, i5.MatTooltip, i6.IconComponent, i7.SimpleTableComponent, i8.MatRipple, i9.CateringOrderItemComponent, i3.DatePipe],
+  dependencies: [i3.NgForOf, i3.NgIf, i4.MatMenu, i4.MatMenuItem, i4.MatMenuTrigger, i5.IconComponent, i6.CustomTooltipComponent, i7.SimpleTableComponent, i8.MatRipple, i9.CateringOrderItemComponent, i3.DatePipe],
   styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n                height: 100%;\n                width: 100%;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvY2F0ZXJpbmcvc3JjL2xpYi9jYXRlcmluZy1vcmRlci1saXN0LmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksYUFBYTtnQkFDYixzQkFBc0I7Z0JBQ3RCLFlBQVk7Z0JBQ1osV0FBVztZQUNmIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
 });
 exports.CateringOrderListComponent = CateringOrderListComponent;
@@ -32660,15 +32687,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "ff7c65c",
-  "hash": "ff7c65c",
+  "raw": "9c1925b",
+  "hash": "9c1925b",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "ff7c65c",
+  "suffix": "9c1925b",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1718869237793
+  "time": 1719375115812
 };
 /* tslint:enable */
 
@@ -40110,7 +40137,10 @@ var MapsIndoorsComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
       };
       console.log('Resource:', this._services.mapsindoors);
       this._initialised.next(true);
-      if (this.zone) this._centerOnZone();
+      if (this.zone) {
+        this._services.map.setZoom(DEFAULT_ZOOM);
+        this._centerOnZone();
+      }
       this._addFloorSelector();
       // Add Events listenders
       this._services.mapsindoors.addListener('building_changed', function (e) {
@@ -40128,6 +40158,7 @@ var MapsIndoorsComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
       this.timeout('resize', function () {
         return window.dispatchEvent(new Event('resize'));
       }, 100);
+      window.maps_indoors = this._services;
       this.timeout('focus', function () {
         return _this3._focusOnLocation();
       });
@@ -40400,7 +40431,7 @@ var MapsIndoorsComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
             case 2:
               styles = ((_this$metadata2 = this.metadata) === null || _this$metadata2 === void 0 ? void 0 : _this$metadata2.styles) || {};
               _loop = /*#__PURE__*/_regeneratorRuntime().mark(function _loop() {
-                var resource, id_simple, list;
+                var resource, id_simple, list, value;
                 return _regeneratorRuntime().wrap(function _loop$(_context5) {
                   while (1) switch (_context5.prev = _context5.next) {
                     case 0:
@@ -40438,15 +40469,13 @@ var MapsIndoorsComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
                       }
                       return _context5.abrupt("return", 0);
                     case 14:
-                      (0, common_1.log)('MapsPeople', 'Resource:', [resource, _this7._services.mapsindoors, styles[id]]);
-                      _this7._services.mapsindoors.setDisplayRule(resource.id, {
+                      value = {
+                        extrusionHeight: 0,
+                        extrusionVisible: false,
                         polygonVisible: true,
-                        polygonFillOpacity: 0.6,
-                        polygonZoomFrom: 16,
-                        polygonZoomTo: 22,
-                        visible: true,
-                        polygonFillColor: '#ff69b4'
-                      });
+                        polygonFillColor: styles[id].fill
+                      };
+                      _this7._services.mapsindoors.setDisplayRule(resource.id, value);
                     case 16:
                     case "end":
                       return _context5.stop();
@@ -40547,7 +40576,6 @@ var MapsIndoorsComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
           _bld$location$split2 = _slicedToArray(_bld$location$split, 2),
           lat = _bld$location$split2[0],
           _long2 = _bld$location$split2[1];
-        _this9._services.map.setZoom(DEFAULT_ZOOM);
         _this9._services.map.setCenter({
           lat: parseFloat(lat),
           lng: parseFloat(_long2)
@@ -41539,7 +41567,7 @@ function SimpleTableComponent_ng_container_3_div_2_div_3_Template(rf, ctx) {
     i0.ɵɵadvance();
     i0.ɵɵtextInterpolate1(" ", row_r10[column_r9.key], " ");
     i0.ɵɵadvance();
-    i0.ɵɵproperty("ngIf", row_r10[column_r9.key] == null);
+    i0.ɵɵproperty("ngIf", row_r10[column_r9.key] == null || row_r10[column_r9.key] === "");
   }
 }
 function SimpleTableComponent_ng_container_3_div_2_ng_container_4_ng_container_1_Template(rf, ctx) {
