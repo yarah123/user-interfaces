@@ -5000,7 +5000,7 @@ class Booking {
     this.linked_event = data.linked_event || null;
     this.linked_bookings = data.linked_bookings || [];
     this.images = data.images || [];
-    this.status = this.checked_out_at > 0 ? 'ended' : this.rejected ? 'declined' : this.approved ? 'approved' : 'tentative';
+    this.status = this.checked_out_at > 0 ? 'ended' : this.rejected || this.deleted ? 'declined' : this.approved ? 'approved' : 'tentative';
     this.process_state = data.process_state || 'pending';
     this.recurrence_type = data.recurrence_type || 'none';
     this.recurrence_days = data.recurrence_days;
@@ -24362,15 +24362,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "9c1925b",
-  "hash": "9c1925b",
+  "raw": "03db4c0",
+  "hash": "03db4c0",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "9c1925b",
+  "suffix": "03db4c0",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1719375120952
+  "time": 1719375282435
 };
 /* tslint:enable */
 
