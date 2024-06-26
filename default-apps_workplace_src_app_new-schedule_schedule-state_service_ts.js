@@ -136,7 +136,8 @@ class ScheduleStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.
     this.parking = this._update.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.switchMap)(([date]) => (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.queryBookings)({
       period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_20__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_21__["default"])(date)),
       period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_20__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_22__["default"])(date)),
-      type: 'parking'
+      type: 'parking',
+      include_deleted: 'recurring'
     }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_16__.catchError)(_ => (0,rxjs__WEBPACK_IMPORTED_MODULE_17__.of)([])))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.tap)(() => this.timeout('end_loading', () => this._loading.next(false))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_18__.shareReplay)(1));
     /** List of group event bookings for the selected date */
     this.group_events = this._update.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.switchMap)(([date]) => (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.queryBookings)({
