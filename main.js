@@ -10383,13 +10383,13 @@ var asset_request_class_1 = __webpack_require__(/*! libs/assets/src/lib/asset-re
 var IGNORE_EXT_KEYS = ['user', 'booked_by', 'resources', 'assets', 'members'];
 var RecurrenceDays;
 (function (RecurrenceDays) {
-  RecurrenceDays[RecurrenceDays["SUNDAY"] = 1] = "SUNDAY";
-  RecurrenceDays[RecurrenceDays["MONDAY"] = 2] = "MONDAY";
-  RecurrenceDays[RecurrenceDays["TUESDAY"] = 4] = "TUESDAY";
+  RecurrenceDays[RecurrenceDays["SUNDAY"] = 64] = "SUNDAY";
+  RecurrenceDays[RecurrenceDays["MONDAY"] = 32] = "MONDAY";
+  RecurrenceDays[RecurrenceDays["TUESDAY"] = 16] = "TUESDAY";
   RecurrenceDays[RecurrenceDays["WEDNESDAY"] = 8] = "WEDNESDAY";
-  RecurrenceDays[RecurrenceDays["THURSDAY"] = 16] = "THURSDAY";
-  RecurrenceDays[RecurrenceDays["FRIDAY"] = 32] = "FRIDAY";
-  RecurrenceDays[RecurrenceDays["SATURDAY"] = 64] = "SATURDAY";
+  RecurrenceDays[RecurrenceDays["THURSDAY"] = 4] = "THURSDAY";
+  RecurrenceDays[RecurrenceDays["FRIDAY"] = 2] = "FRIDAY";
+  RecurrenceDays[RecurrenceDays["SATURDAY"] = 1] = "SATURDAY";
 })(RecurrenceDays || (exports.RecurrenceDays = RecurrenceDays = {}));
 /** General purpose booking class */
 var Booking = /*#__PURE__*/function () {
@@ -32688,15 +32688,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "03db4c0",
-  "hash": "03db4c0",
+  "raw": "a291334",
+  "hash": "a291334",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "03db4c0",
+  "suffix": "a291334",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1719375279659
+  "time": 1719457065861
 };
 /* tslint:enable */
 
