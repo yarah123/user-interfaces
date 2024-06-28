@@ -24362,15 +24362,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "a291334",
-  "hash": "a291334",
+  "raw": "7deebf5",
+  "hash": "7deebf5",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "a291334",
+  "suffix": "7deebf5",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1719457063304
+  "time": 1719552804684
 };
 /* tslint:enable */
 
