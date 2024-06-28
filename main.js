@@ -31576,15 +31576,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "299d1ef",
-  "hash": "299d1ef",
+  "raw": "dd891f0",
+  "hash": "dd891f0",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "299d1ef",
+  "suffix": "dd891f0",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1719551501518
+  "time": 1719558724532
 };
 /* tslint:enable */
 
@@ -45478,6 +45478,7 @@ var progress_spinner_1 = __webpack_require__(/*! @angular/material/progress-spin
 var radio_1 = __webpack_require__(/*! @angular/material/radio */ 53804);
 var form_fields_module_1 = __webpack_require__(/*! libs/form-fields/src/lib/form-fields.module */ 77066);
 var components_module_1 = __webpack_require__(/*! libs/components/src/lib/components.module */ 14974);
+var spaces_module_1 = __webpack_require__(/*! libs/spaces/src/lib/spaces.module */ 34360);
 var attendee_list_component_1 = __webpack_require__(/*! ./attendee-list.component */ 47249);
 var event_card_component_1 = __webpack_require__(/*! ./event-card.component */ 21765);
 var event_details_modal_component_1 = __webpack_require__(/*! ./event-details-modal.component */ 54035);
@@ -45499,6 +45500,7 @@ var i10 = __webpack_require__(/*! @angular/material/core */ 74646);
 var i11 = __webpack_require__(/*! @angular/material/tooltip */ 80640);
 var i12 = __webpack_require__(/*! ../../../components/src/lib/sanitise.pipe */ 54616);
 var i13 = __webpack_require__(/*! ../../../components/src/lib/authenticated-image.directive */ 93208);
+var i14 = __webpack_require__(/*! ../../../spaces/src/lib/space.pipe */ 22011);
 var COMPONENTS = [event_details_modal_component_1.EventDetailsModalComponent, attendee_list_component_1.AttendeeListComponent, event_card_component_1.EventCardComponent, event_link_modal_component_1.EventLinkModalComponent, setup_breakdown_modal_component_1.SetupBreakdownModalComponent, group_event_details_modal_component_1.GroupEventDetailsModalComponent, group_event_card_component_1.GroupEventCardComponent];
 var SharedEventsModule = /*#__PURE__*/_createClass(function SharedEventsModule() {
   _classCallCheck(this, SharedEventsModule);
@@ -45512,20 +45514,20 @@ _SharedEventsModule.ɵmod = /*@__PURE__*/i0.ɵɵdefineNgModule({
 });
 _SharedEventsModule.ɵinj = /*@__PURE__*/i0.ɵɵdefineInjector({
   providers: [forms_1.ReactiveFormsModule],
-  imports: [common_1.CommonModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, radio_1.MatRadioModule, input_1.MatInputModule, form_field_1.MatFormFieldModule, datepicker_1.MatDatepickerModule, button_1.MatButtonModule, dialog_1.MatDialogModule, progress_spinner_1.MatProgressSpinnerModule, form_fields_module_1.FormFieldsModule, components_module_1.ComponentsModule, core_1.MatRippleModule]
+  imports: [common_1.CommonModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, radio_1.MatRadioModule, input_1.MatInputModule, form_field_1.MatFormFieldModule, datepicker_1.MatDatepickerModule, button_1.MatButtonModule, dialog_1.MatDialogModule, progress_spinner_1.MatProgressSpinnerModule, form_fields_module_1.FormFieldsModule, components_module_1.ComponentsModule, core_1.MatRippleModule, spaces_module_1.SharedSpacesModule]
 });
 exports.SharedEventsModule = SharedEventsModule;
 (function () {
   (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(SharedEventsModule, {
     declarations: [event_details_modal_component_1.EventDetailsModalComponent, attendee_list_component_1.AttendeeListComponent, event_card_component_1.EventCardComponent, event_link_modal_component_1.EventLinkModalComponent, setup_breakdown_modal_component_1.SetupBreakdownModalComponent, group_event_details_modal_component_1.GroupEventDetailsModalComponent, group_event_card_component_1.GroupEventCardComponent],
-    imports: [common_1.CommonModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, radio_1.MatRadioModule, input_1.MatInputModule, form_field_1.MatFormFieldModule, datepicker_1.MatDatepickerModule, button_1.MatButtonModule, dialog_1.MatDialogModule, progress_spinner_1.MatProgressSpinnerModule, form_fields_module_1.FormFieldsModule, components_module_1.ComponentsModule, core_1.MatRippleModule],
+    imports: [common_1.CommonModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, radio_1.MatRadioModule, input_1.MatInputModule, form_field_1.MatFormFieldModule, datepicker_1.MatDatepickerModule, button_1.MatButtonModule, dialog_1.MatDialogModule, progress_spinner_1.MatProgressSpinnerModule, form_fields_module_1.FormFieldsModule, components_module_1.ComponentsModule, core_1.MatRippleModule, spaces_module_1.SharedSpacesModule],
     exports: [event_details_modal_component_1.EventDetailsModalComponent, attendee_list_component_1.AttendeeListComponent, event_card_component_1.EventCardComponent, event_link_modal_component_1.EventLinkModalComponent, setup_breakdown_modal_component_1.SetupBreakdownModalComponent, group_event_details_modal_component_1.GroupEventDetailsModalComponent, group_event_card_component_1.GroupEventCardComponent]
   });
 })();
 i0.ɵɵsetComponentScope(event_details_modal_component_1.EventDetailsModalComponent, [i1.NgForOf, i1.NgIf, i2.MatDialogClose, i3.IconComponent, i4.UserAvatarComponent, i5.InteractiveMapComponent, i6.ImageCarouselComponent, i7.StatusPillComponent, i8.BindingDirective, i9.MatMenu, i9.MatMenuItem, i9.MatMenuTrigger, i10.MatRipple, i11.MatTooltip, attendee_list_component_1.AttendeeListComponent], [i1.CurrencyPipe, i1.DatePipe, i12.SanitizePipe]);
 i0.ɵɵsetComponentScope(attendee_list_component_1.AttendeeListComponent, [i1.NgForOf, i1.NgIf, i3.IconComponent, i4.UserAvatarComponent, i10.MatRipple, i11.MatTooltip], []);
 i0.ɵɵsetComponentScope(event_card_component_1.EventCardComponent, [i1.NgForOf, i1.NgIf, i3.IconComponent, i4.UserAvatarComponent, i7.StatusPillComponent], [i1.SlicePipe, i1.DatePipe]);
-i0.ɵɵsetComponentScope(group_event_details_modal_component_1.GroupEventDetailsModalComponent, [i1.NgIf, i2.MatDialogClose, i3.IconComponent, i5.InteractiveMapComponent, i13.AuthenticatedImageDirective, i9.MatMenu, i9.MatMenuItem, i9.MatMenuTrigger, i10.MatRipple, attendee_list_component_1.AttendeeListComponent], [i1.AsyncPipe, i1.DatePipe, i12.SanitizePipe]);
+i0.ɵɵsetComponentScope(group_event_details_modal_component_1.GroupEventDetailsModalComponent, [i1.NgIf, i2.MatDialogClose, i3.IconComponent, i5.InteractiveMapComponent, i13.AuthenticatedImageDirective, i9.MatMenu, i9.MatMenuItem, i9.MatMenuTrigger, i10.MatRipple, attendee_list_component_1.AttendeeListComponent], [i1.AsyncPipe, i1.DatePipe, i12.SanitizePipe, i14.SpacePipe]);
 i0.ɵɵsetComponentScope(group_event_card_component_1.GroupEventCardComponent, [i1.NgIf, i3.IconComponent, i13.AuthenticatedImageDirective, i10.MatRipple], [i1.DatePipe]);
 
 /***/ }),
@@ -45827,31 +45829,39 @@ var GroupEventCardComponent = /*#__PURE__*/function () {
   }, {
     key: "has_space",
     get: function get() {
-      var _this$event2;
-      return !!((_this$event2 = this.event) !== null && _this$event2 !== void 0 && (_this$event2 = _this$event2.system) !== null && _this$event2 !== void 0 && _this$event2.id);
+      var _this$space;
+      return !!((_this$space = this.space) !== null && _this$space !== void 0 && _this$space.id);
     }
   }, {
     key: "is_online",
     get: function get() {
-      var _this$event3;
-      return !this.is_onsite || ((_this$event3 = this.event) === null || _this$event3 === void 0 ? void 0 : _this$event3.extension_data.attendance_type) === 'ANY';
+      var _this$event2;
+      return !this.is_onsite || ((_this$event2 = this.event) === null || _this$event2 === void 0 ? void 0 : _this$event2.extension_data.attendance_type) === 'ANY';
+    }
+  }, {
+    key: "group_event_calendar",
+    get: function get() {
+      return this._settings.get('app.group_events_calendar');
     }
   }, {
     key: "ngOnInit",
     value: function () {
       var _ngOnInit = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-        var _this$event$system;
-        var space_pipe;
+        var _this = this;
+        var space_pipe, resource;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
               space_pipe = new space_pipe_1.SpacePipe(this._org);
-              _context.next = 3;
-              return space_pipe.transform((_this$event$system = this.event.system) === null || _this$event$system === void 0 ? void 0 : _this$event$system.id);
-            case 3:
+              resource = this.event.resources.find(function (_) {
+                return _.email !== _this.group_event_calendar;
+              });
+              _context.next = 4;
+              return space_pipe.transform((resource === null || resource === void 0 ? void 0 : resource.id) || (resource === null || resource === void 0 ? void 0 : resource.email));
+            case 4:
               this.space = _context.sent;
               this.raw_description = this.removeHtmlTags(this.event.body);
-            case 5:
+            case 6:
             case "end":
               return _context.stop();
           }
@@ -46093,9 +46103,9 @@ function GroupEventDetailsModalComponent_div_99_Template(rf, ctx) {
     i0.ɵɵadvance(3);
     i0.ɵɵproperty("ngIf", !ctx_r1.showing_map);
     i0.ɵɵadvance(3);
-    i0.ɵɵtextInterpolate1(" ", (tmp_4_0 = i0.ɵɵpipeBind1(8, 7, i0.ɵɵpipeBind1(7, 5, ctx_r1.event.linked_event == null ? null : ctx_r1.event.linked_event.system_id))) == null ? null : tmp_4_0.display_name, " ");
+    i0.ɵɵtextInterpolate1(" ", (tmp_4_0 = i0.ɵɵpipeBind1(8, 7, i0.ɵɵpipeBind1(7, 5, ctx_r1.system_id))) == null ? null : tmp_4_0.display_name, " ");
     i0.ɵɵadvance(3);
-    i0.ɵɵproperty("ngIf", !((tmp_5_0 = i0.ɵɵpipeBind1(11, 11, i0.ɵɵpipeBind1(10, 9, ctx_r1.event.linked_event == null ? null : ctx_r1.event.linked_event.system_id))) == null ? null : tmp_5_0.display_name));
+    i0.ɵɵproperty("ngIf", !((tmp_5_0 = i0.ɵɵpipeBind1(11, 11, i0.ɵɵpipeBind1(10, 9, ctx_r1.system_id))) == null ? null : tmp_5_0.display_name));
     i0.ɵɵadvance(4);
     i0.ɵɵproperty("ngIf", ctx_r1.building && ctx_r1.level);
     i0.ɵɵadvance();
@@ -46143,6 +46153,7 @@ var GroupEventDetailsModalComponent = /*#__PURE__*/function () {
     this.showing_map = false;
     this.show_attendees = false;
     this.styles = {};
+    this.raw_description = '';
   }
   return _createClass(GroupEventDetailsModalComponent, [{
     key: "time_format",
@@ -46163,8 +46174,8 @@ var GroupEventDetailsModalComponent = /*#__PURE__*/function () {
   }, {
     key: "has_space",
     get: function get() {
-      var _this$event$system;
-      return !!((_this$event$system = this.event.system) !== null && _this$event$system !== void 0 && _this$event$system.id);
+      var _this$space;
+      return !!((_this$space = this.space) !== null && _this$space !== void 0 && _this$space.id);
     }
   }, {
     key: "is_online",
@@ -46193,8 +46204,8 @@ var GroupEventDetailsModalComponent = /*#__PURE__*/function () {
   }, {
     key: "system_id",
     get: function get() {
-      var _this$event$system2;
-      return (_this$event$system2 = this.event.system) === null || _this$event$system2 === void 0 ? void 0 : _this$event$system2.id;
+      var _this$space2;
+      return (_this$space2 = this.space) === null || _this$space2 === void 0 ? void 0 : _this$space2.id;
     }
   }, {
     key: "guest_details",
@@ -46206,21 +46217,32 @@ var GroupEventDetailsModalComponent = /*#__PURE__*/function () {
       });
     }
   }, {
+    key: "group_event_calendar",
+    get: function get() {
+      return this._settings.get('app.group_events_calendar');
+    }
+  }, {
     key: "ngOnInit",
     value: function () {
       var _ngOnInit = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-        var _this$event$system3, _this$event$extension2, _this$space, _this$event$system4;
-        var space_pipe, map_id, id, zones;
+        var _this = this,
+          _this$event$extension2,
+          _this$space3,
+          _this$space4;
+        var space_pipe, resource, map_id, id, zones;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
               space_pipe = new space_pipe_1.SpacePipe(this._org);
-              _context.next = 3;
-              return space_pipe.transform((_this$event$system3 = this.event.system) === null || _this$event$system3 === void 0 ? void 0 : _this$event$system3.id);
-            case 3:
+              resource = this.event.resources.find(function (_) {
+                return _.email !== _this.group_event_calendar;
+              });
+              _context.next = 4;
+              return space_pipe.transform((resource === null || resource === void 0 ? void 0 : resource.id) || (resource === null || resource === void 0 ? void 0 : resource.email));
+            case 4:
               this.space = _context.sent;
               map_id = (_this$event$extension2 = this.event.extension_data) === null || _this$event$extension2 === void 0 ? void 0 : _this$event$extension2.map_id;
-              id = ((_this$space = this.space) === null || _this$space === void 0 ? void 0 : _this$space.map_id) || map_id;
+              id = ((_this$space3 = this.space) === null || _this$space3 === void 0 ? void 0 : _this$space3.map_id) || map_id;
               if (id) {
                 this.styles["#".concat(id)] = {
                   fill: 'green'
@@ -46231,13 +46253,14 @@ var GroupEventDetailsModalComponent = /*#__PURE__*/function () {
                   data: {}
                 }];
               }
-              zones = ((_this$event$system4 = this.event.system) === null || _this$event$system4 === void 0 ? void 0 : _this$event$system4.zones) || [];
+              zones = ((_this$space4 = this.space) === null || _this$space4 === void 0 ? void 0 : _this$space4.zones) || [];
               this.level = this._org.levelWithID(zones);
               this.building = this._org.buildings.find(function (_) {
                 return zones.includes(_.id);
               }) || this._org.building;
               this.locate = map_id || '';
-            case 11:
+              this.raw_description = this.removeHtmlTags(this.event.body);
+            case 13:
             case "end":
               return _context.stop();
           }
@@ -46249,11 +46272,17 @@ var GroupEventDetailsModalComponent = /*#__PURE__*/function () {
       return ngOnInit;
     }()
   }, {
+    key: "removeHtmlTags",
+    value: function removeHtmlTags(html) {
+      var doc = new DOMParser().parseFromString(html, 'text/html');
+      return doc.body.textContent || '';
+    }
+  }, {
     key: "viewLocation",
     value: function viewLocation() {
-      var _this$space2,
-        _this = this;
-      if (!((_this$space2 = this.space) !== null && _this$space2 !== void 0 && _this$space2.map_id)) {
+      var _this$space5,
+        _this2 = this;
+      if (!((_this$space5 = this.space) !== null && _this$space5 !== void 0 && _this$space5.map_id)) {
         return (0, common_1.notifyInfo)('Unable to locate space on map.');
       }
       this.showing_map = true;
@@ -46265,7 +46294,7 @@ var GroupEventDetailsModalComponent = /*#__PURE__*/function () {
         }
       });
       ref.afterClosed().subscribe(function () {
-        _this.showing_map = false;
+        _this2.showing_map = false;
       });
     }
   }, {
@@ -46540,7 +46569,7 @@ _GroupEventDetailsModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵadvance(4);
       i0.ɵɵproperty("innerHTML", i0.ɵɵpipeBind1(96, 36, ctx.event.body), i0.ɵɵsanitizeHtml);
       i0.ɵɵadvance(2);
-      i0.ɵɵproperty("ngIf", !ctx.event.body.trim());
+      i0.ɵɵproperty("ngIf", !ctx.raw_description.trim());
       i0.ɵɵadvance(2);
       i0.ɵɵproperty("ngIf", ctx.level);
       i0.ɵɵadvance();
@@ -47399,15 +47428,6 @@ var i1 = __webpack_require__(/*! @placeos/common */ 22797);
 var i2 = __webpack_require__(/*! libs/events/src/lib/event-form.service */ 26101);
 var i3 = __webpack_require__(/*! @angular/material/dialog */ 12587);
 var i4 = __webpack_require__(/*! @angular/router */ 95072);
-var i5 = __webpack_require__(/*! @angular/common */ 60316);
-var i6 = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
-var i7 = __webpack_require__(/*! @angular/material/form-field */ 24950);
-var i8 = __webpack_require__(/*! @angular/material/core */ 74646);
-var i9 = __webpack_require__(/*! @angular/material/input */ 95541);
-var i10 = __webpack_require__(/*! @angular/material/progress-spinner */ 41134);
-var i11 = __webpack_require__(/*! @angular/forms */ 34456);
-var i12 = __webpack_require__(/*! ../../../form-fields/src/lib/duration-field.component */ 83476);
-var i13 = __webpack_require__(/*! ../../../form-fields/src/lib/user-search-field.component */ 18000);
 function ExploreBookingModalComponent_button_4_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelementStart(0, "button", 10)(1, "app-icon");
@@ -47715,7 +47735,6 @@ _ExploreBookingModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵproperty("ngIf", !i0.ɵɵpipeBind1(7, 5, ctx.loading))("ngIfElse", load_state_r3);
     }
   },
-  dependencies: [i5.NgIf, i6.IconComponent, i7.MatFormField, i7.MatError, i8.MatRipple, i3.MatDialogClose, i9.MatInput, i10.MatProgressSpinner, i11.DefaultValueAccessor, i11.NgControlStatus, i11.NgControlStatusGroup, i11.FormGroupDirective, i11.FormControlName, i12.DurationFieldComponent, i13.UserSearchFieldComponent, i5.AsyncPipe, i5.DatePipe],
   styles: ["header[_ngcontent-%COMP%] {\n                max-width: calc(100vw + 100%);\n            }\n\n            [load][_ngcontent-%COMP%] {\n                width: 32rem;\n                max-width: calc(100vw - 2rem);\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvZXhwbG9yZS9zcmMvbGliL2V4cGxvcmUtYm9va2luZy1tb2RhbC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLDZCQUE2QjtZQUNqQzs7WUFFQTtnQkFDSSxZQUFZO2dCQUNaLDZCQUE2QjtZQUNqQyIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgaGVhZGVyIHtcbiAgICAgICAgICAgICAgICBtYXgtd2lkdGg6IGNhbGMoMTAwdncgKyAxMDAlKTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgW2xvYWRdIHtcbiAgICAgICAgICAgICAgICB3aWR0aDogMzJyZW07XG4gICAgICAgICAgICAgICAgbWF4LXdpZHRoOiBjYWxjKDEwMHZ3IC0gMnJlbSk7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
 });
 exports.ExploreBookingModalComponent = ExploreBookingModalComponent;
@@ -51080,9 +51099,6 @@ var components_1 = __webpack_require__(/*! @placeos/components */ 51588);
 var settings_service_1 = __webpack_require__(/*! libs/common/src/lib/settings.service */ 14233);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
 var i1 = __webpack_require__(/*! libs/common/src/lib/settings.service */ 14233);
-var i2 = __webpack_require__(/*! @angular/common */ 60316);
-var i3 = __webpack_require__(/*! ../../../components/src/lib/custom-tooltip.component */ 22238);
-var i4 = __webpack_require__(/*! ../../../components/src/lib/authenticated-image.directive */ 93208);
 function ExploreSpaceInfoComponent_ng_template_2_img_4_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelement(0, "img", 18);
@@ -51284,7 +51300,6 @@ _ExploreSpaceInfoComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵattribute("id", (ctx.space == null ? null : ctx.space.map_id) || (ctx.space == null ? null : ctx.space.id));
     }
   },
-  dependencies: [i2.NgForOf, i2.NgIf, i3.CustomTooltipComponent, i4.AuthenticatedImageDirective],
   styles: ["[name='space-info'][_ngcontent-%COMP%] {\n                width: 16rem;\n            }\n\n            [status][_ngcontent-%COMP%] {\n                background-color: #43a047;\n                font-weight: 500;\n            }\n\n            [status].busy[_ngcontent-%COMP%] {\n                background-color: #e53935;\n            }\n\n            [status].pending[_ngcontent-%COMP%] {\n                background-color: #ffb300;\n            }\n\n            [status].not-bookable[_ngcontent-%COMP%] {\n                background-color: #757575;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvZXhwbG9yZS9zcmMvbGliL2V4cGxvcmUtc3BhY2UtaW5mby5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLFlBQVk7WUFDaEI7O1lBRUE7Z0JBQ0kseUJBQXlCO2dCQUN6QixnQkFBZ0I7WUFDcEI7O1lBRUE7Z0JBQ0kseUJBQXlCO1lBQzdCOztZQUVBO2dCQUNJLHlCQUF5QjtZQUM3Qjs7WUFFQTtnQkFDSSx5QkFBeUI7WUFDN0IiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIFtuYW1lPSdzcGFjZS1pbmZvJ10ge1xuICAgICAgICAgICAgICAgIHdpZHRoOiAxNnJlbTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgW3N0YXR1c10ge1xuICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICM0M2EwNDc7XG4gICAgICAgICAgICAgICAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgW3N0YXR1c10uYnVzeSB7XG4gICAgICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI2U1MzkzNTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgW3N0YXR1c10ucGVuZGluZyB7XG4gICAgICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmYjMwMDtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgW3N0YXR1c10ubm90LWJvb2thYmxlIHtcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjNzU3NTc1O1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
 });
 exports.ExploreSpaceInfoComponent = ExploreSpaceInfoComponent;
@@ -52416,6 +52431,18 @@ var explore_sensor_info_component_1 = __webpack_require__(/*! ./explore-sensor-i
 var explore_locker_bank_info_component_1 = __webpack_require__(/*! ./explore-locker-bank-info.component */ 84810);
 var explore_locker_bank_modal_component_1 = __webpack_require__(/*! ./explore-locker-bank-modal.component */ 50795);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
+var i1 = __webpack_require__(/*! @angular/common */ 60316);
+var i2 = __webpack_require__(/*! ../../../components/src/lib/custom-tooltip.component */ 22238);
+var i3 = __webpack_require__(/*! ../../../components/src/lib/authenticated-image.directive */ 93208);
+var i4 = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
+var i5 = __webpack_require__(/*! @angular/material/form-field */ 24950);
+var i6 = __webpack_require__(/*! @angular/material/core */ 74646);
+var i7 = __webpack_require__(/*! @angular/material/dialog */ 12587);
+var i8 = __webpack_require__(/*! @angular/material/input */ 95541);
+var i9 = __webpack_require__(/*! @angular/material/progress-spinner */ 41134);
+var i10 = __webpack_require__(/*! @angular/forms */ 34456);
+var i11 = __webpack_require__(/*! ../../../form-fields/src/lib/duration-field.component */ 83476);
+var i12 = __webpack_require__(/*! ../../../form-fields/src/lib/user-search-field.component */ 18000);
 var COMPONENTS = [explore_map_control_component_1.ExploreMapControlComponent, explore_map_view_component_1.ExploreMapViewComponent, explore_search_component_1.ExploreSearchComponent, explore_space_info_component_1.ExploreSpaceInfoComponent, explore_device_info_component_1.ExploreDeviceInfoComponent, explore_desk_info_component_1.ExploreDeskInfoComponent, explore_zoom_control_component_1.ExploreZoomControlComponent, explore_booking_modal_component_1.ExploreBookingModalComponent, set_datetime_modal_component_1.SetDatetimeModalComponent, explore_book_qr_component_1.ExploreBookQrComponent, explore_sensor_info_component_1.ExploreSensorInfoComponent, explore_locker_bank_info_component_1.ExploreLockerBankInfoComponent, explore_locker_bank_modal_component_1.ExploreLockerBankModalComponent];
 var SharedExploreModule = /*#__PURE__*/_createClass(function SharedExploreModule() {
   _classCallCheck(this, SharedExploreModule);
@@ -52438,6 +52465,8 @@ exports.SharedExploreModule = SharedExploreModule;
     exports: [explore_map_control_component_1.ExploreMapControlComponent, explore_map_view_component_1.ExploreMapViewComponent, explore_search_component_1.ExploreSearchComponent, explore_space_info_component_1.ExploreSpaceInfoComponent, explore_device_info_component_1.ExploreDeviceInfoComponent, explore_desk_info_component_1.ExploreDeskInfoComponent, explore_zoom_control_component_1.ExploreZoomControlComponent, explore_booking_modal_component_1.ExploreBookingModalComponent, set_datetime_modal_component_1.SetDatetimeModalComponent, explore_book_qr_component_1.ExploreBookQrComponent, explore_sensor_info_component_1.ExploreSensorInfoComponent, explore_locker_bank_info_component_1.ExploreLockerBankInfoComponent, explore_locker_bank_modal_component_1.ExploreLockerBankModalComponent]
   });
 })();
+i0.ɵɵsetComponentScope(explore_space_info_component_1.ExploreSpaceInfoComponent, [i1.NgForOf, i1.NgIf, i2.CustomTooltipComponent, i3.AuthenticatedImageDirective], []);
+i0.ɵɵsetComponentScope(explore_booking_modal_component_1.ExploreBookingModalComponent, [i1.NgIf, i4.IconComponent, i5.MatFormField, i5.MatError, i6.MatRipple, i7.MatDialogClose, i8.MatInput, i9.MatProgressSpinner, i10.DefaultValueAccessor, i10.NgControlStatus, i10.NgControlStatusGroup, i10.FormGroupDirective, i10.FormControlName, i11.DurationFieldComponent, i12.UserSearchFieldComponent], [i1.AsyncPipe, i1.DatePipe]);
 
 /***/ }),
 
@@ -65799,11 +65828,6 @@ var organisation_service_1 = __webpack_require__(/*! libs/organisation/src/lib/o
 var space_class_1 = __webpack_require__(/*! ../space.class */ 30735);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
 var i1 = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
-var i2 = __webpack_require__(/*! @angular/common */ 60316);
-var i3 = __webpack_require__(/*! ../../../../components/src/lib/icon.component */ 69434);
-var i4 = __webpack_require__(/*! ../../../../components/src/lib/interactive-map.component */ 24918);
-var i5 = __webpack_require__(/*! ../../../../components/src/lib/image-carousel.component */ 65277);
-var i6 = __webpack_require__(/*! @angular/material/core */ 74646);
 var _c0 = function _c0() {
   return {
     disable_pan: true,
@@ -66105,7 +66129,6 @@ _SpaceDetailsComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵproperty("ngIf", ctx.space)("ngIfElse", empty_state_r4);
     }
   },
-  dependencies: [i2.NgForOf, i2.NgIf, i3.IconComponent, i4.InteractiveMapComponent, i5.ImageCarouselComponent, i6.MatRipple],
   styles: ["[_nghost-%COMP%] {\n                position: relative;\n                display: flex;\n                flex-direction: column;\n                width: 30%;\n                min-width: 20rem;\n                height: 100%;\n                min-height: 65vh;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvc3BhY2VzL3NyYy9saWIvc3BhY2Utc2VsZWN0LW1vZGFsL3NwYWNlLWRldGFpbHMuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxrQkFBa0I7Z0JBQ2xCLGFBQWE7Z0JBQ2Isc0JBQXNCO2dCQUN0QixVQUFVO2dCQUNWLGdCQUFnQjtnQkFDaEIsWUFBWTtnQkFDWixnQkFBZ0I7WUFDcEIiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgICAgICAgIHdpZHRoOiAzMCU7XG4gICAgICAgICAgICAgICAgbWluLXdpZHRoOiAyMHJlbTtcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICAgICAgICAgICAgbWluLWhlaWdodDogNjV2aDtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
 });
 exports.SpaceDetailsComponent = SpaceDetailsComponent;
@@ -66502,18 +66525,6 @@ var i2 = __webpack_require__(/*! @placeos/common */ 22797);
 var i3 = __webpack_require__(/*! libs/events/src/lib/event-form.service */ 26101);
 var i4 = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
 var i5 = __webpack_require__(/*! ../spaces.service */ 7401);
-var i6 = __webpack_require__(/*! @angular/common */ 60316);
-var i7 = __webpack_require__(/*! ../../../../components/src/lib/icon.component */ 69434);
-var i8 = __webpack_require__(/*! @angular/material/core */ 74646);
-var i9 = __webpack_require__(/*! @angular/material/form-field */ 24950);
-var i10 = __webpack_require__(/*! @angular/material/select */ 25175);
-var i11 = __webpack_require__(/*! @angular/material/checkbox */ 97024);
-var i12 = __webpack_require__(/*! ../../../../form-fields/src/lib/date-field.component */ 19608);
-var i13 = __webpack_require__(/*! ../../../../form-fields/src/lib/duration-field.component */ 83476);
-var i14 = __webpack_require__(/*! ../../../../form-fields/src/lib/time-field.component */ 81413);
-var i15 = __webpack_require__(/*! @angular/forms */ 34456);
-var i16 = __webpack_require__(/*! ../../../../components/src/lib/building.pipe */ 56062);
-var i17 = __webpack_require__(/*! @ngx-translate/core */ 597);
 var _c0 = function _c0() {
   return {
     standalone: true
@@ -67268,7 +67279,6 @@ _SpaceFiltersComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵproperty("ngIf", ctx.can_close);
     }
   },
-  dependencies: [i6.NgForOf, i6.NgIf, i7.IconComponent, i8.MatOption, i9.MatFormField, i10.MatSelect, i8.MatRipple, i11.MatCheckbox, i12.DateFieldComponent, i13.DurationFieldComponent, i14.TimeFieldComponent, i15.ɵNgNoValidate, i15.NgControlStatus, i15.NgControlStatusGroup, i15.NgModel, i15.FormGroupDirective, i15.FormControlName, i6.AsyncPipe, i16.BuildingPipe, i17.TranslatePipe],
   styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n                width: 100%;\n                max-width: 100vw;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvc3BhY2VzL3NyYy9saWIvc3BhY2Utc2VsZWN0LW1vZGFsL3NwYWNlLWZpbHRlcnMuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxhQUFhO2dCQUNiLHNCQUFzQjtnQkFDdEIsV0FBVztnQkFDWCxnQkFBZ0I7WUFDcEIiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgICAgICAgbWF4LXdpZHRoOiAxMDB2dztcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
 });
 exports.SpaceFiltersComponent = SpaceFiltersComponent;
@@ -67297,11 +67307,6 @@ var organisation_service_1 = __webpack_require__(/*! libs/organisation/src/lib/o
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
 var i1 = __webpack_require__(/*! libs/events/src/lib/event-form.service */ 26101);
 var i2 = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
-var i3 = __webpack_require__(/*! @angular/common */ 60316);
-var i4 = __webpack_require__(/*! ../../../../components/src/lib/icon.component */ 69434);
-var i5 = __webpack_require__(/*! ../../../../components/src/lib/authenticated-image.directive */ 93208);
-var i6 = __webpack_require__(/*! @angular/material/core */ 74646);
-var i7 = __webpack_require__(/*! @angular/material/progress-spinner */ 41134);
 function SpaceListComponent_ng_container_5_ul_1_li_1_div_3_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelementStart(0, "div", 24)(1, "app-icon");
@@ -67562,7 +67567,6 @@ _SpaceListComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵproperty("ngIf", !i0.ɵɵpipeBind1(6, 5, ctx.loading))("ngIfElse", load_state_r6);
     }
   },
-  dependencies: [i3.NgForOf, i3.NgIf, i4.IconComponent, i5.AuthenticatedImageDirective, i6.MatRipple, i7.MatProgressSpinner, i3.AsyncPipe],
   styles: ["[_nghost-%COMP%] {\n                width: 100%;\n                height: 100%;\n                padding: 0.5rem;\n                overflow: auto;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvc3BhY2VzL3NyYy9saWIvc3BhY2Utc2VsZWN0LW1vZGFsL3NwYWNlLWxpc3QuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxXQUFXO2dCQUNYLFlBQVk7Z0JBQ1osZUFBZTtnQkFDZixjQUFjO1lBQ2xCIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgICAgICAgIHBhZGRpbmc6IDAuNXJlbTtcbiAgICAgICAgICAgICAgICBvdmVyZmxvdzogYXV0bztcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
 });
 exports.SpaceListComponent = SpaceListComponent;
@@ -67687,13 +67691,6 @@ var i0 = __webpack_require__(/*! @angular/core */ 37580);
 var i1 = __webpack_require__(/*! libs/events/src/lib/event-form.service */ 26101);
 var i2 = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
 var i3 = __webpack_require__(/*! @placeos/common */ 22797);
-var i4 = __webpack_require__(/*! @angular/common */ 60316);
-var i5 = __webpack_require__(/*! ../../../../components/src/lib/interactive-map.component */ 24918);
-var i6 = __webpack_require__(/*! @angular/material/core */ 74646);
-var i7 = __webpack_require__(/*! @angular/material/form-field */ 24950);
-var i8 = __webpack_require__(/*! @angular/material/select */ 25175);
-var i9 = __webpack_require__(/*! @angular/forms */ 34456);
-var i10 = __webpack_require__(/*! ../../../../components/src/lib/building.pipe */ 56062);
 var _c0 = function _c0() {
   return {
     controls: true
@@ -67970,7 +67967,6 @@ _SpaceSelectMapComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵproperty("styles", i0.ɵɵpipeBind1(5, 10, ctx.styles))("features", i0.ɵɵpipeBind1(6, 12, ctx.features))("actions", i0.ɵɵpipeBind1(7, 14, ctx.actions))("options", i0.ɵɵpureFunction0(16, _c0));
     }
   },
-  dependencies: [i4.NgForOf, i4.NgIf, i5.InteractiveMapComponent, i6.MatOption, i7.MatFormField, i8.MatSelect, i9.NgControlStatus, i9.NgModel, i4.AsyncPipe, i10.BuildingPipe],
   styles: ["[_nghost-%COMP%] {\n                position: relative;\n                background: rgba(0, 0, 0, 0.05);\n                display: flex;\n                flex-direction: column;\n            }\n\n            button[_ngcontent-%COMP%] {\n                border-radius: 0;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvc3BhY2VzL3NyYy9saWIvc3BhY2Utc2VsZWN0LW1vZGFsL3NwYWNlLW1hcC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGtCQUFrQjtnQkFDbEIsK0JBQStCO2dCQUMvQixhQUFhO2dCQUNiLHNCQUFzQjtZQUMxQjs7WUFFQTtnQkFDSSxnQkFBZ0I7WUFDcEIiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgICAgICAgICAgYmFja2dyb3VuZDogcmdiYSgwLCAwLCAwLCAwLjA1KTtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIGJ1dHRvbiB7XG4gICAgICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMDtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
 });
 exports.SpaceSelectMapComponent = SpaceSelectMapComponent;
@@ -68368,6 +68364,19 @@ var i1 = __webpack_require__(/*! @angular/common */ 60316);
 var i2 = __webpack_require__(/*! @angular/material/dialog */ 12587);
 var i3 = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
 var i4 = __webpack_require__(/*! @angular/material/core */ 74646);
+var i5 = __webpack_require__(/*! ../../../components/src/lib/interactive-map.component */ 24918);
+var i6 = __webpack_require__(/*! ../../../components/src/lib/image-carousel.component */ 65277);
+var i7 = __webpack_require__(/*! ../../../components/src/lib/authenticated-image.directive */ 93208);
+var i8 = __webpack_require__(/*! @angular/material/progress-spinner */ 41134);
+var i9 = __webpack_require__(/*! @angular/material/form-field */ 24950);
+var i10 = __webpack_require__(/*! @angular/material/select */ 25175);
+var i11 = __webpack_require__(/*! @angular/material/checkbox */ 97024);
+var i12 = __webpack_require__(/*! ../../../form-fields/src/lib/date-field.component */ 19608);
+var i13 = __webpack_require__(/*! ../../../form-fields/src/lib/duration-field.component */ 83476);
+var i14 = __webpack_require__(/*! ../../../form-fields/src/lib/time-field.component */ 81413);
+var i15 = __webpack_require__(/*! @angular/forms */ 34456);
+var i16 = __webpack_require__(/*! ../../../components/src/lib/building.pipe */ 56062);
+var i17 = __webpack_require__(/*! @ngx-translate/core */ 597);
 var COMPONENTS = [new_space_select_modal_component_1.NewSpaceSelectModalComponent, space_details_component_1.SpaceDetailsComponent, space_list_component_1.SpaceListComponent, space_filters_component_1.SpaceFiltersComponent, space_filters_display_component_1.SpaceFiltersDisplayComponent, space_map_component_1.SpaceSelectMapComponent, space_location_pin_component_1.SpaceLocationPinComponent, space_pipe_1.SpacePipe];
 var SharedSpacesModule = /*#__PURE__*/_createClass(function SharedSpacesModule() {
   _classCallCheck(this, SharedSpacesModule);
@@ -68391,6 +68400,10 @@ exports.SharedSpacesModule = SharedSpacesModule;
   });
 })();
 i0.ɵɵsetComponentScope(new_space_select_modal_component_1.NewSpaceSelectModalComponent, [i1.NgIf, i2.MatDialogClose, i3.IconComponent, i4.MatRipple, space_details_component_1.SpaceDetailsComponent, space_list_component_1.SpaceListComponent, space_filters_component_1.SpaceFiltersComponent, space_filters_display_component_1.SpaceFiltersDisplayComponent, space_map_component_1.SpaceSelectMapComponent], []);
+i0.ɵɵsetComponentScope(space_details_component_1.SpaceDetailsComponent, [i1.NgForOf, i1.NgIf, i3.IconComponent, i5.InteractiveMapComponent, i6.ImageCarouselComponent, i4.MatRipple], []);
+i0.ɵɵsetComponentScope(space_list_component_1.SpaceListComponent, [i1.NgForOf, i1.NgIf, i3.IconComponent, i7.AuthenticatedImageDirective, i4.MatRipple, i8.MatProgressSpinner], [i1.AsyncPipe]);
+i0.ɵɵsetComponentScope(space_filters_component_1.SpaceFiltersComponent, [i1.NgForOf, i1.NgIf, i3.IconComponent, i4.MatOption, i9.MatFormField, i10.MatSelect, i4.MatRipple, i11.MatCheckbox, i12.DateFieldComponent, i13.DurationFieldComponent, i14.TimeFieldComponent, i15.ɵNgNoValidate, i15.NgControlStatus, i15.NgControlStatusGroup, i15.NgModel, i15.FormGroupDirective, i15.FormControlName], [i1.AsyncPipe, i16.BuildingPipe, i17.TranslatePipe]);
+i0.ɵɵsetComponentScope(space_map_component_1.SpaceSelectMapComponent, [i1.NgForOf, i1.NgIf, i5.InteractiveMapComponent, i4.MatOption, i9.MatFormField, i10.MatSelect, i15.NgControlStatus, i15.NgModel], [i1.AsyncPipe, i16.BuildingPipe]);
 
 /***/ }),
 
