@@ -8721,7 +8721,7 @@ var _regeneratorRuntime = (__webpack_require__(/*! ./node_modules/@babel/runtime
 var _asyncToGenerator = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/asyncToGenerator.js */ 95386)["default"]);
 var _classCallCheck = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/classCallCheck.js */ 80912)["default"]);
 var _createClass = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/createClass.js */ 92974)["default"]);
-var _BookingDetailsModalComponent, _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5;
+var _BookingDetailsModalComponent, _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
@@ -8735,6 +8735,7 @@ var map_pin_component_1 = __webpack_require__(/*! libs/components/src/lib/map-pi
 var organisation_service_1 = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
 var booking_class_1 = __webpack_require__(/*! ./booking.class */ 53857);
 var bookings_fn_1 = __webpack_require__(/*! ./bookings.fn */ 18026);
+var desk_settings_modal_component_1 = __webpack_require__(/*! ./desk-settings-modal.component */ 77904);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
 var i1 = __webpack_require__(/*! @placeos/common */ 22797);
 var i2 = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
@@ -8757,13 +8758,13 @@ var _c0 = function _c0() {
 };
 function BookingDetailsModalComponent_div_2_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelement(0, "div", 26);
+    i0.ɵɵelement(0, "div", 27);
   }
 }
 function BookingDetailsModalComponent_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 27);
-    i0.ɵɵelement(1, "image-carousel", 28);
+    i0.ɵɵelementStart(0, "div", 28);
+    i0.ɵɵelement(1, "image-carousel", 29);
     i0.ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -8774,10 +8775,10 @@ function BookingDetailsModalComponent_div_3_Template(rf, ctx) {
 }
 function BookingDetailsModalComponent_div_10_button_1_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 34)(1, "app-icon");
+    i0.ɵɵelementStart(0, "div", 35)(1, "app-icon");
     i0.ɵɵtext(2);
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(3, "div", 35);
+    i0.ɵɵelementStart(3, "div", 36);
     i0.ɵɵtext(4);
     i0.ɵɵelementEnd()();
   }
@@ -8791,7 +8792,7 @@ function BookingDetailsModalComponent_div_10_button_1_div_1_Template(rf, ctx) {
 }
 function BookingDetailsModalComponent_div_10_button_1_ng_template_2_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelement(0, "mat-spinner", 36);
+    i0.ɵɵelement(0, "mat-spinner", 37);
   }
   if (rf & 2) {
     i0.ɵɵproperty("diameter", 32);
@@ -8800,13 +8801,13 @@ function BookingDetailsModalComponent_div_10_button_1_ng_template_2_Template(rf,
 function BookingDetailsModalComponent_div_10_button_1_Template(rf, ctx) {
   if (rf & 1) {
     var _r3 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "button", 32);
+    i0.ɵɵelementStart(0, "button", 33);
     i0.ɵɵlistener("click", function BookingDetailsModalComponent_div_10_button_1_Template_button_click_0_listener() {
       i0.ɵɵrestoreView(_r3);
       var ctx_r1 = i0.ɵɵnextContext(2);
       return i0.ɵɵresetView(ctx_r1.toggleCheckedIn());
     });
-    i0.ɵɵtemplate(1, BookingDetailsModalComponent_div_10_button_1_div_1_Template, 5, 2, "div", 33)(2, BookingDetailsModalComponent_div_10_button_1_ng_template_2_Template, 1, 1, "ng-template", null, 1, i0.ɵɵtemplateRefExtractor);
+    i0.ɵɵtemplate(1, BookingDetailsModalComponent_div_10_button_1_div_1_Template, 5, 2, "div", 34)(2, BookingDetailsModalComponent_div_10_button_1_ng_template_2_Template, 1, 1, "ng-template", null, 1, i0.ɵɵtemplateRefExtractor);
     i0.ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -8820,9 +8821,9 @@ function BookingDetailsModalComponent_div_10_button_1_Template(rf, ctx) {
 }
 function BookingDetailsModalComponent_div_10_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 29);
-    i0.ɵɵtemplate(1, BookingDetailsModalComponent_div_10_button_1_Template, 4, 5, "button", 30);
-    i0.ɵɵelementStart(2, "button", 31)(3, "app-icon");
+    i0.ɵɵelementStart(0, "div", 30);
+    i0.ɵɵtemplate(1, BookingDetailsModalComponent_div_10_button_1_Template, 4, 5, "button", 31);
+    i0.ɵɵelementStart(2, "button", 32)(3, "app-icon");
     i0.ɵɵtext(4, "more_horiz");
     i0.ɵɵelementEnd()()();
   }
@@ -8837,10 +8838,10 @@ function BookingDetailsModalComponent_div_10_Template(rf, ctx) {
 }
 function BookingDetailsModalComponent_ng_container_36_div_5_div_13_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 50)(1, "div", 51)(2, "span", 44);
+    i0.ɵɵelementStart(0, "div", 51)(1, "div", 52)(2, "span", 45);
     i0.ɵɵtext(3);
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(4, "div", 52);
+    i0.ɵɵelementStart(4, "div", 53);
     i0.ɵɵtext(5);
     i0.ɵɵelementEnd()();
   }
@@ -8855,24 +8856,24 @@ function BookingDetailsModalComponent_ng_container_36_div_5_div_13_Template(rf, 
 function BookingDetailsModalComponent_ng_container_36_div_5_Template(rf, ctx) {
   if (rf & 1) {
     var _r6 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "div", 41)(1, "button", 42);
+    i0.ɵɵelementStart(0, "div", 42)(1, "button", 43);
     i0.ɵɵlistener("click", function BookingDetailsModalComponent_ng_container_36_div_5_Template_button_click_1_listener() {
       var request_r7 = i0.ɵɵrestoreView(_r6).$implicit;
       var ctx_r1 = i0.ɵɵnextContext(2);
       return i0.ɵɵresetView(ctx_r1.show_request[request_r7.id] = !ctx_r1.show_request[request_r7.id]);
     });
-    i0.ɵɵelementStart(2, "div", 43)(3, "div", 44);
+    i0.ɵɵelementStart(2, "div", 44)(3, "div", 45);
     i0.ɵɵtext(4);
     i0.ɵɵpipe(5, "date");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(6, "div", 45)(7, "app-icon");
+    i0.ɵɵelementStart(6, "div", 46)(7, "app-icon");
     i0.ɵɵtext(8);
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(9, "div", 46)(10, "app-icon", 47);
+    i0.ɵɵelementStart(9, "div", 47)(10, "app-icon", 48);
     i0.ɵɵtext(11);
     i0.ɵɵelementEnd()()();
-    i0.ɵɵelementStart(12, "div", 48);
-    i0.ɵɵtemplate(13, BookingDetailsModalComponent_ng_container_36_div_5_div_13_Template, 6, 2, "div", 49);
+    i0.ɵɵelementStart(12, "div", 49);
+    i0.ɵɵtemplate(13, BookingDetailsModalComponent_ng_container_36_div_5_div_13_Template, 6, 2, "div", 50);
     i0.ɵɵelementEnd()();
   }
   if (rf & 2) {
@@ -8896,11 +8897,11 @@ function BookingDetailsModalComponent_ng_container_36_div_5_Template(rf, ctx) {
 function BookingDetailsModalComponent_ng_container_36_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelementContainerStart(0);
-    i0.ɵɵelementStart(1, "div", 37)(2, "h3", 38);
+    i0.ɵɵelementStart(1, "div", 38)(2, "h3", 39);
     i0.ɵɵi18n(3, 3);
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(4, "div", 39);
-    i0.ɵɵtemplate(5, BookingDetailsModalComponent_ng_container_36_div_5_Template, 14, 21, "div", 40);
+    i0.ɵɵelementStart(4, "div", 40);
+    i0.ɵɵtemplate(5, BookingDetailsModalComponent_ng_container_36_div_5_Template, 14, 21, "div", 41);
     i0.ɵɵelementEnd()();
     i0.ɵɵelementContainerEnd();
   }
@@ -8916,7 +8917,7 @@ function BookingDetailsModalComponent_ng_container_36_Template(rf, ctx) {
 function BookingDetailsModalComponent_ng_container_38_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelementContainerStart(0);
-    i0.ɵɵelement(1, "interactive-map", 53);
+    i0.ɵɵelement(1, "interactive-map", 54);
     i0.ɵɵelementContainerEnd();
   }
   if (rf & 2) {
@@ -8928,13 +8929,13 @@ function BookingDetailsModalComponent_ng_container_38_Template(rf, ctx) {
 function BookingDetailsModalComponent_button_44_Template(rf, ctx) {
   if (rf & 1) {
     var _r9 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "button", 54);
+    i0.ɵɵelementStart(0, "button", 55);
     i0.ɵɵlistener("click", function BookingDetailsModalComponent_button_44_Template_button_click_0_listener() {
       i0.ɵɵrestoreView(_r9);
       var ctx_r1 = i0.ɵɵnextContext();
       return i0.ɵɵresetView(ctx_r1.edit.emit());
     });
-    i0.ɵɵelementStart(1, "div", 55)(2, "app-icon");
+    i0.ɵɵelementStart(1, "div", 56)(2, "app-icon");
     i0.ɵɵtext(3, "edit");
     i0.ɵɵelementEnd();
     i0.ɵɵelementStart(4, "div");
@@ -8945,14 +8946,14 @@ function BookingDetailsModalComponent_button_44_Template(rf, ctx) {
 function BookingDetailsModalComponent_button_45_Template(rf, ctx) {
   if (rf & 1) {
     var _r10 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "button", 56);
+    i0.ɵɵelementStart(0, "button", 57);
     i0.ɵɵlistener("click", function BookingDetailsModalComponent_button_45_Template_button_click_0_listener() {
       i0.ɵɵrestoreView(_r10);
       var ctx_r1 = i0.ɵɵnextContext();
-      return i0.ɵɵresetView(ctx_r1.remove.emit());
+      return i0.ɵɵresetView(ctx_r1.setDeskHeight());
     });
-    i0.ɵɵelementStart(1, "div", 55)(2, "app-icon", 57);
-    i0.ɵɵtext(3, "delete");
+    i0.ɵɵelementStart(1, "div", 56)(2, "app-icon", 58);
+    i0.ɵɵtext(3, " height ");
     i0.ɵɵelementEnd();
     i0.ɵɵelementStart(4, "div");
     i0.ɵɵi18n(5, 5);
@@ -8962,17 +8963,34 @@ function BookingDetailsModalComponent_button_45_Template(rf, ctx) {
 function BookingDetailsModalComponent_button_46_Template(rf, ctx) {
   if (rf & 1) {
     var _r11 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "button", 56);
+    i0.ɵɵelementStart(0, "button", 57);
     i0.ɵɵlistener("click", function BookingDetailsModalComponent_button_46_Template_button_click_0_listener() {
       i0.ɵɵrestoreView(_r11);
       var ctx_r1 = i0.ɵɵnextContext();
-      return i0.ɵɵresetView(ctx_r1.end.emit());
+      return i0.ɵɵresetView(ctx_r1.remove.emit());
     });
-    i0.ɵɵelementStart(1, "div", 55)(2, "app-icon", 57);
+    i0.ɵɵelementStart(1, "div", 56)(2, "app-icon", 59);
     i0.ɵɵtext(3, "delete");
     i0.ɵɵelementEnd();
     i0.ɵɵelementStart(4, "div");
     i0.ɵɵi18n(5, 6);
+    i0.ɵɵelementEnd()()();
+  }
+}
+function BookingDetailsModalComponent_button_47_Template(rf, ctx) {
+  if (rf & 1) {
+    var _r12 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "button", 57);
+    i0.ɵɵlistener("click", function BookingDetailsModalComponent_button_47_Template_button_click_0_listener() {
+      i0.ɵɵrestoreView(_r12);
+      var ctx_r1 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r1.end.emit());
+    });
+    i0.ɵɵelementStart(1, "div", 56)(2, "app-icon", 59);
+    i0.ɵɵtext(3, "delete");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(4, "div");
+    i0.ɵɵi18n(5, 7);
     i0.ɵɵelementEnd()()();
   }
 }
@@ -9026,13 +9044,24 @@ var BookingDetailsModalComponent = /*#__PURE__*/function () {
       return this._settings.get("app.".concat(((_this$booking5 = this.booking) === null || _this$booking5 === void 0 ? void 0 : _this$booking5.type) || 'bookings', ".auto_checkin"));
     }
   }, {
+    key: "is_checked_in",
+    get: function get() {
+      return this.booking.checked_in;
+    }
+  }, {
+    key: "desk_height_enabled",
+    get: function get() {
+      var _this$booking6;
+      return ((_this$booking6 = this.booking) === null || _this$booking6 === void 0 ? void 0 : _this$booking6.type) === 'desk' && this._settings.get('app.desks.height_enabled');
+    }
+  }, {
     key: "is_in_progress",
     get: function get() {
-      var _this$booking6, _this$booking7, _this$booking8;
+      var _this$booking7, _this$booking8, _this$booking9;
       var ts = Date.now();
-      var start = ((_this$booking6 = this.booking) === null || _this$booking6 === void 0 ? void 0 : _this$booking6.booking_start) * 1000;
-      var end = ((_this$booking7 = this.booking) === null || _this$booking7 === void 0 ? void 0 : _this$booking7.booking_end) * 1000;
-      if ((_this$booking8 = this.booking) !== null && _this$booking8 !== void 0 && _this$booking8.all_day) return start <= ts;
+      var start = ((_this$booking7 = this.booking) === null || _this$booking7 === void 0 ? void 0 : _this$booking7.booking_start) * 1000;
+      var end = ((_this$booking8 = this.booking) === null || _this$booking8 === void 0 ? void 0 : _this$booking8.booking_end) * 1000;
+      if ((_this$booking9 = this.booking) !== null && _this$booking9 !== void 0 && _this$booking9.all_day) return start <= ts;
       return start <= ts && ts <= end;
     }
   }, {
@@ -9043,20 +9072,20 @@ var BookingDetailsModalComponent = /*#__PURE__*/function () {
   }, {
     key: "booking_status",
     get: function get() {
-      var _this$booking9, _this$booking10, _this$booking11, _this$booking12;
-      if ((_this$booking9 = this.booking) !== null && _this$booking9 !== void 0 && _this$booking9.is_done) return 'neutral';
-      if (((_this$booking10 = this.booking) === null || _this$booking10 === void 0 ? void 0 : _this$booking10.status) === 'approved') return 'success';
-      if (((_this$booking11 = this.booking) === null || _this$booking11 === void 0 ? void 0 : _this$booking11.status) === 'declined') return 'error';
-      if (((_this$booking12 = this.booking) === null || _this$booking12 === void 0 ? void 0 : _this$booking12.status) === 'tentative') return 'warning';
+      var _this$booking10, _this$booking11, _this$booking12, _this$booking13;
+      if ((_this$booking10 = this.booking) !== null && _this$booking10 !== void 0 && _this$booking10.is_done) return 'neutral';
+      if (((_this$booking11 = this.booking) === null || _this$booking11 === void 0 ? void 0 : _this$booking11.status) === 'approved') return 'success';
+      if (((_this$booking12 = this.booking) === null || _this$booking12 === void 0 ? void 0 : _this$booking12.status) === 'declined') return 'error';
+      if (((_this$booking13 = this.booking) === null || _this$booking13 === void 0 ? void 0 : _this$booking13.status) === 'tentative') return 'warning';
       return 'warning';
     }
   }, {
     key: "period",
     get: function get() {
-      var _this$booking13, _this$booking14, _this$booking15;
-      if ((_this$booking13 = this.booking) !== null && _this$booking13 !== void 0 && _this$booking13.is_all_day) return 'All Day';
-      var start = ((_this$booking14 = this.booking) === null || _this$booking14 === void 0 ? void 0 : _this$booking14.date) || Date.now();
-      var duration = ((_this$booking15 = this.booking) === null || _this$booking15 === void 0 ? void 0 : _this$booking15.duration) || 60;
+      var _this$booking14, _this$booking15, _this$booking16;
+      if ((_this$booking14 = this.booking) !== null && _this$booking14 !== void 0 && _this$booking14.is_all_day) return 'All Day';
+      var start = ((_this$booking15 = this.booking) === null || _this$booking15 === void 0 ? void 0 : _this$booking15.date) || Date.now();
+      var duration = ((_this$booking16 = this.booking) === null || _this$booking16 === void 0 ? void 0 : _this$booking16.duration) || 60;
       var end = (0, date_fns_1.addMinutes)(start, duration);
       var dur = (0, date_fns_1.formatDuration)({
         hours: Math.floor(duration / 60),
@@ -9125,6 +9154,15 @@ var BookingDetailsModalComponent = /*#__PURE__*/function () {
         return _this3.hide_map = false;
       });
     }
+  }, {
+    key: "setDeskHeight",
+    value: function setDeskHeight() {
+      this._dialog.open(desk_settings_modal_component_1.DeskSettingsModalComponent, {
+        data: {
+          id: this.booking.asset_ids[0] || this.booking.asset_id
+        }
+      });
+    }
   }]);
 }();
 _BookingDetailsModalComponent = BookingDetailsModalComponent;
@@ -9139,8 +9177,8 @@ _BookingDetailsModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
     remove: "remove",
     end: "end"
   },
-  decls: 47,
-  vars: 22,
+  decls: 48,
+  vars: 23,
   consts: function consts() {
     var i18n_0;
     if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
@@ -9183,77 +9221,87 @@ _BookingDetailsModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       /**
        * @suppress {msgDescriptions}
        */
-      var MSG_EXTERNAL_1139994899162365077$$LIBS_BOOKINGS_SRC_LIB_BOOKING_DETAILS_MODAL_COMPONENT_TS_3 = goog.getMsg("Delete booking");
-      i18n_3 = MSG_EXTERNAL_1139994899162365077$$LIBS_BOOKINGS_SRC_LIB_BOOKING_DETAILS_MODAL_COMPONENT_TS_3;
+      var MSG_EXTERNAL_7190557592686051728$$LIBS_BOOKINGS_SRC_LIB_BOOKING_DETAILS_MODAL_COMPONENT_TS_3 = goog.getMsg("Set Desk Height");
+      i18n_3 = MSG_EXTERNAL_7190557592686051728$$LIBS_BOOKINGS_SRC_LIB_BOOKING_DETAILS_MODAL_COMPONENT_TS_3;
     } else {
-      i18n_3 = $localize(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral([":\u241F55883ef2b67c24d30f999a5ade421493fdc9e14a\u241F1139994899162365077:Delete booking"])));
+      i18n_3 = $localize(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral([":\u241F35729dbbde462f39a391c9abc24a3f79eebfba7a\u241F7190557592686051728:Set Desk Height"])));
     }
     var i18n_4;
     if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
       /**
        * @suppress {msgDescriptions}
        */
-      var MSG_EXTERNAL_834898868131691573$$LIBS_BOOKINGS_SRC_LIB_BOOKING_DETAILS_MODAL_COMPONENT_TS_4 = goog.getMsg("End booking");
-      i18n_4 = MSG_EXTERNAL_834898868131691573$$LIBS_BOOKINGS_SRC_LIB_BOOKING_DETAILS_MODAL_COMPONENT_TS_4;
+      var MSG_EXTERNAL_1139994899162365077$$LIBS_BOOKINGS_SRC_LIB_BOOKING_DETAILS_MODAL_COMPONENT_TS_4 = goog.getMsg("Delete booking");
+      i18n_4 = MSG_EXTERNAL_1139994899162365077$$LIBS_BOOKINGS_SRC_LIB_BOOKING_DETAILS_MODAL_COMPONENT_TS_4;
     } else {
-      i18n_4 = $localize(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral([":\u241F2f3dfd27ad1999e91bb66ad271f967d6e543956f\u241F834898868131691573:End booking"])));
+      i18n_4 = $localize(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral([":\u241F55883ef2b67c24d30f999a5ade421493fdc9e14a\u241F1139994899162365077:Delete booking"])));
     }
-    return [["menu", "matMenu"], ["loading_state", ""], i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, [1, "w-[100vw]", "h-[100vh]", "sm:relative", "sm:inset-auto", "sm:w-[51rem]", "sm:h-auto", "sm:max-h-[80vh]", "bg-base-100", "sm:bg-base-200", "sm:dark:bg-neutral-600", "sm:rounded", "overflow-auto", "space-y-2", "pb-2"], [1, "sm:flex", "flex-col", "items-center", "pb-4", "max-h-screen", "sm:max-h-[80vh]", "sm:px-16", "sm:border-b", "bg-base-100", "border-base-200"], ["class", "h-8 w-full sm:hidden block", 4, "ngIf"], ["class", "bg-neutral w-full h-64 sm:rounded-b overflow-hidden", 4, "ngIf"], ["title", "", 1, "px-3", "mt-2", "text-xl", "font-medium", "w-full"], [1, "sm:flex", "items-center", "justify-between", "w-full"], [1, "flex", "m-2"], [3, "status"], ["actions", "", "class", "flex items-center space-x-2 px-2", 4, "ngIf"], [1, "sm:flex", "flex-wrap", "sm:px-12"], [1, "sm:p-4", "sm:bg-base-100", "sm:dark:bg-neutral-700", "rounded", "sm:m-2", "sm:border", "border-base-200", "flex-grow-[4]", "min-w-1/3", "sm:w-[16rem]"], [1, "px-3", "mt-2", "text-lg", "font-medium", "mb-2"], [1, "flex", "items-center", "px-2", "space-x-2"], [4, "ngIf"], ["map", "", 1, "mt-4", "sm:my-2", "h-64", "sm:h-48", "relative", "border", "border-base-200", "overflow-hidden", "rounded", "sm:bg-base-100", "m-2", "flex-grow-[3]", "min-w-1/3", "w-[calc(100%-1rem)]", "p-2", "sm:w-[16rem]", 3, "click"], ["icon", "", "matRipple", "", "mat-dialog-close", "", 1, "absolute", "top-0", "left-2", "bg-neutral", "text-white"], ["xPosition", "before"], ["mat-menu-item", "", "mat-dialog-close", "", 3, "click", 4, "ngIf"], ["mat-menu-item", "", 3, "click", 4, "ngIf"], [1, "h-8", "w-full", "sm:hidden", "block"], [1, "bg-neutral", "w-full", "h-64", "sm:rounded-b", "overflow-hidden"], [1, "w-full", "h-64", 3, "images"], ["actions", "", 1, "flex", "items-center", "space-x-2", "px-2"], ["btn", "", "matRipple", "", "class", "flex-1 h-10 border-none", 3, "bg-success", "disabled", "click", 4, "ngIf"], ["icon", "", "matRipple", "", 1, "bg-secondary", "rounded", "text-white", "h-10", "w-10", 3, "matMenuTriggerFor"], ["btn", "", "matRipple", "", 1, "flex-1", "h-10", "border-none", 3, "click", "disabled"], ["class", "flex items-center space-x-2 justify-center", 4, "ngIf", "ngIfElse"], [1, "flex", "items-center", "space-x-2", "justify-center"], [1, "mr-4"], [1, "mx-auto", 3, "diameter"], [1, "mt-4", "sm:p-4", "sm:bg-base-100", "sm:dark:bg-neutral-700", "rounded", "sm:m-2", "sm:border", "border-base-200", "flex-grow-[3]", "min-w-1/3", "sm:w-[16rem]"], [1, "mx-3", "pt-2", "text-lg", "font-medium"], [1, "flex", "flex-col", "space-y-2"], ["request", "", "class", "border border-base-300 bg-base-100 rounded-xl overflow-hidden", 4, "ngFor", "ngForOf"], ["request", "", 1, "border", "border-base-300", "bg-base-100", "rounded-xl", "overflow-hidden"], ["matRipple", "", 1, "flex", "items-center", "space-x-2", "p-3", "w-full", 3, "click"], [1, "flex-1", "text-left"], [1, "text-sm"], [1, "flex", "items-center", "justify-center", "rounded-full", "w-8", "h-8", 3, "matTooltip"], [1, "flex", "items-center", "justify-center", "rounded-full", "w-8", "h-8"], [1, "text-2xl"], [1, "flex", "flex-col", "bg-base-200", "divide-y", "divide-base-100"], ["class", "flex items-center px-3 py-1 space-x-2 hover:opacity-90", 4, "ngFor", "ngForOf"], [1, "flex", "items-center", "px-3", "py-1", "space-x-2", "hover:opacity-90"], [1, "flex", "items-center", "flex-1"], [1, "rounded", "bg-success", "text-success-content", "text-xs", "px-2", "py-1"], [1, "pointer-events-none", 3, "src", "features", "options"], ["mat-menu-item", "", "mat-dialog-close", "", 3, "click"], [1, "flex", "items-center", "space-x-2", "text-base"], ["mat-menu-item", "", 3, "click"], [1, "text-error"]];
+    var i18n_5;
+    if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+      /**
+       * @suppress {msgDescriptions}
+       */
+      var MSG_EXTERNAL_834898868131691573$$LIBS_BOOKINGS_SRC_LIB_BOOKING_DETAILS_MODAL_COMPONENT_TS_5 = goog.getMsg("End booking");
+      i18n_5 = MSG_EXTERNAL_834898868131691573$$LIBS_BOOKINGS_SRC_LIB_BOOKING_DETAILS_MODAL_COMPONENT_TS_5;
+    } else {
+      i18n_5 = $localize(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral([":\u241F2f3dfd27ad1999e91bb66ad271f967d6e543956f\u241F834898868131691573:End booking"])));
+    }
+    return [["menu", "matMenu"], ["loading_state", ""], i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_5, [1, "w-[100vw]", "h-[100vh]", "sm:relative", "sm:inset-auto", "sm:w-[51rem]", "sm:h-auto", "sm:max-h-[80vh]", "bg-base-100", "sm:bg-base-200", "sm:dark:bg-neutral-600", "sm:rounded", "overflow-auto", "space-y-2", "pb-2"], [1, "sm:flex", "flex-col", "items-center", "pb-4", "max-h-screen", "sm:max-h-[80vh]", "sm:px-16", "sm:border-b", "bg-base-100", "border-base-200"], ["class", "h-8 w-full sm:hidden block", 4, "ngIf"], ["class", "bg-neutral w-full h-64 sm:rounded-b overflow-hidden", 4, "ngIf"], ["title", "", 1, "px-3", "mt-2", "text-xl", "font-medium", "w-full"], [1, "sm:flex", "items-center", "justify-between", "w-full"], [1, "flex", "m-2"], [3, "status"], ["actions", "", "class", "flex items-center space-x-2 px-2", 4, "ngIf"], [1, "sm:flex", "flex-wrap", "sm:px-12"], [1, "sm:p-4", "sm:bg-base-100", "sm:dark:bg-neutral-700", "rounded", "sm:m-2", "sm:border", "border-base-200", "flex-grow-[4]", "min-w-1/3", "sm:w-[16rem]"], [1, "px-3", "mt-2", "text-lg", "font-medium", "mb-2"], [1, "flex", "items-center", "px-2", "space-x-2"], [4, "ngIf"], ["map", "", 1, "mt-4", "sm:my-2", "h-64", "sm:h-48", "relative", "border", "border-base-200", "overflow-hidden", "rounded", "sm:bg-base-100", "m-2", "flex-grow-[3]", "min-w-1/3", "w-[calc(100%-1rem)]", "p-2", "sm:w-[16rem]", 3, "click"], ["icon", "", "matRipple", "", "mat-dialog-close", "", 1, "absolute", "top-0", "left-2", "bg-neutral", "text-white"], ["xPosition", "before"], ["mat-menu-item", "", "mat-dialog-close", "", 3, "click", 4, "ngIf"], ["mat-menu-item", "", 3, "click", 4, "ngIf"], [1, "h-8", "w-full", "sm:hidden", "block"], [1, "bg-neutral", "w-full", "h-64", "sm:rounded-b", "overflow-hidden"], [1, "w-full", "h-64", 3, "images"], ["actions", "", 1, "flex", "items-center", "space-x-2", "px-2"], ["btn", "", "matRipple", "", "class", "flex-1 h-10 border-none", 3, "bg-success", "disabled", "click", 4, "ngIf"], ["icon", "", "matRipple", "", 1, "bg-secondary", "rounded", "text-white", "h-10", "w-10", 3, "matMenuTriggerFor"], ["btn", "", "matRipple", "", 1, "flex-1", "h-10", "border-none", 3, "click", "disabled"], ["class", "flex items-center space-x-2 justify-center", 4, "ngIf", "ngIfElse"], [1, "flex", "items-center", "space-x-2", "justify-center"], [1, "mr-4"], [1, "mx-auto", 3, "diameter"], [1, "mt-4", "sm:p-4", "sm:bg-base-100", "sm:dark:bg-neutral-700", "rounded", "sm:m-2", "sm:border", "border-base-200", "flex-grow-[3]", "min-w-1/3", "sm:w-[16rem]"], [1, "mx-3", "pt-2", "text-lg", "font-medium"], [1, "flex", "flex-col", "space-y-2"], ["request", "", "class", "border border-base-300 bg-base-100 rounded-xl overflow-hidden", 4, "ngFor", "ngForOf"], ["request", "", 1, "border", "border-base-300", "bg-base-100", "rounded-xl", "overflow-hidden"], ["matRipple", "", 1, "flex", "items-center", "space-x-2", "p-3", "w-full", 3, "click"], [1, "flex-1", "text-left"], [1, "text-sm"], [1, "flex", "items-center", "justify-center", "rounded-full", "w-8", "h-8", 3, "matTooltip"], [1, "flex", "items-center", "justify-center", "rounded-full", "w-8", "h-8"], [1, "text-2xl"], [1, "flex", "flex-col", "bg-base-200", "divide-y", "divide-base-100"], ["class", "flex items-center px-3 py-1 space-x-2 hover:opacity-90", 4, "ngFor", "ngForOf"], [1, "flex", "items-center", "px-3", "py-1", "space-x-2", "hover:opacity-90"], [1, "flex", "items-center", "flex-1"], [1, "rounded", "bg-success", "text-success-content", "text-xs", "px-2", "py-1"], [1, "pointer-events-none", 3, "src", "features", "options"], ["mat-menu-item", "", "mat-dialog-close", "", 3, "click"], [1, "flex", "items-center", "space-x-2", "text-base"], ["mat-menu-item", "", 3, "click"], ["className", "material-symbols-rounded"], [1, "text-error"]];
   },
   template: function BookingDetailsModalComponent_Template(rf, ctx) {
     if (rf & 1) {
       var _r1 = i0.ɵɵgetCurrentView();
-      i0.ɵɵelementStart(0, "div", 7)(1, "div", 8);
-      i0.ɵɵtemplate(2, BookingDetailsModalComponent_div_2_Template, 1, 0, "div", 9)(3, BookingDetailsModalComponent_div_3_Template, 2, 1, "div", 10);
-      i0.ɵɵelementStart(4, "h3", 11);
+      i0.ɵɵelementStart(0, "div", 8)(1, "div", 9);
+      i0.ɵɵtemplate(2, BookingDetailsModalComponent_div_2_Template, 1, 0, "div", 10)(3, BookingDetailsModalComponent_div_3_Template, 2, 1, "div", 11);
+      i0.ɵɵelementStart(4, "h3", 12);
       i0.ɵɵtext(5);
       i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(6, "div", 12)(7, "div", 13)(8, "status-pill", 14);
+      i0.ɵɵelementStart(6, "div", 13)(7, "div", 14)(8, "status-pill", 15);
       i0.ɵɵtext(9);
       i0.ɵɵelementEnd()();
-      i0.ɵɵtemplate(10, BookingDetailsModalComponent_div_10_Template, 5, 2, "div", 15);
+      i0.ɵɵtemplate(10, BookingDetailsModalComponent_div_10_Template, 5, 2, "div", 16);
       i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(11, "div", 16)(12, "div", 17)(13, "h3", 18);
+      i0.ɵɵelementStart(11, "div", 17)(12, "div", 18)(13, "h3", 19);
       i0.ɵɵi18n(14, 2);
       i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(15, "div", 19)(16, "app-icon");
+      i0.ɵɵelementStart(15, "div", 20)(16, "app-icon");
       i0.ɵɵtext(17, "event");
       i0.ɵɵelementEnd();
       i0.ɵɵelementStart(18, "div");
       i0.ɵɵtext(19);
       i0.ɵɵpipe(20, "date");
       i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(21, "div", 19)(22, "app-icon");
+      i0.ɵɵelementStart(21, "div", 20)(22, "app-icon");
       i0.ɵɵtext(23, "schedule");
       i0.ɵɵelementEnd();
       i0.ɵɵelementStart(24, "div");
       i0.ɵɵtext(25);
       i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(26, "div", 19)(27, "app-icon");
+      i0.ɵɵelementStart(26, "div", 20)(27, "app-icon");
       i0.ɵɵtext(28, "map");
       i0.ɵɵelementEnd();
       i0.ɵɵelementStart(29, "div");
       i0.ɵɵtext(30);
       i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(31, "div", 19)(32, "app-icon");
+      i0.ɵɵelementStart(31, "div", 20)(32, "app-icon");
       i0.ɵɵtext(33, "place");
       i0.ɵɵelementEnd();
       i0.ɵɵelementStart(34, "div");
       i0.ɵɵtext(35);
       i0.ɵɵelementEnd()()();
-      i0.ɵɵtemplate(36, BookingDetailsModalComponent_ng_container_36_Template, 6, 2, "ng-container", 20);
-      i0.ɵɵelementStart(37, "button", 21);
+      i0.ɵɵtemplate(36, BookingDetailsModalComponent_ng_container_36_Template, 6, 2, "ng-container", 21);
+      i0.ɵɵelementStart(37, "button", 22);
       i0.ɵɵlistener("click", function BookingDetailsModalComponent_Template_button_click_37_listener() {
         i0.ɵɵrestoreView(_r1);
         return i0.ɵɵresetView(ctx.viewLocation());
       });
-      i0.ɵɵtemplate(38, BookingDetailsModalComponent_ng_container_38_Template, 2, 4, "ng-container", 20);
+      i0.ɵɵtemplate(38, BookingDetailsModalComponent_ng_container_38_Template, 2, 4, "ng-container", 21);
       i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(39, "button", 22)(40, "app-icon");
+      i0.ɵɵelementStart(39, "button", 23)(40, "app-icon");
       i0.ɵɵtext(41, "close");
       i0.ɵɵelementEnd()()();
-      i0.ɵɵelementStart(42, "mat-menu", 23, 0);
-      i0.ɵɵtemplate(44, BookingDetailsModalComponent_button_44_Template, 6, 0, "button", 24)(45, BookingDetailsModalComponent_button_45_Template, 6, 0, "button", 25)(46, BookingDetailsModalComponent_button_46_Template, 6, 0, "button", 25);
+      i0.ɵɵelementStart(42, "mat-menu", 24, 0);
+      i0.ɵɵtemplate(44, BookingDetailsModalComponent_button_44_Template, 6, 0, "button", 25)(45, BookingDetailsModalComponent_button_45_Template, 6, 0, "button", 26)(46, BookingDetailsModalComponent_button_46_Template, 6, 0, "button", 26)(47, BookingDetailsModalComponent_button_47_Template, 6, 0, "button", 26);
       i0.ɵɵelementEnd();
     }
     if (rf & 2) {
@@ -9272,7 +9320,7 @@ _BookingDetailsModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵadvance();
       i0.ɵɵproperty("ngIf", !ctx.booking.is_done);
       i0.ɵɵadvance(9);
-      i0.ɵɵtextInterpolate(i0.ɵɵpipeBind2(20, 19, ctx.booking.date, "EEEE, dd LLLL y"));
+      i0.ɵɵtextInterpolate(i0.ɵɵpipeBind2(20, 20, ctx.booking.date, "EEEE, dd LLLL y"));
       i0.ɵɵadvance(6);
       i0.ɵɵtextInterpolate(ctx.period);
       i0.ɵɵadvance(5);
@@ -9285,6 +9333,8 @@ _BookingDetailsModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵproperty("ngIf", !ctx.hide_map);
       i0.ɵɵadvance(6);
       i0.ɵɵproperty("ngIf", ctx.can_edit);
+      i0.ɵɵadvance();
+      i0.ɵɵproperty("ngIf", (ctx.is_checked_in || true) && ctx.desk_height_enabled);
       i0.ɵɵadvance();
       i0.ɵɵproperty("ngIf", !ctx.is_in_progress);
       i0.ɵɵadvance();
@@ -11307,10 +11357,11 @@ var locker_filters_component_1 = __webpack_require__(/*! ./locker-select-modal/l
 var locker_filters_display_component_1 = __webpack_require__(/*! ./locker-select-modal/locker-filters-display.component */ 42394);
 var locker_bank_list_component_1 = __webpack_require__(/*! ./locker-select-modal/locker-bank-list.component */ 90647);
 var locker_map_component_1 = __webpack_require__(/*! ./locker-select-modal/locker-map.component */ 38720);
+var desk_settings_modal_component_1 = __webpack_require__(/*! ./desk-settings-modal.component */ 77904);
 var group_event_details_modal_component_1 = __webpack_require__(/*! ./group-event-details-modal.component */ 30000);
 var group_event_card_component_1 = __webpack_require__(/*! ./group-event-card.component */ 93736);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
-var COMPONENTS = [desk_questions_modal_component_1.DeskQuestionsModalComponent, desk_confirm_modal_component_1.DeskConfirmModalComponent, invite_visitor_form_component_1.InviteVisitorFormComponent, booking_details_modal_component_1.BookingDetailsModalComponent, booking_card_component_1.BookingCardComponent, booking_link_modal_component_1.BookingLinkModalComponent, parking_select_modal_component_1.ParkingSpaceSelectModalComponent, parking_filters_component_1.ParkingSpaceFiltersComponent, parking_filters_display_component_1.ParkingSpaceFiltersDisplayComponent, parking_list_component_1.ParkingSpaceListComponent, parking_location_pin_component_1.ParkingSpaceLocationPinComponent, parking_map_component_1.ParkingSpaceSelectMapComponent, parking_details_component_1.ParkingSpaceDetailsComponent, parking_space_list_field_component_1.ParkingSpaceListFieldComponent, desk_select_modal_component_1.DeskSelectModalComponent, desk_details_component_1.DeskDetailsComponent, desk_filters_component_1.DeskFiltersComponent, desk_filters_display_component_1.DeskFiltersDisplayComponent, desk_list_component_1.DeskListComponent, desk_map_component_1.DeskMapComponent, desk_list_field_component_1.DeskListFieldComponent, locker_grid_component_1.LockerGridComponent, locker_list_field_component_1.LockerListFieldComponent, locker_select_modal_component_1.LockerSelectModalComponent, locker_filters_component_1.LockerFiltersComponent, locker_filters_display_component_1.LockerFiltersDisplayComponent, locker_bank_list_component_1.LockerBankListComponent, locker_map_component_1.LockerMapComponent, group_event_details_modal_component_1.GroupEventDetailsModalComponent, group_event_card_component_1.GroupEventCardComponent];
+var COMPONENTS = [desk_questions_modal_component_1.DeskQuestionsModalComponent, desk_confirm_modal_component_1.DeskConfirmModalComponent, invite_visitor_form_component_1.InviteVisitorFormComponent, booking_details_modal_component_1.BookingDetailsModalComponent, booking_card_component_1.BookingCardComponent, booking_link_modal_component_1.BookingLinkModalComponent, parking_select_modal_component_1.ParkingSpaceSelectModalComponent, parking_filters_component_1.ParkingSpaceFiltersComponent, parking_filters_display_component_1.ParkingSpaceFiltersDisplayComponent, parking_list_component_1.ParkingSpaceListComponent, parking_location_pin_component_1.ParkingSpaceLocationPinComponent, parking_map_component_1.ParkingSpaceSelectMapComponent, parking_details_component_1.ParkingSpaceDetailsComponent, parking_space_list_field_component_1.ParkingSpaceListFieldComponent, desk_select_modal_component_1.DeskSelectModalComponent, desk_details_component_1.DeskDetailsComponent, desk_filters_component_1.DeskFiltersComponent, desk_filters_display_component_1.DeskFiltersDisplayComponent, desk_list_component_1.DeskListComponent, desk_map_component_1.DeskMapComponent, desk_list_field_component_1.DeskListFieldComponent, desk_settings_modal_component_1.DeskSettingsModalComponent, locker_grid_component_1.LockerGridComponent, locker_list_field_component_1.LockerListFieldComponent, locker_select_modal_component_1.LockerSelectModalComponent, locker_filters_component_1.LockerFiltersComponent, locker_filters_display_component_1.LockerFiltersDisplayComponent, locker_bank_list_component_1.LockerBankListComponent, locker_map_component_1.LockerMapComponent, group_event_details_modal_component_1.GroupEventDetailsModalComponent, group_event_card_component_1.GroupEventCardComponent];
 var SharedBookingsModule = /*#__PURE__*/_createClass(function SharedBookingsModule() {
   _classCallCheck(this, SharedBookingsModule);
 });
@@ -11328,9 +11379,9 @@ _SharedBookingsModule.ɵinj = /*@__PURE__*/i0.ɵɵdefineInjector({
 exports.SharedBookingsModule = SharedBookingsModule;
 (function () {
   (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(SharedBookingsModule, {
-    declarations: [desk_questions_modal_component_1.DeskQuestionsModalComponent, desk_confirm_modal_component_1.DeskConfirmModalComponent, invite_visitor_form_component_1.InviteVisitorFormComponent, booking_details_modal_component_1.BookingDetailsModalComponent, booking_card_component_1.BookingCardComponent, booking_link_modal_component_1.BookingLinkModalComponent, parking_select_modal_component_1.ParkingSpaceSelectModalComponent, parking_filters_component_1.ParkingSpaceFiltersComponent, parking_filters_display_component_1.ParkingSpaceFiltersDisplayComponent, parking_list_component_1.ParkingSpaceListComponent, parking_location_pin_component_1.ParkingSpaceLocationPinComponent, parking_map_component_1.ParkingSpaceSelectMapComponent, parking_details_component_1.ParkingSpaceDetailsComponent, parking_space_list_field_component_1.ParkingSpaceListFieldComponent, desk_select_modal_component_1.DeskSelectModalComponent, desk_details_component_1.DeskDetailsComponent, desk_filters_component_1.DeskFiltersComponent, desk_filters_display_component_1.DeskFiltersDisplayComponent, desk_list_component_1.DeskListComponent, desk_map_component_1.DeskMapComponent, desk_list_field_component_1.DeskListFieldComponent, locker_grid_component_1.LockerGridComponent, locker_list_field_component_1.LockerListFieldComponent, locker_select_modal_component_1.LockerSelectModalComponent, locker_filters_component_1.LockerFiltersComponent, locker_filters_display_component_1.LockerFiltersDisplayComponent, locker_bank_list_component_1.LockerBankListComponent, locker_map_component_1.LockerMapComponent, group_event_details_modal_component_1.GroupEventDetailsModalComponent, group_event_card_component_1.GroupEventCardComponent],
+    declarations: [desk_questions_modal_component_1.DeskQuestionsModalComponent, desk_confirm_modal_component_1.DeskConfirmModalComponent, invite_visitor_form_component_1.InviteVisitorFormComponent, booking_details_modal_component_1.BookingDetailsModalComponent, booking_card_component_1.BookingCardComponent, booking_link_modal_component_1.BookingLinkModalComponent, parking_select_modal_component_1.ParkingSpaceSelectModalComponent, parking_filters_component_1.ParkingSpaceFiltersComponent, parking_filters_display_component_1.ParkingSpaceFiltersDisplayComponent, parking_list_component_1.ParkingSpaceListComponent, parking_location_pin_component_1.ParkingSpaceLocationPinComponent, parking_map_component_1.ParkingSpaceSelectMapComponent, parking_details_component_1.ParkingSpaceDetailsComponent, parking_space_list_field_component_1.ParkingSpaceListFieldComponent, desk_select_modal_component_1.DeskSelectModalComponent, desk_details_component_1.DeskDetailsComponent, desk_filters_component_1.DeskFiltersComponent, desk_filters_display_component_1.DeskFiltersDisplayComponent, desk_list_component_1.DeskListComponent, desk_map_component_1.DeskMapComponent, desk_list_field_component_1.DeskListFieldComponent, desk_settings_modal_component_1.DeskSettingsModalComponent, locker_grid_component_1.LockerGridComponent, locker_list_field_component_1.LockerListFieldComponent, locker_select_modal_component_1.LockerSelectModalComponent, locker_filters_component_1.LockerFiltersComponent, locker_filters_display_component_1.LockerFiltersDisplayComponent, locker_bank_list_component_1.LockerBankListComponent, locker_map_component_1.LockerMapComponent, group_event_details_modal_component_1.GroupEventDetailsModalComponent, group_event_card_component_1.GroupEventCardComponent],
     imports: [common_1.CommonModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, radio_1.MatRadioModule, input_1.MatInputModule, form_field_1.MatFormFieldModule, datepicker_1.MatDatepickerModule, button_1.MatButtonModule, dialog_1.MatDialogModule, progress_spinner_1.MatProgressSpinnerModule, checkbox_1.MatCheckboxModule, autocomplete_1.MatAutocompleteModule, form_fields_module_1.FormFieldsModule, components_module_1.ComponentsModule, core_1.MatRippleModule, tooltip_1.MatTooltipModule, spaces_module_1.SharedSpacesModule, events_module_1.SharedEventsModule, users_module_1.SharedUsersModule],
-    exports: [desk_questions_modal_component_1.DeskQuestionsModalComponent, desk_confirm_modal_component_1.DeskConfirmModalComponent, invite_visitor_form_component_1.InviteVisitorFormComponent, booking_details_modal_component_1.BookingDetailsModalComponent, booking_card_component_1.BookingCardComponent, booking_link_modal_component_1.BookingLinkModalComponent, parking_select_modal_component_1.ParkingSpaceSelectModalComponent, parking_filters_component_1.ParkingSpaceFiltersComponent, parking_filters_display_component_1.ParkingSpaceFiltersDisplayComponent, parking_list_component_1.ParkingSpaceListComponent, parking_location_pin_component_1.ParkingSpaceLocationPinComponent, parking_map_component_1.ParkingSpaceSelectMapComponent, parking_details_component_1.ParkingSpaceDetailsComponent, parking_space_list_field_component_1.ParkingSpaceListFieldComponent, desk_select_modal_component_1.DeskSelectModalComponent, desk_details_component_1.DeskDetailsComponent, desk_filters_component_1.DeskFiltersComponent, desk_filters_display_component_1.DeskFiltersDisplayComponent, desk_list_component_1.DeskListComponent, desk_map_component_1.DeskMapComponent, desk_list_field_component_1.DeskListFieldComponent, locker_grid_component_1.LockerGridComponent, locker_list_field_component_1.LockerListFieldComponent, locker_select_modal_component_1.LockerSelectModalComponent, locker_filters_component_1.LockerFiltersComponent, locker_filters_display_component_1.LockerFiltersDisplayComponent, locker_bank_list_component_1.LockerBankListComponent, locker_map_component_1.LockerMapComponent, group_event_details_modal_component_1.GroupEventDetailsModalComponent, group_event_card_component_1.GroupEventCardComponent]
+    exports: [desk_questions_modal_component_1.DeskQuestionsModalComponent, desk_confirm_modal_component_1.DeskConfirmModalComponent, invite_visitor_form_component_1.InviteVisitorFormComponent, booking_details_modal_component_1.BookingDetailsModalComponent, booking_card_component_1.BookingCardComponent, booking_link_modal_component_1.BookingLinkModalComponent, parking_select_modal_component_1.ParkingSpaceSelectModalComponent, parking_filters_component_1.ParkingSpaceFiltersComponent, parking_filters_display_component_1.ParkingSpaceFiltersDisplayComponent, parking_list_component_1.ParkingSpaceListComponent, parking_location_pin_component_1.ParkingSpaceLocationPinComponent, parking_map_component_1.ParkingSpaceSelectMapComponent, parking_details_component_1.ParkingSpaceDetailsComponent, parking_space_list_field_component_1.ParkingSpaceListFieldComponent, desk_select_modal_component_1.DeskSelectModalComponent, desk_details_component_1.DeskDetailsComponent, desk_filters_component_1.DeskFiltersComponent, desk_filters_display_component_1.DeskFiltersDisplayComponent, desk_list_component_1.DeskListComponent, desk_map_component_1.DeskMapComponent, desk_list_field_component_1.DeskListFieldComponent, desk_settings_modal_component_1.DeskSettingsModalComponent, locker_grid_component_1.LockerGridComponent, locker_list_field_component_1.LockerListFieldComponent, locker_select_modal_component_1.LockerSelectModalComponent, locker_filters_component_1.LockerFiltersComponent, locker_filters_display_component_1.LockerFiltersDisplayComponent, locker_bank_list_component_1.LockerBankListComponent, locker_map_component_1.LockerMapComponent, group_event_details_modal_component_1.GroupEventDetailsModalComponent, group_event_card_component_1.GroupEventCardComponent]
   });
 })();
 
@@ -14355,6 +14406,218 @@ _DeskSelectModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
   encapsulation: 2
 });
 exports.DeskSelectModalComponent = DeskSelectModalComponent;
+
+/***/ }),
+
+/***/ 77904:
+/*!****************************************************************!*\
+  !*** ./libs/bookings/src/lib/desk-settings-modal.component.ts ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+
+var _taggedTemplateLiteral = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js */ 9959)["default"]);
+var _regeneratorRuntime = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/regeneratorRuntime.js */ 8698)["default"]);
+var _asyncToGenerator = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/asyncToGenerator.js */ 95386)["default"]);
+var _classCallCheck = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/classCallCheck.js */ 80912)["default"]);
+var _createClass = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/createClass.js */ 92974)["default"]);
+var _DeskSettingsModalComponent, _templateObject, _templateObject2;
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.DeskSettingsModalComponent = void 0;
+var dialog_1 = __webpack_require__(/*! @angular/material/dialog */ 12587);
+var common_1 = __webpack_require__(/*! @placeos/common */ 22797);
+var organisation_1 = __webpack_require__(/*! @placeos/organisation */ 2510);
+var ts_client_1 = __webpack_require__(/*! @placeos/ts-client */ 35713);
+var i0 = __webpack_require__(/*! @angular/core */ 37580);
+var i1 = __webpack_require__(/*! @placeos/organisation */ 2510);
+var i2 = __webpack_require__(/*! @placeos/common */ 22797);
+var i3 = __webpack_require__(/*! @angular/material/dialog */ 12587);
+var i4 = __webpack_require__(/*! @angular/forms */ 34456);
+var i5 = __webpack_require__(/*! @angular/material/form-field */ 24950);
+var i6 = __webpack_require__(/*! @angular/material/core */ 74646);
+var i7 = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
+var i8 = __webpack_require__(/*! @angular/material/select */ 25175);
+var i9 = __webpack_require__(/*! @angular/material/slider */ 64992);
+var DeskSettingsModalComponent = /*#__PURE__*/function () {
+  function DeskSettingsModalComponent(_data, _org, _settings, _dialog_ref) {
+    _classCallCheck(this, DeskSettingsModalComponent);
+    this._data = _data;
+    this._org = _org;
+    this._settings = _settings;
+    this._dialog_ref = _dialog_ref;
+    this.desk_id = this._data.id;
+    this.height = 71;
+  }
+  return _createClass(DeskSettingsModalComponent, [{
+    key: "ngOnInit",
+    value: function ngOnInit() {
+      var sitting_height = this._settings.get('desk_sitting_height');
+      var standing_height = this._settings.get('desk_standing_height');
+      this.height = sitting_height || 71;
+      if (this.height === sitting_height) {
+        this.preset = 'sitting';
+      } else if (this.height === standing_height) {
+        this.preset = 'standing';
+      }
+    }
+  }, {
+    key: "setPreset",
+    value: function setPreset(value) {
+      console.log('Set preset:', value);
+      switch (value) {
+        case 'standing':
+          this.height = this._settings.get('desk_standing_height') || 102;
+          break;
+        case 'sitting':
+          this.height = this._settings.get('desk_sitting_height') || 71;
+          break;
+        default:
+          this.height = 70;
+          break;
+      }
+    }
+  }, {
+    key: "setDeskHeight",
+    value: function () {
+      var _setDeskHeight = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+        var sys_id, module;
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              sys_id = this._org.binding('desks');
+              if (sys_id) {
+                _context.next = 3;
+                break;
+              }
+              return _context.abrupt("return", this._dialog_ref.close());
+            case 3:
+              module = (0, ts_client_1.getModule)(sys_id, 'DeskControl');
+              _context.next = 6;
+              return module.execute('set_desk_height', [this.desk_id, this.height])["catch"](function (_) {
+                (0, common_1.notifyError)('Error setting desk height.' + _);
+                throw _;
+              });
+            case 6:
+              (0, common_1.notifySuccess)('Successfully set desk height');
+              this._dialog_ref.close();
+            case 8:
+            case "end":
+              return _context.stop();
+          }
+        }, _callee, this);
+      }));
+      function setDeskHeight() {
+        return _setDeskHeight.apply(this, arguments);
+      }
+      return setDeskHeight;
+    }()
+  }, {
+    key: "formatLabel",
+    value: function formatLabel(value) {
+      return "".concat(value.toFixed(1), "cm");
+    }
+  }]);
+}();
+_DeskSettingsModalComponent = DeskSettingsModalComponent;
+_DeskSettingsModalComponent.ɵfac = function DeskSettingsModalComponent_Factory(t) {
+  return new (t || _DeskSettingsModalComponent)(i0.ɵɵdirectiveInject(dialog_1.MAT_DIALOG_DATA), i0.ɵɵdirectiveInject(i1.OrganisationService), i0.ɵɵdirectiveInject(i2.SettingsService), i0.ɵɵdirectiveInject(i3.MatDialogRef));
+};
+_DeskSettingsModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
+  type: _DeskSettingsModalComponent,
+  selectors: [["desk-settings-modal"]],
+  decls: 28,
+  vars: 4,
+  consts: function consts() {
+    var i18n_0;
+    if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+      /**
+       * @suppress {msgDescriptions}
+       */
+      var MSG_EXTERNAL_7032027191807032897$$LIBS_BOOKINGS_SRC_LIB_DESK_SETTINGS_MODAL_COMPONENT_TS_0 = goog.getMsg("Desk Height");
+      i18n_0 = MSG_EXTERNAL_7032027191807032897$$LIBS_BOOKINGS_SRC_LIB_DESK_SETTINGS_MODAL_COMPONENT_TS_0;
+    } else {
+      i18n_0 = $localize(_templateObject || (_templateObject = _taggedTemplateLiteral([":\u241Fec37a2ac1276a5f69d65d5ba86b2e98c41b201a9\u241F7032027191807032897:Desk Height"])));
+    }
+    var i18n_1;
+    if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+      /**
+       * @suppress {msgDescriptions}
+       */
+      var MSG_EXTERNAL_8247461324425873330$$LIBS_BOOKINGS_SRC_LIB_DESK_SETTINGS_MODAL_COMPONENT_TS_1 = goog.getMsg(" Set your desk height for the best experience ");
+      i18n_1 = MSG_EXTERNAL_8247461324425873330$$LIBS_BOOKINGS_SRC_LIB_DESK_SETTINGS_MODAL_COMPONENT_TS_1;
+    } else {
+      i18n_1 = $localize(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral([":\u241Fde53fc27bc96d3e69d6c7d9b0a19619db7cc1076\u241F8247461324425873330: Set your desk height for the best experience "])));
+    }
+    return [i18n_0, i18n_1, [1, "relative", "p-4", "bg-base-100", "rounded", "shadow", "w-[20rem]"], [1, "text-lg"], [1, "text-xs", "opacity-60", "mb-4"], [1, "flex", "flex-col", "mt-2", "mb-4"], ["appearance", "outline"], ["placeholder", "No selected preset", 3, "ngModelChange", "ngModel"], ["value", ""], ["value", "standing"], ["value", "sitting"], [1, "flex", "items-center", "space-x-2"], ["min", "60", "max", "120", "step", "0.5", "discrete", "", 1, "flex-1", 3, "displayWith"], ["matSliderThumb", "", 3, "ngModelChange", "ngModel"], [1, "text-sm", "w-12", "text-right"], ["btn", "", "matRipple", "", 1, "w-full", 3, "click"], ["icon", "", "matRipple", "", "mat-dialog-close", "", 1, "absolute", "top-0", "right-0"]];
+  },
+  template: function DeskSettingsModalComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      i0.ɵɵelementStart(0, "div", 2)(1, "div", 3);
+      i0.ɵɵi18n(2, 0);
+      i0.ɵɵelementEnd();
+      i0.ɵɵelementStart(3, "div", 4);
+      i0.ɵɵi18n(4, 1);
+      i0.ɵɵelementEnd();
+      i0.ɵɵelementStart(5, "div", 5)(6, "label");
+      i0.ɵɵtext(7, "Presets");
+      i0.ɵɵelementEnd();
+      i0.ɵɵelementStart(8, "mat-form-field", 6)(9, "mat-select", 7);
+      i0.ɵɵtwoWayListener("ngModelChange", function DeskSettingsModalComponent_Template_mat_select_ngModelChange_9_listener($event) {
+        i0.ɵɵtwoWayBindingSet(ctx.preset, $event) || (ctx.preset = $event);
+        return $event;
+      });
+      i0.ɵɵlistener("ngModelChange", function DeskSettingsModalComponent_Template_mat_select_ngModelChange_9_listener($event) {
+        return ctx.setPreset($event);
+      });
+      i0.ɵɵelementStart(10, "mat-option", 8);
+      i0.ɵɵtext(11, "None");
+      i0.ɵɵelementEnd();
+      i0.ɵɵelementStart(12, "mat-option", 9);
+      i0.ɵɵtext(13, "Standing");
+      i0.ɵɵelementEnd();
+      i0.ɵɵelementStart(14, "mat-option", 10);
+      i0.ɵɵtext(15, "Seated");
+      i0.ɵɵelementEnd()()();
+      i0.ɵɵelementStart(16, "label");
+      i0.ɵɵtext(17, "Current Height");
+      i0.ɵɵelementEnd();
+      i0.ɵɵelementStart(18, "div", 11)(19, "mat-slider", 12)(20, "input", 13);
+      i0.ɵɵtwoWayListener("ngModelChange", function DeskSettingsModalComponent_Template_input_ngModelChange_20_listener($event) {
+        i0.ɵɵtwoWayBindingSet(ctx.height, $event) || (ctx.height = $event);
+        return $event;
+      });
+      i0.ɵɵelementEnd()();
+      i0.ɵɵelementStart(21, "div", 14);
+      i0.ɵɵtext(22);
+      i0.ɵɵelementEnd()()();
+      i0.ɵɵelementStart(23, "button", 15);
+      i0.ɵɵlistener("click", function DeskSettingsModalComponent_Template_button_click_23_listener() {
+        return ctx.setDeskHeight();
+      });
+      i0.ɵɵtext(24, " Apply Settings ");
+      i0.ɵɵelementEnd();
+      i0.ɵɵelementStart(25, "button", 16)(26, "app-icon");
+      i0.ɵɵtext(27, "close");
+      i0.ɵɵelementEnd()()();
+    }
+    if (rf & 2) {
+      i0.ɵɵadvance(9);
+      i0.ɵɵtwoWayProperty("ngModel", ctx.preset);
+      i0.ɵɵadvance(10);
+      i0.ɵɵproperty("displayWith", ctx.formatLabel);
+      i0.ɵɵadvance();
+      i0.ɵɵtwoWayProperty("ngModel", ctx.height);
+      i0.ɵɵadvance(2);
+      i0.ɵɵtextInterpolate1(" ", ctx.height.toFixed(1), "cm ");
+    }
+  },
+  dependencies: [i4.DefaultValueAccessor, i4.NgControlStatus, i4.NgModel, i5.MatFormField, i3.MatDialogClose, i6.MatOption, i7.IconComponent, i8.MatSelect, i6.MatRipple, i9.MatSlider, i9.MatSliderThumb],
+  encapsulation: 2
+});
+exports.DeskSettingsModalComponent = DeskSettingsModalComponent;
 
 /***/ }),
 
@@ -32688,15 +32951,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "a291334",
-  "hash": "a291334",
+  "raw": "108fc33",
+  "hash": "108fc33",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "a291334",
+  "suffix": "108fc33",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1719457065861
+  "time": 1719553923638
 };
 /* tslint:enable */
 
@@ -35222,6 +35485,7 @@ var maps_indoors_component_1 = __webpack_require__(/*! ./maps-indoors.component 
 var map_canvas_component_1 = __webpack_require__(/*! ./map-canvas.component */ 37558);
 var image_viewer_component_1 = __webpack_require__(/*! ./image-viewer.component */ 26821);
 var simple_table_component_1 = __webpack_require__(/*! ./simple-table.component */ 88328);
+var limit_input_directive_1 = __webpack_require__(/*! ./limit-input.directive */ 62897);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
 var i1 = __webpack_require__(/*! @ngx-translate/core */ 597);
 var i2 = __webpack_require__(/*! @angular/common */ 60316);
@@ -35231,9 +35495,10 @@ var i5 = __webpack_require__(/*! @angular/material/dialog */ 12587);
 var i6 = __webpack_require__(/*! @angular/material/progress-spinner */ 41134);
 var i7 = __webpack_require__(/*! @angular/forms */ 34456);
 var i8 = __webpack_require__(/*! @angular/cdk/scrolling */ 79975);
+var i9 = __webpack_require__(/*! @angular/material/slider */ 64992);
 var MAT_MODULES = [autocomplete_1.MatAutocompleteModule, menu_1.MatMenuModule, form_field_1.MatFormFieldModule, select_1.MatSelectModule, core_2.MatRippleModule, autocomplete_1.MatAutocompleteModule, select_1.MatSelectModule, dialog_1.MatDialogModule, datepicker_1.MatDatepickerModule, input_1.MatInputModule, clipboard_1.ClipboardModule, progress_spinner_1.MatProgressSpinnerModule, chips_1.MatChipsModule, paginator_1.MatPaginatorModule, table_1.CdkTableModule, portal_1.PortalModule, sort_1.MatSortModule, scrolling_1.ScrollingModule, tooltip_1.MatTooltipModule, checkbox_1.MatCheckboxModule, radio_1.MatRadioModule, slider_1.MatSliderModule, slide_toggle_1.MatSlideToggleModule, button_toggle_1.MatButtonToggleModule];
 var COMPONENTS = [action_icon_component_1.ActionIconComponent, icon_component_1.IconComponent, popout_menu_component_1.PopoutMenuComponent, user_avatar_component_1.UserAvatarComponent, confirm_modal_component_1.ConfirmModalComponent, interactive_map_component_1.InteractiveMapComponent, map_renderer_component_1.MapRendererComponent, maps_indoors_component_1.MapsIndoorsComponent, map_pin_component_1.MapPinComponent, map_radius_component_1.MapRadiusComponent, map_polygon_component_1.MapPolygonComponent, map_canvas_component_1.MapCanvasComponent, indoor_maps_component_1.IndoorMapsComponent, status_overlay_component_1.StatusOverlayComponent, custom_table_component_1.CustomTableComponent, custom_tooltip_component_1.CustomTooltipComponent, virtual_keyboard_component_1.VirtualKeyboardComponent, global_loading_component_1.GlobalLoadingComponent, global_banner_component_1.GlobalBannerComponent, map_locate_modal_component_1.MapLocateModalComponent, image_carousel_component_1.ImageCarouselComponent, redirect_component_1.RedirectComponent, debug_console_component_1.DebugConsoleComponent, json_display_component_1.JsonDisplayComponent, changelog_modal_component_1.ChangelogModalComponent, status_pill_component_1.StatusPillComponent, image_viewer_component_1.ImageViewerComponent, simple_table_component_1.SimpleTableComponent, fixed_pipe_1.FixedPipe, safe_pipe_1.SafePipe, sanitise_pipe_1.SanitizePipe, duration_pipe_1.DurationPipe, level_pipe_1.LevelPipe, building_pipe_1.BuildingPipe, date_from_pipe_1.DateFromPipe, media_duration_pipe_1.MediaDurationPipe, thumbnail_pipe_1.ThumbnailPipe, user_controls_component_1.UserControlsComponent, building_select_component_1.BuildingSelectComponent, region_select_component_1.RegionSelectComponent, help_tooltip_component_1.HelpTooltipComponent, accessibility_tooltip_component_1.AccessibilityTooltipComponent, language_tooltip_component_1.LanguageSelectComponent, upload_permissions_modal_component_1.UploadPermissionsModalComponent, printable_component_1.PrintableComponent, chat_component_1.ChatComponent, attached_resource_config_modal_component_1.AttachedResourceConfigModalComponent, available_rooms_state_modal_component_1.AvailableRoomsStateModalComponent];
-var DIRECTIVES = [binding_directive_1.BindingDirective, authenticated_image_directive_1.AuthenticatedImageDirective];
+var DIRECTIVES = [binding_directive_1.BindingDirective, authenticated_image_directive_1.AuthenticatedImageDirective, limit_input_directive_1.LimitInputDirective];
 var ComponentsModule = /*#__PURE__*/_createClass(function ComponentsModule() {
   _classCallCheck(this, ComponentsModule);
 });
@@ -35254,9 +35519,9 @@ _ComponentsModule.ɵinj = /*@__PURE__*/i0.ɵɵdefineInjector({
 exports.ComponentsModule = ComponentsModule;
 (function () {
   (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(ComponentsModule, {
-    declarations: [action_icon_component_1.ActionIconComponent, icon_component_1.IconComponent, popout_menu_component_1.PopoutMenuComponent, user_avatar_component_1.UserAvatarComponent, confirm_modal_component_1.ConfirmModalComponent, interactive_map_component_1.InteractiveMapComponent, map_renderer_component_1.MapRendererComponent, maps_indoors_component_1.MapsIndoorsComponent, map_pin_component_1.MapPinComponent, map_radius_component_1.MapRadiusComponent, map_polygon_component_1.MapPolygonComponent, map_canvas_component_1.MapCanvasComponent, indoor_maps_component_1.IndoorMapsComponent, status_overlay_component_1.StatusOverlayComponent, custom_table_component_1.CustomTableComponent, custom_tooltip_component_1.CustomTooltipComponent, virtual_keyboard_component_1.VirtualKeyboardComponent, global_loading_component_1.GlobalLoadingComponent, global_banner_component_1.GlobalBannerComponent, map_locate_modal_component_1.MapLocateModalComponent, image_carousel_component_1.ImageCarouselComponent, redirect_component_1.RedirectComponent, debug_console_component_1.DebugConsoleComponent, json_display_component_1.JsonDisplayComponent, changelog_modal_component_1.ChangelogModalComponent, status_pill_component_1.StatusPillComponent, image_viewer_component_1.ImageViewerComponent, simple_table_component_1.SimpleTableComponent, fixed_pipe_1.FixedPipe, safe_pipe_1.SafePipe, sanitise_pipe_1.SanitizePipe, duration_pipe_1.DurationPipe, level_pipe_1.LevelPipe, building_pipe_1.BuildingPipe, date_from_pipe_1.DateFromPipe, media_duration_pipe_1.MediaDurationPipe, thumbnail_pipe_1.ThumbnailPipe, user_controls_component_1.UserControlsComponent, building_select_component_1.BuildingSelectComponent, region_select_component_1.RegionSelectComponent, help_tooltip_component_1.HelpTooltipComponent, accessibility_tooltip_component_1.AccessibilityTooltipComponent, language_tooltip_component_1.LanguageSelectComponent, upload_permissions_modal_component_1.UploadPermissionsModalComponent, printable_component_1.PrintableComponent, chat_component_1.ChatComponent, attached_resource_config_modal_component_1.AttachedResourceConfigModalComponent, available_rooms_state_modal_component_1.AvailableRoomsStateModalComponent, binding_directive_1.BindingDirective, authenticated_image_directive_1.AuthenticatedImageDirective],
+    declarations: [action_icon_component_1.ActionIconComponent, icon_component_1.IconComponent, popout_menu_component_1.PopoutMenuComponent, user_avatar_component_1.UserAvatarComponent, confirm_modal_component_1.ConfirmModalComponent, interactive_map_component_1.InteractiveMapComponent, map_renderer_component_1.MapRendererComponent, maps_indoors_component_1.MapsIndoorsComponent, map_pin_component_1.MapPinComponent, map_radius_component_1.MapRadiusComponent, map_polygon_component_1.MapPolygonComponent, map_canvas_component_1.MapCanvasComponent, indoor_maps_component_1.IndoorMapsComponent, status_overlay_component_1.StatusOverlayComponent, custom_table_component_1.CustomTableComponent, custom_tooltip_component_1.CustomTooltipComponent, virtual_keyboard_component_1.VirtualKeyboardComponent, global_loading_component_1.GlobalLoadingComponent, global_banner_component_1.GlobalBannerComponent, map_locate_modal_component_1.MapLocateModalComponent, image_carousel_component_1.ImageCarouselComponent, redirect_component_1.RedirectComponent, debug_console_component_1.DebugConsoleComponent, json_display_component_1.JsonDisplayComponent, changelog_modal_component_1.ChangelogModalComponent, status_pill_component_1.StatusPillComponent, image_viewer_component_1.ImageViewerComponent, simple_table_component_1.SimpleTableComponent, fixed_pipe_1.FixedPipe, safe_pipe_1.SafePipe, sanitise_pipe_1.SanitizePipe, duration_pipe_1.DurationPipe, level_pipe_1.LevelPipe, building_pipe_1.BuildingPipe, date_from_pipe_1.DateFromPipe, media_duration_pipe_1.MediaDurationPipe, thumbnail_pipe_1.ThumbnailPipe, user_controls_component_1.UserControlsComponent, building_select_component_1.BuildingSelectComponent, region_select_component_1.RegionSelectComponent, help_tooltip_component_1.HelpTooltipComponent, accessibility_tooltip_component_1.AccessibilityTooltipComponent, language_tooltip_component_1.LanguageSelectComponent, upload_permissions_modal_component_1.UploadPermissionsModalComponent, printable_component_1.PrintableComponent, chat_component_1.ChatComponent, attached_resource_config_modal_component_1.AttachedResourceConfigModalComponent, available_rooms_state_modal_component_1.AvailableRoomsStateModalComponent, binding_directive_1.BindingDirective, authenticated_image_directive_1.AuthenticatedImageDirective, limit_input_directive_1.LimitInputDirective],
     imports: [common_1.CommonModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, i1.TranslateModule, autocomplete_1.MatAutocompleteModule, menu_1.MatMenuModule, form_field_1.MatFormFieldModule, select_1.MatSelectModule, core_2.MatRippleModule, autocomplete_1.MatAutocompleteModule, select_1.MatSelectModule, dialog_1.MatDialogModule, datepicker_1.MatDatepickerModule, input_1.MatInputModule, clipboard_1.ClipboardModule, progress_spinner_1.MatProgressSpinnerModule, chips_1.MatChipsModule, paginator_1.MatPaginatorModule, table_1.CdkTableModule, portal_1.PortalModule, sort_1.MatSortModule, scrolling_1.ScrollingModule, tooltip_1.MatTooltipModule, checkbox_1.MatCheckboxModule, radio_1.MatRadioModule, slider_1.MatSliderModule, slide_toggle_1.MatSlideToggleModule, button_toggle_1.MatButtonToggleModule],
-    exports: [action_icon_component_1.ActionIconComponent, icon_component_1.IconComponent, popout_menu_component_1.PopoutMenuComponent, user_avatar_component_1.UserAvatarComponent, confirm_modal_component_1.ConfirmModalComponent, interactive_map_component_1.InteractiveMapComponent, map_renderer_component_1.MapRendererComponent, maps_indoors_component_1.MapsIndoorsComponent, map_pin_component_1.MapPinComponent, map_radius_component_1.MapRadiusComponent, map_polygon_component_1.MapPolygonComponent, map_canvas_component_1.MapCanvasComponent, indoor_maps_component_1.IndoorMapsComponent, status_overlay_component_1.StatusOverlayComponent, custom_table_component_1.CustomTableComponent, custom_tooltip_component_1.CustomTooltipComponent, virtual_keyboard_component_1.VirtualKeyboardComponent, global_loading_component_1.GlobalLoadingComponent, global_banner_component_1.GlobalBannerComponent, map_locate_modal_component_1.MapLocateModalComponent, image_carousel_component_1.ImageCarouselComponent, redirect_component_1.RedirectComponent, debug_console_component_1.DebugConsoleComponent, json_display_component_1.JsonDisplayComponent, changelog_modal_component_1.ChangelogModalComponent, status_pill_component_1.StatusPillComponent, image_viewer_component_1.ImageViewerComponent, simple_table_component_1.SimpleTableComponent, fixed_pipe_1.FixedPipe, safe_pipe_1.SafePipe, sanitise_pipe_1.SanitizePipe, duration_pipe_1.DurationPipe, level_pipe_1.LevelPipe, building_pipe_1.BuildingPipe, date_from_pipe_1.DateFromPipe, media_duration_pipe_1.MediaDurationPipe, thumbnail_pipe_1.ThumbnailPipe, user_controls_component_1.UserControlsComponent, building_select_component_1.BuildingSelectComponent, region_select_component_1.RegionSelectComponent, help_tooltip_component_1.HelpTooltipComponent, accessibility_tooltip_component_1.AccessibilityTooltipComponent, language_tooltip_component_1.LanguageSelectComponent, upload_permissions_modal_component_1.UploadPermissionsModalComponent, printable_component_1.PrintableComponent, chat_component_1.ChatComponent, attached_resource_config_modal_component_1.AttachedResourceConfigModalComponent, available_rooms_state_modal_component_1.AvailableRoomsStateModalComponent, binding_directive_1.BindingDirective, authenticated_image_directive_1.AuthenticatedImageDirective, autocomplete_1.MatAutocompleteModule, menu_1.MatMenuModule, form_field_1.MatFormFieldModule, select_1.MatSelectModule, core_2.MatRippleModule, autocomplete_1.MatAutocompleteModule, select_1.MatSelectModule, dialog_1.MatDialogModule, datepicker_1.MatDatepickerModule, input_1.MatInputModule, clipboard_1.ClipboardModule, progress_spinner_1.MatProgressSpinnerModule, chips_1.MatChipsModule, paginator_1.MatPaginatorModule, table_1.CdkTableModule, portal_1.PortalModule, sort_1.MatSortModule, scrolling_1.ScrollingModule, tooltip_1.MatTooltipModule, checkbox_1.MatCheckboxModule, radio_1.MatRadioModule, slider_1.MatSliderModule, slide_toggle_1.MatSlideToggleModule, button_toggle_1.MatButtonToggleModule, core_3.TranslateModule]
+    exports: [action_icon_component_1.ActionIconComponent, icon_component_1.IconComponent, popout_menu_component_1.PopoutMenuComponent, user_avatar_component_1.UserAvatarComponent, confirm_modal_component_1.ConfirmModalComponent, interactive_map_component_1.InteractiveMapComponent, map_renderer_component_1.MapRendererComponent, maps_indoors_component_1.MapsIndoorsComponent, map_pin_component_1.MapPinComponent, map_radius_component_1.MapRadiusComponent, map_polygon_component_1.MapPolygonComponent, map_canvas_component_1.MapCanvasComponent, indoor_maps_component_1.IndoorMapsComponent, status_overlay_component_1.StatusOverlayComponent, custom_table_component_1.CustomTableComponent, custom_tooltip_component_1.CustomTooltipComponent, virtual_keyboard_component_1.VirtualKeyboardComponent, global_loading_component_1.GlobalLoadingComponent, global_banner_component_1.GlobalBannerComponent, map_locate_modal_component_1.MapLocateModalComponent, image_carousel_component_1.ImageCarouselComponent, redirect_component_1.RedirectComponent, debug_console_component_1.DebugConsoleComponent, json_display_component_1.JsonDisplayComponent, changelog_modal_component_1.ChangelogModalComponent, status_pill_component_1.StatusPillComponent, image_viewer_component_1.ImageViewerComponent, simple_table_component_1.SimpleTableComponent, fixed_pipe_1.FixedPipe, safe_pipe_1.SafePipe, sanitise_pipe_1.SanitizePipe, duration_pipe_1.DurationPipe, level_pipe_1.LevelPipe, building_pipe_1.BuildingPipe, date_from_pipe_1.DateFromPipe, media_duration_pipe_1.MediaDurationPipe, thumbnail_pipe_1.ThumbnailPipe, user_controls_component_1.UserControlsComponent, building_select_component_1.BuildingSelectComponent, region_select_component_1.RegionSelectComponent, help_tooltip_component_1.HelpTooltipComponent, accessibility_tooltip_component_1.AccessibilityTooltipComponent, language_tooltip_component_1.LanguageSelectComponent, upload_permissions_modal_component_1.UploadPermissionsModalComponent, printable_component_1.PrintableComponent, chat_component_1.ChatComponent, attached_resource_config_modal_component_1.AttachedResourceConfigModalComponent, available_rooms_state_modal_component_1.AvailableRoomsStateModalComponent, binding_directive_1.BindingDirective, authenticated_image_directive_1.AuthenticatedImageDirective, limit_input_directive_1.LimitInputDirective, autocomplete_1.MatAutocompleteModule, menu_1.MatMenuModule, form_field_1.MatFormFieldModule, select_1.MatSelectModule, core_2.MatRippleModule, autocomplete_1.MatAutocompleteModule, select_1.MatSelectModule, dialog_1.MatDialogModule, datepicker_1.MatDatepickerModule, input_1.MatInputModule, clipboard_1.ClipboardModule, progress_spinner_1.MatProgressSpinnerModule, chips_1.MatChipsModule, paginator_1.MatPaginatorModule, table_1.CdkTableModule, portal_1.PortalModule, sort_1.MatSortModule, scrolling_1.ScrollingModule, tooltip_1.MatTooltipModule, checkbox_1.MatCheckboxModule, radio_1.MatRadioModule, slider_1.MatSliderModule, slide_toggle_1.MatSlideToggleModule, button_toggle_1.MatButtonToggleModule, core_3.TranslateModule]
   });
 })();
 i0.ɵɵsetComponentScope(user_avatar_component_1.UserAvatarComponent, function () {
@@ -35281,7 +35546,7 @@ i0.ɵɵsetComponentScope(debug_console_component_1.DebugConsoleComponent, functi
   return [i2.AsyncPipe, i2.DatePipe, sanitise_pipe_1.SanitizePipe];
 });
 i0.ɵɵsetComponentScope(user_controls_component_1.UserControlsComponent, function () {
-  return [i2.NgIf, i3.MatRipple, i4.MatTooltip, icon_component_1.IconComponent, user_avatar_component_1.UserAvatarComponent, custom_tooltip_component_1.CustomTooltipComponent];
+  return [i2.NgIf, i7.DefaultValueAccessor, i7.NgControlStatus, i7.NgModel, i3.MatRipple, i4.MatTooltip, i9.MatSlider, i9.MatSliderThumb, icon_component_1.IconComponent, user_avatar_component_1.UserAvatarComponent, custom_tooltip_component_1.CustomTooltipComponent];
 }, function () {
   return [i2.AsyncPipe, i2.DatePipe, i1.TranslatePipe];
 });
@@ -38133,7 +38398,7 @@ var InteractiveMapComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
     key: "onLevelChange",
     value: function onLevelChange(zone) {
       (0, common_1.log)('Map', 'Level changed to:', (zone === null || zone === void 0 ? void 0 : zone.display_name) || (zone === null || zone === void 0 ? void 0 : zone.name) || zone);
-      this._explore.setLevel(zone);
+      this._explore.setLevel(zone.id);
     }
   }]);
 }(common_1.AsyncHandler);
@@ -38405,6 +38670,105 @@ _LevelPipe.ɵpipe = /*@__PURE__*/i0.ɵɵdefinePipe({
   pure: true
 });
 exports.LevelPipe = LevelPipe;
+
+/***/ }),
+
+/***/ 62897:
+/*!**********************************************************!*\
+  !*** ./libs/components/src/lib/limit-input.directive.ts ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+
+var _classCallCheck = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/classCallCheck.js */ 80912)["default"]);
+var _createClass = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/createClass.js */ 92974)["default"]);
+var _LimitInputDirective;
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.LimitInputDirective = void 0;
+var core_1 = __webpack_require__(/*! @angular/core */ 37580);
+var i0 = __webpack_require__(/*! @angular/core */ 37580);
+var ALLOWED_NUMBERS = '0123456789'.split('');
+var ALLOWED_DECIMALS = '0123456789.'.split('');
+var ALLOWED_LETTERS = 'abcdefghijklmnopqrstuvwxyz'.split('');
+var ALLOWED_ALPHANUMERIC = 'abcdefghijklmnopqrstuvwxyz0123456789'.split('');
+var LimitInputDirective = /*#__PURE__*/function () {
+  function LimitInputDirective(_el) {
+    _classCallCheck(this, LimitInputDirective);
+    this._el = _el;
+    this.restriction = 'decimals';
+    this.custom_list = [];
+  }
+  return _createClass(LimitInputDirective, [{
+    key: "onKeyDown",
+    value: function onKeyDown(event) {
+      var e = event;
+      var key = e.key;
+      if (['ArrowLeft', 'ArrowRight', 'Tab', 'Backspace', 'Home'].indexOf(key) !== -1 ||
+      // Allow: Ctrl+A
+      e.key === 'a' && (e.ctrlKey || e.metaKey) ||
+      // Allow: Ctrl+C
+      e.key === 'c' && (e.ctrlKey || e.metaKey) ||
+      // Allow: Ctrl+V
+      e.key === 'v' && (e.ctrlKey || e.metaKey) ||
+      // Allow: Ctrl+X
+      e.key === 'x' && (e.ctrlKey || e.metaKey)) {
+        // let it happen, don't do anything
+        return;
+      }
+      switch (this.restriction) {
+        case 'letters':
+          if (ALLOWED_LETTERS.indexOf(key) === -1) {
+            e.preventDefault();
+          }
+          break;
+        case 'alphanumeric':
+          if (ALLOWED_ALPHANUMERIC.indexOf(key) === -1) {
+            e.preventDefault();
+          }
+          break;
+        case 'custom':
+          if (this.custom_list.indexOf(key) === -1) {
+            e.preventDefault();
+          }
+          break;
+        case 'decimals':
+          if (ALLOWED_DECIMALS.indexOf(key) === -1) {
+            e.preventDefault();
+          }
+          break;
+        case 'number':
+        default:
+          if (ALLOWED_NUMBERS.indexOf(key) === -1) {
+            e.preventDefault();
+          }
+          break;
+      }
+    }
+  }]);
+}();
+_LimitInputDirective = LimitInputDirective;
+_LimitInputDirective.ɵfac = function LimitInputDirective_Factory(t) {
+  return new (t || _LimitInputDirective)(i0.ɵɵdirectiveInject(i0.ElementRef));
+};
+_LimitInputDirective.ɵdir = /*@__PURE__*/i0.ɵɵdefineDirective({
+  type: _LimitInputDirective,
+  selectors: [["", "limitInput", ""]],
+  hostBindings: function LimitInputDirective_HostBindings(rf, ctx) {
+    if (rf & 1) {
+      i0.ɵɵlistener("keydown", function LimitInputDirective_keydown_HostBindingHandler($event) {
+        return ctx.onKeyDown($event);
+      });
+    }
+  },
+  inputs: {
+    restriction: "restriction",
+    custom_list: "custom_list"
+  }
+});
+exports.LimitInputDirective = LimitInputDirective;
 
 /***/ }),
 
@@ -40298,6 +40662,7 @@ var MapsIndoorsComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
           index: key
         }, floors[key]);
       });
+      (0, common_1.log)('MapsIndoors', 'Floor List:', this._floor_list);
       if (!this._services) return;
       var bld = this._org.buildings.find(function (_) {
         return _.id === id || _.map_id === id;
@@ -40369,6 +40734,7 @@ var MapsIndoorsComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
       (0, common_1.log)('MapsIndoors', "Click occurred", event);
       var id = ((_event$properties = event.properties) === null || _event$properties === void 0 ? void 0 : _event$properties.externalId) || ((_event$properties2 = event.properties) === null || _event$properties2 === void 0 ? void 0 : _event$properties2.roomId) || event.id;
       var actions = ((_this$metadata = this.metadata) === null || _this$metadata === void 0 ? void 0 : _this$metadata.actions) || [];
+      (0, common_1.log)('MapsIndoors', "Registered Actions", actions);
       var ignore_actions = ['mousedown', 'touchstart', 'enter', 'leave'];
       var _iterator = _createForOfIteratorHelper(actions),
         _step;
@@ -42634,7 +43000,7 @@ var _regeneratorRuntime = (__webpack_require__(/*! ./node_modules/@babel/runtime
 var _asyncToGenerator = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/asyncToGenerator.js */ 95386)["default"]);
 var _classCallCheck = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/classCallCheck.js */ 80912)["default"]);
 var _createClass = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/createClass.js */ 92974)["default"]);
-var _UserControlsComponent, _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7;
+var _UserControlsComponent, _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
@@ -42651,138 +43017,222 @@ var help_tooltip_component_1 = __webpack_require__(/*! ./help-tooltip.component 
 var language_tooltip_component_1 = __webpack_require__(/*! ./language-tooltip.component */ 53835);
 var region_select_component_1 = __webpack_require__(/*! ./region-select.component */ 66962);
 var support_ticket_modal_component_1 = __webpack_require__(/*! libs/form-fields/src/lib/support-ticket-modal.component */ 38791);
+var operators_1 = __webpack_require__(/*! rxjs/operators */ 97303);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
 var i1 = __webpack_require__(/*! @placeos/common */ 22797);
 var i2 = __webpack_require__(/*! @placeos/organisation */ 2510);
 var i3 = __webpack_require__(/*! @angular/material/dialog */ 12587);
 function UserControlsComponent_div_7_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 29)(1, "button", 16)(2, "div", 17)(3, "div", 18)(4, "app-icon");
+    i0.ɵɵelementStart(0, "div", 34)(1, "button", 20)(2, "div", 21)(3, "div", 22)(4, "app-icon");
     i0.ɵɵtext(5, "layers");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(6, "div", 30);
+    i0.ɵɵelementStart(6, "div", 35);
     i0.ɵɵtext(7);
     i0.ɵɵpipe(8, "async");
     i0.ɵɵpipe(9, "async");
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(10, "app-icon", 20);
+    i0.ɵɵelementStart(10, "app-icon", 24);
     i0.ɵɵtext(11, " chevron_right ");
     i0.ɵɵelementEnd()()()();
   }
   if (rf & 2) {
-    var tmp_2_0;
-    var ctx_r0 = i0.ɵɵnextContext();
-    i0.ɵɵproperty("content", ctx_r0.region_select);
+    var tmp_3_0;
+    var ctx_r1 = i0.ɵɵnextContext();
+    i0.ɵɵproperty("content", ctx_r1.region_select);
     i0.ɵɵadvance(7);
-    i0.ɵɵtextInterpolate1(" ", ((tmp_2_0 = i0.ɵɵpipeBind1(8, 2, ctx_r0.region)) == null ? null : tmp_2_0.display_name) || ((tmp_2_0 = i0.ɵɵpipeBind1(9, 4, ctx_r0.region)) == null ? null : tmp_2_0.name), " ");
+    i0.ɵɵtextInterpolate1(" ", ((tmp_3_0 = i0.ɵɵpipeBind1(8, 2, ctx_r1.region)) == null ? null : tmp_3_0.display_name) || ((tmp_3_0 = i0.ɵɵpipeBind1(9, 4, ctx_r1.region)) == null ? null : tmp_3_0.name), " ");
   }
 }
 function UserControlsComponent_div_9_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 29)(1, "button", 16)(2, "div", 17)(3, "div", 18)(4, "app-icon");
+    i0.ɵɵelementStart(0, "div", 34)(1, "button", 20)(2, "div", 21)(3, "div", 22)(4, "app-icon");
     i0.ɵɵtext(5, "business");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(6, "div", 30);
+    i0.ɵɵelementStart(6, "div", 35);
     i0.ɵɵtext(7);
     i0.ɵɵpipe(8, "async");
     i0.ɵɵpipe(9, "async");
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(10, "app-icon", 20);
+    i0.ɵɵelementStart(10, "app-icon", 24);
     i0.ɵɵtext(11, " chevron_right ");
     i0.ɵɵelementEnd()()()();
   }
   if (rf & 2) {
-    var tmp_2_0;
-    var ctx_r0 = i0.ɵɵnextContext();
-    i0.ɵɵproperty("content", ctx_r0.building_select);
+    var tmp_3_0;
+    var ctx_r1 = i0.ɵɵnextContext();
+    i0.ɵɵproperty("content", ctx_r1.building_select);
     i0.ɵɵadvance(7);
-    i0.ɵɵtextInterpolate1(" ", ((tmp_2_0 = i0.ɵɵpipeBind1(8, 2, ctx_r0.building)) == null ? null : tmp_2_0.display_name) || ((tmp_2_0 = i0.ɵɵpipeBind1(9, 4, ctx_r0.building)) == null ? null : tmp_2_0.name), " ");
+    i0.ɵɵtextInterpolate1(" ", ((tmp_3_0 = i0.ɵɵpipeBind1(8, 2, ctx_r1.building)) == null ? null : tmp_3_0.display_name) || ((tmp_3_0 = i0.ɵɵpipeBind1(9, 4, ctx_r1.building)) == null ? null : tmp_3_0.name), " ");
   }
 }
 function UserControlsComponent_div_10_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 15)(1, "button", 16)(2, "div", 17)(3, "div", 18)(4, "app-icon");
+    i0.ɵɵelementStart(0, "div", 19)(1, "button", 20)(2, "div", 21)(3, "div", 22)(4, "app-icon");
     i0.ɵɵtext(5, "help");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(6, "div", 19);
-    i0.ɵɵi18n(7, 3);
+    i0.ɵɵelementStart(6, "div", 23);
+    i0.ɵɵi18n(7, 4);
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(8, "app-icon", 20);
+    i0.ɵɵelementStart(8, "app-icon", 24);
     i0.ɵɵtext(9, "chevron_right");
     i0.ɵɵelementEnd()()()();
   }
   if (rf & 2) {
-    var ctx_r0 = i0.ɵɵnextContext();
-    i0.ɵɵproperty("content", ctx_r0.help_tooltip);
+    var ctx_r1 = i0.ɵɵnextContext();
+    i0.ɵɵproperty("content", ctx_r1.help_tooltip);
   }
 }
 function UserControlsComponent_div_11_Template(rf, ctx) {
   if (rf & 1) {
-    var _r2 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "div")(1, "button", 31);
+    var _r3 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "div")(1, "button", 36);
     i0.ɵɵlistener("click", function UserControlsComponent_div_11_Template_button_click_1_listener() {
-      i0.ɵɵrestoreView(_r2);
-      var ctx_r0 = i0.ɵɵnextContext();
-      return i0.ɵɵresetView(ctx_r0.openWfhModal());
+      i0.ɵɵrestoreView(_r3);
+      var ctx_r1 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r1.openWfhModal());
     });
-    i0.ɵɵelementStart(2, "div", 17)(3, "div", 18)(4, "app-icon");
+    i0.ɵɵelementStart(2, "div", 21)(3, "div", 22)(4, "app-icon");
     i0.ɵɵtext(5, "share_location");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(6, "div", 19);
-    i0.ɵɵi18n(7, 4);
+    i0.ɵɵelementStart(6, "div", 23);
+    i0.ɵɵi18n(7, 5);
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(8, "app-icon", 20);
+    i0.ɵɵelementStart(8, "app-icon", 24);
     i0.ɵɵtext(9, "chevron_right");
     i0.ɵɵelementEnd()()()();
   }
 }
 function UserControlsComponent_div_22_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 32)(1, "button", 16)(2, "div", 17)(3, "div", 18)(4, "app-icon");
+    i0.ɵɵelementStart(0, "div", 19)(1, "button", 20)(2, "div", 21)(3, "div", 22)(4, "app-icon");
+    i0.ɵɵtext(5, "desk");
+    i0.ɵɵelementEnd()();
+    i0.ɵɵelementStart(6, "div", 23);
+    i0.ɵɵi18n(7, 6);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(8, "app-icon", 24);
+    i0.ɵɵtext(9, "chevron_right");
+    i0.ɵɵelementEnd()()()();
+  }
+  if (rf & 2) {
+    var ctx_r1 = i0.ɵɵnextContext();
+    var desk_height_tooltip_r4 = i0.ɵɵreference(24);
+    i0.ɵɵclassProp("!border-b", !(ctx_r1.locales == null ? null : ctx_r1.locales.length));
+    i0.ɵɵproperty("content", desk_height_tooltip_r4);
+  }
+}
+function UserControlsComponent_ng_template_23_Template(rf, ctx) {
+  if (rf & 1) {
+    var _r5 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "div", 37)(1, "div", 38);
+    i0.ɵɵi18n(2, 7);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(3, "div", 39);
+    i0.ɵɵi18n(4, 8);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(5, "div", 40)(6, "label");
+    i0.ɵɵtext(7, "Sitting Height");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(8, "div", 41)(9, "mat-slider", 42)(10, "input", 43);
+    i0.ɵɵtwoWayListener("ngModelChange", function UserControlsComponent_ng_template_23_Template_input_ngModelChange_10_listener($event) {
+      i0.ɵɵrestoreView(_r5);
+      var ctx_r1 = i0.ɵɵnextContext();
+      i0.ɵɵtwoWayBindingSet(ctx_r1.desk_sitting_height, $event) || (ctx_r1.desk_sitting_height = $event);
+      return i0.ɵɵresetView($event);
+    });
+    i0.ɵɵlistener("ngModelChange", function UserControlsComponent_ng_template_23_Template_input_ngModelChange_10_listener($event) {
+      i0.ɵɵrestoreView(_r5);
+      var ctx_r1 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r1.saveSetting("desk_sitting_height", $event));
+    });
+    i0.ɵɵelementEnd()();
+    i0.ɵɵelementStart(11, "div", 44);
+    i0.ɵɵtext(12);
+    i0.ɵɵelementEnd()();
+    i0.ɵɵelementStart(13, "label");
+    i0.ɵɵtext(14, "Standing Height");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(15, "div", 45)(16, "mat-slider", 46)(17, "input", 43);
+    i0.ɵɵtwoWayListener("ngModelChange", function UserControlsComponent_ng_template_23_Template_input_ngModelChange_17_listener($event) {
+      i0.ɵɵrestoreView(_r5);
+      var ctx_r1 = i0.ɵɵnextContext();
+      i0.ɵɵtwoWayBindingSet(ctx_r1.desk_standing_height, $event) || (ctx_r1.desk_standing_height = $event);
+      return i0.ɵɵresetView($event);
+    });
+    i0.ɵɵlistener("ngModelChange", function UserControlsComponent_ng_template_23_Template_input_ngModelChange_17_listener($event) {
+      i0.ɵɵrestoreView(_r5);
+      var ctx_r1 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r1.saveSetting("desk_standing_height", $event));
+    });
+    i0.ɵɵelementEnd()();
+    i0.ɵɵelementStart(18, "div", 47);
+    i0.ɵɵtext(19);
+    i0.ɵɵelementEnd()()()();
+  }
+  if (rf & 2) {
+    var ctx_r1 = i0.ɵɵnextContext();
+    i0.ɵɵadvance(9);
+    i0.ɵɵproperty("displayWith", ctx_r1.formatLabel);
+    i0.ɵɵadvance();
+    i0.ɵɵtwoWayProperty("ngModel", ctx_r1.desk_sitting_height);
+    i0.ɵɵadvance(2);
+    i0.ɵɵtextInterpolate1(" ", ctx_r1.desk_sitting_height.toFixed(1), "cm ");
+    i0.ɵɵadvance(4);
+    i0.ɵɵproperty("displayWith", ctx_r1.formatLabel);
+    i0.ɵɵadvance();
+    i0.ɵɵtwoWayProperty("ngModel", ctx_r1.desk_standing_height);
+    i0.ɵɵadvance(2);
+    i0.ɵɵtextInterpolate1(" ", ctx_r1.desk_standing_height.toFixed(1), "cm ");
+  }
+}
+function UserControlsComponent_div_25_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 48)(1, "button", 20)(2, "div", 21)(3, "div", 22)(4, "app-icon");
     i0.ɵɵtext(5, "mode_night");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(6, "div", 19);
-    i0.ɵɵi18n(7, 5);
+    i0.ɵɵelementStart(6, "div", 23);
+    i0.ɵɵi18n(7, 9);
     i0.ɵɵpipe(8, "translate");
     i0.ɵɵpipe(9, "translate");
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(10, "app-icon", 20);
+    i0.ɵɵelementStart(10, "app-icon", 24);
     i0.ɵɵtext(11, "chevron_right");
     i0.ɵɵelementEnd()()()();
   }
   if (rf & 2) {
-    var ctx_r0 = i0.ɵɵnextContext();
-    i0.ɵɵproperty("content", ctx_r0.language_tooltip);
+    var ctx_r1 = i0.ɵɵnextContext();
+    i0.ɵɵproperty("content", ctx_r1.language_tooltip);
     i0.ɵɵadvance(9);
     i0.ɵɵi18nExp(i0.ɵɵpipeBind1(8, 3, "COMMON.LANGUAGE_LABEL"))(i0.ɵɵpipeBind1(9, 5, "COMMON.LANGUAGE"));
     i0.ɵɵi18nApply(7);
   }
 }
-function UserControlsComponent_button_23_Template(rf, ctx) {
+function UserControlsComponent_button_26_Template(rf, ctx) {
   if (rf & 1) {
-    var _r3 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "button", 31);
-    i0.ɵɵlistener("click", function UserControlsComponent_button_23_Template_button_click_0_listener() {
-      i0.ɵɵrestoreView(_r3);
-      var ctx_r0 = i0.ɵɵnextContext();
-      return i0.ɵɵresetView(ctx_r0.newSupportTicket());
+    var _r6 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "button", 36);
+    i0.ɵɵlistener("click", function UserControlsComponent_button_26_Template_button_click_0_listener() {
+      i0.ɵɵrestoreView(_r6);
+      var ctx_r1 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r1.newSupportTicket());
     });
-    i0.ɵɵelementStart(1, "div", 17)(2, "div", 18)(3, "app-icon");
+    i0.ɵɵelementStart(1, "div", 21)(2, "div", 22)(3, "app-icon");
     i0.ɵɵtext(4, "support_agent");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(5, "div", 19);
-    i0.ɵɵi18n(6, 6);
+    i0.ɵɵelementStart(5, "div", 23);
+    i0.ɵɵi18n(6, 10);
     i0.ɵɵelementEnd()()();
   }
 }
-function UserControlsComponent_button_28_Template(rf, ctx) {
+function UserControlsComponent_button_31_Template(rf, ctx) {
   if (rf & 1) {
-    var _r4 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "button", 33);
-    i0.ɵɵlistener("click", function UserControlsComponent_button_28_Template_button_click_0_listener() {
-      i0.ɵɵrestoreView(_r4);
-      var ctx_r0 = i0.ɵɵnextContext();
-      return i0.ɵɵresetView(ctx_r0.reloadPage());
+    var _r7 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "button", 49);
+    i0.ɵɵlistener("click", function UserControlsComponent_button_31_Template_button_click_0_listener() {
+      i0.ɵɵrestoreView(_r7);
+      var ctx_r1 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r1.reloadPage());
     });
     i0.ɵɵtext(1, " New Version ");
     i0.ɵɵelementEnd();
@@ -42802,6 +43252,8 @@ var UserControlsComponent = /*#__PURE__*/function () {
     this.help_tooltip = help_tooltip_component_1.HelpTooltipComponent;
     this.accessibility_tooltip = accessibility_tooltip_component_1.AccessibilityTooltipComponent;
     this.language_tooltip = language_tooltip_component_1.LanguageSelectComponent;
+    this.desk_standing_height = 101;
+    this.desk_sitting_height = 71;
   }
   return _createClass(UserControlsComponent, [{
     key: "user",
@@ -42829,6 +43281,11 @@ var UserControlsComponent = /*#__PURE__*/function () {
       return this._settings.get('app.locales') || [];
     }
   }, {
+    key: "desk_height",
+    get: function get() {
+      return this._settings.get('app.desks.height_enabled');
+    }
+  }, {
     key: "use_region",
     get: function get() {
       return this._settings.get('app.use_region');
@@ -42843,6 +43300,31 @@ var UserControlsComponent = /*#__PURE__*/function () {
     get: function get() {
       return (0, common_1.hasNewVersion)();
     }
+  }, {
+    key: "ngOnInit",
+    value: function () {
+      var _ngOnInit = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return this._org.initialised.pipe((0, operators_1.first)(function (_) {
+                return _;
+              })).toPromise();
+            case 2:
+              this.desk_sitting_height = this._settings.get('desk_sitting_height') || 71;
+              this.desk_standing_height = this._settings.get('desk_standing_height') || 101;
+            case 4:
+            case "end":
+              return _context.stop();
+          }
+        }, _callee, this);
+      }));
+      function ngOnInit() {
+        return _ngOnInit.apply(this, arguments);
+      }
+      return ngOnInit;
+    }()
   }, {
     key: "logout",
     value: function logout() {
@@ -42870,18 +43352,18 @@ var UserControlsComponent = /*#__PURE__*/function () {
   }, {
     key: "viewChangelog",
     value: function () {
-      var _viewChangelog = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      var _viewChangelog = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
         var changelog;
-        return _regeneratorRuntime().wrap(function _callee$(_context) {
-          while (1) switch (_context.prev = _context.next) {
+        return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+          while (1) switch (_context2.prev = _context2.next) {
             case 0:
-              _context.next = 2;
+              _context2.next = 2;
               return fetch('https://raw.githubusercontent.com/PlaceOS/user-interfaces/develop/CHANGELOG.md');
             case 2:
-              _context.next = 4;
-              return _context.sent.text();
+              _context2.next = 4;
+              return _context2.sent.text();
             case 4:
-              changelog = _context.sent;
+              changelog = _context2.sent;
               this._dialog.open(components_1.ChangelogModalComponent, {
                 data: {
                   changelog: changelog
@@ -42889,15 +43371,26 @@ var UserControlsComponent = /*#__PURE__*/function () {
               });
             case 6:
             case "end":
-              return _context.stop();
+              return _context2.stop();
           }
-        }, _callee, this);
+        }, _callee2, this);
       }));
       function viewChangelog() {
         return _viewChangelog.apply(this, arguments);
       }
       return viewChangelog;
     }()
+  }, {
+    key: "saveSetting",
+    value: function saveSetting(name, value) {
+      console.log('Save setting', name, value);
+      this._settings.saveUserSetting(name, value);
+    }
+  }, {
+    key: "formatLabel",
+    value: function formatLabel(value) {
+      return "".concat(value.toFixed(1), "cm");
+    }
   }]);
 }();
 _UserControlsComponent = UserControlsComponent;
@@ -42907,8 +43400,8 @@ _UserControlsComponent.ɵfac = function UserControlsComponent_Factory(t) {
 _UserControlsComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
   type: _UserControlsComponent,
   selectors: [["user-controls"]],
-  decls: 38,
-  vars: 25,
+  decls: 41,
+  vars: 26,
   consts: function consts() {
     var i18n_0;
     if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
@@ -42965,7 +43458,37 @@ _UserControlsComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       /**
        * @suppress {msgDescriptions}
        */
-      var MSG_EXTERNAL_6210988327734808594$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_5 = goog.getMsg(" {$interpolation}: {$interpolation_1} ", {
+      var MSG_EXTERNAL_8687640110841202898$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_5 = goog.getMsg("Desk Settings");
+      i18n_5 = MSG_EXTERNAL_8687640110841202898$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_5;
+    } else {
+      i18n_5 = $localize(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral([":\u241F6f3ddfacb6cc158043b77530f74c15dc406019fe\u241F8687640110841202898:Desk Settings"])));
+    }
+    var i18n_6;
+    if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+      /**
+       * @suppress {msgDescriptions}
+       */
+      var MSG_EXTERNAL_7032027191807032897$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_6 = goog.getMsg("Desk Height");
+      i18n_6 = MSG_EXTERNAL_7032027191807032897$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_6;
+    } else {
+      i18n_6 = $localize(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral([":\u241Fec37a2ac1276a5f69d65d5ba86b2e98c41b201a9\u241F7032027191807032897:Desk Height"])));
+    }
+    var i18n_7;
+    if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+      /**
+       * @suppress {msgDescriptions}
+       */
+      var MSG_EXTERNAL_7033349286087719341$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_7 = goog.getMsg(" Set your desk height for the best experience ");
+      i18n_7 = MSG_EXTERNAL_7033349286087719341$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_7;
+    } else {
+      i18n_7 = $localize(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral([":\u241F75681ae09da891aca20405bb58ae40fae4cae7ce\u241F7033349286087719341: Set your desk height for the best experience "])));
+    }
+    var i18n_8;
+    if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+      /**
+       * @suppress {msgDescriptions}
+       */
+      var MSG_EXTERNAL_6210988327734808594$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_8 = goog.getMsg(" {$interpolation}: {$interpolation_1} ", {
         "interpolation": "\uFFFD0\uFFFD",
         "interpolation_1": "\uFFFD1\uFFFD"
       }, {
@@ -42974,67 +43497,70 @@ _UserControlsComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
           "interpolation_1": "{{ 'COMMON.LANGUAGE' | translate }}"
         }
       });
-      i18n_5 = MSG_EXTERNAL_6210988327734808594$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_5;
+      i18n_8 = MSG_EXTERNAL_6210988327734808594$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_8;
     } else {
-      i18n_5 = $localize(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral([":\u241F5a0db2e7be57ba081264f141f3ee4a8b683f1f6e\u241F6210988327734808594: ", ":INTERPOLATION:: ", ":INTERPOLATION_1: "])), "\uFFFD0\uFFFD", "\uFFFD1\uFFFD");
+      i18n_8 = $localize(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral([":\u241F5a0db2e7be57ba081264f141f3ee4a8b683f1f6e\u241F6210988327734808594: ", ":INTERPOLATION:: ", ":INTERPOLATION_1: "])), "\uFFFD0\uFFFD", "\uFFFD1\uFFFD");
     }
-    var i18n_6;
+    var i18n_9;
     if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
       /**
        * @suppress {msgDescriptions}
        */
-      var MSG_EXTERNAL_270482714535552546$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_6 = goog.getMsg("Raise a support ticket");
-      i18n_6 = MSG_EXTERNAL_270482714535552546$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_6;
+      var MSG_EXTERNAL_270482714535552546$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_9 = goog.getMsg("Raise a support ticket");
+      i18n_9 = MSG_EXTERNAL_270482714535552546$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_9;
     } else {
-      i18n_6 = $localize(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral([":\u241Fb862b54c42ded9ebb47260f60b0f75985c5fab18\u241F270482714535552546:Raise a support ticket"])));
+      i18n_9 = $localize(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral([":\u241Fb862b54c42ded9ebb47260f60b0f75985c5fab18\u241F270482714535552546:Raise a support ticket"])));
     }
-    return [i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_5, i18n_6, [1, "rounded", "bg-base-100", "shadow", "mt-1", "flex", "flex-col", "relative", "divide-y", "divide-base-200"], ["avatar", "", 1, "flex", "flex-col", "items-center", "p-2", "w-[18rem]"], [1, "text-2xl", 3, "user", "matTooltip"], [1, ""], [1, "text-xs", "opacity-60", "truncate"], ["customTooltip", "", "class", "relative", 3, "content", 4, "ngIf"], ["customTooltip", "", 3, "content", 4, "ngIf"], [4, "ngIf"], ["customTooltip", "", 3, "content"], ["btn", "", "matRipple", "", 1, "clear", "w-full", "text-left", "h-[3.5rem]"], [1, "w-full", "flex", "items-center", "space-x-2"], [1, "flex", "items-center", "justify-center", "rounded-full", "w-8", "h-8", "bg-base-200"], [1, "flex-1"], [1, "opacity-60", "text-2xl"], ["customTooltip", "", "class", "!border-b", 3, "content", 4, "ngIf"], ["btn", "", "matRipple", "", "class", "clear w-full text-left h-[3.5rem]", 3, "click", 4, "ngIf"], [1, "flex", "flex-col", "items-center", "p-4"], [1, "flex", "items-center", "justify-center", "space-x-2", "mb-4"], ["btn", "", "matRipple", "", 1, "inverse", 3, "click"], ["btn", "", "matRipple", "", 3, "click", 4, "ngIf"], [1, "text-xs", "opacity-60", "w-full"], [1, "underline", "p-0", "m-0", "bg-none", "border-none", "text-xs", 3, "click"], ["customTooltip", "", 1, "relative", 3, "content"], [1, "flex-1", "truncate", "w-px"], ["btn", "", "matRipple", "", 1, "clear", "w-full", "text-left", "h-[3.5rem]", 3, "click"], ["customTooltip", "", 1, "!border-b", 3, "content"], ["btn", "", "matRipple", "", 3, "click"]];
+    return [["desk_height_tooltip", ""], i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_5, i18n_6, i18n_7, i18n_8, i18n_9, [1, "rounded", "bg-base-100", "shadow", "mt-1", "flex", "flex-col", "relative", "divide-y", "divide-base-200"], ["avatar", "", 1, "flex", "flex-col", "items-center", "p-2", "w-[18rem]"], [1, "text-2xl", 3, "user", "matTooltip"], [1, ""], [1, "text-xs", "opacity-60", "truncate"], ["customTooltip", "", "class", "relative", 3, "content", 4, "ngIf"], ["customTooltip", "", 3, "content", 4, "ngIf"], [4, "ngIf"], ["customTooltip", "", 3, "content"], ["btn", "", "matRipple", "", 1, "clear", "w-full", "text-left", "h-[3.5rem]"], [1, "w-full", "flex", "items-center", "space-x-2"], [1, "flex", "items-center", "justify-center", "rounded-full", "w-8", "h-8", "bg-base-200"], [1, "flex-1"], [1, "opacity-60", "text-2xl"], ["customTooltip", "", 3, "content", "!border-b", 4, "ngIf"], ["customTooltip", "", "class", "!border-b", 3, "content", 4, "ngIf"], ["btn", "", "matRipple", "", "class", "clear w-full text-left h-[3.5rem]", 3, "click", 4, "ngIf"], [1, "flex", "flex-col", "items-center", "p-4"], [1, "flex", "items-center", "justify-center", "space-x-2", "mb-4"], ["btn", "", "matRipple", "", 1, "inverse", 3, "click"], ["btn", "", "matRipple", "", 3, "click", 4, "ngIf"], [1, "text-xs", "opacity-60", "w-full"], [1, "underline", "p-0", "m-0", "bg-none", "border-none", "text-xs", 3, "click"], ["customTooltip", "", 1, "relative", 3, "content"], [1, "flex-1", "truncate", "w-px"], ["btn", "", "matRipple", "", 1, "clear", "w-full", "text-left", "h-[3.5rem]", 3, "click"], [1, "relative", "p-4", "bg-base-100", "rounded", "shadow", "w-64"], [1, "text-lg"], [1, "text-xs", "opacity-60", "mb-4"], [1, "flex", "flex-col", "mt-2"], [1, "flex", "items-center", "space-x-2"], ["min", "60", "max", "80", "step", "0.5", "discrete", "", 1, "flex-1", 3, "displayWith"], ["matSliderThumb", "", 3, "ngModelChange", "ngModel"], [1, "text-sm", "w-12", "text-right"], [1, "flex", "items-center", "space-x-2", "mr-2"], ["min", "90", "max", "120", "step", "0.5", "discrete", "", 1, "flex-1", 3, "displayWith"], [1, "text-sm", "w-12", "text-right", "mr-2"], ["customTooltip", "", 1, "!border-b", 3, "content"], ["btn", "", "matRipple", "", 3, "click"]];
   },
   template: function UserControlsComponent_Template(rf, ctx) {
     if (rf & 1) {
-      i0.ɵɵelementStart(0, "div", 7)(1, "div", 8);
-      i0.ɵɵelement(2, "a-user-avatar", 9);
-      i0.ɵɵelementStart(3, "div", 10);
+      var _r1 = i0.ɵɵgetCurrentView();
+      i0.ɵɵelementStart(0, "div", 11)(1, "div", 12);
+      i0.ɵɵelement(2, "a-user-avatar", 13);
+      i0.ɵɵelementStart(3, "div", 14);
       i0.ɵɵtext(4);
       i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(5, "div", 11);
+      i0.ɵɵelementStart(5, "div", 15);
       i0.ɵɵtext(6);
       i0.ɵɵelementEnd()();
-      i0.ɵɵtemplate(7, UserControlsComponent_div_7_Template, 12, 6, "div", 12);
+      i0.ɵɵtemplate(7, UserControlsComponent_div_7_Template, 12, 6, "div", 16);
       i0.ɵɵpipe(8, "async");
-      i0.ɵɵtemplate(9, UserControlsComponent_div_9_Template, 12, 6, "div", 12)(10, UserControlsComponent_div_10_Template, 10, 1, "div", 13)(11, UserControlsComponent_div_11_Template, 10, 0, "div", 14);
-      i0.ɵɵelementStart(12, "div", 15)(13, "button", 16)(14, "div", 17)(15, "div", 18)(16, "app-icon");
+      i0.ɵɵtemplate(9, UserControlsComponent_div_9_Template, 12, 6, "div", 16)(10, UserControlsComponent_div_10_Template, 10, 1, "div", 17)(11, UserControlsComponent_div_11_Template, 10, 0, "div", 18);
+      i0.ɵɵelementStart(12, "div", 19)(13, "button", 20)(14, "div", 21)(15, "div", 22)(16, "app-icon");
       i0.ɵɵtext(17, "mode_night");
       i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(18, "div", 19);
-      i0.ɵɵi18n(19, 0);
+      i0.ɵɵelementStart(18, "div", 23);
+      i0.ɵɵi18n(19, 1);
       i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(20, "app-icon", 20);
+      i0.ɵɵelementStart(20, "app-icon", 24);
       i0.ɵɵtext(21, "chevron_right");
       i0.ɵɵelementEnd()()()();
-      i0.ɵɵtemplate(22, UserControlsComponent_div_22_Template, 12, 7, "div", 21)(23, UserControlsComponent_button_23_Template, 7, 0, "button", 22);
-      i0.ɵɵelementStart(24, "div", 23)(25, "div", 24)(26, "button", 25);
-      i0.ɵɵlistener("click", function UserControlsComponent_Template_button_click_26_listener() {
-        return ctx.logout();
+      i0.ɵɵtemplate(22, UserControlsComponent_div_22_Template, 10, 3, "div", 25)(23, UserControlsComponent_ng_template_23_Template, 20, 6, "ng-template", null, 0, i0.ɵɵtemplateRefExtractor)(25, UserControlsComponent_div_25_Template, 12, 7, "div", 26)(26, UserControlsComponent_button_26_Template, 7, 0, "button", 27);
+      i0.ɵɵelementStart(27, "div", 28)(28, "div", 29)(29, "button", 30);
+      i0.ɵɵlistener("click", function UserControlsComponent_Template_button_click_29_listener() {
+        i0.ɵɵrestoreView(_r1);
+        return i0.ɵɵresetView(ctx.logout());
       });
-      i0.ɵɵi18n(27, 1);
+      i0.ɵɵi18n(30, 2);
       i0.ɵɵelementEnd();
-      i0.ɵɵtemplate(28, UserControlsComponent_button_28_Template, 2, 0, "button", 26);
+      i0.ɵɵtemplate(31, UserControlsComponent_button_31_Template, 2, 0, "button", 31);
       i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(29, "div", 27);
-      i0.ɵɵelementContainerStart(30);
-      i0.ɵɵi18n(31, 2);
+      i0.ɵɵelementStart(32, "div", 32);
+      i0.ɵɵelementContainerStart(33);
+      i0.ɵɵi18n(34, 3);
       i0.ɵɵelementContainerEnd();
-      i0.ɵɵelementStart(32, "button", 28);
-      i0.ɵɵlistener("click", function UserControlsComponent_Template_button_click_32_listener() {
-        return ctx.viewChangelog();
+      i0.ɵɵelementStart(35, "button", 33);
+      i0.ɵɵlistener("click", function UserControlsComponent_Template_button_click_35_listener() {
+        i0.ɵɵrestoreView(_r1);
+        return i0.ɵɵresetView(ctx.viewChangelog());
       });
-      i0.ɵɵtext(33);
+      i0.ɵɵtext(36);
       i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(34, "div", 27);
-      i0.ɵɵtext(35);
-      i0.ɵɵpipe(36, "date");
-      i0.ɵɵpipe(37, "date");
+      i0.ɵɵelementStart(37, "div", 32);
+      i0.ɵɵtext(38);
+      i0.ɵɵpipe(39, "date");
+      i0.ɵɵpipe(40, "date");
       i0.ɵɵelementEnd()()();
     }
     if (rf & 2) {
@@ -43045,7 +43571,7 @@ _UserControlsComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵadvance(2);
       i0.ɵɵtextInterpolate(ctx.user == null ? null : ctx.user.email);
       i0.ɵɵadvance();
-      i0.ɵɵproperty("ngIf", i0.ɵɵpipeBind1(8, 17, ctx.regions).length);
+      i0.ɵɵproperty("ngIf", i0.ɵɵpipeBind1(8, 18, ctx.regions).length);
       i0.ɵɵadvance(2);
       i0.ɵɵproperty("ngIf", !ctx.disable_building_select && !ctx.use_region);
       i0.ɵɵadvance();
@@ -43053,9 +43579,11 @@ _UserControlsComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵadvance();
       i0.ɵɵproperty("ngIf", ctx.features.includes("wfh"));
       i0.ɵɵadvance();
-      i0.ɵɵclassProp("!border-b", !(ctx.locales == null ? null : ctx.locales.length));
+      i0.ɵɵclassProp("!border-b", !(ctx.locales == null ? null : ctx.locales.length) || !ctx.desk_height);
       i0.ɵɵproperty("content", ctx.accessibility_tooltip);
       i0.ɵɵadvance(10);
+      i0.ɵɵproperty("ngIf", ctx.desk_height);
+      i0.ɵɵadvance(3);
       i0.ɵɵproperty("ngIf", ctx.locales == null ? null : ctx.locales.length);
       i0.ɵɵadvance();
       i0.ɵɵproperty("ngIf", ctx.features.includes("support-ticket"));
@@ -43064,7 +43592,7 @@ _UserControlsComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵadvance(5);
       i0.ɵɵtextInterpolate1(" ", ctx.version.hash, " ");
       i0.ɵɵadvance(2);
-      i0.ɵɵtextInterpolate2(" ", i0.ɵɵpipeBind2(36, 19, ctx.version.time, "longDate"), " (", i0.ɵɵpipeBind2(37, 22, ctx.version.time, "shortTime"), ") ");
+      i0.ɵɵtextInterpolate2(" ", i0.ɵɵpipeBind2(39, 20, ctx.version.time, "longDate"), " (", i0.ɵɵpipeBind2(40, 23, ctx.version.time, "shortTime"), ") ");
     }
   }
 });
@@ -53574,17 +54102,33 @@ exports.CounterComponent = void 0;
 var core_1 = __webpack_require__(/*! @angular/core */ 37580);
 var forms_1 = __webpack_require__(/*! @angular/forms */ 34456);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
-var i1 = __webpack_require__(/*! @angular/material/core */ 74646);
-var i2 = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
+var i1 = __webpack_require__(/*! @angular/common */ 60316);
+var i2 = __webpack_require__(/*! @angular/forms */ 34456);
+var i3 = __webpack_require__(/*! @angular/material/core */ 74646);
+var i4 = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
+var i5 = __webpack_require__(/*! ../../../components/src/lib/limit-input.directive */ 62897);
+function CounterComponent_span_5_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "span");
+    i0.ɵɵtext(1);
+    i0.ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    var ctx_r0 = i0.ɵɵnextContext();
+    i0.ɵɵadvance();
+    i0.ɵɵtextInterpolate1(" ", (ctx_r0.render_fn ? ctx_r0.render_fn(ctx_r0.value) : ctx_r0.value) || "0", " ");
+  }
+}
 var CounterComponent = /*#__PURE__*/function () {
   function CounterComponent() {
     _classCallCheck(this, CounterComponent);
     /** Size of a single step */
     this.step = 1;
     /** Maximum amount for the counter */
-    this.max = 10;
+    this.max = 999;
     /** Minimum amount for the counter */
     this.min = 0;
+    this.focused = false;
   }
   /**
    * Add the `step` to the current value
@@ -53623,6 +54167,11 @@ var CounterComponent = /*#__PURE__*/function () {
   }, {
     key: "setValue",
     value: function setValue(new_value) {
+      if (new_value < this.min) new_value = this.min;
+      if (new_value > this.max) new_value = this.max;
+      if (new_value / this.step % 1 !== 0) {
+        new_value = Math.round(new_value * (1 / this.step)) / (1 / this.step);
+      }
       this.value = new_value;
       /* istanbul ignore else */
       if (this._onChange) {
@@ -53681,9 +54230,9 @@ _CounterComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
     }),
     multi: true
   }])],
-  decls: 9,
-  vars: 3,
-  consts: [["counter", "", 1, "flex", "items-center", "text-base", 3, "keydown.shift", "keydown.control", "keydown.meta", "keyup.shift", "keyup.control", "keyup.meta"], ["icon", "", "matRipple", "", "name", "remove", "type", "button", 3, "click", "disabled"], ["value", "", 1, "p-1", "text-center"], ["icon", "", "matRipple", "", "name", "add", "type", "button", 3, "click", "disabled"]],
+  decls: 10,
+  vars: 4,
+  consts: [["counter", "", 1, "flex", "items-center", "text-base", "space-x-2", "p-2", 3, "keydown.shift", "keydown.control", "keydown.meta", "keyup.shift", "keyup.control", "keyup.meta"], ["decrease", "", "icon", "", "matRipple", "", "type", "button", 1, "border", "border-error", "text-error", "rounded", "h-10", "w-10", 3, "click", "disabled"], ["value", "", 1, "relative", "p-1", "flex", "items-center", "justify-center", "w-16", "h-10", "rounded", "border", "border-base-300"], [4, "ngIf"], ["type", "text", "limitInput", "", 1, "absolute", "inset-0", "opacity-0", "focus:opacity-100", "p-2", 3, "ngModelChange", "focus", "blur", "ngModel"], ["increase", "", "icon", "", "matRipple", "", "type", "button", 1, "border", "border-success", "text-success", "rounded", "h-10", "w-10", 3, "click", "disabled"]],
   template: function CounterComponent_Template(rf, ctx) {
     if (rf & 1) {
       i0.ɵɵelementStart(0, "div", 0);
@@ -53708,27 +54257,39 @@ _CounterComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵtext(3, "remove");
       i0.ɵɵelementEnd()();
       i0.ɵɵelementStart(4, "div", 2);
-      i0.ɵɵtext(5);
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(6, "button", 3);
-      i0.ɵɵlistener("click", function CounterComponent_Template_button_click_6_listener() {
+      i0.ɵɵtemplate(5, CounterComponent_span_5_Template, 2, 1, "span", 3);
+      i0.ɵɵelementStart(6, "input", 4);
+      i0.ɵɵtwoWayListener("ngModelChange", function CounterComponent_Template_input_ngModelChange_6_listener($event) {
+        i0.ɵɵtwoWayBindingSet(ctx.value, $event) || (ctx.value = $event);
+        return $event;
+      });
+      i0.ɵɵlistener("focus", function CounterComponent_Template_input_focus_6_listener() {
+        return ctx.focused = true;
+      })("blur", function CounterComponent_Template_input_blur_6_listener() {
+        ctx.setValue(+ctx.value);
+        return ctx.focused = false;
+      });
+      i0.ɵɵelementEnd()();
+      i0.ɵɵelementStart(7, "button", 5);
+      i0.ɵɵlistener("click", function CounterComponent_Template_button_click_7_listener() {
         return ctx.add();
       });
-      i0.ɵɵelementStart(7, "app-icon");
-      i0.ɵɵtext(8, "add");
+      i0.ɵɵelementStart(8, "app-icon");
+      i0.ɵɵtext(9, "add");
       i0.ɵɵelementEnd()()();
     }
     if (rf & 2) {
       i0.ɵɵadvance();
       i0.ɵɵproperty("disabled", !ctx.value || ctx.value === ctx.min);
       i0.ɵɵadvance(4);
-      i0.ɵɵtextInterpolate1(" ", (ctx.render_fn ? ctx.render_fn(ctx.value) : ctx.value) || "0", " ");
+      i0.ɵɵproperty("ngIf", !ctx.focused);
+      i0.ɵɵadvance();
+      i0.ɵɵtwoWayProperty("ngModel", ctx.value);
       i0.ɵɵadvance();
       i0.ɵɵproperty("disabled", ctx.value === ctx.max);
     }
   },
-  dependencies: [i1.MatRipple, i2.IconComponent],
-  styles: ["[value][_ngcontent-%COMP%] {\n                min-width: 3em;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvZm9ybS1maWVsZHMvc3JjL2xpYi9jb3VudGVyLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksY0FBYztZQUNsQiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgW3ZhbHVlXSB7XG4gICAgICAgICAgICAgICAgbWluLXdpZHRoOiAzZW07XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
+  dependencies: [i1.NgIf, i2.DefaultValueAccessor, i2.NgControlStatus, i2.NgModel, i3.MatRipple, i4.IconComponent, i5.LimitInputDirective]
 });
 exports.CounterComponent = CounterComponent;
 
@@ -65868,7 +66429,7 @@ _NewSpaceSelectModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
   type: _NewSpaceSelectModalComponent,
   selectors: [["new-space-select-modal"]],
   decls: 39,
-  vars: 28,
+  vars: 29,
   consts: function consts() {
     var i18n_0;
     if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
@@ -65926,7 +66487,7 @@ _NewSpaceSelectModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
     } else {
       i18n_4 = $localize(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral([":\u241Fccda1d41ca79703a85a3a598c1d97e040a32b766\u241F874721418273731876: Back "])));
     }
-    return [["map_view", ""], i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, [1, "w-[100vw]", "h-[100vh]", "sm:relative", "sm:w-auto", "sm:h-auto", "flex", "flex-col", "bg-base-100"], [1, "flex", "items-center", "space-x-4", "w-full"], ["icon", "", "matRipple", "", "mat-dialog-close", "", 1, "bg-base-200"], [1, "hidden", "sm:flex", "items-center", "justify-end", "flex-1"], ["btn", "", "matRipple", "", "map", "", 1, "rounded-l", "rounded-r-none", 3, "click"], ["btn", "", "matRipple", "", "list", "", 1, "rounded-r", "rounded-l-none", 3, "click"], [1, "flex-1", "flex", "items-center", "divide-x", "divide-base-200", "min-h-[65vh]", "h-[65vh]", "sm:max-h-[65vh]", "sm:max-w-[95vw]", "w-full", "overflow-hidden"], [1, "h-full", "hidden", "sm:flex", "max-w-[20rem]", "sm:h-[65vh]", "sm:max-h-full", 3, "multiday", "hide_levels"], [1, "flex", "flex-col", "items-center", "flex-1", "w-1/2", "h-full", "sm:h-[65vh]"], [1, "w-full", "border-b", "border-base-200", 3, "viewChange", "view"], ["class", "flex-1 h-1/2 bg-base-200", 3, "active", "selected", "favorites", "toggleFav", "onSelect", 4, "ngIf", "ngIfElse"], [1, "h-full", "w-full", "sm:h-[65vh]", "absolute", "sm:relative", "flex", "sm:flex-col", "sm:max-w-[20rem]", "z-20", "bg-base-100", 3, "activeChange", "toggleFav", "close", "space", "hide_map", "active", "fav"], [1, "flex", "sm:hidden", "flex-col-reverse", "items-center", "justify-end", "px-2", "pt-2", "pb-[5.5rem]", "border-t", "border-base-200", "w-full"], ["btn", "", "matRipple", "", "name", "spaces-return", "class", "inverse sm:hidden w-full", 3, "click", 4, "ngIf"], ["btn", "", "matRipple", "", "name", "save-spaces", 1, "w-full", "sm:w-32", "sm:mb-0", 3, "mat-dialog-close"], [1, "hidden", "sm:flex", "items-center", "justify-between", "p-2", "border-t", "border-base-200", "w-full"], ["btn", "", "matRipple", "", "name", "spaces-return", 1, "clear", "text-secondary", 3, "mat-dialog-close"], [1, "flex", "items-center"], [1, "text-xl"], [1, "mr-1", "underline"], [1, "opacity-60", "text-sm"], ["btn", "", "matRipple", "", "name", "toggle-space", 3, "click", "disabled"], [1, "mr-1"], [1, "flex-1", "h-1/2", "bg-base-200", 3, "toggleFav", "onSelect", "active", "selected", "favorites"], ["btn", "", "matRipple", "", "name", "spaces-return", 1, "inverse", "sm:hidden", "w-full", 3, "click"], [1, "flex-1", "h-1/2", "w-full", 3, "onSelect", "selected", "is_displayed", "active"]];
+    return [["map_view", ""], i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, [1, "w-[100vw]", "h-[100vh]", "sm:relative", "sm:w-auto", "sm:h-auto", "flex", "flex-col", "bg-base-100"], [1, "flex", "items-center", "space-x-4", "w-full"], ["icon", "", "matRipple", "", "mat-dialog-close", "", 1, "bg-base-200"], [1, "hidden", "sm:flex", "items-center", "justify-end", "flex-1"], ["btn", "", "matRipple", "", "map", "", 1, "rounded-l", "rounded-r-none", 3, "click"], ["btn", "", "matRipple", "", "list", "", 1, "rounded-r", "rounded-l-none", 3, "click"], [1, "flex-1", "flex", "items-center", "divide-x", "divide-base-200", "min-h-[65vh]", "h-[65vh]", "sm:max-h-[65vh]", "sm:max-w-[95vw]", "w-full", "overflow-hidden"], [1, "h-full", "hidden", "sm:flex", "max-w-[20rem]", "sm:h-[65vh]", "sm:max-h-full", 3, "multiday", "hide_levels", "viewing_map"], [1, "flex", "flex-col", "items-center", "flex-1", "w-1/2", "h-full", "sm:h-[65vh]"], [1, "w-full", "border-b", "border-base-200", 3, "viewChange", "view"], ["class", "flex-1 h-1/2 bg-base-200", 3, "active", "selected", "favorites", "toggleFav", "onSelect", 4, "ngIf", "ngIfElse"], [1, "h-full", "w-full", "sm:h-[65vh]", "absolute", "sm:relative", "flex", "sm:flex-col", "sm:max-w-[20rem]", "z-20", "bg-base-100", 3, "activeChange", "toggleFav", "close", "space", "hide_map", "active", "fav"], [1, "flex", "sm:hidden", "flex-col-reverse", "items-center", "justify-end", "px-2", "pt-2", "pb-[5.5rem]", "border-t", "border-base-200", "w-full"], ["btn", "", "matRipple", "", "name", "spaces-return", "class", "inverse sm:hidden w-full", 3, "click", 4, "ngIf"], ["btn", "", "matRipple", "", "name", "save-spaces", 1, "w-full", "sm:w-32", "sm:mb-0", 3, "mat-dialog-close"], [1, "hidden", "sm:flex", "items-center", "justify-between", "p-2", "border-t", "border-base-200", "w-full"], ["btn", "", "matRipple", "", "name", "spaces-return", 1, "clear", "text-secondary", 3, "mat-dialog-close"], [1, "flex", "items-center"], [1, "text-xl"], [1, "mr-1", "underline"], [1, "opacity-60", "text-sm"], ["btn", "", "matRipple", "", "name", "toggle-space", 3, "click", "disabled"], [1, "mr-1"], [1, "flex-1", "h-1/2", "bg-base-200", 3, "toggleFav", "onSelect", "active", "selected", "favorites"], ["btn", "", "matRipple", "", "name", "spaces-return", 1, "inverse", "sm:hidden", "w-full", 3, "click"], [1, "flex-1", "h-1/2", "w-full", 3, "onSelect", "selected", "is_displayed", "active"]];
   },
   template: function NewSpaceSelectModalComponent_Template(rf, ctx) {
     if (rf & 1) {
@@ -66008,7 +66569,7 @@ _NewSpaceSelectModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵadvance(2);
       i0.ɵɵclassProp("inverse", ctx.view !== "list");
       i0.ɵɵadvance(3);
-      i0.ɵɵproperty("multiday", ctx.multiday)("hide_levels", ctx.view !== "list");
+      i0.ɵɵproperty("multiday", ctx.multiday)("hide_levels", ctx.view !== "list")("viewing_map", ctx.view === "map");
       i0.ɵɵadvance(2);
       i0.ɵɵtwoWayProperty("view", ctx.view);
       i0.ɵɵadvance();
@@ -66785,7 +67346,7 @@ var _c0 = function _c0() {
 function SpaceFiltersComponent_button_2_Template(rf, ctx) {
   if (rf & 1) {
     var _r1 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "button", 36);
+    i0.ɵɵelementStart(0, "button", 32);
     i0.ɵɵlistener("click", function SpaceFiltersComponent_button_2_Template_button_click_0_listener() {
       i0.ɵɵrestoreView(_r1);
       var ctx_r1 = i0.ɵɵnextContext();
@@ -66798,7 +67359,7 @@ function SpaceFiltersComponent_button_2_Template(rf, ctx) {
 }
 function SpaceFiltersComponent_mat_form_field_13_mat_option_2_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "mat-option", 40);
+    i0.ɵɵelementStart(0, "mat-option", 36);
     i0.ɵɵtext(1);
     i0.ɵɵelementEnd();
   }
@@ -66812,13 +67373,13 @@ function SpaceFiltersComponent_mat_form_field_13_mat_option_2_Template(rf, ctx) 
 function SpaceFiltersComponent_mat_form_field_13_Template(rf, ctx) {
   if (rf & 1) {
     var _r3 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "mat-form-field", 37)(1, "mat-select", 38);
+    i0.ɵɵelementStart(0, "mat-form-field", 33)(1, "mat-select", 34);
     i0.ɵɵlistener("ngModelChange", function SpaceFiltersComponent_mat_form_field_13_Template_mat_select_ngModelChange_1_listener($event) {
       i0.ɵɵrestoreView(_r3);
       var ctx_r1 = i0.ɵɵnextContext();
       return i0.ɵɵresetView(ctx_r1.setRegion($event));
     });
-    i0.ɵɵtemplate(2, SpaceFiltersComponent_mat_form_field_13_mat_option_2_Template, 2, 2, "mat-option", 39);
+    i0.ɵɵtemplate(2, SpaceFiltersComponent_mat_form_field_13_mat_option_2_Template, 2, 2, "mat-option", 35);
     i0.ɵɵpipe(3, "async");
     i0.ɵɵelementEnd()();
   }
@@ -66832,7 +67393,7 @@ function SpaceFiltersComponent_mat_form_field_13_Template(rf, ctx) {
 }
 function SpaceFiltersComponent_mat_form_field_15_mat_option_5_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "mat-option", 40);
+    i0.ɵɵelementStart(0, "mat-option", 36);
     i0.ɵɵtext(1);
     i0.ɵɵelementEnd();
   }
@@ -66846,7 +67407,7 @@ function SpaceFiltersComponent_mat_form_field_15_mat_option_5_Template(rf, ctx) 
 function SpaceFiltersComponent_mat_form_field_15_Template(rf, ctx) {
   if (rf & 1) {
     var _r5 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "mat-form-field", 37)(1, "mat-select", 41);
+    i0.ɵɵelementStart(0, "mat-form-field", 33)(1, "mat-select", 37);
     i0.ɵɵpipe(2, "async");
     i0.ɵɵpipe(3, "async");
     i0.ɵɵpipe(4, "async");
@@ -66855,7 +67416,7 @@ function SpaceFiltersComponent_mat_form_field_15_Template(rf, ctx) {
       var ctx_r1 = i0.ɵɵnextContext();
       return i0.ɵɵresetView(ctx_r1.setBuilding($event));
     });
-    i0.ɵɵtemplate(5, SpaceFiltersComponent_mat_form_field_15_mat_option_5_Template, 2, 2, "mat-option", 39);
+    i0.ɵɵtemplate(5, SpaceFiltersComponent_mat_form_field_15_mat_option_5_Template, 2, 2, "mat-option", 35);
     i0.ɵɵpipe(6, "async");
     i0.ɵɵelementEnd()();
   }
@@ -66870,10 +67431,10 @@ function SpaceFiltersComponent_mat_form_field_15_Template(rf, ctx) {
 }
 function SpaceFiltersComponent_mat_form_field_17_mat_option_3_div_2_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 45);
+    i0.ɵɵelementStart(0, "div", 41);
     i0.ɵɵtext(1);
     i0.ɵɵpipe(2, "building");
-    i0.ɵɵelementStart(3, "span", 46);
+    i0.ɵɵelementStart(3, "span", 42);
     i0.ɵɵtext(4, " - ");
     i0.ɵɵelementEnd()();
   }
@@ -66886,8 +67447,8 @@ function SpaceFiltersComponent_mat_form_field_17_mat_option_3_div_2_Template(rf,
 }
 function SpaceFiltersComponent_mat_form_field_17_mat_option_3_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "mat-option", 40)(1, "div", 43);
-    i0.ɵɵtemplate(2, SpaceFiltersComponent_mat_form_field_17_mat_option_3_div_2_Template, 5, 3, "div", 44);
+    i0.ɵɵelementStart(0, "mat-option", 36)(1, "div", 39);
+    i0.ɵɵtemplate(2, SpaceFiltersComponent_mat_form_field_17_mat_option_3_div_2_Template, 5, 3, "div", 40);
     i0.ɵɵelementStart(3, "div");
     i0.ɵɵtext(4);
     i0.ɵɵelementEnd()()();
@@ -66905,7 +67466,7 @@ function SpaceFiltersComponent_mat_form_field_17_mat_option_3_Template(rf, ctx) 
 function SpaceFiltersComponent_mat_form_field_17_Template(rf, ctx) {
   if (rf & 1) {
     var _r7 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "mat-form-field", 37)(1, "mat-select", 42);
+    i0.ɵɵelementStart(0, "mat-form-field", 33)(1, "mat-select", 38);
     i0.ɵɵpipe(2, "async");
     i0.ɵɵlistener("ngModelChange", function SpaceFiltersComponent_mat_form_field_17_Template_mat_select_ngModelChange_1_listener($event) {
       i0.ɵɵrestoreView(_r7);
@@ -66914,7 +67475,7 @@ function SpaceFiltersComponent_mat_form_field_17_Template(rf, ctx) {
         zone_ids: $event
       }));
     });
-    i0.ɵɵtemplate(3, SpaceFiltersComponent_mat_form_field_17_mat_option_3_Template, 5, 3, "mat-option", 39);
+    i0.ɵɵtemplate(3, SpaceFiltersComponent_mat_form_field_17_mat_option_3_Template, 5, 3, "mat-option", 35);
     i0.ɵɵpipe(4, "async");
     i0.ɵɵelementEnd()();
   }
@@ -66930,13 +67491,13 @@ function SpaceFiltersComponent_mat_form_field_17_Template(rf, ctx) {
 function SpaceFiltersComponent_div_26_Template(rf, ctx) {
   if (rf & 1) {
     var _r9 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "div", 47)(1, "label", 24);
+    i0.ɵɵelementStart(0, "div", 43)(1, "label", 24);
     i0.ɵɵtext(2);
     i0.ɵɵpipe(3, "translate");
     i0.ɵɵelementStart(4, "span");
     i0.ɵɵtext(5, "*");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(6, "a-date-field", 48);
+    i0.ɵɵelementStart(6, "a-date-field", 44);
     i0.ɵɵlistener("ngModelChange", function SpaceFiltersComponent_div_26_Template_a_date_field_ngModelChange_6_listener($event) {
       i0.ɵɵrestoreView(_r9);
       var ctx_r1 = i0.ɵɵnextContext();
@@ -66960,21 +67521,21 @@ function SpaceFiltersComponent_div_26_Template(rf, ctx) {
 }
 function SpaceFiltersComponent_div_27_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 49)(1, "mat-checkbox", 50);
-    i0.ɵɵi18n(2, 7);
+    i0.ɵɵelementStart(0, "div", 45)(1, "mat-checkbox", 46);
+    i0.ɵɵi18n(2, 5);
     i0.ɵɵelementEnd()();
   }
 }
 function SpaceFiltersComponent_div_28_div_6_Template(rf, ctx) {
   if (rf & 1) {
     var _r11 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "div", 52)(1, "label", 56);
+    i0.ɵɵelementStart(0, "div", 48)(1, "label", 52);
     i0.ɵɵtext(2);
     i0.ɵɵpipe(3, "translate");
     i0.ɵɵelementStart(4, "span");
     i0.ɵɵtext(5, "*");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(6, "a-time-field", 57);
+    i0.ɵɵelementStart(6, "a-time-field", 53);
     i0.ɵɵlistener("ngModelChange", function SpaceFiltersComponent_div_28_div_6_Template_a_time_field_ngModelChange_6_listener($event) {
       i0.ɵɵrestoreView(_r11);
       var ctx_r1 = i0.ɵɵnextContext(2);
@@ -66995,13 +67556,13 @@ function SpaceFiltersComponent_div_28_div_6_Template(rf, ctx) {
 }
 function SpaceFiltersComponent_div_28_div_7_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 52)(1, "label", 56);
+    i0.ɵɵelementStart(0, "div", 48)(1, "label", 52);
     i0.ɵɵtext(2);
     i0.ɵɵpipe(3, "translate");
     i0.ɵɵelementStart(4, "span");
     i0.ɵɵtext(5, "*");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelement(6, "a-duration-field", 58);
+    i0.ɵɵelement(6, "a-duration-field", 54);
     i0.ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -67016,12 +67577,12 @@ function SpaceFiltersComponent_div_28_div_7_Template(rf, ctx) {
 function SpaceFiltersComponent_div_28_Template(rf, ctx) {
   if (rf & 1) {
     var _r10 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "div", 51)(1, "div", 52)(2, "label", 53);
-    i0.ɵɵi18nStart(3, 8);
+    i0.ɵɵelementStart(0, "div", 47)(1, "div", 48)(2, "label", 49);
+    i0.ɵɵi18nStart(3, 6);
     i0.ɵɵelement(4, "span");
     i0.ɵɵi18nEnd();
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(5, "a-time-field", 54);
+    i0.ɵɵelementStart(5, "a-time-field", 50);
     i0.ɵɵlistener("ngModelChange", function SpaceFiltersComponent_div_28_Template_a_time_field_ngModelChange_5_listener($event) {
       i0.ɵɵrestoreView(_r10);
       var ctx_r1 = i0.ɵɵnextContext();
@@ -67030,7 +67591,7 @@ function SpaceFiltersComponent_div_28_Template(rf, ctx) {
       }));
     });
     i0.ɵɵelementEnd()();
-    i0.ɵɵtemplate(6, SpaceFiltersComponent_div_28_div_6_Template, 7, 8, "div", 55)(7, SpaceFiltersComponent_div_28_div_7_Template, 7, 6, "div", 55);
+    i0.ɵɵtemplate(6, SpaceFiltersComponent_div_28_div_6_Template, 7, 8, "div", 51)(7, SpaceFiltersComponent_div_28_div_7_Template, 7, 6, "div", 51);
     i0.ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -67043,51 +67604,86 @@ function SpaceFiltersComponent_div_28_Template(rf, ctx) {
     i0.ɵɵproperty("ngIf", !ctx_r1.multiday);
   }
 }
-function SpaceFiltersComponent_section_39_ng_container_3_div_1_Template(rf, ctx) {
+function SpaceFiltersComponent_section_29_Template(rf, ctx) {
   if (rf & 1) {
     var _r12 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "div", 31)(1, "div", 62);
+    i0.ɵɵelementStart(0, "section", 55)(1, "h2", 56);
+    i0.ɵɵi18n(2, 7);
+    i0.ɵɵpipe(3, "translate");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(4, "div", 57)(5, "div", 58);
+    i0.ɵɵi18n(6, 8);
+    i0.ɵɵpipe(7, "translate");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(8, "mat-checkbox", 59);
+    i0.ɵɵpipe(9, "async");
+    i0.ɵɵlistener("ngModelChange", function SpaceFiltersComponent_section_29_Template_mat_checkbox_ngModelChange_8_listener($event) {
+      i0.ɵɵrestoreView(_r12);
+      var ctx_r1 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r1.setOptions({
+        show_fav: $event
+      }));
+    });
+    i0.ɵɵelementEnd()()();
+  }
+  if (rf & 2) {
+    var tmp_5_0;
+    var ctx_r1 = i0.ɵɵnextContext();
+    i0.ɵɵadvance(3);
+    i0.ɵɵi18nExp(i0.ɵɵpipeBind1(3, 4, "COMMON.FAVOURITES"));
+    i0.ɵɵi18nApply(2);
+    i0.ɵɵadvance(4);
+    i0.ɵɵi18nExp(i0.ɵɵpipeBind1(7, 6, "ROOMS.SHOW_FAVOURITES"));
+    i0.ɵɵi18nApply(6);
+    i0.ɵɵadvance();
+    i0.ɵɵproperty("ngModel", (tmp_5_0 = i0.ɵɵpipeBind1(9, 8, ctx_r1.options)) == null ? null : tmp_5_0.show_fav)("ngModelOptions", i0.ɵɵpureFunction0(10, _c0));
+  }
+}
+function SpaceFiltersComponent_section_31_ng_container_3_div_1_Template(rf, ctx) {
+  if (rf & 1) {
+    var _r13 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "div", 57)(1, "div", 63);
     i0.ɵɵtext(2);
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(3, "mat-checkbox", 63);
+    i0.ɵɵelementStart(3, "mat-checkbox", 64);
     i0.ɵɵpipe(4, "async");
-    i0.ɵɵlistener("ngModelChange", function SpaceFiltersComponent_section_39_ng_container_3_div_1_Template_mat_checkbox_ngModelChange_3_listener($event) {
-      i0.ɵɵrestoreView(_r12);
-      var feat_r13 = i0.ɵɵnextContext().$implicit;
+    i0.ɵɵlistener("ngModelChange", function SpaceFiltersComponent_section_31_ng_container_3_div_1_Template_mat_checkbox_ngModelChange_3_listener($event) {
+      i0.ɵɵrestoreView(_r13);
+      var feat_r14 = i0.ɵɵnextContext().$implicit;
       var ctx_r1 = i0.ɵɵnextContext(2);
-      return i0.ɵɵresetView(ctx_r1.toggleFeature(feat_r13, $event));
+      return i0.ɵɵresetView(ctx_r1.toggleFeature(feat_r14, $event));
     });
     i0.ɵɵelementEnd()();
   }
   if (rf & 2) {
     var tmp_5_0;
-    var feat_r13 = i0.ɵɵnextContext().$implicit;
+    var feat_r14 = i0.ɵɵnextContext().$implicit;
     var ctx_r1 = i0.ɵɵnextContext(2);
     i0.ɵɵadvance(2);
-    i0.ɵɵtextInterpolate1(" ", ctx_r1.feature_display[feat_r13] || feat_r13, " ");
+    i0.ɵɵtextInterpolate1(" ", ctx_r1.feature_display[feat_r14] || feat_r14, " ");
     i0.ɵɵadvance();
-    i0.ɵɵproperty("ngModel", (tmp_5_0 = i0.ɵɵpipeBind1(4, 3, ctx_r1.options)) == null ? null : tmp_5_0.features == null ? null : tmp_5_0.features.includes(feat_r13))("ngModelOptions", i0.ɵɵpureFunction0(5, _c0));
+    i0.ɵɵproperty("ngModel", (tmp_5_0 = i0.ɵɵpipeBind1(4, 3, ctx_r1.options)) == null ? null : tmp_5_0.features == null ? null : tmp_5_0.features.includes(feat_r14))("ngModelOptions", i0.ɵɵpureFunction0(5, _c0));
   }
 }
-function SpaceFiltersComponent_section_39_ng_container_3_Template(rf, ctx) {
+function SpaceFiltersComponent_section_31_ng_container_3_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelementContainerStart(0);
-    i0.ɵɵtemplate(1, SpaceFiltersComponent_section_39_ng_container_3_div_1_Template, 5, 6, "div", 61);
+    i0.ɵɵtemplate(1, SpaceFiltersComponent_section_31_ng_container_3_div_1_Template, 5, 6, "div", 62);
     i0.ɵɵelementContainerEnd();
   }
   if (rf & 2) {
-    var feat_r13 = ctx.$implicit;
+    var feat_r14 = ctx.$implicit;
     var ctx_r1 = i0.ɵɵnextContext(2);
     i0.ɵɵadvance();
-    i0.ɵɵproperty("ngIf", !ctx_r1.hide_features.includes(feat_r13));
+    i0.ɵɵproperty("ngIf", !ctx_r1.hide_features.includes(feat_r14));
   }
 }
-function SpaceFiltersComponent_section_39_Template(rf, ctx) {
+function SpaceFiltersComponent_section_31_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "section", 59)(1, "h2", 30);
+    i0.ɵɵelementStart(0, "section", 60)(1, "h2", 56);
     i0.ɵɵi18n(2, 9);
     i0.ɵɵelementEnd();
-    i0.ɵɵtemplate(3, SpaceFiltersComponent_section_39_ng_container_3_Template, 2, 1, "ng-container", 60);
+    i0.ɵɵtemplate(3, SpaceFiltersComponent_section_31_ng_container_3_Template, 2, 1, "ng-container", 61);
     i0.ɵɵpipe(4, "async");
     i0.ɵɵelementEnd();
   }
@@ -67097,12 +67693,12 @@ function SpaceFiltersComponent_section_39_Template(rf, ctx) {
     i0.ɵɵproperty("ngForOf", i0.ɵɵpipeBind1(4, 1, ctx_r1.features));
   }
 }
-function SpaceFiltersComponent_div_41_Template(rf, ctx) {
+function SpaceFiltersComponent_div_34_Template(rf, ctx) {
   if (rf & 1) {
-    var _r14 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "div", 64)(1, "button", 65);
-    i0.ɵɵlistener("click", function SpaceFiltersComponent_div_41_Template_button_click_1_listener() {
-      i0.ɵɵrestoreView(_r14);
+    var _r15 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "div", 65)(1, "button", 66);
+    i0.ɵɵlistener("click", function SpaceFiltersComponent_div_34_Template_button_click_1_listener() {
+      i0.ɵɵrestoreView(_r15);
       var ctx_r1 = i0.ɵɵnextContext();
       return i0.ɵɵresetView(ctx_r1.close());
     });
@@ -67111,7 +67707,7 @@ function SpaceFiltersComponent_div_41_Template(rf, ctx) {
   }
 }
 var SpaceFiltersComponent = /*#__PURE__*/function () {
-  function SpaceFiltersComponent(_bsheet_ref, _settings, _event_form, _org, _spaces) {
+  function SpaceFiltersComponent(_bsheet_ref, _settings, _event_form, _org, _spaces, _mapspeople) {
     var _this = this;
     _classCallCheck(this, SpaceFiltersComponent);
     this._bsheet_ref = _bsheet_ref;
@@ -67119,6 +67715,7 @@ var SpaceFiltersComponent = /*#__PURE__*/function () {
     this._event_form = _event_form;
     this._org = _org;
     this._spaces = _spaces;
+    this._mapspeople = _mapspeople;
     this.can_close = false;
     this.options = this._event_form.options;
     this.building = this._org.active_building;
@@ -67136,6 +67733,7 @@ var SpaceFiltersComponent = /*#__PURE__*/function () {
       });
     }));
     this.regions = this._org.region_list;
+    this.using_mapspeople = this._mapspeople.available$;
     this.features = (0, rxjs_1.combineLatest)([this._spaces.features, this._event_form.available_spaces]).pipe((0, operators_1.map)(function (_ref3) {
       var _ref4 = _slicedToArray(_ref3, 2),
         features = _ref4[0],
@@ -67252,17 +67850,18 @@ var SpaceFiltersComponent = /*#__PURE__*/function () {
 }();
 _SpaceFiltersComponent = SpaceFiltersComponent;
 _SpaceFiltersComponent.ɵfac = function SpaceFiltersComponent_Factory(t) {
-  return new (t || _SpaceFiltersComponent)(i0.ɵɵdirectiveInject(i1.MatBottomSheetRef, 8), i0.ɵɵdirectiveInject(i2.SettingsService), i0.ɵɵdirectiveInject(i3.EventFormService), i0.ɵɵdirectiveInject(i4.OrganisationService), i0.ɵɵdirectiveInject(i5.SpacesService));
+  return new (t || _SpaceFiltersComponent)(i0.ɵɵdirectiveInject(i1.MatBottomSheetRef, 8), i0.ɵɵdirectiveInject(i2.SettingsService), i0.ɵɵdirectiveInject(i3.EventFormService), i0.ɵɵdirectiveInject(i4.OrganisationService), i0.ɵɵdirectiveInject(i5.SpacesService), i0.ɵɵdirectiveInject(i2.MapsPeopleService));
 };
 _SpaceFiltersComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
   type: _SpaceFiltersComponent,
   selectors: [["space-filters"]],
   inputs: {
     multiday: "multiday",
-    hide_levels: "hide_levels"
+    hide_levels: "hide_levels",
+    viewing_map: "viewing_map"
   },
-  decls: 42,
-  vars: 35,
+  decls: 35,
+  vars: 29,
   consts: function consts() {
     var i18n_0;
     if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
@@ -67333,69 +67932,37 @@ _SpaceFiltersComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       /**
        * @suppress {msgDescriptions}
        */
-      var MSG_EXTERNAL_5010873675481014004$$LIBS_SPACES_SRC_LIB_SPACE_SELECT_MODAL_SPACE_FILTERS_COMPONENT_TS_5 = goog.getMsg(" {$interpolation} ", {
-        "interpolation": "\uFFFD0\uFFFD"
-      }, {
-        original_code: {
-          "interpolation": "{{ 'COMMON.FAVOURITES' | translate }}"
-        }
-      });
-      i18n_5 = MSG_EXTERNAL_5010873675481014004$$LIBS_SPACES_SRC_LIB_SPACE_SELECT_MODAL_SPACE_FILTERS_COMPONENT_TS_5;
+      var MSG_EXTERNAL_8264413387051126615$$LIBS_SPACES_SRC_LIB_SPACE_SELECT_MODAL_SPACE_FILTERS_COMPONENT_TS_5 = goog.getMsg("Any Region");
+      i18n_5 = MSG_EXTERNAL_8264413387051126615$$LIBS_SPACES_SRC_LIB_SPACE_SELECT_MODAL_SPACE_FILTERS_COMPONENT_TS_5;
     } else {
-      i18n_5 = $localize(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral([":\u241Fbde3d9fd949ba4c6014b8e64c1362753bca1cf0c\u241F5010873675481014004: ", ":INTERPOLATION: "])), "\uFFFD0\uFFFD");
+      i18n_5 = $localize(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral([":\u241F130845b58eba8e50c98f3fba117a0168cdba4f31\u241F8264413387051126615:Any Region"])));
     }
     var i18n_6;
     if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
       /**
        * @suppress {msgDescriptions}
        */
-      var MSG_EXTERNAL_1614226322496100282$$LIBS_SPACES_SRC_LIB_SPACE_SELECT_MODAL_SPACE_FILTERS_COMPONENT_TS_6 = goog.getMsg(" {$interpolation} ", {
-        "interpolation": "\uFFFD0\uFFFD"
-      }, {
-        original_code: {
-          "interpolation": "{{ 'ROOMS.SHOW_FAVOURITES' | translate }}"
-        }
-      });
-      i18n_6 = MSG_EXTERNAL_1614226322496100282$$LIBS_SPACES_SRC_LIB_SPACE_SELECT_MODAL_SPACE_FILTERS_COMPONENT_TS_6;
+      var MSG_EXTERNAL_7323982518822503502$$LIBS_SPACES_SRC_LIB_SPACE_SELECT_MODAL_SPACE_FILTERS_COMPONENT_TS_6 = goog.getMsg("Any Level");
+      i18n_6 = MSG_EXTERNAL_7323982518822503502$$LIBS_SPACES_SRC_LIB_SPACE_SELECT_MODAL_SPACE_FILTERS_COMPONENT_TS_6;
     } else {
-      i18n_6 = $localize(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral([":\u241F210742da6591a33630e0bfba757b95e6a1d99b20\u241F1614226322496100282: ", ":INTERPOLATION: "])), "\uFFFD0\uFFFD");
+      i18n_6 = $localize(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral([":\u241F50407595967bf29832e873b41f9de3502d5c3e03\u241F7323982518822503502:Any Level"])));
     }
     var i18n_7;
     if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
       /**
        * @suppress {msgDescriptions}
        */
-      var MSG_EXTERNAL_8264413387051126615$$LIBS_SPACES_SRC_LIB_SPACE_SELECT_MODAL_SPACE_FILTERS_COMPONENT_TS_7 = goog.getMsg("Any Region");
-      i18n_7 = MSG_EXTERNAL_8264413387051126615$$LIBS_SPACES_SRC_LIB_SPACE_SELECT_MODAL_SPACE_FILTERS_COMPONENT_TS_7;
+      var MSG_EXTERNAL_835486935962207481$$LIBS_SPACES_SRC_LIB_SPACE_SELECT_MODAL_SPACE_FILTERS_COMPONENT_TS_7 = goog.getMsg(" All Day ");
+      i18n_7 = MSG_EXTERNAL_835486935962207481$$LIBS_SPACES_SRC_LIB_SPACE_SELECT_MODAL_SPACE_FILTERS_COMPONENT_TS_7;
     } else {
-      i18n_7 = $localize(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral([":\u241F130845b58eba8e50c98f3fba117a0168cdba4f31\u241F8264413387051126615:Any Region"])));
+      i18n_7 = $localize(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral([":\u241Fd7f43e20f3a729fa3de32bc7a1f709ccd722eae5\u241F835486935962207481: All Day "])));
     }
     var i18n_8;
     if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
       /**
        * @suppress {msgDescriptions}
        */
-      var MSG_EXTERNAL_7323982518822503502$$LIBS_SPACES_SRC_LIB_SPACE_SELECT_MODAL_SPACE_FILTERS_COMPONENT_TS_8 = goog.getMsg("Any Level");
-      i18n_8 = MSG_EXTERNAL_7323982518822503502$$LIBS_SPACES_SRC_LIB_SPACE_SELECT_MODAL_SPACE_FILTERS_COMPONENT_TS_8;
-    } else {
-      i18n_8 = $localize(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral([":\u241F50407595967bf29832e873b41f9de3502d5c3e03\u241F7323982518822503502:Any Level"])));
-    }
-    var i18n_9;
-    if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-      /**
-       * @suppress {msgDescriptions}
-       */
-      var MSG_EXTERNAL_835486935962207481$$LIBS_SPACES_SRC_LIB_SPACE_SELECT_MODAL_SPACE_FILTERS_COMPONENT_TS_9 = goog.getMsg(" All Day ");
-      i18n_9 = MSG_EXTERNAL_835486935962207481$$LIBS_SPACES_SRC_LIB_SPACE_SELECT_MODAL_SPACE_FILTERS_COMPONENT_TS_9;
-    } else {
-      i18n_9 = $localize(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral([":\u241Fd7f43e20f3a729fa3de32bc7a1f709ccd722eae5\u241F835486935962207481: All Day "])));
-    }
-    var i18n_10;
-    if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-      /**
-       * @suppress {msgDescriptions}
-       */
-      var MSG_EXTERNAL_4735431816432396893$$LIBS_SPACES_SRC_LIB_SPACE_SELECT_MODAL_SPACE_FILTERS_COMPONENT_TS_10 = goog.getMsg(" Start Time{$startTagSpan}*{$closeTagSpan}", {
+      var MSG_EXTERNAL_4735431816432396893$$LIBS_SPACES_SRC_LIB_SPACE_SELECT_MODAL_SPACE_FILTERS_COMPONENT_TS_8 = goog.getMsg(" Start Time{$startTagSpan}*{$closeTagSpan}", {
         "closeTagSpan": "\uFFFD/#4\uFFFD",
         "startTagSpan": "\uFFFD#4\uFFFD"
       }, {
@@ -67404,9 +67971,41 @@ _SpaceFiltersComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
           "startTagSpan": "<span>"
         }
       });
-      i18n_10 = MSG_EXTERNAL_4735431816432396893$$LIBS_SPACES_SRC_LIB_SPACE_SELECT_MODAL_SPACE_FILTERS_COMPONENT_TS_10;
+      i18n_8 = MSG_EXTERNAL_4735431816432396893$$LIBS_SPACES_SRC_LIB_SPACE_SELECT_MODAL_SPACE_FILTERS_COMPONENT_TS_8;
     } else {
-      i18n_10 = $localize(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral([":\u241F02d39ddac5bbf95c424df03d5f0d22cc257556bd\u241F4735431816432396893: Start Time", ":START_TAG_SPAN:*", ":CLOSE_TAG_SPAN:"])), "\uFFFD#4\uFFFD", "\uFFFD/#4\uFFFD");
+      i18n_8 = $localize(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral([":\u241F02d39ddac5bbf95c424df03d5f0d22cc257556bd\u241F4735431816432396893: Start Time", ":START_TAG_SPAN:*", ":CLOSE_TAG_SPAN:"])), "\uFFFD#4\uFFFD", "\uFFFD/#4\uFFFD");
+    }
+    var i18n_9;
+    if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+      /**
+       * @suppress {msgDescriptions}
+       */
+      var MSG_EXTERNAL_5010873675481014004$$LIBS_SPACES_SRC_LIB_SPACE_SELECT_MODAL_SPACE_FILTERS_COMPONENT_TS_9 = goog.getMsg(" {$interpolation} ", {
+        "interpolation": "\uFFFD0\uFFFD"
+      }, {
+        original_code: {
+          "interpolation": "{{ 'COMMON.FAVOURITES' | translate }}"
+        }
+      });
+      i18n_9 = MSG_EXTERNAL_5010873675481014004$$LIBS_SPACES_SRC_LIB_SPACE_SELECT_MODAL_SPACE_FILTERS_COMPONENT_TS_9;
+    } else {
+      i18n_9 = $localize(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral([":\u241Fbde3d9fd949ba4c6014b8e64c1362753bca1cf0c\u241F5010873675481014004: ", ":INTERPOLATION: "])), "\uFFFD0\uFFFD");
+    }
+    var i18n_10;
+    if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+      /**
+       * @suppress {msgDescriptions}
+       */
+      var MSG_EXTERNAL_1614226322496100282$$LIBS_SPACES_SRC_LIB_SPACE_SELECT_MODAL_SPACE_FILTERS_COMPONENT_TS_10 = goog.getMsg(" {$interpolation} ", {
+        "interpolation": "\uFFFD0\uFFFD"
+      }, {
+        original_code: {
+          "interpolation": "{{ 'ROOMS.SHOW_FAVOURITES' | translate }}"
+        }
+      });
+      i18n_10 = MSG_EXTERNAL_1614226322496100282$$LIBS_SPACES_SRC_LIB_SPACE_SELECT_MODAL_SPACE_FILTERS_COMPONENT_TS_10;
+    } else {
+      i18n_10 = $localize(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral([":\u241F210742da6591a33630e0bfba757b95e6a1d99b20\u241F1614226322496100282: ", ":INTERPOLATION: "])), "\uFFFD0\uFFFD");
     }
     var i18n_11;
     if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
@@ -67428,7 +68027,7 @@ _SpaceFiltersComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
     } else {
       i18n_12 = $localize(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral([":\u241Fc17e2cc448524a39eb83b2937cea3235a2e8bf37\u241F2296888311792137027: Apply Filters "])));
     }
-    return [i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_5, i18n_6, i18n_9, i18n_10, i18n_11, i18n_12, [1, "flex", "items-center", "border-b", "border-base-200", "pb-2", "sm:hidden"], [1, "flex-1", "pl-2"], ["icon", "", "matRipple", "", "name", "close-space-filters", 3, "click", 4, "ngIf"], [1, "font-medium", "flex-2", "text-center"], [1, "flex-1"], [1, "max-h-[65vh]", "p-2", "overflow-y-auto", "overflow-x-hidden", "divide-y", "divide-base-200", "w-full", "max-w-[100vw]", 3, "formGroup"], ["details", ""], [1, "text-lg", "font-medium", "mb-1"], [1, "flex-1", "min-w-[8rem]", "flex", "flex-col"], ["for", "location"], ["appearance", "outline", "class", "w-full", 4, "ngIf"], [1, "flex", "items-center", "flex-wrap", "sm:space-x-2"], [1, "flex-1", "min-w-[8rem]"], ["for", "date"], ["name", "date", 3, "ngModelChange", "ngModel", "ngModelOptions", "to", "short"], ["class", "flex-1 min-w-[8rem] relative", 4, "ngIf"], ["class", "flex justify-end -mt-2 mb-2", 4, "ngIf"], ["class", "flex items-center space-x-2", 4, "ngIf"], ["favs", "", 1, "space-y-2", "pb-4"], [1, "text-lg", "font-medium"], [1, "flex", "items-center"], ["for", "fav", 1, "flex-1", "w-1/2"], ["name", "fav", 3, "ngModelChange", "ngModel", "ngModelOptions"], ["features", "", "class", "space-y-2", 4, "ngIf"], ["class", "px-2 pt-2 w-full border-t border-base-200", 4, "ngIf"], ["icon", "", "matRipple", "", "name", "close-space-filters", 3, "click"], ["appearance", "outline", 1, "w-full"], ["name", "region", "placeholder", i18n_7, 3, "ngModelChange", "ngModel", "ngModelOptions"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], ["name", "building", 3, "ngModelChange", "ngModel", "ngModelOptions", "placeholder"], ["name", "location", "placeholder", i18n_8, 3, "ngModelChange", "ngModel", "ngModelOptions", "multiple"], [1, "flex", "flex-col-reverse"], ["class", "opacity-30 text-xs", 4, "ngIf"], [1, "opacity-30", "text-xs"], [1, "opacity-0"], [1, "flex-1", "min-w-[8rem]", "relative"], ["name", "date", 3, "ngModelChange", "ngModel", "ngModelOptions", "from", "to", "short"], [1, "flex", "justify-end", "-mt-2", "mb-2"], ["formControlName", "all_day"], [1, "flex", "items-center", "space-x-2"], [1, "flex-1", "w-1/3"], ["for", "start-time"], ["name", "start-time", 3, "ngModelChange", "ngModel", "ngModelOptions", "use_24hr"], ["class", "flex-1 w-1/3", 4, "ngIf"], ["for", "end-time"], ["name", "end-time", 3, "ngModelChange", "ngModel", "ngModelOptions", "from", "use_24hr"], ["name", "end-time", "formControlName", "duration", 3, "time", "max", "use_24hr"], ["features", "", 1, "space-y-2"], [4, "ngFor", "ngForOf"], ["class", "flex items-center", 4, "ngIf"], ["for", "feat", 1, "flex-1", "w-1/2"], ["name", "feat", 3, "ngModelChange", "ngModel", "ngModelOptions"], [1, "px-2", "pt-2", "w-full", "border-t", "border-base-200"], ["btn", "", "matRipple", "", "name", "apply-space-filters", 1, "w-full", 3, "click"]];
+    return [i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_7, i18n_8, i18n_9, i18n_10, i18n_11, i18n_12, [1, "flex", "items-center", "border-b", "border-base-200", "pb-2", "sm:hidden"], [1, "flex-1", "pl-2"], ["icon", "", "matRipple", "", "name", "close-space-filters", 3, "click", 4, "ngIf"], [1, "font-medium", "flex-2", "text-center"], [1, "flex-1"], [1, "max-h-[65vh]", "p-2", "overflow-y-auto", "overflow-x-hidden", "divide-y", "divide-base-200", "w-full", "max-w-[100vw]", 3, "formGroup"], ["details", ""], [1, "text-lg", "font-medium", "mb-1"], [1, "flex-1", "min-w-[8rem]", "flex", "flex-col"], ["for", "location"], ["appearance", "outline", "class", "w-full", 4, "ngIf"], [1, "flex", "items-center", "flex-wrap", "sm:space-x-2"], [1, "flex-1", "min-w-[8rem]"], ["for", "date"], ["name", "date", 3, "ngModelChange", "ngModel", "ngModelOptions", "to", "short"], ["class", "flex-1 min-w-[8rem] relative", 4, "ngIf"], ["class", "flex justify-end -mt-2 mb-2", 4, "ngIf"], ["class", "flex items-center space-x-2", 4, "ngIf"], ["favs", "", "class", "space-y-2 pb-4", 4, "ngIf"], ["features", "", "class", "space-y-2", 4, "ngIf"], ["class", "px-2 pt-2 w-full border-t border-base-200", 4, "ngIf"], ["icon", "", "matRipple", "", "name", "close-space-filters", 3, "click"], ["appearance", "outline", 1, "w-full"], ["name", "region", "placeholder", i18n_5, 3, "ngModelChange", "ngModel", "ngModelOptions"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], ["name", "building", 3, "ngModelChange", "ngModel", "ngModelOptions", "placeholder"], ["name", "location", "placeholder", i18n_6, 3, "ngModelChange", "ngModel", "ngModelOptions", "multiple"], [1, "flex", "flex-col-reverse"], ["class", "opacity-30 text-xs", 4, "ngIf"], [1, "opacity-30", "text-xs"], [1, "opacity-0"], [1, "flex-1", "min-w-[8rem]", "relative"], ["name", "date", 3, "ngModelChange", "ngModel", "ngModelOptions", "from", "to", "short"], [1, "flex", "justify-end", "-mt-2", "mb-2"], ["formControlName", "all_day"], [1, "flex", "items-center", "space-x-2"], [1, "flex-1", "w-1/3"], ["for", "start-time"], ["name", "start-time", 3, "ngModelChange", "ngModel", "ngModelOptions", "use_24hr"], ["class", "flex-1 w-1/3", 4, "ngIf"], ["for", "end-time"], ["name", "end-time", 3, "ngModelChange", "ngModel", "ngModelOptions", "from", "use_24hr"], ["name", "end-time", "formControlName", "duration", 3, "time", "max", "use_24hr"], ["favs", "", 1, "space-y-2", "pb-4"], [1, "text-lg", "font-medium"], [1, "flex", "items-center"], ["for", "fav", 1, "flex-1", "w-1/2"], ["name", "fav", 3, "ngModelChange", "ngModel", "ngModelOptions"], ["features", "", 1, "space-y-2"], [4, "ngFor", "ngForOf"], ["class", "flex items-center", 4, "ngIf"], ["for", "feat", 1, "flex-1", "w-1/2"], ["name", "feat", 3, "ngModelChange", "ngModel", "ngModelOptions"], [1, "px-2", "pt-2", "w-full", "border-t", "border-base-200"], ["btn", "", "matRipple", "", "name", "apply-space-filters", 1, "w-full", 3, "click"]];
   },
   template: function SpaceFiltersComponent_Template(rf, ctx) {
     if (rf & 1) {
@@ -67470,46 +68069,32 @@ _SpaceFiltersComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵelementEnd();
       i0.ɵɵtemplate(27, SpaceFiltersComponent_div_27_Template, 3, 0, "div", 27)(28, SpaceFiltersComponent_div_28_Template, 8, 6, "div", 28);
       i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(29, "section", 29)(30, "h2", 30);
-      i0.ɵɵi18n(31, 5);
-      i0.ɵɵpipe(32, "translate");
+      i0.ɵɵtemplate(29, SpaceFiltersComponent_section_29_Template, 10, 11, "section", 29);
+      i0.ɵɵpipe(30, "async");
+      i0.ɵɵtemplate(31, SpaceFiltersComponent_section_31_Template, 5, 3, "section", 30);
+      i0.ɵɵpipe(32, "async");
+      i0.ɵɵpipe(33, "async");
       i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(33, "div", 31)(34, "div", 32);
-      i0.ɵɵi18n(35, 6);
-      i0.ɵɵpipe(36, "translate");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(37, "mat-checkbox", 33);
-      i0.ɵɵpipe(38, "async");
-      i0.ɵɵlistener("ngModelChange", function SpaceFiltersComponent_Template_mat_checkbox_ngModelChange_37_listener($event) {
-        return ctx.setOptions({
-          show_fav: $event
-        });
-      });
-      i0.ɵɵelementEnd()()();
-      i0.ɵɵtemplate(39, SpaceFiltersComponent_section_39_Template, 5, 3, "section", 34);
-      i0.ɵɵpipe(40, "async");
-      i0.ɵɵelementEnd();
-      i0.ɵɵtemplate(41, SpaceFiltersComponent_div_41_Template, 3, 0, "div", 35);
+      i0.ɵɵtemplate(34, SpaceFiltersComponent_div_34_Template, 3, 0, "div", 31);
     }
     if (rf & 2) {
       var tmp_2_0;
       var tmp_3_0;
-      var tmp_18_0;
-      var tmp_20_0;
+      var tmp_15_0;
       i0.ɵɵadvance(2);
       i0.ɵɵproperty("ngIf", ctx.can_close);
       i0.ɵɵadvance(4);
       i0.ɵɵproperty("formGroup", ctx.form);
       i0.ɵɵadvance(7);
-      i0.ɵɵproperty("ngIf", ctx.use_region && ((tmp_2_0 = i0.ɵɵpipeBind1(14, 19, ctx.regions)) == null ? null : tmp_2_0.length));
+      i0.ɵɵproperty("ngIf", ctx.use_region && ((tmp_2_0 = i0.ɵɵpipeBind1(14, 16, ctx.regions)) == null ? null : tmp_2_0.length));
       i0.ɵɵadvance(2);
-      i0.ɵɵproperty("ngIf", !ctx.use_region && ((tmp_3_0 = i0.ɵɵpipeBind1(16, 21, ctx.buildings)) == null ? null : tmp_3_0.length) > 1);
+      i0.ɵɵproperty("ngIf", !ctx.use_region && ((tmp_3_0 = i0.ɵɵpipeBind1(16, 18, ctx.buildings)) == null ? null : tmp_3_0.length) > 1);
       i0.ɵɵadvance(2);
       i0.ɵɵproperty("ngIf", !ctx.hide_levels);
       i0.ɵɵadvance(6);
-      i0.ɵɵproperty("ngModel", ctx.form.getRawValue().date)("ngModelOptions", i0.ɵɵpureFunction0(33, _c0))("to", ctx.end_date)("short", true);
+      i0.ɵɵproperty("ngModel", ctx.form.getRawValue().date)("ngModelOptions", i0.ɵɵpureFunction0(28, _c0))("to", ctx.end_date)("short", true);
       i0.ɵɵadvance(2);
-      i0.ɵɵi18nExp(i0.ɵɵpipeBind1(25, 23, "FORM.DATE_ERROR"));
+      i0.ɵɵi18nExp(i0.ɵɵpipeBind1(25, 20, "FORM.DATE_ERROR"));
       i0.ɵɵi18nApply(24);
       i0.ɵɵadvance();
       i0.ɵɵproperty("ngIf", ctx.multiday);
@@ -67517,17 +68102,11 @@ _SpaceFiltersComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵproperty("ngIf", ctx.allow_all_day);
       i0.ɵɵadvance();
       i0.ɵɵproperty("ngIf", !ctx.form.value.all_day);
-      i0.ɵɵadvance(4);
-      i0.ɵɵi18nExp(i0.ɵɵpipeBind1(32, 25, "COMMON.FAVOURITES"));
-      i0.ɵɵi18nApply(31);
-      i0.ɵɵadvance(4);
-      i0.ɵɵi18nExp(i0.ɵɵpipeBind1(36, 27, "ROOMS.SHOW_FAVOURITES"));
-      i0.ɵɵi18nApply(35);
       i0.ɵɵadvance();
-      i0.ɵɵproperty("ngModel", (tmp_18_0 = i0.ɵɵpipeBind1(38, 29, ctx.options)) == null ? null : tmp_18_0.show_fav)("ngModelOptions", i0.ɵɵpureFunction0(34, _c0));
+      i0.ɵɵproperty("ngIf", !ctx.viewing_map || !i0.ɵɵpipeBind1(30, 22, ctx.using_mapspeople));
       i0.ɵɵadvance(2);
-      i0.ɵɵproperty("ngIf", (tmp_20_0 = i0.ɵɵpipeBind1(40, 31, ctx.features)) == null ? null : tmp_20_0.length);
-      i0.ɵɵadvance(2);
+      i0.ɵɵproperty("ngIf", ((tmp_15_0 = i0.ɵɵpipeBind1(32, 24, ctx.features)) == null ? null : tmp_15_0.length) && (!ctx.viewing_map || !i0.ɵɵpipeBind1(33, 26, ctx.using_mapspeople)));
+      i0.ɵɵadvance(3);
       i0.ɵɵproperty("ngIf", ctx.can_close);
     }
   },
