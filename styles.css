@@ -924,6 +924,9 @@ video {
 #placeos :is(.\!mt-0) {
   margin-top: 0px !important;
 }
+#placeos :is(.\!mt-4) {
+  margin-top: 1rem !important;
+}
 #placeos :is(.-mb-5) {
   margin-bottom: -1.25rem;
 }
@@ -3231,6 +3234,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: h
 #placeos :is(.focus\:border-b:focus) {
   border-bottom-width: 1px;
 }
+#placeos :is(.focus\:opacity-100:focus) {
+  opacity: 1;
+}
 #placeos :is(.focus\:outline-none:focus) {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -4675,6 +4681,14 @@ a[icon][disabled] {
 }
 #placeos .mdc-text-field--outlined {
   padding: 0 1rem;
+}
+#placeos .mdc-slider__value-indicator {
+  background-color: var(--b3);
+  color: var(--bc);
+  opacity: 1;
+}
+#placeos .mdc-slider__value-indicator::before {
+  border-top-color: var(--b3);
 }
 #placeos .mat-mdc-tab-list {
   border-bottom: 1px solid var(--b2);

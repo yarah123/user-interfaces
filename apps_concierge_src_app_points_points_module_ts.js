@@ -684,7 +684,7 @@ class PointsOverviewComponent {
     selectors: [["points-overview"]],
     decls: 31,
     vars: 7,
-    consts: [[1, "px-4", "py-3", "bg-secondary", "text-white", "w-full", "rounded", "font-medium", "text-lg", "shadow"], [1, "bg-base-100", "w-full"], [1, "p-2", "underline", "font-medium", "text-lg"], [1, "flex", "items-center", "space-x-2", "p-4", "mb-4"], [1, "bg-base-100", "rounded", "border", "border-base-200", 3, "ngModelChange", "step", "ngModel", "render_fn"], ["matTooltip", "Set point redemption caps on menu items"], [1, "bg-base-100", "w-full", "flex-1"], [1, "p-4"], [1, "flex", "items-center", "space-x-2", "p-2", "border-b", "border-base-200"], [1, "bg-base-100", "rounded", "border", "border-base-200", 3, "ngModelChange", "ngModel"], [1, "flex", "items-center", "space-x-2", "p-2"]],
+    consts: [[1, "px-4", "py-3", "bg-secondary", "text-white", "w-full", "rounded", "font-medium", "text-lg", "shadow"], [1, "bg-base-100", "w-full"], [1, "p-2", "underline", "font-medium", "text-lg"], [1, "flex", "items-center", "space-x-2", "p-4", "mb-4"], [3, "ngModelChange", "step", "ngModel", "render_fn"], ["matTooltip", "Set point redemption caps on menu items"], [1, "bg-base-100", "w-full", "flex-1"], [1, "p-4"], [1, "flex", "items-center", "space-x-2", "p-2", "border-b", "border-base-200"], [3, "ngModelChange", "ngModel"], [1, "flex", "items-center", "space-x-2", "p-2"]],
     template: function PointsOverviewComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "h2", 0);
