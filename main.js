@@ -31576,15 +31576,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "b3cfa43",
-  "hash": "b3cfa43",
+  "raw": "299d1ef",
+  "hash": "299d1ef",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "b3cfa43",
+  "suffix": "299d1ef",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1719205825697
+  "time": 1719551501518
 };
 /* tslint:enable */
 
@@ -44234,6 +44234,7 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
       var _this7 = this;
       var force = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
       var ignore_space_check = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+      var ignore_owner = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
       return new Promise( /*#__PURE__*/function () {
         var _ref18 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(resolve, reject) {
           var _this7$event, _form$get, _form$get2, _form$get3, _ref19, _ref20, _spaces$, _this7$event2, _this7$event3, _this7$event4, _value$organiser, _ref21, _value$organiser2, _ref22, _ref23, _event$extension_data2;
@@ -44315,7 +44316,7 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                 query = id ? {
                   system_id: ((_this7$event2 = _this7.event) === null || _this7$event2 === void 0 || (_this7$event2 = _this7$event2.resources[0]) === null || _this7$event2 === void 0 ? void 0 : _this7$event2.id) || ((_this7$event3 = _this7.event) === null || _this7$event3 === void 0 || (_this7$event3 = _this7$event3.system) === null || _this7$event3 === void 0 ? void 0 : _this7$event3.id) || space_id
                 } : {};
-                if (is_owner) query.calendar = host || creator;
+                if (is_owner && !ignore_owner) query.calendar = host || creator;
                 if (!(_this7._payments.payment_module && spaces.length)) {
                   _context3.next = 43;
                   break;
@@ -44960,6 +44961,11 @@ var CalendarEvent = /*#__PURE__*/function () {
     get: function get() {
       return this.all_day || this.duration >= 12 * 60;
     }
+  }, {
+    key: "view_access",
+    get: function get() {
+      return this.extension_data.view_access || 'PRIVATE';
+    }
     /** Get field from extension data */
   }, {
     key: "ext",
@@ -45061,11 +45067,10 @@ var CalendarEvent = /*#__PURE__*/function () {
         }));
       });
       obj.system_id = (_this$system = this.system) === null || _this$system === void 0 ? void 0 : _this$system.id;
-      delete obj.catering;
-      delete obj.date;
-      delete obj.duration;
-      delete obj.status;
-      delete obj.linked_bookings;
+      for (var _i = 0, _arr = ['catering', 'date', 'date_end', 'duration', 'status', 'linked_bookings', '_valid_asset_cache', '_valid_cache_expiry', 'type']; _i < _arr.length; _i++) {
+        var key = _arr[_i];
+        if (key in obj) delete obj[key];
+      }
       if (!obj.update_master) delete obj.recurring_event_id;
       (0, common_1.removeEmptyFields)(obj);
       return obj;
@@ -45868,7 +45873,7 @@ var GroupEventCardComponent = /*#__PURE__*/function () {
     value: function viewDetails() {
       this._dialog.open(group_event_details_modal_component_1.GroupEventDetailsModalComponent, {
         data: {
-          booking: this.event,
+          event: this.event,
           concierge: false
         }
       });
@@ -45940,7 +45945,7 @@ function GroupEventDetailsModalComponent_img_2_Template(rf, ctx) {
   }
   if (rf & 2) {
     var ctx_r1 = i0.ɵɵnextContext();
-    i0.ɵɵproperty("source", ctx_r1.booking.images[0]);
+    i0.ɵɵproperty("source", ctx_r1.event.extension_data == null ? null : ctx_r1.event.extension_data.images[0]);
   }
 }
 function GroupEventDetailsModalComponent_div_3_Template(rf, ctx) {
@@ -46088,9 +46093,9 @@ function GroupEventDetailsModalComponent_div_99_Template(rf, ctx) {
     i0.ɵɵadvance(3);
     i0.ɵɵproperty("ngIf", !ctx_r1.showing_map);
     i0.ɵɵadvance(3);
-    i0.ɵɵtextInterpolate1(" ", (tmp_4_0 = i0.ɵɵpipeBind1(8, 7, i0.ɵɵpipeBind1(7, 5, ctx_r1.booking.linked_event == null ? null : ctx_r1.booking.linked_event.system_id))) == null ? null : tmp_4_0.display_name, " ");
+    i0.ɵɵtextInterpolate1(" ", (tmp_4_0 = i0.ɵɵpipeBind1(8, 7, i0.ɵɵpipeBind1(7, 5, ctx_r1.event.linked_event == null ? null : ctx_r1.event.linked_event.system_id))) == null ? null : tmp_4_0.display_name, " ");
     i0.ɵɵadvance(3);
-    i0.ɵɵproperty("ngIf", !((tmp_5_0 = i0.ɵɵpipeBind1(11, 11, i0.ɵɵpipeBind1(10, 9, ctx_r1.booking.linked_event == null ? null : ctx_r1.booking.linked_event.system_id))) == null ? null : tmp_5_0.display_name));
+    i0.ɵɵproperty("ngIf", !((tmp_5_0 = i0.ɵɵpipeBind1(11, 11, i0.ɵɵpipeBind1(10, 9, ctx_r1.event.linked_event == null ? null : ctx_r1.event.linked_event.system_id))) == null ? null : tmp_5_0.display_name));
     i0.ɵɵadvance(4);
     i0.ɵɵproperty("ngIf", ctx_r1.building && ctx_r1.level);
     i0.ɵɵadvance();
@@ -46118,7 +46123,7 @@ function GroupEventDetailsModalComponent_div_100_Template(rf, ctx) {
   if (rf & 2) {
     var ctx_r1 = i0.ɵɵnextContext();
     i0.ɵɵadvance(3);
-    i0.ɵɵproperty("list", ctx_r1.booking.attendees)("host", ctx_r1.booking.user_email);
+    i0.ɵɵproperty("list", ctx_r1.event.attendees)("host", ctx_r1.event.user_email);
   }
 }
 var GroupEventDetailsModalComponent = /*#__PURE__*/function () {
@@ -46131,7 +46136,7 @@ var GroupEventDetailsModalComponent = /*#__PURE__*/function () {
     this._dialog_ref = _dialog_ref;
     this.edit = new core_1.EventEmitter();
     this.remove = new core_1.EventEmitter();
-    this.booking = this._data.event;
+    this.event = this._data.event;
     this.concierge = this._data.concierge;
     this.features = [];
     this.locate = '';
@@ -46147,32 +46152,32 @@ var GroupEventDetailsModalComponent = /*#__PURE__*/function () {
   }, {
     key: "featured",
     get: function get() {
-      var _this$booking$extensi;
-      return this.booking.featured || ((_this$booking$extensi = this.booking.extension_data) === null || _this$booking$extensi === void 0 ? void 0 : _this$booking$extensi.featured);
+      var _this$event$extension;
+      return this.event.featured || ((_this$event$extension = this.event.extension_data) === null || _this$event$extension === void 0 ? void 0 : _this$event$extension.featured);
     }
   }, {
     key: "is_onsite",
     get: function get() {
-      return this.booking.extension_data.attendance_type !== 'ONLINE';
+      return this.event.extension_data.attendance_type !== 'ONLINE';
     }
   }, {
     key: "has_space",
     get: function get() {
-      var _this$booking$system;
-      return !!((_this$booking$system = this.booking.system) !== null && _this$booking$system !== void 0 && _this$booking$system.id);
+      var _this$event$system;
+      return !!((_this$event$system = this.event.system) !== null && _this$event$system !== void 0 && _this$event$system.id);
     }
   }, {
     key: "is_online",
     get: function get() {
-      return !this.is_onsite || this.booking.extension_data.attendance_type === 'ANY';
+      return !this.is_onsite || this.event.extension_data.attendance_type === 'ANY';
     }
   }, {
     key: "attendance",
     get: function get() {
-      var _this$booking$attende;
-      return ((_this$booking$attende = this.booking.attendees) === null || _this$booking$attende === void 0 || (_this$booking$attende = _this$booking$attende.filter(function (_) {
+      var _this$event$attendees;
+      return ((_this$event$attendees = this.event.attendees) === null || _this$event$attendees === void 0 || (_this$event$attendees = _this$event$attendees.filter(function (_) {
         return _.checked_in;
-      })) === null || _this$booking$attende === void 0 ? void 0 : _this$booking$attende.length) || 0;
+      })) === null || _this$event$attendees === void 0 ? void 0 : _this$event$attendees.length) || 0;
     }
   }, {
     key: "is_interested",
@@ -46188,15 +46193,15 @@ var GroupEventDetailsModalComponent = /*#__PURE__*/function () {
   }, {
     key: "system_id",
     get: function get() {
-      var _this$booking$system2;
-      return (_this$booking$system2 = this.booking.system) === null || _this$booking$system2 === void 0 ? void 0 : _this$booking$system2.id;
+      var _this$event$system2;
+      return (_this$event$system2 = this.event.system) === null || _this$event$system2 === void 0 ? void 0 : _this$event$system2.id;
     }
   }, {
     key: "guest_details",
     get: function get() {
-      var _this$booking$attende2;
+      var _this$event$attendees2;
       var user = (0, common_1.currentUser)();
-      return (_this$booking$attende2 = this.booking.attendees) === null || _this$booking$attende2 === void 0 ? void 0 : _this$booking$attende2.find(function (_) {
+      return (_this$event$attendees2 = this.event.attendees) === null || _this$event$attendees2 === void 0 ? void 0 : _this$event$attendees2.find(function (_) {
         return _.email === user.email;
       });
     }
@@ -46204,17 +46209,17 @@ var GroupEventDetailsModalComponent = /*#__PURE__*/function () {
     key: "ngOnInit",
     value: function () {
       var _ngOnInit = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-        var _this$booking$system3, _this$booking$extensi2, _this$space, _this$booking$system4;
+        var _this$event$system3, _this$event$extension2, _this$space, _this$event$system4;
         var space_pipe, map_id, id, zones;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
               space_pipe = new space_pipe_1.SpacePipe(this._org);
               _context.next = 3;
-              return space_pipe.transform((_this$booking$system3 = this.booking.system) === null || _this$booking$system3 === void 0 ? void 0 : _this$booking$system3.id);
+              return space_pipe.transform((_this$event$system3 = this.event.system) === null || _this$event$system3 === void 0 ? void 0 : _this$event$system3.id);
             case 3:
               this.space = _context.sent;
-              map_id = (_this$booking$extensi2 = this.booking.extension_data) === null || _this$booking$extensi2 === void 0 ? void 0 : _this$booking$extensi2.map_id;
+              map_id = (_this$event$extension2 = this.event.extension_data) === null || _this$event$extension2 === void 0 ? void 0 : _this$event$extension2.map_id;
               id = ((_this$space = this.space) === null || _this$space === void 0 ? void 0 : _this$space.map_id) || map_id;
               if (id) {
                 this.styles["#".concat(id)] = {
@@ -46226,7 +46231,7 @@ var GroupEventDetailsModalComponent = /*#__PURE__*/function () {
                   data: {}
                 }];
               }
-              zones = ((_this$booking$system4 = this.booking.system) === null || _this$booking$system4 === void 0 ? void 0 : _this$booking$system4.zones) || [];
+              zones = ((_this$event$system4 = this.event.system) === null || _this$event$system4 === void 0 ? void 0 : _this$event$system4.zones) || [];
               this.level = this._org.levelWithID(zones);
               this.building = this._org.buildings.find(function (_) {
                 return zones.includes(_.id);
@@ -46278,19 +46283,19 @@ var GroupEventDetailsModalComponent = /*#__PURE__*/function () {
                 break;
               }
               _context2.next = 5;
-              return (0, events_fn_1.removeEventGuest)(this.booking.id, (0, common_1.currentUser)()).toPromise();
+              return (0, events_fn_1.removeEventGuest)(this.event.id, (0, common_1.currentUser)()).toPromise();
             case 5:
-              this.booking.attendees = (this.booking.attendees || []).filter(function (_) {
+              this.event.attendees = (this.event.attendees || []).filter(function (_) {
                 return _.email !== user.email;
               });
               _context2.next = 12;
               break;
             case 8:
               _context2.next = 10;
-              return (0, events_fn_1.addEventGuest)(this.booking.id, (0, common_1.currentUser)()).toPromise();
+              return (0, events_fn_1.addEventGuest)(this.event.id, (0, common_1.currentUser)()).toPromise();
             case 10:
               user = _context2.sent;
-              this.booking.attendees = (0, common_1.unique)([].concat(_toConsumableArray(this.booking.attendees || []), [user]), 'email');
+              this.event.attendees = (0, common_1.unique)([].concat(_toConsumableArray(this.event.attendees || []), [user]), 'email');
             case 12:
             case "end":
               return _context2.stop();
@@ -46316,10 +46321,10 @@ var GroupEventDetailsModalComponent = /*#__PURE__*/function () {
                 break;
               }
               _context3.next = 4;
-              return (0, events_fn_1.addEventGuest)(this.booking.id, (0, common_1.currentUser)()).toPromise();
+              return (0, events_fn_1.addEventGuest)(this.event.id, (0, common_1.currentUser)()).toPromise();
             case 4:
               user = _context3.sent;
-              this.booking.attendees = (0, common_1.unique)([].concat(_toConsumableArray(this.booking.attendees || []), [user]), 'email');
+              this.event.attendees = (0, common_1.unique)([].concat(_toConsumableArray(this.event.attendees || []), [user]), 'email');
             case 6:
               user = _objectSpread(_objectSpread({}, (0, common_1.currentUser)()), user || {});
               if (user.email) {
@@ -46329,9 +46334,9 @@ var GroupEventDetailsModalComponent = /*#__PURE__*/function () {
               return _context3.abrupt("return");
             case 9:
               _context3.next = 11;
-              return (0, events_fn_1.checkinEventGuest)(this.booking.id, user.email, !this.is_going).toPromise();
+              return (0, events_fn_1.checkinEventGuest)(this.event.id, user.email, !this.is_going).toPromise();
             case 11:
-              guest = this.booking.attendees.find(function (_) {
+              guest = this.event.attendees.find(function (_) {
                 return _.email === user.email;
               });
               if (guest) {
@@ -46499,15 +46504,15 @@ _GroupEventDetailsModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       var concierge_menu_r5 = i0.ɵɵreference(17);
       var menu_r6 = i0.ɵɵreference(43);
       i0.ɵɵadvance(2);
-      i0.ɵɵproperty("ngIf", ctx.booking.extension_data == null ? null : ctx.booking.extension_data.images == null ? null : ctx.booking.extension_data.images.length);
+      i0.ɵɵproperty("ngIf", ctx.event.extension_data == null ? null : ctx.event.extension_data.images == null ? null : ctx.event.extension_data.images.length);
       i0.ɵɵadvance();
       i0.ɵɵproperty("ngIf", ctx.featured);
       i0.ɵɵadvance(7);
-      i0.ɵɵtextInterpolate1(" ", ctx.booking.title, " ");
+      i0.ɵɵtextInterpolate1(" ", ctx.event.title, " ");
       i0.ɵɵadvance(2);
       i0.ɵɵproperty("ngIf", !ctx.concierge);
       i0.ɵɵadvance();
-      i0.ɵɵproperty("disabled", ctx.booking.state === "done")("matMenuTriggerFor", ctx.concierge ? concierge_menu_r5 : menu_r6);
+      i0.ɵɵproperty("disabled", ctx.event.state === "done")("matMenuTriggerFor", ctx.concierge ? concierge_menu_r5 : menu_r6);
       i0.ɵɵadvance(5);
       i0.ɵɵproperty("disabled", true);
       i0.ɵɵadvance(12);
@@ -46521,9 +46526,9 @@ _GroupEventDetailsModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵadvance(3);
       i0.ɵɵtextInterpolate1(" ", ctx.is_going ? "Revoke" : "Indicate", " Going ");
       i0.ɵɵadvance(8);
-      i0.ɵɵtextInterpolate1(" Event by ", (ctx.booking.organiser == null ? null : ctx.booking.organiser.name) || ctx.booking.host, " ");
+      i0.ɵɵtextInterpolate1(" Event by ", (ctx.event.organiser == null ? null : ctx.event.organiser.name) || ctx.event.host, " ");
       i0.ɵɵadvance(11);
-      i0.ɵɵtextInterpolate3(" ", i0.ɵɵpipeBind2(75, 27, ctx.booking.date, "EEEE, d MMMM, yyyy"), " . ", i0.ɵɵpipeBind2(76, 30, ctx.booking.date, ctx.time_format), " - ", i0.ɵɵpipeBind2(77, 33, ctx.booking.date + ctx.booking.duration * 60 * 1000, ctx.time_format), " ");
+      i0.ɵɵtextInterpolate3(" ", i0.ɵɵpipeBind2(75, 27, ctx.event.date, "EEEE, d MMMM, yyyy"), " . ", i0.ɵɵpipeBind2(76, 30, ctx.event.date, ctx.time_format), " - ", i0.ɵɵpipeBind2(77, 33, ctx.event.date + ctx.event.duration * 60 * 1000, ctx.time_format), " ");
       i0.ɵɵadvance(9);
       i0.ɵɵproperty("ngIf", ctx.is_onsite && ctx.has_space);
       i0.ɵɵadvance();
@@ -46531,11 +46536,11 @@ _GroupEventDetailsModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵadvance();
       i0.ɵɵproperty("ngIf", ctx.is_online);
       i0.ɵɵadvance(6);
-      i0.ɵɵtextInterpolate2(" ", ctx.attendance, " going, ", ctx.booking.attendees == null ? null : ctx.booking.attendees.length, " interested ");
+      i0.ɵɵtextInterpolate2(" ", ctx.attendance, " going, ", ctx.event.attendees == null ? null : ctx.event.attendees.length, " interested ");
       i0.ɵɵadvance(4);
-      i0.ɵɵproperty("innerHTML", i0.ɵɵpipeBind1(96, 36, ctx.booking.body), i0.ɵɵsanitizeHtml);
+      i0.ɵɵproperty("innerHTML", i0.ɵɵpipeBind1(96, 36, ctx.event.body), i0.ɵɵsanitizeHtml);
       i0.ɵɵadvance(2);
-      i0.ɵɵproperty("ngIf", !ctx.booking.body.trim());
+      i0.ɵɵproperty("ngIf", !ctx.event.body.trim());
       i0.ɵɵadvance(2);
       i0.ɵɵproperty("ngIf", ctx.level);
       i0.ɵɵadvance();
@@ -46984,7 +46989,7 @@ var validateCateringField = function validateCateringField(catering_control) {
   };
 };
 function generateEventForm() {
-  var _event$organiser, _ref, _ref2, _event$extension_data, _event$extension_data2, _event$extension_data3, _event$extension_data4, _event$extension_data5, _event$extension_data6, _event$extension_data7, _event$extension_data8, _event$extension_data9, _event$extension_data10, _event$extension_data11, _event$extension_data12;
+  var _event$organiser, _ref, _ref2, _event$extension_data, _event$extension_data2, _event$extension_data3, _event$extension_data4, _event$extension_data5, _event$extension_data6, _event$extension_data7, _event$extension_data8, _event$extension_data9, _event$extension_data10, _event$extension_data11, _event$extension_data12, _event$extension_data13, _event$extension_data14;
   var event = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new event_class_1.CalendarEvent();
   var settings = arguments.length > 1 ? arguments[1] : undefined;
   if (!event) event = new event_class_1.CalendarEvent();
@@ -47030,7 +47035,9 @@ function generateEventForm() {
     attendance_type: new forms_1.FormControl(((_event$extension_data10 = event.extension_data) === null || _event$extension_data10 === void 0 ? void 0 : _event$extension_data10.attendance_type) || 'ONSITE'),
     timezone: new forms_1.FormControl(event.timezone || common_1.LOCAL_TIMEZONE),
     shared_event: new forms_1.FormControl(((_event$extension_data11 = event.extension_data) === null || _event$extension_data11 === void 0 ? void 0 : _event$extension_data11.shared_event) || false),
-    access: new forms_1.FormControl(((_event$extension_data12 = event.extension_data) === null || _event$extension_data12 === void 0 ? void 0 : _event$extension_data12.access) || 'PRIVATE')
+    view_access: new forms_1.FormControl(((_event$extension_data12 = event.extension_data) === null || _event$extension_data12 === void 0 ? void 0 : _event$extension_data12.view_access) || 'PRIVATE'),
+    images: new forms_1.FormControl(((_event$extension_data13 = event.extension_data) === null || _event$extension_data13 === void 0 ? void 0 : _event$extension_data13.images) || []),
+    featured: new forms_1.FormControl(((_event$extension_data14 = event.extension_data) === null || _event$extension_data14 === void 0 ? void 0 : _event$extension_data14.featured) || false)
   });
   form.get('organiser').valueChanges.subscribe(function (o) {
     return form.controls.host.setValue(o === null || o === void 0 ? void 0 : o.email);
@@ -55258,7 +55265,7 @@ var ImageListFieldComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
   }, {
     key: "writeValue",
     value: function writeValue(value) {
-      this.list = value;
+      this.list = value || [];
     }
   }, {
     key: "_updateUploadHistory",
