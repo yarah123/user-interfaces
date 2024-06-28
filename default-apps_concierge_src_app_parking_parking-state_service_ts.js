@@ -532,7 +532,7 @@ class ParkingStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.A
     this._loading = new rxjs__WEBPACK_IMPORTED_MODULE_8__.BehaviorSubject([]);
     /** List of available parking levels for the current building */
     this.levels = this._org.level_list.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.map)(_ => {
-      if (!this._settings.get('app.use_region')) {
+      if (this._settings.get('app.use_region')) {
         const blds = this._org.buildingsForRegion();
         const bld_ids = blds.map(bld => bld.id);
         const list = _.filter(lvl => bld_ids.includes(lvl.parent_id) && lvl.tags.includes('parking'));
