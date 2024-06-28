@@ -442,7 +442,7 @@ class GroupEventsStateService {
       period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_7__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_8__["default"])(options.date)),
       period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_7__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_9__["default"])(options.end || options.date || Date.now())),
       calendars: this.calendar
-    })), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.map)(list => list.filter(_ => _.extension_data.access !== 'PRIVATE' && _.extension_data.shared_event).sort((a, b) => a.date - b.date)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.tap)(list => {
+    })), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.map)(list => list.filter(_ => _.extension_data.view_access !== 'PRIVATE' && _.extension_data.shared_event).sort((a, b) => a.date - b.date)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.tap)(list => {
       const old_tags = this._tag_list.getValue();
       const tags = list.map(event => event.extension_data.tags || []).flat();
       this._tag_list.next((0,_placeos_common__WEBPACK_IMPORTED_MODULE_0__.unique)([...old_tags, ...tags]));
