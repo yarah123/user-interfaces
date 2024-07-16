@@ -5225,61 +5225,62 @@ var ScheduleStateService = /*#__PURE__*/function (_common_1$AsyncHandle) {
         var _ref33 = _slicedToArray(_ref32, 1),
           user = _ref33[0];
         return /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(_auto_release$resourc) {
-          var is_home, auto_release, _iterator, _step, type, bookings, check_block, _iterator2, _step2, booking, diff, time, close_after, wording, result;
+          var is_home, auto_release, time_before, _iterator, _step, type, bookings, check_block, _iterator2, _step2, booking, diff, time, close_after, wording, result;
           return _regeneratorRuntime().wrap(function _callee2$(_context2) {
             while (1) switch (_context2.prev = _context2.next) {
               case 0:
                 is_home = user.location !== 'wfo';
                 auto_release = _this._settings.get('app.auto_release');
                 if (!(auto_release && is_home && (auto_release.time_after || auto_release.time_before) && (_auto_release$resourc = auto_release.resources) !== null && _auto_release$resourc !== void 0 && _auto_release$resourc.length)) {
-                  _context2.next = 56;
+                  _context2.next = 57;
                   break;
                 }
+                time_before = Math.min(60, auto_release.time_before || 0);
                 _iterator = _createForOfIteratorHelper(auto_release.resources);
-                _context2.prev = 4;
+                _context2.prev = 5;
                 _iterator.s();
-              case 6:
+              case 7:
                 if ((_step = _iterator.n()).done) {
-                  _context2.next = 48;
+                  _context2.next = 49;
                   break;
                 }
                 type = _step.value;
-                _context2.next = 10;
+                _context2.next = 11;
                 return (0, bookings_1.queryBookings)({
                   period_start: (0, date_fns_1.getUnixTime)((0, date_fns_1.startOfMinute)(Date.now())),
-                  period_end: (0, date_fns_1.getUnixTime)((0, date_fns_1.addMinutes)(Date.now(), (auto_release.time_after || 5) + (auto_release.time_before || 0))),
+                  period_end: (0, date_fns_1.getUnixTime)((0, date_fns_1.addMinutes)(Date.now(), (auto_release.time_after || 5) + time_before)),
                   type: type
                 }).toPromise();
-              case 10:
+              case 11:
                 bookings = _context2.sent;
-                check_block = (auto_release.time_after || 0) + (auto_release.time_before || 0);
+                check_block = (auto_release.time_after || 0) + time_before;
                 _iterator2 = _createForOfIteratorHelper(bookings);
-                _context2.prev = 13;
+                _context2.prev = 14;
                 _iterator2.s();
-              case 15:
+              case 16:
                 if ((_step2 = _iterator2.n()).done) {
-                  _context2.next = 38;
+                  _context2.next = 39;
                   break;
                 }
                 booking = _step2.value;
                 if (!(_this._ignore_cancel.includes(booking.id) || booking.checked_in || booking.rejected)) {
-                  _context2.next = 19;
+                  _context2.next = 20;
                   break;
                 }
-                return _context2.abrupt("continue", 36);
-              case 19:
+                return _context2.abrupt("continue", 37);
+              case 20:
                 _this._dialog.closeAll();
                 diff = (0, date_fns_1.differenceInMinutes)((0, date_fns_1.addMinutes)(booking.date, auto_release.time_after || 0), Date.now());
                 if (!(diff > check_block || diff < 0)) {
-                  _context2.next = 23;
+                  _context2.next = 24;
                   break;
                 }
-                return _context2.abrupt("continue", 36);
-              case 23:
+                return _context2.abrupt("continue", 37);
+              case 24:
                 time = (0, date_fns_1.addMinutes)(booking.date, auto_release.time_after || 0);
                 close_after = (0, date_fns_1.differenceInMilliseconds)(time.getTime() + 60 * 1000, Date.now());
                 wording = type === 'parking' ? 'reservation' : 'booking';
-                _context2.next = 28;
+                _context2.next = 29;
                 return (0, common_1.openConfirmModal)({
                   title: "Keep ".concat(type, " ").concat(wording),
                   content: "You have indicated you are not in the office. \n                                Your  ".concat(wording, " for \"<i>").concat(booking.asset_name || booking.title, "</i>\" at ").concat((0, date_fns_1.format)(booking.date, _this._settings.time_format), " will be cancelled at ").concat((0, date_fns_1.format)(time, _this._settings.time_format), ".<br/><br/>\n                                Do you wish to keep this ").concat(wording, "?"),
@@ -5290,53 +5291,53 @@ var ScheduleStateService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                   cancel_text: 'Dismiss',
                   close_delay: close_after
                 }, _this._dialog);
-              case 28:
+              case 29:
                 result = _context2.sent;
                 if (!(result.reason !== 'done')) {
-                  _context2.next = 32;
+                  _context2.next = 33;
                   break;
                 }
                 _this._ignore_cancel.push(booking.id);
-                return _context2.abrupt("continue", 36);
-              case 32:
+                return _context2.abrupt("continue", 37);
+              case 33:
                 result.loading('Checking in booking...');
-                _context2.next = 35;
+                _context2.next = 36;
                 return (0, bookings_1.checkinBooking)(booking.id, true).toPromise();
-              case 35:
-                result.close();
               case 36:
-                _context2.next = 15;
+                result.close();
+              case 37:
+                _context2.next = 16;
                 break;
-              case 38:
-                _context2.next = 43;
+              case 39:
+                _context2.next = 44;
                 break;
-              case 40:
-                _context2.prev = 40;
-                _context2.t0 = _context2["catch"](13);
+              case 41:
+                _context2.prev = 41;
+                _context2.t0 = _context2["catch"](14);
                 _iterator2.e(_context2.t0);
-              case 43:
-                _context2.prev = 43;
+              case 44:
+                _context2.prev = 44;
                 _iterator2.f();
-                return _context2.finish(43);
-              case 46:
-                _context2.next = 6;
+                return _context2.finish(44);
+              case 47:
+                _context2.next = 7;
                 break;
-              case 48:
-                _context2.next = 53;
+              case 49:
+                _context2.next = 54;
                 break;
-              case 50:
-                _context2.prev = 50;
-                _context2.t1 = _context2["catch"](4);
+              case 51:
+                _context2.prev = 51;
+                _context2.t1 = _context2["catch"](5);
                 _iterator.e(_context2.t1);
-              case 53:
-                _context2.prev = 53;
+              case 54:
+                _context2.prev = 54;
                 _iterator.f();
-                return _context2.finish(53);
-              case 56:
+                return _context2.finish(54);
+              case 57:
               case "end":
                 return _context2.stop();
             }
-          }, _callee2, null, [[4, 50, 53, 56], [13, 40, 43, 46]]);
+          }, _callee2, null, [[5, 51, 54, 57], [14, 41, 44, 47]]);
         })();
       });
       return function (_x2) {
@@ -32734,15 +32735,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "b1b7ad7",
-  "hash": "b1b7ad7",
+  "raw": "42a9699",
+  "hash": "42a9699",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "b1b7ad7",
+  "suffix": "42a9699",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1721099866633
+  "time": 1721107796253
 };
 /* tslint:enable */
 
