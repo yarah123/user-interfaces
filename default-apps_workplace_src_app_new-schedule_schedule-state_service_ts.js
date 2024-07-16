@@ -199,13 +199,14 @@ class ScheduleStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.
         const is_home = user.location !== 'wfo';
         const auto_release = _this._settings.get('app.auto_release');
         if (auto_release && is_home && (auto_release.time_after || auto_release.time_before) && auto_release.resources?.length) {
+          const time_before = Math.min(60, auto_release.time_before || 0);
           for (const type of auto_release.resources) {
             const bookings = yield (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.queryBookings)({
               period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_20__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_25__["default"])(Date.now())),
-              period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_20__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_26__["default"])(Date.now(), (auto_release.time_after || 5) + (auto_release.time_before || 0))),
+              period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_20__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_26__["default"])(Date.now(), (auto_release.time_after || 5) + time_before)),
               type
             }).toPromise();
-            const check_block = (auto_release.time_after || 0) + (auto_release.time_before || 0);
+            const check_block = (auto_release.time_after || 0) + time_before;
             for (const booking of bookings) {
               if (_this._ignore_cancel.includes(booking.id) || booking.checked_in || booking.rejected) {
                 continue;
