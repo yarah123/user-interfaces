@@ -197,10 +197,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! rxjs/operators */ 22508);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! rxjs/operators */ 33602);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! rxjs/operators */ 57871);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! date-fns */ 73725);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! date-fns */ 27419);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! date-fns */ 13264);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! date-fns */ 30417);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! date-fns */ 99908);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! date-fns */ 33240);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! date-fns */ 56441);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! date-fns */ 45726);
 /* harmony import */ var _placeos_bookings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/bookings */ 85616);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/common */ 22797);
 /* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @placeos/organisation */ 2510);
@@ -268,8 +268,8 @@ class DesksStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__.Asy
       const date = filters.date || Date.now();
       const zones = !filters.zones || filters.zones.some(z => this._all_zones_keys.includes(z)) ? this._settings.get('app.use_region') ? this._org.buildingsForRegion().map(_ => _.id) : [this._org.building.id] : filters.zones;
       this._next_page.next(() => (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_2__.queryPagedBookings)({
-        period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_17__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_18__["default"])(date)),
-        period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_17__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_19__["default"])(date)),
+        period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_17__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_18__.startOfDay)(date)),
+        period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_17__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_19__.endOfDay)(date)),
         type: 'desk',
         zones: zones.join(','),
         include_checked_out: true
@@ -411,7 +411,7 @@ class DesksStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__.Asy
       if (success === 'failed') {
         return (0,_placeos_common__WEBPACK_IMPORTED_MODULE_3__.notifyError)('Error approving in desk booking');
       }
-      (0,_placeos_common__WEBPACK_IMPORTED_MODULE_3__.notifySuccess)(`Approved desk booking for ${desk.user_name} on ${(0,date_fns__WEBPACK_IMPORTED_MODULE_24__["default"])(desk.date, 'MMM do')}.`);
+      (0,_placeos_common__WEBPACK_IMPORTED_MODULE_3__.notifySuccess)(`Approved desk booking for ${desk.user_name} on ${(0,date_fns__WEBPACK_IMPORTED_MODULE_24__.format)(desk.date, 'MMM do')}.`);
       desk.approved = true;
       desk.rejected = false;
     })();
@@ -422,7 +422,7 @@ class DesksStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__.Asy
       if (success === 'failed') {
         return (0,_placeos_common__WEBPACK_IMPORTED_MODULE_3__.notifyError)('Error rejecting in desk booking');
       }
-      (0,_placeos_common__WEBPACK_IMPORTED_MODULE_3__.notifySuccess)(`Rejected desk booking for ${desk.user_name} on ${(0,date_fns__WEBPACK_IMPORTED_MODULE_24__["default"])(desk.date, 'MMM do')}.`);
+      (0,_placeos_common__WEBPACK_IMPORTED_MODULE_3__.notifySuccess)(`Rejected desk booking for ${desk.user_name} on ${(0,date_fns__WEBPACK_IMPORTED_MODULE_24__.format)(desk.date, 'MMM do')}.`);
       desk.approved = false;
       desk.rejected = true;
     })();

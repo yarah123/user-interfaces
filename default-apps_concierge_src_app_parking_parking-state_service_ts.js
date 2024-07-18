@@ -480,10 +480,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/common */ 22797);
 /* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/organisation */ 2510);
 /* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @placeos/ts-client */ 35713);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! date-fns */ 73725);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! date-fns */ 27419);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! date-fns */ 13264);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! date-fns */ 30417);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! date-fns */ 99908);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! date-fns */ 33240);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! date-fns */ 56441);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! date-fns */ 45726);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ 90521);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs */ 68824);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs */ 71536);
@@ -565,8 +565,8 @@ class ParkingStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.A
     this.bookings = (0,rxjs__WEBPACK_IMPORTED_MODULE_9__.combineLatest)([this._org.active_building, this._options, this.users, this._poll]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_16__.debounceTime)(500), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.switchMap)(([bld, options, users]) => {
       this._loading.next([...this._loading.getValue(), 'bookings']);
       return (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.queryBookings)({
-        period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_17__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_18__["default"])(options.date)),
-        period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_17__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_19__["default"])(options.date)),
+        period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_17__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_18__.startOfDay)(options.date)),
+        period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_17__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_19__.endOfDay)(options.date)),
         type: 'parking',
         zones: options.zones?.length ? options.zones.join(',') : (this._settings.get('app.use_region') ? this._org.region?.id : '') || bld?.id,
         include_checked_out: true
@@ -615,8 +615,8 @@ class ParkingStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.A
       const idx = spaces.findIndex(_ => _.id === new_space.id);
       if (space.assigned_to && space.assigned_to !== new_space.assigned_to) {
         const booking_list = yield (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.queryBookings)({
-          period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_17__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_18__["default"])(Date.now())),
-          period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_17__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_19__["default"])(Date.now())),
+          period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_17__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_18__.startOfDay)(Date.now())),
+          period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_17__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_19__.endOfDay)(Date.now())),
           type: 'parking',
           email: new_space.assigned_to
         }).toPromise();
@@ -627,8 +627,8 @@ class ParkingStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.A
         yield (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.saveBooking)(new _placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.Booking({
           user_id: new_space.assigned_to,
           user_email: new_space.assigned_to,
-          booking_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_17__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_18__["default"])(Date.now())),
-          booking_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_17__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_19__["default"])(Date.now())),
+          booking_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_17__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_18__.startOfDay)(Date.now())),
+          booking_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_17__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_19__.endOfDay)(Date.now())),
           type: 'parking',
           booking_type: 'parking',
           asset_id: new_space.id,
@@ -754,7 +754,7 @@ class ParkingStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.A
     var _this6 = this;
     return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const success = yield (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.approveBooking)(booking.id).toPromise().catch(_ => 'failed');
-      success === 'failed' ? (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.notifyError)('Error approving in desk booking') : (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.notifySuccess)(`Approved parking reservation for ${booking.user_name} on ${(0,date_fns__WEBPACK_IMPORTED_MODULE_22__["default"])(booking.date, 'MMM Do')}.`);
+      success === 'failed' ? (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.notifyError)('Error approving in desk booking') : (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.notifySuccess)(`Approved parking reservation for ${booking.user_name} on ${(0,date_fns__WEBPACK_IMPORTED_MODULE_22__.format)(booking.date, 'MMM Do')}.`);
       if (success !== 'failed') _this6._change.next(Date.now());
     })();
   }
@@ -762,7 +762,7 @@ class ParkingStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.A
     var _this7 = this;
     return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const success = yield (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.rejectBooking)(bookings.id).toPromise().catch(_ => 'failed');
-      success === 'failed' ? (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.notifyError)('Error rejecting in desk booking') : (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.notifySuccess)(`Rejected parking reservation for ${bookings.user_name} on ${(0,date_fns__WEBPACK_IMPORTED_MODULE_22__["default"])(bookings.date, 'MMM Do')}.`);
+      success === 'failed' ? (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.notifyError)('Error rejecting in desk booking') : (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.notifySuccess)(`Rejected parking reservation for ${bookings.user_name} on ${(0,date_fns__WEBPACK_IMPORTED_MODULE_22__.format)(bookings.date, 'MMM Do')}.`);
       if (success !== 'failed') _this7._change.next(Date.now());
     })();
   }

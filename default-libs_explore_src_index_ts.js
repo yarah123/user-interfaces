@@ -45,10 +45,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
 /* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/ts-client */ 35713);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! date-fns */ 13264);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! date-fns */ 73725);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! date-fns */ 27419);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! date-fns */ 88402);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! date-fns */ 56441);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! date-fns */ 99908);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! date-fns */ 33240);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! date-fns */ 28797);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs */ 90521);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! rxjs */ 71536);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! rxjs */ 68824);
@@ -133,11 +133,11 @@ class ExploreDesksService extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__.A
       this.subscription(`lvl-in_use`, binding.listen().subscribe(d => this.processBindingChange(d || {}, system_id)));
       this.subscription('lvl-in_use_bind', binding.bind());
     }));
-    this._booking_list = (0,rxjs__WEBPACK_IMPORTED_MODULE_20__.combineLatest)([this._options, this._state.level]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.filter)(([_, lvl]) => (_.use_api || _.date > (0,date_fns__WEBPACK_IMPORTED_MODULE_21__["default"])(Date.now()).valueOf()) && !!lvl), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_14__.switchMap)(([_, level]) => {
+    this._booking_list = (0,rxjs__WEBPACK_IMPORTED_MODULE_20__.combineLatest)([this._options, this._state.level]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.filter)(([_, lvl]) => (_.use_api || _.date > (0,date_fns__WEBPACK_IMPORTED_MODULE_21__.endOfDay)(Date.now()).valueOf()) && !!lvl), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_14__.switchMap)(([_, level]) => {
       return (0,libs_bookings_src_lib_bookings_fn__WEBPACK_IMPORTED_MODULE_11__.queryBookings)({
         type: 'desk',
-        period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_22__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_23__["default"])(_.date || Date.now())),
-        period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_22__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_21__["default"])(_.date || Date.now())),
+        period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_22__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_23__.startOfDay)(_.date || Date.now())),
+        period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_22__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_21__.endOfDay)(_.date || Date.now())),
         zones: level.id
       });
     }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_19__.debounceTime)(200), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_24__.tap)(bookings => {
@@ -201,7 +201,7 @@ class ExploreDesksService extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__.A
     const devices = (value || []).filter(v => !['desk', 'booking'].includes(v.location));
     const desks = (value || []).filter(v => v.location === 'desk' || v.location === 'booking' && v.type === 'desk');
     const date = this._options.getValue().date || Date.now();
-    if (date <= (0,date_fns__WEBPACK_IMPORTED_MODULE_21__["default"])(Date.now()).valueOf() && !this._options.getValue().use_api) {
+    if (date <= (0,date_fns__WEBPACK_IMPORTED_MODULE_21__.endOfDay)(Date.now()).valueOf() && !this._options.getValue().use_api) {
       this._in_use.next(desks.filter(v => v.location === 'booking').map(v => v.map_id || v.asset_id));
       this._checked_in.next(desks.filter(v => v.location === 'booking' && v.checked_in).map(v => v.map_id || v.asset_id));
       this._presence.next(desks.filter(v => v.at_location).map(v => v.map_id || v.asset_id));
@@ -349,7 +349,7 @@ class ExploreDesksService extends _placeos_common__WEBPACK_IMPORTED_MODULE_3__.A
     return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       let user = null;
       if (!!_this4._settings.get('app.desks.allow_time_changes')) {
-        const until = (0,date_fns__WEBPACK_IMPORTED_MODULE_21__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_27__["default"])(Date.now(), _this4._settings.get('app.desks.available_period') || 90));
+        const until = (0,date_fns__WEBPACK_IMPORTED_MODULE_21__.endOfDay)((0,date_fns__WEBPACK_IMPORTED_MODULE_27__.addDays)(Date.now(), _this4._settings.get('app.desks.available_period') || 90));
         const ref = _this4._dialog.open(libs_explore_src_lib_set_datetime_modal_component__WEBPACK_IMPORTED_MODULE_6__.SetDatetimeModalComponent, {
           data: {
             date,
@@ -395,8 +395,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
 /* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/ts-client */ 35713);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ 80293);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ 75971);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ 36156);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ 1874);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/common */ 22797);
 /* harmony import */ var libs_components_src_lib_interactive_map_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! libs/components/src/lib/interactive-map.component */ 24918);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37580);
@@ -549,7 +549,7 @@ class ExploreDeviceInfoComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
   }
   /** Time of the last update */
   get last_seen() {
-    return (0,date_fns__WEBPACK_IMPORTED_MODULE_6__["default"])((this._details.last_seen || 0) * 1000, {
+    return (0,date_fns__WEBPACK_IMPORTED_MODULE_6__.formatDistanceToNow)((this._details.last_seen || 0) * 1000, {
       addSuffix: true
     });
   }
@@ -558,7 +558,7 @@ class ExploreDeviceInfoComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
     return this._details.variance * 100 * this.zoom;
   }
   get distance() {
-    return Math.abs((0,date_fns__WEBPACK_IMPORTED_MODULE_7__["default"])((this._details.last_seen || 0) * 1000, new Date()));
+    return Math.abs((0,date_fns__WEBPACK_IMPORTED_MODULE_7__.differenceInMinutes)((this._details.last_seen || 0) * 1000, new Date()));
   }
   get distance_color() {
     return this.distance < 10 ? '#43a047' : this.distance < 20 ? '#ffb300' : '#e53935';
@@ -726,7 +726,7 @@ class ExploreDeviceInfoComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _components_src_lib_custom_tooltip_component__WEBPACK_IMPORTED_MODULE_4__.CustomTooltipComponent],
-    styles: ["[_nghost-%COMP%] {\n                pointer-events: auto;\n            }\n\n            [_nghost-%COMP%]    > [name='dot'][_ngcontent-%COMP%] {\n                background-color: #616161;\n            }\n\n            [_nghost-%COMP%]:hover    > [name='radius'][_ngcontent-%COMP%] {\n                opacity: 1;\n            }\n\n            [name='radius'][_ngcontent-%COMP%] {\n                opacity: 0;\n                transition: opacity 200ms;\n                pointer-events: none;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvZXhwbG9yZS9zcmMvbGliL2V4cGxvcmUtZGV2aWNlLWluZm8uY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxvQkFBb0I7WUFDeEI7O1lBRUE7Z0JBQ0kseUJBQXlCO1lBQzdCOztZQUVBO2dCQUNJLFVBQVU7WUFDZDs7WUFFQTtnQkFDSSxVQUFVO2dCQUNWLHlCQUF5QjtnQkFDekIsb0JBQW9CO1lBQ3hCIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgcG9pbnRlci1ldmVudHM6IGF1dG87XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIDpob3N0ID4gW25hbWU9J2RvdCddIHtcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjNjE2MTYxO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICA6aG9zdDpob3ZlciA+IFtuYW1lPSdyYWRpdXMnXSB7XG4gICAgICAgICAgICAgICAgb3BhY2l0eTogMTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgW25hbWU9J3JhZGl1cyddIHtcbiAgICAgICAgICAgICAgICBvcGFjaXR5OiAwO1xuICAgICAgICAgICAgICAgIHRyYW5zaXRpb246IG9wYWNpdHkgMjAwbXM7XG4gICAgICAgICAgICAgICAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
+    styles: ["[_nghost-%COMP%] {\n                pointer-events: auto;\n            }\n\n            [_nghost-%COMP%]    > [name='dot'][_ngcontent-%COMP%] {\n                background-color: #616161;\n            }\n\n            [_nghost-%COMP%]:hover    > [name='radius'][_ngcontent-%COMP%] {\n                opacity: 1;\n            }\n\n            [name='radius'][_ngcontent-%COMP%] {\n                opacity: 0;\n                transition: opacity 200ms;\n                pointer-events: none;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV4cGxvcmUtZGV2aWNlLWluZm8uY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxvQkFBb0I7WUFDeEI7O1lBRUE7Z0JBQ0kseUJBQXlCO1lBQzdCOztZQUVBO2dCQUNJLFVBQVU7WUFDZDs7WUFFQTtnQkFDSSxVQUFVO2dCQUNWLHlCQUF5QjtnQkFDekIsb0JBQW9CO1lBQ3hCIiwiZmlsZSI6ImV4cGxvcmUtZGV2aWNlLWluZm8uY29tcG9uZW50LnRzIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgcG9pbnRlci1ldmVudHM6IGF1dG87XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIDpob3N0ID4gW25hbWU9J2RvdCddIHtcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjNjE2MTYxO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICA6aG9zdDpob3ZlciA+IFtuYW1lPSdyYWRpdXMnXSB7XG4gICAgICAgICAgICAgICAgb3BhY2l0eTogMTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgW25hbWU9J3JhZGl1cyddIHtcbiAgICAgICAgICAgICAgICBvcGFjaXR5OiAwO1xuICAgICAgICAgICAgICAgIHRyYW5zaXRpb246IG9wYWNpdHkgMjAwbXM7XG4gICAgICAgICAgICAgICAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdfQ== */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvZXhwbG9yZS9zcmMvbGliL2V4cGxvcmUtZGV2aWNlLWluZm8uY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxvQkFBb0I7WUFDeEI7O1lBRUE7Z0JBQ0kseUJBQXlCO1lBQzdCOztZQUVBO2dCQUNJLFVBQVU7WUFDZDs7WUFFQTtnQkFDSSxVQUFVO2dCQUNWLHlCQUF5QjtnQkFDekIsb0JBQW9CO1lBQ3hCOztBQUVaLGcrQkFBZytCIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgcG9pbnRlci1ldmVudHM6IGF1dG87XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIDpob3N0ID4gW25hbWU9J2RvdCddIHtcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjNjE2MTYxO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICA6aG9zdDpob3ZlciA+IFtuYW1lPSdyYWRpdXMnXSB7XG4gICAgICAgICAgICAgICAgb3BhY2l0eTogMTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgW25hbWU9J3JhZGl1cyddIHtcbiAgICAgICAgICAgICAgICBvcGFjaXR5OiAwO1xuICAgICAgICAgICAgICAgIHRyYW5zaXRpb246IG9wYWNpdHkgMjAwbXM7XG4gICAgICAgICAgICAgICAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
   });
 }
 
@@ -1038,7 +1038,7 @@ class ExploreMapControlComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _angular_material_core__WEBPACK_IMPORTED_MODULE_8__.MatOption, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__.MatFormField, _angular_material_select__WEBPACK_IMPORTED_MODULE_10__.MatSelect, _angular_forms__WEBPACK_IMPORTED_MODULE_11__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_11__.NgModel, _angular_common__WEBPACK_IMPORTED_MODULE_7__.AsyncPipe],
-    styles: ["mat-form-field[has-bld='true'][_ngcontent-%COMP%] {\n                max-width: calc(50vw - 2.5rem);\n            }\n\n            [full][_nghost-%COMP%]   mat-form-field[_ngcontent-%COMP%] {\n                max-width: calc(50% - 2.5rem);\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvZXhwbG9yZS9zcmMvbGliL2V4cGxvcmUtbWFwLWNvbnRyb2wuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSw4QkFBOEI7WUFDbEM7O1lBRUE7Z0JBQ0ksNkJBQTZCO1lBQ2pDIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICBtYXQtZm9ybS1maWVsZFtoYXMtYmxkPSd0cnVlJ10ge1xuICAgICAgICAgICAgICAgIG1heC13aWR0aDogY2FsYyg1MHZ3IC0gMi41cmVtKTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgOmhvc3RbZnVsbF0gbWF0LWZvcm0tZmllbGQge1xuICAgICAgICAgICAgICAgIG1heC13aWR0aDogY2FsYyg1MCUgLSAyLjVyZW0pO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
+    styles: ["mat-form-field[has-bld='true'][_ngcontent-%COMP%] {\n                max-width: calc(50vw - 2.5rem);\n            }\n\n            [full][_nghost-%COMP%]   mat-form-field[_ngcontent-%COMP%] {\n                max-width: calc(50% - 2.5rem);\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV4cGxvcmUtbWFwLWNvbnRyb2wuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSw4QkFBOEI7WUFDbEM7O1lBRUE7Z0JBQ0ksNkJBQTZCO1lBQ2pDIiwiZmlsZSI6ImV4cGxvcmUtbWFwLWNvbnRyb2wuY29tcG9uZW50LnRzIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICBtYXQtZm9ybS1maWVsZFtoYXMtYmxkPSd0cnVlJ10ge1xuICAgICAgICAgICAgICAgIG1heC13aWR0aDogY2FsYyg1MHZ3IC0gMi41cmVtKTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgOmhvc3RbZnVsbF0gbWF0LWZvcm0tZmllbGQge1xuICAgICAgICAgICAgICAgIG1heC13aWR0aDogY2FsYyg1MCUgLSAyLjVyZW0pO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXX0= */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvZXhwbG9yZS9zcmMvbGliL2V4cGxvcmUtbWFwLWNvbnRyb2wuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSw4QkFBOEI7WUFDbEM7O1lBRUE7Z0JBQ0ksNkJBQTZCO1lBQ2pDOztBQUVaLDRtQkFBNG1CIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICBtYXQtZm9ybS1maWVsZFtoYXMtYmxkPSd0cnVlJ10ge1xuICAgICAgICAgICAgICAgIG1heC13aWR0aDogY2FsYyg1MHZ3IC0gMi41cmVtKTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgOmhvc3RbZnVsbF0gbWF0LWZvcm0tZmllbGQge1xuICAgICAgICAgICAgICAgIG1heC13aWR0aDogY2FsYyg1MCUgLSAyLjVyZW0pO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
   });
 }
 
@@ -1059,7 +1059,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! rxjs/operators */ 33602);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! rxjs/operators */ 57871);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/common */ 22797);
-/* harmony import */ var _placeos_users__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/users */ 63870);
+/* harmony import */ var _placeos_users__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/users */ 41489);
 /* harmony import */ var libs_spaces_src_lib_spaces_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! libs/spaces/src/lib/spaces.service */ 7401);
 /* harmony import */ var libs_components_src_lib_map_pin_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! libs/components/src/lib/map-pin.component */ 71865);
 /* harmony import */ var libs_components_src_lib_map_radius_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! libs/components/src/lib/map-radius.component */ 95384);
@@ -1419,7 +1419,7 @@ class ExploreMapViewComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_22__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_22__.NgIf, _components_src_lib_interactive_map_component__WEBPACK_IMPORTED_MODULE_16__.InteractiveMapComponent, _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_23__.MatSlideToggle, _angular_forms__WEBPACK_IMPORTED_MODULE_24__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_24__.NgModel, _explore_map_control_component__WEBPACK_IMPORTED_MODULE_17__.ExploreMapControlComponent, _angular_common__WEBPACK_IMPORTED_MODULE_22__.AsyncPipe],
-    styles: ["[_nghost-%COMP%] {\n                height: 100%;\n                width: 100%;\n            }\n\n            [zones][_ngcontent-%COMP%] {\n                top: 3.5rem;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvZXhwbG9yZS9zcmMvbGliL2V4cGxvcmUtbWFwLXZpZXcuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxZQUFZO2dCQUNaLFdBQVc7WUFDZjs7WUFFQTtnQkFDSSxXQUFXO1lBQ2YiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICAgICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIFt6b25lc10ge1xuICAgICAgICAgICAgICAgIHRvcDogMy41cmVtO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
+    styles: ["[_nghost-%COMP%] {\n                height: 100%;\n                width: 100%;\n            }\n\n            [zones][_ngcontent-%COMP%] {\n                top: 3.5rem;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV4cGxvcmUtbWFwLXZpZXcuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxZQUFZO2dCQUNaLFdBQVc7WUFDZjs7WUFFQTtnQkFDSSxXQUFXO1lBQ2YiLCJmaWxlIjoiZXhwbG9yZS1tYXAtdmlldy5jb21wb25lbnQudHMiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICAgICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIFt6b25lc10ge1xuICAgICAgICAgICAgICAgIHRvcDogMy41cmVtO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXX0= */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvZXhwbG9yZS9zcmMvbGliL2V4cGxvcmUtbWFwLXZpZXcuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxZQUFZO2dCQUNaLFdBQVc7WUFDZjs7WUFFQTtnQkFDSSxXQUFXO1lBQ2Y7O0FBRVosd2lCQUF3aUIiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICAgICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIFt6b25lc10ge1xuICAgICAgICAgICAgICAgIHRvcDogMy41cmVtO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
   });
 }
 
@@ -1507,7 +1507,7 @@ class ExploreParkingInfoComponent {
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgIf],
-    styles: [".triangle[_ngcontent-%COMP%] {\n                width: 0px;\n                height: 0px;\n                border-style: solid;\n                border-width: 0.5rem 0.5rem 0 0;\n                border-color: currentColor transparent transparent transparent;\n                transform: rotate(0deg);\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvZXhwbG9yZS9zcmMvbGliL2V4cGxvcmUtcGFya2luZy1pbmZvLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksVUFBVTtnQkFDVixXQUFXO2dCQUNYLG1CQUFtQjtnQkFDbkIsK0JBQStCO2dCQUMvQiw4REFBOEQ7Z0JBQzlELHVCQUF1QjtZQUMzQiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgLnRyaWFuZ2xlIHtcbiAgICAgICAgICAgICAgICB3aWR0aDogMHB4O1xuICAgICAgICAgICAgICAgIGhlaWdodDogMHB4O1xuICAgICAgICAgICAgICAgIGJvcmRlci1zdHlsZTogc29saWQ7XG4gICAgICAgICAgICAgICAgYm9yZGVyLXdpZHRoOiAwLjVyZW0gMC41cmVtIDAgMDtcbiAgICAgICAgICAgICAgICBib3JkZXItY29sb3I6IGN1cnJlbnRDb2xvciB0cmFuc3BhcmVudCB0cmFuc3BhcmVudCB0cmFuc3BhcmVudDtcbiAgICAgICAgICAgICAgICB0cmFuc2Zvcm06IHJvdGF0ZSgwZGVnKTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
+    styles: [".triangle[_ngcontent-%COMP%] {\n                width: 0px;\n                height: 0px;\n                border-style: solid;\n                border-width: 0.5rem 0.5rem 0 0;\n                border-color: currentColor transparent transparent transparent;\n                transform: rotate(0deg);\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV4cGxvcmUtcGFya2luZy1pbmZvLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksVUFBVTtnQkFDVixXQUFXO2dCQUNYLG1CQUFtQjtnQkFDbkIsK0JBQStCO2dCQUMvQiw4REFBOEQ7Z0JBQzlELHVCQUF1QjtZQUMzQiIsImZpbGUiOiJleHBsb3JlLXBhcmtpbmctaW5mby5jb21wb25lbnQudHMiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIC50cmlhbmdsZSB7XG4gICAgICAgICAgICAgICAgd2lkdGg6IDBweDtcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDBweDtcbiAgICAgICAgICAgICAgICBib3JkZXItc3R5bGU6IHNvbGlkO1xuICAgICAgICAgICAgICAgIGJvcmRlci13aWR0aDogMC41cmVtIDAuNXJlbSAwIDA7XG4gICAgICAgICAgICAgICAgYm9yZGVyLWNvbG9yOiBjdXJyZW50Q29sb3IgdHJhbnNwYXJlbnQgdHJhbnNwYXJlbnQgdHJhbnNwYXJlbnQ7XG4gICAgICAgICAgICAgICAgdHJhbnNmb3JtOiByb3RhdGUoMGRlZyk7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdfQ== */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvZXhwbG9yZS9zcmMvbGliL2V4cGxvcmUtcGFya2luZy1pbmZvLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksVUFBVTtnQkFDVixXQUFXO2dCQUNYLG1CQUFtQjtnQkFDbkIsK0JBQStCO2dCQUMvQiw4REFBOEQ7Z0JBQzlELHVCQUF1QjtZQUMzQjs7QUFFWixneUJBQWd5QiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgLnRyaWFuZ2xlIHtcbiAgICAgICAgICAgICAgICB3aWR0aDogMHB4O1xuICAgICAgICAgICAgICAgIGhlaWdodDogMHB4O1xuICAgICAgICAgICAgICAgIGJvcmRlci1zdHlsZTogc29saWQ7XG4gICAgICAgICAgICAgICAgYm9yZGVyLXdpZHRoOiAwLjVyZW0gMC41cmVtIDAgMDtcbiAgICAgICAgICAgICAgICBib3JkZXItY29sb3I6IGN1cnJlbnRDb2xvciB0cmFuc3BhcmVudCB0cmFuc3BhcmVudCB0cmFuc3BhcmVudDtcbiAgICAgICAgICAgICAgICB0cmFuc2Zvcm06IHJvdGF0ZSgwZGVnKTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
   });
 }
 
@@ -1526,12 +1526,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 22797);
 /* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/ts-client */ 35713);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! date-fns */ 73725);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! date-fns */ 46247);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! date-fns */ 2250);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! date-fns */ 27419);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! date-fns */ 13264);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! date-fns */ 88402);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! date-fns */ 99908);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! date-fns */ 23206);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! date-fns */ 5469);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! date-fns */ 33240);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! date-fns */ 56441);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! date-fns */ 28797);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs */ 90521);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs */ 68824);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! rxjs */ 71536);
@@ -1591,15 +1591,15 @@ class ExploreParkingService extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__
     this.events = (0,rxjs__WEBPACK_IMPORTED_MODULE_13__.combineLatest)([this._org.active_building, this._options, this._poll, this._state.options]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_14__.switchMap)(([bld, _, __, {
       is_public
     }]) => is_public ? (0,rxjs__WEBPACK_IMPORTED_MODULE_15__.of)([]) : (0,libs_bookings_src_lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.queryBookings)({
-      period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_16__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_17__["default"])(_.date || Date.now())),
-      period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_16__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_18__["default"])(_.date || Date.now())),
+      period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_16__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_17__.startOfMinute)(_.date || Date.now())),
+      period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_16__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_18__.endOfMinute)(_.date || Date.now())),
       type: 'parking',
       zones: bld?.id
     })), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_19__.shareReplay)(1));
     /** Any event that the selected user has for the current date */
     this.user_events = (0,rxjs__WEBPACK_IMPORTED_MODULE_13__.combineLatest)([this._options]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_14__.switchMap)(([_]) => (0,libs_bookings_src_lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.queryBookings)({
-      period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_16__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_20__["default"])(_.date || Date.now())),
-      period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_16__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_21__["default"])(_.date || Date.now())),
+      period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_16__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_20__.startOfDay)(_.date || Date.now())),
+      period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_16__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_21__.endOfDay)(_.date || Date.now())),
       type: 'parking',
       email: _?.user || (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.currentUser)()?.email
     })), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_19__.shareReplay)(1));
@@ -1753,7 +1753,7 @@ class ExploreParkingService extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__
     return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       let user = null;
       if (!!_this2._settings.get('app.parking.allow_time_changes')) {
-        const until = (0,date_fns__WEBPACK_IMPORTED_MODULE_21__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_24__["default"])(Date.now(), _this2._settings.get('app.parking.available_period') || 90));
+        const until = (0,date_fns__WEBPACK_IMPORTED_MODULE_21__.endOfDay)((0,date_fns__WEBPACK_IMPORTED_MODULE_24__.addDays)(Date.now(), _this2._settings.get('app.parking.available_period') || 90));
         const ref = _this2._dialog.open(_set_datetime_modal_component__WEBPACK_IMPORTED_MODULE_8__.SetDatetimeModalComponent, {
           data: {
             date,
@@ -2050,7 +2050,7 @@ class ExploreSearchComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0_
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_6__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_6__.NgIf, _components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_2__.IconComponent, _components_src_lib_virtual_keyboard_component__WEBPACK_IMPORTED_MODULE_3__.VirtualKeyboardComponent, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_7__.MatAutocomplete, _angular_material_core__WEBPACK_IMPORTED_MODULE_8__.MatOption, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_7__.MatAutocompleteTrigger, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_7__.MatAutocompleteOrigin, _angular_material_core__WEBPACK_IMPORTED_MODULE_8__.MatRipple, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_9__.MatProgressSpinner, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.NgModel, _angular_common__WEBPACK_IMPORTED_MODULE_6__.AsyncPipe, _angular_common__WEBPACK_IMPORTED_MODULE_6__.SlicePipe],
-    styles: ["[_nghost-%COMP%] {\n                z-index: 99;\n                position: relative;\n            }\n\n            [role='search'][_ngcontent-%COMP%] {\n                height: 3rem;\n                width: 0;\n                border-radius: 1.5rem;\n                border: 1px solid var(--b3);\n                transition: width 200ms opacity 200ms;\n                opacity: 0;\n                pointer-events: none;\n            }\n\n            [role='search'].show[_ngcontent-%COMP%] {\n                width: 24rem;\n                opacity: 1;\n                pointer-events: auto;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvZXhwbG9yZS9zcmMvbGliL2V4cGxvcmUtc2VhcmNoLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksV0FBVztnQkFDWCxrQkFBa0I7WUFDdEI7O1lBRUE7Z0JBQ0ksWUFBWTtnQkFDWixRQUFRO2dCQUNSLHFCQUFxQjtnQkFDckIsMkJBQTJCO2dCQUMzQixxQ0FBcUM7Z0JBQ3JDLFVBQVU7Z0JBQ1Ysb0JBQW9CO1lBQ3hCOztZQUVBO2dCQUNJLFlBQVk7Z0JBQ1osVUFBVTtnQkFDVixvQkFBb0I7WUFDeEIiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICB6LWluZGV4OiA5OTtcbiAgICAgICAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIFtyb2xlPSdzZWFyY2gnXSB7XG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAzcmVtO1xuICAgICAgICAgICAgICAgIHdpZHRoOiAwO1xuICAgICAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDEuNXJlbTtcbiAgICAgICAgICAgICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1iMyk7XG4gICAgICAgICAgICAgICAgdHJhbnNpdGlvbjogd2lkdGggMjAwbXMgb3BhY2l0eSAyMDBtcztcbiAgICAgICAgICAgICAgICBvcGFjaXR5OiAwO1xuICAgICAgICAgICAgICAgIHBvaW50ZXItZXZlbnRzOiBub25lO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICBbcm9sZT0nc2VhcmNoJ10uc2hvdyB7XG4gICAgICAgICAgICAgICAgd2lkdGg6IDI0cmVtO1xuICAgICAgICAgICAgICAgIG9wYWNpdHk6IDE7XG4gICAgICAgICAgICAgICAgcG9pbnRlci1ldmVudHM6IGF1dG87XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
+    styles: ["[_nghost-%COMP%] {\n                z-index: 99;\n                position: relative;\n            }\n\n            [role='search'][_ngcontent-%COMP%] {\n                height: 3rem;\n                width: 0;\n                border-radius: 1.5rem;\n                border: 1px solid var(--b3);\n                transition: width 200ms opacity 200ms;\n                opacity: 0;\n                pointer-events: none;\n            }\n\n            [role='search'].show[_ngcontent-%COMP%] {\n                width: 24rem;\n                opacity: 1;\n                pointer-events: auto;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV4cGxvcmUtc2VhcmNoLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksV0FBVztnQkFDWCxrQkFBa0I7WUFDdEI7O1lBRUE7Z0JBQ0ksWUFBWTtnQkFDWixRQUFRO2dCQUNSLHFCQUFxQjtnQkFDckIsMkJBQTJCO2dCQUMzQixxQ0FBcUM7Z0JBQ3JDLFVBQVU7Z0JBQ1Ysb0JBQW9CO1lBQ3hCOztZQUVBO2dCQUNJLFlBQVk7Z0JBQ1osVUFBVTtnQkFDVixvQkFBb0I7WUFDeEIiLCJmaWxlIjoiZXhwbG9yZS1zZWFyY2guY29tcG9uZW50LnRzIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgei1pbmRleDogOTk7XG4gICAgICAgICAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICBbcm9sZT0nc2VhcmNoJ10ge1xuICAgICAgICAgICAgICAgIGhlaWdodDogM3JlbTtcbiAgICAgICAgICAgICAgICB3aWR0aDogMDtcbiAgICAgICAgICAgICAgICBib3JkZXItcmFkaXVzOiAxLjVyZW07XG4gICAgICAgICAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tYjMpO1xuICAgICAgICAgICAgICAgIHRyYW5zaXRpb246IHdpZHRoIDIwMG1zIG9wYWNpdHkgMjAwbXM7XG4gICAgICAgICAgICAgICAgb3BhY2l0eTogMDtcbiAgICAgICAgICAgICAgICBwb2ludGVyLWV2ZW50czogbm9uZTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgW3JvbGU9J3NlYXJjaCddLnNob3cge1xuICAgICAgICAgICAgICAgIHdpZHRoOiAyNHJlbTtcbiAgICAgICAgICAgICAgICBvcGFjaXR5OiAxO1xuICAgICAgICAgICAgICAgIHBvaW50ZXItZXZlbnRzOiBhdXRvO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXX0= */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvZXhwbG9yZS9zcmMvbGliL2V4cGxvcmUtc2VhcmNoLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksV0FBVztnQkFDWCxrQkFBa0I7WUFDdEI7O1lBRUE7Z0JBQ0ksWUFBWTtnQkFDWixRQUFRO2dCQUNSLHFCQUFxQjtnQkFDckIsMkJBQTJCO2dCQUMzQixxQ0FBcUM7Z0JBQ3JDLFVBQVU7Z0JBQ1Ysb0JBQW9CO1lBQ3hCOztZQUVBO2dCQUNJLFlBQVk7Z0JBQ1osVUFBVTtnQkFDVixvQkFBb0I7WUFDeEI7O0FBRVosd3VDQUF3dUMiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICB6LWluZGV4OiA5OTtcbiAgICAgICAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIFtyb2xlPSdzZWFyY2gnXSB7XG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAzcmVtO1xuICAgICAgICAgICAgICAgIHdpZHRoOiAwO1xuICAgICAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDEuNXJlbTtcbiAgICAgICAgICAgICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1iMyk7XG4gICAgICAgICAgICAgICAgdHJhbnNpdGlvbjogd2lkdGggMjAwbXMgb3BhY2l0eSAyMDBtcztcbiAgICAgICAgICAgICAgICBvcGFjaXR5OiAwO1xuICAgICAgICAgICAgICAgIHBvaW50ZXItZXZlbnRzOiBub25lO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICBbcm9sZT0nc2VhcmNoJ10uc2hvdyB7XG4gICAgICAgICAgICAgICAgd2lkdGg6IDI0cmVtO1xuICAgICAgICAgICAgICAgIG9wYWNpdHk6IDE7XG4gICAgICAgICAgICAgICAgcG9pbnRlci1ldmVudHM6IGF1dG87XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
   });
 }
 
@@ -2666,7 +2666,7 @@ class ExploreZoomControlComponent {
       }
     },
     dependencies: [_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_1__.IconComponent, _angular_material_core__WEBPACK_IMPORTED_MODULE_3__.MatRipple, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_4__.MatTooltip],
-    styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n            }\n\n            button[_ngcontent-%COMP%] {\n                border: 1px solid #9998;\n                border-radius: 0;\n            }\n\n            button[_ngcontent-%COMP%]:first-child {\n                border-radius: 0.25rem 0.25rem 0 0;\n                border-bottom: none;\n            }\n\n            button[_ngcontent-%COMP%]:last-child {\n                border-radius: 0 0 0.25rem 0.25rem;\n                border-top: none;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvZXhwbG9yZS9zcmMvbGliL2V4cGxvcmUtem9vbS1jb250cm9sLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksYUFBYTtnQkFDYixzQkFBc0I7WUFDMUI7O1lBRUE7Z0JBQ0ksdUJBQXVCO2dCQUN2QixnQkFBZ0I7WUFDcEI7O1lBRUE7Z0JBQ0ksa0NBQWtDO2dCQUNsQyxtQkFBbUI7WUFDdkI7O1lBRUE7Z0JBQ0ksa0NBQWtDO2dCQUNsQyxnQkFBZ0I7WUFDcEIiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIGJ1dHRvbiB7XG4gICAgICAgICAgICAgICAgYm9yZGVyOiAxcHggc29saWQgIzk5OTg7XG4gICAgICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMDtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgYnV0dG9uOmZpcnN0LWNoaWxkIHtcbiAgICAgICAgICAgICAgICBib3JkZXItcmFkaXVzOiAwLjI1cmVtIDAuMjVyZW0gMCAwO1xuICAgICAgICAgICAgICAgIGJvcmRlci1ib3R0b206IG5vbmU7XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIGJ1dHRvbjpsYXN0LWNoaWxkIHtcbiAgICAgICAgICAgICAgICBib3JkZXItcmFkaXVzOiAwIDAgMC4yNXJlbSAwLjI1cmVtO1xuICAgICAgICAgICAgICAgIGJvcmRlci10b3A6IG5vbmU7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
+    styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n            }\n\n            button[_ngcontent-%COMP%] {\n                border: 1px solid #9998;\n                border-radius: 0;\n            }\n\n            button[_ngcontent-%COMP%]:first-child {\n                border-radius: 0.25rem 0.25rem 0 0;\n                border-bottom: none;\n            }\n\n            button[_ngcontent-%COMP%]:last-child {\n                border-radius: 0 0 0.25rem 0.25rem;\n                border-top: none;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV4cGxvcmUtem9vbS1jb250cm9sLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksYUFBYTtnQkFDYixzQkFBc0I7WUFDMUI7O1lBRUE7Z0JBQ0ksdUJBQXVCO2dCQUN2QixnQkFBZ0I7WUFDcEI7O1lBRUE7Z0JBQ0ksa0NBQWtDO2dCQUNsQyxtQkFBbUI7WUFDdkI7O1lBRUE7Z0JBQ0ksa0NBQWtDO2dCQUNsQyxnQkFBZ0I7WUFDcEIiLCJmaWxlIjoiZXhwbG9yZS16b29tLWNvbnRyb2wuY29tcG9uZW50LnRzIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICBidXR0b24ge1xuICAgICAgICAgICAgICAgIGJvcmRlcjogMXB4IHNvbGlkICM5OTk4O1xuICAgICAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDA7XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIGJ1dHRvbjpmaXJzdC1jaGlsZCB7XG4gICAgICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMC4yNXJlbSAwLjI1cmVtIDAgMDtcbiAgICAgICAgICAgICAgICBib3JkZXItYm90dG9tOiBub25lO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICBidXR0b246bGFzdC1jaGlsZCB7XG4gICAgICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMCAwIDAuMjVyZW0gMC4yNXJlbTtcbiAgICAgICAgICAgICAgICBib3JkZXItdG9wOiBub25lO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXX0= */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvZXhwbG9yZS9zcmMvbGliL2V4cGxvcmUtem9vbS1jb250cm9sLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksYUFBYTtnQkFDYixzQkFBc0I7WUFDMUI7O1lBRUE7Z0JBQ0ksdUJBQXVCO2dCQUN2QixnQkFBZ0I7WUFDcEI7O1lBRUE7Z0JBQ0ksa0NBQWtDO2dCQUNsQyxtQkFBbUI7WUFDdkI7O1lBRUE7Z0JBQ0ksa0NBQWtDO2dCQUNsQyxnQkFBZ0I7WUFDcEI7O0FBRVosd25DQUF3bkMiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIGJ1dHRvbiB7XG4gICAgICAgICAgICAgICAgYm9yZGVyOiAxcHggc29saWQgIzk5OTg7XG4gICAgICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMDtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgYnV0dG9uOmZpcnN0LWNoaWxkIHtcbiAgICAgICAgICAgICAgICBib3JkZXItcmFkaXVzOiAwLjI1cmVtIDAuMjVyZW0gMCAwO1xuICAgICAgICAgICAgICAgIGJvcmRlci1ib3R0b206IG5vbmU7XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIGJ1dHRvbjpsYXN0LWNoaWxkIHtcbiAgICAgICAgICAgICAgICBib3JkZXItcmFkaXVzOiAwIDAgMC4yNXJlbSAwLjI1cmVtO1xuICAgICAgICAgICAgICAgIGJvcmRlci10b3A6IG5vbmU7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
   });
 }
 
@@ -2958,7 +2958,7 @@ class SetDatetimeModalComponent {
 
 /***/ }),
 
-/***/ 63870:
+/***/ 41489:
 /*!*********************************!*\
   !*** ./libs/users/src/index.ts ***!
   \*********************************/
@@ -3021,7 +3021,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   MapLocation: () => (/* binding */ MapLocation)
 /* harmony export */ });
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! date-fns */ 73725);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! date-fns */ 99908);
 
 class MapLocation {
   constructor(_data = {}) {
@@ -3031,7 +3031,7 @@ class MapLocation {
       y: _data.y / _data.map_height || 0
     };
     this.variance = _data.variance || 0;
-    this.last_seen = _data.last_seen || (0,date_fns__WEBPACK_IMPORTED_MODULE_0__["default"])(new Date());
+    this.last_seen = _data.last_seen || (0,date_fns__WEBPACK_IMPORTED_MODULE_0__.getUnixTime)(new Date());
     this.level = _data.level;
     this.building = _data.building;
     this.at_location = !!_data.at_location;

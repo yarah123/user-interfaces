@@ -17,9 +17,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 35443);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 7841);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ 33602);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! date-fns */ 30417);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! date-fns */ 20786);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! date-fns */ 68266);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! date-fns */ 45726);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! date-fns */ 6243);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! date-fns */ 36337);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 37580);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/router */ 95072);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/common */ 60316);
@@ -81,7 +81,7 @@ class EventCalendarComponent {
     this.event_day_map = this.event_list.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.map)(list => {
       const map = {};
       for (const event of list) {
-        const date = (0,date_fns__WEBPACK_IMPORTED_MODULE_8__["default"])(event.date, 'yyyy-MM-dd');
+        const date = (0,date_fns__WEBPACK_IMPORTED_MODULE_8__.format)(event.date, 'yyyy-MM-dd');
         if (!map[date]) map[date] = [];
         map[date].push(event);
       }
@@ -110,7 +110,7 @@ class EventCalendarComponent {
       _this._router.navigate([], {
         relativeTo: _this._route,
         queryParams: {
-          range: period === 'week' ? (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(date, 1).valueOf() : (0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(date, 1).valueOf()
+          range: period === 'week' ? (0,date_fns__WEBPACK_IMPORTED_MODULE_11__.addWeeks)(date, 1).valueOf() : (0,date_fns__WEBPACK_IMPORTED_MODULE_12__.addMonths)(date, 1).valueOf()
         },
         queryParamsHandling: 'merge'
       });
@@ -126,7 +126,7 @@ class EventCalendarComponent {
       _this2._router.navigate([], {
         relativeTo: _this2._route,
         queryParams: {
-          range: period === 'week' ? (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(date, -1).valueOf() : (0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(date, -1).valueOf()
+          range: period === 'week' ? (0,date_fns__WEBPACK_IMPORTED_MODULE_11__.addWeeks)(date, -1).valueOf() : (0,date_fns__WEBPACK_IMPORTED_MODULE_12__.addMonths)(date, -1).valueOf()
         },
         queryParamsHandling: 'merge'
       });
@@ -208,7 +208,7 @@ class EventCalendarComponent {
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_14__.NgIf, _angular_material_core__WEBPACK_IMPORTED_MODULE_15__.MatRipple, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_3__.IconComponent, _event_week_view_component__WEBPACK_IMPORTED_MODULE_4__.EventWeekViewComponent, _event_month_view_component__WEBPACK_IMPORTED_MODULE_5__.EventMonthViewComponent, _angular_common__WEBPACK_IMPORTED_MODULE_14__.AsyncPipe, _angular_common__WEBPACK_IMPORTED_MODULE_14__.DatePipe],
-    styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n                height: 100%;\n                width: 100%;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvZXZlbnRzL2V2ZW50LWNhbGVuZGFyLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksYUFBYTtnQkFDYixzQkFBc0I7Z0JBQ3RCLFlBQVk7Z0JBQ1osV0FBVztZQUNmIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
+    styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n                height: 100%;\n                width: 100%;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV2ZW50LWNhbGVuZGFyLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksYUFBYTtnQkFDYixzQkFBc0I7Z0JBQ3RCLFlBQVk7Z0JBQ1osV0FBVztZQUNmIiwiZmlsZSI6ImV2ZW50LWNhbGVuZGFyLmNvbXBvbmVudC50cyIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgOmhvc3Qge1xuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICAgICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdfQ== */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvZXZlbnRzL2V2ZW50LWNhbGVuZGFyLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksYUFBYTtnQkFDYixzQkFBc0I7Z0JBQ3RCLFlBQVk7Z0JBQ1osV0FBVztZQUNmOztBQUVaLDRpQkFBNGlCIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
   });
 }
 
@@ -636,12 +636,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! rxjs/operators */ 89273);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! rxjs/operators */ 33602);
 /* harmony import */ var _event_state_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./event-state.service */ 94338);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! date-fns */ 30417);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! date-fns */ 75971);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! date-fns */ 5689);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! date-fns */ 27419);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! date-fns */ 45726);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! date-fns */ 1874);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! date-fns */ 99134);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! date-fns */ 33240);
 /* harmony import */ var _placeos_events__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @placeos/events */ 40569);
-/* harmony import */ var _placeos_users__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @placeos/users */ 63870);
+/* harmony import */ var _placeos_users__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @placeos/users */ 41489);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/core */ 37580);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/router */ 95072);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/common */ 60316);
@@ -1155,9 +1155,9 @@ class EventManageComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.
     this.available_spaces = this._event_form.available_spaces;
     this.duration_info = time => {
       const date = this.form.getRawValue().date;
-      if ((0,date_fns__WEBPACK_IMPORTED_MODULE_15__["default"])(date, 'yyyy-MM-dd') !== (0,date_fns__WEBPACK_IMPORTED_MODULE_15__["default"])(time, 'yyyy-MM-dd')) return '';
-      const diff = (0,date_fns__WEBPACK_IMPORTED_MODULE_16__["default"])(time, date);
-      return ` (${(0,date_fns__WEBPACK_IMPORTED_MODULE_17__["default"])({
+      if ((0,date_fns__WEBPACK_IMPORTED_MODULE_15__.format)(date, 'yyyy-MM-dd') !== (0,date_fns__WEBPACK_IMPORTED_MODULE_15__.format)(time, 'yyyy-MM-dd')) return '';
+      const diff = (0,date_fns__WEBPACK_IMPORTED_MODULE_16__.differenceInMinutes)(time, date);
+      return ` (${(0,date_fns__WEBPACK_IMPORTED_MODULE_17__.formatDuration)({
         hours: Math.floor(diff / 60),
         minutes: diff % 60
       })})`;
@@ -1337,7 +1337,7 @@ class EventManageComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.
       if (res) {
         _this2._router.navigate(['/entertainment', 'events'], {
           queryParams: {
-            range: (0,date_fns__WEBPACK_IMPORTED_MODULE_21__["default"])(date).valueOf()
+            range: (0,date_fns__WEBPACK_IMPORTED_MODULE_21__.startOfDay)(date).valueOf()
           }
         });
       }
@@ -1397,13 +1397,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _event_state_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./event-state.service */ 94338);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 22797);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! date-fns */ 30417);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ 27419);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! date-fns */ 69935);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! date-fns */ 61947);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! date-fns */ 88402);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! date-fns */ 26078);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! date-fns */ 3330);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! date-fns */ 45726);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ 33240);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! date-fns */ 90610);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! date-fns */ 60452);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! date-fns */ 28797);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! date-fns */ 31257);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! date-fns */ 79681);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 35443);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 89273);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 7841);
@@ -1562,7 +1562,7 @@ function EventMonthViewComponent_div_3_Template(rf, ctx) {
 class EventMonthViewComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.AsyncHandler {
   dateString(date) {
     if (!date) return '';
-    return (0,date_fns__WEBPACK_IMPORTED_MODULE_5__["default"])(date, 'yyyy-MM-dd');
+    return (0,date_fns__WEBPACK_IMPORTED_MODULE_5__.format)(date, 'yyyy-MM-dd');
   }
   get offset_weekday() {
     return this._settings.get('app.week_start') || 0;
@@ -1573,14 +1573,14 @@ class EventMonthViewComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1
     this._settings = _settings;
     this._dialog = _dialog;
     this._router = _router;
-    this.month = (0,date_fns__WEBPACK_IMPORTED_MODULE_6__["default"])(Date.now()).valueOf();
+    this.month = (0,date_fns__WEBPACK_IMPORTED_MODULE_6__.startOfDay)(Date.now()).valueOf();
     this.weekdays = [];
     this.month_days = [];
     this.event_list = this._state.event_list;
     this.event_day_map = this.event_list.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.map)(list => {
       const map = {};
       for (const event of list) {
-        const date = (0,date_fns__WEBPACK_IMPORTED_MODULE_5__["default"])(event.date, 'yyyy-MM-dd');
+        const date = (0,date_fns__WEBPACK_IMPORTED_MODULE_5__.format)(event.date, 'yyyy-MM-dd');
         if (!map[date]) map[date] = [];
         const start = new Date(event.date);
         map[date].push({
@@ -1605,23 +1605,23 @@ class EventMonthViewComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1
     this._setWeekdays();
   }
   _setMonthDays() {
-    const start = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(this.month), {
+    const start = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__.startOfWeek)((0,date_fns__WEBPACK_IMPORTED_MODULE_11__.startOfMonth)(this.month), {
       weekStartsOn: this.offset_weekday
     });
     this.month_days = Array.from(Array(7 * 6).keys()).map(i => {
-      const date = (0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(start, i).valueOf();
+      const date = (0,date_fns__WEBPACK_IMPORTED_MODULE_12__.addDays)(start, i).valueOf();
       return {
         id: date,
-        is_today: (0,date_fns__WEBPACK_IMPORTED_MODULE_13__["default"])(date, Date.now()),
-        is_month: (0,date_fns__WEBPACK_IMPORTED_MODULE_14__["default"])(date, this.month)
+        is_today: (0,date_fns__WEBPACK_IMPORTED_MODULE_13__.isSameDay)(date, Date.now()),
+        is_month: (0,date_fns__WEBPACK_IMPORTED_MODULE_14__.isSameMonth)(date, this.month)
       };
     });
   }
   _setWeekdays() {
-    const start = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])(Date.now(), {
+    const start = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__.startOfWeek)(Date.now(), {
       weekStartsOn: this.offset_weekday
     });
-    this.weekdays = Array.from(Array(7).keys()).map(i => (0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(start, i));
+    this.weekdays = Array.from(Array(7).keys()).map(i => (0,date_fns__WEBPACK_IMPORTED_MODULE_12__.addDays)(start, i));
   }
   static #_ = this.ɵfac = function EventMonthViewComponent_Factory(t) {
     return new (t || EventMonthViewComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_event_state_service__WEBPACK_IMPORTED_MODULE_0__.EventStateService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_placeos_common__WEBPACK_IMPORTED_MODULE_1__.SettingsService), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_15__.MatDialog), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_16__.Router));
@@ -1647,7 +1647,7 @@ class EventMonthViewComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_17__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_17__.NgIf, _angular_material_menu__WEBPACK_IMPORTED_MODULE_18__.MatMenu, _angular_material_menu__WEBPACK_IMPORTED_MODULE_18__.MatMenuItem, _angular_material_menu__WEBPACK_IMPORTED_MODULE_18__.MatMenuTrigger, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_19__.MatTooltip, _angular_material_core__WEBPACK_IMPORTED_MODULE_20__.MatRipple, _libs_components_src_lib_custom_tooltip_component__WEBPACK_IMPORTED_MODULE_2__.CustomTooltipComponent, _libs_bookings_src_lib_group_event_card_component__WEBPACK_IMPORTED_MODULE_3__.GroupEventCardComponent, _angular_common__WEBPACK_IMPORTED_MODULE_17__.AsyncPipe, _angular_common__WEBPACK_IMPORTED_MODULE_17__.SlicePipe, _angular_common__WEBPACK_IMPORTED_MODULE_17__.DatePipe],
-    styles: [".grid[_ngcontent-%COMP%] {\n                grid-template-rows: 3rem repeat(6, minmax(0, 1fr));\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvZXZlbnRzL2V2ZW50LW1vbnRoLXZpZXcuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxrREFBa0Q7WUFDdEQiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIC5ncmlkIHtcbiAgICAgICAgICAgICAgICBncmlkLXRlbXBsYXRlLXJvd3M6IDNyZW0gcmVwZWF0KDYsIG1pbm1heCgwLCAxZnIpKTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
+    styles: [".grid[_ngcontent-%COMP%] {\n                grid-template-rows: 3rem repeat(6, minmax(0, 1fr));\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV2ZW50LW1vbnRoLXZpZXcuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxrREFBa0Q7WUFDdEQiLCJmaWxlIjoiZXZlbnQtbW9udGgtdmlldy5jb21wb25lbnQudHMiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIC5ncmlkIHtcbiAgICAgICAgICAgICAgICBncmlkLXRlbXBsYXRlLXJvd3M6IDNyZW0gcmVwZWF0KDYsIG1pbm1heCgwLCAxZnIpKTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl19 */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvZXZlbnRzL2V2ZW50LW1vbnRoLXZpZXcuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxrREFBa0Q7WUFDdEQ7O0FBRVosNGFBQTRhIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICAuZ3JpZCB7XG4gICAgICAgICAgICAgICAgZ3JpZC10ZW1wbGF0ZS1yb3dzOiAzcmVtIHJlcGVhdCg2LCBtaW5tYXgoMCwgMWZyKSk7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
   });
 }
 
@@ -1667,9 +1667,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _placeos_bookings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/bookings */ 85616);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/common */ 22797);
 /* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/organisation */ 2510);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! date-fns */ 73725);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns */ 27419);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! date-fns */ 13264);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! date-fns */ 99908);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns */ 33240);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! date-fns */ 56441);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 90521);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ 68824);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 8627);
@@ -1712,8 +1712,8 @@ class EventStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.Asy
     this._poll = new rxjs__WEBPACK_IMPORTED_MODULE_4__.BehaviorSubject(0);
     this._changed = new rxjs__WEBPACK_IMPORTED_MODULE_4__.BehaviorSubject(0);
     this.event_list = (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.combineLatest)([this._org.active_building, this._options, this._changed, this._poll]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.filter)(([bld]) => !!bld), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.switchMap)(([bld, options]) => (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.queryBookings)({
-      period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_8__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_9__["default"])(options.date)),
-      period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_8__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])(options.end || options.date || Date.now())),
+      period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_8__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_9__.startOfDay)(options.date)),
+      period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_8__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_10__.endOfDay)(options.end || options.date || Date.now())),
       type: 'group-event',
       zones: options.zone_ids?.join(',') || bld.id
     })), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.map)(list => list.sort((a, b) => a.date - b.date)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_12__.shareReplay)(1));
@@ -1795,9 +1795,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/common */ 22797);
 /* harmony import */ var _event_state_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./event-state.service */ 94338);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! date-fns */ 30417);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ 46247);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! date-fns */ 88402);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! date-fns */ 45726);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ 23206);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! date-fns */ 28797);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 35443);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 89273);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 7841);
@@ -1933,14 +1933,14 @@ function EventWeekViewComponent_div_12_Template(rf, ctx) {
 class EventWeekViewComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0__.AsyncHandler {
   dateString(date) {
     if (!date) return '';
-    return (0,date_fns__WEBPACK_IMPORTED_MODULE_5__["default"])(date, 'yyyy-MM-dd');
+    return (0,date_fns__WEBPACK_IMPORTED_MODULE_5__.format)(date, 'yyyy-MM-dd');
   }
   isCurrentDay(date) {
     if (!date) return false;
-    return (0,date_fns__WEBPACK_IMPORTED_MODULE_5__["default"])(Date.now(), 'yyyy-MM-dd') === (0,date_fns__WEBPACK_IMPORTED_MODULE_5__["default"])(date, 'yyyy-MM-dd');
+    return (0,date_fns__WEBPACK_IMPORTED_MODULE_5__.format)(Date.now(), 'yyyy-MM-dd') === (0,date_fns__WEBPACK_IMPORTED_MODULE_5__.format)(date, 'yyyy-MM-dd');
   }
   get now() {
-    return (0,date_fns__WEBPACK_IMPORTED_MODULE_6__["default"])(Date.now()).valueOf();
+    return (0,date_fns__WEBPACK_IMPORTED_MODULE_6__.startOfMinute)(Date.now()).valueOf();
   }
   get now_offset() {
     const now = new Date(this.now);
@@ -1957,7 +1957,7 @@ class EventWeekViewComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0_
     this.event_day_map = this.event_list.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.map)(list => {
       const map = {};
       for (const event of list) {
-        const date = (0,date_fns__WEBPACK_IMPORTED_MODULE_5__["default"])(event.date, 'yyyy-MM-dd');
+        const date = (0,date_fns__WEBPACK_IMPORTED_MODULE_5__.format)(event.date, 'yyyy-MM-dd');
         if (!map[date]) map[date] = [];
         const start = new Date(event.date);
         map[date].push({
@@ -1975,7 +1975,7 @@ class EventWeekViewComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0_
       date
     }) => {
       if (!date) return;
-      this.days = this.days.map((_, idx) => (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])(date, idx).valueOf());
+      this.days = this.days.map((_, idx) => (0,date_fns__WEBPACK_IMPORTED_MODULE_10__.addDays)(date, idx).valueOf());
     }));
   }
   static #_ = this.ɵfac = function EventWeekViewComponent_Factory(t) {
@@ -2034,14 +2034,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 22797);
 /* harmony import */ var _event_state_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./event-state.service */ 94338);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns */ 20786);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! date-fns */ 68266);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! date-fns */ 16499);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! date-fns */ 61947);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! date-fns */ 69935);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! date-fns */ 13264);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! date-fns */ 88402);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! date-fns */ 30417);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns */ 6243);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! date-fns */ 36337);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! date-fns */ 70602);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! date-fns */ 60452);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! date-fns */ 90610);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! date-fns */ 56441);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! date-fns */ 28797);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! date-fns */ 45726);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 35443);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 6109);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs/operators */ 33602);
@@ -2136,7 +2136,7 @@ class EventsListComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.A
           const id = parseInt(q.get('range'), 10);
           const item = this.period_list.find(_ => id >= _.start && id < _.end) || this.period_list[0] || {
             start: id,
-            end: this._state.period === 'week' ? (0,date_fns__WEBPACK_IMPORTED_MODULE_9__["default"])(id, 1).valueOf() : (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])(id, 1).valueOf()
+            end: this._state.period === 'week' ? (0,date_fns__WEBPACK_IMPORTED_MODULE_9__.addWeeks)(id, 1).valueOf() : (0,date_fns__WEBPACK_IMPORTED_MODULE_10__.addMonths)(id, 1).valueOf()
           };
           this.selected_range = item.id || id;
           this._state.setOptions({
@@ -2199,35 +2199,35 @@ class EventsListComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.A
     this.timeout('generate_periods', /*#__PURE__*/(0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const periods = [];
       const period_type = yield _this.period.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.take)(1)).toPromise();
-      let date = (0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(Date.now(), 6).valueOf();
-      const end_date = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])(Date.now(), 6).valueOf();
+      let date = (0,date_fns__WEBPACK_IMPORTED_MODULE_12__.subMonths)(Date.now(), 6).valueOf();
+      const end_date = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__.addMonths)(Date.now(), 6).valueOf();
       const week_offset = _this._settings.get('app.week_start') || 0;
       if (period_type === 'month') {
-        date = (0,date_fns__WEBPACK_IMPORTED_MODULE_13__["default"])(date).valueOf();
+        date = (0,date_fns__WEBPACK_IMPORTED_MODULE_13__.startOfMonth)(date).valueOf();
       } else if (period_type === 'week') {
-        date = (0,date_fns__WEBPACK_IMPORTED_MODULE_14__["default"])(date, {
+        date = (0,date_fns__WEBPACK_IMPORTED_MODULE_14__.startOfWeek)(date, {
           weekStartsOn: week_offset
         }).valueOf();
       }
       while (date < end_date) {
         if (period_type === 'week') {
-          const end = (0,date_fns__WEBPACK_IMPORTED_MODULE_15__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_16__["default"])(date, 6)).valueOf();
+          const end = (0,date_fns__WEBPACK_IMPORTED_MODULE_15__.endOfDay)((0,date_fns__WEBPACK_IMPORTED_MODULE_16__.addDays)(date, 6)).valueOf();
           periods.push({
             id: date,
             start: date,
             end,
-            display: `${(0,date_fns__WEBPACK_IMPORTED_MODULE_17__["default"])(date, 'EEE, do MMM')} – ${(0,date_fns__WEBPACK_IMPORTED_MODULE_17__["default"])(end, 'do MMM')}`
+            display: `${(0,date_fns__WEBPACK_IMPORTED_MODULE_17__.format)(date, 'EEE, do MMM')} – ${(0,date_fns__WEBPACK_IMPORTED_MODULE_17__.format)(end, 'do MMM')}`
           });
-          date = (0,date_fns__WEBPACK_IMPORTED_MODULE_16__["default"])(date, 7).valueOf();
+          date = (0,date_fns__WEBPACK_IMPORTED_MODULE_16__.addDays)(date, 7).valueOf();
         } else if (period_type === 'month') {
-          const end = (0,date_fns__WEBPACK_IMPORTED_MODULE_16__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])(date, 1), -1).valueOf();
+          const end = (0,date_fns__WEBPACK_IMPORTED_MODULE_16__.addDays)((0,date_fns__WEBPACK_IMPORTED_MODULE_10__.addMonths)(date, 1), -1).valueOf();
           periods.push({
             id: date,
             start: date,
             end,
-            display: `${(0,date_fns__WEBPACK_IMPORTED_MODULE_17__["default"])(date, 'MMMM yyyy')}`
+            display: `${(0,date_fns__WEBPACK_IMPORTED_MODULE_17__.format)(date, 'MMMM yyyy')}`
           });
-          date = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])(date, 1).valueOf();
+          date = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__.addMonths)(date, 1).valueOf();
         } else break;
       }
       _this.period_list = periods;
@@ -2332,7 +2332,7 @@ class EventsListComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.A
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_19__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_19__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_20__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_20__.NgModel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_21__.MatFormField, _angular_material_select__WEBPACK_IMPORTED_MODULE_22__.MatSelect, _angular_material_core__WEBPACK_IMPORTED_MODULE_23__.MatOption, _angular_material_core__WEBPACK_IMPORTED_MODULE_23__.MatRipple, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_3__.IconComponent, _angular_router__WEBPACK_IMPORTED_MODULE_18__.RouterLink, _event_listing_component__WEBPACK_IMPORTED_MODULE_4__.EventListingComponent, _event_calendar_component__WEBPACK_IMPORTED_MODULE_5__.EventCalendarComponent, _angular_common__WEBPACK_IMPORTED_MODULE_19__.AsyncPipe],
-    styles: ["[_nghost-%COMP%] {\n                flex: 1;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvZXZlbnRzL2V2ZW50cy1saXN0LmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksT0FBTztZQUNYIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgZmxleDogMTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
+    styles: ["[_nghost-%COMP%] {\n                flex: 1;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV2ZW50cy1saXN0LmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksT0FBTztZQUNYIiwiZmlsZSI6ImV2ZW50cy1saXN0LmNvbXBvbmVudC50cyIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgOmhvc3Qge1xuICAgICAgICAgICAgICAgIGZsZXg6IDE7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdfQ== */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvZXZlbnRzL2V2ZW50cy1saXN0LmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksT0FBTztZQUNYOztBQUVaLG9XQUFvVyIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgOmhvc3Qge1xuICAgICAgICAgICAgICAgIGZsZXg6IDE7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
   });
 }
 
@@ -2379,7 +2379,7 @@ class EventsComponent {
       }
     },
     dependencies: [_ui_app_topbar_component__WEBPACK_IMPORTED_MODULE_0__.ApplicationTopbarComponent, _ui_app_sidebar_component__WEBPACK_IMPORTED_MODULE_1__.ApplicationSidebarComponent, _angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterOutlet],
-    styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n                height: 100%;\n                width: 100%;\n                background-color: var(--b1);\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvZXZlbnRzL2V2ZW50cy5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGFBQWE7Z0JBQ2Isc0JBQXNCO2dCQUN0QixZQUFZO2dCQUNaLFdBQVc7Z0JBQ1gsMkJBQTJCO1lBQy9CIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1iMSk7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
+    styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n                height: 100%;\n                width: 100%;\n                background-color: var(--b1);\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV2ZW50cy5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGFBQWE7Z0JBQ2Isc0JBQXNCO2dCQUN0QixZQUFZO2dCQUNaLFdBQVc7Z0JBQ1gsMkJBQTJCO1lBQy9CIiwiZmlsZSI6ImV2ZW50cy5jb21wb25lbnQudHMiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWIxKTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl19 */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvZXZlbnRzL2V2ZW50cy5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGFBQWE7Z0JBQ2Isc0JBQXNCO2dCQUN0QixZQUFZO2dCQUNaLFdBQVc7Z0JBQ1gsMkJBQTJCO1lBQy9COztBQUVaLG9tQkFBb21CIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1iMSk7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
   });
 }
 
@@ -2465,7 +2465,7 @@ class EventsModule {
 
 /***/ }),
 
-/***/ 63870:
+/***/ 41489:
 /*!*********************************!*\
   !*** ./libs/users/src/index.ts ***!
   \*********************************/
@@ -2528,7 +2528,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   MapLocation: () => (/* binding */ MapLocation)
 /* harmony export */ });
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! date-fns */ 73725);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! date-fns */ 99908);
 
 class MapLocation {
   constructor(_data = {}) {
@@ -2538,7 +2538,7 @@ class MapLocation {
       y: _data.y / _data.map_height || 0
     };
     this.variance = _data.variance || 0;
-    this.last_seen = _data.last_seen || (0,date_fns__WEBPACK_IMPORTED_MODULE_0__["default"])(new Date());
+    this.last_seen = _data.last_seen || (0,date_fns__WEBPACK_IMPORTED_MODULE_0__.getUnixTime)(new Date());
     this.level = _data.level;
     this.building = _data.building;
     this.at_location = !!_data.at_location;
@@ -2548,20 +2548,18 @@ class MapLocation {
 
 /***/ }),
 
-/***/ 16499:
-/*!******************************************************!*\
-  !*** ./node_modules/date-fns/esm/subMonths/index.js ***!
-  \******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ 70602:
+/*!*********************************************!*\
+  !*** ./node_modules/date-fns/subMonths.mjs ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ subMonths)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   subMonths: () => (/* binding */ subMonths)
 /* harmony export */ });
-/* harmony import */ var _lib_toInteger_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_lib/toInteger/index.js */ 13144);
-/* harmony import */ var _addMonths_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../addMonths/index.js */ 68266);
-/* harmony import */ var _lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_lib/requiredArgs/index.js */ 64507);
-
+/* harmony import */ var _addMonths_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./addMonths.mjs */ 36337);
 
 
 /**
@@ -2572,21 +2570,24 @@ __webpack_require__.r(__webpack_exports__);
  * @description
  * Subtract the specified number of months from the given date.
  *
- * @param {Date|Number} date - the date to be changed
- * @param {Number} amount - the amount of months to be subtracted. Positive decimals will be rounded using `Math.floor`, decimals less than zero will be rounded using `Math.ceil`.
- * @returns {Date} the new date with the months subtracted
- * @throws {TypeError} 2 arguments required
+ * @typeParam DateType - The `Date` type, the function operates on. Gets inferred from passed arguments. Allows to use extensions like [`UTCDate`](https://github.com/date-fns/utc).
+ *
+ * @param date - The date to be changed
+ * @param amount - The amount of months to be subtracted.
+ *
+ * @returns The new date with the months subtracted
  *
  * @example
  * // Subtract 5 months from 1 February 2015:
  * const result = subMonths(new Date(2015, 1, 1), 5)
  * //=> Mon Sep 01 2014 00:00:00
  */
-function subMonths(dirtyDate, dirtyAmount) {
-  (0,_lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(2, arguments);
-  var amount = (0,_lib_toInteger_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])(dirtyAmount);
-  return (0,_addMonths_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(dirtyDate, -amount);
+function subMonths(date, amount) {
+  return (0,_addMonths_mjs__WEBPACK_IMPORTED_MODULE_0__.addMonths)(date, -amount);
 }
+
+// Fallback for modularized imports:
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (subMonths);
 
 /***/ })
 

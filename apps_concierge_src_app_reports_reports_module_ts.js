@@ -364,7 +364,7 @@ class CateringReportOverallComponent {
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.AsyncPipe, _angular_common__WEBPACK_IMPORTED_MODULE_3__.CurrencyPipe],
-    styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-wrap: wrap;\n                align-items: center;\n                justify-content: center;\n                padding: 0.5rem;\n                max-width: 64rem;\n                margin: 0 auto;\n            }\n\n            [item][_ngcontent-%COMP%] {\n                border: 1px solid var(--b2);\n                border-radius: 0.5rem;\n                padding: 1rem;\n                margin: 0.5rem;\n                height: 6rem;\n                width: 12rem;\n                min-width: 7rem;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9jYXRlcmluZy9jYXRlcmluZy1yZXBvcnQtb3ZlcmFsbC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGFBQWE7Z0JBQ2IsZUFBZTtnQkFDZixtQkFBbUI7Z0JBQ25CLHVCQUF1QjtnQkFDdkIsZUFBZTtnQkFDZixnQkFBZ0I7Z0JBQ2hCLGNBQWM7WUFDbEI7O1lBRUE7Z0JBQ0ksMkJBQTJCO2dCQUMzQixxQkFBcUI7Z0JBQ3JCLGFBQWE7Z0JBQ2IsY0FBYztnQkFDZCxZQUFZO2dCQUNaLFlBQVk7Z0JBQ1osZUFBZTtZQUNuQiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgOmhvc3Qge1xuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgICAgICAgZmxleC13cmFwOiB3cmFwO1xuICAgICAgICAgICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgICAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgICAgICAgICAgcGFkZGluZzogMC41cmVtO1xuICAgICAgICAgICAgICAgIG1heC13aWR0aDogNjRyZW07XG4gICAgICAgICAgICAgICAgbWFyZ2luOiAwIGF1dG87XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIFtpdGVtXSB7XG4gICAgICAgICAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tYjIpO1xuICAgICAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDAuNXJlbTtcbiAgICAgICAgICAgICAgICBwYWRkaW5nOiAxcmVtO1xuICAgICAgICAgICAgICAgIG1hcmdpbjogMC41cmVtO1xuICAgICAgICAgICAgICAgIGhlaWdodDogNnJlbTtcbiAgICAgICAgICAgICAgICB3aWR0aDogMTJyZW07XG4gICAgICAgICAgICAgICAgbWluLXdpZHRoOiA3cmVtO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
+    styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-wrap: wrap;\n                align-items: center;\n                justify-content: center;\n                padding: 0.5rem;\n                max-width: 64rem;\n                margin: 0 auto;\n            }\n\n            [item][_ngcontent-%COMP%] {\n                border: 1px solid var(--b2);\n                border-radius: 0.5rem;\n                padding: 1rem;\n                margin: 0.5rem;\n                height: 6rem;\n                width: 12rem;\n                min-width: 7rem;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNhdGVyaW5nLXJlcG9ydC1vdmVyYWxsLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksYUFBYTtnQkFDYixlQUFlO2dCQUNmLG1CQUFtQjtnQkFDbkIsdUJBQXVCO2dCQUN2QixlQUFlO2dCQUNmLGdCQUFnQjtnQkFDaEIsY0FBYztZQUNsQjs7WUFFQTtnQkFDSSwyQkFBMkI7Z0JBQzNCLHFCQUFxQjtnQkFDckIsYUFBYTtnQkFDYixjQUFjO2dCQUNkLFlBQVk7Z0JBQ1osWUFBWTtnQkFDWixlQUFlO1lBQ25CIiwiZmlsZSI6ImNhdGVyaW5nLXJlcG9ydC1vdmVyYWxsLmNvbXBvbmVudC50cyIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgOmhvc3Qge1xuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgICAgICAgZmxleC13cmFwOiB3cmFwO1xuICAgICAgICAgICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgICAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgICAgICAgICAgcGFkZGluZzogMC41cmVtO1xuICAgICAgICAgICAgICAgIG1heC13aWR0aDogNjRyZW07XG4gICAgICAgICAgICAgICAgbWFyZ2luOiAwIGF1dG87XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIFtpdGVtXSB7XG4gICAgICAgICAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tYjIpO1xuICAgICAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDAuNXJlbTtcbiAgICAgICAgICAgICAgICBwYWRkaW5nOiAxcmVtO1xuICAgICAgICAgICAgICAgIG1hcmdpbjogMC41cmVtO1xuICAgICAgICAgICAgICAgIGhlaWdodDogNnJlbTtcbiAgICAgICAgICAgICAgICB3aWR0aDogMTJyZW07XG4gICAgICAgICAgICAgICAgbWluLXdpZHRoOiA3cmVtO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXX0= */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9jYXRlcmluZy9jYXRlcmluZy1yZXBvcnQtb3ZlcmFsbC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGFBQWE7Z0JBQ2IsZUFBZTtnQkFDZixtQkFBbUI7Z0JBQ25CLHVCQUF1QjtnQkFDdkIsZUFBZTtnQkFDZixnQkFBZ0I7Z0JBQ2hCLGNBQWM7WUFDbEI7O1lBRUE7Z0JBQ0ksMkJBQTJCO2dCQUMzQixxQkFBcUI7Z0JBQ3JCLGFBQWE7Z0JBQ2IsY0FBYztnQkFDZCxZQUFZO2dCQUNaLFlBQVk7Z0JBQ1osZUFBZTtZQUNuQjs7QUFFWiw0d0NBQTR3QyIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgOmhvc3Qge1xuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgICAgICAgZmxleC13cmFwOiB3cmFwO1xuICAgICAgICAgICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgICAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgICAgICAgICAgcGFkZGluZzogMC41cmVtO1xuICAgICAgICAgICAgICAgIG1heC13aWR0aDogNjRyZW07XG4gICAgICAgICAgICAgICAgbWFyZ2luOiAwIGF1dG87XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIFtpdGVtXSB7XG4gICAgICAgICAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tYjIpO1xuICAgICAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDAuNXJlbTtcbiAgICAgICAgICAgICAgICBwYWRkaW5nOiAxcmVtO1xuICAgICAgICAgICAgICAgIG1hcmdpbjogMC41cmVtO1xuICAgICAgICAgICAgICAgIGhlaWdodDogNnJlbTtcbiAgICAgICAgICAgICAgICB3aWR0aDogMTJyZW07XG4gICAgICAgICAgICAgICAgbWluLXdpZHRoOiA3cmVtO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
   });
 }
 
@@ -388,8 +388,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 7841);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 33602);
 /* harmony import */ var _reports_state_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reports-state.service */ 58255);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ 27419);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ 13264);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ 33240);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ 56441);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 37580);
 
 
@@ -408,8 +408,8 @@ class CateringReportStateService {
       start,
       end
     }, list]) => {
-      const start_date = (0,date_fns__WEBPACK_IMPORTED_MODULE_6__["default"])(start).valueOf();
-      const end_date = (0,date_fns__WEBPACK_IMPORTED_MODULE_7__["default"])(end).valueOf();
+      const start_date = (0,date_fns__WEBPACK_IMPORTED_MODULE_6__.startOfDay)(start).valueOf();
+      const end_date = (0,date_fns__WEBPACK_IMPORTED_MODULE_7__.endOfDay)(end).valueOf();
       const orders = (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.flatten)(list.map(_ => _.valid_catering || []));
       const out = orders.filter(_ => _.deliver_at_time >= start_date && _.deliver_at_time < end_date && _.status !== 'cancelled').sort((a, b) => a.event?.date - b.event?.date);
       return out;
@@ -596,7 +596,7 @@ class CateringReportComponent {
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_9__.MatProgressSpinner, _reports_options_component__WEBPACK_IMPORTED_MODULE_2__.ReportsOptionsComponent, _catering_report_overall_component__WEBPACK_IMPORTED_MODULE_3__.CateringReportOverallComponent, _catering_report_orders_component__WEBPACK_IMPORTED_MODULE_4__.CateringReportOrdersComponent, _catering_report_items_component__WEBPACK_IMPORTED_MODULE_5__.CateringReportItemsComponent, _angular_common__WEBPACK_IMPORTED_MODULE_8__.AsyncPipe],
-    styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n                height: 100%;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9jYXRlcmluZy9jYXRlcmluZy1yZXBvcnQuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxhQUFhO2dCQUNiLHNCQUFzQjtnQkFDdEIsWUFBWTtZQUNoQiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgOmhvc3Qge1xuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
+    styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n                height: 100%;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNhdGVyaW5nLXJlcG9ydC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGFBQWE7Z0JBQ2Isc0JBQXNCO2dCQUN0QixZQUFZO1lBQ2hCIiwiZmlsZSI6ImNhdGVyaW5nLXJlcG9ydC5jb21wb25lbnQudHMiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXX0= */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9jYXRlcmluZy9jYXRlcmluZy1yZXBvcnQuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxhQUFhO2dCQUNiLHNCQUFzQjtnQkFDdEIsWUFBWTtZQUNoQjs7QUFFWix3ZkFBd2YiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
   });
 }
 
@@ -732,7 +732,7 @@ class ContactTracingOptionsComponent {
       }
     },
     dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgModel, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_6__.MatTooltip, _angular_material_core__WEBPACK_IMPORTED_MODULE_7__.MatRipple, _libs_form_fields_src_lib_date_range_field_component__WEBPACK_IMPORTED_MODULE_1__.DateRangeFieldComponent, _libs_form_fields_src_lib_user_search_field_component__WEBPACK_IMPORTED_MODULE_2__.UserSearchFieldComponent, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_3__.IconComponent, _angular_common__WEBPACK_IMPORTED_MODULE_8__.AsyncPipe],
-    styles: ["mat-form-field[_ngcontent-%COMP%] {\n                height: 3.25rem;\n            }\n\n            button[icon][disabled][_ngcontent-%COMP%] {\n                background-color: var(--n) !important;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9jb250YWN0LXRyYWNpbmcvY29udGFjdC10cmFjaW5nLW9wdGlvbnMuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxlQUFlO1lBQ25COztZQUVBO2dCQUNJLHFDQUFxQztZQUN6QyIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgbWF0LWZvcm0tZmllbGQge1xuICAgICAgICAgICAgICAgIGhlaWdodDogMy4yNXJlbTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgYnV0dG9uW2ljb25dW2Rpc2FibGVkXSB7XG4gICAgICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbikgIWltcG9ydGFudDtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
+    styles: ["mat-form-field[_ngcontent-%COMP%] {\n                height: 3.25rem;\n            }\n\n            button[icon][disabled][_ngcontent-%COMP%] {\n                background-color: var(--n) !important;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbnRhY3QtdHJhY2luZy1vcHRpb25zLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksZUFBZTtZQUNuQjs7WUFFQTtnQkFDSSxxQ0FBcUM7WUFDekMiLCJmaWxlIjoiY29udGFjdC10cmFjaW5nLW9wdGlvbnMuY29tcG9uZW50LnRzIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICBtYXQtZm9ybS1maWVsZCB7XG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAzLjI1cmVtO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICBidXR0b25baWNvbl1bZGlzYWJsZWRdIHtcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1uKSAhaW1wb3J0YW50O1xuICAgICAgICAgICAgfVxuICAgICAgICAiXX0= */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9jb250YWN0LXRyYWNpbmcvY29udGFjdC10cmFjaW5nLW9wdGlvbnMuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxlQUFlO1lBQ25COztZQUVBO2dCQUNJLHFDQUFxQztZQUN6Qzs7QUFFWixnbEJBQWdsQiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgbWF0LWZvcm0tZmllbGQge1xuICAgICAgICAgICAgICAgIGhlaWdodDogMy4yNXJlbTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgYnV0dG9uW2ljb25dW2Rpc2FibGVkXSB7XG4gICAgICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbikgIWltcG9ydGFudDtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
   });
 }
 
@@ -748,7 +748,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ContactTracingReportComponent: () => (/* binding */ ContactTracingReportComponent)
 /* harmony export */ });
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ 5689);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ 99134);
 /* harmony import */ var _contact_tracing_state_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./contact-tracing-state.service */ 90003);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 22797);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37580);
@@ -904,7 +904,7 @@ class ContactTracingReportComponent {
     this.tracing_events = this._state.events;
     this.setOptions = _ => this._state.setOptions(_);
     this.downloadReport = () => this._state.downloadReport();
-    this.formatDuration = d => (0,date_fns__WEBPACK_IMPORTED_MODULE_6__["default"])({
+    this.formatDuration = d => (0,date_fns__WEBPACK_IMPORTED_MODULE_6__.formatDuration)({
       hours: Math.floor(d / 60),
       minutes: d % 60
     });
@@ -949,7 +949,7 @@ class ContactTracingReportComponent {
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _libs_components_src_lib_simple_table_component__WEBPACK_IMPORTED_MODULE_2__.SimpleTableComponent, _contact_tracing_options_component__WEBPACK_IMPORTED_MODULE_3__.ContactTracingOptionsComponent, _angular_common__WEBPACK_IMPORTED_MODULE_7__.AsyncPipe, _angular_common__WEBPACK_IMPORTED_MODULE_7__.DatePipe, _get_user_pipe__WEBPACK_IMPORTED_MODULE_4__.GetUserPipe],
-    styles: ["[_nghost-%COMP%] {\n                width: 100%;\n                height: 100%;\n                display: flex;\n                flex-direction: column;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9jb250YWN0LXRyYWNpbmcvY29udGFjdC10cmFjaW5nLXJlcG9ydC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLFdBQVc7Z0JBQ1gsWUFBWTtnQkFDWixhQUFhO2dCQUNiLHNCQUFzQjtZQUMxQiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgOmhvc3Qge1xuICAgICAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
+    styles: ["[_nghost-%COMP%] {\n                width: 100%;\n                height: 100%;\n                display: flex;\n                flex-direction: column;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbnRhY3QtdHJhY2luZy1yZXBvcnQuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxXQUFXO2dCQUNYLFlBQVk7Z0JBQ1osYUFBYTtnQkFDYixzQkFBc0I7WUFDMUIiLCJmaWxlIjoiY29udGFjdC10cmFjaW5nLXJlcG9ydC5jb21wb25lbnQudHMiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXX0= */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9jb250YWN0LXRyYWNpbmcvY29udGFjdC10cmFjaW5nLXJlcG9ydC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLFdBQVc7Z0JBQ1gsWUFBWTtnQkFDWixhQUFhO2dCQUNiLHNCQUFzQjtZQUMxQjs7QUFFWixna0JBQWdrQiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgOmhvc3Qge1xuICAgICAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
   });
 }
 
@@ -969,10 +969,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 22797);
 /* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/organisation */ 2510);
 /* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/ts-client */ 35713);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ 27419);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! date-fns */ 13264);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! date-fns */ 73725);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! date-fns */ 30417);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ 33240);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! date-fns */ 56441);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! date-fns */ 99908);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! date-fns */ 45726);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ 90521);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs */ 68824);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs */ 71536);
@@ -1014,8 +1014,8 @@ class ContactTracingStateService {
     this._loading = new rxjs__WEBPACK_IMPORTED_MODULE_6__.BehaviorSubject('');
     this._generate = new rxjs__WEBPACK_IMPORTED_MODULE_6__.BehaviorSubject(0);
     this._options = new rxjs__WEBPACK_IMPORTED_MODULE_6__.BehaviorSubject({
-      start: (0,date_fns__WEBPACK_IMPORTED_MODULE_7__["default"])(Date.now()),
-      end: (0,date_fns__WEBPACK_IMPORTED_MODULE_8__["default"])(Date.now())
+      start: (0,date_fns__WEBPACK_IMPORTED_MODULE_7__.startOfDay)(Date.now()),
+      end: (0,date_fns__WEBPACK_IMPORTED_MODULE_8__.endOfDay)(Date.now())
     });
     this.events = (0,rxjs__WEBPACK_IMPORTED_MODULE_9__.combineLatest)([this._options, this._generate]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.distinctUntilChanged)((a, b) => a[1] === b[1]), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.filter)(([_, gen]) => !!gen), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_12__.switchMap)(([{
       start,
@@ -1027,7 +1027,7 @@ class ContactTracingStateService {
       const mod = (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__.getModule)(this.system_id, 'ContactTracing');
       user = user || (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.currentUser)();
       _get_user_pipe__WEBPACK_IMPORTED_MODULE_5__.GetUserPipe.addUser(user);
-      return this.system_id && mod ? mod.execute('close_contacts', [user.email, user.username, (0,date_fns__WEBPACK_IMPORTED_MODULE_14__["default"])(start), (0,date_fns__WEBPACK_IMPORTED_MODULE_14__["default"])(end)]).catch(err => {
+      return this.system_id && mod ? mod.execute('close_contacts', [user.email, user.username, (0,date_fns__WEBPACK_IMPORTED_MODULE_14__.getUnixTime)(start), (0,date_fns__WEBPACK_IMPORTED_MODULE_14__.getUnixTime)(end)]).catch(err => {
         (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.notifyError)(`${err?.msg || JSON.stringify(err)}`);
         return [];
       }) : (0,rxjs__WEBPACK_IMPORTED_MODULE_13__.of)([]);
@@ -1068,7 +1068,7 @@ class ContactTracingStateService {
         var _ref = (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (_) {
           return {
             'MAC Address': _.mac_address,
-            Date: (0,date_fns__WEBPACK_IMPORTED_MODULE_20__["default"])(_.date, 'dd MMM yyyy, ' + _this.time_format),
+            Date: (0,date_fns__WEBPACK_IMPORTED_MODULE_20__.format)(_.date, 'dd MMM yyyy, ' + _this.time_format),
             'User Name': _.user,
             'Contact Name': (yield pipe.transform(_.contact_id).toPromise())?.name || (_.contact_id !== 'null' ? _.contact_id : null) || _.mac_address,
             Duration: `${Math.floor(_.duration / 60) ? Math.floor(_.duration / 60) + 'h ' : ''}${Math.floor(_.duration % 60) + 'm'}`,
@@ -1082,7 +1082,7 @@ class ContactTracingStateService {
       if (!processed_events?.length) {
         return (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.notifyWarn)('No events to download.');
       }
-      (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.downloadFile)(`report+contact-tracing+${(0,date_fns__WEBPACK_IMPORTED_MODULE_20__["default"])(start, 'yyyy-MM-dd')}+${(0,date_fns__WEBPACK_IMPORTED_MODULE_20__["default"])(end, 'yyyy-MM-dd')}.csv`, (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.jsonToCsv)(processed_events));
+      (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.downloadFile)(`report+contact-tracing+${(0,date_fns__WEBPACK_IMPORTED_MODULE_20__.format)(start, 'yyyy-MM-dd')}+${(0,date_fns__WEBPACK_IMPORTED_MODULE_20__.format)(end, 'yyyy-MM-dd')}.csv`, (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.jsonToCsv)(processed_events));
     })();
   }
   static #_ = this.ɵfac = function ContactTracingStateService_Factory(t) {
@@ -1107,7 +1107,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   GetUserPipe: () => (/* binding */ GetUserPipe)
 /* harmony export */ });
-/* harmony import */ var _placeos_users__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/users */ 63870);
+/* harmony import */ var _placeos_users__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/users */ 41489);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ 71536);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 35443);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ 29314);
@@ -1219,7 +1219,7 @@ class CustomReportComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0__
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.NgIf, _libs_components_src_lib_safe_pipe__WEBPACK_IMPORTED_MODULE_1__.SafePipe],
-    styles: ["[_nghost-%COMP%] {\n                height: 100%;\n                width: 100%;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9jdXN0b20tcmVwb3J0LmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksWUFBWTtnQkFDWixXQUFXO1lBQ2YiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICAgICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
+    styles: ["[_nghost-%COMP%] {\n                height: 100%;\n                width: 100%;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImN1c3RvbS1yZXBvcnQuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxZQUFZO2dCQUNaLFdBQVc7WUFDZiIsImZpbGUiOiJjdXN0b20tcmVwb3J0LmNvbXBvbmVudC50cyIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgOmhvc3Qge1xuICAgICAgICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl19 */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9jdXN0b20tcmVwb3J0LmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksWUFBWTtnQkFDWixXQUFXO1lBQ2Y7O0FBRVosb2FBQW9hIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
   });
 }
 
@@ -1239,7 +1239,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reports_state_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reports-state.service */ 58255);
 /* harmony import */ var chartist__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! chartist */ 63395);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/common */ 22797);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ 30417);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ 45726);
 /* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/organisation */ 2510);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 68824);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ 33602);
@@ -1285,7 +1285,7 @@ class ReportDesksChartsComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
   }
   updateDailyChart(list) {
     const data = {
-      labels: list.map(_ => (0,date_fns__WEBPACK_IMPORTED_MODULE_6__["default"])(_.date, 'dd MMM')),
+      labels: list.map(_ => (0,date_fns__WEBPACK_IMPORTED_MODULE_6__.format)(_.date, 'dd MMM')),
       series: [list.map(_ => +_.utilisation)]
     };
     this._day_chart = new chartist__WEBPACK_IMPORTED_MODULE_7__.LineChart('#daily-chart', data);
@@ -1339,7 +1339,7 @@ class ReportDesksChartsComponent extends _placeos_common__WEBPACK_IMPORTED_MODUL
         _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵclassProp"]("is-print", ctx.print);
       }
     },
-    styles: ["[_nghost-%COMP%] {\n                display: block;\n            }\n\n            .is-print[_ngcontent-%COMP%]   .ct-chart[_ngcontent-%COMP%] {\n                width: 8cm !important;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9kZXNrcy9yZXBvcnQtZGVza3MtY2hhcnRzLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksY0FBYztZQUNsQjs7WUFFQTtnQkFDSSxxQkFBcUI7WUFDekIiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBibG9jaztcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgLmlzLXByaW50IC5jdC1jaGFydCB7XG4gICAgICAgICAgICAgICAgd2lkdGg6IDhjbSAhaW1wb3J0YW50O1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
+    styles: ["[_nghost-%COMP%] {\n                display: block;\n            }\n\n            .is-print[_ngcontent-%COMP%]   .ct-chart[_ngcontent-%COMP%] {\n                width: 8cm !important;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlcG9ydC1kZXNrcy1jaGFydHMuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxjQUFjO1lBQ2xCOztZQUVBO2dCQUNJLHFCQUFxQjtZQUN6QiIsImZpbGUiOiJyZXBvcnQtZGVza3MtY2hhcnRzLmNvbXBvbmVudC50cyIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgOmhvc3Qge1xuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICAuaXMtcHJpbnQgLmN0LWNoYXJ0IHtcbiAgICAgICAgICAgICAgICB3aWR0aDogOGNtICFpbXBvcnRhbnQ7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdfQ== */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9kZXNrcy9yZXBvcnQtZGVza3MtY2hhcnRzLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksY0FBYztZQUNsQjs7WUFFQTtnQkFDSSxxQkFBcUI7WUFDekI7O0FBRVosZ2lCQUFnaUIiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBibG9jaztcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgLmlzLXByaW50IC5jdC1jaGFydCB7XG4gICAgICAgICAgICAgICAgd2lkdGg6IDhjbSAhaW1wb3J0YW50O1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
   });
 }
 
@@ -1358,7 +1358,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 22797);
 /* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/organisation */ 2510);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns */ 92793);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns */ 71246);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ 68824);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 35443);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ 7841);
@@ -1443,7 +1443,7 @@ class ReportDesksLevelListComponent {
         end,
         zones
       } = options;
-      const duration = (0,date_fns__WEBPACK_IMPORTED_MODULE_9__["default"])(end, start) || 1;
+      const duration = (0,date_fns__WEBPACK_IMPORTED_MODULE_9__.differenceInDays)(end, start) || 1;
       const levels = [];
       for (const zone of zones) {
         if (zone === 'All') continue;
@@ -1521,7 +1521,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 22797);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ 30417);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ 45726);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 33602);
 /* harmony import */ var _reports_state_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reports-state.service */ 58255);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37580);
@@ -1608,7 +1608,7 @@ class ReportDesksOverallListComponent {
       let data = yield _this.day_list.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.take)(1)).toPromise();
       data = data.map(d => ({
         ...d,
-        date: (0,date_fns__WEBPACK_IMPORTED_MODULE_7__["default"])(d.date, 'MMMM d, y(EEE)')
+        date: (0,date_fns__WEBPACK_IMPORTED_MODULE_7__.format)(d.date, 'MMMM d, y(EEE)')
       }));
       (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.downloadFile)('desks-usage.csv', (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.jsonToCsv)(data));
     });
@@ -1815,7 +1815,7 @@ class ReportDesksComponent {
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_9__.MatProgressSpinner, _reports_options_component__WEBPACK_IMPORTED_MODULE_2__.ReportsOptionsComponent, _report_desks_overall_list_component__WEBPACK_IMPORTED_MODULE_3__.ReportDesksOverallListComponent, _report_desks_level_list_component__WEBPACK_IMPORTED_MODULE_4__.ReportDesksLevelListComponent, _report_desks_charts_component__WEBPACK_IMPORTED_MODULE_5__.ReportDesksChartsComponent, _angular_common__WEBPACK_IMPORTED_MODULE_8__.AsyncPipe],
-    styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n                height: 100%;\n            }\n\n            h3[_ngcontent-%COMP%] {\n                font-weight: 500;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9kZXNrcy9yZXBvcnQtZGVza3MuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxhQUFhO2dCQUNiLHNCQUFzQjtnQkFDdEIsWUFBWTtZQUNoQjs7WUFFQTtnQkFDSSxnQkFBZ0I7WUFDcEIiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICBoMyB7XG4gICAgICAgICAgICAgICAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
+    styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n                height: 100%;\n            }\n\n            h3[_ngcontent-%COMP%] {\n                font-weight: 500;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlcG9ydC1kZXNrcy5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGFBQWE7Z0JBQ2Isc0JBQXNCO2dCQUN0QixZQUFZO1lBQ2hCOztZQUVBO2dCQUNJLGdCQUFnQjtZQUNwQiIsImZpbGUiOiJyZXBvcnQtZGVza3MuY29tcG9uZW50LnRzIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgaDMge1xuICAgICAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiA1MDA7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdfQ== */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9kZXNrcy9yZXBvcnQtZGVza3MuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxhQUFhO2dCQUNiLHNCQUFzQjtnQkFDdEIsWUFBWTtZQUNoQjs7WUFFQTtnQkFDSSxnQkFBZ0I7WUFDcEI7O0FBRVosZ25CQUFnbkIiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICBoMyB7XG4gICAgICAgICAgICAgICAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
   });
 }
 
@@ -1884,7 +1884,7 @@ class NewReportsComponent {
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf, _ui_app_topbar_component__WEBPACK_IMPORTED_MODULE_0__.ApplicationTopbarComponent, _ui_app_sidebar_component__WEBPACK_IMPORTED_MODULE_1__.ApplicationSidebarComponent, _angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterOutlet, _reports_menu_component__WEBPACK_IMPORTED_MODULE_2__.ReportsMenuComponent],
-    styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n                height: 100%;\n                width: 100%;\n                background-color: var(--b1);\n            }\n\n            main[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%]:not(router-outlet) {\n                display: flex;\n                flex-direction: column;\n                width: 100%;\n                height: 100%;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9uZXctcmVwb3J0cy5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGFBQWE7Z0JBQ2Isc0JBQXNCO2dCQUN0QixZQUFZO2dCQUNaLFdBQVc7Z0JBQ1gsMkJBQTJCO1lBQy9COztZQUVBO2dCQUNJLGFBQWE7Z0JBQ2Isc0JBQXNCO2dCQUN0QixXQUFXO2dCQUNYLFlBQVk7WUFDaEIiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWIxKTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgbWFpbiA+ICo6bm90KHJvdXRlci1vdXRsZXQpIHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
+    styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n                height: 100%;\n                width: 100%;\n                background-color: var(--b1);\n            }\n\n            main[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%]:not(router-outlet) {\n                display: flex;\n                flex-direction: column;\n                width: 100%;\n                height: 100%;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5ldy1yZXBvcnRzLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksYUFBYTtnQkFDYixzQkFBc0I7Z0JBQ3RCLFlBQVk7Z0JBQ1osV0FBVztnQkFDWCwyQkFBMkI7WUFDL0I7O1lBRUE7Z0JBQ0ksYUFBYTtnQkFDYixzQkFBc0I7Z0JBQ3RCLFdBQVc7Z0JBQ1gsWUFBWTtZQUNoQiIsImZpbGUiOiJuZXctcmVwb3J0cy5jb21wb25lbnQudHMiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWIxKTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgbWFpbiA+ICo6bm90KHJvdXRlci1vdXRsZXQpIHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXX0= */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9uZXctcmVwb3J0cy5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGFBQWE7Z0JBQ2Isc0JBQXNCO2dCQUN0QixZQUFZO2dCQUNaLFdBQVc7Z0JBQ1gsMkJBQTJCO1lBQy9COztZQUVBO2dCQUNJLGFBQWE7Z0JBQ2Isc0JBQXNCO2dCQUN0QixXQUFXO2dCQUNYLFlBQVk7WUFDaEI7O0FBRVosbzhCQUFvOEIiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWIxKTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgbWFpbiA+ICo6bm90KHJvdXRlci1vdXRsZXQpIHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
   });
 }
 
@@ -2058,7 +2058,7 @@ class ReportsMenuComponent {
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_3__.NgIf, _angular_material_core__WEBPACK_IMPORTED_MODULE_4__.MatRipple, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_1__.IconComponent, _angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterLink],
-    styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: row !important;\n                align-items: center;\n                justify-content: center;\n                background: inherit;\n            }\n\n            .grid[_ngcontent-%COMP%] {\n                display: grid;\n                grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));\n                \n\n                \n\n                gap: 1rem;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9yZXBvcnRzLW1lbnUuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxhQUFhO2dCQUNiLDhCQUE4QjtnQkFDOUIsbUJBQW1CO2dCQUNuQix1QkFBdUI7Z0JBQ3ZCLG1CQUFtQjtZQUN2Qjs7WUFFQTtnQkFDSSxhQUFhO2dCQUNiLDREQUE0RDtnQkFDNUQscUVBQXFFO2dCQUNyRSw2RUFBNkU7Z0JBQzdFLFNBQVM7WUFDYiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgOmhvc3Qge1xuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgICAgICAgZmxleC1kaXJlY3Rpb246IHJvdyAhaW1wb3J0YW50O1xuICAgICAgICAgICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgICAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgICAgICAgICAgYmFja2dyb3VuZDogaW5oZXJpdDtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgLmdyaWQge1xuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGdyaWQ7XG4gICAgICAgICAgICAgICAgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiByZXBlYXQoYXV0by1maWxsLCBtaW5tYXgoMTZyZW0sIDFmcikpO1xuICAgICAgICAgICAgICAgIC8qIFRoaXMgaXMgYmV0dGVyIGZvciBzbWFsbCBzY3JlZW5zLCBvbmNlIG1pbigpIGlzIGJldHRlciBzdXBwb3J0ZWQgKi9cbiAgICAgICAgICAgICAgICAvKiBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IHJlcGVhdChhdXRvLWZpbGwsIG1pbm1heChtaW4oMjAwcHgsIDEwMCUpLCAxZnIpKTsgKi9cbiAgICAgICAgICAgICAgICBnYXA6IDFyZW07XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
+    styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: row !important;\n                align-items: center;\n                justify-content: center;\n                background: inherit;\n            }\n\n            .grid[_ngcontent-%COMP%] {\n                display: grid;\n                grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));\n                \n\n                \n\n                gap: 1rem;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlcG9ydHMtbWVudS5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGFBQWE7Z0JBQ2IsOEJBQThCO2dCQUM5QixtQkFBbUI7Z0JBQ25CLHVCQUF1QjtnQkFDdkIsbUJBQW1CO1lBQ3ZCOztZQUVBO2dCQUNJLGFBQWE7Z0JBQ2IsNERBQTREO2dCQUM1RCxxRUFBcUU7Z0JBQ3JFLDZFQUE2RTtnQkFDN0UsU0FBUztZQUNiIiwiZmlsZSI6InJlcG9ydHMtbWVudS5jb21wb25lbnQudHMiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiByb3cgIWltcG9ydGFudDtcbiAgICAgICAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICAgICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICAgICAgICAgIGJhY2tncm91bmQ6IGluaGVyaXQ7XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIC5ncmlkIHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBncmlkO1xuICAgICAgICAgICAgICAgIGdyaWQtdGVtcGxhdGUtY29sdW1uczogcmVwZWF0KGF1dG8tZmlsbCwgbWlubWF4KDE2cmVtLCAxZnIpKTtcbiAgICAgICAgICAgICAgICAvKiBUaGlzIGlzIGJldHRlciBmb3Igc21hbGwgc2NyZWVucywgb25jZSBtaW4oKSBpcyBiZXR0ZXIgc3VwcG9ydGVkICovXG4gICAgICAgICAgICAgICAgLyogZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiByZXBlYXQoYXV0by1maWxsLCBtaW5tYXgobWluKDIwMHB4LCAxMDAlKSwgMWZyKSk7ICovXG4gICAgICAgICAgICAgICAgZ2FwOiAxcmVtO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXX0= */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9yZXBvcnRzLW1lbnUuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxhQUFhO2dCQUNiLDhCQUE4QjtnQkFDOUIsbUJBQW1CO2dCQUNuQix1QkFBdUI7Z0JBQ3ZCLG1CQUFtQjtZQUN2Qjs7WUFFQTtnQkFDSSxhQUFhO2dCQUNiLDREQUE0RDtnQkFDNUQscUVBQXFFO2dCQUNyRSw2RUFBNkU7Z0JBQzdFLFNBQVM7WUFDYjs7QUFFWiw0dENBQTR0QyIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgOmhvc3Qge1xuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgICAgICAgZmxleC1kaXJlY3Rpb246IHJvdyAhaW1wb3J0YW50O1xuICAgICAgICAgICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgICAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgICAgICAgICAgYmFja2dyb3VuZDogaW5oZXJpdDtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgLmdyaWQge1xuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGdyaWQ7XG4gICAgICAgICAgICAgICAgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiByZXBlYXQoYXV0by1maWxsLCBtaW5tYXgoMTZyZW0sIDFmcikpO1xuICAgICAgICAgICAgICAgIC8qIFRoaXMgaXMgYmV0dGVyIGZvciBzbWFsbCBzY3JlZW5zLCBvbmNlIG1pbigpIGlzIGJldHRlciBzdXBwb3J0ZWQgKi9cbiAgICAgICAgICAgICAgICAvKiBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IHJlcGVhdChhdXRvLWZpbGwsIG1pbm1heChtaW4oMjAwcHgsIDEwMCUpLCAxZnIpKTsgKi9cbiAgICAgICAgICAgICAgICBnYXA6IDFyZW07XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
   });
 }
 
@@ -2369,7 +2369,7 @@ class ReportsOptionsComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_12__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_12__.NgIf, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_13__.NgModel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_14__.MatFormField, _angular_material_select__WEBPACK_IMPORTED_MODULE_15__.MatSelect, _angular_material_core__WEBPACK_IMPORTED_MODULE_16__.MatOption, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_17__.MatTooltip, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_18__.MatProgressSpinner, _angular_material_core__WEBPACK_IMPORTED_MODULE_16__.MatRipple, _libs_form_fields_src_lib_date_range_field_component__WEBPACK_IMPORTED_MODULE_4__.DateRangeFieldComponent, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_5__.IconComponent, _angular_common__WEBPACK_IMPORTED_MODULE_12__.AsyncPipe, _libs_components_src_lib_building_pipe__WEBPACK_IMPORTED_MODULE_6__.BuildingPipe],
-    styles: ["button[_ngcontent-%COMP%] {\n                min-width: 0;\n                padding: 0 0.85rem;\n            }\n\n            button[icon][disabled][_ngcontent-%COMP%] {\n                background-color: var(--n) !important;\n            }\n\n            mat-slide-toggle[_ngcontent-%COMP%]   div[_ngcontent-%COMP%] {\n                width: 5.5em;\n                white-space: initial;\n                line-height: 1.2em;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9yZXBvcnRzLW9wdGlvbnMuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxZQUFZO2dCQUNaLGtCQUFrQjtZQUN0Qjs7WUFFQTtnQkFDSSxxQ0FBcUM7WUFDekM7O1lBRUE7Z0JBQ0ksWUFBWTtnQkFDWixvQkFBb0I7Z0JBQ3BCLGtCQUFrQjtZQUN0QiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgYnV0dG9uIHtcbiAgICAgICAgICAgICAgICBtaW4td2lkdGg6IDA7XG4gICAgICAgICAgICAgICAgcGFkZGluZzogMCAwLjg1cmVtO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICBidXR0b25baWNvbl1bZGlzYWJsZWRdIHtcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1uKSAhaW1wb3J0YW50O1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICBtYXQtc2xpZGUtdG9nZ2xlIGRpdiB7XG4gICAgICAgICAgICAgICAgd2lkdGg6IDUuNWVtO1xuICAgICAgICAgICAgICAgIHdoaXRlLXNwYWNlOiBpbml0aWFsO1xuICAgICAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAxLjJlbTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
+    styles: ["button[_ngcontent-%COMP%] {\n                min-width: 0;\n                padding: 0 0.85rem;\n            }\n\n            button[icon][disabled][_ngcontent-%COMP%] {\n                background-color: var(--n) !important;\n            }\n\n            mat-slide-toggle[_ngcontent-%COMP%]   div[_ngcontent-%COMP%] {\n                width: 5.5em;\n                white-space: initial;\n                line-height: 1.2em;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlcG9ydHMtb3B0aW9ucy5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLFlBQVk7Z0JBQ1osa0JBQWtCO1lBQ3RCOztZQUVBO2dCQUNJLHFDQUFxQztZQUN6Qzs7WUFFQTtnQkFDSSxZQUFZO2dCQUNaLG9CQUFvQjtnQkFDcEIsa0JBQWtCO1lBQ3RCIiwiZmlsZSI6InJlcG9ydHMtb3B0aW9ucy5jb21wb25lbnQudHMiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIGJ1dHRvbiB7XG4gICAgICAgICAgICAgICAgbWluLXdpZHRoOiAwO1xuICAgICAgICAgICAgICAgIHBhZGRpbmc6IDAgMC44NXJlbTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgYnV0dG9uW2ljb25dW2Rpc2FibGVkXSB7XG4gICAgICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbikgIWltcG9ydGFudDtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgbWF0LXNsaWRlLXRvZ2dsZSBkaXYge1xuICAgICAgICAgICAgICAgIHdpZHRoOiA1LjVlbTtcbiAgICAgICAgICAgICAgICB3aGl0ZS1zcGFjZTogaW5pdGlhbDtcbiAgICAgICAgICAgICAgICBsaW5lLWhlaWdodDogMS4yZW07XG4gICAgICAgICAgICB9XG4gICAgICAgICJdfQ== */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9yZXBvcnRzLW9wdGlvbnMuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxZQUFZO2dCQUNaLGtCQUFrQjtZQUN0Qjs7WUFFQTtnQkFDSSxxQ0FBcUM7WUFDekM7O1lBRUE7Z0JBQ0ksWUFBWTtnQkFDWixvQkFBb0I7Z0JBQ3BCLGtCQUFrQjtZQUN0Qjs7QUFFWix3NEJBQXc0QiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgYnV0dG9uIHtcbiAgICAgICAgICAgICAgICBtaW4td2lkdGg6IDA7XG4gICAgICAgICAgICAgICAgcGFkZGluZzogMCAwLjg1cmVtO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICBidXR0b25baWNvbl1bZGlzYWJsZWRdIHtcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1uKSAhaW1wb3J0YW50O1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICBtYXQtc2xpZGUtdG9nZ2xlIGRpdiB7XG4gICAgICAgICAgICAgICAgd2lkdGg6IDUuNWVtO1xuICAgICAgICAgICAgICAgIHdoaXRlLXNwYWNlOiBpbml0aWFsO1xuICAgICAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAxLjJlbTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
   });
 }
 
@@ -2391,14 +2391,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/common */ 22797);
 /* harmony import */ var _placeos_events__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @placeos/events */ 40569);
 /* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @placeos/organisation */ 2510);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns */ 30417);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! date-fns */ 38216);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! date-fns */ 27419);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! date-fns */ 53838);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! date-fns */ 13264);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! date-fns */ 88402);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! date-fns */ 73725);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! date-fns */ 92561);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns */ 45726);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! date-fns */ 7729);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! date-fns */ 33240);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! date-fns */ 49675);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! date-fns */ 56441);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! date-fns */ 28797);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! date-fns */ 99908);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! date-fns */ 55882);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! rxjs */ 33119);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! rxjs */ 90521);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! rxjs */ 71536);
@@ -2447,17 +2447,20 @@ const DAYS_OF_WEEK_INDEX = {
   6: 'saturday'
 };
 class ReportsStateService {
+  get _ignore_days() {
+    const day_list = this._settings.get('app.reports.ignore_days') || [];
+    return day_list?.map(_ => typeof _ === 'string' ? _?.toLowerCase() : (0,date_fns__WEBPACK_IMPORTED_MODULE_9__.format)((0,date_fns__WEBPACK_IMPORTED_MODULE_10__.setDay)(new Date(), _), 'eeee')?.toLowerCase()).filter(_ => !!_);
+  }
   get duration() {
     const opts = this._options.getValue();
-    const ignore_days = this._settings.get('app.reports.ignore_days')?.map(_ => typeof _ === 'string' ? _.toLowerCase() : (0,date_fns__WEBPACK_IMPORTED_MODULE_9__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])(new Date(), _), 'eeee').toLowerCase()) || [];
-    let start = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(opts.start);
-    const end = (0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_13__["default"])(opts.end), 1);
+    let start = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__.startOfDay)(opts.start);
+    const end = (0,date_fns__WEBPACK_IMPORTED_MODULE_12__.addMinutes)((0,date_fns__WEBPACK_IMPORTED_MODULE_13__.endOfDay)(opts.end), 1);
     let count = 0;
     while (start.valueOf() < end.valueOf()) {
-      if (!ignore_days.includes(DAYS_OF_WEEK_INDEX[start.getDay()])) {
+      if (!this._ignore_days.includes(DAYS_OF_WEEK_INDEX[start.getDay()])) {
         count++;
       }
-      start = (0,date_fns__WEBPACK_IMPORTED_MODULE_14__["default"])(start, 1);
+      start = (0,date_fns__WEBPACK_IMPORTED_MODULE_14__.addDays)(start, 1);
     }
     return Math.max(1, count);
   }
@@ -2477,12 +2480,12 @@ class ReportsStateService {
       const options = this._options.getValue();
       this._loading.next('Loading report details...');
       if (!options?.type && !options?.zones?.length) return (0,rxjs__WEBPACK_IMPORTED_MODULE_19__.of)([]);
-      const start = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(options.start || Date.now());
-      const end = (0,date_fns__WEBPACK_IMPORTED_MODULE_13__["default"])(options.end || start);
+      const start = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__.startOfDay)(options.start || Date.now());
+      const end = (0,date_fns__WEBPACK_IMPORTED_MODULE_13__.endOfDay)(options.end || start);
       const zones = options?.zones ? options.zones.filter(z => z !== 'All').join(',') : '';
       const query = {
-        period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_20__["default"])(start),
-        period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_20__["default"])(end)
+        period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_20__.getUnixTime)(start),
+        period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_20__.getUnixTime)(end)
       };
       return options.type === 'desks' ? (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_2__.queryAllBookings)({
         ...query,
@@ -2516,8 +2519,7 @@ class ReportsStateService {
       if (!list?.length) {
         (0,_placeos_common__WEBPACK_IMPORTED_MODULE_3__.notifyError)('No bookings for the selected levels and period');
       }
-      const ignore_days = this._settings.get('app.reports.ignore_days')?.map(_ => typeof _ === 'string' ? _.toLowerCase() : (0,date_fns__WEBPACK_IMPORTED_MODULE_9__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])(new Date(), _), 'eeee').toLowerCase()) || [];
-      list = list.filter(bkn => !ignore_days.includes(DAYS_OF_WEEK_INDEX[new Date(bkn.date).getDay()]));
+      list = list.filter(bkn => !this._ignore_days.includes(DAYS_OF_WEEK_INDEX[new Date(bkn.date).getDay()]));
       this._active_bookings.next(list || []);
       return list;
     }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_23__.shareReplay)(1));
@@ -2562,17 +2564,16 @@ class ReportsStateService {
       const {
         start
       } = options;
-      let date = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(start);
-      const end = (0,date_fns__WEBPACK_IMPORTED_MODULE_13__["default"])(options.end || date);
+      let date = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__.startOfDay)(start);
+      const end = (0,date_fns__WEBPACK_IMPORTED_MODULE_13__.endOfDay)(options.end || date);
       const dates = [];
-      const ignore_days = this._settings.get('app.reports.ignore_days')?.map(_ => _.toLowerCase()) || [];
-      while ((0,date_fns__WEBPACK_IMPORTED_MODULE_26__["default"])(date, end)) {
-        if (ignore_days.includes(DAYS_OF_WEEK_INDEX[date.getDay()])) {
-          date = (0,date_fns__WEBPACK_IMPORTED_MODULE_14__["default"])(date, 1);
+      while ((0,date_fns__WEBPACK_IMPORTED_MODULE_26__.isBefore)(date, end)) {
+        if (this._ignore_days.includes(DAYS_OF_WEEK_INDEX[date.getDay()])) {
+          date = (0,date_fns__WEBPACK_IMPORTED_MODULE_14__.addDays)(date, 1);
           continue;
         }
-        const s = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(date).valueOf();
-        const e = (0,date_fns__WEBPACK_IMPORTED_MODULE_13__["default"])(s).valueOf();
+        const s = (0,date_fns__WEBPACK_IMPORTED_MODULE_11__.startOfDay)(date).valueOf();
+        const e = (0,date_fns__WEBPACK_IMPORTED_MODULE_13__.endOfDay)(s).valueOf();
         const events = stats.events.filter(bkn => (0,_placeos_common__WEBPACK_IMPORTED_MODULE_3__.timePeriodsIntersect)(s, e, bkn.date, bkn.date + bkn.duration * 60 * 1000));
         const usage = options.type === 'desks' ? (0,_placeos_common__WEBPACK_IMPORTED_MODULE_3__.unique)(events, 'system_id').length : (0,_placeos_common__WEBPACK_IMPORTED_MODULE_3__.unique)(events, 'asset_id').length;
         dates.push({
@@ -2584,7 +2585,7 @@ class ReportsStateService {
           count: events.length,
           utilisation: (events.length / stats.total * 100).toFixed(1)
         });
-        date = (0,date_fns__WEBPACK_IMPORTED_MODULE_14__["default"])(date, 1);
+        date = (0,date_fns__WEBPACK_IMPORTED_MODULE_14__.addDays)(date, 1);
       }
       return dates;
     }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_23__.shareReplay)(1));
@@ -2608,7 +2609,7 @@ class ReportsStateService {
   downloadReport() {
     const options = this._options.getValue();
     const bookings = this._active_bookings.getValue();
-    (0,_placeos_common__WEBPACK_IMPORTED_MODULE_3__.downloadFile)(`report+${options.type}+${(0,date_fns__WEBPACK_IMPORTED_MODULE_9__["default"])(options.start, 'yyyy-MM-dd')}+${(0,date_fns__WEBPACK_IMPORTED_MODULE_9__["default"])(options.end, 'yyyy-MM-dd')}.tsv`, (0,_placeos_common__WEBPACK_IMPORTED_MODULE_3__.jsonToCsv)(bookings.map(bkn => {
+    (0,_placeos_common__WEBPACK_IMPORTED_MODULE_3__.downloadFile)(`report+${options.type}+${(0,date_fns__WEBPACK_IMPORTED_MODULE_9__.format)(options.start, 'yyyy-MM-dd')}+${(0,date_fns__WEBPACK_IMPORTED_MODULE_9__.format)(options.end, 'yyyy-MM-dd')}.tsv`, (0,_placeos_common__WEBPACK_IMPORTED_MODULE_3__.jsonToCsv)(bookings.map(bkn => {
       const details = bkn.toJSON();
       delete details.zones;
       delete details.server_names;
@@ -2687,7 +2688,7 @@ class ReportsComponent {
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.NgIf, _ui_sidebar_component__WEBPACK_IMPORTED_MODULE_0__.SidebarComponent, _angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterOutlet, _reports_menu_component__WEBPACK_IMPORTED_MODULE_1__.ReportsMenuComponent],
-    styles: ["[_nghost-%COMP%] {\n                display: flex;\n                height: 100%;\n                width: 100%;\n            }\n\n            main[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%]:not(router-outlet) {\n                display: flex;\n                flex-direction: column;\n                width: 100%;\n                height: 100%;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9yZXBvcnRzLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksYUFBYTtnQkFDYixZQUFZO2dCQUNaLFdBQVc7WUFDZjs7WUFFQTtnQkFDSSxhQUFhO2dCQUNiLHNCQUFzQjtnQkFDdEIsV0FBVztnQkFDWCxZQUFZO1lBQ2hCIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICAgICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIG1haW4gPiAqOm5vdChyb3V0ZXItb3V0bGV0KSB7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
+    styles: ["[_nghost-%COMP%] {\n                display: flex;\n                height: 100%;\n                width: 100%;\n            }\n\n            main[_ngcontent-%COMP%]    > *[_ngcontent-%COMP%]:not(router-outlet) {\n                display: flex;\n                flex-direction: column;\n                width: 100%;\n                height: 100%;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlcG9ydHMuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxhQUFhO2dCQUNiLFlBQVk7Z0JBQ1osV0FBVztZQUNmOztZQUVBO2dCQUNJLGFBQWE7Z0JBQ2Isc0JBQXNCO2dCQUN0QixXQUFXO2dCQUNYLFlBQVk7WUFDaEIiLCJmaWxlIjoicmVwb3J0cy5jb21wb25lbnQudHMiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgbWFpbiA+ICo6bm90KHJvdXRlci1vdXRsZXQpIHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXX0= */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9yZXBvcnRzLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksYUFBYTtnQkFDYixZQUFZO2dCQUNaLFdBQVc7WUFDZjs7WUFFQTtnQkFDSSxhQUFhO2dCQUNiLHNCQUFzQjtnQkFDdEIsV0FBVztnQkFDWCxZQUFZO1lBQ2hCOztBQUVaLGd5QkFBZ3lCIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICAgICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIG1haW4gPiAqOm5vdChyb3V0ZXItb3V0bGV0KSB7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
   });
 }
 
@@ -2710,7 +2711,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @angular/material/paginator */ 24624);
 /* harmony import */ var _reports_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reports.component */ 99179);
 /* harmony import */ var _placeos_spaces__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/spaces */ 44855);
-/* harmony import */ var _placeos_users__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/users */ 63870);
+/* harmony import */ var _placeos_users__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/users */ 41489);
 /* harmony import */ var _reports_options_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./reports-options.component */ 5956);
 /* harmony import */ var _spaces_report_spaces_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./spaces/report-spaces.component */ 5938);
 /* harmony import */ var _desks_report_desks_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./desks/report-desks.component */ 78302);
@@ -2870,7 +2871,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 22797);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ 30417);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ 45726);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 33602);
 /* harmony import */ var _reports_state_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reports-state.service */ 58255);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37580);
@@ -2957,7 +2958,7 @@ class ReportSpacesOverallListComponent {
       let data = yield _this.day_list.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.take)(1)).toPromise();
       data = data.map(d => ({
         ...d,
-        date: (0,date_fns__WEBPACK_IMPORTED_MODULE_7__["default"])(d.date, 'MMMM d, y(EEE)')
+        date: (0,date_fns__WEBPACK_IMPORTED_MODULE_7__.format)(d.date, 'MMMM d, y(EEE)')
       }));
       (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.downloadFile)('spaces-usage.csv', (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.jsonToCsv)(data));
     });
@@ -3011,10 +3012,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ReportSpacesOverallComponent: () => (/* binding */ ReportSpacesOverallComponent)
 /* harmony export */ });
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! date-fns */ 49407);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! date-fns */ 27419);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! date-fns */ 13264);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ 5689);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! date-fns */ 88948);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! date-fns */ 33240);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! date-fns */ 56441);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ 99134);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 35443);
 /* harmony import */ var _reports_state_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../reports-state.service */ 58255);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 37580);
@@ -3065,9 +3066,9 @@ class ReportSpacesOverallComponent {
     this.business_days = this._state.options.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)(({
       start,
       end
-    }) => (0,date_fns__WEBPACK_IMPORTED_MODULE_3__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_4__["default"])(end || Date.now()), (0,date_fns__WEBPACK_IMPORTED_MODULE_5__["default"])(start || Date.now())) || 1));
+    }) => (0,date_fns__WEBPACK_IMPORTED_MODULE_3__.differenceInBusinessDays)((0,date_fns__WEBPACK_IMPORTED_MODULE_4__.startOfDay)(end || Date.now()), (0,date_fns__WEBPACK_IMPORTED_MODULE_5__.endOfDay)(start || Date.now())) || 1));
     this.total_count = this._state.stats.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)(i => i.count || 0));
-    this.avg_length = this._state.stats.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)(i => (0,date_fns__WEBPACK_IMPORTED_MODULE_6__["default"])({
+    this.avg_length = this._state.stats.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)(i => (0,date_fns__WEBPACK_IMPORTED_MODULE_6__.formatDuration)({
       minutes: Math.floor(i.avg_length || 0)
     })));
     this.attendance = this._state.stats.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)(({
@@ -3138,7 +3139,7 @@ class ReportSpacesOverallComponent {
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _angular_common__WEBPACK_IMPORTED_MODULE_7__.AsyncPipe],
-    styles: ["h3[_ngcontent-%COMP%] {\n                font-weight: 500;\n            }\n\n            p[_ngcontent-%COMP%]:not([simple]) {\n                font-size: 1.75rem;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9zcGFjZXMvcmVwb3J0LXNwYWNlcy1vdmVyYWxsLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksZ0JBQWdCO1lBQ3BCOztZQUVBO2dCQUNJLGtCQUFrQjtZQUN0QiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgaDMge1xuICAgICAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiA1MDA7XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIHA6bm90KFtzaW1wbGVdKSB7XG4gICAgICAgICAgICAgICAgZm9udC1zaXplOiAxLjc1cmVtO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
+    styles: ["h3[_ngcontent-%COMP%] {\n                font-weight: 500;\n            }\n\n            p[_ngcontent-%COMP%]:not([simple]) {\n                font-size: 1.75rem;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlcG9ydC1zcGFjZXMtb3ZlcmFsbC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGdCQUFnQjtZQUNwQjs7WUFFQTtnQkFDSSxrQkFBa0I7WUFDdEIiLCJmaWxlIjoicmVwb3J0LXNwYWNlcy1vdmVyYWxsLmNvbXBvbmVudC50cyIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgaDMge1xuICAgICAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiA1MDA7XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIHA6bm90KFtzaW1wbGVdKSB7XG4gICAgICAgICAgICAgICAgZm9udC1zaXplOiAxLjc1cmVtO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXX0= */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9zcGFjZXMvcmVwb3J0LXNwYWNlcy1vdmVyYWxsLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksZ0JBQWdCO1lBQ3BCOztZQUVBO2dCQUNJLGtCQUFrQjtZQUN0Qjs7QUFFWiw0aEJBQTRoQiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgaDMge1xuICAgICAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiA1MDA7XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIHA6bm90KFtzaW1wbGVdKSB7XG4gICAgICAgICAgICAgICAgZm9udC1zaXplOiAxLjc1cmVtO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
   });
 }
 
@@ -3156,7 +3157,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 22797);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns */ 92793);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns */ 71246);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ 68824);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 19803);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 35443);
@@ -3281,7 +3282,7 @@ class ReportSpacesSpaceListing {
           has_attendance = has_attendance || !!booking.extension_data.people_count;
         }
       }
-      const period_in_days = Math.max(1, (0,date_fns__WEBPACK_IMPORTED_MODULE_9__["default"])(end, start) + 1);
+      const period_in_days = Math.max(1, (0,date_fns__WEBPACK_IMPORTED_MODULE_9__.differenceInDays)(end, start) + 1);
       for (const space of list) {
         space.avg_attendees = Math.floor(space.attendees / space.booking_count * 100) / 100;
         space.avg_attendance = Math.floor(space.attendance / space.booking_count * 100) / 100;
@@ -3360,7 +3361,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 22797);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns */ 5689);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns */ 99134);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ 68824);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 19803);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 35443);
@@ -3455,7 +3456,7 @@ class ReportSpacesUserListingComponent {
       for (const space of list) {
         space.avg_attendees = Math.floor(space.attendees / space.booking_count * 100) / 100;
         space.occupancy = Math.floor(space.avg_attendees / space.capacity * 100) / 100;
-        space.total_time = (0,date_fns__WEBPACK_IMPORTED_MODULE_9__["default"])({
+        space.total_time = (0,date_fns__WEBPACK_IMPORTED_MODULE_9__.formatDuration)({
           hours: Math.floor(space.total_time / 60),
           minutes: space.total_time % 60
         });
@@ -3648,13 +3649,13 @@ class ReportSpacesComponent {
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_10__.MatProgressSpinner, _reports_options_component__WEBPACK_IMPORTED_MODULE_2__.ReportsOptionsComponent, _report_spaces_overall_component__WEBPACK_IMPORTED_MODULE_3__.ReportSpacesOverallComponent, _report_spaces_overall_list_component__WEBPACK_IMPORTED_MODULE_4__.ReportSpacesOverallListComponent, _report_spaces_space_listing_component__WEBPACK_IMPORTED_MODULE_5__.ReportSpacesSpaceListing, _report_spaces_user_listing_component__WEBPACK_IMPORTED_MODULE_6__.ReportSpacesUserListingComponent, _angular_common__WEBPACK_IMPORTED_MODULE_9__.AsyncPipe],
-    styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n                height: 100%;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9zcGFjZXMvcmVwb3J0LXNwYWNlcy5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGFBQWE7Z0JBQ2Isc0JBQXNCO2dCQUN0QixZQUFZO1lBQ2hCIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
+    styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n                height: 100%;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlcG9ydC1zcGFjZXMuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxhQUFhO2dCQUNiLHNCQUFzQjtnQkFDdEIsWUFBWTtZQUNoQiIsImZpbGUiOiJyZXBvcnQtc3BhY2VzLmNvbXBvbmVudC50cyIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgOmhvc3Qge1xuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdfQ== */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9zcGFjZXMvcmVwb3J0LXNwYWNlcy5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGFBQWE7Z0JBQ2Isc0JBQXNCO2dCQUN0QixZQUFZO1lBQ2hCOztBQUVaLG9mQUFvZiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgOmhvc3Qge1xuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
   });
 }
 
 /***/ }),
 
-/***/ 63870:
+/***/ 41489:
 /*!*********************************!*\
   !*** ./libs/users/src/index.ts ***!
   \*********************************/
@@ -3717,7 +3718,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   MapLocation: () => (/* binding */ MapLocation)
 /* harmony export */ });
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! date-fns */ 73725);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! date-fns */ 99908);
 
 class MapLocation {
   constructor(_data = {}) {
@@ -3727,149 +3728,12 @@ class MapLocation {
       y: _data.y / _data.map_height || 0
     };
     this.variance = _data.variance || 0;
-    this.last_seen = _data.last_seen || (0,date_fns__WEBPACK_IMPORTED_MODULE_0__["default"])(new Date());
+    this.last_seen = _data.last_seen || (0,date_fns__WEBPACK_IMPORTED_MODULE_0__.getUnixTime)(new Date());
     this.level = _data.level;
     this.building = _data.building;
     this.at_location = !!_data.at_location;
     this.coordinates_from = _data.coordinates_from || 'top-left';
   }
-}
-
-/***/ }),
-
-/***/ 49407:
-/*!*********************************************************************!*\
-  !*** ./node_modules/date-fns/esm/differenceInBusinessDays/index.js ***!
-  \*********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ differenceInBusinessDays)
-/* harmony export */ });
-/* harmony import */ var _addDays_index_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../addDays/index.js */ 88402);
-/* harmony import */ var _differenceInCalendarDays_index_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../differenceInCalendarDays/index.js */ 25395);
-/* harmony import */ var _isSameDay_index_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../isSameDay/index.js */ 26078);
-/* harmony import */ var _isValid_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../isValid/index.js */ 47576);
-/* harmony import */ var _isWeekend_index_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../isWeekend/index.js */ 2363);
-/* harmony import */ var _toDate_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../toDate/index.js */ 59103);
-/* harmony import */ var _lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_lib/requiredArgs/index.js */ 64507);
-/* harmony import */ var _lib_toInteger_index_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../_lib/toInteger/index.js */ 13144);
-
-
-
-
-
-
-
-
-/**
- * @name differenceInBusinessDays
- * @category Day Helpers
- * @summary Get the number of business days between the given dates.
- *
- * @description
- * Get the number of business day periods between the given dates.
- * Business days being days that arent in the weekend.
- * Like `differenceInCalendarDays`, the function removes the times from
- * the dates before calculating the difference.
- *
- * @param {Date|Number} dateLeft - the later date
- * @param {Date|Number} dateRight - the earlier date
- * @returns {Number} the number of business days
- * @throws {TypeError} 2 arguments required
- *
- * @example
- * // How many business days are between
- * // 10 January 2014 and 20 July 2014?
- * const result = differenceInBusinessDays(
- *   new Date(2014, 6, 20),
- *   new Date(2014, 0, 10)
- * )
- * //=> 136
- *
- * // How many business days are between
- * // 30 November 2021 and 1 November 2021?
- * const result = differenceInBusinessDays(
- *   new Date(2021, 10, 30),
- *   new Date(2021, 10, 1)
- * )
- * //=> 21
- *
- * // How many business days are between
- * // 1 November 2021 and 1 December 2021?
- * const result = differenceInBusinessDays(
- *   new Date(2021, 10, 1),
- *   new Date(2021, 11, 1)
- * )
- * //=> -22
- *
- * // How many business days are between
- * // 1 November 2021 and 1 November 2021 ?
- * const result = differenceInBusinessDays(
- *   new Date(2021, 10, 1),
- *   new Date(2021, 10, 1)
- * )
- * //=> 0
- */
-function differenceInBusinessDays(dirtyDateLeft, dirtyDateRight) {
-  (0,_lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(2, arguments);
-  var dateLeft = (0,_toDate_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])(dirtyDateLeft);
-  var dateRight = (0,_toDate_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])(dirtyDateRight);
-  if (!(0,_isValid_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(dateLeft) || !(0,_isValid_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(dateRight)) return NaN;
-  var calendarDifference = (0,_differenceInCalendarDays_index_js__WEBPACK_IMPORTED_MODULE_3__["default"])(dateLeft, dateRight);
-  var sign = calendarDifference < 0 ? -1 : 1;
-  var weeks = (0,_lib_toInteger_index_js__WEBPACK_IMPORTED_MODULE_4__["default"])(calendarDifference / 7);
-  var result = weeks * 5;
-  dateRight = (0,_addDays_index_js__WEBPACK_IMPORTED_MODULE_5__["default"])(dateRight, weeks * 7);
-
-  // the loop below will run at most 6 times to account for the remaining days that don't makeup a full week
-  while (!(0,_isSameDay_index_js__WEBPACK_IMPORTED_MODULE_6__["default"])(dateLeft, dateRight)) {
-    // sign is used to account for both negative and positive differences
-    result += (0,_isWeekend_index_js__WEBPACK_IMPORTED_MODULE_7__["default"])(dateRight) ? 0 : sign;
-    dateRight = (0,_addDays_index_js__WEBPACK_IMPORTED_MODULE_5__["default"])(dateRight, sign);
-  }
-  return result === 0 ? 0 : result;
-}
-
-/***/ }),
-
-/***/ 2363:
-/*!******************************************************!*\
-  !*** ./node_modules/date-fns/esm/isWeekend/index.js ***!
-  \******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ isWeekend)
-/* harmony export */ });
-/* harmony import */ var _toDate_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../toDate/index.js */ 59103);
-/* harmony import */ var _lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_lib/requiredArgs/index.js */ 64507);
-
-
-/**
- * @name isWeekend
- * @category Weekday Helpers
- * @summary Does the given date fall on a weekend?
- *
- * @description
- * Does the given date fall on a weekend?
- *
- * @param {Date|Number} date - the date to check
- * @returns {Boolean} the date falls on a weekend
- * @throws {TypeError} 1 argument required
- *
- * @example
- * // Does 5 October 2014 fall on a weekend?
- * const result = isWeekend(new Date(2014, 9, 5))
- * //=> true
- */
-function isWeekend(dirtyDate) {
-  (0,_lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(1, arguments);
-  var date = (0,_toDate_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])(dirtyDate);
-  var day = date.getDay();
-  return day === 0 || day === 6;
 }
 
 /***/ }),
@@ -7387,6 +7251,150 @@ class PieChart extends BaseChart {
   }
 }
 
+
+/***/ }),
+
+/***/ 88948:
+/*!************************************************************!*\
+  !*** ./node_modules/date-fns/differenceInBusinessDays.mjs ***!
+  \************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   differenceInBusinessDays: () => (/* binding */ differenceInBusinessDays)
+/* harmony export */ });
+/* harmony import */ var _addDays_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./addDays.mjs */ 28797);
+/* harmony import */ var _differenceInCalendarDays_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./differenceInCalendarDays.mjs */ 56248);
+/* harmony import */ var _isSameDay_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./isSameDay.mjs */ 31257);
+/* harmony import */ var _isValid_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./isValid.mjs */ 86211);
+/* harmony import */ var _isWeekend_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./isWeekend.mjs */ 51174);
+/* harmony import */ var _toDate_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./toDate.mjs */ 58700);
+
+
+
+
+
+
+
+/**
+ * @name differenceInBusinessDays
+ * @category Day Helpers
+ * @summary Get the number of business days between the given dates.
+ *
+ * @description
+ * Get the number of business day periods between the given dates.
+ * Business days being days that arent in the weekend.
+ * Like `differenceInCalendarDays`, the function removes the times from
+ * the dates before calculating the difference.
+ *
+ * @typeParam DateType - The `Date` type, the function operates on. Gets inferred from passed arguments. Allows to use extensions like [`UTCDate`](https://github.com/date-fns/utc).
+ *
+ * @param dateLeft - The later date
+ * @param dateRight - The earlier date
+ *
+ * @returns The number of business days
+ *
+ * @example
+ * // How many business days are between
+ * // 10 January 2014 and 20 July 2014?
+ * const result = differenceInBusinessDays(
+ *   new Date(2014, 6, 20),
+ *   new Date(2014, 0, 10)
+ * )
+ * //=> 136
+ *
+ * // How many business days are between
+ * // 30 November 2021 and 1 November 2021?
+ * const result = differenceInBusinessDays(
+ *   new Date(2021, 10, 30),
+ *   new Date(2021, 10, 1)
+ * )
+ * //=> 21
+ *
+ * // How many business days are between
+ * // 1 November 2021 and 1 December 2021?
+ * const result = differenceInBusinessDays(
+ *   new Date(2021, 10, 1),
+ *   new Date(2021, 11, 1)
+ * )
+ * //=> -22
+ *
+ * // How many business days are between
+ * // 1 November 2021 and 1 November 2021 ?
+ * const result = differenceInBusinessDays(
+ *   new Date(2021, 10, 1),
+ *   new Date(2021, 10, 1)
+ * )
+ * //=> 0
+ */
+function differenceInBusinessDays(dateLeft, dateRight) {
+  const _dateLeft = (0,_toDate_mjs__WEBPACK_IMPORTED_MODULE_0__.toDate)(dateLeft);
+  let _dateRight = (0,_toDate_mjs__WEBPACK_IMPORTED_MODULE_0__.toDate)(dateRight);
+  if (!(0,_isValid_mjs__WEBPACK_IMPORTED_MODULE_1__.isValid)(_dateLeft) || !(0,_isValid_mjs__WEBPACK_IMPORTED_MODULE_1__.isValid)(_dateRight)) return NaN;
+  const calendarDifference = (0,_differenceInCalendarDays_mjs__WEBPACK_IMPORTED_MODULE_2__.differenceInCalendarDays)(_dateLeft, _dateRight);
+  const sign = calendarDifference < 0 ? -1 : 1;
+  const weeks = Math.trunc(calendarDifference / 7);
+  let result = weeks * 5;
+  _dateRight = (0,_addDays_mjs__WEBPACK_IMPORTED_MODULE_3__.addDays)(_dateRight, weeks * 7);
+
+  // the loop below will run at most 6 times to account for the remaining days that don't makeup a full week
+  while (!(0,_isSameDay_mjs__WEBPACK_IMPORTED_MODULE_4__.isSameDay)(_dateLeft, _dateRight)) {
+    // sign is used to account for both negative and positive differences
+    result += (0,_isWeekend_mjs__WEBPACK_IMPORTED_MODULE_5__.isWeekend)(_dateRight) ? 0 : sign;
+    _dateRight = (0,_addDays_mjs__WEBPACK_IMPORTED_MODULE_3__.addDays)(_dateRight, sign);
+  }
+
+  // Prevent negative zero
+  return result === 0 ? 0 : result;
+}
+
+// Fallback for modularized imports:
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (differenceInBusinessDays);
+
+/***/ }),
+
+/***/ 51174:
+/*!*********************************************!*\
+  !*** ./node_modules/date-fns/isWeekend.mjs ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   isWeekend: () => (/* binding */ isWeekend)
+/* harmony export */ });
+/* harmony import */ var _toDate_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./toDate.mjs */ 58700);
+
+
+/**
+ * @name isWeekend
+ * @category Weekday Helpers
+ * @summary Does the given date fall on a weekend?
+ *
+ * @description
+ * Does the given date fall on a weekend?
+ *
+ * @typeParam DateType - The `Date` type, the function operates on. Gets inferred from passed arguments. Allows to use extensions like [`UTCDate`](https://github.com/date-fns/utc).
+ *
+ * @param date - The date to check
+ *
+ * @returns The date falls on a weekend
+ *
+ * @example
+ * // Does 5 October 2014 fall on a weekend?
+ * const result = isWeekend(new Date(2014, 9, 5))
+ * //=> true
+ */
+function isWeekend(date) {
+  const day = (0,_toDate_mjs__WEBPACK_IMPORTED_MODULE_0__.toDate)(date).getDay();
+  return day === 0 || day === 6;
+}
+
+// Fallback for modularized imports:
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isWeekend);
 
 /***/ })
 
