@@ -3616,12 +3616,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   SharedExploreModule: () => (/* binding */ SharedExploreModule)
 /* harmony export */ });
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/common */ 60316);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/forms */ 34456);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/forms */ 34456);
 /* harmony import */ var _placeos_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/components */ 51588);
-/* harmony import */ var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/slide-toggle */ 8827);
-/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/cdk/overlay */ 81570);
-/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/cdk/portal */ 9168);
+/* harmony import */ var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/material/slide-toggle */ 8827);
+/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @angular/cdk/overlay */ 81570);
+/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @angular/cdk/portal */ 9168);
 /* harmony import */ var libs_form_fields_src_lib_form_fields_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! libs/form-fields/src/lib/form-fields.module */ 77066);
 /* harmony import */ var libs_bookings_src_lib_bookings_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! libs/bookings/src/lib/bookings.module */ 38742);
 /* harmony import */ var _explore_map_control_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./explore-map-control.component */ 60468);
@@ -3638,7 +3638,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _explore_locker_bank_info_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./explore-locker-bank-info.component */ 84810);
 /* harmony import */ var _explore_locker_bank_modal_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./explore-locker-bank-modal.component */ 50795);
 /* harmony import */ var _explore_parking_info_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./explore-parking-info.component */ 17889);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _components_src_lib_custom_tooltip_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../../components/src/lib/custom-tooltip.component */ 22238);
+/* harmony import */ var _components_src_lib_authenticated_image_directive__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../../components/src/lib/authenticated-image.directive */ 93208);
+/* harmony import */ var _components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @angular/material/form-field */ 24950);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @angular/material/core */ 74646);
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @angular/material/dialog */ 12587);
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @angular/material/input */ 95541);
+/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @angular/material/progress-spinner */ 41134);
+/* harmony import */ var _form_fields_src_lib_duration_field_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../../../form-fields/src/lib/duration-field.component */ 83476);
+/* harmony import */ var _form_fields_src_lib_user_search_field_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../../form-fields/src/lib/user-search-field.component */ 18000);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3668,20 +3690,22 @@ class SharedExploreModule {
   static #_ = this.ɵfac = function SharedExploreModule_Factory(t) {
     return new (t || SharedExploreModule)();
   };
-  static #_2 = this.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_17__["ɵɵdefineNgModule"]({
+  static #_2 = this.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵdefineNgModule"]({
     type: SharedExploreModule
   });
-  static #_3 = this.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_17__["ɵɵdefineInjector"]({
-    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_18__.CommonModule, _placeos_components__WEBPACK_IMPORTED_MODULE_0__.ComponentsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_19__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_19__.ReactiveFormsModule, _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_20__.MatSlideToggleModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_21__.OverlayModule, _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_22__.PortalModule, libs_form_fields_src_lib_form_fields_module__WEBPACK_IMPORTED_MODULE_1__.FormFieldsModule, libs_bookings_src_lib_bookings_module__WEBPACK_IMPORTED_MODULE_2__.SharedBookingsModule]
+  static #_3 = this.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵdefineInjector"]({
+    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_23__.CommonModule, _placeos_components__WEBPACK_IMPORTED_MODULE_0__.ComponentsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_24__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_24__.ReactiveFormsModule, _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_25__.MatSlideToggleModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_26__.OverlayModule, _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_27__.PortalModule, libs_form_fields_src_lib_form_fields_module__WEBPACK_IMPORTED_MODULE_1__.FormFieldsModule, libs_bookings_src_lib_bookings_module__WEBPACK_IMPORTED_MODULE_2__.SharedBookingsModule]
   });
 }
 (function () {
-  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_17__["ɵɵsetNgModuleScope"](SharedExploreModule, {
+  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵsetNgModuleScope"](SharedExploreModule, {
     declarations: [_explore_map_control_component__WEBPACK_IMPORTED_MODULE_3__.ExploreMapControlComponent, _explore_map_view_component__WEBPACK_IMPORTED_MODULE_4__.ExploreMapViewComponent, _explore_search_component__WEBPACK_IMPORTED_MODULE_5__.ExploreSearchComponent, _explore_space_info_component__WEBPACK_IMPORTED_MODULE_6__.ExploreSpaceInfoComponent, _explore_device_info_component__WEBPACK_IMPORTED_MODULE_8__.ExploreDeviceInfoComponent, _explore_desk_info_component__WEBPACK_IMPORTED_MODULE_10__.ExploreDeskInfoComponent, _explore_zoom_control_component__WEBPACK_IMPORTED_MODULE_7__.ExploreZoomControlComponent, _explore_booking_modal_component__WEBPACK_IMPORTED_MODULE_9__.ExploreBookingModalComponent, _set_datetime_modal_component__WEBPACK_IMPORTED_MODULE_11__.SetDatetimeModalComponent, _explore_book_qr_component__WEBPACK_IMPORTED_MODULE_12__.ExploreBookQrComponent, _explore_sensor_info_component__WEBPACK_IMPORTED_MODULE_13__.ExploreSensorInfoComponent, _explore_locker_bank_info_component__WEBPACK_IMPORTED_MODULE_14__.ExploreLockerBankInfoComponent, _explore_locker_bank_modal_component__WEBPACK_IMPORTED_MODULE_15__.ExploreLockerBankModalComponent, _explore_parking_info_component__WEBPACK_IMPORTED_MODULE_16__.ExploreParkingInfoComponent],
-    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_18__.CommonModule, _placeos_components__WEBPACK_IMPORTED_MODULE_0__.ComponentsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_19__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_19__.ReactiveFormsModule, _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_20__.MatSlideToggleModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_21__.OverlayModule, _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_22__.PortalModule, libs_form_fields_src_lib_form_fields_module__WEBPACK_IMPORTED_MODULE_1__.FormFieldsModule, libs_bookings_src_lib_bookings_module__WEBPACK_IMPORTED_MODULE_2__.SharedBookingsModule],
+    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_23__.CommonModule, _placeos_components__WEBPACK_IMPORTED_MODULE_0__.ComponentsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_24__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_24__.ReactiveFormsModule, _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_25__.MatSlideToggleModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_26__.OverlayModule, _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_27__.PortalModule, libs_form_fields_src_lib_form_fields_module__WEBPACK_IMPORTED_MODULE_1__.FormFieldsModule, libs_bookings_src_lib_bookings_module__WEBPACK_IMPORTED_MODULE_2__.SharedBookingsModule],
     exports: [_explore_map_control_component__WEBPACK_IMPORTED_MODULE_3__.ExploreMapControlComponent, _explore_map_view_component__WEBPACK_IMPORTED_MODULE_4__.ExploreMapViewComponent, _explore_search_component__WEBPACK_IMPORTED_MODULE_5__.ExploreSearchComponent, _explore_space_info_component__WEBPACK_IMPORTED_MODULE_6__.ExploreSpaceInfoComponent, _explore_device_info_component__WEBPACK_IMPORTED_MODULE_8__.ExploreDeviceInfoComponent, _explore_desk_info_component__WEBPACK_IMPORTED_MODULE_10__.ExploreDeskInfoComponent, _explore_zoom_control_component__WEBPACK_IMPORTED_MODULE_7__.ExploreZoomControlComponent, _explore_booking_modal_component__WEBPACK_IMPORTED_MODULE_9__.ExploreBookingModalComponent, _set_datetime_modal_component__WEBPACK_IMPORTED_MODULE_11__.SetDatetimeModalComponent, _explore_book_qr_component__WEBPACK_IMPORTED_MODULE_12__.ExploreBookQrComponent, _explore_sensor_info_component__WEBPACK_IMPORTED_MODULE_13__.ExploreSensorInfoComponent, _explore_locker_bank_info_component__WEBPACK_IMPORTED_MODULE_14__.ExploreLockerBankInfoComponent, _explore_locker_bank_modal_component__WEBPACK_IMPORTED_MODULE_15__.ExploreLockerBankModalComponent, _explore_parking_info_component__WEBPACK_IMPORTED_MODULE_16__.ExploreParkingInfoComponent]
   });
 })();
+_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵsetComponentScope"](_explore_space_info_component__WEBPACK_IMPORTED_MODULE_6__.ExploreSpaceInfoComponent, [_angular_common__WEBPACK_IMPORTED_MODULE_23__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_23__.NgIf, _components_src_lib_custom_tooltip_component__WEBPACK_IMPORTED_MODULE_17__.CustomTooltipComponent, _components_src_lib_authenticated_image_directive__WEBPACK_IMPORTED_MODULE_18__.AuthenticatedImageDirective], []);
+_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵsetComponentScope"](_explore_booking_modal_component__WEBPACK_IMPORTED_MODULE_9__.ExploreBookingModalComponent, [_angular_common__WEBPACK_IMPORTED_MODULE_23__.NgIf, _components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_19__.IconComponent, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_28__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_28__.MatError, _angular_material_core__WEBPACK_IMPORTED_MODULE_29__.MatRipple, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_30__.MatDialogClose, _angular_material_input__WEBPACK_IMPORTED_MODULE_31__.MatInput, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_32__.MatProgressSpinner, _angular_forms__WEBPACK_IMPORTED_MODULE_24__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_24__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_24__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_24__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_24__.FormControlName, _form_fields_src_lib_duration_field_component__WEBPACK_IMPORTED_MODULE_20__.DurationFieldComponent, _form_fields_src_lib_user_search_field_component__WEBPACK_IMPORTED_MODULE_21__.UserSearchFieldComponent], [_angular_common__WEBPACK_IMPORTED_MODULE_23__.AsyncPipe, _angular_common__WEBPACK_IMPORTED_MODULE_23__.DatePipe]);
 
 /***/ }),
 
