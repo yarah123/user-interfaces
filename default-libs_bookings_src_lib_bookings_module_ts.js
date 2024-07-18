@@ -1,77 +1,5 @@
 "use strict";
-(self["webpackChunkconcierge"] = self["webpackChunkconcierge"] || []).push([["default-libs_bookings_src_index_ts-libs_bookings_src_lib_group-event-details-modal_component_ts"],{
-
-/***/ 85616:
-/*!************************************!*\
-  !*** ./libs/bookings/src/index.ts ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Booking: () => (/* reexport safe */ _lib_booking_class__WEBPACK_IMPORTED_MODULE_2__.Booking),
-/* harmony export */   BookingCardComponent: () => (/* reexport safe */ _lib_booking_card_component__WEBPACK_IMPORTED_MODULE_8__.BookingCardComponent),
-/* harmony export */   BookingDetailsModalComponent: () => (/* reexport safe */ _lib_booking_details_modal_component__WEBPACK_IMPORTED_MODULE_7__.BookingDetailsModalComponent),
-/* harmony export */   BookingFormService: () => (/* reexport safe */ _lib_booking_form_service__WEBPACK_IMPORTED_MODULE_1__.BookingFormService),
-/* harmony export */   DesksService: () => (/* reexport safe */ _lib_desk_service__WEBPACK_IMPORTED_MODULE_5__.DesksService),
-/* harmony export */   FAV_PARKING_KEY: () => (/* reexport safe */ _lib_parking_select_modal_parking_select_modal_component__WEBPACK_IMPORTED_MODULE_9__.FAV_PARKING_KEY),
-/* harmony export */   GroupEventDetailsModalComponent: () => (/* reexport safe */ _lib_group_event_details_modal_component__WEBPACK_IMPORTED_MODULE_10__.GroupEventDetailsModalComponent),
-/* harmony export */   LockersService: () => (/* reexport safe */ _lib_lockers_service__WEBPACK_IMPORTED_MODULE_6__.LockersService),
-/* harmony export */   ParkingService: () => (/* reexport safe */ _lib_parking_service__WEBPACK_IMPORTED_MODULE_11__.ParkingService),
-/* harmony export */   ParkingSpaceSelectModalComponent: () => (/* reexport safe */ _lib_parking_select_modal_parking_select_modal_component__WEBPACK_IMPORTED_MODULE_9__.ParkingSpaceSelectModalComponent),
-/* harmony export */   RecurrenceDays: () => (/* reexport safe */ _lib_booking_class__WEBPACK_IMPORTED_MODULE_2__.RecurrenceDays),
-/* harmony export */   SharedBookingsModule: () => (/* reexport safe */ _lib_bookings_module__WEBPACK_IMPORTED_MODULE_0__.SharedBookingsModule),
-/* harmony export */   approveBooking: () => (/* reexport safe */ _lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.approveBooking),
-/* harmony export */   bookingAddGuest: () => (/* reexport safe */ _lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.bookingAddGuest),
-/* harmony export */   bookingRemoveGuest: () => (/* reexport safe */ _lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.bookingRemoveGuest),
-/* harmony export */   checkinBooking: () => (/* reexport safe */ _lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.checkinBooking),
-/* harmony export */   checkinBookingAttendee: () => (/* reexport safe */ _lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.checkinBookingAttendee),
-/* harmony export */   checkinBookingGuest: () => (/* reexport safe */ _lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.checkinBookingGuest),
-/* harmony export */   createBooking: () => (/* reexport safe */ _lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.createBooking),
-/* harmony export */   createBookingsForEvent: () => (/* reexport safe */ _lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.createBookingsForEvent),
-/* harmony export */   findNearbyFeature: () => (/* reexport safe */ _lib_booking_utilities__WEBPACK_IMPORTED_MODULE_3__.findNearbyFeature),
-/* harmony export */   generateBookingForm: () => (/* reexport safe */ _lib_booking_utilities__WEBPACK_IMPORTED_MODULE_3__.generateBookingForm),
-/* harmony export */   isResourceAvailable: () => (/* reexport safe */ _lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.isResourceAvailable),
-/* harmony export */   newBookingFromCalendarEvent: () => (/* reexport safe */ _lib_booking_utilities__WEBPACK_IMPORTED_MODULE_3__.newBookingFromCalendarEvent),
-/* harmony export */   queryAllBookings: () => (/* reexport safe */ _lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.queryAllBookings),
-/* harmony export */   queryBookingGuests: () => (/* reexport safe */ _lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.queryBookingGuests),
-/* harmony export */   queryBookings: () => (/* reexport safe */ _lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.queryBookings),
-/* harmony export */   queryPagedBookings: () => (/* reexport safe */ _lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.queryPagedBookings),
-/* harmony export */   queryResourceAvailability: () => (/* reexport safe */ _lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.queryResourceAvailability),
-/* harmony export */   rejectBooking: () => (/* reexport safe */ _lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.rejectBooking),
-/* harmony export */   removeBooking: () => (/* reexport safe */ _lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.removeBooking),
-/* harmony export */   saveBooking: () => (/* reexport safe */ _lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.saveBooking),
-/* harmony export */   setBookingState: () => (/* reexport safe */ _lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.setBookingState),
-/* harmony export */   showBooking: () => (/* reexport safe */ _lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.showBooking),
-/* harmony export */   updateBooking: () => (/* reexport safe */ _lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__.updateBooking)
-/* harmony export */ });
-/* harmony import */ var _lib_bookings_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/bookings.module */ 38742);
-/* harmony import */ var _lib_booking_form_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lib/booking-form.service */ 18379);
-/* harmony import */ var _lib_booking_class__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lib/booking.class */ 53857);
-/* harmony import */ var _lib_booking_utilities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lib/booking.utilities */ 17141);
-/* harmony import */ var _lib_bookings_fn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./lib/bookings.fn */ 18026);
-/* harmony import */ var _lib_desk_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./lib/desk.service */ 74350);
-/* harmony import */ var _lib_lockers_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./lib/lockers.service */ 98796);
-/* harmony import */ var _lib_booking_details_modal_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./lib/booking-details-modal.component */ 1781);
-/* harmony import */ var _lib_booking_card_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./lib/booking-card.component */ 27547);
-/* harmony import */ var _lib_parking_select_modal_parking_select_modal_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./lib/parking-select-modal/parking-select-modal.component */ 67642);
-/* harmony import */ var _lib_group_event_details_modal_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./lib/group-event-details-modal.component */ 30000);
-/* harmony import */ var _lib_parking_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./lib/parking.service */ 1593);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/***/ }),
+(self["webpackChunkconcierge"] = self["webpackChunkconcierge"] || []).push([["default-libs_bookings_src_lib_bookings_module_ts"],{
 
 /***/ 27547:
 /*!*********************************************************!*\
@@ -89,13 +17,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! date-fns */ 45726);
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! date-fns */ 49675);
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! date-fns */ 99134);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ 35443);
 /* harmony import */ var _booking_class__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./booking.class */ 53857);
 /* harmony import */ var _booking_details_modal_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./booking-details-modal.component */ 1781);
 /* harmony import */ var libs_common_src_lib_async_handler_class__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! libs/common/src/lib/async-handler.class */ 75354);
 /* harmony import */ var libs_organisation_src_lib_organisation_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
-/* harmony import */ var _group_event_details_modal_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./group-event-details-modal.component */ 30000);
-/* harmony import */ var _parking_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./parking.service */ 1593);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ 35443);
+/* harmony import */ var _parking_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./parking.service */ 1593);
+/* harmony import */ var _events_src_lib_group_event_details_modal_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../events/src/lib/group-event-details-modal.component */ 58094);
 /* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/dialog */ 12587);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/router */ 95072);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/common */ 60316);
@@ -339,7 +267,7 @@ class BookingCardComponent extends libs_common_src_lib_async_handler_class__WEBP
   viewDetails() {
     if (!this.booking) return;
     this.timeout('open', () => {
-      const view_component = this.booking.booking_type === 'group-event' ? _group_event_details_modal_component__WEBPACK_IMPORTED_MODULE_5__.GroupEventDetailsModalComponent : _booking_details_modal_component__WEBPACK_IMPORTED_MODULE_2__.BookingDetailsModalComponent;
+      const view_component = this.booking.booking_type === 'group-event' ? _events_src_lib_group_event_details_modal_component__WEBPACK_IMPORTED_MODULE_6__.GroupEventDetailsModalComponent : _booking_details_modal_component__WEBPACK_IMPORTED_MODULE_2__.BookingDetailsModalComponent;
       const data = this.booking.booking_type === 'group-event' ? {
         booking: this.booking,
         concierge: false
@@ -353,7 +281,7 @@ class BookingCardComponent extends libs_common_src_lib_async_handler_class__WEBP
     });
   }
   static #_ = this.ɵfac = function BookingCardComponent_Factory(t) {
-    return new (t || BookingCardComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_15__.MatDialog), _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_16__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdirectiveInject"](libs_organisation_src_lib_organisation_service__WEBPACK_IMPORTED_MODULE_4__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdirectiveInject"](_placeos_common__WEBPACK_IMPORTED_MODULE_0__.SettingsService), _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdirectiveInject"](_parking_service__WEBPACK_IMPORTED_MODULE_6__.ParkingService));
+    return new (t || BookingCardComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_15__.MatDialog), _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_16__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdirectiveInject"](libs_organisation_src_lib_organisation_service__WEBPACK_IMPORTED_MODULE_4__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdirectiveInject"](_placeos_common__WEBPACK_IMPORTED_MODULE_0__.SettingsService), _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdirectiveInject"](_parking_service__WEBPACK_IMPORTED_MODULE_5__.ParkingService));
   };
   static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineComponent"]({
     type: BookingCardComponent,
@@ -1154,17 +1082,19 @@ class BookingFormService extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.As
         date = (0,date_fns__WEBPACK_IMPORTED_MODULE_24__.startOfDay)(date).valueOf();
         duration = 24 * 60 - 1;
       }
-      return (0,_bookings_fn__WEBPACK_IMPORTED_MODULE_6__.queryBookings)({
+      return (0,_bookings_fn__WEBPACK_IMPORTED_MODULE_6__.bookedResourceList)({
         period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_25__.getUnixTime)(date),
         period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_25__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_26__.addMinutes)(date, duration)),
         type: options.type,
-        zones: options.zone_id || this._org.building?.id || this._org.organisation.id,
-        limit: 1000
-      }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_20__.map)(bookings => {
+        zones: options.zone_id || this._org.building?.id || this._org.organisation.id
+      }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_20__.map)(booked_ids => {
         const start = this.form.getRawValue().date;
         const end = (0,date_fns__WEBPACK_IMPORTED_MODULE_26__.addMinutes)(start, this.form.getRawValue().duration).valueOf();
         this._resource_use = {};
-        bookings.forEach(_ => this._resource_use[_.asset_id] = _.user_name);
+        for (const id of booked_ids) {
+          this._resource_use[id] = ' ';
+        }
+        console.log('Booked:', booked_ids);
         const available = resources.filter(asset => {
           const is_restricted = (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.rulesForResource)({
             date,
@@ -1172,7 +1102,8 @@ class BookingFormService extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.As
             resource: asset,
             host: user || (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.currentUser)()
           }, restrictions[asset.zone?.id] || restrictions[asset.zone?.parent_id] || restrictions[this._org.building.id] || []).hidden;
-          return !is_restricted && (!asset.groups?.length || asset.groups.some(grp => (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.currentUser)().groups.includes(grp))) && asset.bookable !== false && (!options.features || options.features?.every(_ => asset.features.includes(_))) && (!options.zone_id || options.zone_id === asset.zone?.id || options.zone_id === asset.zone?.parent_id) && !bookings.find(bkn => bkn.asset_id === asset.id && bkn.status !== 'declined') && !asset.assigned_to;
+          console.log('Booked:', asset.id, booked_ids.includes(asset.id));
+          return !is_restricted && (!asset.groups?.length || asset.groups.some(grp => (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.currentUser)().groups.includes(grp))) && asset.bookable !== false && (!options.features || options.features?.every(_ => asset.features.includes(_))) && (!options.zone_id || options.zone_id === asset.zone?.id || options.zone_id === asset.zone?.parent_id) && !booked_ids.includes(asset.id) && !asset.assigned_to;
         });
         return available;
       }, (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_27__.catchError)(_ => (0,rxjs__WEBPACK_IMPORTED_MODULE_18__.of)([]))));
@@ -1701,16 +1632,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   SharedBookingsModule: () => (/* binding */ SharedBookingsModule)
 /* harmony export */ });
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @angular/common */ 60316);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @angular/forms */ 34456);
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! @angular/material/button */ 84175);
-/* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! @angular/material/checkbox */ 97024);
-/* harmony import */ var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! @angular/material/datepicker */ 61977);
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! @angular/material/dialog */ 12587);
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @angular/material/form-field */ 24950);
-/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @angular/material/input */ 95541);
-/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! @angular/material/progress-spinner */ 41134);
-/* harmony import */ var _angular_material_radio__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @angular/material/radio */ 53804);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @angular/forms */ 34456);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @angular/material/button */ 84175);
+/* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! @angular/material/checkbox */ 97024);
+/* harmony import */ var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @angular/material/datepicker */ 61977);
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! @angular/material/dialog */ 12587);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @angular/material/form-field */ 24950);
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @angular/material/input */ 95541);
+/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! @angular/material/progress-spinner */ 41134);
+/* harmony import */ var _angular_material_radio__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @angular/material/radio */ 53804);
 /* harmony import */ var libs_components_src_lib_components_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! libs/components/src/lib/components.module */ 14974);
 /* harmony import */ var libs_form_fields_src_lib_form_fields_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! libs/form-fields/src/lib/form-fields.module */ 77066);
 /* harmony import */ var libs_events_src_lib_events_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! libs/events/src/lib/events.module */ 2704);
@@ -1737,10 +1668,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parking_space_list_field_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./parking-space-list-field.component */ 24844);
 /* harmony import */ var _desk_list_field_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./desk-list-field.component */ 56416);
 /* harmony import */ var _booking_link_modal_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./booking-link-modal.component */ 84089);
-/* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! @angular/material/autocomplete */ 79771);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! @angular/material/core */ 74646);
+/* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! @angular/material/autocomplete */ 79771);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! @angular/material/core */ 74646);
 /* harmony import */ var _locker_grid_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./locker-grid.component */ 84854);
-/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! @angular/material/tooltip */ 80640);
+/* harmony import */ var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! @angular/material/tooltip */ 80640);
 /* harmony import */ var _locker_select_modal_locker_select_modal_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./locker-select-modal/locker-select-modal.component */ 90482);
 /* harmony import */ var _locker_list_field_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./locker-list-field.component */ 71511);
 /* harmony import */ var _locker_select_modal_locker_filters_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./locker-select-modal/locker-filters.component */ 22657);
@@ -1748,9 +1679,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _locker_select_modal_locker_bank_list_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./locker-select-modal/locker-bank-list.component */ 90647);
 /* harmony import */ var _locker_select_modal_locker_map_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./locker-select-modal/locker-map.component */ 38720);
 /* harmony import */ var _desk_settings_modal_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./desk-settings-modal.component */ 77904);
-/* harmony import */ var _group_event_details_modal_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./group-event-details-modal.component */ 30000);
-/* harmony import */ var _group_event_card_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./group-event-card.component */ 93736);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @angular/core */ 37580);
 
 
 
@@ -1799,26 +1728,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-const COMPONENTS = [_desk_questions_modal_component__WEBPACK_IMPORTED_MODULE_8__.DeskQuestionsModalComponent, _desk_confirm_modal_component__WEBPACK_IMPORTED_MODULE_7__.DeskConfirmModalComponent, _invite_visitor_form_component__WEBPACK_IMPORTED_MODULE_15__.InviteVisitorFormComponent, _booking_details_modal_component__WEBPACK_IMPORTED_MODULE_6__.BookingDetailsModalComponent, _booking_card_component__WEBPACK_IMPORTED_MODULE_5__.BookingCardComponent, _booking_link_modal_component__WEBPACK_IMPORTED_MODULE_25__.BookingLinkModalComponent, _parking_select_modal_parking_select_modal_component__WEBPACK_IMPORTED_MODULE_22__.ParkingSpaceSelectModalComponent, _parking_select_modal_parking_filters_component__WEBPACK_IMPORTED_MODULE_18__.ParkingSpaceFiltersComponent, _parking_select_modal_parking_filters_display_component__WEBPACK_IMPORTED_MODULE_17__.ParkingSpaceFiltersDisplayComponent, _parking_select_modal_parking_list_component__WEBPACK_IMPORTED_MODULE_19__.ParkingSpaceListComponent, _parking_select_modal_parking_location_pin_component__WEBPACK_IMPORTED_MODULE_20__.ParkingSpaceLocationPinComponent, _parking_select_modal_parking_map_component__WEBPACK_IMPORTED_MODULE_21__.ParkingSpaceSelectMapComponent, _parking_select_modal_parking_details_component__WEBPACK_IMPORTED_MODULE_16__.ParkingSpaceDetailsComponent, _parking_space_list_field_component__WEBPACK_IMPORTED_MODULE_23__.ParkingSpaceListFieldComponent, _desk_select_modal_desk_select_modal_component__WEBPACK_IMPORTED_MODULE_14__.DeskSelectModalComponent, _desk_select_modal_desk_details_component__WEBPACK_IMPORTED_MODULE_9__.DeskDetailsComponent, _desk_select_modal_desk_filters_component__WEBPACK_IMPORTED_MODULE_11__.DeskFiltersComponent, _desk_select_modal_desk_filters_display_component__WEBPACK_IMPORTED_MODULE_10__.DeskFiltersDisplayComponent, _desk_select_modal_desk_list_component__WEBPACK_IMPORTED_MODULE_12__.DeskListComponent, _desk_select_modal_desk_map_component__WEBPACK_IMPORTED_MODULE_13__.DeskMapComponent, _desk_list_field_component__WEBPACK_IMPORTED_MODULE_24__.DeskListFieldComponent, _desk_settings_modal_component__WEBPACK_IMPORTED_MODULE_33__.DeskSettingsModalComponent, _locker_grid_component__WEBPACK_IMPORTED_MODULE_26__.LockerGridComponent, _locker_list_field_component__WEBPACK_IMPORTED_MODULE_28__.LockerListFieldComponent, _locker_select_modal_locker_select_modal_component__WEBPACK_IMPORTED_MODULE_27__.LockerSelectModalComponent, _locker_select_modal_locker_filters_component__WEBPACK_IMPORTED_MODULE_29__.LockerFiltersComponent, _locker_select_modal_locker_filters_display_component__WEBPACK_IMPORTED_MODULE_30__.LockerFiltersDisplayComponent, _locker_select_modal_locker_bank_list_component__WEBPACK_IMPORTED_MODULE_31__.LockerBankListComponent, _locker_select_modal_locker_map_component__WEBPACK_IMPORTED_MODULE_32__.LockerMapComponent, _group_event_details_modal_component__WEBPACK_IMPORTED_MODULE_34__.GroupEventDetailsModalComponent, _group_event_card_component__WEBPACK_IMPORTED_MODULE_35__.GroupEventCardComponent];
+const COMPONENTS = [_desk_questions_modal_component__WEBPACK_IMPORTED_MODULE_8__.DeskQuestionsModalComponent, _desk_confirm_modal_component__WEBPACK_IMPORTED_MODULE_7__.DeskConfirmModalComponent, _invite_visitor_form_component__WEBPACK_IMPORTED_MODULE_15__.InviteVisitorFormComponent, _booking_details_modal_component__WEBPACK_IMPORTED_MODULE_6__.BookingDetailsModalComponent, _booking_card_component__WEBPACK_IMPORTED_MODULE_5__.BookingCardComponent, _booking_link_modal_component__WEBPACK_IMPORTED_MODULE_25__.BookingLinkModalComponent, _parking_select_modal_parking_select_modal_component__WEBPACK_IMPORTED_MODULE_22__.ParkingSpaceSelectModalComponent, _parking_select_modal_parking_filters_component__WEBPACK_IMPORTED_MODULE_18__.ParkingSpaceFiltersComponent, _parking_select_modal_parking_filters_display_component__WEBPACK_IMPORTED_MODULE_17__.ParkingSpaceFiltersDisplayComponent, _parking_select_modal_parking_list_component__WEBPACK_IMPORTED_MODULE_19__.ParkingSpaceListComponent, _parking_select_modal_parking_location_pin_component__WEBPACK_IMPORTED_MODULE_20__.ParkingSpaceLocationPinComponent, _parking_select_modal_parking_map_component__WEBPACK_IMPORTED_MODULE_21__.ParkingSpaceSelectMapComponent, _parking_select_modal_parking_details_component__WEBPACK_IMPORTED_MODULE_16__.ParkingSpaceDetailsComponent, _parking_space_list_field_component__WEBPACK_IMPORTED_MODULE_23__.ParkingSpaceListFieldComponent, _desk_select_modal_desk_select_modal_component__WEBPACK_IMPORTED_MODULE_14__.DeskSelectModalComponent, _desk_select_modal_desk_details_component__WEBPACK_IMPORTED_MODULE_9__.DeskDetailsComponent, _desk_select_modal_desk_filters_component__WEBPACK_IMPORTED_MODULE_11__.DeskFiltersComponent, _desk_select_modal_desk_filters_display_component__WEBPACK_IMPORTED_MODULE_10__.DeskFiltersDisplayComponent, _desk_select_modal_desk_list_component__WEBPACK_IMPORTED_MODULE_12__.DeskListComponent, _desk_select_modal_desk_map_component__WEBPACK_IMPORTED_MODULE_13__.DeskMapComponent, _desk_list_field_component__WEBPACK_IMPORTED_MODULE_24__.DeskListFieldComponent, _desk_settings_modal_component__WEBPACK_IMPORTED_MODULE_33__.DeskSettingsModalComponent, _locker_grid_component__WEBPACK_IMPORTED_MODULE_26__.LockerGridComponent, _locker_list_field_component__WEBPACK_IMPORTED_MODULE_28__.LockerListFieldComponent, _locker_select_modal_locker_select_modal_component__WEBPACK_IMPORTED_MODULE_27__.LockerSelectModalComponent, _locker_select_modal_locker_filters_component__WEBPACK_IMPORTED_MODULE_29__.LockerFiltersComponent, _locker_select_modal_locker_filters_display_component__WEBPACK_IMPORTED_MODULE_30__.LockerFiltersDisplayComponent, _locker_select_modal_locker_bank_list_component__WEBPACK_IMPORTED_MODULE_31__.LockerBankListComponent, _locker_select_modal_locker_map_component__WEBPACK_IMPORTED_MODULE_32__.LockerMapComponent];
 class SharedBookingsModule {
   static #_ = this.ɵfac = function SharedBookingsModule_Factory(t) {
     return new (t || SharedBookingsModule)();
   };
-  static #_2 = this.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_36__["ɵɵdefineNgModule"]({
+  static #_2 = this.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_34__["ɵɵdefineNgModule"]({
     type: SharedBookingsModule
   });
-  static #_3 = this.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_36__["ɵɵdefineInjector"]({
-    providers: [_angular_forms__WEBPACK_IMPORTED_MODULE_37__.ReactiveFormsModule],
-    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_38__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_37__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_37__.ReactiveFormsModule, _angular_material_radio__WEBPACK_IMPORTED_MODULE_39__.MatRadioModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_40__.MatInputModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_41__.MatFormFieldModule, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_42__.MatDatepickerModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_43__.MatButtonModule, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_44__.MatDialogModule, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_45__.MatProgressSpinnerModule, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_46__.MatCheckboxModule, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_47__.MatAutocompleteModule, libs_form_fields_src_lib_form_fields_module__WEBPACK_IMPORTED_MODULE_1__.FormFieldsModule, libs_components_src_lib_components_module__WEBPACK_IMPORTED_MODULE_0__.ComponentsModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_48__.MatRippleModule, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_49__.MatTooltipModule, libs_spaces_src_lib_spaces_module__WEBPACK_IMPORTED_MODULE_3__.SharedSpacesModule, libs_events_src_lib_events_module__WEBPACK_IMPORTED_MODULE_2__.SharedEventsModule, libs_users_src_lib_users_module__WEBPACK_IMPORTED_MODULE_4__.SharedUsersModule]
+  static #_3 = this.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_34__["ɵɵdefineInjector"]({
+    providers: [_angular_forms__WEBPACK_IMPORTED_MODULE_35__.ReactiveFormsModule],
+    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_36__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_35__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_35__.ReactiveFormsModule, _angular_material_radio__WEBPACK_IMPORTED_MODULE_37__.MatRadioModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_38__.MatInputModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_39__.MatFormFieldModule, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_40__.MatDatepickerModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_41__.MatButtonModule, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_42__.MatDialogModule, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_43__.MatProgressSpinnerModule, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_44__.MatCheckboxModule, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_45__.MatAutocompleteModule, libs_form_fields_src_lib_form_fields_module__WEBPACK_IMPORTED_MODULE_1__.FormFieldsModule, libs_components_src_lib_components_module__WEBPACK_IMPORTED_MODULE_0__.ComponentsModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_46__.MatRippleModule, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_47__.MatTooltipModule, libs_spaces_src_lib_spaces_module__WEBPACK_IMPORTED_MODULE_3__.SharedSpacesModule, libs_events_src_lib_events_module__WEBPACK_IMPORTED_MODULE_2__.SharedEventsModule, libs_users_src_lib_users_module__WEBPACK_IMPORTED_MODULE_4__.SharedUsersModule]
   });
 }
 (function () {
-  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_36__["ɵɵsetNgModuleScope"](SharedBookingsModule, {
-    declarations: [_desk_questions_modal_component__WEBPACK_IMPORTED_MODULE_8__.DeskQuestionsModalComponent, _desk_confirm_modal_component__WEBPACK_IMPORTED_MODULE_7__.DeskConfirmModalComponent, _invite_visitor_form_component__WEBPACK_IMPORTED_MODULE_15__.InviteVisitorFormComponent, _booking_details_modal_component__WEBPACK_IMPORTED_MODULE_6__.BookingDetailsModalComponent, _booking_card_component__WEBPACK_IMPORTED_MODULE_5__.BookingCardComponent, _booking_link_modal_component__WEBPACK_IMPORTED_MODULE_25__.BookingLinkModalComponent, _parking_select_modal_parking_select_modal_component__WEBPACK_IMPORTED_MODULE_22__.ParkingSpaceSelectModalComponent, _parking_select_modal_parking_filters_component__WEBPACK_IMPORTED_MODULE_18__.ParkingSpaceFiltersComponent, _parking_select_modal_parking_filters_display_component__WEBPACK_IMPORTED_MODULE_17__.ParkingSpaceFiltersDisplayComponent, _parking_select_modal_parking_list_component__WEBPACK_IMPORTED_MODULE_19__.ParkingSpaceListComponent, _parking_select_modal_parking_location_pin_component__WEBPACK_IMPORTED_MODULE_20__.ParkingSpaceLocationPinComponent, _parking_select_modal_parking_map_component__WEBPACK_IMPORTED_MODULE_21__.ParkingSpaceSelectMapComponent, _parking_select_modal_parking_details_component__WEBPACK_IMPORTED_MODULE_16__.ParkingSpaceDetailsComponent, _parking_space_list_field_component__WEBPACK_IMPORTED_MODULE_23__.ParkingSpaceListFieldComponent, _desk_select_modal_desk_select_modal_component__WEBPACK_IMPORTED_MODULE_14__.DeskSelectModalComponent, _desk_select_modal_desk_details_component__WEBPACK_IMPORTED_MODULE_9__.DeskDetailsComponent, _desk_select_modal_desk_filters_component__WEBPACK_IMPORTED_MODULE_11__.DeskFiltersComponent, _desk_select_modal_desk_filters_display_component__WEBPACK_IMPORTED_MODULE_10__.DeskFiltersDisplayComponent, _desk_select_modal_desk_list_component__WEBPACK_IMPORTED_MODULE_12__.DeskListComponent, _desk_select_modal_desk_map_component__WEBPACK_IMPORTED_MODULE_13__.DeskMapComponent, _desk_list_field_component__WEBPACK_IMPORTED_MODULE_24__.DeskListFieldComponent, _desk_settings_modal_component__WEBPACK_IMPORTED_MODULE_33__.DeskSettingsModalComponent, _locker_grid_component__WEBPACK_IMPORTED_MODULE_26__.LockerGridComponent, _locker_list_field_component__WEBPACK_IMPORTED_MODULE_28__.LockerListFieldComponent, _locker_select_modal_locker_select_modal_component__WEBPACK_IMPORTED_MODULE_27__.LockerSelectModalComponent, _locker_select_modal_locker_filters_component__WEBPACK_IMPORTED_MODULE_29__.LockerFiltersComponent, _locker_select_modal_locker_filters_display_component__WEBPACK_IMPORTED_MODULE_30__.LockerFiltersDisplayComponent, _locker_select_modal_locker_bank_list_component__WEBPACK_IMPORTED_MODULE_31__.LockerBankListComponent, _locker_select_modal_locker_map_component__WEBPACK_IMPORTED_MODULE_32__.LockerMapComponent, _group_event_details_modal_component__WEBPACK_IMPORTED_MODULE_34__.GroupEventDetailsModalComponent, _group_event_card_component__WEBPACK_IMPORTED_MODULE_35__.GroupEventCardComponent],
-    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_38__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_37__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_37__.ReactiveFormsModule, _angular_material_radio__WEBPACK_IMPORTED_MODULE_39__.MatRadioModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_40__.MatInputModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_41__.MatFormFieldModule, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_42__.MatDatepickerModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_43__.MatButtonModule, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_44__.MatDialogModule, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_45__.MatProgressSpinnerModule, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_46__.MatCheckboxModule, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_47__.MatAutocompleteModule, libs_form_fields_src_lib_form_fields_module__WEBPACK_IMPORTED_MODULE_1__.FormFieldsModule, libs_components_src_lib_components_module__WEBPACK_IMPORTED_MODULE_0__.ComponentsModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_48__.MatRippleModule, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_49__.MatTooltipModule, libs_spaces_src_lib_spaces_module__WEBPACK_IMPORTED_MODULE_3__.SharedSpacesModule, libs_events_src_lib_events_module__WEBPACK_IMPORTED_MODULE_2__.SharedEventsModule, libs_users_src_lib_users_module__WEBPACK_IMPORTED_MODULE_4__.SharedUsersModule],
-    exports: [_desk_questions_modal_component__WEBPACK_IMPORTED_MODULE_8__.DeskQuestionsModalComponent, _desk_confirm_modal_component__WEBPACK_IMPORTED_MODULE_7__.DeskConfirmModalComponent, _invite_visitor_form_component__WEBPACK_IMPORTED_MODULE_15__.InviteVisitorFormComponent, _booking_details_modal_component__WEBPACK_IMPORTED_MODULE_6__.BookingDetailsModalComponent, _booking_card_component__WEBPACK_IMPORTED_MODULE_5__.BookingCardComponent, _booking_link_modal_component__WEBPACK_IMPORTED_MODULE_25__.BookingLinkModalComponent, _parking_select_modal_parking_select_modal_component__WEBPACK_IMPORTED_MODULE_22__.ParkingSpaceSelectModalComponent, _parking_select_modal_parking_filters_component__WEBPACK_IMPORTED_MODULE_18__.ParkingSpaceFiltersComponent, _parking_select_modal_parking_filters_display_component__WEBPACK_IMPORTED_MODULE_17__.ParkingSpaceFiltersDisplayComponent, _parking_select_modal_parking_list_component__WEBPACK_IMPORTED_MODULE_19__.ParkingSpaceListComponent, _parking_select_modal_parking_location_pin_component__WEBPACK_IMPORTED_MODULE_20__.ParkingSpaceLocationPinComponent, _parking_select_modal_parking_map_component__WEBPACK_IMPORTED_MODULE_21__.ParkingSpaceSelectMapComponent, _parking_select_modal_parking_details_component__WEBPACK_IMPORTED_MODULE_16__.ParkingSpaceDetailsComponent, _parking_space_list_field_component__WEBPACK_IMPORTED_MODULE_23__.ParkingSpaceListFieldComponent, _desk_select_modal_desk_select_modal_component__WEBPACK_IMPORTED_MODULE_14__.DeskSelectModalComponent, _desk_select_modal_desk_details_component__WEBPACK_IMPORTED_MODULE_9__.DeskDetailsComponent, _desk_select_modal_desk_filters_component__WEBPACK_IMPORTED_MODULE_11__.DeskFiltersComponent, _desk_select_modal_desk_filters_display_component__WEBPACK_IMPORTED_MODULE_10__.DeskFiltersDisplayComponent, _desk_select_modal_desk_list_component__WEBPACK_IMPORTED_MODULE_12__.DeskListComponent, _desk_select_modal_desk_map_component__WEBPACK_IMPORTED_MODULE_13__.DeskMapComponent, _desk_list_field_component__WEBPACK_IMPORTED_MODULE_24__.DeskListFieldComponent, _desk_settings_modal_component__WEBPACK_IMPORTED_MODULE_33__.DeskSettingsModalComponent, _locker_grid_component__WEBPACK_IMPORTED_MODULE_26__.LockerGridComponent, _locker_list_field_component__WEBPACK_IMPORTED_MODULE_28__.LockerListFieldComponent, _locker_select_modal_locker_select_modal_component__WEBPACK_IMPORTED_MODULE_27__.LockerSelectModalComponent, _locker_select_modal_locker_filters_component__WEBPACK_IMPORTED_MODULE_29__.LockerFiltersComponent, _locker_select_modal_locker_filters_display_component__WEBPACK_IMPORTED_MODULE_30__.LockerFiltersDisplayComponent, _locker_select_modal_locker_bank_list_component__WEBPACK_IMPORTED_MODULE_31__.LockerBankListComponent, _locker_select_modal_locker_map_component__WEBPACK_IMPORTED_MODULE_32__.LockerMapComponent, _group_event_details_modal_component__WEBPACK_IMPORTED_MODULE_34__.GroupEventDetailsModalComponent, _group_event_card_component__WEBPACK_IMPORTED_MODULE_35__.GroupEventCardComponent]
+  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_34__["ɵɵsetNgModuleScope"](SharedBookingsModule, {
+    declarations: [_desk_questions_modal_component__WEBPACK_IMPORTED_MODULE_8__.DeskQuestionsModalComponent, _desk_confirm_modal_component__WEBPACK_IMPORTED_MODULE_7__.DeskConfirmModalComponent, _invite_visitor_form_component__WEBPACK_IMPORTED_MODULE_15__.InviteVisitorFormComponent, _booking_details_modal_component__WEBPACK_IMPORTED_MODULE_6__.BookingDetailsModalComponent, _booking_card_component__WEBPACK_IMPORTED_MODULE_5__.BookingCardComponent, _booking_link_modal_component__WEBPACK_IMPORTED_MODULE_25__.BookingLinkModalComponent, _parking_select_modal_parking_select_modal_component__WEBPACK_IMPORTED_MODULE_22__.ParkingSpaceSelectModalComponent, _parking_select_modal_parking_filters_component__WEBPACK_IMPORTED_MODULE_18__.ParkingSpaceFiltersComponent, _parking_select_modal_parking_filters_display_component__WEBPACK_IMPORTED_MODULE_17__.ParkingSpaceFiltersDisplayComponent, _parking_select_modal_parking_list_component__WEBPACK_IMPORTED_MODULE_19__.ParkingSpaceListComponent, _parking_select_modal_parking_location_pin_component__WEBPACK_IMPORTED_MODULE_20__.ParkingSpaceLocationPinComponent, _parking_select_modal_parking_map_component__WEBPACK_IMPORTED_MODULE_21__.ParkingSpaceSelectMapComponent, _parking_select_modal_parking_details_component__WEBPACK_IMPORTED_MODULE_16__.ParkingSpaceDetailsComponent, _parking_space_list_field_component__WEBPACK_IMPORTED_MODULE_23__.ParkingSpaceListFieldComponent, _desk_select_modal_desk_select_modal_component__WEBPACK_IMPORTED_MODULE_14__.DeskSelectModalComponent, _desk_select_modal_desk_details_component__WEBPACK_IMPORTED_MODULE_9__.DeskDetailsComponent, _desk_select_modal_desk_filters_component__WEBPACK_IMPORTED_MODULE_11__.DeskFiltersComponent, _desk_select_modal_desk_filters_display_component__WEBPACK_IMPORTED_MODULE_10__.DeskFiltersDisplayComponent, _desk_select_modal_desk_list_component__WEBPACK_IMPORTED_MODULE_12__.DeskListComponent, _desk_select_modal_desk_map_component__WEBPACK_IMPORTED_MODULE_13__.DeskMapComponent, _desk_list_field_component__WEBPACK_IMPORTED_MODULE_24__.DeskListFieldComponent, _desk_settings_modal_component__WEBPACK_IMPORTED_MODULE_33__.DeskSettingsModalComponent, _locker_grid_component__WEBPACK_IMPORTED_MODULE_26__.LockerGridComponent, _locker_list_field_component__WEBPACK_IMPORTED_MODULE_28__.LockerListFieldComponent, _locker_select_modal_locker_select_modal_component__WEBPACK_IMPORTED_MODULE_27__.LockerSelectModalComponent, _locker_select_modal_locker_filters_component__WEBPACK_IMPORTED_MODULE_29__.LockerFiltersComponent, _locker_select_modal_locker_filters_display_component__WEBPACK_IMPORTED_MODULE_30__.LockerFiltersDisplayComponent, _locker_select_modal_locker_bank_list_component__WEBPACK_IMPORTED_MODULE_31__.LockerBankListComponent, _locker_select_modal_locker_map_component__WEBPACK_IMPORTED_MODULE_32__.LockerMapComponent],
+    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_36__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_35__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_35__.ReactiveFormsModule, _angular_material_radio__WEBPACK_IMPORTED_MODULE_37__.MatRadioModule, _angular_material_input__WEBPACK_IMPORTED_MODULE_38__.MatInputModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_39__.MatFormFieldModule, _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_40__.MatDatepickerModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_41__.MatButtonModule, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_42__.MatDialogModule, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_43__.MatProgressSpinnerModule, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_44__.MatCheckboxModule, _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_45__.MatAutocompleteModule, libs_form_fields_src_lib_form_fields_module__WEBPACK_IMPORTED_MODULE_1__.FormFieldsModule, libs_components_src_lib_components_module__WEBPACK_IMPORTED_MODULE_0__.ComponentsModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_46__.MatRippleModule, _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_47__.MatTooltipModule, libs_spaces_src_lib_spaces_module__WEBPACK_IMPORTED_MODULE_3__.SharedSpacesModule, libs_events_src_lib_events_module__WEBPACK_IMPORTED_MODULE_2__.SharedEventsModule, libs_users_src_lib_users_module__WEBPACK_IMPORTED_MODULE_4__.SharedUsersModule],
+    exports: [_desk_questions_modal_component__WEBPACK_IMPORTED_MODULE_8__.DeskQuestionsModalComponent, _desk_confirm_modal_component__WEBPACK_IMPORTED_MODULE_7__.DeskConfirmModalComponent, _invite_visitor_form_component__WEBPACK_IMPORTED_MODULE_15__.InviteVisitorFormComponent, _booking_details_modal_component__WEBPACK_IMPORTED_MODULE_6__.BookingDetailsModalComponent, _booking_card_component__WEBPACK_IMPORTED_MODULE_5__.BookingCardComponent, _booking_link_modal_component__WEBPACK_IMPORTED_MODULE_25__.BookingLinkModalComponent, _parking_select_modal_parking_select_modal_component__WEBPACK_IMPORTED_MODULE_22__.ParkingSpaceSelectModalComponent, _parking_select_modal_parking_filters_component__WEBPACK_IMPORTED_MODULE_18__.ParkingSpaceFiltersComponent, _parking_select_modal_parking_filters_display_component__WEBPACK_IMPORTED_MODULE_17__.ParkingSpaceFiltersDisplayComponent, _parking_select_modal_parking_list_component__WEBPACK_IMPORTED_MODULE_19__.ParkingSpaceListComponent, _parking_select_modal_parking_location_pin_component__WEBPACK_IMPORTED_MODULE_20__.ParkingSpaceLocationPinComponent, _parking_select_modal_parking_map_component__WEBPACK_IMPORTED_MODULE_21__.ParkingSpaceSelectMapComponent, _parking_select_modal_parking_details_component__WEBPACK_IMPORTED_MODULE_16__.ParkingSpaceDetailsComponent, _parking_space_list_field_component__WEBPACK_IMPORTED_MODULE_23__.ParkingSpaceListFieldComponent, _desk_select_modal_desk_select_modal_component__WEBPACK_IMPORTED_MODULE_14__.DeskSelectModalComponent, _desk_select_modal_desk_details_component__WEBPACK_IMPORTED_MODULE_9__.DeskDetailsComponent, _desk_select_modal_desk_filters_component__WEBPACK_IMPORTED_MODULE_11__.DeskFiltersComponent, _desk_select_modal_desk_filters_display_component__WEBPACK_IMPORTED_MODULE_10__.DeskFiltersDisplayComponent, _desk_select_modal_desk_list_component__WEBPACK_IMPORTED_MODULE_12__.DeskListComponent, _desk_select_modal_desk_map_component__WEBPACK_IMPORTED_MODULE_13__.DeskMapComponent, _desk_list_field_component__WEBPACK_IMPORTED_MODULE_24__.DeskListFieldComponent, _desk_settings_modal_component__WEBPACK_IMPORTED_MODULE_33__.DeskSettingsModalComponent, _locker_grid_component__WEBPACK_IMPORTED_MODULE_26__.LockerGridComponent, _locker_list_field_component__WEBPACK_IMPORTED_MODULE_28__.LockerListFieldComponent, _locker_select_modal_locker_select_modal_component__WEBPACK_IMPORTED_MODULE_27__.LockerSelectModalComponent, _locker_select_modal_locker_filters_component__WEBPACK_IMPORTED_MODULE_29__.LockerFiltersComponent, _locker_select_modal_locker_filters_display_component__WEBPACK_IMPORTED_MODULE_30__.LockerFiltersDisplayComponent, _locker_select_modal_locker_bank_list_component__WEBPACK_IMPORTED_MODULE_31__.LockerBankListComponent, _locker_select_modal_locker_map_component__WEBPACK_IMPORTED_MODULE_32__.LockerMapComponent]
   });
 })();
 
@@ -4859,1019 +4786,6 @@ class DeskSettingsModalComponent {
     },
     dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.NgModel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__.MatFormField, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__.MatDialogClose, _angular_material_core__WEBPACK_IMPORTED_MODULE_9__.MatOption, _components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_4__.IconComponent, _angular_material_select__WEBPACK_IMPORTED_MODULE_10__.MatSelect, _angular_material_core__WEBPACK_IMPORTED_MODULE_9__.MatRipple, _angular_material_slider__WEBPACK_IMPORTED_MODULE_11__.MatSlider, _angular_material_slider__WEBPACK_IMPORTED_MODULE_11__.MatSliderThumb],
     encapsulation: 2
-  });
-}
-
-/***/ }),
-
-/***/ 74350:
-/*!***********************************************!*\
-  !*** ./libs/bookings/src/lib/desk.service.ts ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   DesksService: () => (/* binding */ DesksService)
-/* harmony export */ });
-/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
-/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 22797);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! date-fns */ 99908);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns */ 33240);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! date-fns */ 56441);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 57871);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 35443);
-/* harmony import */ var libs_organisation_src_lib_organisation_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
-/* harmony import */ var _bookings_fn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./bookings.fn */ 18026);
-/* harmony import */ var _desk_confirm_modal_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./desk-confirm-modal.component */ 3367);
-/* harmony import */ var _desk_questions_modal_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./desk-questions-modal.component */ 67254);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 37580);
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/dialog */ 12587);
-
-
-
-
-
-
-
-
-
-
-
-
-class DesksService {
-  constructor(_org, _dialog) {
-    this._org = _org;
-    this._dialog = _dialog;
-    this.can_set_date = true;
-    this.error_on_host = true;
-  }
-  bookDesk({
-    desks,
-    host,
-    reason,
-    attendees,
-    date
-  }) {
-    var _this = this;
-    return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      if (_this.error_on_host && !host) {
-        return (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.notifyError)('You need to select a host to book a desk.');
-      } else {
-        host = host || (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.currentUser)();
-      }
-      reason = reason || '';
-      const level = _this._org.levelWithID(desks[0].zone instanceof Array ? desks[0].zone : [desks[0].zone?.id]);
-      let ref = _this._dialog.open(_desk_questions_modal_component__WEBPACK_IMPORTED_MODULE_5__.DeskQuestionsModalComponent);
-      let success = yield Promise.race([ref.componentInstance.event.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.first)(_ => _.reason === 'done')).toPromise(), ref.afterClosed().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.map)(_ => null)).toPromise()]);
-      if (!success) return;
-      ref.close();
-      ref = _this._dialog.open(_desk_confirm_modal_component__WEBPACK_IMPORTED_MODULE_4__.DeskConfirmModalComponent, {
-        data: {
-          host,
-          desks,
-          date: date ? new Date(date) : new Date(),
-          reason,
-          level,
-          can_set_date: _this.can_set_date
-        }
-      });
-      success = yield Promise.race([ref.componentInstance.event.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.first)(_ => _.reason === 'done')).toPromise(), ref.afterClosed().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.map)(_ => null)).toPromise()]);
-      if (!success) return;
-      host = ref.componentInstance.host || host;
-      date = ref.componentInstance.date || date;
-      reason = ref.componentInstance.reason || reason;
-      if (!host) {
-        ref.close();
-        return (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.notifyError)('You need to select a host to book a desk. ');
-      }
-      ref.componentInstance.loading = 'Checking for existing desk bookings...';
-      const bookings = yield (0,_bookings_fn__WEBPACK_IMPORTED_MODULE_3__.queryBookings)({
-        type: 'desk',
-        period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_8__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_9__.startOfDay)(date || new Date())),
-        period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_8__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_10__.endOfDay)(date || new Date()))
-      }).toPromise();
-      const desk_list = bookings.filter(d => d.user_email.toLowerCase() === host.email.toLowerCase());
-      if (desk_list?.length) {
-        ref.close();
-        return (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.notifyError)('You currently already have a desk booked for the selected date.');
-      }
-      ref.componentInstance.loading = 'Booking desk...';
-      const users = [host, ...(attendees || [])];
-      yield Promise.all([desks.map((desk, idx) => _this.makeDeskBooking(desk, host, date.valueOf() || new Date().valueOf(), reason, users[idx]))]);
-      (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.notifySuccess)('Successfully booked desk');
-      ref.close();
-      return true;
-    })();
-  }
-  makeDeskBooking(desk, host, date, reason, for_user = null) {
-    var _this2 = this;
-    return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const location = `${desk.zone?.name}-${desk.id}`;
-      const level = _this2._org.levelWithID(desk.zone instanceof Array ? desk.zone : [desk.zone?.id]);
-      const zones = desk.zone?.id ? [desk.zone?.id, level?.parent_id] : [level?.parent_id];
-      const booking_data = {
-        booking_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_8__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_9__.startOfDay)(date)),
-        user_id: for_user?.id || host.id,
-        user_name: for_user?.name || host.name,
-        user_email: for_user?.email || host.email,
-        booking_end: Math.floor((0,date_fns__WEBPACK_IMPORTED_MODULE_10__.endOfDay)(date).valueOf() / 1000),
-        asset_id: desk.id,
-        asset_name: desk.name,
-        title: reason,
-        description: location,
-        zones,
-        booking_type: 'desk',
-        extension_data: {
-          map_id: desk?.map_id || desk?.id,
-          groups: desk.groups,
-          for_user: for_user?.email
-        }
-      };
-      return (0,_bookings_fn__WEBPACK_IMPORTED_MODULE_3__.saveBooking)(booking_data).toPromise();
-    })();
-  }
-  static #_ = this.ɵfac = function DesksService_Factory(t) {
-    return new (t || DesksService)(_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵinject"](libs_organisation_src_lib_organisation_service__WEBPACK_IMPORTED_MODULE_2__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵinject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_12__.MatDialog));
-  };
-  static #_2 = this.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineInjectable"]({
-    token: DesksService,
-    factory: DesksService.ɵfac,
-    providedIn: 'root'
-  });
-}
-
-/***/ }),
-
-/***/ 93736:
-/*!*************************************************************!*\
-  !*** ./libs/bookings/src/lib/group-event-card.component.ts ***!
-  \*************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   GroupEventCardComponent: () => (/* binding */ GroupEventCardComponent)
-/* harmony export */ });
-/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
-/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 22797);
-/* harmony import */ var _placeos_bookings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/bookings */ 85616);
-/* harmony import */ var libs_spaces_src_lib_space_pipe__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! libs/spaces/src/lib/space.pipe */ 22011);
-/* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @placeos/organisation */ 2510);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37580);
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/dialog */ 12587);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ 60316);
-/* harmony import */ var _components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
-/* harmony import */ var _components_src_lib_authenticated_image_directive__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../components/src/lib/authenticated-image.directive */ 93208);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/core */ 74646);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function GroupEventCardComponent_button_0_img_2_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "img", 15);
-  }
-  if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("source", ctx_r1.event.images[0]);
-  }
-}
-function GroupEventCardComponent_button_0_p_13_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "p", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " No description ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-  }
-}
-function GroupEventCardComponent_button_0_div_17_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", ctx_r1.space.display_name || ctx_r1.space.name || "", " ");
-  }
-}
-function GroupEventCardComponent_button_0_div_18_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Room to be confirmed ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-  }
-}
-function GroupEventCardComponent_button_0_div_19_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Remote event ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-  }
-}
-function GroupEventCardComponent_button_0_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "button", 2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function GroupEventCardComponent_button_0_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r1);
-      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵresetView"](ctx_r1.viewDetails());
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](1, "div", 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](2, GroupEventCardComponent_button_0_img_2_Template, 1, 1, "img", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](3, "div", 5)(4, "div", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipe"](6, "date");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipe"](7, "date");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](8, "h2", 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](10, "div", 8)(11, "p", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](13, GroupEventCardComponent_button_0_p_13_Template, 2, 0, "p", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](14, "div", 11)(15, "app-icon", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](16, "place");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](17, GroupEventCardComponent_button_0_div_17_Template, 2, 1, "div", 13)(18, GroupEventCardComponent_button_0_div_18_Template, 2, 0, "div", 10)(19, GroupEventCardComponent_button_0_div_19_Template, 2, 0, "div", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](20, "div", 11)(21, "app-icon", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](22, "people");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](23, "div", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](24);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()()();
-  }
-  if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r1.event.images == null ? null : ctx_r1.event.images.length);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate2"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind2"](6, 11, ctx_r1.event.date, "EEE d MMM"), ", ", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind2"](7, 14, ctx_r1.event.date, ctx_r1.time_format), " ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("title", ctx_r1.event.title);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", ctx_r1.event.title, " ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](ctx_r1.raw_description);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", !ctx_r1.raw_description.trim());
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r1.is_onsite && ctx_r1.has_space);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r1.is_onsite && !ctx_r1.has_space);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", !ctx_r1.is_onsite);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", (ctx_r1.event.attendees == null ? null : ctx_r1.event.attendees.length) || "0", " attending ");
-  }
-}
-function GroupEventCardComponent_ng_template_1_img_2_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](0, "img", 15);
-  }
-  if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("source", ctx_r1.event.images[0]);
-  }
-}
-function GroupEventCardComponent_ng_template_1_p_27_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "p", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " No description ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-  }
-}
-function GroupEventCardComponent_ng_template_1_div_31_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", ctx_r1.space.display_name || ctx_r1.space.name || "", " ");
-  }
-}
-function GroupEventCardComponent_ng_template_1_div_32_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Room to be confirmed ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-  }
-}
-function GroupEventCardComponent_ng_template_1_div_33_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](1, " Remote event ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-  }
-}
-function GroupEventCardComponent_ng_template_1_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "button", 17);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("click", function GroupEventCardComponent_ng_template_1_Template_button_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r3);
-      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵresetView"](ctx_r1.viewDetails());
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](1, "div", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](2, GroupEventCardComponent_ng_template_1_img_2_Template, 1, 1, "img", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](3, "div", 19)(4, "app-icon", 20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](5, "star");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](6, "div", 21);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](7, "Featured");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](8, "div", 22)(9, "div", 23)(10, "div", 24);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipe"](12, "date");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](13, "div", 25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipe"](15, "date");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](16, "div", 26)(17, "h3", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](19, "div", 28);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipe"](21, "date");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipe"](22, "date");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipe"](23, "date");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](24, "div", 29)(25, "p", 30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](26);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](27, GroupEventCardComponent_ng_template_1_p_27_Template, 2, 0, "p", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](28, "div", 11)(29, "app-icon", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](30, "place");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](31, GroupEventCardComponent_ng_template_1_div_31_Template, 2, 1, "div", 13)(32, GroupEventCardComponent_ng_template_1_div_32_Template, 2, 0, "div", 10)(33, GroupEventCardComponent_ng_template_1_div_33_Template, 2, 0, "div", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](34, "div", 11)(35, "app-icon", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](36, "people");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](37, "div", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](38);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](39, "div", 31);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](40, " View Details ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
-  }
-  if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r1.event.images == null ? null : ctx_r1.event.images.length);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind2"](12, 13, ctx_r1.event.date, "MMM"), " ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind2"](15, 16, ctx_r1.event.date, "d"));
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](ctx_r1.event.title);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate3"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind2"](21, 19, ctx_r1.event.date, "EEEE"), " ", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind2"](22, 22, ctx_r1.event.date, ctx_r1.time_format), " - ", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind2"](23, 25, ctx_r1.event.date + ctx_r1.event.duration * 60 * 1000, ctx_r1.time_format), " ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate"](ctx_r1.raw_description);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", !ctx_r1.raw_description.trim());
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r1.is_onsite && ctx_r1.has_space);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", ctx_r1.is_onsite && !ctx_r1.has_space);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", !ctx_r1.is_onsite);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtextInterpolate1"](" ", (ctx_r1.event.attendees == null ? null : ctx_r1.event.attendees.length) || "0", " attending ");
-  }
-}
-class GroupEventCardComponent {
-  get time_format() {
-    return this._settings.time_format;
-  }
-  get is_onsite() {
-    return this.event?.extension_data.attendance_type !== 'ONLINE';
-  }
-  get has_space() {
-    return !!this.event?.linked_event?.system_id;
-  }
-  get is_online() {
-    return !this.is_onsite || this.event?.extension_data.attendance_type === 'ANY';
-  }
-  constructor(_settings, _dialog, _org) {
-    this._settings = _settings;
-    this._dialog = _dialog;
-    this._org = _org;
-    this.raw_description = '';
-  }
-  ngOnInit() {
-    var _this = this;
-    return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const space_pipe = new libs_spaces_src_lib_space_pipe__WEBPACK_IMPORTED_MODULE_3__.SpacePipe(_this._org);
-      _this.space = yield space_pipe.transform(_this.event.linked_event?.system_id);
-      _this.raw_description = _this.removeHtmlTags(_this.event.description);
-    })();
-  }
-  removeHtmlTags(html) {
-    const doc = new DOMParser().parseFromString(html, 'text/html');
-    return doc.body.textContent || '';
-  }
-  viewDetails() {
-    this._dialog.open(_placeos_bookings__WEBPACK_IMPORTED_MODULE_2__.GroupEventDetailsModalComponent, {
-      data: {
-        booking: this.event,
-        concierge: false
-      }
-    });
-  }
-  static #_ = this.ɵfac = function GroupEventCardComponent_Factory(t) {
-    return new (t || GroupEventCardComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_placeos_common__WEBPACK_IMPORTED_MODULE_1__.SettingsService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_8__.MatDialog), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_4__.OrganisationService));
-  };
-  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineComponent"]({
-    type: GroupEventCardComponent,
-    selectors: [["group-event-card"]],
-    inputs: {
-      event: "event",
-      featured: "featured"
-    },
-    decls: 3,
-    vars: 2,
-    consts: [["featured_card", ""], ["matRipple", "", "class", "border border-base-300 hover:border-info flex flex-col bg-base-100 rounded-xl shadow hover:shadow-2xl overflow-hidden w-60 h-[20rem]", 3, "click", 4, "ngIf", "ngIfElse"], ["matRipple", "", 1, "border", "border-base-300", "hover:border-info", "flex", "flex-col", "bg-base-100", "rounded-xl", "shadow", "hover:shadow-2xl", "overflow-hidden", "w-60", "h-[20rem]", 3, "click"], [1, "relative", "flex", "items-center", "justify-between", "h-28", "min-h-28", "w-full", "bg-base-200", "overflow-hidden", "border-b", "border-base-200"], ["auth", "", "class", "absolute top-0 left-0 h-full w-full object-center object-cover", 3, "source", 4, "ngIf"], [1, "p-4", "flex-1", "h-1/2", "w-full"], [1, "opacity-60", "text-sm", "text-left"], [1, "text-xl", "mb-2", "text-left", "truncate", "w-full", 3, "title"], [1, "opacity-60", "text-xs", "flex-1", "overflow-hidden", "h-[4.5rem]", "mb-2", "text-left"], [1, "line-clamp-4"], ["class", "opacity-30", 4, "ngIf"], [1, "flex", "items-center", "space-x-2", "text-sm"], [1, "text-info"], [4, "ngIf"], [1, ""], ["auth", "", 1, "absolute", "top-0", "left-0", "h-full", "w-full", "object-center", "object-cover", 3, "source"], [1, "opacity-30"], ["matRipple", "", 1, "border", "border-base-300", "hover:border-info", "flex", "bg-base-100", "rounded-xl", "shadow", "hover:shadow-2xl", "overflow-hidden", "w-[63rem]", "max-w-full", "h-56", "mx-auto", 3, "click"], [1, "relative", "flex", "items-center", "justify-between", "h-full", "min-w-56", "w-1/2", "max-w-[20rem]", "bg-base-200", "overflow-hidden", "border-r", "border-base-200"], [1, "absolute", "top-0", "left-0", "rounded-br-xl", "py-2", "pl-2", "pr-4", "space-x-2", "bg-info", "text-info-content", "flex", "items-center", "text-sm"], [1, "text-base"], [1, "uppercase"], ["details", "", 1, "flex", "px-8", "py-4", "space-x-4"], [1, "flex", "flex-col", "items-center"], [1, "text-sm", "opacity-30"], [1, "text-lg"], [1, "flex", "flex-col", "space-y-2"], [1, "text-left"], ["time", "", 1, "text-sm", "opacity-30", "text-left"], [1, "h-20", "overflow-hidden", "text-left"], [1, "line-clamp-3"], [1, "absolute", "top-4", "right-4", "bg-secondary", "text-secondary-content", "rounded", "px-4", "py-2", "w-32", "text-center", "truncate"]],
-    template: function GroupEventCardComponent_Template(rf, ctx) {
-      if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](0, GroupEventCardComponent_button_0_Template, 25, 17, "button", 1)(1, GroupEventCardComponent_ng_template_1_Template, 41, 28, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplateRefExtractor"]);
-      }
-      if (rf & 2) {
-        const featured_card_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵreference"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", !ctx.featured)("ngIfElse", featured_card_r4);
-      }
-    },
-    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf, _components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_5__.IconComponent, _components_src_lib_authenticated_image_directive__WEBPACK_IMPORTED_MODULE_6__.AuthenticatedImageDirective, _angular_material_core__WEBPACK_IMPORTED_MODULE_10__.MatRipple, _angular_common__WEBPACK_IMPORTED_MODULE_9__.DatePipe],
-    styles: ["button[_ngcontent-%COMP%] {\n                transition: box-shadow 300ms, border 200ms;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImdyb3VwLWV2ZW50LWNhcmQuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSwwQ0FBMEM7WUFDOUMiLCJmaWxlIjoiZ3JvdXAtZXZlbnQtY2FyZC5jb21wb25lbnQudHMiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIGJ1dHRvbiB7XG4gICAgICAgICAgICAgICAgdHJhbnNpdGlvbjogYm94LXNoYWRvdyAzMDBtcywgYm9yZGVyIDIwMG1zO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXX0= */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvYm9va2luZ3Mvc3JjL2xpYi9ncm91cC1ldmVudC1jYXJkLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksMENBQTBDO1lBQzlDOztBQUVaLG9hQUFvYSIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgYnV0dG9uIHtcbiAgICAgICAgICAgICAgICB0cmFuc2l0aW9uOiBib3gtc2hhZG93IDMwMG1zLCBib3JkZXIgMjAwbXM7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
-  });
-}
-
-/***/ }),
-
-/***/ 30000:
-/*!**********************************************************************!*\
-  !*** ./libs/bookings/src/lib/group-event-details-modal.component.ts ***!
-  \**********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   GroupEventDetailsModalComponent: () => (/* binding */ GroupEventDetailsModalComponent)
-/* harmony export */ });
-/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 37580);
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/dialog */ 12587);
-/* harmony import */ var _placeos_bookings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/bookings */ 85616);
-/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/common */ 22797);
-/* harmony import */ var _placeos_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/components */ 51588);
-/* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @placeos/organisation */ 2510);
-/* harmony import */ var libs_spaces_src_lib_space_pipe__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../spaces/src/lib/space.pipe */ 22011);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/common */ 60316);
-/* harmony import */ var _components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
-/* harmony import */ var _components_src_lib_interactive_map_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../components/src/lib/interactive-map.component */ 24918);
-/* harmony import */ var _components_src_lib_authenticated_image_directive__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../components/src/lib/authenticated-image.directive */ 93208);
-/* harmony import */ var _angular_material_menu__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/menu */ 31034);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/core */ 74646);
-/* harmony import */ var _events_src_lib_attendee_list_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../events/src/lib/attendee-list.component */ 47249);
-/* harmony import */ var _components_src_lib_sanitise_pipe__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../components/src/lib/sanitise.pipe */ 54616);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function GroupEventDetailsModalComponent_img_2_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelement"](0, "img", 36);
-  }
-  if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("source", ctx_r1.booking.images[0]);
-  }
-}
-function GroupEventDetailsModalComponent_div_3_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](0, "div", 37)(1, "app-icon", 38);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](2, "star");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](3, "div", 39);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](4, "Featured");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
-  }
-}
-function GroupEventDetailsModalComponent_ng_container_12_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](1, "div", 40)(2, "app-icon");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](3, "star");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](4, "div", 41);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](6, "div", 40)(7, "app-icon");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](8, "help");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](9, "div", 41);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementContainerEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵclassProp"]("bg-base-200", !ctx_r1.is_interested)("text-base-content", !ctx_r1.is_interested)("opacity-30", !ctx_r1.is_interested)("bg-success", ctx_r1.is_interested)("text-success-content", ctx_r1.is_interested)("opacity-100", ctx_r1.is_interested);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtextInterpolate1"](" ", ctx_r1.is_interested ? "" : "Not ", "Interested ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵclassProp"]("bg-base-200", !ctx_r1.is_going)("text-base-content", !ctx_r1.is_going)("opacity-30", !ctx_r1.is_going)("bg-success", ctx_r1.is_going)("text-success-content", ctx_r1.is_going)("opacity-100", ctx_r1.is_going);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtextInterpolate1"](" ", ctx_r1.is_going ? "" : "Not ", "Going ");
-  }
-}
-function GroupEventDetailsModalComponent_div_83_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipe"](2, "space");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipe"](3, "async");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    let tmp_3_0;
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtextInterpolate1"](" ", (tmp_3_0 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipeBind1"](3, 3, _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipeBind1"](2, 1, ctx_r1.system_id))) == null ? null : tmp_3_0.display_name, " ");
-  }
-}
-function GroupEventDetailsModalComponent_div_84_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](0, "div", 42);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](1, " Room to be confirmed ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-  }
-}
-function GroupEventDetailsModalComponent_div_85_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](0, "div", 42);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtextInterpolate1"](" ", ctx_r1.is_onsite ? "Can be attended online" : "Remote Event", " ");
-  }
-}
-function GroupEventDetailsModalComponent_span_97_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](0, "span", 42);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](1, " No description ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-  }
-}
-function GroupEventDetailsModalComponent_div_99_interactive_map_3_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelement"](0, "interactive-map", 49);
-  }
-  if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("src", ctx_r1.level == null ? null : ctx_r1.level.map_id)("features", ctx_r1.features)("styles", ctx_r1.styles);
-  }
-}
-function GroupEventDetailsModalComponent_div_99_span_9_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](0, "span", 42);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](1, " Remote Event ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-  }
-}
-function GroupEventDetailsModalComponent_div_99_span_13_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](0, "span");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtextInterpolate2"](" ", ctx_r1.building.display_name || ctx_r1.building.name, ", ", (ctx_r1.level == null ? null : ctx_r1.level.display_name) || (ctx_r1.level == null ? null : ctx_r1.level.name), " ");
-  }
-}
-function GroupEventDetailsModalComponent_div_99_span_14_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](0, "span", 42);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](1, " No location set for this event ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-  }
-}
-function GroupEventDetailsModalComponent_div_99_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](0, "div", 43)(1, "div", 44)(2, "button", 45);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("click", function GroupEventDetailsModalComponent_div_99_Template_button_click_2_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵrestoreView"](_r3);
-      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵresetView"](ctx_r1.viewLocation());
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtemplate"](3, GroupEventDetailsModalComponent_div_99_interactive_map_3_Template, 1, 3, "interactive-map", 46);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](4, "div", 47)(5, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipe"](7, "space");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipe"](8, "async");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtemplate"](9, GroupEventDetailsModalComponent_div_99_span_9_Template, 2, 0, "span", 30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipe"](10, "space");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipe"](11, "async");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](12, "div", 48);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtemplate"](13, GroupEventDetailsModalComponent_div_99_span_13_Template, 2, 2, "span", 12)(14, GroupEventDetailsModalComponent_div_99_span_14_Template, 2, 0, "span", 30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()()()();
-  }
-  if (rf & 2) {
-    let tmp_4_0;
-    let tmp_5_0;
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("ngIf", !ctx_r1.showing_map);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtextInterpolate1"](" ", (tmp_4_0 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipeBind1"](8, 7, _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipeBind1"](7, 5, ctx_r1.booking.linked_event == null ? null : ctx_r1.booking.linked_event.system_id))) == null ? null : tmp_4_0.display_name, " ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("ngIf", !((tmp_5_0 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipeBind1"](11, 11, _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipeBind1"](10, 9, ctx_r1.booking.linked_event == null ? null : ctx_r1.booking.linked_event.system_id))) == null ? null : tmp_5_0.display_name));
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("ngIf", ctx_r1.building && ctx_r1.level);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("ngIf", !ctx_r1.building || !ctx_r1.level);
-  }
-}
-function GroupEventDetailsModalComponent_div_100_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](0, "div", 50)(1, "button", 51);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("click", function GroupEventDetailsModalComponent_div_100_Template_button_click_1_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵrestoreView"](_r4);
-      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵresetView"](ctx_r1.show_attendees = false);
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](2, "div", 52)(3, "attendee-list", 53);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("click", function GroupEventDetailsModalComponent_div_100_Template_attendee_list_click_3_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵrestoreView"](_r4);
-      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵresetView"](ctx_r1.show_attendees = false);
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()()();
-  }
-  if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("list", ctx_r1.booking.attendees)("host", ctx_r1.booking.user_email);
-  }
-}
-class GroupEventDetailsModalComponent {
-  get time_format() {
-    return this._settings.time_format;
-  }
-  get featured() {
-    return this.booking.featured || this.booking.extension_data?.featured;
-  }
-  get is_onsite() {
-    return this.booking.extension_data.attendance_type !== 'ONLINE';
-  }
-  get has_space() {
-    return !!this.booking.linked_event?.system_id;
-  }
-  get is_online() {
-    return !this.is_onsite || this.booking.extension_data.attendance_type === 'ANY';
-  }
-  get attendance() {
-    return this.booking.attendees?.filter(_ => _.checked_in)?.length || 0;
-  }
-  get is_interested() {
-    return !!this.guest_details;
-  }
-  get is_going() {
-    return this.guest_details?.checked_in;
-  }
-  get system_id() {
-    return this.booking.linked_event?.system_id;
-  }
-  get guest_details() {
-    const user = (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.currentUser)();
-    return this.booking.attendees?.find(_ => _.email === user.email);
-  }
-  constructor(_data, _org, _settings, _dialog, _dialog_ref) {
-    this._data = _data;
-    this._org = _org;
-    this._settings = _settings;
-    this._dialog = _dialog;
-    this._dialog_ref = _dialog_ref;
-    this.edit = new _angular_core__WEBPACK_IMPORTED_MODULE_11__.EventEmitter();
-    this.remove = new _angular_core__WEBPACK_IMPORTED_MODULE_11__.EventEmitter();
-    this.booking = this._data.booking;
-    this.concierge = this._data.concierge;
-    this.features = [];
-    this.locate = '';
-    this.showing_map = false;
-    this.show_attendees = false;
-    this.styles = {};
-  }
-  ngOnInit() {
-    var _this = this;
-    return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const space_pipe = new libs_spaces_src_lib_space_pipe__WEBPACK_IMPORTED_MODULE_5__.SpacePipe(_this._org);
-      _this.space = yield space_pipe.transform(_this.booking.linked_event?.system_id);
-      const id = _this.space?.map_id || _this.booking.extension_data?.map_id;
-      if (id) {
-        _this.styles[`#${id}`] = {
-          fill: 'green'
-        };
-        _this.features = [{
-          location: id,
-          content: _placeos_components__WEBPACK_IMPORTED_MODULE_3__.MapPinComponent,
-          data: {}
-        }];
-      }
-      _this.level = _this._org.levelWithID(_this.booking.zones);
-      _this.building = _this._org.buildings.find(_ => _this.booking.zones.includes(_.id)) || _this._org.building;
-      _this.locate = _this.booking.extension_data?.map_id || '';
-    })();
-  }
-  viewLocation() {
-    if (!this.space?.map_id) {
-      return (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.notifyInfo)('Unable to locate space on map.');
-    }
-    this.showing_map = true;
-    const ref = this._dialog.open(_placeos_components__WEBPACK_IMPORTED_MODULE_3__.MapLocateModalComponent, {
-      maxWidth: '95vw',
-      maxHeight: '95vh',
-      data: {
-        item: this.space
-      }
-    });
-    ref.afterClosed().subscribe(() => {
-      this.showing_map = false;
-    });
-  }
-  toggleInterest() {
-    var _this2 = this;
-    return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      let user = _this2.guest_details;
-      console.log('User:', user, _this2.is_interested);
-      if (_this2.is_interested && user) {
-        yield (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.bookingRemoveGuest)(_this2.booking.id, (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.currentUser)()).toPromise();
-        _this2.booking.attendees = (_this2.booking.attendees || []).filter(_ => _.email !== user.email);
-      } else {
-        user = yield (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.bookingAddGuest)(_this2.booking.id, (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.currentUser)()).toPromise();
-        _this2.booking.attendees = (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.unique)([...(_this2.booking.attendees || []), user], 'email');
-      }
-    })();
-  }
-  toggleAttendance() {
-    var _this3 = this;
-    return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      let user = _this3.guest_details;
-      if (!user) {
-        user = yield (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.bookingAddGuest)(_this3.booking.id, (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.currentUser)()).toPromise();
-        _this3.booking.attendees = (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.unique)([...(_this3.booking.attendees || []), user], 'email');
-      }
-      user = {
-        ...(0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.currentUser)(),
-        ...(user || {})
-      };
-      if (!user.email) return;
-      yield (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_1__.checkinBookingGuest)(_this3.booking.id, user.email, !_this3.is_going).toPromise();
-      const guest = _this3.booking.attendees.find(_ => _.email === user.email);
-      if (!guest) return;
-      guest.checked_in = !_this3.is_going;
-    })();
-  }
-  static #_ = this.ɵfac = function GroupEventDetailsModalComponent_Factory(t) {
-    return new (t || GroupEventDetailsModalComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_12__.MAT_DIALOG_DATA), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_4__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_placeos_common__WEBPACK_IMPORTED_MODULE_2__.SettingsService), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_12__.MatDialog), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_12__.MatDialogRef));
-  };
-  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵdefineComponent"]({
-    type: GroupEventDetailsModalComponent,
-    selectors: [["group-event-details-modal"]],
-    outputs: {
-      edit: "edit",
-      remove: "remove"
-    },
-    decls: 101,
-    vars: 38,
-    consts: [["concierge_menu", "matMenu"], ["menu", "matMenu"], [1, "relative", "w-[48rem]", "max-w-[calc(100vw-1rem)]", "max-h-[80vh]", "overflow-hidden"], [1, "relative", "flex", "items-center", "justify-between", "h-52", "w-full", "bg-base-200", "overflow-hidden"], ["auth", "", "class", "absolute top-1/2 left-1/2 min-h-full min-w-full object-cover -translate-x-1/2 -translate-y-1/2", 3, "source", 4, "ngIf"], ["class", "absolute top-0 left-0 rounded-br py-2 pl-2 pr-4 space-x-2 bg-info text-info-content flex items-center text-sm", 4, "ngIf"], ["icon", "", "mat-dialog-close", "", 1, "absolute", "top-1", "right-1", "overflow-hidden"], [1, "absolute", "inset-0", "bg-base-100", "opacity-30", "z-0"], [1, "z-10"], [1, "flex", "items-center", "justify-between", "py-4", "px-8", "border-b", "border-base-200"], [1, "text-left", "text-xl"], [1, "flex", "items-center", "space-x-2"], [4, "ngIf"], ["btn", "", "matRipple", "", 1, "clear", "bg-base-200", "text-base-content", "w-[2.75rem]", 3, "disabled", "matMenuTriggerFor"], [1, "text-2xl"], ["mat-menu-item", "", 3, "disabled"], [1, "mr-2"], ["mat-menu-item", "", "mat-dialog-close", "", 3, "click"], ["mat-menu-item", "", 3, "click"], [1, "text-2xl", "text-error"], ["mat-menu-item", "", 1, "flex", "items-center", "space-x-2", 3, "click"], [1, "flex", "flex-1", "max-h-[calc(80vh-18rem)]", "overflow-y-auto", "overflow-x-hidden", "p-8", "space-x-6"], [1, "flex", "flex-1", "flex-col", "space-y-2", "w-1/3"], [1, "flex", "items-center", "space-x-4"], [1, "flex", "items-center", "justify-center", "w-10", "h-10", "bg-base-200", "rounded-full"], [1, "font-medium", "pt-4"], [1, "flex", "flex-col"], [1, "text-sm"], [1, "text-sm", "opacity-30"], [1, "flex", "flex-col", "text-sm"], ["class", "opacity-30", 4, "ngIf"], ["matRipple", "", 1, "flex", "items-center", "space-x-4", "rounded", "min-h-12", 3, "click"], [1, "text-sm", "pb-4"], [3, "innerHTML"], ["class", "flex w-[20rem]", 4, "ngIf"], ["class", "absolute inset-0 z-50", 4, "ngIf"], ["auth", "", 1, "absolute", "top-1/2", "left-1/2", "min-h-full", "min-w-full", "object-cover", "-translate-x-1/2", "-translate-y-1/2", 3, "source"], [1, "absolute", "top-0", "left-0", "rounded-br", "py-2", "pl-2", "pr-4", "space-x-2", "bg-info", "text-info-content", "flex", "items-center", "text-sm"], [1, "text-base"], [1, "uppercase"], ["btn", "", 1, "flex", "items-center", "px-4", "h-10", "rounded", "space-x-2"], [1, "pr-2"], [1, "opacity-30"], [1, "flex", "w-[20rem]"], [1, "border", "border-base-300", "w-full"], ["matRipple", "", 1, "relative", "w-full", "h-40", "bg-base-200", 3, "click"], [3, "src", "features", "styles", 4, "ngIf"], [1, "p-4", "space-y-2"], [1, "opacity-30", "text-sm"], [3, "src", "features", "styles"], [1, "absolute", "inset-0", "z-50"], [1, "absolute", "inset-0", "bg-base-content", "opacity-60", 3, "click"], [1, "absolute", "left-1/2", "-translate-x-1/2", "w-[24rem]", "inset-y-8", "rounded", "shadow", "overflow-hidden"], [3, "click", "list", "host"]],
-    template: function GroupEventDetailsModalComponent_Template(rf, ctx) {
-      if (rf & 1) {
-        const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵgetCurrentView"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](0, "div", 2)(1, "div", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtemplate"](2, GroupEventDetailsModalComponent_img_2_Template, 1, 1, "img", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtemplate"](3, GroupEventDetailsModalComponent_div_3_Template, 5, 0, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](4, "button", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelement"](5, "div", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](6, "app-icon", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](7, "close");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](8, "div", 9)(9, "h3", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](11, "div", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtemplate"](12, GroupEventDetailsModalComponent_ng_container_12_Template, 11, 26, "ng-container", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](13, "button", 13)(14, "app-icon", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](15, "more_horiz");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](16, "mat-menu", null, 0)(18, "button", 15)(19, "div", 11)(20, "app-icon", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](21, " confirmation_number ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](22, "div", 16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](23, "Promote Event");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](24, "button", 17);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("click", function GroupEventDetailsModalComponent_Template_button_click_24_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵrestoreView"](_r1);
-          return _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵresetView"](ctx.edit.emit());
-        });
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](25, "div", 11)(26, "app-icon", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](27, "edit");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](28, "div", 16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](29, "Edit Event");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](30, "button", 15)(31, "div", 11)(32, "app-icon", 14);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](33, "content_copy");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](34, "div", 16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](35, "Copy URL");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](36, "button", 18);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("click", function GroupEventDetailsModalComponent_Template_button_click_36_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵrestoreView"](_r1);
-          return _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵresetView"](ctx.remove.emit());
-        });
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](37, "div", 11)(38, "app-icon", 19);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](39, " delete ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](40, "div", 16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](41, "Delete Event");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](42, "mat-menu", null, 1)(44, "button", 20);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("click", function GroupEventDetailsModalComponent_Template_button_click_44_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵrestoreView"](_r1);
-          return _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵresetView"](ctx.toggleInterest());
-        });
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](45, "div", 11)(46, "app-icon");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](47, " star ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](48, "span");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](49);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](50, "button", 18);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("click", function GroupEventDetailsModalComponent_Template_button_click_50_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵrestoreView"](_r1);
-          return _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵresetView"](ctx.toggleAttendance());
-        });
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](51, "div", 11)(52, "app-icon");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](53, " help ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](54, "span");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](55);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()()()()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](56, "div", 21)(57, "div", 22)(58, "div", 23)(59, "div", 24)(60, "app-icon");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](61, "person");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](62, "div");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](63);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](64, "h3", 25);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](65, "When and where");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](66, "div", 23)(67, "div", 24)(68, "app-icon");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](69, "calendar_today");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](70, "div", 26)(71, "div", 27);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](72, "Date and Time");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](73, "div", 28);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](74);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipe"](75, "date");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipe"](76, "date");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipe"](77, "date");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](78, "div", 23)(79, "div", 24)(80, "app-icon");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](81, "place");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](82, "div", 29);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtemplate"](83, GroupEventDetailsModalComponent_div_83_Template, 4, 5, "div", 12)(84, GroupEventDetailsModalComponent_div_84_Template, 2, 0, "div", 30)(85, GroupEventDetailsModalComponent_div_85_Template, 2, 1, "div", 30);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](86, "button", 31);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵlistener"]("click", function GroupEventDetailsModalComponent_Template_button_click_86_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵrestoreView"](_r1);
-          return _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵresetView"](ctx.show_attendees = true);
-        });
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](87, "div", 24)(88, "app-icon");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](89, "person");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](90, "div");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](91);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](92, "h3", 25);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtext"](93, "About this event");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](94, "div", 32);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelement"](95, "span", 33);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipe"](96, "sanitize");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtemplate"](97, GroupEventDetailsModalComponent_span_97_Template, 2, 0, "span", 30);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementStart"](98, "div");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtemplate"](99, GroupEventDetailsModalComponent_div_99_Template, 15, 13, "div", 34);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵelementEnd"]()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtemplate"](100, GroupEventDetailsModalComponent_div_100_Template, 4, 2, "div", 35);
-      }
-      if (rf & 2) {
-        const concierge_menu_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵreference"](17);
-        const menu_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵreference"](43);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("ngIf", ctx.booking.images == null ? null : ctx.booking.images.length);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("ngIf", ctx.featured);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtextInterpolate1"](" ", ctx.booking.title, " ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("ngIf", !ctx.concierge);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("disabled", ctx.booking.state === "done")("matMenuTriggerFor", ctx.concierge ? concierge_menu_r5 : menu_r6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("disabled", true);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("disabled", true);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](16);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵclassProp"]("text-error", ctx.is_interested);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtextInterpolate1"](" ", ctx.is_interested ? "Revoke" : "Indicate", " Interest ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵclassProp"]("text-error", ctx.is_going);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtextInterpolate1"](" ", ctx.is_going ? "Revoke" : "Indicate", " Going ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtextInterpolate1"]("Event by ", ctx.booking.user_name, "");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtextInterpolate3"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipeBind2"](75, 27, ctx.booking.date, "EEEE, d MMMM, yyyy"), " . ", _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipeBind2"](76, 30, ctx.booking.date, ctx.time_format), " - ", _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipeBind2"](77, 33, ctx.booking.date + ctx.booking.duration * 60 * 1000, ctx.time_format), " ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("ngIf", ctx.is_onsite && ctx.has_space);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("ngIf", ctx.is_onsite && !ctx.has_space);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("ngIf", ctx.is_online);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵtextInterpolate2"](" ", ctx.attendance, " going, ", ctx.booking.attendees == null ? null : ctx.booking.attendees.length, " interested ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("innerHTML", _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵpipeBind1"](96, 36, ctx.booking.description), _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵsanitizeHtml"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("ngIf", !ctx.booking.description.trim());
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("ngIf", ctx.level);
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵadvance"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_11__["ɵɵproperty"]("ngIf", ctx.show_attendees);
-      }
-    },
-    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_13__.NgIf, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_12__.MatDialogClose, _components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_6__.IconComponent, _components_src_lib_interactive_map_component__WEBPACK_IMPORTED_MODULE_7__.InteractiveMapComponent, _components_src_lib_authenticated_image_directive__WEBPACK_IMPORTED_MODULE_8__.AuthenticatedImageDirective, _angular_material_menu__WEBPACK_IMPORTED_MODULE_14__.MatMenu, _angular_material_menu__WEBPACK_IMPORTED_MODULE_14__.MatMenuItem, _angular_material_menu__WEBPACK_IMPORTED_MODULE_14__.MatMenuTrigger, _angular_material_core__WEBPACK_IMPORTED_MODULE_15__.MatRipple, _events_src_lib_attendee_list_component__WEBPACK_IMPORTED_MODULE_9__.AttendeeListComponent, _angular_common__WEBPACK_IMPORTED_MODULE_13__.AsyncPipe, _angular_common__WEBPACK_IMPORTED_MODULE_13__.DatePipe, _components_src_lib_sanitise_pipe__WEBPACK_IMPORTED_MODULE_10__.SanitizePipe, libs_spaces_src_lib_space_pipe__WEBPACK_IMPORTED_MODULE_5__.SpacePipe]
   });
 }
 
@@ -11589,4 +10503,4 @@ class ExploreLockerBankModalComponent {
 /***/ })
 
 }]);
-//# sourceMappingURL=default-libs_bookings_src_index_ts-libs_bookings_src_lib_group-event-details-modal_component_ts.js.map
+//# sourceMappingURL=default-libs_bookings_src_lib_bookings_module_ts.js.map

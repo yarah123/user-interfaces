@@ -269,7 +269,8 @@ class RoomManagementService {
     this._change = new rxjs__WEBPACK_IMPORTED_MODULE_4__.BehaviorSubject(0);
     this.options = this._options.asObservable();
     this.room_list = (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.combineLatest)([this._org.active_building, this._org.active_region, this._change]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.filter)(([b, r]) => !!b?.id), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.switchMap)(([bld, region]) => (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_1__.querySystems)({
-      zone_id: (this._settings.get('use_region') ? region.id : '') || bld.id
+      zone_id: (this._settings.get('use_region') ? region.id : '') || bld.id,
+      limit: 2500
     }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.map)(({
       data
     }) => data), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.catchError)(() => (0,rxjs__WEBPACK_IMPORTED_MODULE_10__.of)([])))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.map)(list => list.filter(_ => this._org.levelWithID(_.zones)).sort((a, b) => a.name.localeCompare(b.name))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.shareReplay)(1));
