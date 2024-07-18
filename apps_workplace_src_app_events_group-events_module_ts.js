@@ -13,9 +13,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
 /* harmony import */ var _group_events_state_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./group-events-state.service */ 12794);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! date-fns */ 27419);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ 13264);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ 92793);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! date-fns */ 33240);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ 56441);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ 71246);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ 35443);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 33602);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 37580);
@@ -63,12 +63,12 @@ class GroupEventsFiltersListComponent {
       date,
       end
     }) => {
-      return Date.now() >= (0,date_fns__WEBPACK_IMPORTED_MODULE_5__["default"])(date).valueOf() && Date.now() < (0,date_fns__WEBPACK_IMPORTED_MODULE_6__["default"])(end || date).valueOf();
+      return Date.now() >= (0,date_fns__WEBPACK_IMPORTED_MODULE_5__.startOfDay)(date).valueOf() && Date.now() < (0,date_fns__WEBPACK_IMPORTED_MODULE_6__.endOfDay)(end || date).valueOf();
     }));
     this.period = this._state.options.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(({
       date,
       end
-    }) => Math.abs((0,date_fns__WEBPACK_IMPORTED_MODULE_7__["default"])(date, end || Date.now())) > 7 ? 'month' : 'week'));
+    }) => Math.abs((0,date_fns__WEBPACK_IMPORTED_MODULE_7__.differenceInDays)(date, end || Date.now())) > 7 ? 'month' : 'week'));
   }
   removeTag(tag) {
     var _this = this;
@@ -135,12 +135,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 22797);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ 88402);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! date-fns */ 61947);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns */ 69935);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! date-fns */ 13264);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! date-fns */ 30417);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! date-fns */ 68266);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ 28797);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! date-fns */ 60452);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns */ 90610);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! date-fns */ 56441);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! date-fns */ 45726);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! date-fns */ 36337);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ 90521);
 /* harmony import */ var _group_events_state_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./group-events-state.service */ 12794);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 33602);
@@ -283,34 +283,34 @@ class GroupEventsSidebarComponent extends _placeos_common__WEBPACK_IMPORTED_MODU
     const periods = [];
     const period_type = this.period.value;
     let date = Date.now();
-    const end_date = (0,date_fns__WEBPACK_IMPORTED_MODULE_7__["default"])(date, 12 * 30).valueOf();
+    const end_date = (0,date_fns__WEBPACK_IMPORTED_MODULE_7__.addDays)(date, 12 * 30).valueOf();
     const week_offset = this._settings.get('app.week_start') || 0;
     if (period_type === 'month') {
-      date = (0,date_fns__WEBPACK_IMPORTED_MODULE_8__["default"])(date).valueOf();
+      date = (0,date_fns__WEBPACK_IMPORTED_MODULE_8__.startOfMonth)(date).valueOf();
     } else if (period_type === 'week') {
-      date = (0,date_fns__WEBPACK_IMPORTED_MODULE_9__["default"])(date, {
+      date = (0,date_fns__WEBPACK_IMPORTED_MODULE_9__.startOfWeek)(date, {
         weekStartsOn: week_offset
       }).valueOf();
     }
     while (date < end_date) {
       if (period_type === 'week') {
-        const end = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_7__["default"])(date, 6)).valueOf();
+        const end = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__.endOfDay)((0,date_fns__WEBPACK_IMPORTED_MODULE_7__.addDays)(date, 6)).valueOf();
         periods.push({
           id: date,
           start: date,
           end,
-          display: `${(0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(Math.max(Date.now(), date), 'EEE, do MMM')} – ${(0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(end, 'do MMM')}`
+          display: `${(0,date_fns__WEBPACK_IMPORTED_MODULE_11__.format)(Math.max(Date.now(), date), 'EEE, do MMM')} – ${(0,date_fns__WEBPACK_IMPORTED_MODULE_11__.format)(end, 'do MMM')}`
         });
-        date = (0,date_fns__WEBPACK_IMPORTED_MODULE_7__["default"])(date, 7).valueOf();
+        date = (0,date_fns__WEBPACK_IMPORTED_MODULE_7__.addDays)(date, 7).valueOf();
       } else if (period_type === 'month') {
-        const end = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_7__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(date, 1), -1)).valueOf();
+        const end = (0,date_fns__WEBPACK_IMPORTED_MODULE_10__.endOfDay)((0,date_fns__WEBPACK_IMPORTED_MODULE_7__.addDays)((0,date_fns__WEBPACK_IMPORTED_MODULE_12__.addMonths)(date, 1), -1)).valueOf();
         periods.push({
           id: date,
           start: date,
           end,
-          display: `${(0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(date, 'MMMM yyyy')}`
+          display: `${(0,date_fns__WEBPACK_IMPORTED_MODULE_11__.format)(date, 'MMMM yyyy')}`
         });
-        date = (0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(date, 1).valueOf();
+        date = (0,date_fns__WEBPACK_IMPORTED_MODULE_12__.addMonths)(date, 1).valueOf();
       } else break;
     }
     this.period_list = periods;
@@ -401,9 +401,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _placeos_bookings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/bookings */ 85616);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 22797);
 /* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/organisation */ 2510);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ 73725);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! date-fns */ 27419);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns */ 13264);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ 99908);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! date-fns */ 33240);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns */ 56441);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 90521);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 68824);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ 8627);
@@ -436,8 +436,8 @@ class GroupEventsStateService {
     this.filters = this._filters.asObservable();
     this.tags = this._tag_list.asObservable();
     this.events = (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.combineLatest)([this._org.active_building, this._options]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.filter)(([building]) => !!building), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.switchMap)(([building, options]) => (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_0__.queryBookings)({
-      period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_7__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_8__["default"])(Math.max(Date.now(), options.date))),
-      period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_7__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_9__["default"])(options.end || options.date)),
+      period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_7__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_8__.startOfDay)(Math.max(Date.now(), options.date))),
+      period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_7__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_9__.endOfDay)(options.end || options.date)),
       type: 'group-event',
       zones: this._settings.get('app.use_region') ? building.parent_id : building.id
     })), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.map)(list => list.filter(_ => _.permission !== 'PRIVATE').sort((a, b) => a.date - b.date)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.tap)(list => {
@@ -604,7 +604,7 @@ class GroupEventsComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_1__.
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_10__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_10__.NgIf, _components_topbar_component__WEBPACK_IMPORTED_MODULE_2__.TopbarComponent, _components_footer_menu_component__WEBPACK_IMPORTED_MODULE_3__.FooterMenuComponent, _libs_bookings_src_lib_group_event_card_component__WEBPACK_IMPORTED_MODULE_4__.GroupEventCardComponent, _group_events_sidebar_component__WEBPACK_IMPORTED_MODULE_5__.GroupEventsSidebarComponent, _group_events_filters_list_component__WEBPACK_IMPORTED_MODULE_6__.GroupEventsFiltersListComponent, _angular_common__WEBPACK_IMPORTED_MODULE_10__.AsyncPipe],
-    styles: ["[_nghost-%COMP%] {\n                position: absolute;\n                top: 0;\n                left: 0;\n                right: 0;\n                bottom: 0;\n                overflow: hidden;\n                display: flex;\n                flex-direction: column;\n            }\n\n            main[_ngcontent-%COMP%] {\n                min-height: 50%;\n            }\n\n            .top[_ngcontent-%COMP%] {\n                background-color: #007ac8;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvd29ya3BsYWNlL3NyYy9hcHAvZXZlbnRzL2dyb3VwLWV2ZW50cy5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGtCQUFrQjtnQkFDbEIsTUFBTTtnQkFDTixPQUFPO2dCQUNQLFFBQVE7Z0JBQ1IsU0FBUztnQkFDVCxnQkFBZ0I7Z0JBQ2hCLGFBQWE7Z0JBQ2Isc0JBQXNCO1lBQzFCOztZQUVBO2dCQUNJLGVBQWU7WUFDbkI7O1lBRUE7Z0JBQ0kseUJBQXlCO1lBQzdCIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgICAgICAgICAgIHRvcDogMDtcbiAgICAgICAgICAgICAgICBsZWZ0OiAwO1xuICAgICAgICAgICAgICAgIHJpZ2h0OiAwO1xuICAgICAgICAgICAgICAgIGJvdHRvbTogMDtcbiAgICAgICAgICAgICAgICBvdmVyZmxvdzogaGlkZGVuO1xuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgbWFpbiB7XG4gICAgICAgICAgICAgICAgbWluLWhlaWdodDogNTAlO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICAudG9wIHtcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDA3YWM4O1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
+    styles: ["[_nghost-%COMP%] {\n                position: absolute;\n                top: 0;\n                left: 0;\n                right: 0;\n                bottom: 0;\n                overflow: hidden;\n                display: flex;\n                flex-direction: column;\n            }\n\n            main[_ngcontent-%COMP%] {\n                min-height: 50%;\n            }\n\n            .top[_ngcontent-%COMP%] {\n                background-color: #007ac8;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImdyb3VwLWV2ZW50cy5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGtCQUFrQjtnQkFDbEIsTUFBTTtnQkFDTixPQUFPO2dCQUNQLFFBQVE7Z0JBQ1IsU0FBUztnQkFDVCxnQkFBZ0I7Z0JBQ2hCLGFBQWE7Z0JBQ2Isc0JBQXNCO1lBQzFCOztZQUVBO2dCQUNJLGVBQWU7WUFDbkI7O1lBRUE7Z0JBQ0kseUJBQXlCO1lBQzdCIiwiZmlsZSI6Imdyb3VwLWV2ZW50cy5jb21wb25lbnQudHMiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICAgICAgICAgICAgdG9wOiAwO1xuICAgICAgICAgICAgICAgIGxlZnQ6IDA7XG4gICAgICAgICAgICAgICAgcmlnaHQ6IDA7XG4gICAgICAgICAgICAgICAgYm90dG9tOiAwO1xuICAgICAgICAgICAgICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICBtYWluIHtcbiAgICAgICAgICAgICAgICBtaW4taGVpZ2h0OiA1MCU7XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIC50b3Age1xuICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMwMDdhYzg7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdfQ== */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvd29ya3BsYWNlL3NyYy9hcHAvZXZlbnRzL2dyb3VwLWV2ZW50cy5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGtCQUFrQjtnQkFDbEIsTUFBTTtnQkFDTixPQUFPO2dCQUNQLFFBQVE7Z0JBQ1IsU0FBUztnQkFDVCxnQkFBZ0I7Z0JBQ2hCLGFBQWE7Z0JBQ2Isc0JBQXNCO1lBQzFCOztZQUVBO2dCQUNJLGVBQWU7WUFDbkI7O1lBRUE7Z0JBQ0kseUJBQXlCO1lBQzdCOztBQUVaLGdoQ0FBZ2hDIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgICAgICAgICAgIHRvcDogMDtcbiAgICAgICAgICAgICAgICBsZWZ0OiAwO1xuICAgICAgICAgICAgICAgIHJpZ2h0OiAwO1xuICAgICAgICAgICAgICAgIGJvdHRvbTogMDtcbiAgICAgICAgICAgICAgICBvdmVyZmxvdzogaGlkZGVuO1xuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgbWFpbiB7XG4gICAgICAgICAgICAgICAgbWluLWhlaWdodDogNTAlO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICAudG9wIHtcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDA3YWM4O1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
   });
 }
 

@@ -179,7 +179,7 @@ class ScheduleFilterCardComponent {
       }
     },
     dependencies: [_libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_1__.IconComponent, _angular_material_core__WEBPACK_IMPORTED_MODULE_4__.MatRipple, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_5__.MatCheckbox, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgModel, _angular_common__WEBPACK_IMPORTED_MODULE_7__.AsyncPipe, _ngx_translate_core__WEBPACK_IMPORTED_MODULE_8__.TranslatePipe],
-    styles: ["mat-checkbox[_ngcontent-%COMP%] {\n                pointer-events: none;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvd29ya3BsYWNlL3NyYy9hcHAvbmV3LXNjaGVkdWxlL3NjaGVkdWxlLWZpbHRlci1jYXJkLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksb0JBQW9CO1lBQ3hCIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICBtYXQtY2hlY2tib3gge1xuICAgICAgICAgICAgICAgIHBvaW50ZXItZXZlbnRzOiBub25lO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
+    styles: ["mat-checkbox[_ngcontent-%COMP%] {\n                pointer-events: none;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNjaGVkdWxlLWZpbHRlci1jYXJkLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksb0JBQW9CO1lBQ3hCIiwiZmlsZSI6InNjaGVkdWxlLWZpbHRlci1jYXJkLmNvbXBvbmVudC50cyIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgbWF0LWNoZWNrYm94IHtcbiAgICAgICAgICAgICAgICBwb2ludGVyLWV2ZW50czogbm9uZTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl19 */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvd29ya3BsYWNlL3NyYy9hcHAvbmV3LXNjaGVkdWxlL3NjaGVkdWxlLWZpbHRlci1jYXJkLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksb0JBQW9CO1lBQ3hCOztBQUVaLHdaQUF3WiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgbWF0LWNoZWNrYm94IHtcbiAgICAgICAgICAgICAgICBwb2ludGVyLWV2ZW50czogbm9uZTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
   });
 }
 
@@ -603,14 +603,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 37580);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/forms */ 34456);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! date-fns */ 27419);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! date-fns */ 68266);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! date-fns */ 69935);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! date-fns */ 61947);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ 92561);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ 3330);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! date-fns */ 26078);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns */ 88402);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! date-fns */ 33240);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! date-fns */ 36337);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! date-fns */ 90610);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! date-fns */ 60452);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ 55882);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ 79681);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! date-fns */ 31257);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns */ 28797);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common */ 60316);
 /* harmony import */ var _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../libs/components/src/lib/icon.component */ 69434);
 /* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/core */ 74646);
@@ -665,7 +665,7 @@ function ScheduleMobileCalendarComponent_button_19_Template(rf, ctx) {
 }
 class ScheduleMobileCalendarComponent {
   constructor() {
-    this.active_date = (0,date_fns__WEBPACK_IMPORTED_MODULE_2__["default"])(Date.now()).valueOf();
+    this.active_date = (0,date_fns__WEBPACK_IMPORTED_MODULE_2__.startOfDay)(Date.now()).valueOf();
     this.offset = 0;
     this.date_list = [];
     this.short_list = [];
@@ -686,7 +686,7 @@ class ScheduleMobileCalendarComponent {
    * @param new_value New value to set on the form field
    */
   setValue(new_value) {
-    this.active_date = (0,date_fns__WEBPACK_IMPORTED_MODULE_2__["default"])(new_value).valueOf();
+    this.active_date = (0,date_fns__WEBPACK_IMPORTED_MODULE_2__.startOfDay)(new_value).valueOf();
     this.offset = 0;
     if (this._onChange) {
       this._onChange(new_value);
@@ -697,7 +697,7 @@ class ScheduleMobileCalendarComponent {
    * @param value The new value for the component
    */
   writeValue(value) {
-    this.active_date = (0,date_fns__WEBPACK_IMPORTED_MODULE_2__["default"])(value).valueOf();
+    this.active_date = (0,date_fns__WEBPACK_IMPORTED_MODULE_2__.startOfDay)(value).valueOf();
     this.offset = 0;
     this.generateDates();
   }
@@ -709,30 +709,30 @@ class ScheduleMobileCalendarComponent {
     this.generateDates();
   }
   generateDates() {
-    const date = (0,date_fns__WEBPACK_IMPORTED_MODULE_3__["default"])(this.active_date, this.offset);
-    let start = (0,date_fns__WEBPACK_IMPORTED_MODULE_4__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_5__["default"])(date));
-    const now = (0,date_fns__WEBPACK_IMPORTED_MODULE_2__["default"])(Date.now());
+    const date = (0,date_fns__WEBPACK_IMPORTED_MODULE_3__.addMonths)(this.active_date, this.offset);
+    let start = (0,date_fns__WEBPACK_IMPORTED_MODULE_4__.startOfWeek)((0,date_fns__WEBPACK_IMPORTED_MODULE_5__.startOfMonth)(date));
+    const now = (0,date_fns__WEBPACK_IMPORTED_MODULE_2__.startOfDay)(Date.now());
     let list = [];
     while (list.length < 7 * 6) {
       list.push({
         id: start.valueOf(),
-        is_past: (0,date_fns__WEBPACK_IMPORTED_MODULE_6__["default"])(start, now),
-        is_month: (0,date_fns__WEBPACK_IMPORTED_MODULE_7__["default"])(start, date),
-        is_today: (0,date_fns__WEBPACK_IMPORTED_MODULE_8__["default"])(Date.now(), start)
+        is_past: (0,date_fns__WEBPACK_IMPORTED_MODULE_6__.isBefore)(start, now),
+        is_month: (0,date_fns__WEBPACK_IMPORTED_MODULE_7__.isSameMonth)(start, date),
+        is_today: (0,date_fns__WEBPACK_IMPORTED_MODULE_8__.isSameDay)(Date.now(), start)
       });
-      start = (0,date_fns__WEBPACK_IMPORTED_MODULE_9__["default"])(start, 1);
+      start = (0,date_fns__WEBPACK_IMPORTED_MODULE_9__.addDays)(start, 1);
     }
     this.date_list = list;
-    start = this.offset === 0 ? (0,date_fns__WEBPACK_IMPORTED_MODULE_4__["default"])(date) : (0,date_fns__WEBPACK_IMPORTED_MODULE_4__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_5__["default"])(date));
+    start = this.offset === 0 ? (0,date_fns__WEBPACK_IMPORTED_MODULE_4__.startOfWeek)(date) : (0,date_fns__WEBPACK_IMPORTED_MODULE_4__.startOfWeek)((0,date_fns__WEBPACK_IMPORTED_MODULE_5__.startOfMonth)(date));
     list = [];
     while (list.length < 7) {
       list.push({
         id: start.valueOf(),
-        is_past: (0,date_fns__WEBPACK_IMPORTED_MODULE_6__["default"])(start, now),
-        is_month: (0,date_fns__WEBPACK_IMPORTED_MODULE_7__["default"])(start, date),
-        is_today: (0,date_fns__WEBPACK_IMPORTED_MODULE_8__["default"])(Date.now(), start)
+        is_past: (0,date_fns__WEBPACK_IMPORTED_MODULE_6__.isBefore)(start, now),
+        is_month: (0,date_fns__WEBPACK_IMPORTED_MODULE_7__.isSameMonth)(start, date),
+        is_today: (0,date_fns__WEBPACK_IMPORTED_MODULE_8__.isSameDay)(Date.now(), start)
       });
-      start = (0,date_fns__WEBPACK_IMPORTED_MODULE_9__["default"])(start, 1);
+      start = (0,date_fns__WEBPACK_IMPORTED_MODULE_9__.addDays)(start, 1);
     }
     this.short_list = list;
   }
@@ -1213,7 +1213,7 @@ class ScheduleSidebarComponent {
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_2__.IconComponent, _angular_material_core__WEBPACK_IMPORTED_MODULE_6__.MatRipple, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_7__.MatCheckbox, _libs_form_fields_src_lib_date_calendar_component__WEBPACK_IMPORTED_MODULE_3__.DateCalendarComponent, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_8__.NgModel, _angular_common__WEBPACK_IMPORTED_MODULE_5__.AsyncPipe, _ngx_translate_core__WEBPACK_IMPORTED_MODULE_9__.TranslatePipe],
-    styles: ["mat-checkbox[_ngcontent-%COMP%] {\n                pointer-events: none;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvd29ya3BsYWNlL3NyYy9hcHAvbmV3LXNjaGVkdWxlL3NjaGVkdWxlLXNpZGViYXIuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxvQkFBb0I7WUFDeEIiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIG1hdC1jaGVja2JveCB7XG4gICAgICAgICAgICAgICAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
+    styles: ["mat-checkbox[_ngcontent-%COMP%] {\n                pointer-events: none;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNjaGVkdWxlLXNpZGViYXIuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxvQkFBb0I7WUFDeEIiLCJmaWxlIjoic2NoZWR1bGUtc2lkZWJhci5jb21wb25lbnQudHMiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIG1hdC1jaGVja2JveCB7XG4gICAgICAgICAgICAgICAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdfQ== */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvd29ya3BsYWNlL3NyYy9hcHAvbmV3LXNjaGVkdWxlL3NjaGVkdWxlLXNpZGViYXIuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxvQkFBb0I7WUFDeEI7O0FBRVosZ1pBQWdaIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICBtYXQtY2hlY2tib3gge1xuICAgICAgICAgICAgICAgIHBvaW50ZXItZXZlbnRzOiBub25lO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
   });
 }
 
@@ -1233,8 +1233,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _placeos_bookings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/bookings */ 85616);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/common */ 22797);
 /* harmony import */ var _placeos_events__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/events */ 40569);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! date-fns */ 26078);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! date-fns */ 30417);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! date-fns */ 31257);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! date-fns */ 45726);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! rxjs/operators */ 35443);
 /* harmony import */ var _schedule_state_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./schedule-state.service */ 75323);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs */ 68824);
@@ -1418,7 +1418,7 @@ class ScheduleComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.Asy
     this.bookings = (0,rxjs__WEBPACK_IMPORTED_MODULE_13__.combineLatest)([this._state.filtered_bookings, this._state.loading]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_14__.map)(([bookings, loading]) => loading ? [] : bookings));
     this.date = this._state.date;
     this.loading = this._state.loading;
-    this.is_today = this.date.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_14__.map)(_ => (0,date_fns__WEBPACK_IMPORTED_MODULE_15__["default"])(_, Date.now())));
+    this.is_today = this.date.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_14__.map)(_ => (0,date_fns__WEBPACK_IMPORTED_MODULE_15__.isSameDay)(_, Date.now())));
     this.setDate = d => this._state.setDate(d);
   }
   ngOnInit() {
@@ -1458,7 +1458,7 @@ class ScheduleComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.Asy
   remove(item, remove_series = false) {
     var _this2 = this;
     return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const time = `${(0,date_fns__WEBPACK_IMPORTED_MODULE_16__["default"])(item.date, 'dd MMM yyyy h:mma')}`;
+      const time = `${(0,date_fns__WEBPACK_IMPORTED_MODULE_16__.format)(item.date, 'dd MMM yyyy h:mma')}`;
       const resource_name = item instanceof _placeos_events__WEBPACK_IMPORTED_MODULE_3__.CalendarEvent ? item.space?.display_name : item.asset_name || item.asset_id;
       const content = `Delete the ${remove_series ? 'recurring series of ' : ''}booking for ${resource_name} at ${time}`;
       const resp = yield (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.openConfirmModal)({
@@ -1493,7 +1493,7 @@ class ScheduleComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.Asy
   end(item) {
     var _this3 = this;
     return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const time = `${(0,date_fns__WEBPACK_IMPORTED_MODULE_16__["default"])(item.date, 'dd MMM yyyy h:mma')}`;
+      const time = `${(0,date_fns__WEBPACK_IMPORTED_MODULE_16__.format)(item.date, 'dd MMM yyyy h:mma')}`;
       const resource_name = item.asset_name || item.asset_id;
       const content = `End the booking for ${resource_name} at ${time}`;
       const resp = yield (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.openConfirmModal)({
@@ -1574,7 +1574,7 @@ class ScheduleComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.Asy
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_19__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_19__.NgIf, _components_topbar_component__WEBPACK_IMPORTED_MODULE_5__.TopbarComponent, _components_footer_menu_component__WEBPACK_IMPORTED_MODULE_6__.FooterMenuComponent, _libs_events_src_lib_event_card_component__WEBPACK_IMPORTED_MODULE_7__.EventCardComponent, _libs_bookings_src_lib_booking_card_component__WEBPACK_IMPORTED_MODULE_8__.BookingCardComponent, _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_20__.MatProgressBar, _angular_forms__WEBPACK_IMPORTED_MODULE_21__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_21__.NgModel, _schedule_sidebar_component__WEBPACK_IMPORTED_MODULE_9__.ScheduleSidebarComponent, _schedule_filters_component__WEBPACK_IMPORTED_MODULE_10__.ScheduleFiltersComponent, _schedule_mobile_calendar_component__WEBPACK_IMPORTED_MODULE_11__.ScheduleMobileCalendarComponent, _angular_common__WEBPACK_IMPORTED_MODULE_19__.AsyncPipe, _angular_common__WEBPACK_IMPORTED_MODULE_19__.DatePipe, _ngx_translate_core__WEBPACK_IMPORTED_MODULE_22__.TranslatePipe],
-    styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n                height: 100%;\n                width: 100%;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvd29ya3BsYWNlL3NyYy9hcHAvbmV3LXNjaGVkdWxlL3NjaGVkdWxlLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksYUFBYTtnQkFDYixzQkFBc0I7Z0JBQ3RCLFlBQVk7Z0JBQ1osV0FBVztZQUNmIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
+    styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n                height: 100%;\n                width: 100%;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNjaGVkdWxlLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksYUFBYTtnQkFDYixzQkFBc0I7Z0JBQ3RCLFlBQVk7Z0JBQ1osV0FBVztZQUNmIiwiZmlsZSI6InNjaGVkdWxlLmNvbXBvbmVudC50cyIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgOmhvc3Qge1xuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICAgICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdfQ== */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvd29ya3BsYWNlL3NyYy9hcHAvbmV3LXNjaGVkdWxlL3NjaGVkdWxlLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksYUFBYTtnQkFDYixzQkFBc0I7Z0JBQ3RCLFlBQVk7Z0JBQ1osV0FBVztZQUNmOztBQUVaLDRoQkFBNGhCIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgICAgICAgIGhlaWdodDogMTAwJTtcbiAgICAgICAgICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
   });
 }
 
