@@ -7301,7 +7301,7 @@ class Booking {
     this.process_state = data.process_state || 'pending';
     this.recurrence_type = data.recurrence_type || 'none';
     this.recurrence_days = data.recurrence_days;
-    this.recurrence_week_of_month = data.recurrence_week_of_month;
+    this.recurrence_nth_of_month = data.recurrence_nth_of_month;
     this.recurrence_interval = data.recurrence_interval;
     this.recurrence_end = data.recurrence_end;
     this.instance = data.instance;
@@ -7467,7 +7467,7 @@ function generateBookingForm(booking = new _booking_class__WEBPACK_IMPORTED_MODU
     plate_number: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(booking.extension_data.plate_number || ''),
     recurrence_type: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(booking.recurrence_type || 'none'),
     recurrence_days: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(booking.recurrence_days),
-    recurrence_week_of_month: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(booking.recurrence_week_of_month),
+    recurrence_nth_of_month: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(booking.recurrence_nth_of_month),
     recurrence_interval: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(booking.recurrence_interval),
     recurrence_end: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControl(booking.recurrence_end)
   });
@@ -21612,15 +21612,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "2a9fa50",
-  "hash": "2a9fa50",
+  "raw": "5215657",
+  "hash": "5215657",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "2a9fa50",
+  "suffix": "5215657",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1721276170038
+  "time": 1721276948710
 };
 /* tslint:enable */
 
