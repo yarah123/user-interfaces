@@ -15,10 +15,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _placeos_calendar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/calendar */ 91886);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/common */ 22797);
 /* harmony import */ var _placeos_events__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/events */ 40569);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! date-fns */ 73725);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! date-fns */ 27419);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! date-fns */ 88402);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! date-fns */ 13264);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! date-fns */ 99908);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! date-fns */ 33240);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! date-fns */ 28797);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! date-fns */ 56441);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 90521);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ 26320);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ 68824);
@@ -57,8 +57,8 @@ class ScheduleStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.
     this.events = (0,rxjs__WEBPACK_IMPORTED_MODULE_8__.combineLatest)([this._options, this._poll]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.debounceTime)(1000), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.mergeMap)(([options]) => {
       this._loading.next('Loading schedule...');
       const query = {
-        period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(options.start)),
-        period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_13__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_14__["default"])(options.start), 6))
+        period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_11__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_12__.startOfDay)(options.start)),
+        period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_11__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_13__.addDays)((0,date_fns__WEBPACK_IMPORTED_MODULE_14__.endOfDay)(options.start), 6))
       };
       if (options.calendar) {
         query.calendar = options.calendar;
@@ -156,10 +156,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 66000);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 7841);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 57871);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns */ 73725);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! date-fns */ 27419);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! date-fns */ 13264);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! date-fns */ 53838);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns */ 99908);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! date-fns */ 33240);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! date-fns */ 56441);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! date-fns */ 49675);
 /* harmony import */ var libs_common_src_lib_async_handler_class__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! libs/common/src/lib/async-handler.class */ 75354);
 /* harmony import */ var libs_common_src_lib_settings_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! libs/common/src/lib/settings.service */ 14233);
 /* harmony import */ var libs_organisation_src_lib_organisation_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
@@ -208,8 +208,8 @@ class CalendarService extends libs_common_src_lib_async_handler_class__WEBPACK_I
    */
   getFreeBusyDate(date, calendars) {
     return (0,_calendar_fn__WEBPACK_IMPORTED_MODULE_4__.querySpaceFreeBusy)({
-      period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_9__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])(date)),
-      period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_9__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(date)),
+      period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_9__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_10__.startOfDay)(date)),
+      period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_9__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_11__.endOfDay)(date)),
       calendars
     }, this._org);
   }
@@ -222,12 +222,12 @@ class CalendarService extends libs_common_src_lib_async_handler_class__WEBPACK_I
         system_ids: system_ids.join(',')
       }).toPromise();
       const start = new Date(old_booking?.date).valueOf();
-      const end = (0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(start, old_booking?.duration).valueOf();
+      const end = (0,date_fns__WEBPACK_IMPORTED_MODULE_12__.addMinutes)(start, old_booking?.duration).valueOf();
       const available = result.every(i => {
         const availability = i.availability;
         if (old_booking && i.id === old_booking.system?.email) {
           const index = availability.findIndex(block => {
-            return block.date >= start && (0,date_fns__WEBPACK_IMPORTED_MODULE_12__["default"])(block.date, block.duration).valueOf() <= end;
+            return block.date >= start && (0,date_fns__WEBPACK_IMPORTED_MODULE_12__.addMinutes)(block.date, block.duration).valueOf() <= end;
           });
           if (index !== -1) {
             availability.splice(index, 1);
