@@ -549,13 +549,16 @@ class ParkingStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.A
     /** List of parking spaces for the current building/level */
     this.spaces = (0,rxjs__WEBPACK_IMPORTED_MODULE_9__.combineLatest)([this.levels, this._options, this._change]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.switchMap)(([levels, options]) => {
       if (!(options.zones[0] || levels[0]?.id)) {
-        return (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.of)({
-          details: []
-        });
+        return (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.of)([]);
       }
       this._loading.next([...this._loading.getValue(), 'spaces']);
-      return (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_4__.showMetadata)(options.zones[0] || levels[0]?.id, 'parking-spaces');
-    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.map)(metadata => metadata.details instanceof Array ? metadata.details : []), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.tap)(() => this._loading.next(this._loading.getValue().filter(_ => _ !== 'spaces'))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_14__.shareReplay)(1));
+      return (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_4__.showMetadata)(options.zones[0] || levels[0]?.id, 'parking-spaces').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.map)(({
+        details
+      }) => (details instanceof Array ? details : []).map(space => ({
+        ...space,
+        zone_id: options.zones[0] || levels[0]?.id
+      }))));
+    }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.tap)(() => this._loading.next(this._loading.getValue().filter(_ => _ !== 'spaces'))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_14__.shareReplay)(1));
     /** List of parking spaces for the current building/level */
     this.users = (0,rxjs__WEBPACK_IMPORTED_MODULE_9__.combineLatest)([this._org.active_building, this._change]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_15__.filter)(([bld]) => !!bld?.id), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.switchMap)(([bld]) => {
       this._loading.next([...this._loading.getValue(), 'users']);
@@ -606,7 +609,7 @@ class ParkingStateService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.A
       });
       const state = yield Promise.race([ref.afterClosed().toPromise(), ref.componentInstance.event.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_20__.first)(_ => _.reason === 'done')).toPromise()]);
       if (state?.reason !== 'done') return;
-      const zone = _this._options.getValue().zones[0];
+      const zone = _this._options.getValue().zones[0] || space.zone_id;
       const new_space = {
         ...state.metadata,
         id: state.metadata.id || `parking-${zone}.${(0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.randomInt)(999_999)}`
