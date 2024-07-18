@@ -1834,6 +1834,9 @@ video {
 #placeos :is(.max-w-\[8rem\]) {
   max-width: 8rem;
 }
+#placeos :is(.max-w-\[calc\(100\%-16rem\)\]) {
+  max-width: calc(100% - 16rem);
+}
 #placeos :is(.max-w-\[calc\(100\%-2rem\)\]) {
   max-width: calc(100% - 2rem);
 }
