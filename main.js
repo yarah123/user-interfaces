@@ -8346,7 +8346,6 @@ tslib_1.__exportStar(__webpack_require__(/*! ./lib/lockers.service */ 98796), ex
 tslib_1.__exportStar(__webpack_require__(/*! ./lib/booking-details-modal.component */ 1781), exports);
 tslib_1.__exportStar(__webpack_require__(/*! ./lib/booking-card.component */ 27547), exports);
 tslib_1.__exportStar(__webpack_require__(/*! ./lib/parking-select-modal/parking-select-modal.component */ 67642), exports);
-tslib_1.__exportStar(__webpack_require__(/*! ./lib/group-event-details-modal.component */ 30000), exports);
 tslib_1.__exportStar(__webpack_require__(/*! ./lib/parking.service */ 1593), exports);
 
 /***/ }),
@@ -8373,13 +8372,13 @@ var dialog_1 = __webpack_require__(/*! @angular/material/dialog */ 12587);
 var router_1 = __webpack_require__(/*! @angular/router */ 95072);
 var common_1 = __webpack_require__(/*! @placeos/common */ 22797);
 var date_fns_1 = __webpack_require__(/*! date-fns */ 25773);
+var operators_1 = __webpack_require__(/*! rxjs/operators */ 97303);
 var booking_class_1 = __webpack_require__(/*! ./booking.class */ 53857);
 var booking_details_modal_component_1 = __webpack_require__(/*! ./booking-details-modal.component */ 1781);
 var async_handler_class_1 = __webpack_require__(/*! libs/common/src/lib/async-handler.class */ 75354);
 var organisation_service_1 = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
-var group_event_details_modal_component_1 = __webpack_require__(/*! ./group-event-details-modal.component */ 30000);
 var parking_service_1 = __webpack_require__(/*! ./parking.service */ 1593);
-var operators_1 = __webpack_require__(/*! rxjs/operators */ 97303);
+var group_event_details_modal_component_1 = __webpack_require__(/*! ../../../events/src/lib/group-event-details-modal.component */ 58094);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
 var i1 = __webpack_require__(/*! @angular/material/dialog */ 12587);
 var i2 = __webpack_require__(/*! @angular/router */ 95072);
@@ -9502,19 +9501,28 @@ var BookingFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
         date = (0, date_fns_1.startOfDay)(date).valueOf();
         duration = 24 * 60 - 1;
       }
-      return (0, bookings_fn_1.queryBookings)({
+      return (0, bookings_fn_1.bookedResourceList)({
         period_start: (0, date_fns_1.getUnixTime)(date),
         period_end: (0, date_fns_1.getUnixTime)((0, date_fns_1.addMinutes)(date, duration)),
         type: options.type,
-        zones: options.zone_id || ((_this$_org$building = _this._org.building) === null || _this$_org$building === void 0 ? void 0 : _this$_org$building.id) || _this._org.organisation.id,
-        limit: 1000
-      }).pipe((0, operators_1.map)(function (bookings) {
+        zones: options.zone_id || ((_this$_org$building = _this._org.building) === null || _this$_org$building === void 0 ? void 0 : _this$_org$building.id) || _this._org.organisation.id
+      }).pipe((0, operators_1.map)(function (booked_ids) {
         var start = _this.form.getRawValue().date;
         var end = (0, date_fns_1.addMinutes)(start, _this.form.getRawValue().duration).valueOf();
         _this._resource_use = {};
-        bookings.forEach(function (_) {
-          return _this._resource_use[_.asset_id] = _.user_name;
-        });
+        var _iterator3 = _createForOfIteratorHelper(booked_ids),
+          _step3;
+        try {
+          for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+            var id = _step3.value;
+            _this._resource_use[id] = ' ';
+          }
+        } catch (err) {
+          _iterator3.e(err);
+        } finally {
+          _iterator3.f();
+        }
+        console.log('Booked:', booked_ids);
         var available = resources.filter(function (asset) {
           var _asset$zone, _asset$zone2, _asset$groups, _options$features, _asset$zone3, _asset$zone4;
           var is_restricted = (0, common_1.rulesForResource)({
@@ -9523,13 +9531,12 @@ var BookingFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
             resource: asset,
             host: user || (0, common_1.currentUser)()
           }, restrictions[(_asset$zone = asset.zone) === null || _asset$zone === void 0 ? void 0 : _asset$zone.id] || restrictions[(_asset$zone2 = asset.zone) === null || _asset$zone2 === void 0 ? void 0 : _asset$zone2.parent_id] || restrictions[_this._org.building.id] || []).hidden;
+          console.log('Booked:', asset.id, booked_ids.includes(asset.id));
           return !is_restricted && (!((_asset$groups = asset.groups) !== null && _asset$groups !== void 0 && _asset$groups.length) || asset.groups.some(function (grp) {
             return (0, common_1.currentUser)().groups.includes(grp);
           })) && asset.bookable !== false && (!options.features || ((_options$features = options.features) === null || _options$features === void 0 ? void 0 : _options$features.every(function (_) {
             return asset.features.includes(_);
-          }))) && (!options.zone_id || options.zone_id === ((_asset$zone3 = asset.zone) === null || _asset$zone3 === void 0 ? void 0 : _asset$zone3.id) || options.zone_id === ((_asset$zone4 = asset.zone) === null || _asset$zone4 === void 0 ? void 0 : _asset$zone4.parent_id)) && !bookings.find(function (bkn) {
-            return bkn.asset_id === asset.id && bkn.status !== 'declined';
-          }) && !asset.assigned_to;
+          }))) && (!options.zone_id || options.zone_id === ((_asset$zone3 = asset.zone) === null || _asset$zone3 === void 0 ? void 0 : _asset$zone3.id) || options.zone_id === ((_asset$zone4 = asset.zone) === null || _asset$zone4 === void 0 ? void 0 : _asset$zone4.parent_id)) && !booked_ids.includes(asset.id) && !asset.assigned_to;
         });
         return available;
       }, (0, operators_1.catchError)(function (_) {
@@ -10900,7 +10907,7 @@ var _asyncToGenerator = (__webpack_require__(/*! ./node_modules/@babel/runtime/h
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.createBookingsForEvent = exports.isResourceAvailable = exports.queryResourceAvailability = exports.checkinBookingAttendee = exports.checkinBooking = exports.bookingRemoveGuest = exports.bookingAddGuest = exports.checkinBookingGuest = exports.queryBookingGuests = exports.setBookingState = exports.rejectBooking = exports.approveBooking = exports.removeBooking = exports.saveBooking = exports.updateBooking = exports.createBooking = exports.showBooking = exports.queryAllBookings = exports.queryPagedBookings = exports.queryBookings = void 0;
+exports.createBookingsForEvent = exports.isResourceAvailable = exports.queryResourceAvailability = exports.checkinBookingAttendee = exports.checkinBooking = exports.bookingRemoveGuest = exports.bookingAddGuest = exports.checkinBookingGuest = exports.queryBookingGuests = exports.setBookingState = exports.rejectBooking = exports.approveBooking = exports.removeBooking = exports.saveBooking = exports.updateBooking = exports.createBooking = exports.showBooking = exports.queryAllBookings = exports.queryPagedBookings = exports.bookedResourceList = exports.queryBookings = void 0;
 var ts_client_1 = __webpack_require__(/*! @placeos/ts-client */ 35713);
 var rxjs_1 = __webpack_require__(/*! rxjs */ 15681);
 var operators_1 = __webpack_require__(/*! rxjs/operators */ 97303);
@@ -10925,6 +10932,19 @@ function queryBookings(q) {
   }));
 }
 exports.queryBookings = queryBookings;
+/**
+ * List resources that are booked within the given parameters
+ * @param q Parameters to pass to the API request
+ */
+function bookedResourceList(q) {
+  var query = (0, api_1.toQueryString)(q);
+  return (0, ts_client_1.get)("".concat(BOOKINGS_ENDPOINT, "/booked").concat(query ? '?' + query : '')).pipe((0, operators_1.map)(function (list) {
+    return list;
+  }), (0, operators_1.catchError)(function (_) {
+    return (0, rxjs_1.of)([]);
+  }));
+}
+exports.bookedResourceList = bookedResourceList;
 /**
  * List bookings with link to next page of bookings
  * @param q Parameters to pass to the API request
@@ -11359,10 +11379,8 @@ var locker_filters_display_component_1 = __webpack_require__(/*! ./locker-select
 var locker_bank_list_component_1 = __webpack_require__(/*! ./locker-select-modal/locker-bank-list.component */ 90647);
 var locker_map_component_1 = __webpack_require__(/*! ./locker-select-modal/locker-map.component */ 38720);
 var desk_settings_modal_component_1 = __webpack_require__(/*! ./desk-settings-modal.component */ 77904);
-var group_event_details_modal_component_1 = __webpack_require__(/*! ./group-event-details-modal.component */ 30000);
-var group_event_card_component_1 = __webpack_require__(/*! ./group-event-card.component */ 93736);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
-var COMPONENTS = [desk_questions_modal_component_1.DeskQuestionsModalComponent, desk_confirm_modal_component_1.DeskConfirmModalComponent, invite_visitor_form_component_1.InviteVisitorFormComponent, booking_details_modal_component_1.BookingDetailsModalComponent, booking_card_component_1.BookingCardComponent, booking_link_modal_component_1.BookingLinkModalComponent, parking_select_modal_component_1.ParkingSpaceSelectModalComponent, parking_filters_component_1.ParkingSpaceFiltersComponent, parking_filters_display_component_1.ParkingSpaceFiltersDisplayComponent, parking_list_component_1.ParkingSpaceListComponent, parking_location_pin_component_1.ParkingSpaceLocationPinComponent, parking_map_component_1.ParkingSpaceSelectMapComponent, parking_details_component_1.ParkingSpaceDetailsComponent, parking_space_list_field_component_1.ParkingSpaceListFieldComponent, desk_select_modal_component_1.DeskSelectModalComponent, desk_details_component_1.DeskDetailsComponent, desk_filters_component_1.DeskFiltersComponent, desk_filters_display_component_1.DeskFiltersDisplayComponent, desk_list_component_1.DeskListComponent, desk_map_component_1.DeskMapComponent, desk_list_field_component_1.DeskListFieldComponent, desk_settings_modal_component_1.DeskSettingsModalComponent, locker_grid_component_1.LockerGridComponent, locker_list_field_component_1.LockerListFieldComponent, locker_select_modal_component_1.LockerSelectModalComponent, locker_filters_component_1.LockerFiltersComponent, locker_filters_display_component_1.LockerFiltersDisplayComponent, locker_bank_list_component_1.LockerBankListComponent, locker_map_component_1.LockerMapComponent, group_event_details_modal_component_1.GroupEventDetailsModalComponent, group_event_card_component_1.GroupEventCardComponent];
+var COMPONENTS = [desk_questions_modal_component_1.DeskQuestionsModalComponent, desk_confirm_modal_component_1.DeskConfirmModalComponent, invite_visitor_form_component_1.InviteVisitorFormComponent, booking_details_modal_component_1.BookingDetailsModalComponent, booking_card_component_1.BookingCardComponent, booking_link_modal_component_1.BookingLinkModalComponent, parking_select_modal_component_1.ParkingSpaceSelectModalComponent, parking_filters_component_1.ParkingSpaceFiltersComponent, parking_filters_display_component_1.ParkingSpaceFiltersDisplayComponent, parking_list_component_1.ParkingSpaceListComponent, parking_location_pin_component_1.ParkingSpaceLocationPinComponent, parking_map_component_1.ParkingSpaceSelectMapComponent, parking_details_component_1.ParkingSpaceDetailsComponent, parking_space_list_field_component_1.ParkingSpaceListFieldComponent, desk_select_modal_component_1.DeskSelectModalComponent, desk_details_component_1.DeskDetailsComponent, desk_filters_component_1.DeskFiltersComponent, desk_filters_display_component_1.DeskFiltersDisplayComponent, desk_list_component_1.DeskListComponent, desk_map_component_1.DeskMapComponent, desk_list_field_component_1.DeskListFieldComponent, desk_settings_modal_component_1.DeskSettingsModalComponent, locker_grid_component_1.LockerGridComponent, locker_list_field_component_1.LockerListFieldComponent, locker_select_modal_component_1.LockerSelectModalComponent, locker_filters_component_1.LockerFiltersComponent, locker_filters_display_component_1.LockerFiltersDisplayComponent, locker_bank_list_component_1.LockerBankListComponent, locker_map_component_1.LockerMapComponent];
 var SharedBookingsModule = /*#__PURE__*/_createClass(function SharedBookingsModule() {
   _classCallCheck(this, SharedBookingsModule);
 });
@@ -11380,9 +11398,9 @@ _SharedBookingsModule.ɵinj = /*@__PURE__*/i0.ɵɵdefineInjector({
 exports.SharedBookingsModule = SharedBookingsModule;
 (function () {
   (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(SharedBookingsModule, {
-    declarations: [desk_questions_modal_component_1.DeskQuestionsModalComponent, desk_confirm_modal_component_1.DeskConfirmModalComponent, invite_visitor_form_component_1.InviteVisitorFormComponent, booking_details_modal_component_1.BookingDetailsModalComponent, booking_card_component_1.BookingCardComponent, booking_link_modal_component_1.BookingLinkModalComponent, parking_select_modal_component_1.ParkingSpaceSelectModalComponent, parking_filters_component_1.ParkingSpaceFiltersComponent, parking_filters_display_component_1.ParkingSpaceFiltersDisplayComponent, parking_list_component_1.ParkingSpaceListComponent, parking_location_pin_component_1.ParkingSpaceLocationPinComponent, parking_map_component_1.ParkingSpaceSelectMapComponent, parking_details_component_1.ParkingSpaceDetailsComponent, parking_space_list_field_component_1.ParkingSpaceListFieldComponent, desk_select_modal_component_1.DeskSelectModalComponent, desk_details_component_1.DeskDetailsComponent, desk_filters_component_1.DeskFiltersComponent, desk_filters_display_component_1.DeskFiltersDisplayComponent, desk_list_component_1.DeskListComponent, desk_map_component_1.DeskMapComponent, desk_list_field_component_1.DeskListFieldComponent, desk_settings_modal_component_1.DeskSettingsModalComponent, locker_grid_component_1.LockerGridComponent, locker_list_field_component_1.LockerListFieldComponent, locker_select_modal_component_1.LockerSelectModalComponent, locker_filters_component_1.LockerFiltersComponent, locker_filters_display_component_1.LockerFiltersDisplayComponent, locker_bank_list_component_1.LockerBankListComponent, locker_map_component_1.LockerMapComponent, group_event_details_modal_component_1.GroupEventDetailsModalComponent, group_event_card_component_1.GroupEventCardComponent],
+    declarations: [desk_questions_modal_component_1.DeskQuestionsModalComponent, desk_confirm_modal_component_1.DeskConfirmModalComponent, invite_visitor_form_component_1.InviteVisitorFormComponent, booking_details_modal_component_1.BookingDetailsModalComponent, booking_card_component_1.BookingCardComponent, booking_link_modal_component_1.BookingLinkModalComponent, parking_select_modal_component_1.ParkingSpaceSelectModalComponent, parking_filters_component_1.ParkingSpaceFiltersComponent, parking_filters_display_component_1.ParkingSpaceFiltersDisplayComponent, parking_list_component_1.ParkingSpaceListComponent, parking_location_pin_component_1.ParkingSpaceLocationPinComponent, parking_map_component_1.ParkingSpaceSelectMapComponent, parking_details_component_1.ParkingSpaceDetailsComponent, parking_space_list_field_component_1.ParkingSpaceListFieldComponent, desk_select_modal_component_1.DeskSelectModalComponent, desk_details_component_1.DeskDetailsComponent, desk_filters_component_1.DeskFiltersComponent, desk_filters_display_component_1.DeskFiltersDisplayComponent, desk_list_component_1.DeskListComponent, desk_map_component_1.DeskMapComponent, desk_list_field_component_1.DeskListFieldComponent, desk_settings_modal_component_1.DeskSettingsModalComponent, locker_grid_component_1.LockerGridComponent, locker_list_field_component_1.LockerListFieldComponent, locker_select_modal_component_1.LockerSelectModalComponent, locker_filters_component_1.LockerFiltersComponent, locker_filters_display_component_1.LockerFiltersDisplayComponent, locker_bank_list_component_1.LockerBankListComponent, locker_map_component_1.LockerMapComponent],
     imports: [common_1.CommonModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, radio_1.MatRadioModule, input_1.MatInputModule, form_field_1.MatFormFieldModule, datepicker_1.MatDatepickerModule, button_1.MatButtonModule, dialog_1.MatDialogModule, progress_spinner_1.MatProgressSpinnerModule, checkbox_1.MatCheckboxModule, autocomplete_1.MatAutocompleteModule, form_fields_module_1.FormFieldsModule, components_module_1.ComponentsModule, core_1.MatRippleModule, tooltip_1.MatTooltipModule, spaces_module_1.SharedSpacesModule, events_module_1.SharedEventsModule, users_module_1.SharedUsersModule],
-    exports: [desk_questions_modal_component_1.DeskQuestionsModalComponent, desk_confirm_modal_component_1.DeskConfirmModalComponent, invite_visitor_form_component_1.InviteVisitorFormComponent, booking_details_modal_component_1.BookingDetailsModalComponent, booking_card_component_1.BookingCardComponent, booking_link_modal_component_1.BookingLinkModalComponent, parking_select_modal_component_1.ParkingSpaceSelectModalComponent, parking_filters_component_1.ParkingSpaceFiltersComponent, parking_filters_display_component_1.ParkingSpaceFiltersDisplayComponent, parking_list_component_1.ParkingSpaceListComponent, parking_location_pin_component_1.ParkingSpaceLocationPinComponent, parking_map_component_1.ParkingSpaceSelectMapComponent, parking_details_component_1.ParkingSpaceDetailsComponent, parking_space_list_field_component_1.ParkingSpaceListFieldComponent, desk_select_modal_component_1.DeskSelectModalComponent, desk_details_component_1.DeskDetailsComponent, desk_filters_component_1.DeskFiltersComponent, desk_filters_display_component_1.DeskFiltersDisplayComponent, desk_list_component_1.DeskListComponent, desk_map_component_1.DeskMapComponent, desk_list_field_component_1.DeskListFieldComponent, desk_settings_modal_component_1.DeskSettingsModalComponent, locker_grid_component_1.LockerGridComponent, locker_list_field_component_1.LockerListFieldComponent, locker_select_modal_component_1.LockerSelectModalComponent, locker_filters_component_1.LockerFiltersComponent, locker_filters_display_component_1.LockerFiltersDisplayComponent, locker_bank_list_component_1.LockerBankListComponent, locker_map_component_1.LockerMapComponent, group_event_details_modal_component_1.GroupEventDetailsModalComponent, group_event_card_component_1.GroupEventCardComponent]
+    exports: [desk_questions_modal_component_1.DeskQuestionsModalComponent, desk_confirm_modal_component_1.DeskConfirmModalComponent, invite_visitor_form_component_1.InviteVisitorFormComponent, booking_details_modal_component_1.BookingDetailsModalComponent, booking_card_component_1.BookingCardComponent, booking_link_modal_component_1.BookingLinkModalComponent, parking_select_modal_component_1.ParkingSpaceSelectModalComponent, parking_filters_component_1.ParkingSpaceFiltersComponent, parking_filters_display_component_1.ParkingSpaceFiltersDisplayComponent, parking_list_component_1.ParkingSpaceListComponent, parking_location_pin_component_1.ParkingSpaceLocationPinComponent, parking_map_component_1.ParkingSpaceSelectMapComponent, parking_details_component_1.ParkingSpaceDetailsComponent, parking_space_list_field_component_1.ParkingSpaceListFieldComponent, desk_select_modal_component_1.DeskSelectModalComponent, desk_details_component_1.DeskDetailsComponent, desk_filters_component_1.DeskFiltersComponent, desk_filters_display_component_1.DeskFiltersDisplayComponent, desk_list_component_1.DeskListComponent, desk_map_component_1.DeskMapComponent, desk_list_field_component_1.DeskListFieldComponent, desk_settings_modal_component_1.DeskSettingsModalComponent, locker_grid_component_1.LockerGridComponent, locker_list_field_component_1.LockerListFieldComponent, locker_select_modal_component_1.LockerSelectModalComponent, locker_filters_component_1.LockerFiltersComponent, locker_filters_display_component_1.LockerFiltersDisplayComponent, locker_bank_list_component_1.LockerBankListComponent, locker_map_component_1.LockerMapComponent]
   });
 })();
 
@@ -14848,1022 +14866,6 @@ _DesksService.ɵprov = /*@__PURE__*/i0.ɵɵdefineInjectable({
   providedIn: 'root'
 });
 exports.DesksService = DesksService;
-
-/***/ }),
-
-/***/ 93736:
-/*!*************************************************************!*\
-  !*** ./libs/bookings/src/lib/group-event-card.component.ts ***!
-  \*************************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-
-var _regeneratorRuntime = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/regeneratorRuntime.js */ 8698)["default"]);
-var _asyncToGenerator = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/asyncToGenerator.js */ 95386)["default"]);
-var _classCallCheck = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/classCallCheck.js */ 80912)["default"]);
-var _createClass = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/createClass.js */ 92974)["default"]);
-var _GroupEventCardComponent;
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports.GroupEventCardComponent = void 0;
-var dialog_1 = __webpack_require__(/*! @angular/material/dialog */ 12587);
-var common_1 = __webpack_require__(/*! @placeos/common */ 22797);
-var bookings_1 = __webpack_require__(/*! @placeos/bookings */ 85616);
-var space_pipe_1 = __webpack_require__(/*! libs/spaces/src/lib/space.pipe */ 22011);
-var organisation_1 = __webpack_require__(/*! @placeos/organisation */ 2510);
-var i0 = __webpack_require__(/*! @angular/core */ 37580);
-var i1 = __webpack_require__(/*! @placeos/common */ 22797);
-var i2 = __webpack_require__(/*! @angular/material/dialog */ 12587);
-var i3 = __webpack_require__(/*! @placeos/organisation */ 2510);
-var i4 = __webpack_require__(/*! @angular/common */ 60316);
-var i5 = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
-var i6 = __webpack_require__(/*! ../../../components/src/lib/authenticated-image.directive */ 93208);
-var i7 = __webpack_require__(/*! @angular/material/core */ 74646);
-function GroupEventCardComponent_button_0_img_2_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelement(0, "img", 15);
-  }
-  if (rf & 2) {
-    var ctx_r1 = i0.ɵɵnextContext(2);
-    i0.ɵɵproperty("source", ctx_r1.event.images[0]);
-  }
-}
-function GroupEventCardComponent_button_0_p_13_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "p", 16);
-    i0.ɵɵtext(1, " No description ");
-    i0.ɵɵelementEnd();
-  }
-}
-function GroupEventCardComponent_button_0_div_17_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "div");
-    i0.ɵɵtext(1);
-    i0.ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    var ctx_r1 = i0.ɵɵnextContext(2);
-    i0.ɵɵadvance();
-    i0.ɵɵtextInterpolate1(" ", ctx_r1.space.display_name || ctx_r1.space.name || "", " ");
-  }
-}
-function GroupEventCardComponent_button_0_div_18_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 16);
-    i0.ɵɵtext(1, " Room to be confirmed ");
-    i0.ɵɵelementEnd();
-  }
-}
-function GroupEventCardComponent_button_0_div_19_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 16);
-    i0.ɵɵtext(1, " Remote event ");
-    i0.ɵɵelementEnd();
-  }
-}
-function GroupEventCardComponent_button_0_Template(rf, ctx) {
-  if (rf & 1) {
-    var _r1 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "button", 2);
-    i0.ɵɵlistener("click", function GroupEventCardComponent_button_0_Template_button_click_0_listener() {
-      i0.ɵɵrestoreView(_r1);
-      var ctx_r1 = i0.ɵɵnextContext();
-      return i0.ɵɵresetView(ctx_r1.viewDetails());
-    });
-    i0.ɵɵelementStart(1, "div", 3);
-    i0.ɵɵtemplate(2, GroupEventCardComponent_button_0_img_2_Template, 1, 1, "img", 4);
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(3, "div", 5)(4, "div", 6);
-    i0.ɵɵtext(5);
-    i0.ɵɵpipe(6, "date");
-    i0.ɵɵpipe(7, "date");
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(8, "h2", 7);
-    i0.ɵɵtext(9);
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(10, "div", 8)(11, "p", 9);
-    i0.ɵɵtext(12);
-    i0.ɵɵelementEnd();
-    i0.ɵɵtemplate(13, GroupEventCardComponent_button_0_p_13_Template, 2, 0, "p", 10);
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(14, "div", 11)(15, "app-icon", 12);
-    i0.ɵɵtext(16, "place");
-    i0.ɵɵelementEnd();
-    i0.ɵɵtemplate(17, GroupEventCardComponent_button_0_div_17_Template, 2, 1, "div", 13)(18, GroupEventCardComponent_button_0_div_18_Template, 2, 0, "div", 10)(19, GroupEventCardComponent_button_0_div_19_Template, 2, 0, "div", 10);
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(20, "div", 11)(21, "app-icon", 12);
-    i0.ɵɵtext(22, "people");
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(23, "div", 14);
-    i0.ɵɵtext(24);
-    i0.ɵɵelementEnd()()()();
-  }
-  if (rf & 2) {
-    var ctx_r1 = i0.ɵɵnextContext();
-    i0.ɵɵadvance(2);
-    i0.ɵɵproperty("ngIf", ctx_r1.event.images == null ? null : ctx_r1.event.images.length);
-    i0.ɵɵadvance(3);
-    i0.ɵɵtextInterpolate2(" ", i0.ɵɵpipeBind2(6, 11, ctx_r1.event.date, "EEE d MMM"), ", ", i0.ɵɵpipeBind2(7, 14, ctx_r1.event.date, ctx_r1.time_format), " ");
-    i0.ɵɵadvance(3);
-    i0.ɵɵproperty("title", ctx_r1.event.title);
-    i0.ɵɵadvance();
-    i0.ɵɵtextInterpolate1(" ", ctx_r1.event.title, " ");
-    i0.ɵɵadvance(3);
-    i0.ɵɵtextInterpolate(ctx_r1.raw_description);
-    i0.ɵɵadvance();
-    i0.ɵɵproperty("ngIf", !ctx_r1.raw_description.trim());
-    i0.ɵɵadvance(4);
-    i0.ɵɵproperty("ngIf", ctx_r1.is_onsite && ctx_r1.has_space);
-    i0.ɵɵadvance();
-    i0.ɵɵproperty("ngIf", ctx_r1.is_onsite && !ctx_r1.has_space);
-    i0.ɵɵadvance();
-    i0.ɵɵproperty("ngIf", !ctx_r1.is_onsite);
-    i0.ɵɵadvance(5);
-    i0.ɵɵtextInterpolate1(" ", (ctx_r1.event.attendees == null ? null : ctx_r1.event.attendees.length) || "0", " attending ");
-  }
-}
-function GroupEventCardComponent_ng_template_1_img_2_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelement(0, "img", 15);
-  }
-  if (rf & 2) {
-    var ctx_r1 = i0.ɵɵnextContext(2);
-    i0.ɵɵproperty("source", ctx_r1.event.images[0]);
-  }
-}
-function GroupEventCardComponent_ng_template_1_p_27_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "p", 16);
-    i0.ɵɵtext(1, " No description ");
-    i0.ɵɵelementEnd();
-  }
-}
-function GroupEventCardComponent_ng_template_1_div_31_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "div");
-    i0.ɵɵtext(1);
-    i0.ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    var ctx_r1 = i0.ɵɵnextContext(2);
-    i0.ɵɵadvance();
-    i0.ɵɵtextInterpolate1(" ", ctx_r1.space.display_name || ctx_r1.space.name || "", " ");
-  }
-}
-function GroupEventCardComponent_ng_template_1_div_32_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 16);
-    i0.ɵɵtext(1, " Room to be confirmed ");
-    i0.ɵɵelementEnd();
-  }
-}
-function GroupEventCardComponent_ng_template_1_div_33_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 16);
-    i0.ɵɵtext(1, " Remote event ");
-    i0.ɵɵelementEnd();
-  }
-}
-function GroupEventCardComponent_ng_template_1_Template(rf, ctx) {
-  if (rf & 1) {
-    var _r3 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "button", 17);
-    i0.ɵɵlistener("click", function GroupEventCardComponent_ng_template_1_Template_button_click_0_listener() {
-      i0.ɵɵrestoreView(_r3);
-      var ctx_r1 = i0.ɵɵnextContext();
-      return i0.ɵɵresetView(ctx_r1.viewDetails());
-    });
-    i0.ɵɵelementStart(1, "div", 18);
-    i0.ɵɵtemplate(2, GroupEventCardComponent_ng_template_1_img_2_Template, 1, 1, "img", 4);
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(3, "div", 19)(4, "app-icon", 20);
-    i0.ɵɵtext(5, "star");
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(6, "div", 21);
-    i0.ɵɵtext(7, "Featured");
-    i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(8, "div", 22)(9, "div", 23)(10, "div", 24);
-    i0.ɵɵtext(11);
-    i0.ɵɵpipe(12, "date");
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(13, "div", 25);
-    i0.ɵɵtext(14);
-    i0.ɵɵpipe(15, "date");
-    i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(16, "div", 26)(17, "h3", 27);
-    i0.ɵɵtext(18);
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(19, "div", 28);
-    i0.ɵɵtext(20);
-    i0.ɵɵpipe(21, "date");
-    i0.ɵɵpipe(22, "date");
-    i0.ɵɵpipe(23, "date");
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(24, "div", 29)(25, "p", 30);
-    i0.ɵɵtext(26);
-    i0.ɵɵelementEnd();
-    i0.ɵɵtemplate(27, GroupEventCardComponent_ng_template_1_p_27_Template, 2, 0, "p", 10);
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(28, "div", 11)(29, "app-icon", 12);
-    i0.ɵɵtext(30, "place");
-    i0.ɵɵelementEnd();
-    i0.ɵɵtemplate(31, GroupEventCardComponent_ng_template_1_div_31_Template, 2, 1, "div", 13)(32, GroupEventCardComponent_ng_template_1_div_32_Template, 2, 0, "div", 10)(33, GroupEventCardComponent_ng_template_1_div_33_Template, 2, 0, "div", 10);
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(34, "div", 11)(35, "app-icon", 12);
-    i0.ɵɵtext(36, "people");
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(37, "div", 14);
-    i0.ɵɵtext(38);
-    i0.ɵɵelementEnd()()()();
-    i0.ɵɵelementStart(39, "div", 31);
-    i0.ɵɵtext(40, " View Details ");
-    i0.ɵɵelementEnd()();
-  }
-  if (rf & 2) {
-    var ctx_r1 = i0.ɵɵnextContext();
-    i0.ɵɵadvance(2);
-    i0.ɵɵproperty("ngIf", ctx_r1.event.images == null ? null : ctx_r1.event.images.length);
-    i0.ɵɵadvance(9);
-    i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind2(12, 13, ctx_r1.event.date, "MMM"), " ");
-    i0.ɵɵadvance(3);
-    i0.ɵɵtextInterpolate(i0.ɵɵpipeBind2(15, 16, ctx_r1.event.date, "d"));
-    i0.ɵɵadvance(4);
-    i0.ɵɵtextInterpolate(ctx_r1.event.title);
-    i0.ɵɵadvance(2);
-    i0.ɵɵtextInterpolate3(" ", i0.ɵɵpipeBind2(21, 19, ctx_r1.event.date, "EEEE"), " ", i0.ɵɵpipeBind2(22, 22, ctx_r1.event.date, ctx_r1.time_format), " - ", i0.ɵɵpipeBind2(23, 25, ctx_r1.event.date + ctx_r1.event.duration * 60 * 1000, ctx_r1.time_format), " ");
-    i0.ɵɵadvance(6);
-    i0.ɵɵtextInterpolate(ctx_r1.raw_description);
-    i0.ɵɵadvance();
-    i0.ɵɵproperty("ngIf", !ctx_r1.raw_description.trim());
-    i0.ɵɵadvance(4);
-    i0.ɵɵproperty("ngIf", ctx_r1.is_onsite && ctx_r1.has_space);
-    i0.ɵɵadvance();
-    i0.ɵɵproperty("ngIf", ctx_r1.is_onsite && !ctx_r1.has_space);
-    i0.ɵɵadvance();
-    i0.ɵɵproperty("ngIf", !ctx_r1.is_onsite);
-    i0.ɵɵadvance(5);
-    i0.ɵɵtextInterpolate1(" ", (ctx_r1.event.attendees == null ? null : ctx_r1.event.attendees.length) || "0", " attending ");
-  }
-}
-var GroupEventCardComponent = /*#__PURE__*/function () {
-  function GroupEventCardComponent(_settings, _dialog, _org) {
-    _classCallCheck(this, GroupEventCardComponent);
-    this._settings = _settings;
-    this._dialog = _dialog;
-    this._org = _org;
-    this.raw_description = '';
-  }
-  return _createClass(GroupEventCardComponent, [{
-    key: "time_format",
-    get: function get() {
-      return this._settings.time_format;
-    }
-  }, {
-    key: "is_onsite",
-    get: function get() {
-      var _this$event;
-      return ((_this$event = this.event) === null || _this$event === void 0 ? void 0 : _this$event.extension_data.attendance_type) !== 'ONLINE';
-    }
-  }, {
-    key: "has_space",
-    get: function get() {
-      var _this$event2;
-      return !!((_this$event2 = this.event) !== null && _this$event2 !== void 0 && (_this$event2 = _this$event2.linked_event) !== null && _this$event2 !== void 0 && _this$event2.system_id);
-    }
-  }, {
-    key: "is_online",
-    get: function get() {
-      var _this$event3;
-      return !this.is_onsite || ((_this$event3 = this.event) === null || _this$event3 === void 0 ? void 0 : _this$event3.extension_data.attendance_type) === 'ANY';
-    }
-  }, {
-    key: "ngOnInit",
-    value: function () {
-      var _ngOnInit = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-        var _this$event$linked_ev;
-        var space_pipe;
-        return _regeneratorRuntime().wrap(function _callee$(_context) {
-          while (1) switch (_context.prev = _context.next) {
-            case 0:
-              space_pipe = new space_pipe_1.SpacePipe(this._org);
-              _context.next = 3;
-              return space_pipe.transform((_this$event$linked_ev = this.event.linked_event) === null || _this$event$linked_ev === void 0 ? void 0 : _this$event$linked_ev.system_id);
-            case 3:
-              this.space = _context.sent;
-              this.raw_description = this.removeHtmlTags(this.event.description);
-            case 5:
-            case "end":
-              return _context.stop();
-          }
-        }, _callee, this);
-      }));
-      function ngOnInit() {
-        return _ngOnInit.apply(this, arguments);
-      }
-      return ngOnInit;
-    }()
-  }, {
-    key: "removeHtmlTags",
-    value: function removeHtmlTags(html) {
-      var doc = new DOMParser().parseFromString(html, 'text/html');
-      return doc.body.textContent || '';
-    }
-  }, {
-    key: "viewDetails",
-    value: function viewDetails() {
-      this._dialog.open(bookings_1.GroupEventDetailsModalComponent, {
-        data: {
-          booking: this.event,
-          concierge: false
-        }
-      });
-    }
-  }]);
-}();
-_GroupEventCardComponent = GroupEventCardComponent;
-_GroupEventCardComponent.ɵfac = function GroupEventCardComponent_Factory(t) {
-  return new (t || _GroupEventCardComponent)(i0.ɵɵdirectiveInject(i1.SettingsService), i0.ɵɵdirectiveInject(i2.MatDialog), i0.ɵɵdirectiveInject(i3.OrganisationService));
-};
-_GroupEventCardComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
-  type: _GroupEventCardComponent,
-  selectors: [["group-event-card"]],
-  inputs: {
-    event: "event",
-    featured: "featured"
-  },
-  decls: 3,
-  vars: 2,
-  consts: [["featured_card", ""], ["matRipple", "", "class", "border border-base-300 hover:border-info flex flex-col bg-base-100 rounded-xl shadow hover:shadow-2xl overflow-hidden w-60 h-[20rem]", 3, "click", 4, "ngIf", "ngIfElse"], ["matRipple", "", 1, "border", "border-base-300", "hover:border-info", "flex", "flex-col", "bg-base-100", "rounded-xl", "shadow", "hover:shadow-2xl", "overflow-hidden", "w-60", "h-[20rem]", 3, "click"], [1, "relative", "flex", "items-center", "justify-between", "h-28", "min-h-28", "w-full", "bg-base-200", "overflow-hidden", "border-b", "border-base-200"], ["auth", "", "class", "absolute top-0 left-0 h-full w-full object-center object-cover", 3, "source", 4, "ngIf"], [1, "p-4", "flex-1", "h-1/2", "w-full"], [1, "opacity-60", "text-sm", "text-left"], [1, "text-xl", "mb-2", "text-left", "truncate", "w-full", 3, "title"], [1, "opacity-60", "text-xs", "flex-1", "overflow-hidden", "h-[4.5rem]", "mb-2", "text-left"], [1, "line-clamp-4"], ["class", "opacity-30", 4, "ngIf"], [1, "flex", "items-center", "space-x-2", "text-sm"], [1, "text-info"], [4, "ngIf"], [1, ""], ["auth", "", 1, "absolute", "top-0", "left-0", "h-full", "w-full", "object-center", "object-cover", 3, "source"], [1, "opacity-30"], ["matRipple", "", 1, "border", "border-base-300", "hover:border-info", "flex", "bg-base-100", "rounded-xl", "shadow", "hover:shadow-2xl", "overflow-hidden", "w-[63rem]", "max-w-full", "h-56", "mx-auto", 3, "click"], [1, "relative", "flex", "items-center", "justify-between", "h-full", "min-w-56", "w-1/2", "max-w-[20rem]", "bg-base-200", "overflow-hidden", "border-r", "border-base-200"], [1, "absolute", "top-0", "left-0", "rounded-br-xl", "py-2", "pl-2", "pr-4", "space-x-2", "bg-info", "text-info-content", "flex", "items-center", "text-sm"], [1, "text-base"], [1, "uppercase"], ["details", "", 1, "flex", "px-8", "py-4", "space-x-4"], [1, "flex", "flex-col", "items-center"], [1, "text-sm", "opacity-30"], [1, "text-lg"], [1, "flex", "flex-col", "space-y-2"], [1, "text-left"], ["time", "", 1, "text-sm", "opacity-30", "text-left"], [1, "h-20", "overflow-hidden", "text-left"], [1, "line-clamp-3"], [1, "absolute", "top-4", "right-4", "bg-secondary", "text-secondary-content", "rounded", "px-4", "py-2", "w-32", "text-center", "truncate"]],
-  template: function GroupEventCardComponent_Template(rf, ctx) {
-    if (rf & 1) {
-      i0.ɵɵtemplate(0, GroupEventCardComponent_button_0_Template, 25, 17, "button", 1)(1, GroupEventCardComponent_ng_template_1_Template, 41, 28, "ng-template", null, 0, i0.ɵɵtemplateRefExtractor);
-    }
-    if (rf & 2) {
-      var featured_card_r4 = i0.ɵɵreference(2);
-      i0.ɵɵproperty("ngIf", !ctx.featured)("ngIfElse", featured_card_r4);
-    }
-  },
-  dependencies: [i4.NgIf, i5.IconComponent, i6.AuthenticatedImageDirective, i7.MatRipple, i4.DatePipe],
-  styles: ["button[_ngcontent-%COMP%] {\n                transition: box-shadow 300ms, border 200ms;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImdyb3VwLWV2ZW50LWNhcmQuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSwwQ0FBMEM7WUFDOUMiLCJmaWxlIjoiZ3JvdXAtZXZlbnQtY2FyZC5jb21wb25lbnQudHMiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIGJ1dHRvbiB7XG4gICAgICAgICAgICAgICAgdHJhbnNpdGlvbjogYm94LXNoYWRvdyAzMDBtcywgYm9yZGVyIDIwMG1zO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXX0= */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvYm9va2luZ3Mvc3JjL2xpYi9ncm91cC1ldmVudC1jYXJkLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksMENBQTBDO1lBQzlDOztBQUVaLG9hQUFvYSIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgYnV0dG9uIHtcbiAgICAgICAgICAgICAgICB0cmFuc2l0aW9uOiBib3gtc2hhZG93IDMwMG1zLCBib3JkZXIgMjAwbXM7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
-});
-exports.GroupEventCardComponent = GroupEventCardComponent;
-
-/***/ }),
-
-/***/ 30000:
-/*!**********************************************************************!*\
-  !*** ./libs/bookings/src/lib/group-event-details-modal.component.ts ***!
-  \**********************************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-
-var _objectSpread = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/objectSpread2.js */ 34092)["default"]);
-var _toConsumableArray = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/toConsumableArray.js */ 86033)["default"]);
-var _regeneratorRuntime = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/regeneratorRuntime.js */ 8698)["default"]);
-var _asyncToGenerator = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/asyncToGenerator.js */ 95386)["default"]);
-var _classCallCheck = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/classCallCheck.js */ 80912)["default"]);
-var _createClass = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/createClass.js */ 92974)["default"]);
-var _GroupEventDetailsModalComponent;
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports.GroupEventDetailsModalComponent = void 0;
-var core_1 = __webpack_require__(/*! @angular/core */ 37580);
-var dialog_1 = __webpack_require__(/*! @angular/material/dialog */ 12587);
-var bookings_1 = __webpack_require__(/*! @placeos/bookings */ 85616);
-var common_1 = __webpack_require__(/*! @placeos/common */ 22797);
-var components_1 = __webpack_require__(/*! @placeos/components */ 51588);
-var organisation_1 = __webpack_require__(/*! @placeos/organisation */ 2510);
-var space_pipe_1 = __webpack_require__(/*! libs/spaces/src/lib/space.pipe */ 22011);
-var i0 = __webpack_require__(/*! @angular/core */ 37580);
-var i1 = __webpack_require__(/*! @placeos/organisation */ 2510);
-var i2 = __webpack_require__(/*! @placeos/common */ 22797);
-var i3 = __webpack_require__(/*! @angular/material/dialog */ 12587);
-var i4 = __webpack_require__(/*! @angular/common */ 60316);
-var i5 = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
-var i6 = __webpack_require__(/*! ../../../components/src/lib/interactive-map.component */ 24918);
-var i7 = __webpack_require__(/*! ../../../components/src/lib/authenticated-image.directive */ 93208);
-var i8 = __webpack_require__(/*! @angular/material/menu */ 31034);
-var i9 = __webpack_require__(/*! @angular/material/core */ 74646);
-var i10 = __webpack_require__(/*! ../../../events/src/lib/attendee-list.component */ 47249);
-var i11 = __webpack_require__(/*! ../../../components/src/lib/sanitise.pipe */ 54616);
-var i12 = __webpack_require__(/*! ../../../spaces/src/lib/space.pipe */ 22011);
-function GroupEventDetailsModalComponent_img_2_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelement(0, "img", 36);
-  }
-  if (rf & 2) {
-    var ctx_r1 = i0.ɵɵnextContext();
-    i0.ɵɵproperty("source", ctx_r1.booking.images[0]);
-  }
-}
-function GroupEventDetailsModalComponent_div_3_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 37)(1, "app-icon", 38);
-    i0.ɵɵtext(2, "star");
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(3, "div", 39);
-    i0.ɵɵtext(4, "Featured");
-    i0.ɵɵelementEnd()();
-  }
-}
-function GroupEventDetailsModalComponent_ng_container_12_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementContainerStart(0);
-    i0.ɵɵelementStart(1, "div", 40)(2, "app-icon");
-    i0.ɵɵtext(3, "star");
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(4, "div", 41);
-    i0.ɵɵtext(5);
-    i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(6, "div", 40)(7, "app-icon");
-    i0.ɵɵtext(8, "help");
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(9, "div", 41);
-    i0.ɵɵtext(10);
-    i0.ɵɵelementEnd()();
-    i0.ɵɵelementContainerEnd();
-  }
-  if (rf & 2) {
-    var ctx_r1 = i0.ɵɵnextContext();
-    i0.ɵɵadvance();
-    i0.ɵɵclassProp("bg-base-200", !ctx_r1.is_interested)("text-base-content", !ctx_r1.is_interested)("opacity-30", !ctx_r1.is_interested)("bg-success", ctx_r1.is_interested)("text-success-content", ctx_r1.is_interested)("opacity-100", ctx_r1.is_interested);
-    i0.ɵɵadvance(4);
-    i0.ɵɵtextInterpolate1(" ", ctx_r1.is_interested ? "" : "Not ", "Interested ");
-    i0.ɵɵadvance();
-    i0.ɵɵclassProp("bg-base-200", !ctx_r1.is_going)("text-base-content", !ctx_r1.is_going)("opacity-30", !ctx_r1.is_going)("bg-success", ctx_r1.is_going)("text-success-content", ctx_r1.is_going)("opacity-100", ctx_r1.is_going);
-    i0.ɵɵadvance(4);
-    i0.ɵɵtextInterpolate1(" ", ctx_r1.is_going ? "" : "Not ", "Going ");
-  }
-}
-function GroupEventDetailsModalComponent_div_83_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "div");
-    i0.ɵɵtext(1);
-    i0.ɵɵpipe(2, "space");
-    i0.ɵɵpipe(3, "async");
-    i0.ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    var tmp_3_0;
-    var ctx_r1 = i0.ɵɵnextContext();
-    i0.ɵɵadvance();
-    i0.ɵɵtextInterpolate1(" ", (tmp_3_0 = i0.ɵɵpipeBind1(3, 3, i0.ɵɵpipeBind1(2, 1, ctx_r1.system_id))) == null ? null : tmp_3_0.display_name, " ");
-  }
-}
-function GroupEventDetailsModalComponent_div_84_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 42);
-    i0.ɵɵtext(1, " Room to be confirmed ");
-    i0.ɵɵelementEnd();
-  }
-}
-function GroupEventDetailsModalComponent_div_85_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 42);
-    i0.ɵɵtext(1);
-    i0.ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    var ctx_r1 = i0.ɵɵnextContext();
-    i0.ɵɵadvance();
-    i0.ɵɵtextInterpolate1(" ", ctx_r1.is_onsite ? "Can be attended online" : "Remote Event", " ");
-  }
-}
-function GroupEventDetailsModalComponent_span_97_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "span", 42);
-    i0.ɵɵtext(1, " No description ");
-    i0.ɵɵelementEnd();
-  }
-}
-function GroupEventDetailsModalComponent_div_99_interactive_map_3_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelement(0, "interactive-map", 49);
-  }
-  if (rf & 2) {
-    var ctx_r1 = i0.ɵɵnextContext(2);
-    i0.ɵɵproperty("src", ctx_r1.level == null ? null : ctx_r1.level.map_id)("features", ctx_r1.features)("styles", ctx_r1.styles);
-  }
-}
-function GroupEventDetailsModalComponent_div_99_span_9_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "span", 42);
-    i0.ɵɵtext(1, " Remote Event ");
-    i0.ɵɵelementEnd();
-  }
-}
-function GroupEventDetailsModalComponent_div_99_span_13_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "span");
-    i0.ɵɵtext(1);
-    i0.ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    var ctx_r1 = i0.ɵɵnextContext(2);
-    i0.ɵɵadvance();
-    i0.ɵɵtextInterpolate2(" ", ctx_r1.building.display_name || ctx_r1.building.name, ", ", (ctx_r1.level == null ? null : ctx_r1.level.display_name) || (ctx_r1.level == null ? null : ctx_r1.level.name), " ");
-  }
-}
-function GroupEventDetailsModalComponent_div_99_span_14_Template(rf, ctx) {
-  if (rf & 1) {
-    i0.ɵɵelementStart(0, "span", 42);
-    i0.ɵɵtext(1, " No location set for this event ");
-    i0.ɵɵelementEnd();
-  }
-}
-function GroupEventDetailsModalComponent_div_99_Template(rf, ctx) {
-  if (rf & 1) {
-    var _r3 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "div", 43)(1, "div", 44)(2, "button", 45);
-    i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_div_99_Template_button_click_2_listener() {
-      i0.ɵɵrestoreView(_r3);
-      var ctx_r1 = i0.ɵɵnextContext();
-      return i0.ɵɵresetView(ctx_r1.viewLocation());
-    });
-    i0.ɵɵtemplate(3, GroupEventDetailsModalComponent_div_99_interactive_map_3_Template, 1, 3, "interactive-map", 46);
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(4, "div", 47)(5, "div");
-    i0.ɵɵtext(6);
-    i0.ɵɵpipe(7, "space");
-    i0.ɵɵpipe(8, "async");
-    i0.ɵɵtemplate(9, GroupEventDetailsModalComponent_div_99_span_9_Template, 2, 0, "span", 30);
-    i0.ɵɵpipe(10, "space");
-    i0.ɵɵpipe(11, "async");
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(12, "div", 48);
-    i0.ɵɵtemplate(13, GroupEventDetailsModalComponent_div_99_span_13_Template, 2, 2, "span", 12)(14, GroupEventDetailsModalComponent_div_99_span_14_Template, 2, 0, "span", 30);
-    i0.ɵɵelementEnd()()()();
-  }
-  if (rf & 2) {
-    var tmp_4_0;
-    var tmp_5_0;
-    var ctx_r1 = i0.ɵɵnextContext();
-    i0.ɵɵadvance(3);
-    i0.ɵɵproperty("ngIf", !ctx_r1.showing_map);
-    i0.ɵɵadvance(3);
-    i0.ɵɵtextInterpolate1(" ", (tmp_4_0 = i0.ɵɵpipeBind1(8, 7, i0.ɵɵpipeBind1(7, 5, ctx_r1.booking.linked_event == null ? null : ctx_r1.booking.linked_event.system_id))) == null ? null : tmp_4_0.display_name, " ");
-    i0.ɵɵadvance(3);
-    i0.ɵɵproperty("ngIf", !((tmp_5_0 = i0.ɵɵpipeBind1(11, 11, i0.ɵɵpipeBind1(10, 9, ctx_r1.booking.linked_event == null ? null : ctx_r1.booking.linked_event.system_id))) == null ? null : tmp_5_0.display_name));
-    i0.ɵɵadvance(4);
-    i0.ɵɵproperty("ngIf", ctx_r1.building && ctx_r1.level);
-    i0.ɵɵadvance();
-    i0.ɵɵproperty("ngIf", !ctx_r1.building || !ctx_r1.level);
-  }
-}
-function GroupEventDetailsModalComponent_div_100_Template(rf, ctx) {
-  if (rf & 1) {
-    var _r4 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "div", 50)(1, "button", 51);
-    i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_div_100_Template_button_click_1_listener() {
-      i0.ɵɵrestoreView(_r4);
-      var ctx_r1 = i0.ɵɵnextContext();
-      return i0.ɵɵresetView(ctx_r1.show_attendees = false);
-    });
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(2, "div", 52)(3, "attendee-list", 53);
-    i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_div_100_Template_attendee_list_click_3_listener() {
-      i0.ɵɵrestoreView(_r4);
-      var ctx_r1 = i0.ɵɵnextContext();
-      return i0.ɵɵresetView(ctx_r1.show_attendees = false);
-    });
-    i0.ɵɵelementEnd()()();
-  }
-  if (rf & 2) {
-    var ctx_r1 = i0.ɵɵnextContext();
-    i0.ɵɵadvance(3);
-    i0.ɵɵproperty("list", ctx_r1.booking.attendees)("host", ctx_r1.booking.user_email);
-  }
-}
-var GroupEventDetailsModalComponent = /*#__PURE__*/function () {
-  function GroupEventDetailsModalComponent(_data, _org, _settings, _dialog, _dialog_ref) {
-    _classCallCheck(this, GroupEventDetailsModalComponent);
-    this._data = _data;
-    this._org = _org;
-    this._settings = _settings;
-    this._dialog = _dialog;
-    this._dialog_ref = _dialog_ref;
-    this.edit = new core_1.EventEmitter();
-    this.remove = new core_1.EventEmitter();
-    this.booking = this._data.booking;
-    this.concierge = this._data.concierge;
-    this.features = [];
-    this.locate = '';
-    this.showing_map = false;
-    this.show_attendees = false;
-    this.styles = {};
-  }
-  return _createClass(GroupEventDetailsModalComponent, [{
-    key: "time_format",
-    get: function get() {
-      return this._settings.time_format;
-    }
-  }, {
-    key: "featured",
-    get: function get() {
-      var _this$booking$extensi;
-      return this.booking.featured || ((_this$booking$extensi = this.booking.extension_data) === null || _this$booking$extensi === void 0 ? void 0 : _this$booking$extensi.featured);
-    }
-  }, {
-    key: "is_onsite",
-    get: function get() {
-      return this.booking.extension_data.attendance_type !== 'ONLINE';
-    }
-  }, {
-    key: "has_space",
-    get: function get() {
-      var _this$booking$linked_;
-      return !!((_this$booking$linked_ = this.booking.linked_event) !== null && _this$booking$linked_ !== void 0 && _this$booking$linked_.system_id);
-    }
-  }, {
-    key: "is_online",
-    get: function get() {
-      return !this.is_onsite || this.booking.extension_data.attendance_type === 'ANY';
-    }
-  }, {
-    key: "attendance",
-    get: function get() {
-      var _this$booking$attende;
-      return ((_this$booking$attende = this.booking.attendees) === null || _this$booking$attende === void 0 || (_this$booking$attende = _this$booking$attende.filter(function (_) {
-        return _.checked_in;
-      })) === null || _this$booking$attende === void 0 ? void 0 : _this$booking$attende.length) || 0;
-    }
-  }, {
-    key: "is_interested",
-    get: function get() {
-      return !!this.guest_details;
-    }
-  }, {
-    key: "is_going",
-    get: function get() {
-      var _this$guest_details;
-      return (_this$guest_details = this.guest_details) === null || _this$guest_details === void 0 ? void 0 : _this$guest_details.checked_in;
-    }
-  }, {
-    key: "system_id",
-    get: function get() {
-      var _this$booking$linked_2;
-      return (_this$booking$linked_2 = this.booking.linked_event) === null || _this$booking$linked_2 === void 0 ? void 0 : _this$booking$linked_2.system_id;
-    }
-  }, {
-    key: "guest_details",
-    get: function get() {
-      var _this$booking$attende2;
-      var user = (0, common_1.currentUser)();
-      return (_this$booking$attende2 = this.booking.attendees) === null || _this$booking$attende2 === void 0 ? void 0 : _this$booking$attende2.find(function (_) {
-        return _.email === user.email;
-      });
-    }
-  }, {
-    key: "ngOnInit",
-    value: function () {
-      var _ngOnInit = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-        var _this$booking$linked_3,
-          _this$space,
-          _this$booking$extensi2,
-          _this = this,
-          _this$booking$extensi3;
-        var space_pipe, id;
-        return _regeneratorRuntime().wrap(function _callee$(_context) {
-          while (1) switch (_context.prev = _context.next) {
-            case 0:
-              space_pipe = new space_pipe_1.SpacePipe(this._org);
-              _context.next = 3;
-              return space_pipe.transform((_this$booking$linked_3 = this.booking.linked_event) === null || _this$booking$linked_3 === void 0 ? void 0 : _this$booking$linked_3.system_id);
-            case 3:
-              this.space = _context.sent;
-              id = ((_this$space = this.space) === null || _this$space === void 0 ? void 0 : _this$space.map_id) || ((_this$booking$extensi2 = this.booking.extension_data) === null || _this$booking$extensi2 === void 0 ? void 0 : _this$booking$extensi2.map_id);
-              if (id) {
-                this.styles["#".concat(id)] = {
-                  fill: 'green'
-                };
-                this.features = [{
-                  location: id,
-                  content: components_1.MapPinComponent,
-                  data: {}
-                }];
-              }
-              this.level = this._org.levelWithID(this.booking.zones);
-              this.building = this._org.buildings.find(function (_) {
-                return _this.booking.zones.includes(_.id);
-              }) || this._org.building;
-              this.locate = ((_this$booking$extensi3 = this.booking.extension_data) === null || _this$booking$extensi3 === void 0 ? void 0 : _this$booking$extensi3.map_id) || '';
-            case 9:
-            case "end":
-              return _context.stop();
-          }
-        }, _callee, this);
-      }));
-      function ngOnInit() {
-        return _ngOnInit.apply(this, arguments);
-      }
-      return ngOnInit;
-    }()
-  }, {
-    key: "viewLocation",
-    value: function viewLocation() {
-      var _this$space2,
-        _this2 = this;
-      if (!((_this$space2 = this.space) !== null && _this$space2 !== void 0 && _this$space2.map_id)) {
-        return (0, common_1.notifyInfo)('Unable to locate space on map.');
-      }
-      this.showing_map = true;
-      var ref = this._dialog.open(components_1.MapLocateModalComponent, {
-        maxWidth: '95vw',
-        maxHeight: '95vh',
-        data: {
-          item: this.space
-        }
-      });
-      ref.afterClosed().subscribe(function () {
-        _this2.showing_map = false;
-      });
-    }
-  }, {
-    key: "toggleInterest",
-    value: function () {
-      var _toggleInterest = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
-        var user;
-        return _regeneratorRuntime().wrap(function _callee2$(_context2) {
-          while (1) switch (_context2.prev = _context2.next) {
-            case 0:
-              user = this.guest_details;
-              console.log('User:', user, this.is_interested);
-              if (!(this.is_interested && user)) {
-                _context2.next = 8;
-                break;
-              }
-              _context2.next = 5;
-              return (0, bookings_1.bookingRemoveGuest)(this.booking.id, (0, common_1.currentUser)()).toPromise();
-            case 5:
-              this.booking.attendees = (this.booking.attendees || []).filter(function (_) {
-                return _.email !== user.email;
-              });
-              _context2.next = 12;
-              break;
-            case 8:
-              _context2.next = 10;
-              return (0, bookings_1.bookingAddGuest)(this.booking.id, (0, common_1.currentUser)()).toPromise();
-            case 10:
-              user = _context2.sent;
-              this.booking.attendees = (0, common_1.unique)([].concat(_toConsumableArray(this.booking.attendees || []), [user]), 'email');
-            case 12:
-            case "end":
-              return _context2.stop();
-          }
-        }, _callee2, this);
-      }));
-      function toggleInterest() {
-        return _toggleInterest.apply(this, arguments);
-      }
-      return toggleInterest;
-    }()
-  }, {
-    key: "toggleAttendance",
-    value: function () {
-      var _toggleAttendance = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
-        var user, guest;
-        return _regeneratorRuntime().wrap(function _callee3$(_context3) {
-          while (1) switch (_context3.prev = _context3.next) {
-            case 0:
-              user = this.guest_details;
-              if (user) {
-                _context3.next = 6;
-                break;
-              }
-              _context3.next = 4;
-              return (0, bookings_1.bookingAddGuest)(this.booking.id, (0, common_1.currentUser)()).toPromise();
-            case 4:
-              user = _context3.sent;
-              this.booking.attendees = (0, common_1.unique)([].concat(_toConsumableArray(this.booking.attendees || []), [user]), 'email');
-            case 6:
-              user = _objectSpread(_objectSpread({}, (0, common_1.currentUser)()), user || {});
-              if (user.email) {
-                _context3.next = 9;
-                break;
-              }
-              return _context3.abrupt("return");
-            case 9:
-              _context3.next = 11;
-              return (0, bookings_1.checkinBookingGuest)(this.booking.id, user.email, !this.is_going).toPromise();
-            case 11:
-              guest = this.booking.attendees.find(function (_) {
-                return _.email === user.email;
-              });
-              if (guest) {
-                _context3.next = 14;
-                break;
-              }
-              return _context3.abrupt("return");
-            case 14:
-              guest.checked_in = !this.is_going;
-            case 15:
-            case "end":
-              return _context3.stop();
-          }
-        }, _callee3, this);
-      }));
-      function toggleAttendance() {
-        return _toggleAttendance.apply(this, arguments);
-      }
-      return toggleAttendance;
-    }()
-  }]);
-}();
-_GroupEventDetailsModalComponent = GroupEventDetailsModalComponent;
-_GroupEventDetailsModalComponent.ɵfac = function GroupEventDetailsModalComponent_Factory(t) {
-  return new (t || _GroupEventDetailsModalComponent)(i0.ɵɵdirectiveInject(dialog_1.MAT_DIALOG_DATA), i0.ɵɵdirectiveInject(i1.OrganisationService), i0.ɵɵdirectiveInject(i2.SettingsService), i0.ɵɵdirectiveInject(i3.MatDialog), i0.ɵɵdirectiveInject(i3.MatDialogRef));
-};
-_GroupEventDetailsModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
-  type: _GroupEventDetailsModalComponent,
-  selectors: [["group-event-details-modal"]],
-  outputs: {
-    edit: "edit",
-    remove: "remove"
-  },
-  decls: 101,
-  vars: 38,
-  consts: [["concierge_menu", "matMenu"], ["menu", "matMenu"], [1, "relative", "w-[48rem]", "max-w-[calc(100vw-1rem)]", "max-h-[80vh]", "overflow-hidden"], [1, "relative", "flex", "items-center", "justify-between", "h-52", "w-full", "bg-base-200", "overflow-hidden"], ["auth", "", "class", "absolute top-1/2 left-1/2 min-h-full min-w-full object-cover -translate-x-1/2 -translate-y-1/2", 3, "source", 4, "ngIf"], ["class", "absolute top-0 left-0 rounded-br py-2 pl-2 pr-4 space-x-2 bg-info text-info-content flex items-center text-sm", 4, "ngIf"], ["icon", "", "mat-dialog-close", "", 1, "absolute", "top-1", "right-1", "overflow-hidden"], [1, "absolute", "inset-0", "bg-base-100", "opacity-30", "z-0"], [1, "z-10"], [1, "flex", "items-center", "justify-between", "py-4", "px-8", "border-b", "border-base-200"], [1, "text-left", "text-xl"], [1, "flex", "items-center", "space-x-2"], [4, "ngIf"], ["btn", "", "matRipple", "", 1, "clear", "bg-base-200", "text-base-content", "w-[2.75rem]", 3, "disabled", "matMenuTriggerFor"], [1, "text-2xl"], ["mat-menu-item", "", 3, "disabled"], [1, "mr-2"], ["mat-menu-item", "", "mat-dialog-close", "", 3, "click"], ["mat-menu-item", "", 3, "click"], [1, "text-2xl", "text-error"], ["mat-menu-item", "", 1, "flex", "items-center", "space-x-2", 3, "click"], [1, "flex", "flex-1", "max-h-[calc(80vh-18rem)]", "overflow-y-auto", "overflow-x-hidden", "p-8", "space-x-6"], [1, "flex", "flex-1", "flex-col", "space-y-2", "w-1/3"], [1, "flex", "items-center", "space-x-4"], [1, "flex", "items-center", "justify-center", "w-10", "h-10", "bg-base-200", "rounded-full"], [1, "font-medium", "pt-4"], [1, "flex", "flex-col"], [1, "text-sm"], [1, "text-sm", "opacity-30"], [1, "flex", "flex-col", "text-sm"], ["class", "opacity-30", 4, "ngIf"], ["matRipple", "", 1, "flex", "items-center", "space-x-4", "rounded", "min-h-12", 3, "click"], [1, "text-sm", "pb-4"], [3, "innerHTML"], ["class", "flex w-[20rem]", 4, "ngIf"], ["class", "absolute inset-0 z-50", 4, "ngIf"], ["auth", "", 1, "absolute", "top-1/2", "left-1/2", "min-h-full", "min-w-full", "object-cover", "-translate-x-1/2", "-translate-y-1/2", 3, "source"], [1, "absolute", "top-0", "left-0", "rounded-br", "py-2", "pl-2", "pr-4", "space-x-2", "bg-info", "text-info-content", "flex", "items-center", "text-sm"], [1, "text-base"], [1, "uppercase"], ["btn", "", 1, "flex", "items-center", "px-4", "h-10", "rounded", "space-x-2"], [1, "pr-2"], [1, "opacity-30"], [1, "flex", "w-[20rem]"], [1, "border", "border-base-300", "w-full"], ["matRipple", "", 1, "relative", "w-full", "h-40", "bg-base-200", 3, "click"], [3, "src", "features", "styles", 4, "ngIf"], [1, "p-4", "space-y-2"], [1, "opacity-30", "text-sm"], [3, "src", "features", "styles"], [1, "absolute", "inset-0", "z-50"], [1, "absolute", "inset-0", "bg-base-content", "opacity-60", 3, "click"], [1, "absolute", "left-1/2", "-translate-x-1/2", "w-[24rem]", "inset-y-8", "rounded", "shadow", "overflow-hidden"], [3, "click", "list", "host"]],
-  template: function GroupEventDetailsModalComponent_Template(rf, ctx) {
-    if (rf & 1) {
-      var _r1 = i0.ɵɵgetCurrentView();
-      i0.ɵɵelementStart(0, "div", 2)(1, "div", 3);
-      i0.ɵɵtemplate(2, GroupEventDetailsModalComponent_img_2_Template, 1, 1, "img", 4);
-      i0.ɵɵelementEnd();
-      i0.ɵɵtemplate(3, GroupEventDetailsModalComponent_div_3_Template, 5, 0, "div", 5);
-      i0.ɵɵelementStart(4, "button", 6);
-      i0.ɵɵelement(5, "div", 7);
-      i0.ɵɵelementStart(6, "app-icon", 8);
-      i0.ɵɵtext(7, "close");
-      i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(8, "div", 9)(9, "h3", 10);
-      i0.ɵɵtext(10);
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(11, "div", 11);
-      i0.ɵɵtemplate(12, GroupEventDetailsModalComponent_ng_container_12_Template, 11, 26, "ng-container", 12);
-      i0.ɵɵelementStart(13, "button", 13)(14, "app-icon", 14);
-      i0.ɵɵtext(15, "more_horiz");
-      i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(16, "mat-menu", null, 0)(18, "button", 15)(19, "div", 11)(20, "app-icon", 14);
-      i0.ɵɵtext(21, " confirmation_number ");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(22, "div", 16);
-      i0.ɵɵtext(23, "Promote Event");
-      i0.ɵɵelementEnd()()();
-      i0.ɵɵelementStart(24, "button", 17);
-      i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_Template_button_click_24_listener() {
-        i0.ɵɵrestoreView(_r1);
-        return i0.ɵɵresetView(ctx.edit.emit());
-      });
-      i0.ɵɵelementStart(25, "div", 11)(26, "app-icon", 14);
-      i0.ɵɵtext(27, "edit");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(28, "div", 16);
-      i0.ɵɵtext(29, "Edit Event");
-      i0.ɵɵelementEnd()()();
-      i0.ɵɵelementStart(30, "button", 15)(31, "div", 11)(32, "app-icon", 14);
-      i0.ɵɵtext(33, "content_copy");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(34, "div", 16);
-      i0.ɵɵtext(35, "Copy URL");
-      i0.ɵɵelementEnd()()();
-      i0.ɵɵelementStart(36, "button", 18);
-      i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_Template_button_click_36_listener() {
-        i0.ɵɵrestoreView(_r1);
-        return i0.ɵɵresetView(ctx.remove.emit());
-      });
-      i0.ɵɵelementStart(37, "div", 11)(38, "app-icon", 19);
-      i0.ɵɵtext(39, " delete ");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(40, "div", 16);
-      i0.ɵɵtext(41, "Delete Event");
-      i0.ɵɵelementEnd()()()();
-      i0.ɵɵelementStart(42, "mat-menu", null, 1)(44, "button", 20);
-      i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_Template_button_click_44_listener() {
-        i0.ɵɵrestoreView(_r1);
-        return i0.ɵɵresetView(ctx.toggleInterest());
-      });
-      i0.ɵɵelementStart(45, "div", 11)(46, "app-icon");
-      i0.ɵɵtext(47, " star ");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(48, "span");
-      i0.ɵɵtext(49);
-      i0.ɵɵelementEnd()()();
-      i0.ɵɵelementStart(50, "button", 18);
-      i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_Template_button_click_50_listener() {
-        i0.ɵɵrestoreView(_r1);
-        return i0.ɵɵresetView(ctx.toggleAttendance());
-      });
-      i0.ɵɵelementStart(51, "div", 11)(52, "app-icon");
-      i0.ɵɵtext(53, " help ");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(54, "span");
-      i0.ɵɵtext(55);
-      i0.ɵɵelementEnd()()()()()();
-      i0.ɵɵelementStart(56, "div", 21)(57, "div", 22)(58, "div", 23)(59, "div", 24)(60, "app-icon");
-      i0.ɵɵtext(61, "person");
-      i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(62, "div");
-      i0.ɵɵtext(63);
-      i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(64, "h3", 25);
-      i0.ɵɵtext(65, "When and where");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(66, "div", 23)(67, "div", 24)(68, "app-icon");
-      i0.ɵɵtext(69, "calendar_today");
-      i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(70, "div", 26)(71, "div", 27);
-      i0.ɵɵtext(72, "Date and Time");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(73, "div", 28);
-      i0.ɵɵtext(74);
-      i0.ɵɵpipe(75, "date");
-      i0.ɵɵpipe(76, "date");
-      i0.ɵɵpipe(77, "date");
-      i0.ɵɵelementEnd()()();
-      i0.ɵɵelementStart(78, "div", 23)(79, "div", 24)(80, "app-icon");
-      i0.ɵɵtext(81, "place");
-      i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(82, "div", 29);
-      i0.ɵɵtemplate(83, GroupEventDetailsModalComponent_div_83_Template, 4, 5, "div", 12)(84, GroupEventDetailsModalComponent_div_84_Template, 2, 0, "div", 30)(85, GroupEventDetailsModalComponent_div_85_Template, 2, 1, "div", 30);
-      i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(86, "button", 31);
-      i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_Template_button_click_86_listener() {
-        i0.ɵɵrestoreView(_r1);
-        return i0.ɵɵresetView(ctx.show_attendees = true);
-      });
-      i0.ɵɵelementStart(87, "div", 24)(88, "app-icon");
-      i0.ɵɵtext(89, "person");
-      i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(90, "div");
-      i0.ɵɵtext(91);
-      i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(92, "h3", 25);
-      i0.ɵɵtext(93, "About this event");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(94, "div", 32);
-      i0.ɵɵelement(95, "span", 33);
-      i0.ɵɵpipe(96, "sanitize");
-      i0.ɵɵtemplate(97, GroupEventDetailsModalComponent_span_97_Template, 2, 0, "span", 30);
-      i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(98, "div");
-      i0.ɵɵtemplate(99, GroupEventDetailsModalComponent_div_99_Template, 15, 13, "div", 34);
-      i0.ɵɵelementEnd()()();
-      i0.ɵɵtemplate(100, GroupEventDetailsModalComponent_div_100_Template, 4, 2, "div", 35);
-    }
-    if (rf & 2) {
-      var concierge_menu_r5 = i0.ɵɵreference(17);
-      var menu_r6 = i0.ɵɵreference(43);
-      i0.ɵɵadvance(2);
-      i0.ɵɵproperty("ngIf", ctx.booking.images == null ? null : ctx.booking.images.length);
-      i0.ɵɵadvance();
-      i0.ɵɵproperty("ngIf", ctx.featured);
-      i0.ɵɵadvance(7);
-      i0.ɵɵtextInterpolate1(" ", ctx.booking.title, " ");
-      i0.ɵɵadvance(2);
-      i0.ɵɵproperty("ngIf", !ctx.concierge);
-      i0.ɵɵadvance();
-      i0.ɵɵproperty("disabled", ctx.booking.state === "done")("matMenuTriggerFor", ctx.concierge ? concierge_menu_r5 : menu_r6);
-      i0.ɵɵadvance(5);
-      i0.ɵɵproperty("disabled", true);
-      i0.ɵɵadvance(12);
-      i0.ɵɵproperty("disabled", true);
-      i0.ɵɵadvance(16);
-      i0.ɵɵclassProp("text-error", ctx.is_interested);
-      i0.ɵɵadvance(3);
-      i0.ɵɵtextInterpolate1(" ", ctx.is_interested ? "Revoke" : "Indicate", " Interest ");
-      i0.ɵɵadvance(3);
-      i0.ɵɵclassProp("text-error", ctx.is_going);
-      i0.ɵɵadvance(3);
-      i0.ɵɵtextInterpolate1(" ", ctx.is_going ? "Revoke" : "Indicate", " Going ");
-      i0.ɵɵadvance(8);
-      i0.ɵɵtextInterpolate1("Event by ", ctx.booking.user_name, "");
-      i0.ɵɵadvance(11);
-      i0.ɵɵtextInterpolate3(" ", i0.ɵɵpipeBind2(75, 27, ctx.booking.date, "EEEE, d MMMM, yyyy"), " . ", i0.ɵɵpipeBind2(76, 30, ctx.booking.date, ctx.time_format), " - ", i0.ɵɵpipeBind2(77, 33, ctx.booking.date + ctx.booking.duration * 60 * 1000, ctx.time_format), " ");
-      i0.ɵɵadvance(9);
-      i0.ɵɵproperty("ngIf", ctx.is_onsite && ctx.has_space);
-      i0.ɵɵadvance();
-      i0.ɵɵproperty("ngIf", ctx.is_onsite && !ctx.has_space);
-      i0.ɵɵadvance();
-      i0.ɵɵproperty("ngIf", ctx.is_online);
-      i0.ɵɵadvance(6);
-      i0.ɵɵtextInterpolate2(" ", ctx.attendance, " going, ", ctx.booking.attendees == null ? null : ctx.booking.attendees.length, " interested ");
-      i0.ɵɵadvance(4);
-      i0.ɵɵproperty("innerHTML", i0.ɵɵpipeBind1(96, 36, ctx.booking.description), i0.ɵɵsanitizeHtml);
-      i0.ɵɵadvance(2);
-      i0.ɵɵproperty("ngIf", !ctx.booking.description.trim());
-      i0.ɵɵadvance(2);
-      i0.ɵɵproperty("ngIf", ctx.level);
-      i0.ɵɵadvance();
-      i0.ɵɵproperty("ngIf", ctx.show_attendees);
-    }
-  },
-  dependencies: [i4.NgIf, i3.MatDialogClose, i5.IconComponent, i6.InteractiveMapComponent, i7.AuthenticatedImageDirective, i8.MatMenu, i8.MatMenuItem, i8.MatMenuTrigger, i9.MatRipple, i10.AttendeeListComponent, i4.AsyncPipe, i4.DatePipe, i11.SanitizePipe, i12.SpacePipe]
-});
-exports.GroupEventDetailsModalComponent = GroupEventDetailsModalComponent;
 
 /***/ }),
 
@@ -32968,15 +31970,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "5215657",
-  "hash": "5215657",
+  "raw": "3f8ae11",
+  "hash": "3f8ae11",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "5215657",
+  "suffix": "3f8ae11",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1721276950149
+  "time": 1721278879274
 };
 /* tslint:enable */
 
@@ -43884,6 +42886,8 @@ tslib_1.__exportStar(__webpack_require__(/*! ./lib/events.module */ 2704), expor
 tslib_1.__exportStar(__webpack_require__(/*! ./lib/event-details-modal.component */ 54035), exports);
 tslib_1.__exportStar(__webpack_require__(/*! ./lib/event-card.component */ 21765), exports);
 tslib_1.__exportStar(__webpack_require__(/*! ./lib/setup-breakdown-modal.component */ 50711), exports);
+tslib_1.__exportStar(__webpack_require__(/*! ./lib/group-event-details-modal.component */ 58094), exports);
+tslib_1.__exportStar(__webpack_require__(/*! ./lib/group-event-card.component */ 27535), exports);
 
 /***/ }),
 
@@ -45719,6 +44723,11 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
   }
   _inherits(EventFormService, _common_1$AsyncHandle);
   return _createClass(EventFormService, [{
+    key: "options_value",
+    get: function get() {
+      return this._options.getValue();
+    }
+  }, {
     key: "is_multiday",
     get: function get() {
       var _this$_event$getValue;
@@ -45929,9 +44938,11 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
     value: function postForm() {
       var _this7 = this;
       var force = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      var ignore_space_check = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+      var ignore_owner = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
       return new Promise( /*#__PURE__*/function () {
         var _ref18 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(resolve, reject) {
-          var _this7$event, _form$get, _form$get2, _ref19, _ref20, _spaces$, _this7$event2, _this7$event3, _this7$event4, _value$organiser, _ref21, _value$organiser2, _ref22, _ref23, _event$extension_data2;
+          var _this7$event, _form$get, _form$get2, _form$get3, _ref19, _ref20, _spaces$, _this7$event2, _this7$event3, _this7$event4, _value$organiser, _ref21, _value$organiser2, _ref22, _ref23, _event$extension_data2;
           var form, event, ical_uid, value, _value, id, host, date, duration, creator, all_day, assets, recurrence, spaces, catering, changed_times, changed_spaces, is_owner, space, attendees, message, space_id, query, receipt, d, _iterator2, _step2, order, setup, breakdown, _iterator3, _step3, _space, overflow, processed_assets, result, domain, visitors, creating_assets, on_error, _spaces$2, _spaces$3, _spaces$4, _spaces$5, _spaces$6, _this7$_org$building, requests;
           return _regeneratorRuntime().wrap(function _callee3$(_context3) {
             while (1) switch (_context3.prev = _context3.next) {
@@ -45951,6 +44962,11 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                 value = _this7._form.getRawValue();
                 _value = value, id = _value.id, host = _value.host, date = _value.date, duration = _value.duration, creator = _value.creator, all_day = _value.all_day, assets = _value.assets, recurrence = _value.recurrence;
                 spaces = ((_form$get = form.get('resources')) === null || _form$get === void 0 ? void 0 : _form$get.value) || [];
+                if (ignore_space_check.length) {
+                  spaces = spaces.filter(function (_) {
+                    return !ignore_space_check.includes(_.email) && !ignore_space_check.includes(_.id);
+                  });
+                }
                 catering = ((_form$get2 = form.get('catering')) === null || _form$get2 === void 0 ? void 0 : _form$get2.value) || [];
                 if (recurrence !== null && recurrence !== void 0 && recurrence._pattern && (recurrence === null || recurrence === void 0 ? void 0 : recurrence._pattern) !== 'none') {
                   _this7.form.patchValue({
@@ -45966,50 +44982,51 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                   }));
                 });
                 if (!((!id || date !== event.date || duration !== event.duration) && spaces.length)) {
-                  _context3.next = 19;
+                  _context3.next = 20;
                   break;
                 }
                 changed_times = true;
-                _context3.next = 19;
+                _context3.next = 20;
                 return _this7.checkSelectedSpacesAreAvailable(spaces, all_day ? (0, date_fns_1.startOfDay)(date).valueOf() : date, all_day ? Math.max(24 * 60, duration) : duration, ical_uid || id || '')["catch"](function (_) {
                   _this7._loading.next('');
                   reject(_);
                   throw _;
                 });
-              case 19:
+              case 20:
+                spaces = ((_form$get3 = form.get('resources')) === null || _form$get3 === void 0 ? void 0 : _form$get3.value) || [];
                 is_owner = host === ((_ref19 = (0, common_1.currentUser)()) === null || _ref19 === void 0 ? void 0 : _ref19.email) || creator === ((_ref20 = (0, common_1.currentUser)()) === null || _ref20 === void 0 ? void 0 : _ref20.email);
                 if (!(!spaces.length && _this7._settings.get('app.events.no_space_resource'))) {
-                  _context3.next = 25;
+                  _context3.next = 27;
                   break;
                 }
-                _context3.next = 23;
+                _context3.next = 25;
                 return _this7._space_pipe.transform(_this7._settings.get('app.events.no_space_resource'));
-              case 23:
+              case 25:
                 space = _context3.sent;
                 spaces.push(space);
-              case 25:
+              case 27:
                 attendees = (0, common_1.unique)([].concat(_toConsumableArray(value.attendees), [value.organiser || (0, common_1.currentUser)()]), 'email');
                 if (!(!spaces.length && attendees.find(function (_) {
                   return _.is_external;
                 }))) {
-                  _context3.next = 31;
+                  _context3.next = 33;
                   break;
                 }
                 _this7._loading.next('');
                 message = 'External attendees require a space to be booked';
                 reject(message);
                 throw message;
-              case 31:
+              case 33:
                 space_id = (_spaces$ = spaces[0]) === null || _spaces$ === void 0 ? void 0 : _spaces$.id;
                 query = id ? {
                   system_id: ((_this7$event2 = _this7.event) === null || _this7$event2 === void 0 || (_this7$event2 = _this7$event2.resources[0]) === null || _this7$event2 === void 0 ? void 0 : _this7$event2.id) || ((_this7$event3 = _this7.event) === null || _this7$event3 === void 0 || (_this7$event3 = _this7$event3.system) === null || _this7$event3 === void 0 ? void 0 : _this7$event3.id) || space_id
                 } : {};
-                if (is_owner) query.calendar = host || creator;
+                if (is_owner && !ignore_owner) query.calendar = host || creator;
                 if (!(_this7._payments.payment_module && spaces.length)) {
-                  _context3.next = 41;
+                  _context3.next = 43;
                   break;
                 }
-                _context3.next = 37;
+                _context3.next = 39;
                 return _this7._payments.makePayment({
                   type: 'space',
                   resource_name: spaces[0].display_name || spaces[0].name,
@@ -46017,19 +45034,19 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                   duration: duration,
                   all_day: all_day
                 });
-              case 37:
+              case 39:
                 receipt = _context3.sent;
                 if (receipt !== null && receipt !== void 0 && receipt.success) {
-                  _context3.next = 40;
+                  _context3.next = 42;
                   break;
                 }
                 return _context3.abrupt("return", _this7._loading.next(''));
-              case 40:
+              case 42:
                 value.extension_data = {
                   invoice: receipt,
                   invoice_id: receipt.invoice_id
                 };
-              case 41:
+              case 43:
                 d = value.date;
                 _iterator2 = _createForOfIteratorHelper(catering);
                 try {
@@ -46064,7 +45081,7 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                 processed_assets = (assets || []).map(function (_) {
                   return new asset_request_class_1.AssetRequest(_).toJSON();
                 });
-                _context3.next = 48;
+                _context3.next = 50;
                 return _this7._makeBooking(new event_class_1.CalendarEvent(_objectSpread(_objectSpread({}, value), {}, {
                   old_system: (_this7$event4 = _this7.event) === null || _this7$event4 === void 0 ? void 0 : _this7$event4.system,
                   host: _this7._settings.get('app.events.force_host') || (_this7._settings.get('app.events.room_as_host') ? value.resources[0].email : '') || value.host,
@@ -46088,7 +45105,7 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                   _this7._loading.next('');
                   throw e;
                 });
-              case 48:
+              case 50:
                 result = _context3.sent;
                 domain = (((_ref23 = (0, common_1.currentUser)()) === null || _ref23 === void 0 ? void 0 : _ref23.email) || '@').split('@')[1];
                 visitors = attendees.filter(function (user) {
@@ -46138,18 +45155,18 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                   };
                 }();
                 if (!visitors.length) {
-                  _context3.next = 56;
+                  _context3.next = 58;
                   break;
                 }
-                _context3.next = 56;
+                _context3.next = 58;
                 return (0, bookings_fn_1.createBookingsForEvent)(result, 'visitor', visitors)["catch"](on_error);
-              case 56:
+              case 58:
                 if (!(assets !== null && assets !== void 0 && assets.length || (_event$extension_data2 = event.extension_data.assets) !== null && _event$extension_data2 !== void 0 && _event$extension_data2.length)) {
-                  _context3.next = 66;
+                  _context3.next = 68;
                   break;
                 }
                 creating_assets = true;
-                _context3.next = 60;
+                _context3.next = 62;
                 return (0, assets_fn_1.validateAssetRequestsForResource)(result, {
                   date: date,
                   duration: duration,
@@ -46160,19 +45177,19 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                   zones: (_spaces$5 = spaces[0]) !== null && _spaces$5 !== void 0 && (_spaces$5 = _spaces$5.level) !== null && _spaces$5 !== void 0 && _spaces$5.parent_id ? [(_spaces$6 = spaces[0]) === null || _spaces$6 === void 0 || (_spaces$6 = _spaces$6.level) === null || _spaces$6 === void 0 ? void 0 : _spaces$6.parent_id] : [(_this7$_org$building = _this7._org.building) === null || _this7$_org$building === void 0 ? void 0 : _this7$_org$building.id],
                   reset_state: changed_times
                 }, assets, changed_spaces || changed_times)["catch"](on_error);
-              case 60:
+              case 62:
                 requests = _context3.sent;
                 if (requests) {
-                  _context3.next = 63;
+                  _context3.next = 65;
                   break;
                 }
                 throw 'Unable to validate asset requests';
-              case 63:
-                _context3.next = 65;
-                return requests();
               case 65:
+                _context3.next = 67;
+                return requests();
+              case 67:
                 creating_assets = false;
-              case 66:
+              case 68:
                 _this7.clearForm();
                 _this7.last_success = result;
                 sessionStorage.setItem('PLACEOS.last_booked_event', JSON.stringify(result));
@@ -46182,7 +45199,7 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                 });
                 resolve(result);
                 _this7._loading.next('');
-              case 73:
+              case 75:
               case "end":
                 return _context3.stop();
             }
@@ -46649,6 +45666,11 @@ var CalendarEvent = /*#__PURE__*/function () {
     get: function get() {
       return this.all_day || this.duration >= 12 * 60;
     }
+  }, {
+    key: "view_access",
+    get: function get() {
+      return this.extension_data.view_access || 'PRIVATE';
+    }
     /** Get field from extension data */
   }, {
     key: "ext",
@@ -46750,11 +45772,10 @@ var CalendarEvent = /*#__PURE__*/function () {
         }));
       });
       obj.system_id = (_this$system = this.system) === null || _this$system === void 0 ? void 0 : _this$system.id;
-      delete obj.catering;
-      delete obj.date;
-      delete obj.duration;
-      delete obj.status;
-      delete obj.linked_bookings;
+      for (var _i = 0, _arr = ['catering', 'date', 'date_end', 'duration', 'status', 'linked_bookings', '_valid_asset_cache', '_valid_cache_expiry', 'type']; _i < _arr.length; _i++) {
+        var key = _arr[_i];
+        if (key in obj) delete obj[key];
+      }
       if (!obj.update_master) delete obj.recurring_event_id;
       (0, common_1.removeEmptyFields)(obj);
       return obj;
@@ -46819,7 +45840,7 @@ var _asyncToGenerator = (__webpack_require__(/*! ./node_modules/@babel/runtime/h
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.querySpaceAvailability = exports.isSpaceAvailable = exports.updateEventMetadata = exports.getEventMetadata = exports.checkinEventGuest = exports.queryEventGuests = exports.declineEvent = exports.rejectEvent = exports.approveEvent = exports.removeEvent = exports.saveEvent = exports.updateEvent = exports.createEvent = exports.showEvent = exports.queryAllEvents = exports.queryEvents = void 0;
+exports.querySpaceAvailability = exports.isSpaceAvailable = exports.updateEventMetadata = exports.getEventMetadata = exports.removeEventGuest = exports.addEventGuest = exports.checkinEventGuest = exports.queryEventGuests = exports.declineEvent = exports.rejectEvent = exports.approveEvent = exports.removeEvent = exports.saveEvent = exports.updateEvent = exports.createEvent = exports.showEvent = exports.queryAllEvents = exports.queryEvents = void 0;
 var ts_client_1 = __webpack_require__(/*! @placeos/ts-client */ 35713);
 var rxjs_1 = __webpack_require__(/*! rxjs */ 15681);
 var operators_1 = __webpack_require__(/*! rxjs/operators */ 97303);
@@ -47026,6 +46047,28 @@ function checkinEventGuest(id, guest_id, state) {
 }
 exports.checkinEventGuest = checkinEventGuest;
 /**
+ * Add a guest to a booking
+ * @param id ID of the booking
+ * @param guest Guest to add to the booking
+ */
+function addEventGuest(id, guest) {
+  return (0, ts_client_1.post)("".concat(EVENTS_ENDPOINT, "/").concat(encodeURIComponent(id), "/attendee"), guest).pipe((0, operators_1.map)(function (item) {
+    return new user_class_1.GuestUser(item);
+  }));
+}
+exports.addEventGuest = addEventGuest;
+/**
+ * Remove an attendee from a booking
+ * @param id ID of the booking
+ * @param guest Guest to remove from the booking
+ */
+function removeEventGuest(id, guest) {
+  return (0, ts_client_1.del)("".concat(EVENTS_ENDPOINT, "/").concat(encodeURIComponent(id), "/attendee/").concat(encodeURIComponent(guest.email))).pipe((0, operators_1.map)(function (item) {
+    return new user_class_1.GuestUser(item);
+  }));
+}
+exports.removeEventGuest = removeEventGuest;
+/**
  * Get the extension data for an event
  * @param id ID of the event
  * @param system_id  ID of the system associated with the event
@@ -47131,6 +46174,7 @@ exports.SharedEventsModule = void 0;
 var common_1 = __webpack_require__(/*! @angular/common */ 60316);
 var forms_1 = __webpack_require__(/*! @angular/forms */ 34456);
 var button_1 = __webpack_require__(/*! @angular/material/button */ 84175);
+var core_1 = __webpack_require__(/*! @angular/material/core */ 74646);
 var datepicker_1 = __webpack_require__(/*! @angular/material/datepicker */ 61977);
 var dialog_1 = __webpack_require__(/*! @angular/material/dialog */ 12587);
 var form_field_1 = __webpack_require__(/*! @angular/material/form-field */ 24950);
@@ -47139,12 +46183,14 @@ var progress_spinner_1 = __webpack_require__(/*! @angular/material/progress-spin
 var radio_1 = __webpack_require__(/*! @angular/material/radio */ 53804);
 var form_fields_module_1 = __webpack_require__(/*! libs/form-fields/src/lib/form-fields.module */ 77066);
 var components_module_1 = __webpack_require__(/*! libs/components/src/lib/components.module */ 14974);
+var spaces_module_1 = __webpack_require__(/*! libs/spaces/src/lib/spaces.module */ 34360);
 var attendee_list_component_1 = __webpack_require__(/*! ./attendee-list.component */ 47249);
 var event_card_component_1 = __webpack_require__(/*! ./event-card.component */ 21765);
 var event_details_modal_component_1 = __webpack_require__(/*! ./event-details-modal.component */ 54035);
 var event_link_modal_component_1 = __webpack_require__(/*! ./event-link-modal.component */ 22671);
-var core_1 = __webpack_require__(/*! @angular/material/core */ 74646);
 var setup_breakdown_modal_component_1 = __webpack_require__(/*! ./setup-breakdown-modal.component */ 50711);
+var group_event_card_component_1 = __webpack_require__(/*! ./group-event-card.component */ 27535);
+var group_event_details_modal_component_1 = __webpack_require__(/*! ./group-event-details-modal.component */ 58094);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
 var i1 = __webpack_require__(/*! @angular/common */ 60316);
 var i2 = __webpack_require__(/*! @angular/material/dialog */ 12587);
@@ -47158,7 +46204,9 @@ var i9 = __webpack_require__(/*! @angular/material/menu */ 31034);
 var i10 = __webpack_require__(/*! @angular/material/core */ 74646);
 var i11 = __webpack_require__(/*! @angular/material/tooltip */ 80640);
 var i12 = __webpack_require__(/*! ../../../components/src/lib/sanitise.pipe */ 54616);
-var COMPONENTS = [event_details_modal_component_1.EventDetailsModalComponent, attendee_list_component_1.AttendeeListComponent, event_card_component_1.EventCardComponent, event_link_modal_component_1.EventLinkModalComponent, setup_breakdown_modal_component_1.SetupBreakdownModalComponent];
+var i13 = __webpack_require__(/*! ../../../components/src/lib/authenticated-image.directive */ 93208);
+var i14 = __webpack_require__(/*! ../../../spaces/src/lib/space.pipe */ 22011);
+var COMPONENTS = [event_details_modal_component_1.EventDetailsModalComponent, attendee_list_component_1.AttendeeListComponent, event_card_component_1.EventCardComponent, event_link_modal_component_1.EventLinkModalComponent, setup_breakdown_modal_component_1.SetupBreakdownModalComponent, group_event_details_modal_component_1.GroupEventDetailsModalComponent, group_event_card_component_1.GroupEventCardComponent];
 var SharedEventsModule = /*#__PURE__*/_createClass(function SharedEventsModule() {
   _classCallCheck(this, SharedEventsModule);
 });
@@ -47171,19 +46219,21 @@ _SharedEventsModule.ɵmod = /*@__PURE__*/i0.ɵɵdefineNgModule({
 });
 _SharedEventsModule.ɵinj = /*@__PURE__*/i0.ɵɵdefineInjector({
   providers: [forms_1.ReactiveFormsModule],
-  imports: [common_1.CommonModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, radio_1.MatRadioModule, input_1.MatInputModule, form_field_1.MatFormFieldModule, datepicker_1.MatDatepickerModule, button_1.MatButtonModule, dialog_1.MatDialogModule, progress_spinner_1.MatProgressSpinnerModule, form_fields_module_1.FormFieldsModule, components_module_1.ComponentsModule, core_1.MatRippleModule]
+  imports: [common_1.CommonModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, radio_1.MatRadioModule, input_1.MatInputModule, form_field_1.MatFormFieldModule, datepicker_1.MatDatepickerModule, button_1.MatButtonModule, dialog_1.MatDialogModule, progress_spinner_1.MatProgressSpinnerModule, form_fields_module_1.FormFieldsModule, components_module_1.ComponentsModule, core_1.MatRippleModule, spaces_module_1.SharedSpacesModule]
 });
 exports.SharedEventsModule = SharedEventsModule;
 (function () {
   (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(SharedEventsModule, {
-    declarations: [event_details_modal_component_1.EventDetailsModalComponent, attendee_list_component_1.AttendeeListComponent, event_card_component_1.EventCardComponent, event_link_modal_component_1.EventLinkModalComponent, setup_breakdown_modal_component_1.SetupBreakdownModalComponent],
-    imports: [common_1.CommonModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, radio_1.MatRadioModule, input_1.MatInputModule, form_field_1.MatFormFieldModule, datepicker_1.MatDatepickerModule, button_1.MatButtonModule, dialog_1.MatDialogModule, progress_spinner_1.MatProgressSpinnerModule, form_fields_module_1.FormFieldsModule, components_module_1.ComponentsModule, core_1.MatRippleModule],
-    exports: [event_details_modal_component_1.EventDetailsModalComponent, attendee_list_component_1.AttendeeListComponent, event_card_component_1.EventCardComponent, event_link_modal_component_1.EventLinkModalComponent, setup_breakdown_modal_component_1.SetupBreakdownModalComponent]
+    declarations: [event_details_modal_component_1.EventDetailsModalComponent, attendee_list_component_1.AttendeeListComponent, event_card_component_1.EventCardComponent, event_link_modal_component_1.EventLinkModalComponent, setup_breakdown_modal_component_1.SetupBreakdownModalComponent, group_event_details_modal_component_1.GroupEventDetailsModalComponent, group_event_card_component_1.GroupEventCardComponent],
+    imports: [common_1.CommonModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, radio_1.MatRadioModule, input_1.MatInputModule, form_field_1.MatFormFieldModule, datepicker_1.MatDatepickerModule, button_1.MatButtonModule, dialog_1.MatDialogModule, progress_spinner_1.MatProgressSpinnerModule, form_fields_module_1.FormFieldsModule, components_module_1.ComponentsModule, core_1.MatRippleModule, spaces_module_1.SharedSpacesModule],
+    exports: [event_details_modal_component_1.EventDetailsModalComponent, attendee_list_component_1.AttendeeListComponent, event_card_component_1.EventCardComponent, event_link_modal_component_1.EventLinkModalComponent, setup_breakdown_modal_component_1.SetupBreakdownModalComponent, group_event_details_modal_component_1.GroupEventDetailsModalComponent, group_event_card_component_1.GroupEventCardComponent]
   });
 })();
 i0.ɵɵsetComponentScope(event_details_modal_component_1.EventDetailsModalComponent, [i1.NgForOf, i1.NgIf, i2.MatDialogClose, i3.IconComponent, i4.UserAvatarComponent, i5.InteractiveMapComponent, i6.ImageCarouselComponent, i7.StatusPillComponent, i8.BindingDirective, i9.MatMenu, i9.MatMenuItem, i9.MatMenuTrigger, i10.MatRipple, i11.MatTooltip, attendee_list_component_1.AttendeeListComponent], [i1.CurrencyPipe, i1.DatePipe, i12.SanitizePipe]);
 i0.ɵɵsetComponentScope(attendee_list_component_1.AttendeeListComponent, [i1.NgForOf, i1.NgIf, i3.IconComponent, i4.UserAvatarComponent, i10.MatRipple, i11.MatTooltip], []);
 i0.ɵɵsetComponentScope(event_card_component_1.EventCardComponent, [i1.NgForOf, i1.NgIf, i3.IconComponent, i4.UserAvatarComponent, i7.StatusPillComponent], [i1.SlicePipe, i1.DatePipe]);
+i0.ɵɵsetComponentScope(group_event_details_modal_component_1.GroupEventDetailsModalComponent, [i1.NgIf, i2.MatDialogClose, i3.IconComponent, i5.InteractiveMapComponent, i13.AuthenticatedImageDirective, i9.MatMenu, i9.MatMenuItem, i9.MatMenuTrigger, i10.MatRipple, attendee_list_component_1.AttendeeListComponent], [i1.AsyncPipe, i1.DatePipe, i12.SanitizePipe, i14.SpacePipe]);
+i0.ɵɵsetComponentScope(group_event_card_component_1.GroupEventCardComponent, [i1.NgIf, i3.IconComponent, i13.AuthenticatedImageDirective, i10.MatRipple], [i1.DatePipe]);
 
 /***/ }),
 
@@ -47206,6 +46256,1033 @@ tslib_1.__exportStar(__webpack_require__(/*! ./events.fn */ 51416), exports);
 tslib_1.__exportStar(__webpack_require__(/*! ./helpers */ 37420), exports);
 tslib_1.__exportStar(__webpack_require__(/*! ./utilities */ 55049), exports);
 tslib_1.__exportStar(__webpack_require__(/*! ./validators */ 90690), exports);
+
+/***/ }),
+
+/***/ 27535:
+/*!***********************************************************!*\
+  !*** ./libs/events/src/lib/group-event-card.component.ts ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+
+var _regeneratorRuntime = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/regeneratorRuntime.js */ 8698)["default"]);
+var _asyncToGenerator = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/asyncToGenerator.js */ 95386)["default"]);
+var _classCallCheck = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/classCallCheck.js */ 80912)["default"]);
+var _createClass = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/createClass.js */ 92974)["default"]);
+var _GroupEventCardComponent;
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.GroupEventCardComponent = void 0;
+var dialog_1 = __webpack_require__(/*! @angular/material/dialog */ 12587);
+var common_1 = __webpack_require__(/*! @placeos/common */ 22797);
+var group_event_details_modal_component_1 = __webpack_require__(/*! ./group-event-details-modal.component */ 58094);
+var space_pipe_1 = __webpack_require__(/*! libs/spaces/src/lib/space.pipe */ 22011);
+var organisation_service_1 = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
+var event_class_1 = __webpack_require__(/*! ./event.class */ 6727);
+var i0 = __webpack_require__(/*! @angular/core */ 37580);
+var i1 = __webpack_require__(/*! @placeos/common */ 22797);
+var i2 = __webpack_require__(/*! @angular/material/dialog */ 12587);
+var i3 = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
+function GroupEventCardComponent_button_0_img_2_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelement(0, "img", 15);
+  }
+  if (rf & 2) {
+    var ctx_r1 = i0.ɵɵnextContext(2);
+    i0.ɵɵproperty("source", ctx_r1.event.images[0]);
+  }
+}
+function GroupEventCardComponent_button_0_p_13_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "p", 16);
+    i0.ɵɵtext(1, " No description ");
+    i0.ɵɵelementEnd();
+  }
+}
+function GroupEventCardComponent_button_0_div_17_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div");
+    i0.ɵɵtext(1);
+    i0.ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    var ctx_r1 = i0.ɵɵnextContext(2);
+    i0.ɵɵadvance();
+    i0.ɵɵtextInterpolate1(" ", ctx_r1.space.display_name || ctx_r1.space.name || "", " ");
+  }
+}
+function GroupEventCardComponent_button_0_div_18_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 16);
+    i0.ɵɵtext(1, " Room to be confirmed ");
+    i0.ɵɵelementEnd();
+  }
+}
+function GroupEventCardComponent_button_0_div_19_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 16);
+    i0.ɵɵtext(1, " Remote event ");
+    i0.ɵɵelementEnd();
+  }
+}
+function GroupEventCardComponent_button_0_Template(rf, ctx) {
+  if (rf & 1) {
+    var _r1 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "button", 2);
+    i0.ɵɵlistener("click", function GroupEventCardComponent_button_0_Template_button_click_0_listener() {
+      i0.ɵɵrestoreView(_r1);
+      var ctx_r1 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r1.viewDetails());
+    });
+    i0.ɵɵelementStart(1, "div", 3);
+    i0.ɵɵtemplate(2, GroupEventCardComponent_button_0_img_2_Template, 1, 1, "img", 4);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(3, "div", 5)(4, "div", 6);
+    i0.ɵɵtext(5);
+    i0.ɵɵpipe(6, "date");
+    i0.ɵɵpipe(7, "date");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(8, "h2", 7);
+    i0.ɵɵtext(9);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(10, "div", 8)(11, "p", 9);
+    i0.ɵɵtext(12);
+    i0.ɵɵelementEnd();
+    i0.ɵɵtemplate(13, GroupEventCardComponent_button_0_p_13_Template, 2, 0, "p", 10);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(14, "div", 11)(15, "app-icon", 12);
+    i0.ɵɵtext(16, "place");
+    i0.ɵɵelementEnd();
+    i0.ɵɵtemplate(17, GroupEventCardComponent_button_0_div_17_Template, 2, 1, "div", 13)(18, GroupEventCardComponent_button_0_div_18_Template, 2, 0, "div", 10)(19, GroupEventCardComponent_button_0_div_19_Template, 2, 0, "div", 10);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(20, "div", 11)(21, "app-icon", 12);
+    i0.ɵɵtext(22, "people");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(23, "div", 14);
+    i0.ɵɵtext(24);
+    i0.ɵɵelementEnd()()()();
+  }
+  if (rf & 2) {
+    var ctx_r1 = i0.ɵɵnextContext();
+    i0.ɵɵadvance(2);
+    i0.ɵɵproperty("ngIf", ctx_r1.event.images == null ? null : ctx_r1.event.images.length);
+    i0.ɵɵadvance(3);
+    i0.ɵɵtextInterpolate2(" ", i0.ɵɵpipeBind2(6, 11, ctx_r1.event.date, "EEE d MMM"), ", ", i0.ɵɵpipeBind2(7, 14, ctx_r1.event.date, ctx_r1.time_format), " ");
+    i0.ɵɵadvance(3);
+    i0.ɵɵproperty("title", ctx_r1.event.title);
+    i0.ɵɵadvance();
+    i0.ɵɵtextInterpolate1(" ", ctx_r1.event.title, " ");
+    i0.ɵɵadvance(3);
+    i0.ɵɵtextInterpolate(ctx_r1.raw_description);
+    i0.ɵɵadvance();
+    i0.ɵɵproperty("ngIf", !ctx_r1.raw_description.trim());
+    i0.ɵɵadvance(4);
+    i0.ɵɵproperty("ngIf", ctx_r1.is_onsite && ctx_r1.has_space);
+    i0.ɵɵadvance();
+    i0.ɵɵproperty("ngIf", ctx_r1.is_onsite && !ctx_r1.has_space);
+    i0.ɵɵadvance();
+    i0.ɵɵproperty("ngIf", !ctx_r1.is_onsite);
+    i0.ɵɵadvance(5);
+    i0.ɵɵtextInterpolate1(" ", (ctx_r1.event.attendees == null ? null : ctx_r1.event.attendees.length) || "0", " attending ");
+  }
+}
+function GroupEventCardComponent_ng_template_1_img_2_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelement(0, "img", 15);
+  }
+  if (rf & 2) {
+    var ctx_r1 = i0.ɵɵnextContext(2);
+    i0.ɵɵproperty("source", ctx_r1.event.images[0]);
+  }
+}
+function GroupEventCardComponent_ng_template_1_p_27_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "p", 16);
+    i0.ɵɵtext(1, " No description ");
+    i0.ɵɵelementEnd();
+  }
+}
+function GroupEventCardComponent_ng_template_1_div_31_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div");
+    i0.ɵɵtext(1);
+    i0.ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    var ctx_r1 = i0.ɵɵnextContext(2);
+    i0.ɵɵadvance();
+    i0.ɵɵtextInterpolate1(" ", ctx_r1.space.display_name || ctx_r1.space.name || "", " ");
+  }
+}
+function GroupEventCardComponent_ng_template_1_div_32_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 16);
+    i0.ɵɵtext(1, " Room to be confirmed ");
+    i0.ɵɵelementEnd();
+  }
+}
+function GroupEventCardComponent_ng_template_1_div_33_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 16);
+    i0.ɵɵtext(1, " Remote event ");
+    i0.ɵɵelementEnd();
+  }
+}
+function GroupEventCardComponent_ng_template_1_Template(rf, ctx) {
+  if (rf & 1) {
+    var _r3 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "button", 17);
+    i0.ɵɵlistener("click", function GroupEventCardComponent_ng_template_1_Template_button_click_0_listener() {
+      i0.ɵɵrestoreView(_r3);
+      var ctx_r1 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r1.viewDetails());
+    });
+    i0.ɵɵelementStart(1, "div", 18);
+    i0.ɵɵtemplate(2, GroupEventCardComponent_ng_template_1_img_2_Template, 1, 1, "img", 4);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(3, "div", 19)(4, "app-icon", 20);
+    i0.ɵɵtext(5, "star");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(6, "div", 21);
+    i0.ɵɵtext(7, "Featured");
+    i0.ɵɵelementEnd()();
+    i0.ɵɵelementStart(8, "div", 22)(9, "div", 23)(10, "div", 24);
+    i0.ɵɵtext(11);
+    i0.ɵɵpipe(12, "date");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(13, "div", 25);
+    i0.ɵɵtext(14);
+    i0.ɵɵpipe(15, "date");
+    i0.ɵɵelementEnd()();
+    i0.ɵɵelementStart(16, "div", 26)(17, "h3", 27);
+    i0.ɵɵtext(18);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(19, "div", 28);
+    i0.ɵɵtext(20);
+    i0.ɵɵpipe(21, "date");
+    i0.ɵɵpipe(22, "date");
+    i0.ɵɵpipe(23, "date");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(24, "div", 29)(25, "p", 30);
+    i0.ɵɵtext(26);
+    i0.ɵɵelementEnd();
+    i0.ɵɵtemplate(27, GroupEventCardComponent_ng_template_1_p_27_Template, 2, 0, "p", 10);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(28, "div", 11)(29, "app-icon", 12);
+    i0.ɵɵtext(30, "place");
+    i0.ɵɵelementEnd();
+    i0.ɵɵtemplate(31, GroupEventCardComponent_ng_template_1_div_31_Template, 2, 1, "div", 13)(32, GroupEventCardComponent_ng_template_1_div_32_Template, 2, 0, "div", 10)(33, GroupEventCardComponent_ng_template_1_div_33_Template, 2, 0, "div", 10);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(34, "div", 11)(35, "app-icon", 12);
+    i0.ɵɵtext(36, "people");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(37, "div", 14);
+    i0.ɵɵtext(38);
+    i0.ɵɵelementEnd()()()();
+    i0.ɵɵelementStart(39, "div", 31);
+    i0.ɵɵtext(40, " View Details ");
+    i0.ɵɵelementEnd()();
+  }
+  if (rf & 2) {
+    var ctx_r1 = i0.ɵɵnextContext();
+    i0.ɵɵadvance(2);
+    i0.ɵɵproperty("ngIf", ctx_r1.event.images == null ? null : ctx_r1.event.images.length);
+    i0.ɵɵadvance(9);
+    i0.ɵɵtextInterpolate1(" ", i0.ɵɵpipeBind2(12, 13, ctx_r1.event.date, "MMM"), " ");
+    i0.ɵɵadvance(3);
+    i0.ɵɵtextInterpolate(i0.ɵɵpipeBind2(15, 16, ctx_r1.event.date, "d"));
+    i0.ɵɵadvance(4);
+    i0.ɵɵtextInterpolate(ctx_r1.event.title);
+    i0.ɵɵadvance(2);
+    i0.ɵɵtextInterpolate3(" ", i0.ɵɵpipeBind2(21, 19, ctx_r1.event.date, "EEEE"), " ", i0.ɵɵpipeBind2(22, 22, ctx_r1.event.date, ctx_r1.time_format), " - ", i0.ɵɵpipeBind2(23, 25, ctx_r1.event.date + ctx_r1.event.duration * 60 * 1000, ctx_r1.time_format), " ");
+    i0.ɵɵadvance(6);
+    i0.ɵɵtextInterpolate(ctx_r1.raw_description);
+    i0.ɵɵadvance();
+    i0.ɵɵproperty("ngIf", !ctx_r1.raw_description.trim());
+    i0.ɵɵadvance(4);
+    i0.ɵɵproperty("ngIf", ctx_r1.is_onsite && ctx_r1.has_space);
+    i0.ɵɵadvance();
+    i0.ɵɵproperty("ngIf", ctx_r1.is_onsite && !ctx_r1.has_space);
+    i0.ɵɵadvance();
+    i0.ɵɵproperty("ngIf", !ctx_r1.is_onsite);
+    i0.ɵɵadvance(5);
+    i0.ɵɵtextInterpolate1(" ", (ctx_r1.event.attendees == null ? null : ctx_r1.event.attendees.length) || "0", " attending ");
+  }
+}
+var GroupEventCardComponent = /*#__PURE__*/function () {
+  function GroupEventCardComponent(_settings, _dialog, _org) {
+    _classCallCheck(this, GroupEventCardComponent);
+    this._settings = _settings;
+    this._dialog = _dialog;
+    this._org = _org;
+    this.raw_description = '';
+  }
+  return _createClass(GroupEventCardComponent, [{
+    key: "time_format",
+    get: function get() {
+      return this._settings.time_format;
+    }
+  }, {
+    key: "is_onsite",
+    get: function get() {
+      var _this$event;
+      return ((_this$event = this.event) === null || _this$event === void 0 ? void 0 : _this$event.extension_data.attendance_type) !== 'ONLINE';
+    }
+  }, {
+    key: "has_space",
+    get: function get() {
+      var _this$space;
+      return !!((_this$space = this.space) !== null && _this$space !== void 0 && _this$space.id);
+    }
+  }, {
+    key: "is_online",
+    get: function get() {
+      var _this$event2;
+      return !this.is_onsite || ((_this$event2 = this.event) === null || _this$event2 === void 0 ? void 0 : _this$event2.extension_data.attendance_type) === 'ANY';
+    }
+  }, {
+    key: "group_event_calendar",
+    get: function get() {
+      return this._settings.get('app.group_events_calendar');
+    }
+  }, {
+    key: "ngOnInit",
+    value: function () {
+      var _ngOnInit = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+        var _this = this;
+        var space_pipe, resource;
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              space_pipe = new space_pipe_1.SpacePipe(this._org);
+              resource = this.event.resources.find(function (_) {
+                return _.email !== _this.group_event_calendar;
+              });
+              _context.next = 4;
+              return space_pipe.transform((resource === null || resource === void 0 ? void 0 : resource.id) || (resource === null || resource === void 0 ? void 0 : resource.email));
+            case 4:
+              this.space = _context.sent;
+              this.raw_description = this.removeHtmlTags(this.event.body);
+            case 6:
+            case "end":
+              return _context.stop();
+          }
+        }, _callee, this);
+      }));
+      function ngOnInit() {
+        return _ngOnInit.apply(this, arguments);
+      }
+      return ngOnInit;
+    }()
+  }, {
+    key: "removeHtmlTags",
+    value: function removeHtmlTags(html) {
+      var doc = new DOMParser().parseFromString(html, 'text/html');
+      return doc.body.textContent || '';
+    }
+  }, {
+    key: "viewDetails",
+    value: function viewDetails() {
+      this._dialog.open(group_event_details_modal_component_1.GroupEventDetailsModalComponent, {
+        data: {
+          event: this.event,
+          concierge: false
+        }
+      });
+    }
+  }]);
+}();
+_GroupEventCardComponent = GroupEventCardComponent;
+_GroupEventCardComponent.ɵfac = function GroupEventCardComponent_Factory(t) {
+  return new (t || _GroupEventCardComponent)(i0.ɵɵdirectiveInject(i1.SettingsService), i0.ɵɵdirectiveInject(i2.MatDialog), i0.ɵɵdirectiveInject(i3.OrganisationService));
+};
+_GroupEventCardComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
+  type: _GroupEventCardComponent,
+  selectors: [["group-event-card"]],
+  inputs: {
+    event: "event",
+    featured: "featured"
+  },
+  decls: 3,
+  vars: 2,
+  consts: [["featured_card", ""], ["matRipple", "", "class", "border border-base-300 hover:border-info flex flex-col bg-base-100 rounded-xl shadow hover:shadow-2xl overflow-hidden w-60 h-[20rem]", 3, "click", 4, "ngIf", "ngIfElse"], ["matRipple", "", 1, "border", "border-base-300", "hover:border-info", "flex", "flex-col", "bg-base-100", "rounded-xl", "shadow", "hover:shadow-2xl", "overflow-hidden", "w-60", "h-[20rem]", 3, "click"], [1, "relative", "flex", "items-center", "justify-between", "h-28", "min-h-28", "w-full", "bg-base-200", "overflow-hidden", "border-b", "border-base-200"], ["auth", "", "class", "absolute top-0 left-0 h-full w-full object-center object-cover", 3, "source", 4, "ngIf"], [1, "p-4", "flex-1", "h-1/2", "w-full"], [1, "opacity-60", "text-sm", "text-left"], [1, "text-xl", "mb-2", "text-left", "truncate", "w-full", 3, "title"], [1, "opacity-60", "text-xs", "flex-1", "overflow-hidden", "h-[4.5rem]", "mb-2", "text-left"], [1, "line-clamp-4"], ["class", "opacity-30", 4, "ngIf"], [1, "flex", "items-center", "space-x-2", "text-sm"], [1, "text-info"], [4, "ngIf"], [1, ""], ["auth", "", 1, "absolute", "top-0", "left-0", "h-full", "w-full", "object-center", "object-cover", 3, "source"], [1, "opacity-30"], ["matRipple", "", 1, "border", "border-base-300", "hover:border-info", "flex", "bg-base-100", "rounded-xl", "shadow", "hover:shadow-2xl", "overflow-hidden", "w-[63rem]", "max-w-full", "h-56", "mx-auto", 3, "click"], [1, "relative", "flex", "items-center", "justify-between", "h-full", "min-w-56", "w-1/2", "max-w-[20rem]", "bg-base-200", "overflow-hidden", "border-r", "border-base-200"], [1, "absolute", "top-0", "left-0", "rounded-br-xl", "py-2", "pl-2", "pr-4", "space-x-2", "bg-info", "text-info-content", "flex", "items-center", "text-sm"], [1, "text-base"], [1, "uppercase"], ["details", "", 1, "flex", "px-8", "py-4", "space-x-4"], [1, "flex", "flex-col", "items-center"], [1, "text-sm", "opacity-30"], [1, "text-lg"], [1, "flex", "flex-col", "space-y-2"], [1, "text-left"], ["time", "", 1, "text-sm", "opacity-30", "text-left"], [1, "h-20", "overflow-hidden", "text-left"], [1, "line-clamp-3"], [1, "absolute", "top-4", "right-4", "bg-secondary", "text-secondary-content", "rounded", "px-4", "py-2", "w-32", "text-center", "truncate"]],
+  template: function GroupEventCardComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      i0.ɵɵtemplate(0, GroupEventCardComponent_button_0_Template, 25, 17, "button", 1)(1, GroupEventCardComponent_ng_template_1_Template, 41, 28, "ng-template", null, 0, i0.ɵɵtemplateRefExtractor);
+    }
+    if (rf & 2) {
+      var featured_card_r4 = i0.ɵɵreference(2);
+      i0.ɵɵproperty("ngIf", !ctx.featured)("ngIfElse", featured_card_r4);
+    }
+  },
+  styles: ["button[_ngcontent-%COMP%] {\n                transition: box-shadow 300ms, border 200ms;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImdyb3VwLWV2ZW50LWNhcmQuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSwwQ0FBMEM7WUFDOUMiLCJmaWxlIjoiZ3JvdXAtZXZlbnQtY2FyZC5jb21wb25lbnQudHMiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIGJ1dHRvbiB7XG4gICAgICAgICAgICAgICAgdHJhbnNpdGlvbjogYm94LXNoYWRvdyAzMDBtcywgYm9yZGVyIDIwMG1zO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXX0= */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvZXZlbnRzL3NyYy9saWIvZ3JvdXAtZXZlbnQtY2FyZC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLDBDQUEwQztZQUM5Qzs7QUFFWixvYUFBb2EiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIGJ1dHRvbiB7XG4gICAgICAgICAgICAgICAgdHJhbnNpdGlvbjogYm94LXNoYWRvdyAzMDBtcywgYm9yZGVyIDIwMG1zO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
+});
+exports.GroupEventCardComponent = GroupEventCardComponent;
+
+/***/ }),
+
+/***/ 58094:
+/*!********************************************************************!*\
+  !*** ./libs/events/src/lib/group-event-details-modal.component.ts ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+
+var _objectSpread = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/objectSpread2.js */ 34092)["default"]);
+var _toConsumableArray = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/toConsumableArray.js */ 86033)["default"]);
+var _regeneratorRuntime = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/regeneratorRuntime.js */ 8698)["default"]);
+var _asyncToGenerator = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/asyncToGenerator.js */ 95386)["default"]);
+var _classCallCheck = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/classCallCheck.js */ 80912)["default"]);
+var _createClass = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/createClass.js */ 92974)["default"]);
+var _GroupEventDetailsModalComponent;
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.GroupEventDetailsModalComponent = void 0;
+var core_1 = __webpack_require__(/*! @angular/core */ 37580);
+var dialog_1 = __webpack_require__(/*! @angular/material/dialog */ 12587);
+var common_1 = __webpack_require__(/*! @placeos/common */ 22797);
+var components_1 = __webpack_require__(/*! @placeos/components */ 51588);
+var organisation_1 = __webpack_require__(/*! @placeos/organisation */ 2510);
+var space_pipe_1 = __webpack_require__(/*! libs/spaces/src/lib/space.pipe */ 22011);
+var events_fn_1 = __webpack_require__(/*! ./events.fn */ 51416);
+var i0 = __webpack_require__(/*! @angular/core */ 37580);
+var i1 = __webpack_require__(/*! @placeos/organisation */ 2510);
+var i2 = __webpack_require__(/*! @placeos/common */ 22797);
+var i3 = __webpack_require__(/*! @angular/material/dialog */ 12587);
+function GroupEventDetailsModalComponent_img_2_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelement(0, "img", 36);
+  }
+  if (rf & 2) {
+    var ctx_r1 = i0.ɵɵnextContext();
+    i0.ɵɵproperty("source", ctx_r1.event.extension_data == null ? null : ctx_r1.event.extension_data.images[0]);
+  }
+}
+function GroupEventDetailsModalComponent_div_3_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 37)(1, "app-icon", 38);
+    i0.ɵɵtext(2, "star");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(3, "div", 39);
+    i0.ɵɵtext(4, "Featured");
+    i0.ɵɵelementEnd()();
+  }
+}
+function GroupEventDetailsModalComponent_ng_container_12_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementContainerStart(0);
+    i0.ɵɵelementStart(1, "div", 40)(2, "app-icon");
+    i0.ɵɵtext(3, "star");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(4, "div", 41);
+    i0.ɵɵtext(5);
+    i0.ɵɵelementEnd()();
+    i0.ɵɵelementStart(6, "div", 40)(7, "app-icon");
+    i0.ɵɵtext(8, "help");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(9, "div", 41);
+    i0.ɵɵtext(10);
+    i0.ɵɵelementEnd()();
+    i0.ɵɵelementContainerEnd();
+  }
+  if (rf & 2) {
+    var ctx_r1 = i0.ɵɵnextContext();
+    i0.ɵɵadvance();
+    i0.ɵɵclassProp("bg-base-200", !ctx_r1.is_interested)("text-base-content", !ctx_r1.is_interested)("opacity-30", !ctx_r1.is_interested)("bg-success", ctx_r1.is_interested)("text-success-content", ctx_r1.is_interested)("opacity-100", ctx_r1.is_interested);
+    i0.ɵɵadvance(4);
+    i0.ɵɵtextInterpolate1(" ", ctx_r1.is_interested ? "" : "Not ", "Interested ");
+    i0.ɵɵadvance();
+    i0.ɵɵclassProp("bg-base-200", !ctx_r1.is_going)("text-base-content", !ctx_r1.is_going)("opacity-30", !ctx_r1.is_going)("bg-success", ctx_r1.is_going)("text-success-content", ctx_r1.is_going)("opacity-100", ctx_r1.is_going);
+    i0.ɵɵadvance(4);
+    i0.ɵɵtextInterpolate1(" ", ctx_r1.is_going ? "" : "Not ", "Going ");
+  }
+}
+function GroupEventDetailsModalComponent_div_83_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div");
+    i0.ɵɵtext(1);
+    i0.ɵɵpipe(2, "space");
+    i0.ɵɵpipe(3, "async");
+    i0.ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    var tmp_3_0;
+    var ctx_r1 = i0.ɵɵnextContext();
+    i0.ɵɵadvance();
+    i0.ɵɵtextInterpolate1(" ", (tmp_3_0 = i0.ɵɵpipeBind1(3, 3, i0.ɵɵpipeBind1(2, 1, ctx_r1.system_id))) == null ? null : tmp_3_0.display_name, " ");
+  }
+}
+function GroupEventDetailsModalComponent_div_84_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 42);
+    i0.ɵɵtext(1, " Room to be confirmed ");
+    i0.ɵɵelementEnd();
+  }
+}
+function GroupEventDetailsModalComponent_div_85_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 42);
+    i0.ɵɵtext(1);
+    i0.ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    var ctx_r1 = i0.ɵɵnextContext();
+    i0.ɵɵadvance();
+    i0.ɵɵtextInterpolate1(" ", ctx_r1.is_onsite ? "Can be attended online" : "Remote Event", " ");
+  }
+}
+function GroupEventDetailsModalComponent_span_97_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "span", 42);
+    i0.ɵɵtext(1, " No description ");
+    i0.ɵɵelementEnd();
+  }
+}
+function GroupEventDetailsModalComponent_div_99_interactive_map_3_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelement(0, "interactive-map", 49);
+  }
+  if (rf & 2) {
+    var ctx_r1 = i0.ɵɵnextContext(2);
+    i0.ɵɵproperty("src", ctx_r1.level == null ? null : ctx_r1.level.map_id)("features", ctx_r1.features)("styles", ctx_r1.styles);
+  }
+}
+function GroupEventDetailsModalComponent_div_99_span_9_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "span", 42);
+    i0.ɵɵtext(1, " Remote Event ");
+    i0.ɵɵelementEnd();
+  }
+}
+function GroupEventDetailsModalComponent_div_99_span_13_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "span");
+    i0.ɵɵtext(1);
+    i0.ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    var ctx_r1 = i0.ɵɵnextContext(2);
+    i0.ɵɵadvance();
+    i0.ɵɵtextInterpolate2(" ", ctx_r1.building.display_name || ctx_r1.building.name, ", ", (ctx_r1.level == null ? null : ctx_r1.level.display_name) || (ctx_r1.level == null ? null : ctx_r1.level.name), " ");
+  }
+}
+function GroupEventDetailsModalComponent_div_99_span_14_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "span", 42);
+    i0.ɵɵtext(1, " No location set for this event ");
+    i0.ɵɵelementEnd();
+  }
+}
+function GroupEventDetailsModalComponent_div_99_Template(rf, ctx) {
+  if (rf & 1) {
+    var _r3 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "div", 43)(1, "div", 44)(2, "button", 45);
+    i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_div_99_Template_button_click_2_listener() {
+      i0.ɵɵrestoreView(_r3);
+      var ctx_r1 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r1.viewLocation());
+    });
+    i0.ɵɵtemplate(3, GroupEventDetailsModalComponent_div_99_interactive_map_3_Template, 1, 3, "interactive-map", 46);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(4, "div", 47)(5, "div");
+    i0.ɵɵtext(6);
+    i0.ɵɵpipe(7, "space");
+    i0.ɵɵpipe(8, "async");
+    i0.ɵɵtemplate(9, GroupEventDetailsModalComponent_div_99_span_9_Template, 2, 0, "span", 30);
+    i0.ɵɵpipe(10, "space");
+    i0.ɵɵpipe(11, "async");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(12, "div", 48);
+    i0.ɵɵtemplate(13, GroupEventDetailsModalComponent_div_99_span_13_Template, 2, 2, "span", 12)(14, GroupEventDetailsModalComponent_div_99_span_14_Template, 2, 0, "span", 30);
+    i0.ɵɵelementEnd()()()();
+  }
+  if (rf & 2) {
+    var tmp_4_0;
+    var tmp_5_0;
+    var ctx_r1 = i0.ɵɵnextContext();
+    i0.ɵɵadvance(3);
+    i0.ɵɵproperty("ngIf", !ctx_r1.showing_map);
+    i0.ɵɵadvance(3);
+    i0.ɵɵtextInterpolate1(" ", (tmp_4_0 = i0.ɵɵpipeBind1(8, 7, i0.ɵɵpipeBind1(7, 5, ctx_r1.system_id))) == null ? null : tmp_4_0.display_name, " ");
+    i0.ɵɵadvance(3);
+    i0.ɵɵproperty("ngIf", !((tmp_5_0 = i0.ɵɵpipeBind1(11, 11, i0.ɵɵpipeBind1(10, 9, ctx_r1.system_id))) == null ? null : tmp_5_0.display_name));
+    i0.ɵɵadvance(4);
+    i0.ɵɵproperty("ngIf", ctx_r1.building && ctx_r1.level);
+    i0.ɵɵadvance();
+    i0.ɵɵproperty("ngIf", !ctx_r1.building || !ctx_r1.level);
+  }
+}
+function GroupEventDetailsModalComponent_div_100_Template(rf, ctx) {
+  if (rf & 1) {
+    var _r4 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "div", 50)(1, "button", 51);
+    i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_div_100_Template_button_click_1_listener() {
+      i0.ɵɵrestoreView(_r4);
+      var ctx_r1 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r1.show_attendees = false);
+    });
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(2, "div", 52)(3, "attendee-list", 53);
+    i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_div_100_Template_attendee_list_click_3_listener() {
+      i0.ɵɵrestoreView(_r4);
+      var ctx_r1 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r1.show_attendees = false);
+    });
+    i0.ɵɵelementEnd()()();
+  }
+  if (rf & 2) {
+    var ctx_r1 = i0.ɵɵnextContext();
+    i0.ɵɵadvance(3);
+    i0.ɵɵproperty("list", ctx_r1.event.attendees)("host", ctx_r1.event.user_email);
+  }
+}
+var GroupEventDetailsModalComponent = /*#__PURE__*/function () {
+  function GroupEventDetailsModalComponent(_data, _org, _settings, _dialog, _dialog_ref) {
+    _classCallCheck(this, GroupEventDetailsModalComponent);
+    this._data = _data;
+    this._org = _org;
+    this._settings = _settings;
+    this._dialog = _dialog;
+    this._dialog_ref = _dialog_ref;
+    this.edit = new core_1.EventEmitter();
+    this.remove = new core_1.EventEmitter();
+    this.event = this._data.event;
+    this.concierge = this._data.concierge;
+    this.features = [];
+    this.locate = '';
+    this.showing_map = false;
+    this.show_attendees = false;
+    this.styles = {};
+    this.raw_description = '';
+  }
+  return _createClass(GroupEventDetailsModalComponent, [{
+    key: "time_format",
+    get: function get() {
+      return this._settings.time_format;
+    }
+  }, {
+    key: "featured",
+    get: function get() {
+      var _this$event$extension;
+      return this.event.featured || ((_this$event$extension = this.event.extension_data) === null || _this$event$extension === void 0 ? void 0 : _this$event$extension.featured);
+    }
+  }, {
+    key: "is_onsite",
+    get: function get() {
+      return this.event.extension_data.attendance_type !== 'ONLINE';
+    }
+  }, {
+    key: "has_space",
+    get: function get() {
+      var _this$space;
+      return !!((_this$space = this.space) !== null && _this$space !== void 0 && _this$space.id);
+    }
+  }, {
+    key: "is_online",
+    get: function get() {
+      return !this.is_onsite || this.event.extension_data.attendance_type === 'ANY';
+    }
+  }, {
+    key: "attendance",
+    get: function get() {
+      var _this$event$attendees;
+      return ((_this$event$attendees = this.event.attendees) === null || _this$event$attendees === void 0 || (_this$event$attendees = _this$event$attendees.filter(function (_) {
+        return _.checked_in;
+      })) === null || _this$event$attendees === void 0 ? void 0 : _this$event$attendees.length) || 0;
+    }
+  }, {
+    key: "is_interested",
+    get: function get() {
+      return !!this.guest_details;
+    }
+  }, {
+    key: "is_going",
+    get: function get() {
+      var _this$guest_details;
+      return (_this$guest_details = this.guest_details) === null || _this$guest_details === void 0 ? void 0 : _this$guest_details.checked_in;
+    }
+  }, {
+    key: "system_id",
+    get: function get() {
+      var _this$space2;
+      return (_this$space2 = this.space) === null || _this$space2 === void 0 ? void 0 : _this$space2.id;
+    }
+  }, {
+    key: "guest_details",
+    get: function get() {
+      var _this$event$attendees2;
+      var user = (0, common_1.currentUser)();
+      return (_this$event$attendees2 = this.event.attendees) === null || _this$event$attendees2 === void 0 ? void 0 : _this$event$attendees2.find(function (_) {
+        return _.email === user.email;
+      });
+    }
+  }, {
+    key: "group_event_calendar",
+    get: function get() {
+      return this._settings.get('app.group_events_calendar');
+    }
+  }, {
+    key: "ngOnInit",
+    value: function () {
+      var _ngOnInit = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+        var _this = this,
+          _this$event$extension2,
+          _this$space3,
+          _this$space4;
+        var space_pipe, resource, map_id, id, zones;
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              space_pipe = new space_pipe_1.SpacePipe(this._org);
+              resource = this.event.resources.find(function (_) {
+                return _.email !== _this.group_event_calendar;
+              });
+              _context.next = 4;
+              return space_pipe.transform((resource === null || resource === void 0 ? void 0 : resource.id) || (resource === null || resource === void 0 ? void 0 : resource.email));
+            case 4:
+              this.space = _context.sent;
+              map_id = (_this$event$extension2 = this.event.extension_data) === null || _this$event$extension2 === void 0 ? void 0 : _this$event$extension2.map_id;
+              id = ((_this$space3 = this.space) === null || _this$space3 === void 0 ? void 0 : _this$space3.map_id) || map_id;
+              if (id) {
+                this.styles["#".concat(id)] = {
+                  fill: 'green'
+                };
+                this.features = [{
+                  location: id,
+                  content: components_1.MapPinComponent,
+                  data: {}
+                }];
+              }
+              zones = ((_this$space4 = this.space) === null || _this$space4 === void 0 ? void 0 : _this$space4.zones) || [];
+              this.level = this._org.levelWithID(zones);
+              this.building = this._org.buildings.find(function (_) {
+                return zones.includes(_.id);
+              }) || this._org.building;
+              this.locate = map_id || '';
+              this.raw_description = this.removeHtmlTags(this.event.body);
+            case 13:
+            case "end":
+              return _context.stop();
+          }
+        }, _callee, this);
+      }));
+      function ngOnInit() {
+        return _ngOnInit.apply(this, arguments);
+      }
+      return ngOnInit;
+    }()
+  }, {
+    key: "removeHtmlTags",
+    value: function removeHtmlTags(html) {
+      var doc = new DOMParser().parseFromString(html, 'text/html');
+      return doc.body.textContent || '';
+    }
+  }, {
+    key: "viewLocation",
+    value: function viewLocation() {
+      var _this$space5,
+        _this2 = this;
+      if (!((_this$space5 = this.space) !== null && _this$space5 !== void 0 && _this$space5.map_id)) {
+        return (0, common_1.notifyInfo)('Unable to locate space on map.');
+      }
+      this.showing_map = true;
+      var ref = this._dialog.open(components_1.MapLocateModalComponent, {
+        maxWidth: '95vw',
+        maxHeight: '95vh',
+        data: {
+          item: this.space
+        }
+      });
+      ref.afterClosed().subscribe(function () {
+        _this2.showing_map = false;
+      });
+    }
+  }, {
+    key: "toggleInterest",
+    value: function () {
+      var _toggleInterest = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+        var user;
+        return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+          while (1) switch (_context2.prev = _context2.next) {
+            case 0:
+              user = this.guest_details;
+              console.log('User:', user, this.is_interested);
+              if (!(this.is_interested && user)) {
+                _context2.next = 8;
+                break;
+              }
+              _context2.next = 5;
+              return (0, events_fn_1.removeEventGuest)(this.event.id, (0, common_1.currentUser)()).toPromise();
+            case 5:
+              this.event.attendees = (this.event.attendees || []).filter(function (_) {
+                return _.email !== user.email;
+              });
+              _context2.next = 12;
+              break;
+            case 8:
+              _context2.next = 10;
+              return (0, events_fn_1.addEventGuest)(this.event.id, (0, common_1.currentUser)()).toPromise();
+            case 10:
+              user = _context2.sent;
+              this.event.attendees = (0, common_1.unique)([].concat(_toConsumableArray(this.event.attendees || []), [user]), 'email');
+            case 12:
+            case "end":
+              return _context2.stop();
+          }
+        }, _callee2, this);
+      }));
+      function toggleInterest() {
+        return _toggleInterest.apply(this, arguments);
+      }
+      return toggleInterest;
+    }()
+  }, {
+    key: "toggleAttendance",
+    value: function () {
+      var _toggleAttendance = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
+        var user, guest;
+        return _regeneratorRuntime().wrap(function _callee3$(_context3) {
+          while (1) switch (_context3.prev = _context3.next) {
+            case 0:
+              user = this.guest_details;
+              if (user) {
+                _context3.next = 6;
+                break;
+              }
+              _context3.next = 4;
+              return (0, events_fn_1.addEventGuest)(this.event.id, (0, common_1.currentUser)()).toPromise();
+            case 4:
+              user = _context3.sent;
+              this.event.attendees = (0, common_1.unique)([].concat(_toConsumableArray(this.event.attendees || []), [user]), 'email');
+            case 6:
+              user = _objectSpread(_objectSpread({}, (0, common_1.currentUser)()), user || {});
+              if (user.email) {
+                _context3.next = 9;
+                break;
+              }
+              return _context3.abrupt("return");
+            case 9:
+              _context3.next = 11;
+              return (0, events_fn_1.checkinEventGuest)(this.event.id, user.email, !this.is_going).toPromise();
+            case 11:
+              guest = this.event.attendees.find(function (_) {
+                return _.email === user.email;
+              });
+              if (guest) {
+                _context3.next = 14;
+                break;
+              }
+              return _context3.abrupt("return");
+            case 14:
+              guest.checked_in = !this.is_going;
+            case 15:
+            case "end":
+              return _context3.stop();
+          }
+        }, _callee3, this);
+      }));
+      function toggleAttendance() {
+        return _toggleAttendance.apply(this, arguments);
+      }
+      return toggleAttendance;
+    }()
+  }]);
+}();
+_GroupEventDetailsModalComponent = GroupEventDetailsModalComponent;
+_GroupEventDetailsModalComponent.ɵfac = function GroupEventDetailsModalComponent_Factory(t) {
+  return new (t || _GroupEventDetailsModalComponent)(i0.ɵɵdirectiveInject(dialog_1.MAT_DIALOG_DATA), i0.ɵɵdirectiveInject(i1.OrganisationService), i0.ɵɵdirectiveInject(i2.SettingsService), i0.ɵɵdirectiveInject(i3.MatDialog), i0.ɵɵdirectiveInject(i3.MatDialogRef));
+};
+_GroupEventDetailsModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
+  type: _GroupEventDetailsModalComponent,
+  selectors: [["group-event-details-modal"]],
+  outputs: {
+    edit: "edit",
+    remove: "remove"
+  },
+  decls: 101,
+  vars: 38,
+  consts: [["concierge_menu", "matMenu"], ["menu", "matMenu"], [1, "relative", "w-[48rem]", "max-w-[calc(100vw-1rem)]", "max-h-[80vh]", "overflow-hidden"], [1, "relative", "flex", "items-center", "justify-between", "h-52", "w-full", "bg-base-200", "overflow-hidden"], ["auth", "", "class", "absolute top-1/2 left-1/2 min-h-full min-w-full object-cover -translate-x-1/2 -translate-y-1/2", 3, "source", 4, "ngIf"], ["class", "absolute top-0 left-0 rounded-br py-2 pl-2 pr-4 space-x-2 bg-info text-info-content flex items-center text-sm", 4, "ngIf"], ["icon", "", "mat-dialog-close", "", 1, "absolute", "top-1", "right-1", "overflow-hidden"], [1, "absolute", "inset-0", "bg-base-100", "opacity-30", "z-0"], [1, "z-10"], [1, "flex", "items-center", "justify-between", "py-4", "px-8", "border-b", "border-base-200"], [1, "text-left", "text-xl"], [1, "flex", "items-center", "space-x-2"], [4, "ngIf"], ["btn", "", "matRipple", "", 1, "clear", "bg-base-200", "text-base-content", "w-[2.75rem]", 3, "disabled", "matMenuTriggerFor"], [1, "text-2xl"], ["mat-menu-item", "", 3, "disabled"], [1, "mr-2"], ["mat-menu-item", "", "mat-dialog-close", "", 3, "click"], ["mat-menu-item", "", 3, "click"], [1, "text-2xl", "text-error"], ["mat-menu-item", "", 1, "flex", "items-center", "space-x-2", 3, "click"], [1, "flex", "flex-1", "max-h-[calc(80vh-18rem)]", "overflow-y-auto", "overflow-x-hidden", "p-8", "space-x-6"], [1, "flex", "flex-1", "flex-col", "space-y-2", "w-1/3"], [1, "flex", "items-center", "space-x-4"], [1, "flex", "items-center", "justify-center", "w-10", "h-10", "bg-base-200", "rounded-full"], [1, "font-medium", "pt-4"], [1, "flex", "flex-col"], [1, "text-sm"], [1, "text-sm", "opacity-30"], [1, "flex", "flex-col", "text-sm"], ["class", "opacity-30", 4, "ngIf"], ["matRipple", "", 1, "flex", "items-center", "space-x-4", "rounded", "min-h-12", 3, "click"], [1, "text-sm", "pb-4"], [3, "innerHTML"], ["class", "flex w-[20rem]", 4, "ngIf"], ["class", "absolute inset-0 z-50", 4, "ngIf"], ["auth", "", 1, "absolute", "top-1/2", "left-1/2", "min-h-full", "min-w-full", "object-cover", "-translate-x-1/2", "-translate-y-1/2", 3, "source"], [1, "absolute", "top-0", "left-0", "rounded-br", "py-2", "pl-2", "pr-4", "space-x-2", "bg-info", "text-info-content", "flex", "items-center", "text-sm"], [1, "text-base"], [1, "uppercase"], ["btn", "", 1, "flex", "items-center", "px-4", "h-10", "rounded", "space-x-2"], [1, "pr-2"], [1, "opacity-30"], [1, "flex", "w-[20rem]"], [1, "border", "border-base-300", "w-full"], ["matRipple", "", 1, "relative", "w-full", "h-40", "bg-base-200", 3, "click"], [3, "src", "features", "styles", 4, "ngIf"], [1, "p-4", "space-y-2"], [1, "opacity-30", "text-sm"], [3, "src", "features", "styles"], [1, "absolute", "inset-0", "z-50"], [1, "absolute", "inset-0", "bg-base-content", "opacity-60", 3, "click"], [1, "absolute", "left-1/2", "-translate-x-1/2", "w-[24rem]", "inset-y-8", "rounded", "shadow", "overflow-hidden"], [3, "click", "list", "host"]],
+  template: function GroupEventDetailsModalComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      var _r1 = i0.ɵɵgetCurrentView();
+      i0.ɵɵelementStart(0, "div", 2)(1, "div", 3);
+      i0.ɵɵtemplate(2, GroupEventDetailsModalComponent_img_2_Template, 1, 1, "img", 4);
+      i0.ɵɵelementEnd();
+      i0.ɵɵtemplate(3, GroupEventDetailsModalComponent_div_3_Template, 5, 0, "div", 5);
+      i0.ɵɵelementStart(4, "button", 6);
+      i0.ɵɵelement(5, "div", 7);
+      i0.ɵɵelementStart(6, "app-icon", 8);
+      i0.ɵɵtext(7, "close");
+      i0.ɵɵelementEnd()();
+      i0.ɵɵelementStart(8, "div", 9)(9, "h3", 10);
+      i0.ɵɵtext(10);
+      i0.ɵɵelementEnd();
+      i0.ɵɵelementStart(11, "div", 11);
+      i0.ɵɵtemplate(12, GroupEventDetailsModalComponent_ng_container_12_Template, 11, 26, "ng-container", 12);
+      i0.ɵɵelementStart(13, "button", 13)(14, "app-icon", 14);
+      i0.ɵɵtext(15, "more_horiz");
+      i0.ɵɵelementEnd()();
+      i0.ɵɵelementStart(16, "mat-menu", null, 0)(18, "button", 15)(19, "div", 11)(20, "app-icon", 14);
+      i0.ɵɵtext(21, " confirmation_number ");
+      i0.ɵɵelementEnd();
+      i0.ɵɵelementStart(22, "div", 16);
+      i0.ɵɵtext(23, "Promote Event");
+      i0.ɵɵelementEnd()()();
+      i0.ɵɵelementStart(24, "button", 17);
+      i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_Template_button_click_24_listener() {
+        i0.ɵɵrestoreView(_r1);
+        return i0.ɵɵresetView(ctx.edit.emit());
+      });
+      i0.ɵɵelementStart(25, "div", 11)(26, "app-icon", 14);
+      i0.ɵɵtext(27, "edit");
+      i0.ɵɵelementEnd();
+      i0.ɵɵelementStart(28, "div", 16);
+      i0.ɵɵtext(29, "Edit Event");
+      i0.ɵɵelementEnd()()();
+      i0.ɵɵelementStart(30, "button", 15)(31, "div", 11)(32, "app-icon", 14);
+      i0.ɵɵtext(33, "content_copy");
+      i0.ɵɵelementEnd();
+      i0.ɵɵelementStart(34, "div", 16);
+      i0.ɵɵtext(35, "Copy URL");
+      i0.ɵɵelementEnd()()();
+      i0.ɵɵelementStart(36, "button", 18);
+      i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_Template_button_click_36_listener() {
+        i0.ɵɵrestoreView(_r1);
+        return i0.ɵɵresetView(ctx.remove.emit());
+      });
+      i0.ɵɵelementStart(37, "div", 11)(38, "app-icon", 19);
+      i0.ɵɵtext(39, " delete ");
+      i0.ɵɵelementEnd();
+      i0.ɵɵelementStart(40, "div", 16);
+      i0.ɵɵtext(41, "Delete Event");
+      i0.ɵɵelementEnd()()()();
+      i0.ɵɵelementStart(42, "mat-menu", null, 1)(44, "button", 20);
+      i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_Template_button_click_44_listener() {
+        i0.ɵɵrestoreView(_r1);
+        return i0.ɵɵresetView(ctx.toggleInterest());
+      });
+      i0.ɵɵelementStart(45, "div", 11)(46, "app-icon");
+      i0.ɵɵtext(47, " star ");
+      i0.ɵɵelementEnd();
+      i0.ɵɵelementStart(48, "span");
+      i0.ɵɵtext(49);
+      i0.ɵɵelementEnd()()();
+      i0.ɵɵelementStart(50, "button", 18);
+      i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_Template_button_click_50_listener() {
+        i0.ɵɵrestoreView(_r1);
+        return i0.ɵɵresetView(ctx.toggleAttendance());
+      });
+      i0.ɵɵelementStart(51, "div", 11)(52, "app-icon");
+      i0.ɵɵtext(53, " help ");
+      i0.ɵɵelementEnd();
+      i0.ɵɵelementStart(54, "span");
+      i0.ɵɵtext(55);
+      i0.ɵɵelementEnd()()()()()();
+      i0.ɵɵelementStart(56, "div", 21)(57, "div", 22)(58, "div", 23)(59, "div", 24)(60, "app-icon");
+      i0.ɵɵtext(61, "person");
+      i0.ɵɵelementEnd()();
+      i0.ɵɵelementStart(62, "div");
+      i0.ɵɵtext(63);
+      i0.ɵɵelementEnd()();
+      i0.ɵɵelementStart(64, "h3", 25);
+      i0.ɵɵtext(65, "When and where");
+      i0.ɵɵelementEnd();
+      i0.ɵɵelementStart(66, "div", 23)(67, "div", 24)(68, "app-icon");
+      i0.ɵɵtext(69, "calendar_today");
+      i0.ɵɵelementEnd()();
+      i0.ɵɵelementStart(70, "div", 26)(71, "div", 27);
+      i0.ɵɵtext(72, "Date and Time");
+      i0.ɵɵelementEnd();
+      i0.ɵɵelementStart(73, "div", 28);
+      i0.ɵɵtext(74);
+      i0.ɵɵpipe(75, "date");
+      i0.ɵɵpipe(76, "date");
+      i0.ɵɵpipe(77, "date");
+      i0.ɵɵelementEnd()()();
+      i0.ɵɵelementStart(78, "div", 23)(79, "div", 24)(80, "app-icon");
+      i0.ɵɵtext(81, "place");
+      i0.ɵɵelementEnd()();
+      i0.ɵɵelementStart(82, "div", 29);
+      i0.ɵɵtemplate(83, GroupEventDetailsModalComponent_div_83_Template, 4, 5, "div", 12)(84, GroupEventDetailsModalComponent_div_84_Template, 2, 0, "div", 30)(85, GroupEventDetailsModalComponent_div_85_Template, 2, 1, "div", 30);
+      i0.ɵɵelementEnd()();
+      i0.ɵɵelementStart(86, "button", 31);
+      i0.ɵɵlistener("click", function GroupEventDetailsModalComponent_Template_button_click_86_listener() {
+        i0.ɵɵrestoreView(_r1);
+        return i0.ɵɵresetView(ctx.show_attendees = true);
+      });
+      i0.ɵɵelementStart(87, "div", 24)(88, "app-icon");
+      i0.ɵɵtext(89, "person");
+      i0.ɵɵelementEnd()();
+      i0.ɵɵelementStart(90, "div");
+      i0.ɵɵtext(91);
+      i0.ɵɵelementEnd()();
+      i0.ɵɵelementStart(92, "h3", 25);
+      i0.ɵɵtext(93, "About this event");
+      i0.ɵɵelementEnd();
+      i0.ɵɵelementStart(94, "div", 32);
+      i0.ɵɵelement(95, "span", 33);
+      i0.ɵɵpipe(96, "sanitize");
+      i0.ɵɵtemplate(97, GroupEventDetailsModalComponent_span_97_Template, 2, 0, "span", 30);
+      i0.ɵɵelementEnd()();
+      i0.ɵɵelementStart(98, "div");
+      i0.ɵɵtemplate(99, GroupEventDetailsModalComponent_div_99_Template, 15, 13, "div", 34);
+      i0.ɵɵelementEnd()()();
+      i0.ɵɵtemplate(100, GroupEventDetailsModalComponent_div_100_Template, 4, 2, "div", 35);
+    }
+    if (rf & 2) {
+      var concierge_menu_r5 = i0.ɵɵreference(17);
+      var menu_r6 = i0.ɵɵreference(43);
+      i0.ɵɵadvance(2);
+      i0.ɵɵproperty("ngIf", ctx.event.extension_data == null ? null : ctx.event.extension_data.images == null ? null : ctx.event.extension_data.images.length);
+      i0.ɵɵadvance();
+      i0.ɵɵproperty("ngIf", ctx.featured);
+      i0.ɵɵadvance(7);
+      i0.ɵɵtextInterpolate1(" ", ctx.event.title, " ");
+      i0.ɵɵadvance(2);
+      i0.ɵɵproperty("ngIf", !ctx.concierge);
+      i0.ɵɵadvance();
+      i0.ɵɵproperty("disabled", ctx.event.state === "done")("matMenuTriggerFor", ctx.concierge ? concierge_menu_r5 : menu_r6);
+      i0.ɵɵadvance(5);
+      i0.ɵɵproperty("disabled", true);
+      i0.ɵɵadvance(12);
+      i0.ɵɵproperty("disabled", true);
+      i0.ɵɵadvance(16);
+      i0.ɵɵclassProp("text-error", ctx.is_interested);
+      i0.ɵɵadvance(3);
+      i0.ɵɵtextInterpolate1(" ", ctx.is_interested ? "Revoke" : "Indicate", " Interest ");
+      i0.ɵɵadvance(3);
+      i0.ɵɵclassProp("text-error", ctx.is_going);
+      i0.ɵɵadvance(3);
+      i0.ɵɵtextInterpolate1(" ", ctx.is_going ? "Revoke" : "Indicate", " Going ");
+      i0.ɵɵadvance(8);
+      i0.ɵɵtextInterpolate1(" Event by ", (ctx.event.organiser == null ? null : ctx.event.organiser.name) || ctx.event.host, " ");
+      i0.ɵɵadvance(11);
+      i0.ɵɵtextInterpolate3(" ", i0.ɵɵpipeBind2(75, 27, ctx.event.date, "EEEE, d MMMM, yyyy"), " . ", i0.ɵɵpipeBind2(76, 30, ctx.event.date, ctx.time_format), " - ", i0.ɵɵpipeBind2(77, 33, ctx.event.date + ctx.event.duration * 60 * 1000, ctx.time_format), " ");
+      i0.ɵɵadvance(9);
+      i0.ɵɵproperty("ngIf", ctx.is_onsite && ctx.has_space);
+      i0.ɵɵadvance();
+      i0.ɵɵproperty("ngIf", ctx.is_onsite && !ctx.has_space);
+      i0.ɵɵadvance();
+      i0.ɵɵproperty("ngIf", ctx.is_online);
+      i0.ɵɵadvance(6);
+      i0.ɵɵtextInterpolate2(" ", ctx.attendance, " going, ", ctx.event.attendees == null ? null : ctx.event.attendees.length, " interested ");
+      i0.ɵɵadvance(4);
+      i0.ɵɵproperty("innerHTML", i0.ɵɵpipeBind1(96, 36, ctx.event.body), i0.ɵɵsanitizeHtml);
+      i0.ɵɵadvance(2);
+      i0.ɵɵproperty("ngIf", !ctx.raw_description.trim());
+      i0.ɵɵadvance(2);
+      i0.ɵɵproperty("ngIf", ctx.level);
+      i0.ɵɵadvance();
+      i0.ɵɵproperty("ngIf", ctx.show_attendees);
+    }
+  }
+});
+exports.GroupEventDetailsModalComponent = GroupEventDetailsModalComponent;
 
 /***/ }),
 
@@ -47646,7 +47723,7 @@ var validateCateringField = function validateCateringField(catering_control) {
   };
 };
 function generateEventForm() {
-  var _event$organiser, _ref, _ref2, _event$extension_data, _event$extension_data2, _event$extension_data3, _event$extension_data4, _event$extension_data5, _event$extension_data6, _event$extension_data7, _event$extension_data8, _event$extension_data9;
+  var _event$organiser, _ref, _ref2, _event$extension_data, _event$extension_data2, _event$extension_data3, _event$extension_data4, _event$extension_data5, _event$extension_data6, _event$extension_data7, _event$extension_data8, _event$extension_data9, _event$extension_data10, _event$extension_data11, _event$extension_data12, _event$extension_data13, _event$extension_data14;
   var event = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new event_class_1.CalendarEvent();
   var settings = arguments.length > 1 ? arguments[1] : undefined;
   if (!event) event = new event_class_1.CalendarEvent();
@@ -47688,7 +47765,13 @@ function generateEventForm() {
     category: new forms_1.FormControl(((_event$extension_data8 = event.extension_data) === null || _event$extension_data8 === void 0 ? void 0 : _event$extension_data8.category) || ''),
     tags: new forms_1.FormControl(((_event$extension_data9 = event.extension_data) === null || _event$extension_data9 === void 0 ? void 0 : _event$extension_data9.tags) || []),
     update_master: new forms_1.FormControl(false),
-    system: new forms_1.FormControl(event.system)
+    system: new forms_1.FormControl(event.system),
+    attendance_type: new forms_1.FormControl(((_event$extension_data10 = event.extension_data) === null || _event$extension_data10 === void 0 ? void 0 : _event$extension_data10.attendance_type) || 'ONSITE'),
+    timezone: new forms_1.FormControl(event.timezone || common_1.LOCAL_TIMEZONE),
+    shared_event: new forms_1.FormControl(((_event$extension_data11 = event.extension_data) === null || _event$extension_data11 === void 0 ? void 0 : _event$extension_data11.shared_event) || false),
+    view_access: new forms_1.FormControl(((_event$extension_data12 = event.extension_data) === null || _event$extension_data12 === void 0 ? void 0 : _event$extension_data12.view_access) || 'PRIVATE'),
+    images: new forms_1.FormControl(((_event$extension_data13 = event.extension_data) === null || _event$extension_data13 === void 0 ? void 0 : _event$extension_data13.images) || []),
+    featured: new forms_1.FormControl(((_event$extension_data14 = event.extension_data) === null || _event$extension_data14 === void 0 ? void 0 : _event$extension_data14.featured) || false)
   });
   form.get('organiser').valueChanges.subscribe(function (o) {
     return form.controls.host.setValue(o === null || o === void 0 ? void 0 : o.email);
@@ -48050,15 +48133,6 @@ var i1 = __webpack_require__(/*! @placeos/common */ 22797);
 var i2 = __webpack_require__(/*! libs/events/src/lib/event-form.service */ 26101);
 var i3 = __webpack_require__(/*! @angular/material/dialog */ 12587);
 var i4 = __webpack_require__(/*! @angular/router */ 95072);
-var i5 = __webpack_require__(/*! @angular/common */ 60316);
-var i6 = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
-var i7 = __webpack_require__(/*! @angular/material/form-field */ 24950);
-var i8 = __webpack_require__(/*! @angular/material/core */ 74646);
-var i9 = __webpack_require__(/*! @angular/material/input */ 95541);
-var i10 = __webpack_require__(/*! @angular/material/progress-spinner */ 41134);
-var i11 = __webpack_require__(/*! @angular/forms */ 34456);
-var i12 = __webpack_require__(/*! ../../../form-fields/src/lib/duration-field.component */ 83476);
-var i13 = __webpack_require__(/*! ../../../form-fields/src/lib/user-search-field.component */ 18000);
 function ExploreBookingModalComponent_button_4_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelementStart(0, "button", 10)(1, "app-icon");
@@ -48366,7 +48440,6 @@ _ExploreBookingModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵproperty("ngIf", !i0.ɵɵpipeBind1(7, 5, ctx.loading))("ngIfElse", load_state_r3);
     }
   },
-  dependencies: [i5.NgIf, i6.IconComponent, i7.MatFormField, i7.MatError, i8.MatRipple, i3.MatDialogClose, i9.MatInput, i10.MatProgressSpinner, i11.DefaultValueAccessor, i11.NgControlStatus, i11.NgControlStatusGroup, i11.FormGroupDirective, i11.FormControlName, i12.DurationFieldComponent, i13.UserSearchFieldComponent, i5.AsyncPipe, i5.DatePipe],
   styles: ["header[_ngcontent-%COMP%] {\n                max-width: calc(100vw + 100%);\n            }\n\n            [load][_ngcontent-%COMP%] {\n                width: 32rem;\n                max-width: calc(100vw - 2rem);\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV4cGxvcmUtYm9va2luZy1tb2RhbC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLDZCQUE2QjtZQUNqQzs7WUFFQTtnQkFDSSxZQUFZO2dCQUNaLDZCQUE2QjtZQUNqQyIsImZpbGUiOiJleHBsb3JlLWJvb2tpbmctbW9kYWwuY29tcG9uZW50LnRzIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICBoZWFkZXIge1xuICAgICAgICAgICAgICAgIG1heC13aWR0aDogY2FsYygxMDB2dyArIDEwMCUpO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICBbbG9hZF0ge1xuICAgICAgICAgICAgICAgIHdpZHRoOiAzMnJlbTtcbiAgICAgICAgICAgICAgICBtYXgtd2lkdGg6IGNhbGMoMTAwdncgLSAycmVtKTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl19 */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvZXhwbG9yZS9zcmMvbGliL2V4cGxvcmUtYm9va2luZy1tb2RhbC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLDZCQUE2QjtZQUNqQzs7WUFFQTtnQkFDSSxZQUFZO2dCQUNaLDZCQUE2QjtZQUNqQzs7QUFFWiw0bUJBQTRtQiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgaGVhZGVyIHtcbiAgICAgICAgICAgICAgICBtYXgtd2lkdGg6IGNhbGMoMTAwdncgKyAxMDAlKTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgW2xvYWRdIHtcbiAgICAgICAgICAgICAgICB3aWR0aDogMzJyZW07XG4gICAgICAgICAgICAgICAgbWF4LXdpZHRoOiBjYWxjKDEwMHZ3IC0gMnJlbSk7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
 });
 exports.ExploreBookingModalComponent = ExploreBookingModalComponent;
@@ -51888,9 +51961,6 @@ var components_1 = __webpack_require__(/*! @placeos/components */ 51588);
 var settings_service_1 = __webpack_require__(/*! libs/common/src/lib/settings.service */ 14233);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
 var i1 = __webpack_require__(/*! libs/common/src/lib/settings.service */ 14233);
-var i2 = __webpack_require__(/*! @angular/common */ 60316);
-var i3 = __webpack_require__(/*! ../../../components/src/lib/custom-tooltip.component */ 22238);
-var i4 = __webpack_require__(/*! ../../../components/src/lib/authenticated-image.directive */ 93208);
 function ExploreSpaceInfoComponent_ng_template_2_img_4_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelement(0, "img", 18);
@@ -52092,7 +52162,6 @@ _ExploreSpaceInfoComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵattribute("id", (ctx.space == null ? null : ctx.space.map_id) || (ctx.space == null ? null : ctx.space.id));
     }
   },
-  dependencies: [i2.NgForOf, i2.NgIf, i3.CustomTooltipComponent, i4.AuthenticatedImageDirective],
   styles: ["[name='space-info'][_ngcontent-%COMP%] {\n                width: 16rem;\n            }\n\n            [status][_ngcontent-%COMP%] {\n                background-color: #43a047;\n                font-weight: 500;\n            }\n\n            [status].busy[_ngcontent-%COMP%] {\n                background-color: #e53935;\n            }\n\n            [status].pending[_ngcontent-%COMP%] {\n                background-color: #ffb300;\n            }\n\n            [status].not-bookable[_ngcontent-%COMP%] {\n                background-color: #757575;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV4cGxvcmUtc3BhY2UtaW5mby5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLFlBQVk7WUFDaEI7O1lBRUE7Z0JBQ0kseUJBQXlCO2dCQUN6QixnQkFBZ0I7WUFDcEI7O1lBRUE7Z0JBQ0kseUJBQXlCO1lBQzdCOztZQUVBO2dCQUNJLHlCQUF5QjtZQUM3Qjs7WUFFQTtnQkFDSSx5QkFBeUI7WUFDN0IiLCJmaWxlIjoiZXhwbG9yZS1zcGFjZS1pbmZvLmNvbXBvbmVudC50cyIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgW25hbWU9J3NwYWNlLWluZm8nXSB7XG4gICAgICAgICAgICAgICAgd2lkdGg6IDE2cmVtO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICBbc3RhdHVzXSB7XG4gICAgICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzQzYTA0NztcbiAgICAgICAgICAgICAgICBmb250LXdlaWdodDogNTAwO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICBbc3RhdHVzXS5idXN5IHtcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZTUzOTM1O1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICBbc3RhdHVzXS5wZW5kaW5nIHtcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZiMzAwO1xuICAgICAgICAgICAgfVxuXG4gICAgICAgICAgICBbc3RhdHVzXS5ub3QtYm9va2FibGUge1xuICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICM3NTc1NzU7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdfQ== */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvZXhwbG9yZS9zcmMvbGliL2V4cGxvcmUtc3BhY2UtaW5mby5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLFlBQVk7WUFDaEI7O1lBRUE7Z0JBQ0kseUJBQXlCO2dCQUN6QixnQkFBZ0I7WUFDcEI7O1lBRUE7Z0JBQ0kseUJBQXlCO1lBQzdCOztZQUVBO2dCQUNJLHlCQUF5QjtZQUM3Qjs7WUFFQTtnQkFDSSx5QkFBeUI7WUFDN0I7O0FBRVosZ2tDQUFna0MiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIFtuYW1lPSdzcGFjZS1pbmZvJ10ge1xuICAgICAgICAgICAgICAgIHdpZHRoOiAxNnJlbTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgW3N0YXR1c10ge1xuICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICM0M2EwNDc7XG4gICAgICAgICAgICAgICAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgW3N0YXR1c10uYnVzeSB7XG4gICAgICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI2U1MzkzNTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgW3N0YXR1c10ucGVuZGluZyB7XG4gICAgICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmYjMwMDtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgW3N0YXR1c10ubm90LWJvb2thYmxlIHtcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjNzU3NTc1O1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
 });
 exports.ExploreSpaceInfoComponent = ExploreSpaceInfoComponent;
@@ -53225,6 +53294,18 @@ var explore_locker_bank_info_component_1 = __webpack_require__(/*! ./explore-loc
 var explore_locker_bank_modal_component_1 = __webpack_require__(/*! ./explore-locker-bank-modal.component */ 50795);
 var explore_parking_info_component_1 = __webpack_require__(/*! ./explore-parking-info.component */ 17889);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
+var i1 = __webpack_require__(/*! @angular/common */ 60316);
+var i2 = __webpack_require__(/*! ../../../components/src/lib/custom-tooltip.component */ 22238);
+var i3 = __webpack_require__(/*! ../../../components/src/lib/authenticated-image.directive */ 93208);
+var i4 = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
+var i5 = __webpack_require__(/*! @angular/material/form-field */ 24950);
+var i6 = __webpack_require__(/*! @angular/material/core */ 74646);
+var i7 = __webpack_require__(/*! @angular/material/dialog */ 12587);
+var i8 = __webpack_require__(/*! @angular/material/input */ 95541);
+var i9 = __webpack_require__(/*! @angular/material/progress-spinner */ 41134);
+var i10 = __webpack_require__(/*! @angular/forms */ 34456);
+var i11 = __webpack_require__(/*! ../../../form-fields/src/lib/duration-field.component */ 83476);
+var i12 = __webpack_require__(/*! ../../../form-fields/src/lib/user-search-field.component */ 18000);
 var COMPONENTS = [explore_map_control_component_1.ExploreMapControlComponent, explore_map_view_component_1.ExploreMapViewComponent, explore_search_component_1.ExploreSearchComponent, explore_space_info_component_1.ExploreSpaceInfoComponent, explore_device_info_component_1.ExploreDeviceInfoComponent, explore_desk_info_component_1.ExploreDeskInfoComponent, explore_zoom_control_component_1.ExploreZoomControlComponent, explore_booking_modal_component_1.ExploreBookingModalComponent, set_datetime_modal_component_1.SetDatetimeModalComponent, explore_book_qr_component_1.ExploreBookQrComponent, explore_sensor_info_component_1.ExploreSensorInfoComponent, explore_locker_bank_info_component_1.ExploreLockerBankInfoComponent, explore_locker_bank_modal_component_1.ExploreLockerBankModalComponent, explore_parking_info_component_1.ExploreParkingInfoComponent];
 var SharedExploreModule = /*#__PURE__*/_createClass(function SharedExploreModule() {
   _classCallCheck(this, SharedExploreModule);
@@ -53247,6 +53328,8 @@ exports.SharedExploreModule = SharedExploreModule;
     exports: [explore_map_control_component_1.ExploreMapControlComponent, explore_map_view_component_1.ExploreMapViewComponent, explore_search_component_1.ExploreSearchComponent, explore_space_info_component_1.ExploreSpaceInfoComponent, explore_device_info_component_1.ExploreDeviceInfoComponent, explore_desk_info_component_1.ExploreDeskInfoComponent, explore_zoom_control_component_1.ExploreZoomControlComponent, explore_booking_modal_component_1.ExploreBookingModalComponent, set_datetime_modal_component_1.SetDatetimeModalComponent, explore_book_qr_component_1.ExploreBookQrComponent, explore_sensor_info_component_1.ExploreSensorInfoComponent, explore_locker_bank_info_component_1.ExploreLockerBankInfoComponent, explore_locker_bank_modal_component_1.ExploreLockerBankModalComponent, explore_parking_info_component_1.ExploreParkingInfoComponent]
   });
 })();
+i0.ɵɵsetComponentScope(explore_space_info_component_1.ExploreSpaceInfoComponent, [i1.NgForOf, i1.NgIf, i2.CustomTooltipComponent, i3.AuthenticatedImageDirective], []);
+i0.ɵɵsetComponentScope(explore_booking_modal_component_1.ExploreBookingModalComponent, [i1.NgIf, i4.IconComponent, i5.MatFormField, i5.MatError, i6.MatRipple, i7.MatDialogClose, i8.MatInput, i9.MatProgressSpinner, i10.DefaultValueAccessor, i10.NgControlStatus, i10.NgControlStatusGroup, i10.FormGroupDirective, i10.FormControlName, i11.DurationFieldComponent, i12.UserSearchFieldComponent], [i1.AsyncPipe, i1.DatePipe]);
 
 /***/ }),
 
@@ -56107,7 +56190,7 @@ var ImageListFieldComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
   }, {
     key: "writeValue",
     value: function writeValue(value) {
-      this.list = value;
+      this.list = value || [];
     }
   }, {
     key: "_updateUploadHistory",
@@ -66656,11 +66739,6 @@ var organisation_service_1 = __webpack_require__(/*! libs/organisation/src/lib/o
 var space_class_1 = __webpack_require__(/*! ../space.class */ 30735);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
 var i1 = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
-var i2 = __webpack_require__(/*! @angular/common */ 60316);
-var i3 = __webpack_require__(/*! ../../../../components/src/lib/icon.component */ 69434);
-var i4 = __webpack_require__(/*! ../../../../components/src/lib/interactive-map.component */ 24918);
-var i5 = __webpack_require__(/*! ../../../../components/src/lib/image-carousel.component */ 65277);
-var i6 = __webpack_require__(/*! @angular/material/core */ 74646);
 var _c0 = function _c0() {
   return {
     disable_pan: true,
@@ -66962,7 +67040,6 @@ _SpaceDetailsComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵproperty("ngIf", ctx.space)("ngIfElse", empty_state_r4);
     }
   },
-  dependencies: [i2.NgForOf, i2.NgIf, i3.IconComponent, i4.InteractiveMapComponent, i5.ImageCarouselComponent, i6.MatRipple],
   styles: ["[_nghost-%COMP%] {\n                position: relative;\n                display: flex;\n                flex-direction: column;\n                width: 30%;\n                min-width: 20rem;\n                height: 100%;\n                min-height: 65vh;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNwYWNlLWRldGFpbHMuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxrQkFBa0I7Z0JBQ2xCLGFBQWE7Z0JBQ2Isc0JBQXNCO2dCQUN0QixVQUFVO2dCQUNWLGdCQUFnQjtnQkFDaEIsWUFBWTtnQkFDWixnQkFBZ0I7WUFDcEIiLCJmaWxlIjoic3BhY2UtZGV0YWlscy5jb21wb25lbnQudHMiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgICAgICAgIHdpZHRoOiAzMCU7XG4gICAgICAgICAgICAgICAgbWluLXdpZHRoOiAyMHJlbTtcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICAgICAgICAgICAgbWluLWhlaWdodDogNjV2aDtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl19 */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvc3BhY2VzL3NyYy9saWIvc3BhY2Utc2VsZWN0LW1vZGFsL3NwYWNlLWRldGFpbHMuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxrQkFBa0I7Z0JBQ2xCLGFBQWE7Z0JBQ2Isc0JBQXNCO2dCQUN0QixVQUFVO2dCQUNWLGdCQUFnQjtnQkFDaEIsWUFBWTtnQkFDWixnQkFBZ0I7WUFDcEI7O0FBRVosNHVCQUE0dUIiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICAgICAgICAgICAgICAgIHdpZHRoOiAzMCU7XG4gICAgICAgICAgICAgICAgbWluLXdpZHRoOiAyMHJlbTtcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICAgICAgICAgICAgbWluLWhlaWdodDogNjV2aDtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
 });
 exports.SpaceDetailsComponent = SpaceDetailsComponent;
@@ -67359,18 +67436,6 @@ var i2 = __webpack_require__(/*! @placeos/common */ 22797);
 var i3 = __webpack_require__(/*! libs/events/src/lib/event-form.service */ 26101);
 var i4 = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
 var i5 = __webpack_require__(/*! ../spaces.service */ 7401);
-var i6 = __webpack_require__(/*! @angular/common */ 60316);
-var i7 = __webpack_require__(/*! ../../../../components/src/lib/icon.component */ 69434);
-var i8 = __webpack_require__(/*! @angular/material/core */ 74646);
-var i9 = __webpack_require__(/*! @angular/material/form-field */ 24950);
-var i10 = __webpack_require__(/*! @angular/material/select */ 25175);
-var i11 = __webpack_require__(/*! @angular/material/checkbox */ 97024);
-var i12 = __webpack_require__(/*! ../../../../form-fields/src/lib/date-field.component */ 19608);
-var i13 = __webpack_require__(/*! ../../../../form-fields/src/lib/duration-field.component */ 83476);
-var i14 = __webpack_require__(/*! ../../../../form-fields/src/lib/time-field.component */ 81413);
-var i15 = __webpack_require__(/*! @angular/forms */ 34456);
-var i16 = __webpack_require__(/*! ../../../../components/src/lib/building.pipe */ 56062);
-var i17 = __webpack_require__(/*! @ngx-translate/core */ 597);
 var _c0 = function _c0() {
   return {
     standalone: true
@@ -68143,7 +68208,6 @@ _SpaceFiltersComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵproperty("ngIf", ctx.can_close);
     }
   },
-  dependencies: [i6.NgForOf, i6.NgIf, i7.IconComponent, i8.MatOption, i9.MatFormField, i10.MatSelect, i8.MatRipple, i11.MatCheckbox, i12.DateFieldComponent, i13.DurationFieldComponent, i14.TimeFieldComponent, i15.ɵNgNoValidate, i15.NgControlStatus, i15.NgControlStatusGroup, i15.NgModel, i15.FormGroupDirective, i15.FormControlName, i6.AsyncPipe, i16.BuildingPipe, i17.TranslatePipe],
   styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n                width: 100%;\n                max-width: 100vw;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNwYWNlLWZpbHRlcnMuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxhQUFhO2dCQUNiLHNCQUFzQjtnQkFDdEIsV0FBVztnQkFDWCxnQkFBZ0I7WUFDcEIiLCJmaWxlIjoic3BhY2UtZmlsdGVycy5jb21wb25lbnQudHMiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgICAgICAgbWF4LXdpZHRoOiAxMDB2dztcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl19 */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvc3BhY2VzL3NyYy9saWIvc3BhY2Utc2VsZWN0LW1vZGFsL3NwYWNlLWZpbHRlcnMuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxhQUFhO2dCQUNiLHNCQUFzQjtnQkFDdEIsV0FBVztnQkFDWCxnQkFBZ0I7WUFDcEI7O0FBRVosZ2pCQUFnakIiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgICAgICAgbWF4LXdpZHRoOiAxMDB2dztcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
 });
 exports.SpaceFiltersComponent = SpaceFiltersComponent;
@@ -68172,11 +68236,6 @@ var organisation_service_1 = __webpack_require__(/*! libs/organisation/src/lib/o
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
 var i1 = __webpack_require__(/*! libs/events/src/lib/event-form.service */ 26101);
 var i2 = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
-var i3 = __webpack_require__(/*! @angular/common */ 60316);
-var i4 = __webpack_require__(/*! ../../../../components/src/lib/icon.component */ 69434);
-var i5 = __webpack_require__(/*! ../../../../components/src/lib/authenticated-image.directive */ 93208);
-var i6 = __webpack_require__(/*! @angular/material/core */ 74646);
-var i7 = __webpack_require__(/*! @angular/material/progress-spinner */ 41134);
 function SpaceListComponent_ng_container_5_ul_1_li_1_div_3_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelementStart(0, "div", 24)(1, "app-icon");
@@ -68437,7 +68496,6 @@ _SpaceListComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵproperty("ngIf", !i0.ɵɵpipeBind1(6, 5, ctx.loading))("ngIfElse", load_state_r6);
     }
   },
-  dependencies: [i3.NgForOf, i3.NgIf, i4.IconComponent, i5.AuthenticatedImageDirective, i6.MatRipple, i7.MatProgressSpinner, i3.AsyncPipe],
   styles: ["[_nghost-%COMP%] {\n                width: 100%;\n                height: 100%;\n                padding: 0.5rem;\n                overflow: auto;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNwYWNlLWxpc3QuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxXQUFXO2dCQUNYLFlBQVk7Z0JBQ1osZUFBZTtnQkFDZixjQUFjO1lBQ2xCIiwiZmlsZSI6InNwYWNlLWxpc3QuY29tcG9uZW50LnRzIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgICAgICAgIHBhZGRpbmc6IDAuNXJlbTtcbiAgICAgICAgICAgICAgICBvdmVyZmxvdzogYXV0bztcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl19 */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvc3BhY2VzL3NyYy9saWIvc3BhY2Utc2VsZWN0LW1vZGFsL3NwYWNlLWxpc3QuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxXQUFXO2dCQUNYLFlBQVk7Z0JBQ1osZUFBZTtnQkFDZixjQUFjO1lBQ2xCOztBQUVaLG9oQkFBb2hCIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICAgICAgICAgIHBhZGRpbmc6IDAuNXJlbTtcbiAgICAgICAgICAgICAgICBvdmVyZmxvdzogYXV0bztcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
 });
 exports.SpaceListComponent = SpaceListComponent;
@@ -68562,13 +68620,6 @@ var i0 = __webpack_require__(/*! @angular/core */ 37580);
 var i1 = __webpack_require__(/*! libs/events/src/lib/event-form.service */ 26101);
 var i2 = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
 var i3 = __webpack_require__(/*! @placeos/common */ 22797);
-var i4 = __webpack_require__(/*! @angular/common */ 60316);
-var i5 = __webpack_require__(/*! ../../../../components/src/lib/interactive-map.component */ 24918);
-var i6 = __webpack_require__(/*! @angular/material/core */ 74646);
-var i7 = __webpack_require__(/*! @angular/material/form-field */ 24950);
-var i8 = __webpack_require__(/*! @angular/material/select */ 25175);
-var i9 = __webpack_require__(/*! @angular/forms */ 34456);
-var i10 = __webpack_require__(/*! ../../../../components/src/lib/building.pipe */ 56062);
 var _c0 = function _c0() {
   return {
     controls: true
@@ -68845,7 +68896,6 @@ _SpaceSelectMapComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       i0.ɵɵproperty("styles", i0.ɵɵpipeBind1(5, 10, ctx.styles))("features", i0.ɵɵpipeBind1(6, 12, ctx.features))("actions", i0.ɵɵpipeBind1(7, 14, ctx.actions))("options", i0.ɵɵpureFunction0(16, _c0));
     }
   },
-  dependencies: [i4.NgForOf, i4.NgIf, i5.InteractiveMapComponent, i6.MatOption, i7.MatFormField, i8.MatSelect, i9.NgControlStatus, i9.NgModel, i4.AsyncPipe, i10.BuildingPipe],
   styles: ["[_nghost-%COMP%] {\n                position: relative;\n                background: rgba(0, 0, 0, 0.05);\n                display: flex;\n                flex-direction: column;\n            }\n\n            button[_ngcontent-%COMP%] {\n                border-radius: 0;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNwYWNlLW1hcC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGtCQUFrQjtnQkFDbEIsK0JBQStCO2dCQUMvQixhQUFhO2dCQUNiLHNCQUFzQjtZQUMxQjs7WUFFQTtnQkFDSSxnQkFBZ0I7WUFDcEIiLCJmaWxlIjoic3BhY2UtbWFwLmNvbXBvbmVudC50cyIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgOmhvc3Qge1xuICAgICAgICAgICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuMDUpO1xuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgYnV0dG9uIHtcbiAgICAgICAgICAgICAgICBib3JkZXItcmFkaXVzOiAwO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXX0= */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvc3BhY2VzL3NyYy9saWIvc3BhY2Utc2VsZWN0LW1vZGFsL3NwYWNlLW1hcC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGtCQUFrQjtnQkFDbEIsK0JBQStCO2dCQUMvQixhQUFhO2dCQUNiLHNCQUFzQjtZQUMxQjs7WUFFQTtnQkFDSSxnQkFBZ0I7WUFDcEI7O0FBRVosNHNCQUE0c0IiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgICAgICAgICAgYmFja2dyb3VuZDogcmdiYSgwLCAwLCAwLCAwLjA1KTtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gICAgICAgICAgICB9XG5cbiAgICAgICAgICAgIGJ1dHRvbiB7XG4gICAgICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMDtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
 });
 exports.SpaceSelectMapComponent = SpaceSelectMapComponent;
@@ -69243,6 +69293,19 @@ var i1 = __webpack_require__(/*! @angular/common */ 60316);
 var i2 = __webpack_require__(/*! @angular/material/dialog */ 12587);
 var i3 = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
 var i4 = __webpack_require__(/*! @angular/material/core */ 74646);
+var i5 = __webpack_require__(/*! ../../../components/src/lib/interactive-map.component */ 24918);
+var i6 = __webpack_require__(/*! ../../../components/src/lib/image-carousel.component */ 65277);
+var i7 = __webpack_require__(/*! ../../../components/src/lib/authenticated-image.directive */ 93208);
+var i8 = __webpack_require__(/*! @angular/material/progress-spinner */ 41134);
+var i9 = __webpack_require__(/*! @angular/material/form-field */ 24950);
+var i10 = __webpack_require__(/*! @angular/material/select */ 25175);
+var i11 = __webpack_require__(/*! @angular/material/checkbox */ 97024);
+var i12 = __webpack_require__(/*! ../../../form-fields/src/lib/date-field.component */ 19608);
+var i13 = __webpack_require__(/*! ../../../form-fields/src/lib/duration-field.component */ 83476);
+var i14 = __webpack_require__(/*! ../../../form-fields/src/lib/time-field.component */ 81413);
+var i15 = __webpack_require__(/*! @angular/forms */ 34456);
+var i16 = __webpack_require__(/*! ../../../components/src/lib/building.pipe */ 56062);
+var i17 = __webpack_require__(/*! @ngx-translate/core */ 597);
 var COMPONENTS = [new_space_select_modal_component_1.NewSpaceSelectModalComponent, space_details_component_1.SpaceDetailsComponent, space_list_component_1.SpaceListComponent, space_filters_component_1.SpaceFiltersComponent, space_filters_display_component_1.SpaceFiltersDisplayComponent, space_map_component_1.SpaceSelectMapComponent, space_location_pin_component_1.SpaceLocationPinComponent, space_pipe_1.SpacePipe];
 var SharedSpacesModule = /*#__PURE__*/_createClass(function SharedSpacesModule() {
   _classCallCheck(this, SharedSpacesModule);
@@ -69266,6 +69329,10 @@ exports.SharedSpacesModule = SharedSpacesModule;
   });
 })();
 i0.ɵɵsetComponentScope(new_space_select_modal_component_1.NewSpaceSelectModalComponent, [i1.NgIf, i2.MatDialogClose, i3.IconComponent, i4.MatRipple, space_details_component_1.SpaceDetailsComponent, space_list_component_1.SpaceListComponent, space_filters_component_1.SpaceFiltersComponent, space_filters_display_component_1.SpaceFiltersDisplayComponent, space_map_component_1.SpaceSelectMapComponent], []);
+i0.ɵɵsetComponentScope(space_details_component_1.SpaceDetailsComponent, [i1.NgForOf, i1.NgIf, i3.IconComponent, i5.InteractiveMapComponent, i6.ImageCarouselComponent, i4.MatRipple], []);
+i0.ɵɵsetComponentScope(space_list_component_1.SpaceListComponent, [i1.NgForOf, i1.NgIf, i3.IconComponent, i7.AuthenticatedImageDirective, i4.MatRipple, i8.MatProgressSpinner], [i1.AsyncPipe]);
+i0.ɵɵsetComponentScope(space_filters_component_1.SpaceFiltersComponent, [i1.NgForOf, i1.NgIf, i3.IconComponent, i4.MatOption, i9.MatFormField, i10.MatSelect, i4.MatRipple, i11.MatCheckbox, i12.DateFieldComponent, i13.DurationFieldComponent, i14.TimeFieldComponent, i15.ɵNgNoValidate, i15.NgControlStatus, i15.NgControlStatusGroup, i15.NgModel, i15.FormGroupDirective, i15.FormControlName], [i1.AsyncPipe, i16.BuildingPipe, i17.TranslatePipe]);
+i0.ɵɵsetComponentScope(space_map_component_1.SpaceSelectMapComponent, [i1.NgForOf, i1.NgIf, i5.InteractiveMapComponent, i4.MatOption, i9.MatFormField, i10.MatSelect, i15.NgControlStatus, i15.NgModel], [i1.AsyncPipe, i16.BuildingPipe]);
 
 /***/ }),
 
