@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1719458623740,
+  "timestamp": 1721614001440,
   "index": "./index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "./favicon.ico",
         "./index.html",
-        "./main.faac302bd707eadb.js",
+        "./main.4ecf478477e96f4e.js",
         "./manifest.webmanifest",
-        "./polyfills.01aea152e0ed16ba.js",
+        "./polyfills.b8e6dc8d247ec892.js",
         "./runtime.c3f557512ddddd50.js",
-        "./styles.45a974b89c07a31c.css"
+        "./styles.6c2940e492a66df6.css"
       ],
       "patterns": []
     },
@@ -190,8 +190,8 @@
     "./assets/support/opera-logo.svg": "23f8e25409598ac843eefe81ea3c09b4f460844d",
     "./assets/support/safari-logo.svg": "1c510b0c330f84f6662351e4a0abd7fb8af2f678",
     "./favicon.ico": "4e23d0f9b6ddaf3c9ddef90dbaed2342941297b5",
-    "./index.html": "fd16129ad9b03bed02134e952e0fa165688eb371",
-    "./main.faac302bd707eadb.js": "402882ae51500496bfef0e813dacd2369e96e420",
+    "./index.html": "3e25e11d8394278a626251f81f4db774b3b3e96d",
+    "./main.4ecf478477e96f4e.js": "6722e96c34b8d8d4908d85e03d8451283f6d2092",
     "./manifest.webmanifest": "f23567bd46672c5628059833da39da05adf508d6",
     "./material-icons-outlined.f86cb7b0aa53f0fe.woff2": "2f9e28ab559782402f27332633c843c40209d95a",
     "./material-icons-round.b10ec9db5b7fbc74.woff2": "abe05e0641f1050fbe00ef0dbb10c5ea72c26cff",
@@ -201,9 +201,9 @@
     "./material-symbols-outlined.d7c942d6f7c7b6e2.woff2": "79fcf0a26343e138a9f29a4138f53dd5fa5b89ab",
     "./material-symbols-rounded.9a04bfc1a1aa7c11.woff2": "d3440655edf947fdecdb36ecd0bf981a07a31d0c",
     "./material-symbols-sharp.2bac22456edcc5ba.woff2": "518c8895fddc0ea0951192d60e314be1d6824ba7",
-    "./polyfills.01aea152e0ed16ba.js": "ddb4efeb70eddbd96a2f0fc66e31741a4283c933",
+    "./polyfills.b8e6dc8d247ec892.js": "451de0641f6d0d237a19a73e80aa6714fd5abe8a",
     "./runtime.c3f557512ddddd50.js": "1da75464266a00534cebb98116da36fa788329b2",
-    "./styles.45a974b89c07a31c.css": "c51558ee77dbec3d45320f0b506eb2eb887ea8fa"
+    "./styles.6c2940e492a66df6.css": "6d3a29d3e6f039a53b613dd3e1cc83cd3d065831"
   },
   "navigationUrls": [
     {
