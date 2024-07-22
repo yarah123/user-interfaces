@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkvisitor_kiosk"] = self["webpackChunkvisitor_kiosk"] || []).push([["common"],{
 
-/***/ 63870:
+/***/ 41489:
 /*!*********************************!*\
   !*** ./libs/users/src/index.ts ***!
   \*********************************/
@@ -64,7 +64,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   MapLocation: () => (/* binding */ MapLocation)
 /* harmony export */ });
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! date-fns */ 73725);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! date-fns */ 99908);
 
 class MapLocation {
   constructor(_data = {}) {
@@ -74,7 +74,7 @@ class MapLocation {
       y: _data.y / _data.map_height || 0
     };
     this.variance = _data.variance || 0;
-    this.last_seen = _data.last_seen || (0,date_fns__WEBPACK_IMPORTED_MODULE_0__["default"])(new Date());
+    this.last_seen = _data.last_seen || (0,date_fns__WEBPACK_IMPORTED_MODULE_0__.getUnixTime)(new Date());
     this.level = _data.level;
     this.building = _data.building;
     this.at_location = !!_data.at_location;
