@@ -13,13 +13,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/dialog */ 12587);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/common */ 22797);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! date-fns */ 26078);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! date-fns */ 73725);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns */ 27419);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! date-fns */ 13264);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! date-fns */ 86077);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! date-fns */ 75971);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! date-fns */ 53838);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! date-fns */ 31257);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! date-fns */ 99908);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns */ 33240);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! date-fns */ 56441);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! date-fns */ 82890);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! date-fns */ 1874);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! date-fns */ 49675);
 /* harmony import */ var libs_calendar_src_lib_calendar_fn__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! libs/calendar/src/lib/calendar.fn */ 458);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 90521);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ 68824);
@@ -123,7 +123,7 @@ function FindAvailabilityModalComponent_user_availability_list_36_Template(rf, c
 }
 class FindAvailabilityModalComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0__.AsyncHandler {
   get today() {
-    return (0,date_fns__WEBPACK_IMPORTED_MODULE_3__["default"])(this.date, Date.now());
+    return (0,date_fns__WEBPACK_IMPORTED_MODULE_3__.isSameDay)(this.date, Date.now());
   }
   get current_hour() {
     return new Date().getHours();
@@ -152,15 +152,15 @@ class FindAvailabilityModalComponent extends _placeos_common__WEBPACK_IMPORTED_M
     this.availability = (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.combineLatest)([this.users, this.on_change]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.debounceTime)(300), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.switchMap)(([users]) => {
       return (0,libs_calendar_src_lib_calendar_fn__WEBPACK_IMPORTED_MODULE_1__.queryUserFreeBusy)({
         calendars: [this.host.email, ...users.map(_ => _.email.toLowerCase())].join(','),
-        period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_8__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_9__["default"])(this.date)),
-        period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_8__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_10__["default"])(this.date))
+        period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_8__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_9__.startOfDay)(this.date)),
+        period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_8__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_10__.endOfDay)(this.date))
       }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.catchError)(() => (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.of)([])));
     }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.map)(availability_list => {
       const availability_map = {};
       for (const item of availability_list) {
         availability_map[item.id.toLowerCase()] = item.availability.filter(_ => _.status === 'busy').map(block => {
-          const date = (0,date_fns__WEBPACK_IMPORTED_MODULE_14__["default"])(block.starts_at);
-          const duration = (0,date_fns__WEBPACK_IMPORTED_MODULE_15__["default"])((0,date_fns__WEBPACK_IMPORTED_MODULE_14__["default"])(block.ends_at), (0,date_fns__WEBPACK_IMPORTED_MODULE_14__["default"])(block.starts_at));
+          const date = (0,date_fns__WEBPACK_IMPORTED_MODULE_14__.fromUnixTime)(block.starts_at);
+          const duration = (0,date_fns__WEBPACK_IMPORTED_MODULE_15__.differenceInMinutes)((0,date_fns__WEBPACK_IMPORTED_MODULE_14__.fromUnixTime)(block.ends_at), (0,date_fns__WEBPACK_IMPORTED_MODULE_14__.fromUnixTime)(block.starts_at));
           return {
             date,
             duration,
@@ -227,7 +227,7 @@ class FindAvailabilityModalComponent extends _placeos_common__WEBPACK_IMPORTED_M
     const change_min = dir * Math.floor(Math.abs(change_px / this._move_size * 24 * 60) / 5) * 5;
     if (change_min) {
       const old_date = this.date;
-      this.date = (0,date_fns__WEBPACK_IMPORTED_MODULE_18__["default"])(this._start_time, change_min).valueOf();
+      this.date = (0,date_fns__WEBPACK_IMPORTED_MODULE_18__.addMinutes)(this._start_time, change_min).valueOf();
       if (this.date < Date.now()) this.date = old_date;
     }
   }
@@ -381,7 +381,7 @@ class FindAvailabilityModalComponent extends _placeos_common__WEBPACK_IMPORTED_M
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("mat-dialog-close", true);
       }
     },
-    styles: [".grid[_ngcontent-%COMP%] {\n                grid-template-columns: 6rem 1fr;\n                grid-template-rows: 2.5rem minmax(0, 1fr);\n            }\n            [disabled='true'][_ngcontent-%COMP%], \n   [disabled='true'][_ngcontent-%COMP%]   [header][_ngcontent-%COMP%] {\n                background: var(--b3) !important;\n                pointer-events: none;\n            }\n            [disabled='true'][_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n                opacity: 0.3;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvdXNlcnMvc3JjL2xpYi9maW5kLWF2YWlsYWJpbGl0eS1tb2RhbC9maW5kLWF2YWlsYWJpbGl0eS1tb2RhbC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLCtCQUErQjtnQkFDL0IseUNBQXlDO1lBQzdDO1lBQ0E7O2dCQUVJLGdDQUFnQztnQkFDaEMsb0JBQW9CO1lBQ3hCO1lBQ0E7Z0JBQ0ksWUFBWTtZQUNoQiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgLmdyaWQge1xuICAgICAgICAgICAgICAgIGdyaWQtdGVtcGxhdGUtY29sdW1uczogNnJlbSAxZnI7XG4gICAgICAgICAgICAgICAgZ3JpZC10ZW1wbGF0ZS1yb3dzOiAyLjVyZW0gbWlubWF4KDAsIDFmcik7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBbZGlzYWJsZWQ9J3RydWUnXSxcbiAgICAgICAgICAgIFtkaXNhYmxlZD0ndHJ1ZSddIFtoZWFkZXJdIHtcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1iMykgIWltcG9ydGFudDtcbiAgICAgICAgICAgICAgICBwb2ludGVyLWV2ZW50czogbm9uZTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIFtkaXNhYmxlZD0ndHJ1ZSddID4gKiB7XG4gICAgICAgICAgICAgICAgb3BhY2l0eTogMC4zO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
+    styles: [".grid[_ngcontent-%COMP%] {\n                grid-template-columns: 6rem 1fr;\n                grid-template-rows: 2.5rem minmax(0, 1fr);\n            }\n            [disabled='true'][_ngcontent-%COMP%], \n   [disabled='true'][_ngcontent-%COMP%]   [header][_ngcontent-%COMP%] {\n                background: var(--b3) !important;\n                pointer-events: none;\n            }\n            [disabled='true'][_ngcontent-%COMP%]    > *[_ngcontent-%COMP%] {\n                opacity: 0.3;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZpbmQtYXZhaWxhYmlsaXR5LW1vZGFsLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksK0JBQStCO2dCQUMvQix5Q0FBeUM7WUFDN0M7WUFDQTs7Z0JBRUksZ0NBQWdDO2dCQUNoQyxvQkFBb0I7WUFDeEI7WUFDQTtnQkFDSSxZQUFZO1lBQ2hCIiwiZmlsZSI6ImZpbmQtYXZhaWxhYmlsaXR5LW1vZGFsLmNvbXBvbmVudC50cyIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgLmdyaWQge1xuICAgICAgICAgICAgICAgIGdyaWQtdGVtcGxhdGUtY29sdW1uczogNnJlbSAxZnI7XG4gICAgICAgICAgICAgICAgZ3JpZC10ZW1wbGF0ZS1yb3dzOiAyLjVyZW0gbWlubWF4KDAsIDFmcik7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBbZGlzYWJsZWQ9J3RydWUnXSxcbiAgICAgICAgICAgIFtkaXNhYmxlZD0ndHJ1ZSddIFtoZWFkZXJdIHtcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1iMykgIWltcG9ydGFudDtcbiAgICAgICAgICAgICAgICBwb2ludGVyLWV2ZW50czogbm9uZTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIFtkaXNhYmxlZD0ndHJ1ZSddID4gKiB7XG4gICAgICAgICAgICAgICAgb3BhY2l0eTogMC4zO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXX0= */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvdXNlcnMvc3JjL2xpYi9maW5kLWF2YWlsYWJpbGl0eS1tb2RhbC9maW5kLWF2YWlsYWJpbGl0eS1tb2RhbC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLCtCQUErQjtnQkFDL0IseUNBQXlDO1lBQzdDO1lBQ0E7O2dCQUVJLGdDQUFnQztnQkFDaEMsb0JBQW9CO1lBQ3hCO1lBQ0E7Z0JBQ0ksWUFBWTtZQUNoQjs7QUFFWix3N0JBQXc3QiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgLmdyaWQge1xuICAgICAgICAgICAgICAgIGdyaWQtdGVtcGxhdGUtY29sdW1uczogNnJlbSAxZnI7XG4gICAgICAgICAgICAgICAgZ3JpZC10ZW1wbGF0ZS1yb3dzOiAyLjVyZW0gbWlubWF4KDAsIDFmcik7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBbZGlzYWJsZWQ9J3RydWUnXSxcbiAgICAgICAgICAgIFtkaXNhYmxlZD0ndHJ1ZSddIFtoZWFkZXJdIHtcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1iMykgIWltcG9ydGFudDtcbiAgICAgICAgICAgICAgICBwb2ludGVyLWV2ZW50czogbm9uZTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIFtkaXNhYmxlZD0ndHJ1ZSddID4gKiB7XG4gICAgICAgICAgICAgICAgb3BhY2l0eTogMC4zO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
   });
 }
 
@@ -449,7 +449,7 @@ class UserAvailabilityComponent {
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_2__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_2__.DatePipe],
-    styles: ["[_nghost-%COMP%] {\n                display: block;\n            }\n        \n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvdXNlcnMvc3JjL2xpYi9maW5kLWF2YWlsYWJpbGl0eS1tb2RhbC91c2VyLWF2YWlsYWJpbGl0eS5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGNBQWM7WUFDbEIiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBibG9jaztcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl0sInNvdXJjZVJvb3QiOiIifQ== */"]
+    styles: ["[_nghost-%COMP%] {\n                display: block;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVzZXItYXZhaWxhYmlsaXR5LmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO1lBQ1k7Z0JBQ0ksY0FBYztZQUNsQiIsImZpbGUiOiJ1c2VyLWF2YWlsYWJpbGl0eS5jb21wb25lbnQudHMiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBibG9jaztcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl19 */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvdXNlcnMvc3JjL2xpYi9maW5kLWF2YWlsYWJpbGl0eS1tb2RhbC91c2VyLWF2YWlsYWJpbGl0eS5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGNBQWM7WUFDbEI7O0FBRVosNFhBQTRYIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogYmxvY2s7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
   });
 }
 
@@ -602,20 +602,18 @@ _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵsetComponentScope"](_find_avail
 
 /***/ }),
 
-/***/ 86077:
-/*!*********************************************************!*\
-  !*** ./node_modules/date-fns/esm/fromUnixTime/index.js ***!
-  \*********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ 82890:
+/*!************************************************!*\
+  !*** ./node_modules/date-fns/fromUnixTime.mjs ***!
+  \************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ fromUnixTime)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   fromUnixTime: () => (/* binding */ fromUnixTime)
 /* harmony export */ });
-/* harmony import */ var _toDate_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../toDate/index.js */ 59103);
-/* harmony import */ var _lib_toInteger_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_lib/toInteger/index.js */ 13144);
-/* harmony import */ var _lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_lib/requiredArgs/index.js */ 64507);
-
+/* harmony import */ var _toDate_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./toDate.mjs */ 58700);
 
 
 /**
@@ -626,20 +624,21 @@ __webpack_require__.r(__webpack_exports__);
  * @description
  * Create a date from a Unix timestamp (in seconds). Decimal values will be discarded.
  *
- * @param {Number} unixTime - the given Unix timestamp (in seconds)
- * @returns {Date} the date
- * @throws {TypeError} 1 argument required
+ * @param unixTime - The given Unix timestamp (in seconds)
+ *
+ * @returns The date
  *
  * @example
  * // Create the date 29 February 2012 11:45:05:
  * const result = fromUnixTime(1330515905)
  * //=> Wed Feb 29 2012 11:45:05
  */
-function fromUnixTime(dirtyUnixTime) {
-  (0,_lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(1, arguments);
-  var unixTime = (0,_lib_toInteger_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])(dirtyUnixTime);
-  return (0,_toDate_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(unixTime * 1000);
+function fromUnixTime(unixTime) {
+  return (0,_toDate_mjs__WEBPACK_IMPORTED_MODULE_0__.toDate)(unixTime * 1000);
 }
+
+// Fallback for modularized imports:
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (fromUnixTime);
 
 /***/ })
 
