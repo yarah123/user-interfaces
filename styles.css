@@ -655,6 +655,9 @@ video {
 #placeos :is(.-top-2) {
   top: -0.5rem;
 }
+#placeos :is(.-top-px) {
+  top: -1px;
+}
 #placeos :is(.bottom-0) {
   bottom: 0px;
 }
@@ -1497,9 +1500,6 @@ video {
 #placeos :is(.w-\[120rem\]) {
   width: 120rem;
 }
-#placeos :is(.w-\[13\.625rem\]) {
-  width: 13.625rem;
-}
 #placeos :is(.w-\[17\.25rem\]) {
   width: 17.25rem;
 }
@@ -1574,6 +1574,9 @@ video {
 }
 #placeos :is(.w-\[48rem\]) {
   width: 48rem;
+}
+#placeos :is(.w-\[56rem\]) {
+  width: 56rem;
 }
 #placeos :is(.w-\[60\%\]) {
   width: 60%;
@@ -1912,10 +1915,6 @@ video {
   --tw-translate-y: -100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-#placeos :is(.-translate-y-px) {
-  --tw-translate-y: -1px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
 #placeos :is(.translate-x-1\/2) {
   --tw-translate-x: 50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2135,12 +2134,6 @@ video {
 }
 #placeos :is(.overflow-x-hidden) {
   overflow-x: hidden;
-}
-#placeos :is(.overflow-y-hidden) {
-  overflow-y: hidden;
-}
-#placeos :is(.overflow-x-visible) {
-  overflow-x: visible;
 }
 #placeos :is(.truncate) {
   overflow: hidden;

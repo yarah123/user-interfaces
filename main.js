@@ -9027,9 +9027,16 @@ var BookingDetailsModalComponent = /*#__PURE__*/function () {
     key: "building",
     get: function get() {
       var _this = this;
+      if (this._settings.get('app.use_region')) {
+        var region = this._org.regions.find(function (region) {
+          var _this$booking4;
+          return (((_this$booking4 = _this.booking) === null || _this$booking4 === void 0 ? void 0 : _this$booking4.zones) || []).includes(region.id);
+        });
+        if (region) return region;
+      }
       return this._org.buildings.find(function (bld) {
-        var _this$booking4;
-        return (((_this$booking4 = _this.booking) === null || _this$booking4 === void 0 ? void 0 : _this$booking4.zones) || []).includes(bld.id);
+        var _this$booking5;
+        return (((_this$booking5 = _this.booking) === null || _this$booking5 === void 0 ? void 0 : _this$booking5.zones) || []).includes(bld.id);
       });
     }
   }, {
@@ -9040,8 +9047,8 @@ var BookingDetailsModalComponent = /*#__PURE__*/function () {
   }, {
     key: "auto_checkin",
     get: function get() {
-      var _this$booking5;
-      return this._settings.get("app.".concat(((_this$booking5 = this.booking) === null || _this$booking5 === void 0 ? void 0 : _this$booking5.type) || 'bookings', ".auto_checkin"));
+      var _this$booking6;
+      return this._settings.get("app.".concat(((_this$booking6 = this.booking) === null || _this$booking6 === void 0 ? void 0 : _this$booking6.type) || 'bookings', ".auto_checkin"));
     }
   }, {
     key: "is_checked_in",
@@ -9051,17 +9058,17 @@ var BookingDetailsModalComponent = /*#__PURE__*/function () {
   }, {
     key: "desk_height_enabled",
     get: function get() {
-      var _this$booking6;
-      return ((_this$booking6 = this.booking) === null || _this$booking6 === void 0 ? void 0 : _this$booking6.type) === 'desk' && this._settings.get('app.desks.height_enabled');
+      var _this$booking7;
+      return ((_this$booking7 = this.booking) === null || _this$booking7 === void 0 ? void 0 : _this$booking7.type) === 'desk' && this._settings.get('app.desks.height_enabled');
     }
   }, {
     key: "is_in_progress",
     get: function get() {
-      var _this$booking7, _this$booking8, _this$booking9;
+      var _this$booking8, _this$booking9, _this$booking10;
       var ts = Date.now();
-      var start = ((_this$booking7 = this.booking) === null || _this$booking7 === void 0 ? void 0 : _this$booking7.booking_start) * 1000;
-      var end = ((_this$booking8 = this.booking) === null || _this$booking8 === void 0 ? void 0 : _this$booking8.booking_end) * 1000;
-      if ((_this$booking9 = this.booking) !== null && _this$booking9 !== void 0 && _this$booking9.all_day) return start <= ts;
+      var start = ((_this$booking8 = this.booking) === null || _this$booking8 === void 0 ? void 0 : _this$booking8.booking_start) * 1000;
+      var end = ((_this$booking9 = this.booking) === null || _this$booking9 === void 0 ? void 0 : _this$booking9.booking_end) * 1000;
+      if ((_this$booking10 = this.booking) !== null && _this$booking10 !== void 0 && _this$booking10.all_day) return start <= ts;
       return start <= ts && ts <= end;
     }
   }, {
@@ -9072,20 +9079,20 @@ var BookingDetailsModalComponent = /*#__PURE__*/function () {
   }, {
     key: "booking_status",
     get: function get() {
-      var _this$booking10, _this$booking11, _this$booking12, _this$booking13;
-      if ((_this$booking10 = this.booking) !== null && _this$booking10 !== void 0 && _this$booking10.is_done) return 'neutral';
-      if (((_this$booking11 = this.booking) === null || _this$booking11 === void 0 ? void 0 : _this$booking11.status) === 'approved') return 'success';
-      if (((_this$booking12 = this.booking) === null || _this$booking12 === void 0 ? void 0 : _this$booking12.status) === 'declined') return 'error';
-      if (((_this$booking13 = this.booking) === null || _this$booking13 === void 0 ? void 0 : _this$booking13.status) === 'tentative') return 'warning';
+      var _this$booking11, _this$booking12, _this$booking13, _this$booking14;
+      if ((_this$booking11 = this.booking) !== null && _this$booking11 !== void 0 && _this$booking11.is_done) return 'neutral';
+      if (((_this$booking12 = this.booking) === null || _this$booking12 === void 0 ? void 0 : _this$booking12.status) === 'approved') return 'success';
+      if (((_this$booking13 = this.booking) === null || _this$booking13 === void 0 ? void 0 : _this$booking13.status) === 'declined') return 'error';
+      if (((_this$booking14 = this.booking) === null || _this$booking14 === void 0 ? void 0 : _this$booking14.status) === 'tentative') return 'warning';
       return 'warning';
     }
   }, {
     key: "period",
     get: function get() {
-      var _this$booking14, _this$booking15, _this$booking16;
-      if ((_this$booking14 = this.booking) !== null && _this$booking14 !== void 0 && _this$booking14.is_all_day) return 'All Day';
-      var start = ((_this$booking15 = this.booking) === null || _this$booking15 === void 0 ? void 0 : _this$booking15.date) || Date.now();
-      var duration = ((_this$booking16 = this.booking) === null || _this$booking16 === void 0 ? void 0 : _this$booking16.duration) || 60;
+      var _this$booking15, _this$booking16, _this$booking17;
+      if ((_this$booking15 = this.booking) !== null && _this$booking15 !== void 0 && _this$booking15.is_all_day) return 'All Day';
+      var start = ((_this$booking16 = this.booking) === null || _this$booking16 === void 0 ? void 0 : _this$booking16.date) || Date.now();
+      var duration = ((_this$booking17 = this.booking) === null || _this$booking17 === void 0 ? void 0 : _this$booking17.duration) || 60;
       var end = (0, date_fns_1.addMinutes)(start, duration);
       var dur = (0, date_fns_1.formatDuration)({
         hours: Math.floor(duration / 60),
@@ -15326,7 +15333,7 @@ var InviteVisitorFormComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
   }, {
     key: "building",
     get: function get() {
-      return this._org.building;
+      return this._settings.get('app.use_region') ? this._org.region : this._org.building;
     }
   }, {
     key: "form",
@@ -18173,7 +18180,7 @@ exports.LockersService = LockersService;
 var _taggedTemplateLiteral = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js */ 9959)["default"]);
 var _classCallCheck = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/classCallCheck.js */ 80912)["default"]);
 var _createClass = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/createClass.js */ 92974)["default"]);
-var _ParkingSpaceDetailsComponent, _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7;
+var _ParkingSpaceDetailsComponent, _templateObject, _templateObject2, _templateObject3;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
@@ -18196,7 +18203,7 @@ var _c0 = function _c0() {
 };
 function ParkingSpaceDetailsComponent_ng_container_0_image_carousel_2_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelement(0, "image-carousel", 26);
+    i0.ɵɵelement(0, "image-carousel", 21);
   }
   if (rf & 2) {
     var ctx_r1 = i0.ɵɵnextContext(2);
@@ -18207,9 +18214,9 @@ function ParkingSpaceDetailsComponent_ng_container_0_Template(rf, ctx) {
   if (rf & 1) {
     var _r1 = i0.ɵɵgetCurrentView();
     i0.ɵɵelementContainerStart(0);
-    i0.ɵɵelementStart(1, "section", 9);
-    i0.ɵɵtemplate(2, ParkingSpaceDetailsComponent_ng_container_0_image_carousel_2_Template, 1, 1, "image-carousel", 10);
-    i0.ɵɵelementStart(3, "button", 11);
+    i0.ɵɵelementStart(1, "section", 5);
+    i0.ɵɵtemplate(2, ParkingSpaceDetailsComponent_ng_container_0_image_carousel_2_Template, 1, 1, "image-carousel", 6);
+    i0.ɵɵelementStart(3, "button", 7);
     i0.ɵɵlistener("click", function ParkingSpaceDetailsComponent_ng_container_0_Template_button_click_3_listener() {
       i0.ɵɵrestoreView(_r1);
       var ctx_r1 = i0.ɵɵnextContext();
@@ -18218,7 +18225,7 @@ function ParkingSpaceDetailsComponent_ng_container_0_Template(rf, ctx) {
     i0.ɵɵelementStart(4, "app-icon");
     i0.ɵɵtext(5, "arrow_back");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(6, "button", 12);
+    i0.ɵɵelementStart(6, "button", 8);
     i0.ɵɵlistener("click", function ParkingSpaceDetailsComponent_ng_container_0_Template_button_click_6_listener() {
       i0.ɵɵrestoreView(_r1);
       var ctx_r1 = i0.ɵɵnextContext();
@@ -18227,68 +18234,47 @@ function ParkingSpaceDetailsComponent_ng_container_0_Template(rf, ctx) {
     i0.ɵɵelementStart(7, "app-icon");
     i0.ɵɵtext(8);
     i0.ɵɵelementEnd()()();
-    i0.ɵɵelementStart(9, "div", 13)(10, "section", 14)(11, "h2", 15);
+    i0.ɵɵelementStart(9, "div", 9)(10, "section", 10)(11, "h2", 11);
     i0.ɵɵtext(12);
     i0.ɵɵelementEnd()();
     i0.ɵɵelement(13, "hr");
-    i0.ɵɵelementStart(14, "section", 16)(15, "h2", 17);
+    i0.ɵɵelementStart(14, "section", 12)(15, "h2", 13);
     i0.ɵɵi18n(16, 1);
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(17, "div", 18)(18, "app-icon");
+    i0.ɵɵelementStart(17, "div", 14)(18, "app-icon");
     i0.ɵɵtext(19, "people");
     i0.ɵɵelementEnd();
     i0.ɵɵelementStart(20, "p");
     i0.ɵɵi18n(21, 2);
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(22, "div", 18)(23, "app-icon");
+    i0.ɵɵelementStart(22, "div", 14)(23, "app-icon");
     i0.ɵɵtext(24, "meeting_room");
     i0.ɵɵelementEnd();
     i0.ɵɵelementStart(25, "p");
     i0.ɵɵtext(26);
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(27, "div", 18)(28, "app-icon");
+    i0.ɵɵelementStart(27, "div", 14)(28, "app-icon");
     i0.ɵɵtext(29, "place");
     i0.ɵɵelementEnd();
     i0.ɵɵelementStart(30, "p");
     i0.ɵɵtext(31);
     i0.ɵɵelementEnd()()();
     i0.ɵɵelement(32, "hr");
-    i0.ɵɵelementStart(33, "section", 19)(34, "h2", 17);
-    i0.ɵɵi18n(35, 3);
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(36, "div", 18)(37, "app-icon");
-    i0.ɵɵtext(38, "people");
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(39, "p");
-    i0.ɵɵi18n(40, 4);
+    i0.ɵɵelementStart(33, "section", 15);
+    i0.ɵɵelement(34, "interactive-map", 16);
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(41, "div", 18)(42, "app-icon");
-    i0.ɵɵtext(43, "restaurant");
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(44, "p");
-    i0.ɵɵi18n(45, 5);
-    i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(46, "div", 18)(47, "app-icon");
-    i0.ɵɵtext(48, "edit");
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(49, "p");
-    i0.ɵɵi18n(50, 6);
-    i0.ɵɵelementEnd()()();
-    i0.ɵɵelementStart(51, "section", 20);
-    i0.ɵɵelement(52, "interactive-map", 21);
-    i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(53, "div", 22)(54, "button", 23);
-    i0.ɵɵlistener("click", function ParkingSpaceDetailsComponent_ng_container_0_Template_button_click_54_listener() {
+    i0.ɵɵelementStart(35, "div", 17)(36, "button", 18);
+    i0.ɵɵlistener("click", function ParkingSpaceDetailsComponent_ng_container_0_Template_button_click_36_listener() {
       i0.ɵɵrestoreView(_r1);
       var ctx_r1 = i0.ɵɵnextContext();
       ctx_r1.active = !ctx_r1.active;
       return i0.ɵɵresetView(ctx_r1.activeChange.emit(ctx_r1.active));
     });
-    i0.ɵɵelementStart(55, "div", 24)(56, "app-icon", 25);
-    i0.ɵɵtext(57);
+    i0.ɵɵelementStart(37, "div", 19)(38, "app-icon", 20);
+    i0.ɵɵtext(39);
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(58, "p");
-    i0.ɵɵtext(59);
+    i0.ɵɵelementStart(40, "p");
+    i0.ɵɵtext(41);
     i0.ɵɵelementEnd()()()();
     i0.ɵɵelementContainerEnd();
   }
@@ -18311,7 +18297,7 @@ function ParkingSpaceDetailsComponent_ng_container_0_Template(rf, ctx) {
     i0.ɵɵtextInterpolate1(" ", (ctx_r1.level == null ? null : ctx_r1.level.display_name) || (ctx_r1.level == null ? null : ctx_r1.level.name), " ");
     i0.ɵɵadvance(5);
     i0.ɵɵtextInterpolate1(" ", (ctx_r1.building == null ? null : ctx_r1.building.address) || (ctx_r1.building == null ? null : ctx_r1.building.display_name) || (ctx_r1.building == null ? null : ctx_r1.building.name), " ");
-    i0.ɵɵadvance(21);
+    i0.ɵɵadvance(3);
     i0.ɵɵproperty("src", ctx_r1.map_url)("focus", ctx_r1.space.map_id)("features", ctx_r1.features)("options", i0.ɵɵpureFunction0(28, _c0));
     i0.ɵɵadvance(2);
     i0.ɵɵclassProp("inverse", ctx_r1.active);
@@ -18323,8 +18309,8 @@ function ParkingSpaceDetailsComponent_ng_container_0_Template(rf, ctx) {
 }
 function ParkingSpaceDetailsComponent_ng_template_1_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 27)(1, "p", 28);
-    i0.ɵɵi18n(2, 7);
+    i0.ɵɵelementStart(0, "div", 22)(1, "p", 23);
+    i0.ɵɵi18n(2, 3);
     i0.ɵɵelementEnd()();
   }
 }
@@ -18426,56 +18412,16 @@ _ParkingSpaceDetailsComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       /**
        * @suppress {msgDescriptions}
        */
-      var MSG_EXTERNAL_3223773701700202859$$LIBS_BOOKINGS_SRC_LIB_PARKING_SELECT_MODAL_PARKING_DETAILS_COMPONENT_TS_2 = goog.getMsg("Room Facilities");
-      i18n_2 = MSG_EXTERNAL_3223773701700202859$$LIBS_BOOKINGS_SRC_LIB_PARKING_SELECT_MODAL_PARKING_DETAILS_COMPONENT_TS_2;
+      var MSG_EXTERNAL_7182911930527299079$$LIBS_BOOKINGS_SRC_LIB_PARKING_SELECT_MODAL_PARKING_DETAILS_COMPONENT_TS_2 = goog.getMsg(" Select a space to view it's details ");
+      i18n_2 = MSG_EXTERNAL_7182911930527299079$$LIBS_BOOKINGS_SRC_LIB_PARKING_SELECT_MODAL_PARKING_DETAILS_COMPONENT_TS_2;
     } else {
-      i18n_2 = $localize(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral([":\u241F45b5b90d7df8adeb648858761739fa700117c0d5\u241F3223773701700202859:Room Facilities"])));
+      i18n_2 = $localize(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral([":\u241F2d39d1ca65d735d7f800e458ce54af6a25652395\u241F7182911930527299079: Select a space to view it's details "])));
     }
-    var i18n_3;
-    if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-      /**
-       * @suppress {msgDescriptions}
-       */
-      var MSG_EXTERNAL_2658260878259066313$$LIBS_BOOKINGS_SRC_LIB_PARKING_SELECT_MODAL_PARKING_DETAILS_COMPONENT_TS_3 = goog.getMsg("WiFi Available");
-      i18n_3 = MSG_EXTERNAL_2658260878259066313$$LIBS_BOOKINGS_SRC_LIB_PARKING_SELECT_MODAL_PARKING_DETAILS_COMPONENT_TS_3;
-    } else {
-      i18n_3 = $localize(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral([":\u241F49db2433248cbe017b956cb5baefb0196dd788f1\u241F2658260878259066313:WiFi Available"])));
-    }
-    var i18n_4;
-    if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-      /**
-       * @suppress {msgDescriptions}
-       */
-      var MSG_EXTERNAL_8309048761278776852$$LIBS_BOOKINGS_SRC_LIB_PARKING_SELECT_MODAL_PARKING_DETAILS_COMPONENT_TS_4 = goog.getMsg("Catering Available");
-      i18n_4 = MSG_EXTERNAL_8309048761278776852$$LIBS_BOOKINGS_SRC_LIB_PARKING_SELECT_MODAL_PARKING_DETAILS_COMPONENT_TS_4;
-    } else {
-      i18n_4 = $localize(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral([":\u241F551b6a6b5ecee7d32448ac4ef3a1fb883dd8e13c\u241F8309048761278776852:Catering Available"])));
-    }
-    var i18n_5;
-    if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-      /**
-       * @suppress {msgDescriptions}
-       */
-      var MSG_EXTERNAL_3473226617663475632$$LIBS_BOOKINGS_SRC_LIB_PARKING_SELECT_MODAL_PARKING_DETAILS_COMPONENT_TS_5 = goog.getMsg("Whiteboard");
-      i18n_5 = MSG_EXTERNAL_3473226617663475632$$LIBS_BOOKINGS_SRC_LIB_PARKING_SELECT_MODAL_PARKING_DETAILS_COMPONENT_TS_5;
-    } else {
-      i18n_5 = $localize(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral([":\u241F9169207ff2581dc7ac8b9125088b0cb3dc789824\u241F3473226617663475632:Whiteboard"])));
-    }
-    var i18n_6;
-    if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-      /**
-       * @suppress {msgDescriptions}
-       */
-      var MSG_EXTERNAL_7182911930527299079$$LIBS_BOOKINGS_SRC_LIB_PARKING_SELECT_MODAL_PARKING_DETAILS_COMPONENT_TS_6 = goog.getMsg(" Select a space to view it's details ");
-      i18n_6 = MSG_EXTERNAL_7182911930527299079$$LIBS_BOOKINGS_SRC_LIB_PARKING_SELECT_MODAL_PARKING_DETAILS_COMPONENT_TS_6;
-    } else {
-      i18n_6 = $localize(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral([":\u241F2d39d1ca65d735d7f800e458ce54af6a25652395\u241F7182911930527299079: Select a space to view it's details "])));
-    }
-    return [["empty_state", ""], i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_5, i18n_6, [4, "ngIf", "ngIfElse"], ["image", "", 1, "relative", "w-full", "bg-base-200"], ["class", "absolute inset-0", 3, "images", 4, "ngIf"], ["icon", "", "matRipple", "", "close", "", 1, "absolute", "top-2", "left-2", "bg-base-200", "sm:hidden", 3, "click"], ["icon", "", "matRipple", "", "fav", "", 1, "absolute", "top-2", "right-2", "bg-base-200", 3, "click"], [1, "p-2", "space-y-2", "flex-1", "h-1/2", "overflow-auto"], ["actions", "", 1, "z-0"], [1, "text-xl", "font-medium", "mb-2", "mt-4"], ["details", "", 1, "space-y-2"], [1, "text-xl", "font-medium"], [1, "flex", "items-center", "space-x-2"], ["facilities", "", 1, "space-y-2"], ["map", "", 1, "w-full", "mx-auto", "h-64", "sm:h-48", "relative", "border", "border-base-200", "overflow-hidden", "rounded"], [1, "pointer-events-none", 3, "src", "focus", "features", "options"], [1, "p-2", "border-t", "border-base-200", "shadow", "sm:hidden"], ["btn", "", "matRipple", "", 1, "w-full", 3, "click"], [1, "flex", "items-center", "justify-center"], [1, "text-2xl"], [1, "absolute", "inset-0", 3, "images"], ["empty", "", 1, "p-16", "flex", "flex-col", "items-center", "justify-center", "space-y-2"], [1, "opacity-30", "text-center"]];
+    return [["empty_state", ""], i18n_0, i18n_1, i18n_2, [4, "ngIf", "ngIfElse"], ["image", "", 1, "relative", "w-full", "bg-base-200"], ["class", "absolute inset-0", 3, "images", 4, "ngIf"], ["icon", "", "matRipple", "", "close", "", 1, "absolute", "top-2", "left-2", "bg-base-200", "sm:hidden", 3, "click"], ["icon", "", "matRipple", "", "fav", "", 1, "absolute", "top-2", "right-2", "bg-base-200", 3, "click"], [1, "p-2", "space-y-2", "flex-1", "h-1/2", "overflow-auto"], ["actions", "", 1, "z-0"], [1, "text-xl", "font-medium", "mb-2", "mt-4"], ["details", "", 1, "space-y-2"], [1, "text-xl", "font-medium"], [1, "flex", "items-center", "space-x-2"], ["map", "", 1, "w-full", "mx-auto", "h-64", "sm:h-48", "relative", "border", "border-base-200", "overflow-hidden", "rounded"], [1, "pointer-events-none", 3, "src", "focus", "features", "options"], [1, "p-2", "border-t", "border-base-200", "shadow", "sm:hidden"], ["btn", "", "matRipple", "", 1, "w-full", 3, "click"], [1, "flex", "items-center", "justify-center"], [1, "text-2xl"], [1, "absolute", "inset-0", 3, "images"], ["empty", "", 1, "p-16", "flex", "flex-col", "items-center", "justify-center", "space-y-2"], [1, "opacity-30", "text-center"]];
   },
   template: function ParkingSpaceDetailsComponent_Template(rf, ctx) {
     if (rf & 1) {
-      i0.ɵɵtemplate(0, ParkingSpaceDetailsComponent_ng_container_0_Template, 60, 29, "ng-container", 8)(1, ParkingSpaceDetailsComponent_ng_template_1_Template, 3, 0, "ng-template", null, 0, i0.ɵɵtemplateRefExtractor);
+      i0.ɵɵtemplate(0, ParkingSpaceDetailsComponent_ng_container_0_Template, 42, 29, "ng-container", 4)(1, ParkingSpaceDetailsComponent_ng_template_1_Template, 3, 0, "ng-template", null, 0, i0.ɵɵtemplateRefExtractor);
     }
     if (rf & 2) {
       var empty_state_r3 = i0.ɵɵreference(2);
@@ -28334,7 +28280,7 @@ var _asyncToGenerator = (__webpack_require__(/*! ./node_modules/@babel/runtime/h
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.shiftColorTowards = exports.rgbToHex = exports.interpolateColors = exports.hexToRgb = exports.calculateDistance = exports.isNestedFrame = exports.isMobileSafari = exports.cleanArray = exports.capitalizeFirstLetter = exports.removeEmptyFields = exports.getInvalidFields = exports.is24HourTime = exports.timeFormatString = exports.predictableRandomInt = exports.timePeriodsIntersect = exports.flatten = exports.parseJWT = exports.downloadFile = exports.jsonToCsv = exports.loadTextFileFromInputEvent = exports.csvToJson = exports.openConfirmModal = exports.randomString = exports.padString = exports.randomInt = exports.unique = exports.getItemWithKeys = exports.log = exports.setAppName = void 0;
+exports.extractTextFromHTML = exports.shiftColorTowards = exports.rgbToHex = exports.interpolateColors = exports.hexToRgb = exports.calculateDistance = exports.isNestedFrame = exports.isMobileSafari = exports.cleanArray = exports.capitalizeFirstLetter = exports.removeEmptyFields = exports.getInvalidFields = exports.is24HourTime = exports.timeFormatString = exports.predictableRandomInt = exports.timePeriodsIntersect = exports.flatten = exports.parseJWT = exports.downloadFile = exports.jsonToCsv = exports.loadTextFileFromInputEvent = exports.csvToJson = exports.openConfirmModal = exports.randomString = exports.padString = exports.randomInt = exports.unique = exports.getItemWithKeys = exports.log = exports.setAppName = void 0;
 var forms_1 = __webpack_require__(/*! @angular/forms */ 34456);
 var operators_1 = __webpack_require__(/*! rxjs/operators */ 97303);
 var confirm_modal_component_1 = __webpack_require__(/*! ../../../components/src/lib/confirm-modal.component */ 30841);
@@ -28747,6 +28693,15 @@ function shiftColorTowards(hex1, hex2, fraction) {
   return rgbToHex(resultRgb[0], resultRgb[1], resultRgb[2]);
 }
 exports.shiftColorTowards = shiftColorTowards;
+function extractTextFromHTML(html_string) {
+  // Create a temporary DOM element
+  var temp_element = document.createElement('div');
+  // Set the innerHTML to our HTML string
+  temp_element.innerHTML = html_string;
+  // Extract and return the text content
+  return temp_element.textContent || temp_element.innerText || '';
+}
+exports.extractTextFromHTML = extractTextFromHTML;
 
 /***/ }),
 
@@ -31972,15 +31927,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "0aa558c",
-  "hash": "0aa558c",
+  "raw": "58962db",
+  "hash": "58962db",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "0aa558c",
+  "suffix": "58962db",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1721627435558
+  "time": 1721790483716
 };
 /* tslint:enable */
 
@@ -44520,7 +44475,7 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
     _this.options = _this._options.asObservable();
     _this.booking_rules = _this._org.building_list.pipe((0, operators_1.switchMap)(function (list) {
       return Promise.all(list.map(function (bld) {
-        return (0, ts_client_1.showMetadata)(bld.id, 'booking_rules').toPromise();
+        return (0, ts_client_1.showMetadata)(bld.id, 'room_booking_rules').toPromise();
       }));
     }), (0, operators_1.map)(function (building_rules) {
       var mapping = {};
@@ -65285,6 +65240,7 @@ var Region = /*#__PURE__*/_createClass(function Region(_data) {
   this.timezone = _data.timezone || '';
   this.images = _data.images || [];
   this.bindings = _data.bindings || {};
+  this.address = _data.address || '';
 });
 exports.Region = Region;
 
