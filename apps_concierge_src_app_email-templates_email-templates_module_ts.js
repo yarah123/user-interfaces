@@ -434,12 +434,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 22797);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ 99908);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 90521);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 68824);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ 35443);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ 33602);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _placeos_organisation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/organisation */ 2510);
+/* harmony import */ var _placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/ts-client */ 35713);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! date-fns */ 99908);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 90521);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ 68824);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs */ 71536);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs */ 68757);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 8627);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 71963);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 35443);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 29314);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs/operators */ 7841);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs/operators */ 33602);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/core */ 37580);
+
+
+
+
 
 
 
@@ -447,51 +459,82 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class EmailTemplatesStateService {
-  constructor() {
-    this._templates = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject([]);
-    this._filters = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({});
-    this.templates = this._templates.asObservable();
+  _processTemplates(metadata, zone_id) {
+    const data = metadata.details;
+    return ((data instanceof Array ? data : '') || []).map(template => ({
+      ...template,
+      zone_id
+    }));
+  }
+  constructor(_org, _settings) {
+    this._org = _org;
+    this._settings = _settings;
+    this._filters = new rxjs__WEBPACK_IMPORTED_MODULE_4__.BehaviorSubject({});
+    this._change = new rxjs__WEBPACK_IMPORTED_MODULE_4__.BehaviorSubject(0);
+    this.available_template_definitions = (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.combineLatest)([this._org.active_building, this._org.active_region, this._change]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.filter)(([bld]) => !!bld), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.switchMap)(([bld, region]) => (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__.showMetadata)(this._settings.get('app.use_region') ? region.id : bld.id, 'email_template_fields').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.map)(_ => {
+      const definitions = _?.details || {};
+      return Object.keys(definitions).map(key => ({
+        id: key,
+        name: definitions[key].name,
+        description: definitions[key].description || '',
+        fields: definitions[key].fields.map(field => ({
+          name: field.name,
+          description: field.description || ''
+        }))
+      }));
+    })).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.catchError)(() => (0,rxjs__WEBPACK_IMPORTED_MODULE_10__.of)([])))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.shareReplay)(1));
+    this.templates = (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.combineLatest)([this._org.active_building, this._org.active_region, this._change]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.filter)(([bld]) => !!bld), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.switchMap)(([bld, region]) => (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.forkJoin)([(0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__.showMetadata)(this._org.organisation.id, 'email_templates').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.map)(_ => this._processTemplates(_, this._org.organisation.id)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.catchError)(() => (0,rxjs__WEBPACK_IMPORTED_MODULE_10__.of)([]))), (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__.showMetadata)(bld.id, 'email_templates').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.map)(_ => this._processTemplates(_, bld.id)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.catchError)(() => (0,rxjs__WEBPACK_IMPORTED_MODULE_10__.of)([]))), (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__.showMetadata)(region.id, 'email_templates').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.map)(_ => this._processTemplates(_, region.id)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.catchError)(() => (0,rxjs__WEBPACK_IMPORTED_MODULE_10__.of)([])))])), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.map)(([org_templates, bld_templates, region_templates]) => org_templates.concat(bld_templates).concat(region_templates)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.shareReplay)(1));
     this.filters = this._filters.asObservable();
-    this.filtered_templates = (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.combineLatest)([this.templates, this.filters]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(([templates, filters]) => {
+    this.filtered_templates = (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.combineLatest)([this.templates, this.filters]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.map)(([templates, filters]) => {
       const category = filters.category || '';
       return templates.filter(_ => _.category === category || category === '');
     }));
-    this.loadTemplates();
-  }
-  loadTemplates() {
-    var _this = this;
-    return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const session_templates = JSON.parse(sessionStorage.getItem('PLACEOS.email_templates') || '[]');
-      _this._templates.next(session_templates);
-    })();
   }
   loadTemplate(id) {
-    var _this2 = this;
+    var _this = this;
     return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const template_list = yield _this2.templates.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.take)(1)).toPromise();
+      const template_list = yield _this.templates.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.take)(1)).toPromise();
       return template_list.find(_ => _.id === id);
     })();
   }
   saveTemplate(template) {
-    var _this3 = this;
+    var _this2 = this;
     return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const template_list = yield _this3.templates.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.take)(1)).toPromise();
+      if (!template.zone_id) return;
+      const template_list = yield _this2.templates.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.take)(1)).toPromise();
       if (!template.id) {
         template.id = `template-${(0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.randomString)(8)}`;
-        template.created_at = (0,date_fns__WEBPACK_IMPORTED_MODULE_6__.getUnixTime)(Date.now());
+        template.created_at = (0,date_fns__WEBPACK_IMPORTED_MODULE_14__.getUnixTime)(Date.now());
       }
-      template.updated_at = (0,date_fns__WEBPACK_IMPORTED_MODULE_6__.getUnixTime)(Date.now());
+      template.updated_at = (0,date_fns__WEBPACK_IMPORTED_MODULE_14__.getUnixTime)(Date.now());
+      const zone_templates = template_list.filter(_ => _.zone_id === template.zone_id);
+      const template_value = {
+        ...template
+      };
+      delete template_value.zone_id;
       console.log('Templates:', template_list);
-      const new_template_list = [...template_list.filter(_ => _.id !== template.id), template];
-      console.log('New Templates:', new_template_list);
-      _this3._templates.next(new_template_list);
-      sessionStorage.setItem('PLACEOS.email_templates', JSON.stringify(new_template_list));
+      const new_template_list = [...zone_templates.filter(_ => _.id !== template.id), template];
+      yield (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__.updateMetadata)(template.zone_id, {
+        name: `email_templates`,
+        details: new_template_list,
+        description: 'Email Templates for Zone'
+      }).toPromise();
+      (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.notifySuccess)('Successfully saved template');
     })();
   }
   removeTemplate(template) {
-    const new_template_list = this._templates.getValue().filter(_ => _.id !== template.id);
-    this._templates.next(new_template_list);
-    sessionStorage.setItem('PLACEOS.email_templates', JSON.stringify(new_template_list));
+    var _this3 = this;
+    return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      const template_list = yield _this3.templates.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__.take)(1)).toPromise();
+      const zone_templates = template_list.filter(_ => _.zone_id === template.zone_id);
+      const new_template_list = zone_templates.filter(_ => _.id !== template.id);
+      yield (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__.updateMetadata)(template.zone_id, {
+        name: `email_templates`,
+        details: new_template_list,
+        description: 'Email Templates for Zone'
+      }).toPromise();
+      (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.notifySuccess)('Successfully removed template');
+    })();
   }
   setFilters(filters) {
     this._filters.next({
@@ -500,9 +543,9 @@ class EmailTemplatesStateService {
     });
   }
   static #_ = this.ɵfac = function EmailTemplatesStateService_Factory(t) {
-    return new (t || EmailTemplatesStateService)();
+    return new (t || EmailTemplatesStateService)(_angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵinject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_2__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵinject"](_placeos_common__WEBPACK_IMPORTED_MODULE_1__.SettingsService));
   };
-  static #_2 = this.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjectable"]({
+  static #_2 = this.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵdefineInjectable"]({
     token: EmailTemplatesStateService,
     factory: EmailTemplatesStateService.ɵfac,
     providedIn: 'root'
