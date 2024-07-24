@@ -48,7 +48,7 @@ __webpack_require__.r(__webpack_exports__);
 const _c0 = () => ["/email-templates"];
 function EmailTemplateManageComponent_mat_option_17_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-option", 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-option", 24);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
   }
@@ -59,20 +59,33 @@ function EmailTemplateManageComponent_mat_option_17_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", bld_r2.display_name || bld_r2.name, " ");
   }
 }
-function EmailTemplateManageComponent_ng_template_56_Template(rf, ctx) {
+function EmailTemplateManageComponent_mat_option_39_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 27)(1, "div", 28);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](2, "mat-spinner", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "mat-option", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const template_r3 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("value", template_r3.id);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", template_r3.name, " ");
+  }
+}
+function EmailTemplateManageComponent_ng_template_50_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 25)(1, "div", 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](2, "mat-spinner", 27);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](3, "p");
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
-    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("diameter", 32);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r2.loading);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r3.loading);
   }
 }
 class EmailTemplateManageComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.AsyncHandler {
@@ -83,13 +96,14 @@ class EmailTemplateManageComponent extends _placeos_common__WEBPACK_IMPORTED_MOD
     this._route = _route;
     this._router = _router;
     this.loading = '';
+    this.definitions = this._state.template_definitions;
     this.buildings = this._org.building_list;
     this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormGroup({
       id: new _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControl(''),
-      title: new _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControl('', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]),
+      subject: new _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControl('', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]),
       category: new _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControl('internal'),
       trigger: new _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControl(''),
-      body: new _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControl('', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]),
+      html: new _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControl('', [_angular_forms__WEBPACK_IMPORTED_MODULE_7__.Validators.required]),
       zone_id: new _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormControl('')
     });
   }
@@ -119,7 +133,8 @@ class EmailTemplateManageComponent extends _placeos_common__WEBPACK_IMPORTED_MOD
       _this2.loading = 'Saving email template...';
       yield _this2._state.saveTemplate({
         ...(_this2.template || {}),
-        ..._this2.form.getRawValue()
+        ..._this2.form.getRawValue(),
+        text: (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.extractTextFromHTML)(_this2.form.getRawValue().html || '')
       });
       _this2.loading = '';
       (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.notifySuccess)('Successfully saved email template');
@@ -133,9 +148,9 @@ class EmailTemplateManageComponent extends _placeos_common__WEBPACK_IMPORTED_MOD
     type: EmailTemplateManageComponent,
     selectors: [["email-template-manage"]],
     features: [_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵInheritDefinitionFeature"]],
-    decls: 58,
-    vars: 8,
-    consts: [["load_state", ""], [1, "absolute", "inset-0", "bg-base-100", "overflow-auto", "p-8"], [1, "max-w-full", "w-[48rem]", "mx-auto", "min-h-full", 3, "formGroup"], [1, "flex", "items-center", "space-x-2", "mb-8"], ["icon", "", "matRipple", "", 1, "-ml-8", 3, "routerLink"], [1, "text-2xl", "font-medium"], [1, "flex-1"], ["btn", "", "matRipple", "", "type", "button", 1, "w-48", 3, "click"], [1, "flex", "items-center", "space-x-4"], [1, "flex-1", "space-y-2"], ["for", "title"], ["appearance", "outline", 1, "w-full"], ["placeholder", "Select Building", "formControlName", "zone_id"], [3, "value", 4, "ngFor", "ngForOf"], ["placeholder", "Select Category", "formControlName", "category"], ["value", "internal"], ["value", "external"], ["placeholder", "Select Trigger", "formControlName", "trigger"], ["value", "none"], ["value", "checkout"], ["value", "checkin"], ["value", "booking"], ["value", "event"], ["matPrefix", "", 1, "text-2xl", "relative", "-left-1"], ["matInput", "", "placeholder", "Template Title", "formControlName", "title"], ["formControlName", "body", "placeholder", "Body of the email template", 1, "min-h-[calc(100vh-20rem)]", "block", 3, "images_allowed"], [3, "value"], [1, "absolute", "inset-0", "bg-base-100"], [1, "h-full", "w-full", "flex", "flex-col", "items-center", "justify-center", "space-y-2"], [3, "diameter"]],
+    decls: 52,
+    vars: 11,
+    consts: [["load_state", ""], [1, "absolute", "inset-0", "bg-base-100", "overflow-auto", "p-8"], [1, "max-w-full", "w-[48rem]", "mx-auto", "min-h-full", 3, "formGroup"], [1, "flex", "items-center", "space-x-2", "mb-8"], ["icon", "", "matRipple", "", 1, "-ml-8", 3, "routerLink"], [1, "text-2xl", "font-medium"], [1, "flex-1"], ["btn", "", "matRipple", "", "type", "button", 1, "w-48", 3, "click"], [1, "flex", "items-center", "space-x-4"], [1, "flex-1", "space-y-2"], ["for", "zone"], ["appearance", "outline", 1, "w-full"], ["name", "zone", "placeholder", "Select Building", "formControlName", "zone_id"], [3, "value", 4, "ngFor", "ngForOf"], ["for", "category"], ["name", "category", "placeholder", "Select Category", "formControlName", "category"], ["value", "internal"], ["value", "external"], ["for", "trigger"], ["name", "trigger", "placeholder", "Select Trigger", "formControlName", "trigger"], ["value", "none"], ["matPrefix", "", 1, "text-2xl", "relative", "-left-1"], ["matInput", "", "placeholder", "Template Title", "formControlName", "title"], ["formControlName", "html", "placeholder", "Body of the email template", 1, "min-h-[calc(100vh-20rem)]", "block", 3, "images_allowed"], [3, "value"], [1, "absolute", "inset-0", "bg-base-100"], [1, "h-full", "w-full", "flex", "flex-col", "items-center", "justify-center", "space-y-2"], [3, "diameter"]],
     template: function EmailTemplateManageComponent_Template(rf, ctx) {
       if (rf & 1) {
         const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
@@ -163,60 +178,53 @@ class EmailTemplateManageComponent extends _placeos_common__WEBPACK_IMPORTED_MOD
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](19, "mat-error");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](20, "A building is required");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](21, "div", 9)(22, "label", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](21, "div", 9)(22, "label", 14);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](23, "Category");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](24, "mat-form-field", 11)(25, "mat-select", 14)(26, "mat-option", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](24, "mat-form-field", 11)(25, "mat-select", 15)(26, "mat-option", 16);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](27, " Internal ");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](28, "mat-option", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](28, "mat-option", 17);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](29, " External ");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](30, "mat-error");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](31, "A category is required");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](32, "div", 9)(33, "label", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](32, "div", 9)(33, "label", 18);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](34, "Trigger");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](35, "mat-form-field", 11)(36, "mat-select", 17)(37, "mat-option", 18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](35, "mat-form-field", 11)(36, "mat-select", 19)(37, "mat-option", 20);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](38, "None");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](39, "mat-option", 19);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](40, " Checkout ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](39, EmailTemplateManageComponent_mat_option_39_Template, 2, 2, "mat-option", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipe"](40, "async");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](41, "mat-option", 20);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](42, "Checkin");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](43, "mat-option", 21);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](44, "Booking");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](45, "mat-option", 22);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](46, "Event");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](47, "mat-error");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](48, "A trigger is required");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](41, "mat-error");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](42, "A trigger is required");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](49, "mat-form-field", 11)(50, "app-icon", 23);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](51, " description ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](43, "mat-form-field", 11)(44, "app-icon", 21);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](45, " description ");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](52, "input", 24);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](53, "mat-error");
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](54, "A title for the template is required");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](46, "input", 22);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](47, "mat-error");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](48, "A title for the template is required");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](55, "rich-text-input", 25);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](49, "rich-text-input", 23);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](56, EmailTemplateManageComponent_ng_template_56_Template, 5, 2, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](50, EmailTemplateManageComponent_ng_template_50_Template, 5, 2, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplateRefExtractor"]);
       }
       if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("formGroup", ctx.form);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](7, _c0));
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpureFunction0"](10, _c0));
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate1"](" ", (ctx.template == null ? null : ctx.template.id) ? "Edit" : "New", " Email Template ");
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](18, 5, ctx.buildings));
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](38);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](18, 6, ctx.buildings));
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](22);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵpipeBind1"](40, 8, ctx.definitions));
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](10);
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("images_allowed", true);
       }
     },
@@ -471,7 +479,7 @@ class EmailTemplatesStateService {
     this._settings = _settings;
     this._filters = new rxjs__WEBPACK_IMPORTED_MODULE_4__.BehaviorSubject({});
     this._change = new rxjs__WEBPACK_IMPORTED_MODULE_4__.BehaviorSubject(0);
-    this.available_template_definitions = (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.combineLatest)([this._org.active_building, this._org.active_region, this._change]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.filter)(([bld]) => !!bld), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.switchMap)(() => (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__.showMetadata)(this._org.organisation.id, 'email_template_fields').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.map)(_ => {
+    this.template_definitions = (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.combineLatest)([this._org.active_building, this._org.active_region, this._change]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.filter)(([bld]) => !!bld), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.switchMap)(() => (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__.showMetadata)(this._org.organisation.id, 'email_template_fields').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.map)(_ => {
       const definitions = _?.details || {};
       return Object.keys(definitions).map(key => ({
         id: key,
