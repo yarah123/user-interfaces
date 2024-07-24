@@ -471,7 +471,7 @@ class EmailTemplatesStateService {
     this._settings = _settings;
     this._filters = new rxjs__WEBPACK_IMPORTED_MODULE_4__.BehaviorSubject({});
     this._change = new rxjs__WEBPACK_IMPORTED_MODULE_4__.BehaviorSubject(0);
-    this.available_template_definitions = (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.combineLatest)([this._org.active_building, this._org.active_region, this._change]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.filter)(([bld]) => !!bld), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.switchMap)(([bld, region]) => (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__.showMetadata)(this._settings.get('app.use_region') ? region.id : bld.id, 'email_template_fields').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.map)(_ => {
+    this.available_template_definitions = (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.combineLatest)([this._org.active_building, this._org.active_region, this._change]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.filter)(([bld]) => !!bld), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.switchMap)(() => (0,_placeos_ts_client__WEBPACK_IMPORTED_MODULE_3__.showMetadata)(this._org.organisation.id, 'email_template_fields').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.map)(_ => {
       const definitions = _?.details || {};
       return Object.keys(definitions).map(key => ({
         id: key,
