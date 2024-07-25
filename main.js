@@ -31927,15 +31927,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "58962db",
-  "hash": "58962db",
+  "raw": "210dc54",
+  "hash": "210dc54",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "58962db",
+  "suffix": "210dc54",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1721790483716
+  "time": 1721871847465
 };
 /* tslint:enable */
 
@@ -57255,7 +57255,7 @@ var RichTextInputComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
       }], ['clean'] // remove formatting button
       ];
       if (this.images_allowed) {
-        toolbarOptions.push(['image']);
+        toolbarOptions.push(['image', 'link']);
       }
       if (this._editor) {
         this.unsub('changes');
@@ -57271,6 +57271,9 @@ var RichTextInputComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
             handlers: {
               image: function image() {
                 return _this5._embedImage();
+              },
+              link: function link() {
+                return _this5._embedAttachment();
               }
             }
           }
@@ -57303,6 +57306,29 @@ var RichTextInputComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
             progress = _ref.progress;
           if (!link || progress !== 100) return;
           _this6._editor.insertEmbed(index, 'image', link);
+        });
+      };
+    }
+  }, {
+    key: "_embedAttachment",
+    value: function _embedAttachment() {
+      var _this7 = this;
+      if (!this._editor) return;
+      var range = this._editor.getSelection();
+      if (!range) return;
+      var index = range.index;
+      // Create a File input element
+      var file_input = document.createElement('input');
+      file_input.setAttribute('type', 'file');
+      file_input.click();
+      file_input.onchange = function () {
+        var file = file_input.files[0];
+        (0, common_1.uploadFile)(file, true).subscribe(function (_ref2) {
+          var link = _ref2.link,
+            progress = _ref2.progress;
+          if (!link || progress !== 100) return;
+          _this7._editor.insertText(range.index, file.name, 'link', link);
+          _this7._editor.setSelection(range.index + file.name.length);
         });
       };
     }
