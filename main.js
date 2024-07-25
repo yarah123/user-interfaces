@@ -21593,15 +21593,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "58962db",
-  "hash": "58962db",
+  "raw": "210dc54",
+  "hash": "210dc54",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "58962db",
+  "suffix": "210dc54",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1721790480830
+  "time": 1721871982674
 };
 /* tslint:enable */
 
@@ -43238,7 +43238,7 @@ class RichTextInputComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0_
     }], ['clean'] // remove formatting button
     ];
     if (this.images_allowed) {
-      toolbarOptions.push(['image']);
+      toolbarOptions.push(['image', 'link']);
     }
     if (this._editor) {
       this.unsub('changes');
@@ -43252,7 +43252,8 @@ class RichTextInputComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0_
         toolbar: {
           container: toolbarOptions,
           handlers: {
-            image: () => this._embedImage()
+            image: () => this._embedImage(),
+            link: () => this._embedAttachment()
           }
         }
       },
@@ -43282,6 +43283,29 @@ class RichTextInputComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0_
       }) => {
         if (!link || progress !== 100) return;
         this._editor.insertEmbed(index, 'image', link);
+      });
+    };
+  }
+  _embedAttachment() {
+    if (!this._editor) return;
+    const range = this._editor.getSelection();
+    if (!range) return;
+    const {
+      index
+    } = range;
+    // Create a File input element
+    var file_input = document.createElement('input');
+    file_input.setAttribute('type', 'file');
+    file_input.click();
+    file_input.onchange = () => {
+      var file = file_input.files[0];
+      (0,_placeos_common__WEBPACK_IMPORTED_MODULE_0__.uploadFile)(file, true).subscribe(({
+        link,
+        progress
+      }) => {
+        if (!link || progress !== 100) return;
+        this._editor.insertText(range.index, file.name, 'link', link);
+        this._editor.setSelection(range.index + file.name.length);
       });
     };
   }
