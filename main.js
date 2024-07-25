@@ -410,7 +410,8 @@ var _AppModule;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.AppModule = exports.HttpLoaderFactory = void 0;
+exports.AppModule = void 0;
+exports.HttpLoaderFactory = HttpLoaderFactory;
 var forms_1 = __webpack_require__(/*! @angular/forms */ 34456);
 var platform_browser_1 = __webpack_require__(/*! @angular/platform-browser */ 80436);
 var http_1 = __webpack_require__(/*! @angular/common/http */ 46443);
@@ -446,7 +447,6 @@ var i2 = __webpack_require__(/*! @angular/service-worker */ 46140);
 function HttpLoaderFactory(http) {
   return new http_loader_1.TranslateHttpLoader(http, './assets/locale/', '.json');
 }
-exports.HttpLoaderFactory = HttpLoaderFactory;
 var AppModule = /*#__PURE__*/_createClass(function AppModule() {
   _classCallCheck(this, AppModule);
 });
@@ -5487,7 +5487,8 @@ var _AssetGroupPipe;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.AssetGroupPipe = exports.updateAssetGroupList = void 0;
+exports.AssetGroupPipe = void 0;
+exports.updateAssetGroupList = _updateAssetGroupList;
 var asset_class_1 = __webpack_require__(/*! ./asset.class */ 84011);
 var assets_fn_1 = __webpack_require__(/*! ./assets.fn */ 75204);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
@@ -5515,7 +5516,6 @@ function _updateAssetGroupList(assetgroup_list) {
     _iterator.f();
   }
 }
-exports.updateAssetGroupList = _updateAssetGroupList;
 var AssetGroupPipe = /*#__PURE__*/function () {
   function AssetGroupPipe() {
     _classCallCheck(this, AssetGroupPipe);
@@ -7504,7 +7504,12 @@ var _createForOfIteratorHelper = (__webpack_require__(/*! ./node_modules/@babel/
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.assetAvailable = exports.getAssetRulesForZone = exports.generateAssetForm = exports.generateAssetGroupForm = exports.generateAssetPurchaseOrderForm = exports.generateAssetCategoryForm = void 0;
+exports.generateAssetCategoryForm = generateAssetCategoryForm;
+exports.generateAssetPurchaseOrderForm = generateAssetPurchaseOrderForm;
+exports.generateAssetGroupForm = generateAssetGroupForm;
+exports.generateAssetForm = generateAssetForm;
+exports.getAssetRulesForZone = getAssetRulesForZone;
+exports.assetAvailable = assetAvailable;
 var forms_1 = __webpack_require__(/*! @angular/forms */ 34456);
 var asset_class_1 = __webpack_require__(/*! ./asset.class */ 84011);
 var common_1 = __webpack_require__(/*! @placeos/common */ 22797);
@@ -7520,7 +7525,6 @@ function generateAssetCategoryForm() {
     parent_category_id: new forms_1.FormControl(category.parent_category_id)
   });
 }
-exports.generateAssetCategoryForm = generateAssetCategoryForm;
 function generateAssetPurchaseOrderForm() {
   var order = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   return new forms_1.FormGroup({
@@ -7533,7 +7537,6 @@ function generateAssetPurchaseOrderForm() {
     expected_service_end_date: new forms_1.FormControl(order.expected_service_end_date * 1000 || order.depreciation_end_date || null)
   });
 }
-exports.generateAssetPurchaseOrderForm = generateAssetPurchaseOrderForm;
 function generateAssetGroupForm() {
   var group = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new asset_class_1.AssetGroup();
   return new forms_1.FormGroup({
@@ -7545,7 +7548,6 @@ function generateAssetGroupForm() {
     description: new forms_1.FormControl(group.description || '')
   });
 }
-exports.generateAssetGroupForm = generateAssetGroupForm;
 function generateAssetForm() {
   var asset = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new asset_class_1.Asset();
   return new forms_1.FormGroup({
@@ -7559,7 +7561,6 @@ function generateAssetForm() {
     purchase_order_id: new forms_1.FormControl(asset.purchase_order_id)
   });
 }
-exports.generateAssetForm = generateAssetForm;
 var RULE_REQUESTS = {};
 function getAssetRulesForZone(zone_id) {
   var fresh = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
@@ -7571,7 +7572,6 @@ function getAssetRulesForZone(zone_id) {
   }));
   return RULE_REQUESTS[zone_id];
 }
-exports.getAssetRulesForZone = getAssetRulesForZone;
 function assetAvailable(item, rules, event) {
   var current_date = Date.now();
   var event_date = new Date(event.date);
@@ -7621,7 +7621,6 @@ function assetAvailable(item, rules, event) {
   }
   return true;
 }
-exports.assetAvailable = assetAvailable;
 
 /***/ }),
 
@@ -7642,7 +7641,42 @@ var _objectSpread = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpe
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.validateAssetRequestsForResource = exports.differenceBetweenAssetRequests = exports.removeAssetRequests = exports.queryGroupAvailability = exports.queryAvailableAssets = exports.showGroupFull = exports.getGroupsWithAssets = exports.deleteAssetPurchaseOrder = exports.showAssetPurchaseOrder = exports.saveAssetPurchaseOrder = exports.updateAssetPurchaseOrder = exports.addAssetPurchaseOrder = exports.queryAssetPurchaseOrders = exports.deleteAssetsInBulk = exports.saveAssetsInBulk = exports.updateAssetsInBulk = exports.addAssetsInBulk = exports.deleteAsset = exports.showAsset = exports.saveAsset = exports.updateAsset = exports.addAsset = exports.queryAssets = exports.deleteAssetGroup = exports.showAssetGroup = exports.saveAssetGroup = exports.updateAssetGroup = exports.addAssetGroup = exports.queryAssetGroupsExtended = exports.queryAssetGroups = exports.deleteAssetCategory = exports.showAssetCategory = exports.saveAssetCategory = exports.updateAssetCategory = exports.addAssetCategory = exports.queryAssetCategories = void 0;
+exports.queryAssetCategories = queryAssetCategories;
+exports.addAssetCategory = addAssetCategory;
+exports.updateAssetCategory = updateAssetCategory;
+exports.saveAssetCategory = saveAssetCategory;
+exports.showAssetCategory = showAssetCategory;
+exports.deleteAssetCategory = deleteAssetCategory;
+exports.queryAssetGroups = queryAssetGroups;
+exports.queryAssetGroupsExtended = queryAssetGroupsExtended;
+exports.addAssetGroup = addAssetGroup;
+exports.updateAssetGroup = updateAssetGroup;
+exports.saveAssetGroup = saveAssetGroup;
+exports.showAssetGroup = showAssetGroup;
+exports.deleteAssetGroup = deleteAssetGroup;
+exports.queryAssets = queryAssets;
+exports.addAsset = addAsset;
+exports.updateAsset = updateAsset;
+exports.saveAsset = saveAsset;
+exports.showAsset = showAsset;
+exports.deleteAsset = deleteAsset;
+exports.addAssetsInBulk = addAssetsInBulk;
+exports.updateAssetsInBulk = updateAssetsInBulk;
+exports.saveAssetsInBulk = saveAssetsInBulk;
+exports.deleteAssetsInBulk = deleteAssetsInBulk;
+exports.queryAssetPurchaseOrders = queryAssetPurchaseOrders;
+exports.addAssetPurchaseOrder = addAssetPurchaseOrder;
+exports.updateAssetPurchaseOrder = updateAssetPurchaseOrder;
+exports.saveAssetPurchaseOrder = saveAssetPurchaseOrder;
+exports.showAssetPurchaseOrder = showAssetPurchaseOrder;
+exports.deleteAssetPurchaseOrder = deleteAssetPurchaseOrder;
+exports.getGroupsWithAssets = getGroupsWithAssets;
+exports.showGroupFull = showGroupFull;
+exports.queryAvailableAssets = queryAvailableAssets;
+exports.queryGroupAvailability = queryGroupAvailability;
+exports.removeAssetRequests = removeAssetRequests;
+exports.differenceBetweenAssetRequests = differenceBetweenAssetRequests;
+exports.validateAssetRequestsForResource = validateAssetRequestsForResource;
 var ts_client_1 = __webpack_require__(/*! @placeos/ts-client */ 35713);
 var api_1 = __webpack_require__(/*! libs/common/src/lib/api */ 38385);
 var operators_1 = __webpack_require__(/*! rxjs/operators */ 97303);
@@ -7663,33 +7697,27 @@ function queryAssetCategories() {
     return _;
   }));
 }
-exports.queryAssetCategories = queryAssetCategories;
 function addAssetCategory(category) {
   return (0, ts_client_1.post)("".concat(BASE_ENDPOINT, "/asset_categories"), (0, ts_client_1.cleanObject)(category, [undefined, null, ''])).pipe((0, operators_1.map)(function (_) {
     return _;
   }));
 }
-exports.addAssetCategory = addAssetCategory;
 function updateAssetCategory(id, category) {
   return (0, ts_client_1.put)("".concat(BASE_ENDPOINT, "/asset_categories/").concat(id), (0, ts_client_1.cleanObject)(category, [undefined, null, ''])).pipe((0, operators_1.map)(function (_) {
     return _;
   }));
 }
-exports.updateAssetCategory = updateAssetCategory;
 function saveAssetCategory(category) {
   return category.id ? updateAssetCategory(category.id, category) : addAssetCategory(category);
 }
-exports.saveAssetCategory = saveAssetCategory;
 function showAssetCategory(id) {
   return (0, ts_client_1.get)("".concat(BASE_ENDPOINT, "/asset_categories/").concat(id)).pipe((0, operators_1.map)(function (_) {
     return _;
   }));
 }
-exports.showAssetCategory = showAssetCategory;
 function deleteAssetCategory(id) {
   return (0, ts_client_1.del)("".concat(BASE_ENDPOINT, "/asset_categories/").concat(id));
 }
-exports.deleteAssetCategory = deleteAssetCategory;
 //////////////////////////////
 ////     Asset Groups     ////
 //////////////////////////////
@@ -7700,7 +7728,6 @@ function queryAssetGroups() {
     return _;
   }));
 }
-exports.queryAssetGroups = queryAssetGroups;
 var groups_cache = new Map();
 function queryAssetGroupsExtended() {
   var query = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
@@ -7730,33 +7757,27 @@ function queryAssetGroupsExtended() {
     }, 5 * 60 * 1000);
   }));
 }
-exports.queryAssetGroupsExtended = queryAssetGroupsExtended;
 function addAssetGroup(product) {
   return (0, ts_client_1.post)("".concat(BASE_ENDPOINT, "/asset_types"), (0, ts_client_1.cleanObject)(product, [undefined, null, ''])).pipe((0, operators_1.map)(function (_) {
     return _;
   }));
 }
-exports.addAssetGroup = addAssetGroup;
 function updateAssetGroup(id, product) {
   return (0, ts_client_1.put)("".concat(BASE_ENDPOINT, "/asset_types/").concat(id), (0, ts_client_1.cleanObject)(product, [undefined, null, ''])).pipe((0, operators_1.map)(function (_) {
     return _;
   }));
 }
-exports.updateAssetGroup = updateAssetGroup;
 function saveAssetGroup(product) {
   return product.id ? updateAssetGroup(product.id, product) : addAssetGroup(product);
 }
-exports.saveAssetGroup = saveAssetGroup;
 function showAssetGroup(id) {
   return (0, ts_client_1.get)("".concat(BASE_ENDPOINT, "/asset_types/").concat(id)).pipe((0, operators_1.map)(function (_) {
     return _;
   }));
 }
-exports.showAssetGroup = showAssetGroup;
 function deleteAssetGroup(id) {
   return (0, ts_client_1.del)("".concat(BASE_ENDPOINT, "/asset_types/").concat(id));
 }
-exports.deleteAssetGroup = deleteAssetGroup;
 ////////////////////////////////
 ////          Assets        ////
 ////////////////////////////////
@@ -7767,19 +7788,16 @@ function queryAssets() {
     return _;
   }));
 }
-exports.queryAssets = queryAssets;
 function addAsset(asset) {
   return (0, ts_client_1.post)("".concat(BASE_ENDPOINT, "/assets"), (0, ts_client_1.cleanObject)(asset, [undefined, null, ''])).pipe((0, operators_1.map)(function (_) {
     return _;
   }));
 }
-exports.addAsset = addAsset;
 function updateAsset(id, asset) {
   return (0, ts_client_1.put)("".concat(BASE_ENDPOINT, "/assets/").concat(id), (0, ts_client_1.cleanObject)(asset, [undefined, null, ''])).pipe((0, operators_1.map)(function (_) {
     return _;
   }));
 }
-exports.updateAsset = updateAsset;
 function saveAsset(asset) {
   return asset.id ? updateAsset(asset.id, _objectSpread(_objectSpread({}, asset), {}, {
     asset_type_id: asset.type_id
@@ -7787,17 +7805,14 @@ function saveAsset(asset) {
     asset_type_id: asset.type_id
   }));
 }
-exports.saveAsset = saveAsset;
 function showAsset(id) {
   return (0, ts_client_1.get)("".concat(BASE_ENDPOINT, "/assets/").concat(id)).pipe((0, operators_1.map)(function (_) {
     return _;
   }));
 }
-exports.showAsset = showAsset;
 function deleteAsset(id) {
   return (0, ts_client_1.del)("".concat(BASE_ENDPOINT, "/assets/").concat(id));
 }
-exports.deleteAsset = deleteAsset;
 ////////////////////////////////
 ////      Assets (Bulk)     ////
 ////////////////////////////////
@@ -7811,7 +7826,6 @@ function addAssetsInBulk(assets) {
     return _;
   }));
 }
-exports.addAssetsInBulk = addAssetsInBulk;
 function updateAssetsInBulk(assets) {
   assets.map(function (_) {
     return _.asset_type_id = _.type_id;
@@ -7822,14 +7836,12 @@ function updateAssetsInBulk(assets) {
     return _;
   }));
 }
-exports.updateAssetsInBulk = updateAssetsInBulk;
 function saveAssetsInBulk(assets) {
   if (!(assets !== null && assets !== void 0 && assets.length)) return (0, rxjs_1.of)([]);
   return assets.every(function (item) {
     return item === null || item === void 0 ? void 0 : item.id;
   }) ? updateAssetsInBulk(assets) : addAssetsInBulk(assets);
 }
-exports.saveAssetsInBulk = saveAssetsInBulk;
 function deleteAssetsInBulk(id_list) {
   return (0, ts_client_1.del)("".concat(BASE_ENDPOINT, "/assets/bulk"), {
     body: {
@@ -7837,7 +7849,6 @@ function deleteAssetsInBulk(id_list) {
     }
   });
 }
-exports.deleteAssetsInBulk = deleteAssetsInBulk;
 /////////////////////////////////
 ////  Asset Purchase Orders  ////
 /////////////////////////////////
@@ -7848,19 +7859,16 @@ function queryAssetPurchaseOrders() {
     return _;
   }));
 }
-exports.queryAssetPurchaseOrders = queryAssetPurchaseOrders;
 function addAssetPurchaseOrder(order) {
   return (0, ts_client_1.post)("".concat(BASE_ENDPOINT, "/asset_purchase_orders"), (0, ts_client_1.cleanObject)(order, [undefined, null, ''])).pipe((0, operators_1.map)(function (_) {
     return _;
   }));
 }
-exports.addAssetPurchaseOrder = addAssetPurchaseOrder;
 function updateAssetPurchaseOrder(id, order) {
   return (0, ts_client_1.put)("".concat(BASE_ENDPOINT, "/asset_purchase_orders/").concat(id), (0, ts_client_1.cleanObject)(order, [undefined, null, ''])).pipe((0, operators_1.map)(function (_) {
     return _;
   }));
 }
-exports.updateAssetPurchaseOrder = updateAssetPurchaseOrder;
 function saveAssetPurchaseOrder(order) {
   return order.id ? updateAssetPurchaseOrder(order.id, _objectSpread(_objectSpread({}, order), {}, {
     purchase_order_number: order.order_number
@@ -7868,17 +7876,14 @@ function saveAssetPurchaseOrder(order) {
     purchase_order_number: order.order_number
   }));
 }
-exports.saveAssetPurchaseOrder = saveAssetPurchaseOrder;
 function showAssetPurchaseOrder(id) {
   return (0, ts_client_1.get)("".concat(BASE_ENDPOINT, "/asset_purchase_orders/").concat(id)).pipe((0, operators_1.map)(function (_) {
     return _;
   }));
 }
-exports.showAssetPurchaseOrder = showAssetPurchaseOrder;
 function deleteAssetPurchaseOrder(id) {
   return (0, ts_client_1.del)("".concat(BASE_ENDPOINT, "/asset_purchase_orders/").concat(id));
 }
-exports.deleteAssetPurchaseOrder = deleteAssetPurchaseOrder;
 //////////////////////////////////////
 ////     Asset Helper Methods     ////
 //////////////////////////////////////
@@ -7890,7 +7895,6 @@ function getGroupsWithAssets() {
     return products;
   }));
 }
-exports.getGroupsWithAssets = getGroupsWithAssets;
 function showGroupFull(id) {
   var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   return (0, rxjs_1.combineLatest)([showAssetGroup(id), queryAssetCategories(), queryAssets(_objectSpread(_objectSpread({}, query), {}, {
@@ -7934,7 +7938,6 @@ function showGroupFull(id) {
     return product;
   }));
 }
-exports.showGroupFull = showGroupFull;
 function queryAvailableAssets(query, ignore) {
   query.type = 'asset-request';
   return (0, rxjs_1.combineLatest)([queryAssets(query), (0, bookings_fn_1.queryBookings)(query)]).pipe((0, operators_1.map)(function (_ref5) {
@@ -7949,7 +7952,6 @@ function queryAvailableAssets(query, ignore) {
     });
   }));
 }
-exports.queryAvailableAssets = queryAvailableAssets;
 function queryGroupAvailability(query, ignore) {
   query.type = 'asset-request';
   return (0, rxjs_1.combineLatest)([queryAssetGroupsExtended(query), (0, bookings_fn_1.queryBookings)(query)]).pipe((0, operators_1.map)(function (_ref7) {
@@ -7971,7 +7973,6 @@ function queryGroupAvailability(query, ignore) {
     });
   }));
 }
-exports.queryGroupAvailability = queryGroupAvailability;
 function removeAssetRequests(_x) {
   return _removeAssetRequests.apply(this, arguments);
 }
@@ -8003,7 +8004,6 @@ function _removeAssetRequests() {
   }));
   return _removeAssetRequests.apply(this, arguments);
 }
-exports.removeAssetRequests = removeAssetRequests;
 function differenceBetweenAssetRequests(new_assets, old_assets) {
   var reset_state = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
   if ((!new_assets || (new_assets === null || new_assets === void 0 ? void 0 : new_assets.length) <= 0) && old_assets !== null && old_assets !== void 0 && old_assets.length) return [];
@@ -8031,7 +8031,6 @@ function differenceBetweenAssetRequests(new_assets, old_assets) {
   }
   return changed;
 }
-exports.differenceBetweenAssetRequests = differenceBetweenAssetRequests;
 function validateAssetRequestsForResource(_x2, _x3) {
   return _validateAssetRequestsForResource.apply(this, arguments);
 }
@@ -8264,7 +8263,6 @@ function _validateAssetRequestsForResource() {
   });
   return _validateAssetRequestsForResource.apply(this, arguments);
 }
-exports.validateAssetRequestsForResource = validateAssetRequestsForResource;
 
 /***/ }),
 
@@ -9027,9 +9025,16 @@ var BookingDetailsModalComponent = /*#__PURE__*/function () {
     key: "building",
     get: function get() {
       var _this = this;
+      if (this._settings.get('app.use_region')) {
+        var region = this._org.regions.find(function (region) {
+          var _this$booking4;
+          return (((_this$booking4 = _this.booking) === null || _this$booking4 === void 0 ? void 0 : _this$booking4.zones) || []).includes(region.id);
+        });
+        if (region) return region;
+      }
       return this._org.buildings.find(function (bld) {
-        var _this$booking4;
-        return (((_this$booking4 = _this.booking) === null || _this$booking4 === void 0 ? void 0 : _this$booking4.zones) || []).includes(bld.id);
+        var _this$booking5;
+        return (((_this$booking5 = _this.booking) === null || _this$booking5 === void 0 ? void 0 : _this$booking5.zones) || []).includes(bld.id);
       });
     }
   }, {
@@ -9040,8 +9045,8 @@ var BookingDetailsModalComponent = /*#__PURE__*/function () {
   }, {
     key: "auto_checkin",
     get: function get() {
-      var _this$booking5;
-      return this._settings.get("app.".concat(((_this$booking5 = this.booking) === null || _this$booking5 === void 0 ? void 0 : _this$booking5.type) || 'bookings', ".auto_checkin"));
+      var _this$booking6;
+      return this._settings.get("app.".concat(((_this$booking6 = this.booking) === null || _this$booking6 === void 0 ? void 0 : _this$booking6.type) || 'bookings', ".auto_checkin"));
     }
   }, {
     key: "is_checked_in",
@@ -9051,17 +9056,17 @@ var BookingDetailsModalComponent = /*#__PURE__*/function () {
   }, {
     key: "desk_height_enabled",
     get: function get() {
-      var _this$booking6;
-      return ((_this$booking6 = this.booking) === null || _this$booking6 === void 0 ? void 0 : _this$booking6.type) === 'desk' && this._settings.get('app.desks.height_enabled');
+      var _this$booking7;
+      return ((_this$booking7 = this.booking) === null || _this$booking7 === void 0 ? void 0 : _this$booking7.type) === 'desk' && this._settings.get('app.desks.height_enabled');
     }
   }, {
     key: "is_in_progress",
     get: function get() {
-      var _this$booking7, _this$booking8, _this$booking9;
+      var _this$booking8, _this$booking9, _this$booking10;
       var ts = Date.now();
-      var start = ((_this$booking7 = this.booking) === null || _this$booking7 === void 0 ? void 0 : _this$booking7.booking_start) * 1000;
-      var end = ((_this$booking8 = this.booking) === null || _this$booking8 === void 0 ? void 0 : _this$booking8.booking_end) * 1000;
-      if ((_this$booking9 = this.booking) !== null && _this$booking9 !== void 0 && _this$booking9.all_day) return start <= ts;
+      var start = ((_this$booking8 = this.booking) === null || _this$booking8 === void 0 ? void 0 : _this$booking8.booking_start) * 1000;
+      var end = ((_this$booking9 = this.booking) === null || _this$booking9 === void 0 ? void 0 : _this$booking9.booking_end) * 1000;
+      if ((_this$booking10 = this.booking) !== null && _this$booking10 !== void 0 && _this$booking10.all_day) return start <= ts;
       return start <= ts && ts <= end;
     }
   }, {
@@ -9072,20 +9077,20 @@ var BookingDetailsModalComponent = /*#__PURE__*/function () {
   }, {
     key: "booking_status",
     get: function get() {
-      var _this$booking10, _this$booking11, _this$booking12, _this$booking13;
-      if ((_this$booking10 = this.booking) !== null && _this$booking10 !== void 0 && _this$booking10.is_done) return 'neutral';
-      if (((_this$booking11 = this.booking) === null || _this$booking11 === void 0 ? void 0 : _this$booking11.status) === 'approved') return 'success';
-      if (((_this$booking12 = this.booking) === null || _this$booking12 === void 0 ? void 0 : _this$booking12.status) === 'declined') return 'error';
-      if (((_this$booking13 = this.booking) === null || _this$booking13 === void 0 ? void 0 : _this$booking13.status) === 'tentative') return 'warning';
+      var _this$booking11, _this$booking12, _this$booking13, _this$booking14;
+      if ((_this$booking11 = this.booking) !== null && _this$booking11 !== void 0 && _this$booking11.is_done) return 'neutral';
+      if (((_this$booking12 = this.booking) === null || _this$booking12 === void 0 ? void 0 : _this$booking12.status) === 'approved') return 'success';
+      if (((_this$booking13 = this.booking) === null || _this$booking13 === void 0 ? void 0 : _this$booking13.status) === 'declined') return 'error';
+      if (((_this$booking14 = this.booking) === null || _this$booking14 === void 0 ? void 0 : _this$booking14.status) === 'tentative') return 'warning';
       return 'warning';
     }
   }, {
     key: "period",
     get: function get() {
-      var _this$booking14, _this$booking15, _this$booking16;
-      if ((_this$booking14 = this.booking) !== null && _this$booking14 !== void 0 && _this$booking14.is_all_day) return 'All Day';
-      var start = ((_this$booking15 = this.booking) === null || _this$booking15 === void 0 ? void 0 : _this$booking15.date) || Date.now();
-      var duration = ((_this$booking16 = this.booking) === null || _this$booking16 === void 0 ? void 0 : _this$booking16.duration) || 60;
+      var _this$booking15, _this$booking16, _this$booking17;
+      if ((_this$booking15 = this.booking) !== null && _this$booking15 !== void 0 && _this$booking15.is_all_day) return 'All Day';
+      var start = ((_this$booking16 = this.booking) === null || _this$booking16 === void 0 ? void 0 : _this$booking16.date) || Date.now();
+      var duration = ((_this$booking17 = this.booking) === null || _this$booking17 === void 0 ? void 0 : _this$booking17.duration) || 60;
       var end = (0, date_fns_1.addMinutes)(start, duration);
       var dur = (0, date_fns_1.formatDuration)({
         hours: Math.floor(duration / 60),
@@ -10661,7 +10666,9 @@ var _asyncToGenerator = (__webpack_require__(/*! ./node_modules/@babel/runtime/h
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.newBookingFromCalendarEvent = exports.findNearbyFeature = exports.generateBookingForm = void 0;
+exports.generateBookingForm = generateBookingForm;
+exports.findNearbyFeature = findNearbyFeature;
+exports.newBookingFromCalendarEvent = newBookingFromCalendarEvent;
 var forms_1 = __webpack_require__(/*! @angular/forms */ 34456);
 var common_1 = __webpack_require__(/*! @placeos/common */ 22797);
 var validators_1 = __webpack_require__(/*! libs/events/src/lib/validators */ 90690);
@@ -10813,7 +10820,6 @@ function generateBookingForm() {
   if (booking.state === 'started') form.get('date').disable();
   return form;
 }
-exports.generateBookingForm = generateBookingForm;
 function findNearbyFeature(_x, _x2) {
   return _findNearbyFeature.apply(this, arguments);
 }
@@ -10876,7 +10882,6 @@ function _findNearbyFeature() {
   });
   return _findNearbyFeature.apply(this, arguments);
 }
-exports.findNearbyFeature = findNearbyFeature;
 function newBookingFromCalendarEvent(event) {
   var _event$system, _event$system2, _event$system3;
   return new booking_class_1.Booking({
@@ -10889,7 +10894,6 @@ function newBookingFromCalendarEvent(event) {
     extension_data: _objectSpread({}, event)
   });
 }
-exports.newBookingFromCalendarEvent = newBookingFromCalendarEvent;
 
 /***/ }),
 
@@ -10907,7 +10911,27 @@ var _asyncToGenerator = (__webpack_require__(/*! ./node_modules/@babel/runtime/h
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.createBookingsForEvent = exports.isResourceAvailable = exports.queryResourceAvailability = exports.checkinBookingAttendee = exports.checkinBooking = exports.bookingRemoveGuest = exports.bookingAddGuest = exports.checkinBookingGuest = exports.queryBookingGuests = exports.setBookingState = exports.rejectBooking = exports.approveBooking = exports.removeBooking = exports.saveBooking = exports.updateBooking = exports.createBooking = exports.showBooking = exports.queryAllBookings = exports.queryPagedBookings = exports.bookedResourceList = exports.queryBookings = void 0;
+exports.saveBooking = void 0;
+exports.queryBookings = queryBookings;
+exports.bookedResourceList = bookedResourceList;
+exports.queryPagedBookings = queryPagedBookings;
+exports.queryAllBookings = queryAllBookings;
+exports.showBooking = showBooking;
+exports.createBooking = createBooking;
+exports.updateBooking = updateBooking;
+exports.removeBooking = removeBooking;
+exports.approveBooking = approveBooking;
+exports.rejectBooking = rejectBooking;
+exports.setBookingState = setBookingState;
+exports.queryBookingGuests = queryBookingGuests;
+exports.checkinBookingGuest = checkinBookingGuest;
+exports.bookingAddGuest = bookingAddGuest;
+exports.bookingRemoveGuest = bookingRemoveGuest;
+exports.checkinBooking = checkinBooking;
+exports.checkinBookingAttendee = checkinBookingAttendee;
+exports.queryResourceAvailability = queryResourceAvailability;
+exports.isResourceAvailable = isResourceAvailable;
+exports.createBookingsForEvent = createBookingsForEvent;
 var ts_client_1 = __webpack_require__(/*! @placeos/ts-client */ 35713);
 var rxjs_1 = __webpack_require__(/*! rxjs */ 15681);
 var operators_1 = __webpack_require__(/*! rxjs/operators */ 97303);
@@ -10931,7 +10955,6 @@ function queryBookings(q) {
     return (0, rxjs_1.of)([]);
   }));
 }
-exports.queryBookings = queryBookings;
 /**
  * List resources that are booked within the given parameters
  * @param q Parameters to pass to the API request
@@ -10944,7 +10967,6 @@ function bookedResourceList(q) {
     return (0, rxjs_1.of)([]);
   }));
 }
-exports.bookedResourceList = bookedResourceList;
 /**
  * List bookings with link to next page of bookings
  * @param q Parameters to pass to the API request
@@ -10959,7 +10981,6 @@ function queryPagedBookings(q) {
     path: ''
   });
 }
-exports.queryPagedBookings = queryPagedBookings;
 /**
  * List all bookings
  * @param q Parameters to pass to the API request
@@ -11012,7 +11033,6 @@ function queryAllBookings(q) {
     return (0, rxjs_1.of)([]);
   }));
 }
-exports.queryAllBookings = queryAllBookings;
 /**
  * Get booking details
  * @param id ID of the booking to grab
@@ -11023,7 +11043,6 @@ function showBooking(id) {
     return new booking_class_1.Booking(item);
   }));
 }
-exports.showBooking = showBooking;
 /**
  * Create new booking and add it to the database
  * @param data New booking fields
@@ -11034,7 +11053,6 @@ function createBooking(data, q) {
     return new booking_class_1.Booking(item);
   }));
 }
-exports.createBooking = createBooking;
 /**
  * Update an existing booking
  * @param id ID of the booking to update
@@ -11047,7 +11065,6 @@ function updateBooking(id, data) {
     return new booking_class_1.Booking(item);
   }));
 }
-exports.updateBooking = updateBooking;
 /**
  * Save changes to or create a booking
  * @param data State of the booking
@@ -11069,7 +11086,6 @@ function removeBooking(id) {
     response_type: 'void'
   });
 }
-exports.removeBooking = removeBooking;
 /**
  * Set the approval state of the booking to approved
  * @param id ID of the booking to approve
@@ -11080,7 +11096,6 @@ function approveBooking(id) {
     return new booking_class_1.Booking(item);
   }));
 }
-exports.approveBooking = approveBooking;
 /**
  * Set the approval state of the booking to rejected
  * @param id ID of the booking to reject
@@ -11091,7 +11106,6 @@ function rejectBooking(id) {
     return new booking_class_1.Booking(item);
   }));
 }
-exports.rejectBooking = rejectBooking;
 function setBookingState(id, state, utm_source) {
   var query = (0, api_1.toQueryString)({
     state: state,
@@ -11101,7 +11115,6 @@ function setBookingState(id, state, utm_source) {
     return new booking_class_1.Booking(item);
   }));
 }
-exports.setBookingState = setBookingState;
 /**
  * List the guests in a booking
  * @param id ID of the booking to reject
@@ -11111,7 +11124,6 @@ function queryBookingGuests(id) {
     return new user_class_1.GuestUser(item);
   }));
 }
-exports.queryBookingGuests = queryBookingGuests;
 /**
  * Set the checkin state of a guest in a booking
  * @param id ID of the booking to reject
@@ -11123,7 +11135,6 @@ function checkinBookingGuest(id, guest_id) {
     return new user_class_1.GuestUser(item);
   }));
 }
-exports.checkinBookingGuest = checkinBookingGuest;
 /**
  * Add a guest to a booking
  * @param id ID of the booking
@@ -11134,7 +11145,6 @@ function bookingAddGuest(id, guest) {
     return new user_class_1.GuestUser(item);
   }));
 }
-exports.bookingAddGuest = bookingAddGuest;
 /**
  * Remove an attendee from a booking
  * @param id ID of the booking
@@ -11145,7 +11155,6 @@ function bookingRemoveGuest(id, guest) {
     return new user_class_1.GuestUser(item);
   }));
 }
-exports.bookingRemoveGuest = bookingRemoveGuest;
 /**
  * Set the checkin state of a booking
  * @param id ID of the booking to grab
@@ -11179,7 +11188,6 @@ function checkinBooking(id, state) {
     };
   }()));
 }
-exports.checkinBooking = checkinBooking;
 /**
  * Set the checkin state of a booking
  * @param id ID of the booking to grab
@@ -11193,7 +11201,6 @@ function checkinBookingAttendee(id, email, state) {
     return new user_class_1.GuestUser(item);
   }));
 }
-exports.checkinBookingAttendee = checkinBookingAttendee;
 /**
  * Filter list of resources based of the bookings found in the given query
  * @param asset_id_list List of resource IDs
@@ -11214,7 +11221,6 @@ function queryResourceAvailability(id_list, start, duration, ignore) {
     });
   }));
 }
-exports.queryResourceAvailability = queryResourceAvailability;
 function isResourceAvailable(id, start, duration, ignore) {
   var type = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 'room';
   return queryBookings({
@@ -11227,7 +11233,6 @@ function isResourceAvailable(id, start, duration, ignore) {
     }).length === 0;
   }));
 }
-exports.isResourceAvailable = isResourceAvailable;
 /**
  *
  * @param event
@@ -11313,7 +11318,6 @@ function _createBookingsForEvent() {
   }));
   return _createBookingsForEvent.apply(this, arguments);
 }
-exports.createBookingsForEvent = createBookingsForEvent;
 
 /***/ }),
 
@@ -14454,12 +14458,114 @@ var i0 = __webpack_require__(/*! @angular/core */ 37580);
 var i1 = __webpack_require__(/*! @placeos/organisation */ 2510);
 var i2 = __webpack_require__(/*! @placeos/common */ 22797);
 var i3 = __webpack_require__(/*! @angular/material/dialog */ 12587);
-var i4 = __webpack_require__(/*! @angular/forms */ 34456);
-var i5 = __webpack_require__(/*! @angular/material/form-field */ 24950);
-var i6 = __webpack_require__(/*! @angular/material/core */ 74646);
-var i7 = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
-var i8 = __webpack_require__(/*! @angular/material/select */ 25175);
-var i9 = __webpack_require__(/*! @angular/material/slider */ 64992);
+var i4 = __webpack_require__(/*! @angular/common */ 60316);
+var i5 = __webpack_require__(/*! @angular/forms */ 34456);
+var i6 = __webpack_require__(/*! @angular/material/form-field */ 24950);
+var i7 = __webpack_require__(/*! @angular/material/core */ 74646);
+var i8 = __webpack_require__(/*! ../../../components/src/lib/icon.component */ 69434);
+var i9 = __webpack_require__(/*! ../../../components/src/lib/desk-height-presets.component */ 3051);
+var i10 = __webpack_require__(/*! @angular/material/select */ 25175);
+var i11 = __webpack_require__(/*! @angular/material/slider */ 64992);
+function DeskSettingsModalComponent_div_0_Template(rf, ctx) {
+  if (rf & 1) {
+    var _r1 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "div", 4)(1, "div", 5);
+    i0.ɵɵi18n(2, 1);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(3, "div", 6);
+    i0.ɵɵi18n(4, 2);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(5, "div", 7)(6, "label");
+    i0.ɵɵtext(7, "Presets");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(8, "div", 8)(9, "mat-form-field", 9)(10, "mat-select", 10);
+    i0.ɵɵtwoWayListener("ngModelChange", function DeskSettingsModalComponent_div_0_Template_mat_select_ngModelChange_10_listener($event) {
+      i0.ɵɵrestoreView(_r1);
+      var ctx_r1 = i0.ɵɵnextContext();
+      i0.ɵɵtwoWayBindingSet(ctx_r1.preset, $event) || (ctx_r1.preset = $event);
+      return i0.ɵɵresetView($event);
+    });
+    i0.ɵɵlistener("ngModelChange", function DeskSettingsModalComponent_div_0_Template_mat_select_ngModelChange_10_listener($event) {
+      i0.ɵɵrestoreView(_r1);
+      var ctx_r1 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r1.setPreset($event));
+    });
+    i0.ɵɵelementStart(11, "mat-option", 11);
+    i0.ɵɵtext(12, "None");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(13, "mat-option", 12);
+    i0.ɵɵtext(14, "Standing");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(15, "mat-option", 13);
+    i0.ɵɵtext(16, "Seated");
+    i0.ɵɵelementEnd()()();
+    i0.ɵɵelementStart(17, "button", 14);
+    i0.ɵɵlistener("click", function DeskSettingsModalComponent_div_0_Template_button_click_17_listener() {
+      i0.ɵɵrestoreView(_r1);
+      var ctx_r1 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r1.edit_presets = true);
+    });
+    i0.ɵɵelementStart(18, "app-icon");
+    i0.ɵɵtext(19, "edit");
+    i0.ɵɵelementEnd()()();
+    i0.ɵɵelementStart(20, "label");
+    i0.ɵɵtext(21, "Current Height");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(22, "div", 15)(23, "mat-slider", 16)(24, "input", 17);
+    i0.ɵɵtwoWayListener("ngModelChange", function DeskSettingsModalComponent_div_0_Template_input_ngModelChange_24_listener($event) {
+      i0.ɵɵrestoreView(_r1);
+      var ctx_r1 = i0.ɵɵnextContext();
+      i0.ɵɵtwoWayBindingSet(ctx_r1.height, $event) || (ctx_r1.height = $event);
+      return i0.ɵɵresetView($event);
+    });
+    i0.ɵɵlistener("ngModelChange", function DeskSettingsModalComponent_div_0_Template_input_ngModelChange_24_listener() {
+      i0.ɵɵrestoreView(_r1);
+      var ctx_r1 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r1.updatePreset(ctx_r1.height));
+    });
+    i0.ɵɵelementEnd()();
+    i0.ɵɵelementStart(25, "div", 18);
+    i0.ɵɵtext(26);
+    i0.ɵɵelementEnd()()();
+    i0.ɵɵelementStart(27, "button", 19);
+    i0.ɵɵlistener("click", function DeskSettingsModalComponent_div_0_Template_button_click_27_listener() {
+      i0.ɵɵrestoreView(_r1);
+      var ctx_r1 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r1.setDeskHeight());
+    });
+    i0.ɵɵtext(28, " Apply Settings ");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(29, "button", 20)(30, "app-icon");
+    i0.ɵɵtext(31, "close");
+    i0.ɵɵelementEnd()()();
+  }
+  if (rf & 2) {
+    var ctx_r1 = i0.ɵɵnextContext();
+    i0.ɵɵadvance(10);
+    i0.ɵɵtwoWayProperty("ngModel", ctx_r1.preset);
+    i0.ɵɵadvance(13);
+    i0.ɵɵproperty("displayWith", ctx_r1.formatLabel);
+    i0.ɵɵadvance();
+    i0.ɵɵtwoWayProperty("ngModel", ctx_r1.height);
+    i0.ɵɵadvance(2);
+    i0.ɵɵtextInterpolate1(" ", ctx_r1.height.toFixed(1), "cm ");
+  }
+}
+function DeskSettingsModalComponent_ng_template_1_Template(rf, ctx) {
+  if (rf & 1) {
+    var _r3 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "desk-height-presets", 21);
+    i0.ɵɵlistener("close", function DeskSettingsModalComponent_ng_template_1_Template_desk_height_presets_close_0_listener() {
+      i0.ɵɵrestoreView(_r3);
+      var ctx_r1 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r1.edit_presets = false);
+    });
+    i0.ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    i0.ɵɵproperty("show_close", true);
+  }
+}
 var DeskSettingsModalComponent = /*#__PURE__*/function () {
   function DeskSettingsModalComponent(_data, _org, _settings, _dialog_ref) {
     _classCallCheck(this, DeskSettingsModalComponent);
@@ -14468,6 +14574,7 @@ var DeskSettingsModalComponent = /*#__PURE__*/function () {
     this._settings = _settings;
     this._dialog_ref = _dialog_ref;
     this.desk_id = this._data.id;
+    this.edit_presets = false;
     this.height = 71;
   }
   return _createClass(DeskSettingsModalComponent, [{
@@ -14475,6 +14582,9 @@ var DeskSettingsModalComponent = /*#__PURE__*/function () {
     value: function ngOnInit() {
       var sitting_height = this._settings.get('desk_sitting_height');
       var standing_height = this._settings.get('desk_standing_height');
+      if (!sitting_height && !standing_height) {
+        this.edit_presets = true;
+      }
       var last_height = parseInt(localStorage.getItem('PLACEOS.last_desk_height'), 10);
       this.height = last_height || sitting_height || 71;
       if (this.height === sitting_height) {
@@ -14521,20 +14631,20 @@ var DeskSettingsModalComponent = /*#__PURE__*/function () {
           while (1) switch (_context.prev = _context.next) {
             case 0:
               sys_id = this._org.binding('desks');
+              localStorage.setItem('PLACEOS.last_desk_height', "".concat(this.height));
               if (sys_id) {
-                _context.next = 3;
+                _context.next = 4;
                 break;
               }
               return _context.abrupt("return", this._dialog_ref.close());
-            case 3:
+            case 4:
               module = (0, ts_client_1.getModule)(sys_id, 'DeskControl');
-              _context.next = 6;
+              _context.next = 7;
               return module.execute('set_desk_height', [this.desk_id, this.height])["catch"](function (_) {
                 (0, common_1.notifyError)('Error setting desk height.' + _);
                 throw _;
               });
-            case 6:
-              localStorage.setItem('PLACEOS.last_desk_height', "".concat(this.height));
+            case 7:
               (0, common_1.notifySuccess)('Successfully set desk height');
               this._dialog_ref.close();
             case 9:
@@ -14562,8 +14672,8 @@ _DeskSettingsModalComponent.ɵfac = function DeskSettingsModalComponent_Factory(
 _DeskSettingsModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
   type: _DeskSettingsModalComponent,
   selectors: [["desk-settings-modal"]],
-  decls: 28,
-  vars: 4,
+  decls: 3,
+  vars: 2,
   consts: function consts() {
     var i18n_0;
     if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
@@ -14585,73 +14695,18 @@ _DeskSettingsModalComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
     } else {
       i18n_1 = $localize(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral([":\u241Fde53fc27bc96d3e69d6c7d9b0a19619db7cc1076\u241F8247461324425873330: Set your desk height for the best experience "])));
     }
-    return [i18n_0, i18n_1, [1, "relative", "p-4", "bg-base-100", "rounded", "shadow", "w-[20rem]"], [1, "text-lg"], [1, "text-xs", "opacity-60", "mb-4"], [1, "flex", "flex-col", "mt-2", "mb-4"], ["appearance", "outline"], ["placeholder", "No selected preset", 3, "ngModelChange", "ngModel"], ["value", ""], ["value", "standing"], ["value", "sitting"], [1, "flex", "items-center", "space-x-2"], ["min", "60", "max", "120", "step", "0.5", "discrete", "", 1, "flex-1", 3, "displayWith"], ["matSliderThumb", "", 3, "ngModelChange", "ngModel"], [1, "text-sm", "w-12", "text-right"], ["btn", "", "matRipple", "", 1, "w-full", 3, "click"], ["icon", "", "matRipple", "", "mat-dialog-close", "", 1, "absolute", "top-0", "right-0"]];
+    return [["desk_height_tooltip", ""], i18n_0, i18n_1, ["class", "relative p-4 bg-base-100 rounded shadow w-[20rem]", 4, "ngIf", "ngIfElse"], [1, "relative", "p-4", "bg-base-100", "rounded", "shadow", "w-[20rem]"], [1, "text-lg"], [1, "text-xs", "opacity-60", "mb-4"], [1, "flex", "flex-col", "mt-2", "mb-4"], [1, "flex", "items-center", "space-x-2", "pb-4"], ["appearance", "outline", 1, "no-subscript", "flex-1", "w-1/2"], ["placeholder", "No selected preset", 3, "ngModelChange", "ngModel"], ["value", ""], ["value", "standing"], ["value", "sitting"], ["icon", "", "matRipple", "", 1, "rounded", "h-12", "w-12", "bg-secondary", "text-secondary-content", 3, "click"], [1, "flex", "items-center", "space-x-2"], ["min", "60", "max", "120", "step", "0.5", "discrete", "", 1, "flex-1", 3, "displayWith"], ["matSliderThumb", "", 3, "ngModelChange", "ngModel"], [1, "text-sm", "w-12", "text-right"], ["btn", "", "matRipple", "", 1, "w-full", 3, "click"], ["icon", "", "matRipple", "", "mat-dialog-close", "", 1, "absolute", "top-0", "right-0"], [3, "close", "show_close"]];
   },
   template: function DeskSettingsModalComponent_Template(rf, ctx) {
     if (rf & 1) {
-      i0.ɵɵelementStart(0, "div", 2)(1, "div", 3);
-      i0.ɵɵi18n(2, 0);
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(3, "div", 4);
-      i0.ɵɵi18n(4, 1);
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(5, "div", 5)(6, "label");
-      i0.ɵɵtext(7, "Presets");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(8, "mat-form-field", 6)(9, "mat-select", 7);
-      i0.ɵɵtwoWayListener("ngModelChange", function DeskSettingsModalComponent_Template_mat_select_ngModelChange_9_listener($event) {
-        i0.ɵɵtwoWayBindingSet(ctx.preset, $event) || (ctx.preset = $event);
-        return $event;
-      });
-      i0.ɵɵlistener("ngModelChange", function DeskSettingsModalComponent_Template_mat_select_ngModelChange_9_listener($event) {
-        return ctx.setPreset($event);
-      });
-      i0.ɵɵelementStart(10, "mat-option", 8);
-      i0.ɵɵtext(11, "None");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(12, "mat-option", 9);
-      i0.ɵɵtext(13, "Standing");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(14, "mat-option", 10);
-      i0.ɵɵtext(15, "Seated");
-      i0.ɵɵelementEnd()()();
-      i0.ɵɵelementStart(16, "label");
-      i0.ɵɵtext(17, "Current Height");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(18, "div", 11)(19, "mat-slider", 12)(20, "input", 13);
-      i0.ɵɵtwoWayListener("ngModelChange", function DeskSettingsModalComponent_Template_input_ngModelChange_20_listener($event) {
-        i0.ɵɵtwoWayBindingSet(ctx.height, $event) || (ctx.height = $event);
-        return $event;
-      });
-      i0.ɵɵlistener("ngModelChange", function DeskSettingsModalComponent_Template_input_ngModelChange_20_listener() {
-        return ctx.updatePreset(ctx.height);
-      });
-      i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(21, "div", 14);
-      i0.ɵɵtext(22);
-      i0.ɵɵelementEnd()()();
-      i0.ɵɵelementStart(23, "button", 15);
-      i0.ɵɵlistener("click", function DeskSettingsModalComponent_Template_button_click_23_listener() {
-        return ctx.setDeskHeight();
-      });
-      i0.ɵɵtext(24, " Apply Settings ");
-      i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(25, "button", 16)(26, "app-icon");
-      i0.ɵɵtext(27, "close");
-      i0.ɵɵelementEnd()()();
+      i0.ɵɵtemplate(0, DeskSettingsModalComponent_div_0_Template, 32, 4, "div", 3)(1, DeskSettingsModalComponent_ng_template_1_Template, 1, 1, "ng-template", null, 0, i0.ɵɵtemplateRefExtractor);
     }
     if (rf & 2) {
-      i0.ɵɵadvance(9);
-      i0.ɵɵtwoWayProperty("ngModel", ctx.preset);
-      i0.ɵɵadvance(10);
-      i0.ɵɵproperty("displayWith", ctx.formatLabel);
-      i0.ɵɵadvance();
-      i0.ɵɵtwoWayProperty("ngModel", ctx.height);
-      i0.ɵɵadvance(2);
-      i0.ɵɵtextInterpolate1(" ", ctx.height.toFixed(1), "cm ");
+      var desk_height_tooltip_r4 = i0.ɵɵreference(2);
+      i0.ɵɵproperty("ngIf", !ctx.edit_presets)("ngIfElse", desk_height_tooltip_r4);
     }
   },
-  dependencies: [i4.DefaultValueAccessor, i4.NgControlStatus, i4.NgModel, i5.MatFormField, i3.MatDialogClose, i6.MatOption, i7.IconComponent, i8.MatSelect, i6.MatRipple, i9.MatSlider, i9.MatSliderThumb],
+  dependencies: [i4.NgIf, i5.DefaultValueAccessor, i5.NgControlStatus, i5.NgModel, i6.MatFormField, i3.MatDialogClose, i7.MatOption, i8.IconComponent, i9.DeskHeightPresetsComponent, i10.MatSelect, i7.MatRipple, i11.MatSlider, i11.MatSliderThumb],
   encapsulation: 2
 });
 exports.DeskSettingsModalComponent = DeskSettingsModalComponent;
@@ -15326,7 +15381,7 @@ var InviteVisitorFormComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
   }, {
     key: "building",
     get: function get() {
-      return this._org.building;
+      return this._settings.get('app.use_region') ? this._org.region : this._org.building;
     }
   }, {
     key: "form",
@@ -18173,7 +18228,7 @@ exports.LockersService = LockersService;
 var _taggedTemplateLiteral = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js */ 9959)["default"]);
 var _classCallCheck = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/classCallCheck.js */ 80912)["default"]);
 var _createClass = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/createClass.js */ 92974)["default"]);
-var _ParkingSpaceDetailsComponent, _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7;
+var _ParkingSpaceDetailsComponent, _templateObject, _templateObject2, _templateObject3;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
@@ -18196,7 +18251,7 @@ var _c0 = function _c0() {
 };
 function ParkingSpaceDetailsComponent_ng_container_0_image_carousel_2_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelement(0, "image-carousel", 26);
+    i0.ɵɵelement(0, "image-carousel", 21);
   }
   if (rf & 2) {
     var ctx_r1 = i0.ɵɵnextContext(2);
@@ -18207,9 +18262,9 @@ function ParkingSpaceDetailsComponent_ng_container_0_Template(rf, ctx) {
   if (rf & 1) {
     var _r1 = i0.ɵɵgetCurrentView();
     i0.ɵɵelementContainerStart(0);
-    i0.ɵɵelementStart(1, "section", 9);
-    i0.ɵɵtemplate(2, ParkingSpaceDetailsComponent_ng_container_0_image_carousel_2_Template, 1, 1, "image-carousel", 10);
-    i0.ɵɵelementStart(3, "button", 11);
+    i0.ɵɵelementStart(1, "section", 5);
+    i0.ɵɵtemplate(2, ParkingSpaceDetailsComponent_ng_container_0_image_carousel_2_Template, 1, 1, "image-carousel", 6);
+    i0.ɵɵelementStart(3, "button", 7);
     i0.ɵɵlistener("click", function ParkingSpaceDetailsComponent_ng_container_0_Template_button_click_3_listener() {
       i0.ɵɵrestoreView(_r1);
       var ctx_r1 = i0.ɵɵnextContext();
@@ -18218,7 +18273,7 @@ function ParkingSpaceDetailsComponent_ng_container_0_Template(rf, ctx) {
     i0.ɵɵelementStart(4, "app-icon");
     i0.ɵɵtext(5, "arrow_back");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(6, "button", 12);
+    i0.ɵɵelementStart(6, "button", 8);
     i0.ɵɵlistener("click", function ParkingSpaceDetailsComponent_ng_container_0_Template_button_click_6_listener() {
       i0.ɵɵrestoreView(_r1);
       var ctx_r1 = i0.ɵɵnextContext();
@@ -18227,68 +18282,47 @@ function ParkingSpaceDetailsComponent_ng_container_0_Template(rf, ctx) {
     i0.ɵɵelementStart(7, "app-icon");
     i0.ɵɵtext(8);
     i0.ɵɵelementEnd()()();
-    i0.ɵɵelementStart(9, "div", 13)(10, "section", 14)(11, "h2", 15);
+    i0.ɵɵelementStart(9, "div", 9)(10, "section", 10)(11, "h2", 11);
     i0.ɵɵtext(12);
     i0.ɵɵelementEnd()();
     i0.ɵɵelement(13, "hr");
-    i0.ɵɵelementStart(14, "section", 16)(15, "h2", 17);
+    i0.ɵɵelementStart(14, "section", 12)(15, "h2", 13);
     i0.ɵɵi18n(16, 1);
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(17, "div", 18)(18, "app-icon");
+    i0.ɵɵelementStart(17, "div", 14)(18, "app-icon");
     i0.ɵɵtext(19, "people");
     i0.ɵɵelementEnd();
     i0.ɵɵelementStart(20, "p");
     i0.ɵɵi18n(21, 2);
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(22, "div", 18)(23, "app-icon");
+    i0.ɵɵelementStart(22, "div", 14)(23, "app-icon");
     i0.ɵɵtext(24, "meeting_room");
     i0.ɵɵelementEnd();
     i0.ɵɵelementStart(25, "p");
     i0.ɵɵtext(26);
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(27, "div", 18)(28, "app-icon");
+    i0.ɵɵelementStart(27, "div", 14)(28, "app-icon");
     i0.ɵɵtext(29, "place");
     i0.ɵɵelementEnd();
     i0.ɵɵelementStart(30, "p");
     i0.ɵɵtext(31);
     i0.ɵɵelementEnd()()();
     i0.ɵɵelement(32, "hr");
-    i0.ɵɵelementStart(33, "section", 19)(34, "h2", 17);
-    i0.ɵɵi18n(35, 3);
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(36, "div", 18)(37, "app-icon");
-    i0.ɵɵtext(38, "people");
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(39, "p");
-    i0.ɵɵi18n(40, 4);
+    i0.ɵɵelementStart(33, "section", 15);
+    i0.ɵɵelement(34, "interactive-map", 16);
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(41, "div", 18)(42, "app-icon");
-    i0.ɵɵtext(43, "restaurant");
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(44, "p");
-    i0.ɵɵi18n(45, 5);
-    i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(46, "div", 18)(47, "app-icon");
-    i0.ɵɵtext(48, "edit");
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(49, "p");
-    i0.ɵɵi18n(50, 6);
-    i0.ɵɵelementEnd()()();
-    i0.ɵɵelementStart(51, "section", 20);
-    i0.ɵɵelement(52, "interactive-map", 21);
-    i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(53, "div", 22)(54, "button", 23);
-    i0.ɵɵlistener("click", function ParkingSpaceDetailsComponent_ng_container_0_Template_button_click_54_listener() {
+    i0.ɵɵelementStart(35, "div", 17)(36, "button", 18);
+    i0.ɵɵlistener("click", function ParkingSpaceDetailsComponent_ng_container_0_Template_button_click_36_listener() {
       i0.ɵɵrestoreView(_r1);
       var ctx_r1 = i0.ɵɵnextContext();
       ctx_r1.active = !ctx_r1.active;
       return i0.ɵɵresetView(ctx_r1.activeChange.emit(ctx_r1.active));
     });
-    i0.ɵɵelementStart(55, "div", 24)(56, "app-icon", 25);
-    i0.ɵɵtext(57);
+    i0.ɵɵelementStart(37, "div", 19)(38, "app-icon", 20);
+    i0.ɵɵtext(39);
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(58, "p");
-    i0.ɵɵtext(59);
+    i0.ɵɵelementStart(40, "p");
+    i0.ɵɵtext(41);
     i0.ɵɵelementEnd()()()();
     i0.ɵɵelementContainerEnd();
   }
@@ -18311,7 +18345,7 @@ function ParkingSpaceDetailsComponent_ng_container_0_Template(rf, ctx) {
     i0.ɵɵtextInterpolate1(" ", (ctx_r1.level == null ? null : ctx_r1.level.display_name) || (ctx_r1.level == null ? null : ctx_r1.level.name), " ");
     i0.ɵɵadvance(5);
     i0.ɵɵtextInterpolate1(" ", (ctx_r1.building == null ? null : ctx_r1.building.address) || (ctx_r1.building == null ? null : ctx_r1.building.display_name) || (ctx_r1.building == null ? null : ctx_r1.building.name), " ");
-    i0.ɵɵadvance(21);
+    i0.ɵɵadvance(3);
     i0.ɵɵproperty("src", ctx_r1.map_url)("focus", ctx_r1.space.map_id)("features", ctx_r1.features)("options", i0.ɵɵpureFunction0(28, _c0));
     i0.ɵɵadvance(2);
     i0.ɵɵclassProp("inverse", ctx_r1.active);
@@ -18323,8 +18357,8 @@ function ParkingSpaceDetailsComponent_ng_container_0_Template(rf, ctx) {
 }
 function ParkingSpaceDetailsComponent_ng_template_1_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 27)(1, "p", 28);
-    i0.ɵɵi18n(2, 7);
+    i0.ɵɵelementStart(0, "div", 22)(1, "p", 23);
+    i0.ɵɵi18n(2, 3);
     i0.ɵɵelementEnd()();
   }
 }
@@ -18426,56 +18460,16 @@ _ParkingSpaceDetailsComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       /**
        * @suppress {msgDescriptions}
        */
-      var MSG_EXTERNAL_3223773701700202859$$LIBS_BOOKINGS_SRC_LIB_PARKING_SELECT_MODAL_PARKING_DETAILS_COMPONENT_TS_2 = goog.getMsg("Room Facilities");
-      i18n_2 = MSG_EXTERNAL_3223773701700202859$$LIBS_BOOKINGS_SRC_LIB_PARKING_SELECT_MODAL_PARKING_DETAILS_COMPONENT_TS_2;
+      var MSG_EXTERNAL_7182911930527299079$$LIBS_BOOKINGS_SRC_LIB_PARKING_SELECT_MODAL_PARKING_DETAILS_COMPONENT_TS_2 = goog.getMsg(" Select a space to view it's details ");
+      i18n_2 = MSG_EXTERNAL_7182911930527299079$$LIBS_BOOKINGS_SRC_LIB_PARKING_SELECT_MODAL_PARKING_DETAILS_COMPONENT_TS_2;
     } else {
-      i18n_2 = $localize(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral([":\u241F45b5b90d7df8adeb648858761739fa700117c0d5\u241F3223773701700202859:Room Facilities"])));
+      i18n_2 = $localize(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral([":\u241F2d39d1ca65d735d7f800e458ce54af6a25652395\u241F7182911930527299079: Select a space to view it's details "])));
     }
-    var i18n_3;
-    if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-      /**
-       * @suppress {msgDescriptions}
-       */
-      var MSG_EXTERNAL_2658260878259066313$$LIBS_BOOKINGS_SRC_LIB_PARKING_SELECT_MODAL_PARKING_DETAILS_COMPONENT_TS_3 = goog.getMsg("WiFi Available");
-      i18n_3 = MSG_EXTERNAL_2658260878259066313$$LIBS_BOOKINGS_SRC_LIB_PARKING_SELECT_MODAL_PARKING_DETAILS_COMPONENT_TS_3;
-    } else {
-      i18n_3 = $localize(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral([":\u241F49db2433248cbe017b956cb5baefb0196dd788f1\u241F2658260878259066313:WiFi Available"])));
-    }
-    var i18n_4;
-    if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-      /**
-       * @suppress {msgDescriptions}
-       */
-      var MSG_EXTERNAL_8309048761278776852$$LIBS_BOOKINGS_SRC_LIB_PARKING_SELECT_MODAL_PARKING_DETAILS_COMPONENT_TS_4 = goog.getMsg("Catering Available");
-      i18n_4 = MSG_EXTERNAL_8309048761278776852$$LIBS_BOOKINGS_SRC_LIB_PARKING_SELECT_MODAL_PARKING_DETAILS_COMPONENT_TS_4;
-    } else {
-      i18n_4 = $localize(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral([":\u241F551b6a6b5ecee7d32448ac4ef3a1fb883dd8e13c\u241F8309048761278776852:Catering Available"])));
-    }
-    var i18n_5;
-    if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-      /**
-       * @suppress {msgDescriptions}
-       */
-      var MSG_EXTERNAL_3473226617663475632$$LIBS_BOOKINGS_SRC_LIB_PARKING_SELECT_MODAL_PARKING_DETAILS_COMPONENT_TS_5 = goog.getMsg("Whiteboard");
-      i18n_5 = MSG_EXTERNAL_3473226617663475632$$LIBS_BOOKINGS_SRC_LIB_PARKING_SELECT_MODAL_PARKING_DETAILS_COMPONENT_TS_5;
-    } else {
-      i18n_5 = $localize(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral([":\u241F9169207ff2581dc7ac8b9125088b0cb3dc789824\u241F3473226617663475632:Whiteboard"])));
-    }
-    var i18n_6;
-    if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-      /**
-       * @suppress {msgDescriptions}
-       */
-      var MSG_EXTERNAL_7182911930527299079$$LIBS_BOOKINGS_SRC_LIB_PARKING_SELECT_MODAL_PARKING_DETAILS_COMPONENT_TS_6 = goog.getMsg(" Select a space to view it's details ");
-      i18n_6 = MSG_EXTERNAL_7182911930527299079$$LIBS_BOOKINGS_SRC_LIB_PARKING_SELECT_MODAL_PARKING_DETAILS_COMPONENT_TS_6;
-    } else {
-      i18n_6 = $localize(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral([":\u241F2d39d1ca65d735d7f800e458ce54af6a25652395\u241F7182911930527299079: Select a space to view it's details "])));
-    }
-    return [["empty_state", ""], i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_5, i18n_6, [4, "ngIf", "ngIfElse"], ["image", "", 1, "relative", "w-full", "bg-base-200"], ["class", "absolute inset-0", 3, "images", 4, "ngIf"], ["icon", "", "matRipple", "", "close", "", 1, "absolute", "top-2", "left-2", "bg-base-200", "sm:hidden", 3, "click"], ["icon", "", "matRipple", "", "fav", "", 1, "absolute", "top-2", "right-2", "bg-base-200", 3, "click"], [1, "p-2", "space-y-2", "flex-1", "h-1/2", "overflow-auto"], ["actions", "", 1, "z-0"], [1, "text-xl", "font-medium", "mb-2", "mt-4"], ["details", "", 1, "space-y-2"], [1, "text-xl", "font-medium"], [1, "flex", "items-center", "space-x-2"], ["facilities", "", 1, "space-y-2"], ["map", "", 1, "w-full", "mx-auto", "h-64", "sm:h-48", "relative", "border", "border-base-200", "overflow-hidden", "rounded"], [1, "pointer-events-none", 3, "src", "focus", "features", "options"], [1, "p-2", "border-t", "border-base-200", "shadow", "sm:hidden"], ["btn", "", "matRipple", "", 1, "w-full", 3, "click"], [1, "flex", "items-center", "justify-center"], [1, "text-2xl"], [1, "absolute", "inset-0", 3, "images"], ["empty", "", 1, "p-16", "flex", "flex-col", "items-center", "justify-center", "space-y-2"], [1, "opacity-30", "text-center"]];
+    return [["empty_state", ""], i18n_0, i18n_1, i18n_2, [4, "ngIf", "ngIfElse"], ["image", "", 1, "relative", "w-full", "bg-base-200"], ["class", "absolute inset-0", 3, "images", 4, "ngIf"], ["icon", "", "matRipple", "", "close", "", 1, "absolute", "top-2", "left-2", "bg-base-200", "sm:hidden", 3, "click"], ["icon", "", "matRipple", "", "fav", "", 1, "absolute", "top-2", "right-2", "bg-base-200", 3, "click"], [1, "p-2", "space-y-2", "flex-1", "h-1/2", "overflow-auto"], ["actions", "", 1, "z-0"], [1, "text-xl", "font-medium", "mb-2", "mt-4"], ["details", "", 1, "space-y-2"], [1, "text-xl", "font-medium"], [1, "flex", "items-center", "space-x-2"], ["map", "", 1, "w-full", "mx-auto", "h-64", "sm:h-48", "relative", "border", "border-base-200", "overflow-hidden", "rounded"], [1, "pointer-events-none", 3, "src", "focus", "features", "options"], [1, "p-2", "border-t", "border-base-200", "shadow", "sm:hidden"], ["btn", "", "matRipple", "", 1, "w-full", 3, "click"], [1, "flex", "items-center", "justify-center"], [1, "text-2xl"], [1, "absolute", "inset-0", 3, "images"], ["empty", "", 1, "p-16", "flex", "flex-col", "items-center", "justify-center", "space-y-2"], [1, "opacity-30", "text-center"]];
   },
   template: function ParkingSpaceDetailsComponent_Template(rf, ctx) {
     if (rf & 1) {
-      i0.ɵɵtemplate(0, ParkingSpaceDetailsComponent_ng_container_0_Template, 60, 29, "ng-container", 8)(1, ParkingSpaceDetailsComponent_ng_template_1_Template, 3, 0, "ng-template", null, 0, i0.ɵɵtemplateRefExtractor);
+      i0.ɵɵtemplate(0, ParkingSpaceDetailsComponent_ng_container_0_Template, 42, 29, "ng-container", 4)(1, ParkingSpaceDetailsComponent_ng_template_1_Template, 3, 0, "ng-template", null, 0, i0.ɵɵtemplateRefExtractor);
     }
     if (rf & 2) {
       var empty_state_r3 = i0.ɵɵreference(2);
@@ -20946,7 +20940,11 @@ var _objectSpread = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpe
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.querySpaceFreeBusy = exports.queryUserFreeBusy = exports.querySpaceCalendarAvailability = exports.queryCalendarAvailability = exports.queryCalendars = void 0;
+exports.queryCalendars = queryCalendars;
+exports.queryCalendarAvailability = queryCalendarAvailability;
+exports.querySpaceCalendarAvailability = querySpaceCalendarAvailability;
+exports.queryUserFreeBusy = queryUserFreeBusy;
+exports.querySpaceFreeBusy = querySpaceFreeBusy;
 var ts_client_1 = __webpack_require__(/*! @placeos/ts-client */ 35713);
 var operators_1 = __webpack_require__(/*! rxjs/operators */ 97303);
 var common_1 = __webpack_require__(/*! @placeos/common */ 22797);
@@ -20961,7 +20959,6 @@ function queryCalendars() {
     });
   }));
 }
-exports.queryCalendars = queryCalendars;
 /** List room calendars for available spaces based on the given query */
 function queryCalendarAvailability(q) {
   var query = (0, common_1.toQueryString)(q);
@@ -20971,7 +20968,6 @@ function queryCalendarAvailability(q) {
     });
   }));
 }
-exports.queryCalendarAvailability = queryCalendarAvailability;
 var calendarsToSpaces = function calendarsToSpaces(org) {
   return (0, operators_1.map)(function (list) {
     return list.filter(function (cal) {
@@ -20990,14 +20986,12 @@ var calendarsToSpaces = function calendarsToSpaces(org) {
 function querySpaceCalendarAvailability(q, org) {
   return queryCalendarAvailability(q).pipe(calendarsToSpaces(org));
 }
-exports.querySpaceCalendarAvailability = querySpaceCalendarAvailability;
 function queryUserFreeBusy(q) {
   var query = (0, common_1.toQueryString)(q);
   return (0, ts_client_1.get)("".concat(CALENDAR_ENDPOINT, "/free_busy").concat(query ? '?' + query : '')).pipe((0, operators_1.map)(function (i) {
     return i;
   }));
 }
-exports.queryUserFreeBusy = queryUserFreeBusy;
 /** List room calendars for available spaces based on the given query */
 function querySpaceFreeBusy(q, org) {
   var query = (0, common_1.toQueryString)(q);
@@ -21007,7 +21001,6 @@ function querySpaceFreeBusy(q, org) {
     });
   }), calendarsToSpaces(org));
 }
-exports.querySpaceFreeBusy = querySpaceFreeBusy;
 
 /***/ }),
 
@@ -27379,7 +27372,8 @@ var _createForOfIteratorHelper = (__webpack_require__(/*! ./node_modules/@babel/
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.cateringItemAvailable = exports.getCateringRulesForZone = void 0;
+exports.getCateringRulesForZone = getCateringRulesForZone;
+exports.cateringItemAvailable = cateringItemAvailable;
 var date_fns_1 = __webpack_require__(/*! date-fns */ 25773);
 var rxjs_1 = __webpack_require__(/*! rxjs */ 15681);
 var ts_client_1 = __webpack_require__(/*! @placeos/ts-client */ 35713);
@@ -27396,7 +27390,6 @@ function getCateringRulesForZone(zone_id) {
   }));
   return RULE_REQUESTS[zone_id];
 }
-exports.getCateringRulesForZone = getCateringRulesForZone;
 function cateringItemAvailable(item, rules, event) {
   var is_available = true;
   var _iterator = _createForOfIteratorHelper(rules),
@@ -27459,7 +27452,6 @@ function cateringItemAvailable(item, rules, event) {
   }
   return is_available;
 }
-exports.cateringItemAvailable = cateringItemAvailable;
 
 /***/ }),
 
@@ -27536,7 +27528,7 @@ exports.ANIMATION_SHOW_CONTRACT_EXPAND = (0, animations_1.trigger)('show', [(0, 
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.toQueryString = void 0;
+exports.toQueryString = toQueryString;
 var IGNORE_VALUES = [undefined, null, ''];
 /**
  * Convert map into a query string
@@ -27553,7 +27545,6 @@ function toQueryString(map) {
   }
   return str;
 }
-exports.toQueryString = toQueryString;
 
 /***/ }),
 
@@ -27570,7 +27561,9 @@ var _asyncToGenerator = (__webpack_require__(/*! ./node_modules/@babel/runtime/h
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.clearCacheCheck = exports.setupCache = exports.hasNewVersion = void 0;
+exports.hasNewVersion = hasNewVersion;
+exports.setupCache = setupCache;
+exports.clearCacheCheck = clearCacheCheck;
 var general_1 = __webpack_require__(/*! ./general */ 64217);
 var notifications_1 = __webpack_require__(/*! ./notifications */ 39525);
 var _timer;
@@ -27578,7 +27571,6 @@ var _new_version = false;
 function hasNewVersion() {
   return _new_version;
 }
-exports.hasNewVersion = hasNewVersion;
 /**
  * Setup handler for cache change events
  * @param cache Angular Service worker service
@@ -27595,11 +27587,9 @@ function setupCache(cache) {
     }, interval);
   }
 }
-exports.setupCache = setupCache;
 function clearCacheCheck() {
   if (_timer) clearInterval(_timer);
 }
-exports.clearCacheCheck = clearCacheCheck;
 /**
  * Update the cache and reload the page
  *
@@ -27877,7 +27867,11 @@ var _objectSpread = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpe
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.checkRulesMatch = exports.rulesForResource = exports.filterResourcesFromRules = exports.addToDate = exports.stringToMinutes = void 0;
+exports.stringToMinutes = stringToMinutes;
+exports.addToDate = addToDate;
+exports.filterResourcesFromRules = filterResourcesFromRules;
+exports.rulesForResource = rulesForResource;
+exports.checkRulesMatch = checkRulesMatch;
 var date_fns_1 = __webpack_require__(/*! date-fns */ 25773);
 var MINUTE = 1;
 var HOUR = 60;
@@ -27908,12 +27902,10 @@ function stringToMinutes(str) {
   var parts = (str || '').split(' ');
   return parts.length > 1 ? +parts[0] * DURATION_MAP[parts[1].toLowerCase()] : 0;
 }
-exports.stringToMinutes = stringToMinutes;
 function addToDate(add) {
   var date = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : new Date();
   return (0, date_fns_1.addMinutes)(date, stringToMinutes(add));
 }
-exports.addToDate = addToDate;
 function filterResourcesFromRules(resources, details, ruleset_list) {
   return resources.filter(function (_) {
     var _rulesForResource;
@@ -27922,7 +27914,6 @@ function filterResourcesFromRules(resources, details, ruleset_list) {
     }), ruleset_list)) !== null && _rulesForResource !== void 0 && _rulesForResource.hidden);
   });
 }
-exports.filterResourcesFromRules = filterResourcesFromRules;
 function rulesForResource(details, ruleset_list) {
   if (!(ruleset_list instanceof Array)) return DEFAULT_RULES;
   var _iterator = _createForOfIteratorHelper(ruleset_list),
@@ -27956,7 +27947,6 @@ function rulesForResource(details, ruleset_list) {
   }
   return DEFAULT_RULES;
 }
-exports.rulesForResource = rulesForResource;
 function checkRulesMatch(_ref, ruleset) {
   var date = _ref.date,
     duration = _ref.duration,
@@ -27980,7 +27970,6 @@ function checkRulesMatch(_ref, ruleset) {
   if (conditions.locations && conditions.locations.includes(resource.name)) matches += 1;
   return matches >= Object.keys(conditions).length;
 }
-exports.checkRulesMatch = checkRulesMatch;
 
 /***/ }),
 
@@ -27997,7 +27986,9 @@ var _slicedToArray = (__webpack_require__(/*! ./node_modules/@babel/runtime/help
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.generateMicrosoftCalendarLink = exports.generateGoogleCalendarLink = exports.generateCalendarFileLink = void 0;
+exports.generateCalendarFileLink = generateCalendarFileLink;
+exports.generateGoogleCalendarLink = generateGoogleCalendarLink;
+exports.generateMicrosoftCalendarLink = generateMicrosoftCalendarLink;
 var date_fns_1 = __webpack_require__(/*! date-fns */ 25773);
 var api_1 = __webpack_require__(/*! ./api */ 38385);
 var timezone_helpers_1 = __webpack_require__(/*! ./timezone-helpers */ 35774);
@@ -28039,7 +28030,6 @@ function generateCalendarFileLink(event) {
   }).join('\n');
   return "data:text/calendar;charset=utf8,".concat(url_data);
 }
-exports.generateCalendarFileLink = generateCalendarFileLink;
 function generateGoogleCalendarLink(event) {
   var _event$duration2, _event$resources;
   var fmt = event.all_day ? formatAllDay : formatUTC;
@@ -28060,7 +28050,6 @@ function generateGoogleCalendarLink(event) {
   if (emails.length || resources.length) details.add = (0, general_1.unique)([].concat(_toConsumableArray(emails), _toConsumableArray(resources))).join();
   return "https://calendar.google.com/calendar/render?".concat((0, api_1.toQueryString)(details));
 }
-exports.generateGoogleCalendarLink = generateGoogleCalendarLink;
 function generateMicrosoftCalendarLink(event) {
   var _event$duration3, _event$all_day, _event$resources2;
   var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'office';
@@ -28085,7 +28074,6 @@ function generateMicrosoftCalendarLink(event) {
   if (emails.length || resources.length) data.to = (0, general_1.unique)([].concat(_toConsumableArray(emails), _toConsumableArray(resources))).join();
   return type === 'office' ? "https://outlook.office.com/calendar/0/action/compose?".concat((0, api_1.toQueryString)(data)) : "https://outlook.live.com/calendar/0/action/compose?".concat((0, api_1.toQueryString)(data));
 }
-exports.generateMicrosoftCalendarLink = generateMicrosoftCalendarLink;
 function formatCalFileText(str) {
   return str.replace(/,/gm, ',').replace(/;/gm, ';').replace(/\r\n/gm, '\n').replace(/\n/gm, '\\n').replace(/(\\n)[\s\t]+/gm, '\\n');
 }
@@ -28308,14 +28296,13 @@ exports.FeatureAvailableGuard = FeatureAvailableGuard;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.formatRecurrence = void 0;
+exports.formatRecurrence = formatRecurrence;
 var date_fns_1 = __webpack_require__(/*! date-fns */ 25773);
 function formatRecurrence(details) {
   var pattern = details.pattern || '';
   pattern = pattern.charAt(0).toUpperCase() + pattern.slice(1);
   return pattern ? "".concat(pattern, " until ").concat((0, date_fns_1.format)(new Date(details.end), 'do MMM yyyy')) : '<No Recurrence>';
 }
-exports.formatRecurrence = formatRecurrence;
 
 /***/ }),
 
@@ -28334,7 +28321,35 @@ var _asyncToGenerator = (__webpack_require__(/*! ./node_modules/@babel/runtime/h
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.shiftColorTowards = exports.rgbToHex = exports.interpolateColors = exports.hexToRgb = exports.calculateDistance = exports.isNestedFrame = exports.isMobileSafari = exports.cleanArray = exports.capitalizeFirstLetter = exports.removeEmptyFields = exports.getInvalidFields = exports.is24HourTime = exports.timeFormatString = exports.predictableRandomInt = exports.timePeriodsIntersect = exports.flatten = exports.parseJWT = exports.downloadFile = exports.jsonToCsv = exports.loadTextFileFromInputEvent = exports.csvToJson = exports.openConfirmModal = exports.randomString = exports.padString = exports.randomInt = exports.unique = exports.getItemWithKeys = exports.log = exports.setAppName = void 0;
+exports.setAppName = setAppName;
+exports.log = log;
+exports.getItemWithKeys = getItemWithKeys;
+exports.unique = unique;
+exports.randomInt = randomInt;
+exports.padString = padString;
+exports.randomString = randomString;
+exports.openConfirmModal = openConfirmModal;
+exports.csvToJson = csvToJson;
+exports.loadTextFileFromInputEvent = loadTextFileFromInputEvent;
+exports.jsonToCsv = jsonToCsv;
+exports.downloadFile = downloadFile;
+exports.parseJWT = parseJWT;
+exports.flatten = flatten;
+exports.timePeriodsIntersect = timePeriodsIntersect;
+exports.predictableRandomInt = predictableRandomInt;
+exports.timeFormatString = timeFormatString;
+exports.is24HourTime = is24HourTime;
+exports.getInvalidFields = getInvalidFields;
+exports.removeEmptyFields = removeEmptyFields;
+exports.capitalizeFirstLetter = capitalizeFirstLetter;
+exports.cleanArray = cleanArray;
+exports.isMobileSafari = isMobileSafari;
+exports.isNestedFrame = isNestedFrame;
+exports.calculateDistance = calculateDistance;
+exports.hexToRgb = hexToRgb;
+exports.interpolateColors = interpolateColors;
+exports.rgbToHex = rgbToHex;
+exports.shiftColorTowards = shiftColorTowards;
 var forms_1 = __webpack_require__(/*! @angular/forms */ 34456);
 var operators_1 = __webpack_require__(/*! rxjs/operators */ 97303);
 var confirm_modal_component_1 = __webpack_require__(/*! ../../../components/src/lib/confirm-modal.component */ 30841);
@@ -28342,7 +28357,6 @@ var _app_name = 'APP';
 function setAppName(name) {
   _app_name = name;
 }
-exports.setAppName = setAppName;
 /**
  * Log data to the browser console
  * @param type Type of message
@@ -28367,7 +28381,6 @@ function log(type, msg, args) {
     }
   }
 }
-exports.log = log;
 /**
  * Get item from the nested object
  * @param keys List of sub-keys to search for
@@ -28380,7 +28393,6 @@ function getItemWithKeys(keys, map) {
   }
   return null;
 }
-exports.getItemWithKeys = getItemWithKeys;
 /**
  * Remove duplicates from the given array
  * @param array List of items to remove duplicates from
@@ -28397,7 +28409,6 @@ function unique() {
     return !exists;
   });
 }
-exports.unique = unique;
 /**
  * Generate a random number
  * @param ceil Biggest value to generate not inclusive
@@ -28407,7 +28418,6 @@ function randomInt(ceil) {
   var floor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
   return Math.floor(Math.random() * (ceil - floor)) + floor;
 }
-exports.randomInt = randomInt;
 /**
  * Pad string to the given length
  * @param str Base string
@@ -28419,7 +28429,6 @@ function padString(str) {
   while (str.length < length) str = "0".concat(str);
   return str;
 }
-exports.padString = padString;
 /**
  * Generate a random string
  * @param length Length of the string
@@ -28433,10 +28442,13 @@ function randomString(length) {
   }
   return str;
 }
-exports.randomString = randomString;
 function openConfirmModal(_x, _x2) {
   return _openConfirmModal.apply(this, arguments);
 }
+/**
+ * Parse raw CSV data into a JSON object
+ * @param csv CSV data to parse
+ */
 function _openConfirmModal() {
   _openConfirmModal = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(data, dialog) {
     var ref;
@@ -28474,11 +28486,6 @@ function _openConfirmModal() {
   }));
   return _openConfirmModal.apply(this, arguments);
 }
-exports.openConfirmModal = openConfirmModal;
-/**
- * Parse raw CSV data into a JSON object
- * @param csv CSV data to parse
- */
 function csvToJson(csv) {
   var delimiter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ',';
   var objPattern = new RegExp('(\\,|\\r?\\n|\\r|^)(?:"([^"]*(?:""[^"]*)*)"|([^\\,\\r\\n]*))', 'gi');
@@ -28506,7 +28513,6 @@ function csvToJson(csv) {
   });
   return elements;
 }
-exports.csvToJson = csvToJson;
 function loadTextFileFromInputEvent(event) {
   var _this = this;
   return new Promise(function (resolve, reject) {
@@ -28530,7 +28536,6 @@ function loadTextFileFromInputEvent(event) {
     }
   });
 }
-exports.loadTextFileFromInputEvent = loadTextFileFromInputEvent;
 /**
  * Convert javascript array to CSV string
  * @param json Javascript array to convert
@@ -28551,7 +28556,6 @@ function jsonToCsv(json) {
   }
   return '';
 }
-exports.jsonToCsv = jsonToCsv;
 /**
  * Downloads a file to the users computer with the given filename and contents
  * @param filename Name of the file to download
@@ -28566,7 +28570,6 @@ function downloadFile(filename, contents) {
   element.click();
   document.body.removeChild(element);
 }
-exports.downloadFile = downloadFile;
 function parseJWT(token) {
   var base64Url = token.split('.')[1];
   var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
@@ -28575,7 +28578,6 @@ function parseJWT(token) {
   }).join(''));
   return JSON.parse(jsonPayload);
 }
-exports.parseJWT = parseJWT;
 /* istanbul ignore next */
 /**
  * Flatten nested array
@@ -28597,7 +28599,6 @@ function flatten(an_array) {
   // reverse to restore input order
   return res.reverse();
 }
-exports.flatten = flatten;
 /**
  * Check whether two time periods intersect with each other
  * @param start1 Unix epoch in ms of the first period's start time
@@ -28611,7 +28612,6 @@ function timePeriodsIntersect(s1, e1, s2, e2) {
   e1 > s2 && e1 <= e2 || e2 > s1 && e2 <= e1 // Check end time
   ;
 }
-exports.timePeriodsIntersect = timePeriodsIntersect;
 var seed = xmur3('PlaceOS');
 var rand = sfc32(0x9e3779b9, 0x243f6a88, 0xb7e15162, seed());
 function predictableRandomInt() {
@@ -28619,7 +28619,6 @@ function predictableRandomInt() {
   var floor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
   return Math.floor(rand() * (ceil - floor)) + floor;
 }
-exports.predictableRandomInt = predictableRandomInt;
 // https://stackoverflow.com/questions/521295/seeding-the-random-number-generator-in-javascript
 function xmur3(str) {
   var h = 1779033703 ^ str.length;
@@ -28650,14 +28649,12 @@ function sfc32(a, b, c, d) {
 function timeFormatString() {
   return is24HourTime() ? 'HH:mm' : 'h:mm a';
 }
-exports.timeFormatString = timeFormatString;
 /** Whether locale string is displayed in 24 hour time */
 function is24HourTime() {
   var date = new Date();
   var localeString = date.toLocaleTimeString(document.querySelector('html').getAttribute('lang') || navigator.language).toLowerCase();
   return localeString.indexOf('am') < 0 && localeString.indexOf('pm') < 0;
 }
-exports.is24HourTime = is24HourTime;
 function getInvalidFields(form) {
   var prefix = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
   var invalid = [];
@@ -28670,7 +28667,6 @@ function getInvalidFields(form) {
   }
   return invalid;
 }
-exports.getInvalidFields = getInvalidFields;
 function removeEmptyFields(obj) {
   for (var key in obj) {
     if (obj[key] === undefined || obj[key] === null || obj[key] === '') {
@@ -28678,28 +28674,23 @@ function removeEmptyFields(obj) {
     }
   }
 }
-exports.removeEmptyFields = removeEmptyFields;
 function capitalizeFirstLetter(word) {
   return "".concat(word[0].toUpperCase()).concat(word.substring(1));
 }
-exports.capitalizeFirstLetter = capitalizeFirstLetter;
 function cleanArray(array) {
   var removal_items = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [undefined, null, ''];
   return array.filter(function (_) {
     return !removal_items.includes(_);
   });
 }
-exports.cleanArray = cleanArray;
 function isMobileSafari() {
   return ['iPad Simulator', 'iPhone Simulator', 'iPod Simulator', 'iPad', 'iPhone', 'iPod'].includes(navigator.platform) ||
   // iPad on iOS 13 detection
   navigator.userAgent.includes('Mac') && 'ontouchend' in document;
 }
-exports.isMobileSafari = isMobileSafari;
 function isNestedFrame() {
   return window.location !== window.parent.location;
 }
-exports.isNestedFrame = isNestedFrame;
 // Calculate the distance between geographical cooridinates
 function calculateDistance(lat1, lon1, lat2, lon2) {
   var radius = 6371; // Earth's radius in kilometers
@@ -28711,7 +28702,6 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   return radius * c;
 }
-exports.calculateDistance = calculateDistance;
 function degreesToRadians(degrees) {
   return degrees * (Math.PI / 180);
 }
@@ -28724,14 +28714,12 @@ function hexToRgb(hex) {
   var b = parseInt(hex.slice(5, 7), 16);
   return [r, g, b];
 }
-exports.hexToRgb = hexToRgb;
 function interpolateColors(rgb1, rgb2, fraction) {
   var r = rgb1[0] + (rgb2[0] - rgb1[0]) * fraction;
   var g = rgb1[1] + (rgb2[1] - rgb1[1]) * fraction;
   var b = rgb1[2] + (rgb2[2] - rgb1[2]) * fraction;
   return [Math.round(r), Math.round(g), Math.round(b)];
 }
-exports.interpolateColors = interpolateColors;
 function rgbToHex(r, g, b) {
   function componentToHex(c) {
     var hex = c.toString(16);
@@ -28739,14 +28727,12 @@ function rgbToHex(r, g, b) {
   }
   return '#' + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
-exports.rgbToHex = rgbToHex;
 function shiftColorTowards(hex1, hex2, fraction) {
   var rgb1 = hexToRgb(hex1);
   var rgb2 = hexToRgb(hex2);
   var resultRgb = interpolateColors(rgb1, rgb2, fraction);
   return rgbToHex(resultRgb[0], resultRgb[1], resultRgb[2]);
 }
-exports.shiftColorTowards = shiftColorTowards;
 
 /***/ }),
 
@@ -29423,7 +29409,12 @@ var _objectSpread = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpe
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.notifyInfo = exports.notifyWarn = exports.notifyError = exports.notifySuccess = exports.notify = exports.setNotifyOutlet = void 0;
+exports.setNotifyOutlet = setNotifyOutlet;
+exports.notify = notify;
+exports.notifySuccess = notifySuccess;
+exports.notifyError = notifyError;
+exports.notifyWarn = notifyWarn;
+exports.notifyInfo = notifyInfo;
 var _service;
 var _disable_logging = false;
 function setNotifyOutlet(snackbar) {
@@ -29431,7 +29422,6 @@ function setNotifyOutlet(snackbar) {
   _service = snackbar;
   _disable_logging = disable_logging;
 }
-exports.setNotifyOutlet = setNotifyOutlet;
 /**
  * Create notification popup
  * @param type CSS Class to add to the notification
@@ -29460,7 +29450,6 @@ function notify(type, message) {
     });
   }
 }
-exports.notify = notify;
 /**
  * Create success notification popup
  * @param msg Message to display on the notificaiton
@@ -29474,7 +29463,6 @@ function notifySuccess(msg, action, on_action) {
   if (typeof msg !== 'string') msg = 'Success';
   notify('success', msg, action, on_action, config);
 }
-exports.notifySuccess = notifySuccess;
 /**
  * Create error notification popup
  * @param msg Message to display on the notificaiton
@@ -29489,7 +29477,6 @@ function notifyError(msg, action, on_action) {
   if (typeof msg !== 'string') msg = ((_msg = msg) === null || _msg === void 0 ? void 0 : _msg.error) || ((_msg2 = msg) === null || _msg2 === void 0 ? void 0 : _msg2.message) || 'An error occurred';
   notify('error', msg, action, on_action, config);
 }
-exports.notifyError = notifyError;
 /**
  * Create warning notification popup
  * @param msg Message to display on the notificaiton
@@ -29502,7 +29489,6 @@ function notifyWarn(msg, action, on_action) {
   !_disable_logging && console.debug(msg);
   notify('warn', msg, action, on_action, config);
 }
-exports.notifyWarn = notifyWarn;
 /**
  * Create info notification popup
  * @param msg Message to display on the notificaiton
@@ -29515,7 +29501,6 @@ function notifyInfo(msg, action, on_action) {
   !_disable_logging && console.debug(msg);
   notify('info', msg, action, on_action, config);
 }
-exports.notifyInfo = notifyInfo;
 
 /***/ }),
 
@@ -29532,7 +29517,7 @@ var _asyncToGenerator = (__webpack_require__(/*! ./node_modules/@babel/runtime/h
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.setupPlace = void 0;
+exports.setupPlace = setupPlace;
 var ts_client_1 = __webpack_require__(/*! @placeos/ts-client */ 35713);
 var notifications_1 = __webpack_require__(/*! ./notifications */ 39525);
 /**
@@ -29579,7 +29564,6 @@ function _setupPlace() {
   }));
   return _setupPlace.apply(this, arguments);
 }
-exports.setupPlace = setupPlace;
 
 /***/ }),
 
@@ -29594,7 +29578,7 @@ exports.setupPlace = setupPlace;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.generateQRCode = void 0;
+exports.generateQRCode = generateQRCode;
 var vanillaqr_min_1 = __webpack_require__(/*! ./vanillaqr.min */ 64295);
 /** Generates a DataURL for QR code image */
 function generateQRCode(code) {
@@ -29613,7 +29597,6 @@ function generateQRCode(code) {
   });
   return qr === null || qr === void 0 || (_qr$toImage = qr.toImage('svg+xml')) === null || _qr$toImage === void 0 ? void 0 : _qr$toImage.src;
 }
-exports.generateQRCode = generateQRCode;
 
 /***/ }),
 
@@ -30397,7 +30380,14 @@ var _asyncToGenerator = (__webpack_require__(/*! ./node_modules/@babel/runtime/h
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.deleteShortURL = exports.patchShortURL = exports.saveShortURL = exports.updateShortURL = exports.createShortURL = exports.getShortUrlQRCode = exports.showShortURL = exports.queryShortURLs = void 0;
+exports.queryShortURLs = queryShortURLs;
+exports.showShortURL = showShortURL;
+exports.getShortUrlQRCode = getShortUrlQRCode;
+exports.createShortURL = createShortURL;
+exports.updateShortURL = updateShortURL;
+exports.saveShortURL = saveShortURL;
+exports.patchShortURL = patchShortURL;
+exports.deleteShortURL = deleteShortURL;
 var ts_client_1 = __webpack_require__(/*! @placeos/ts-client */ 35713);
 var operators_1 = __webpack_require__(/*! rxjs/operators */ 97303);
 var ENDPOINT = '/api/engine/v2/short_url';
@@ -30414,13 +30404,11 @@ function queryShortURLs() {
     return _.data;
   }));
 }
-exports.queryShortURLs = queryShortURLs;
 function showShortURL(id) {
   return (0, ts_client_1.get)("".concat(ENDPOINT, "/").concat(id)).pipe((0, operators_1.map)(function (_) {
     return _;
   }));
 }
-exports.showShortURL = showShortURL;
 var QR_STORE = new Map();
 function getShortUrlQRCode(_x) {
   return _getShortUrlQRCode.apply(this, arguments);
@@ -30463,35 +30451,29 @@ function _getShortUrlQRCode() {
   });
   return _getShortUrlQRCode.apply(this, arguments);
 }
-exports.getShortUrlQRCode = getShortUrlQRCode;
 function createShortURL(data) {
   return (0, ts_client_1.post)(ENDPOINT, data).pipe((0, operators_1.map)(function (_) {
     return _;
   }));
 }
-exports.createShortURL = createShortURL;
 function updateShortURL(id, data) {
   return (0, ts_client_1.put)("".concat(ENDPOINT, "/").concat(id), data).pipe((0, operators_1.map)(function (_) {
     return _;
   }));
 }
-exports.updateShortURL = updateShortURL;
 function saveShortURL(data) {
   return data.id ? updateShortURL(data.id, data) : createShortURL(data);
 }
-exports.saveShortURL = saveShortURL;
 function patchShortURL(id, data) {
   return (0, ts_client_1.patch)("".concat(ENDPOINT, "/").concat(id), data).pipe((0, operators_1.map)(function (_) {
     return _;
   }));
 }
-exports.patchShortURL = patchShortURL;
 function deleteShortURL(id) {
   return (0, ts_client_1.del)("".concat(ENDPOINT, "/").concat(id)).pipe((0, operators_1.map)(function (_) {
     return null;
   }));
 }
-exports.deleteShortURL = deleteShortURL;
 
 /***/ }),
 
@@ -30508,7 +30490,7 @@ var _asyncToGenerator = (__webpack_require__(/*! ./node_modules/@babel/runtime/h
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.whenChangesStable = void 0;
+exports.whenChangesStable = whenChangesStable;
 function whenChangesStable(_x) {
   return _whenChangesStable.apply(this, arguments);
 }
@@ -30530,7 +30512,6 @@ function _whenChangesStable() {
   }));
   return _whenChangesStable.apply(this, arguments);
 }
-exports.whenChangesStable = whenChangesStable;
 
 /***/ }),
 
@@ -30546,7 +30527,9 @@ var _Intl;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.timezoneToLocal = exports.localToTimezone = exports.LOCAL_TIMEZONE = void 0;
+exports.LOCAL_TIMEZONE = void 0;
+exports.localToTimezone = localToTimezone;
+exports.timezoneToLocal = timezoneToLocal;
 var date_fns_1 = __webpack_require__(/*! date-fns */ 25773);
 var date_fns_tz_1 = __webpack_require__(/*! date-fns-tz */ 79315);
 exports.LOCAL_TIMEZONE = ((_Intl = Intl) === null || _Intl === void 0 || (_Intl = _Intl.DateTimeFormat()) === null || _Intl === void 0 || (_Intl = _Intl.resolvedOptions()) === null || _Intl === void 0 ? void 0 : _Intl.timeZone) || 'Australia/Sydney';
@@ -30555,13 +30538,11 @@ function localToTimezone(date) {
   var offset_diff = (0, date_fns_tz_1.getTimezoneOffset)(tz) - (0, date_fns_tz_1.getTimezoneOffset)(exports.LOCAL_TIMEZONE);
   return (0, date_fns_1.addMilliseconds)(date, offset_diff).valueOf();
 }
-exports.localToTimezone = localToTimezone;
 function timezoneToLocal(date) {
   var tz = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : exports.LOCAL_TIMEZONE;
   var offset_diff = (0, date_fns_tz_1.getTimezoneOffset)(exports.LOCAL_TIMEZONE) - (0, date_fns_tz_1.getTimezoneOffset)(tz);
   return (0, date_fns_1.addMilliseconds)(date, offset_diff).valueOf();
 }
-exports.timezoneToLocal = timezoneToLocal;
 
 /***/ }),
 
@@ -31489,7 +31470,7 @@ var _objectSpread = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpe
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.uploadFile = void 0;
+exports.uploadFile = uploadFile;
 var cloud_uploads_1 = __webpack_require__(/*! @placeos/cloud-uploads */ 51556);
 var rxjs_1 = __webpack_require__(/*! rxjs */ 15681);
 var operators_1 = __webpack_require__(/*! rxjs/operators */ 97303);
@@ -31540,7 +31521,6 @@ function uploadFile(file) {
     fileReader.readAsArrayBuffer(file);
   });
 }
-exports.uploadFile = uploadFile;
 
 /***/ }),
 
@@ -31661,7 +31641,8 @@ exports.UserIdleTimeService = UserIdleTimeService;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.currentUser = exports.current_user = void 0;
+exports.current_user = void 0;
+exports.currentUser = currentUser;
 var ts_client_1 = __webpack_require__(/*! @placeos/ts-client */ 35713);
 var rxjs_1 = __webpack_require__(/*! rxjs */ 15681);
 var operators_1 = __webpack_require__(/*! rxjs/operators */ 97303);
@@ -31683,7 +31664,6 @@ setTimeout(function () {
 function currentUser() {
   return _current_user.getValue() || EMPTY_USER;
 }
-exports.currentUser = currentUser;
 
 /***/ }),
 
@@ -31698,7 +31678,7 @@ exports.currentUser = currentUser;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.VanillaQR = void 0;
+exports.VanillaQR = VanillaQR;
 // @ts-nocheck
 /** From https://github.com/chuckfairy/VanillaQR.js */
 function VanillaQR(r) {
@@ -31889,7 +31869,6 @@ function VanillaQR(r) {
     e.toTable ? e.tableWrite(r, t) : e.canvasWrite(r, t);
   }, e.init();
 }
-exports.VanillaQR = VanillaQR;
 VanillaQR.prototype = {
   canvasWrite: function canvasWrite(r, e) {
     if (!this.qrc && (this.qrc = this.getContext(this.domElement), !this.qrc)) return this.toTable = !0, this.domElement = document.createElement("div"), void this.tableWrite(r, e);
@@ -31972,15 +31951,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "55bad4c",
-  "hash": "55bad4c",
+  "raw": "1c397a7",
+  "hash": "1c397a7",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "55bad4c",
+  "suffix": "1c397a7",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1721279745537
+  "time": 1721884851327
 };
 /* tslint:enable */
 
@@ -33806,7 +33785,9 @@ var ChangelogModalComponent = /*#__PURE__*/function () {
   return _createClass(ChangelogModalComponent, [{
     key: "changelog",
     get: function get() {
-      return (0, marked_1.marked)(this._data.changelog || '');
+      return (0, marked_1.marked)(this._data.changelog || '', {
+        async: false
+      });
     }
   }]);
 }();
@@ -34376,7 +34357,9 @@ var ChatService = /*#__PURE__*/function (_common_1$AsyncHandle) {
           id: "msg-".concat((0, common_1.randomString)(6)),
           chat_id: msg.chat_id,
           message: msg.message,
-          content: marked.parse(msg.message),
+          content: marked.parse(msg.message, {
+            async: false
+          }),
           user_id: msg.user_id || 'assistant',
           "function": msg["function"],
           timestamp: Date.now()
@@ -34389,7 +34372,9 @@ var ChatService = /*#__PURE__*/function (_common_1$AsyncHandle) {
           id: "msg-".concat((0, common_1.randomString)(6)),
           chat_id: msg.chat_id,
           message: msg.message,
-          content: marked.parse(msg.message),
+          content: marked.parse(msg.message, {
+            async: false
+          }),
           user_id: msg.user_id || 'assistant',
           timestamp: Date.now()
         }]));
@@ -34507,6 +34492,7 @@ var map_canvas_component_1 = __webpack_require__(/*! ./map-canvas.component */ 3
 var image_viewer_component_1 = __webpack_require__(/*! ./image-viewer.component */ 26821);
 var simple_table_component_1 = __webpack_require__(/*! ./simple-table.component */ 88328);
 var limit_input_directive_1 = __webpack_require__(/*! ./limit-input.directive */ 62897);
+var desk_height_presets_component_1 = __webpack_require__(/*! ./desk-height-presets.component */ 3051);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
 var i1 = __webpack_require__(/*! @ngx-translate/core */ 597);
 var i2 = __webpack_require__(/*! @angular/common */ 60316);
@@ -34516,9 +34502,8 @@ var i5 = __webpack_require__(/*! @angular/material/dialog */ 12587);
 var i6 = __webpack_require__(/*! @angular/material/progress-spinner */ 41134);
 var i7 = __webpack_require__(/*! @angular/forms */ 34456);
 var i8 = __webpack_require__(/*! @angular/cdk/scrolling */ 79975);
-var i9 = __webpack_require__(/*! @angular/material/slider */ 64992);
 var MAT_MODULES = [autocomplete_1.MatAutocompleteModule, menu_1.MatMenuModule, form_field_1.MatFormFieldModule, select_1.MatSelectModule, core_2.MatRippleModule, autocomplete_1.MatAutocompleteModule, select_1.MatSelectModule, dialog_1.MatDialogModule, datepicker_1.MatDatepickerModule, input_1.MatInputModule, clipboard_1.ClipboardModule, progress_spinner_1.MatProgressSpinnerModule, chips_1.MatChipsModule, paginator_1.MatPaginatorModule, table_1.CdkTableModule, portal_1.PortalModule, sort_1.MatSortModule, scrolling_1.ScrollingModule, tooltip_1.MatTooltipModule, checkbox_1.MatCheckboxModule, radio_1.MatRadioModule, slider_1.MatSliderModule, slide_toggle_1.MatSlideToggleModule, button_toggle_1.MatButtonToggleModule];
-var COMPONENTS = [action_icon_component_1.ActionIconComponent, icon_component_1.IconComponent, popout_menu_component_1.PopoutMenuComponent, user_avatar_component_1.UserAvatarComponent, confirm_modal_component_1.ConfirmModalComponent, interactive_map_component_1.InteractiveMapComponent, map_renderer_component_1.MapRendererComponent, maps_indoors_component_1.MapsIndoorsComponent, map_pin_component_1.MapPinComponent, map_radius_component_1.MapRadiusComponent, map_polygon_component_1.MapPolygonComponent, map_canvas_component_1.MapCanvasComponent, indoor_maps_component_1.IndoorMapsComponent, status_overlay_component_1.StatusOverlayComponent, custom_table_component_1.CustomTableComponent, custom_tooltip_component_1.CustomTooltipComponent, virtual_keyboard_component_1.VirtualKeyboardComponent, global_loading_component_1.GlobalLoadingComponent, global_banner_component_1.GlobalBannerComponent, map_locate_modal_component_1.MapLocateModalComponent, image_carousel_component_1.ImageCarouselComponent, redirect_component_1.RedirectComponent, debug_console_component_1.DebugConsoleComponent, json_display_component_1.JsonDisplayComponent, changelog_modal_component_1.ChangelogModalComponent, status_pill_component_1.StatusPillComponent, image_viewer_component_1.ImageViewerComponent, simple_table_component_1.SimpleTableComponent, fixed_pipe_1.FixedPipe, safe_pipe_1.SafePipe, sanitise_pipe_1.SanitizePipe, duration_pipe_1.DurationPipe, level_pipe_1.LevelPipe, building_pipe_1.BuildingPipe, date_from_pipe_1.DateFromPipe, media_duration_pipe_1.MediaDurationPipe, thumbnail_pipe_1.ThumbnailPipe, user_controls_component_1.UserControlsComponent, building_select_component_1.BuildingSelectComponent, region_select_component_1.RegionSelectComponent, help_tooltip_component_1.HelpTooltipComponent, accessibility_tooltip_component_1.AccessibilityTooltipComponent, language_tooltip_component_1.LanguageSelectComponent, upload_permissions_modal_component_1.UploadPermissionsModalComponent, printable_component_1.PrintableComponent, chat_component_1.ChatComponent, attached_resource_config_modal_component_1.AttachedResourceConfigModalComponent, available_rooms_state_modal_component_1.AvailableRoomsStateModalComponent];
+var COMPONENTS = [action_icon_component_1.ActionIconComponent, icon_component_1.IconComponent, popout_menu_component_1.PopoutMenuComponent, user_avatar_component_1.UserAvatarComponent, confirm_modal_component_1.ConfirmModalComponent, interactive_map_component_1.InteractiveMapComponent, map_renderer_component_1.MapRendererComponent, maps_indoors_component_1.MapsIndoorsComponent, map_pin_component_1.MapPinComponent, map_radius_component_1.MapRadiusComponent, map_polygon_component_1.MapPolygonComponent, map_canvas_component_1.MapCanvasComponent, indoor_maps_component_1.IndoorMapsComponent, status_overlay_component_1.StatusOverlayComponent, custom_table_component_1.CustomTableComponent, custom_tooltip_component_1.CustomTooltipComponent, virtual_keyboard_component_1.VirtualKeyboardComponent, global_loading_component_1.GlobalLoadingComponent, global_banner_component_1.GlobalBannerComponent, map_locate_modal_component_1.MapLocateModalComponent, image_carousel_component_1.ImageCarouselComponent, redirect_component_1.RedirectComponent, debug_console_component_1.DebugConsoleComponent, json_display_component_1.JsonDisplayComponent, changelog_modal_component_1.ChangelogModalComponent, status_pill_component_1.StatusPillComponent, image_viewer_component_1.ImageViewerComponent, simple_table_component_1.SimpleTableComponent, fixed_pipe_1.FixedPipe, safe_pipe_1.SafePipe, sanitise_pipe_1.SanitizePipe, duration_pipe_1.DurationPipe, level_pipe_1.LevelPipe, building_pipe_1.BuildingPipe, date_from_pipe_1.DateFromPipe, media_duration_pipe_1.MediaDurationPipe, thumbnail_pipe_1.ThumbnailPipe, user_controls_component_1.UserControlsComponent, building_select_component_1.BuildingSelectComponent, region_select_component_1.RegionSelectComponent, help_tooltip_component_1.HelpTooltipComponent, accessibility_tooltip_component_1.AccessibilityTooltipComponent, language_tooltip_component_1.LanguageSelectComponent, upload_permissions_modal_component_1.UploadPermissionsModalComponent, printable_component_1.PrintableComponent, chat_component_1.ChatComponent, attached_resource_config_modal_component_1.AttachedResourceConfigModalComponent, available_rooms_state_modal_component_1.AvailableRoomsStateModalComponent, desk_height_presets_component_1.DeskHeightPresetsComponent];
 var DIRECTIVES = [binding_directive_1.BindingDirective, authenticated_image_directive_1.AuthenticatedImageDirective, limit_input_directive_1.LimitInputDirective];
 var ComponentsModule = /*#__PURE__*/_createClass(function ComponentsModule() {
   _classCallCheck(this, ComponentsModule);
@@ -34540,9 +34525,9 @@ _ComponentsModule.ɵinj = /*@__PURE__*/i0.ɵɵdefineInjector({
 exports.ComponentsModule = ComponentsModule;
 (function () {
   (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(ComponentsModule, {
-    declarations: [action_icon_component_1.ActionIconComponent, icon_component_1.IconComponent, popout_menu_component_1.PopoutMenuComponent, user_avatar_component_1.UserAvatarComponent, confirm_modal_component_1.ConfirmModalComponent, interactive_map_component_1.InteractiveMapComponent, map_renderer_component_1.MapRendererComponent, maps_indoors_component_1.MapsIndoorsComponent, map_pin_component_1.MapPinComponent, map_radius_component_1.MapRadiusComponent, map_polygon_component_1.MapPolygonComponent, map_canvas_component_1.MapCanvasComponent, indoor_maps_component_1.IndoorMapsComponent, status_overlay_component_1.StatusOverlayComponent, custom_table_component_1.CustomTableComponent, custom_tooltip_component_1.CustomTooltipComponent, virtual_keyboard_component_1.VirtualKeyboardComponent, global_loading_component_1.GlobalLoadingComponent, global_banner_component_1.GlobalBannerComponent, map_locate_modal_component_1.MapLocateModalComponent, image_carousel_component_1.ImageCarouselComponent, redirect_component_1.RedirectComponent, debug_console_component_1.DebugConsoleComponent, json_display_component_1.JsonDisplayComponent, changelog_modal_component_1.ChangelogModalComponent, status_pill_component_1.StatusPillComponent, image_viewer_component_1.ImageViewerComponent, simple_table_component_1.SimpleTableComponent, fixed_pipe_1.FixedPipe, safe_pipe_1.SafePipe, sanitise_pipe_1.SanitizePipe, duration_pipe_1.DurationPipe, level_pipe_1.LevelPipe, building_pipe_1.BuildingPipe, date_from_pipe_1.DateFromPipe, media_duration_pipe_1.MediaDurationPipe, thumbnail_pipe_1.ThumbnailPipe, user_controls_component_1.UserControlsComponent, building_select_component_1.BuildingSelectComponent, region_select_component_1.RegionSelectComponent, help_tooltip_component_1.HelpTooltipComponent, accessibility_tooltip_component_1.AccessibilityTooltipComponent, language_tooltip_component_1.LanguageSelectComponent, upload_permissions_modal_component_1.UploadPermissionsModalComponent, printable_component_1.PrintableComponent, chat_component_1.ChatComponent, attached_resource_config_modal_component_1.AttachedResourceConfigModalComponent, available_rooms_state_modal_component_1.AvailableRoomsStateModalComponent, binding_directive_1.BindingDirective, authenticated_image_directive_1.AuthenticatedImageDirective, limit_input_directive_1.LimitInputDirective],
+    declarations: [action_icon_component_1.ActionIconComponent, icon_component_1.IconComponent, popout_menu_component_1.PopoutMenuComponent, user_avatar_component_1.UserAvatarComponent, confirm_modal_component_1.ConfirmModalComponent, interactive_map_component_1.InteractiveMapComponent, map_renderer_component_1.MapRendererComponent, maps_indoors_component_1.MapsIndoorsComponent, map_pin_component_1.MapPinComponent, map_radius_component_1.MapRadiusComponent, map_polygon_component_1.MapPolygonComponent, map_canvas_component_1.MapCanvasComponent, indoor_maps_component_1.IndoorMapsComponent, status_overlay_component_1.StatusOverlayComponent, custom_table_component_1.CustomTableComponent, custom_tooltip_component_1.CustomTooltipComponent, virtual_keyboard_component_1.VirtualKeyboardComponent, global_loading_component_1.GlobalLoadingComponent, global_banner_component_1.GlobalBannerComponent, map_locate_modal_component_1.MapLocateModalComponent, image_carousel_component_1.ImageCarouselComponent, redirect_component_1.RedirectComponent, debug_console_component_1.DebugConsoleComponent, json_display_component_1.JsonDisplayComponent, changelog_modal_component_1.ChangelogModalComponent, status_pill_component_1.StatusPillComponent, image_viewer_component_1.ImageViewerComponent, simple_table_component_1.SimpleTableComponent, fixed_pipe_1.FixedPipe, safe_pipe_1.SafePipe, sanitise_pipe_1.SanitizePipe, duration_pipe_1.DurationPipe, level_pipe_1.LevelPipe, building_pipe_1.BuildingPipe, date_from_pipe_1.DateFromPipe, media_duration_pipe_1.MediaDurationPipe, thumbnail_pipe_1.ThumbnailPipe, user_controls_component_1.UserControlsComponent, building_select_component_1.BuildingSelectComponent, region_select_component_1.RegionSelectComponent, help_tooltip_component_1.HelpTooltipComponent, accessibility_tooltip_component_1.AccessibilityTooltipComponent, language_tooltip_component_1.LanguageSelectComponent, upload_permissions_modal_component_1.UploadPermissionsModalComponent, printable_component_1.PrintableComponent, chat_component_1.ChatComponent, attached_resource_config_modal_component_1.AttachedResourceConfigModalComponent, available_rooms_state_modal_component_1.AvailableRoomsStateModalComponent, desk_height_presets_component_1.DeskHeightPresetsComponent, binding_directive_1.BindingDirective, authenticated_image_directive_1.AuthenticatedImageDirective, limit_input_directive_1.LimitInputDirective],
     imports: [common_1.CommonModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, i1.TranslateModule, autocomplete_1.MatAutocompleteModule, menu_1.MatMenuModule, form_field_1.MatFormFieldModule, select_1.MatSelectModule, core_2.MatRippleModule, autocomplete_1.MatAutocompleteModule, select_1.MatSelectModule, dialog_1.MatDialogModule, datepicker_1.MatDatepickerModule, input_1.MatInputModule, clipboard_1.ClipboardModule, progress_spinner_1.MatProgressSpinnerModule, chips_1.MatChipsModule, paginator_1.MatPaginatorModule, table_1.CdkTableModule, portal_1.PortalModule, sort_1.MatSortModule, scrolling_1.ScrollingModule, tooltip_1.MatTooltipModule, checkbox_1.MatCheckboxModule, radio_1.MatRadioModule, slider_1.MatSliderModule, slide_toggle_1.MatSlideToggleModule, button_toggle_1.MatButtonToggleModule],
-    exports: [action_icon_component_1.ActionIconComponent, icon_component_1.IconComponent, popout_menu_component_1.PopoutMenuComponent, user_avatar_component_1.UserAvatarComponent, confirm_modal_component_1.ConfirmModalComponent, interactive_map_component_1.InteractiveMapComponent, map_renderer_component_1.MapRendererComponent, maps_indoors_component_1.MapsIndoorsComponent, map_pin_component_1.MapPinComponent, map_radius_component_1.MapRadiusComponent, map_polygon_component_1.MapPolygonComponent, map_canvas_component_1.MapCanvasComponent, indoor_maps_component_1.IndoorMapsComponent, status_overlay_component_1.StatusOverlayComponent, custom_table_component_1.CustomTableComponent, custom_tooltip_component_1.CustomTooltipComponent, virtual_keyboard_component_1.VirtualKeyboardComponent, global_loading_component_1.GlobalLoadingComponent, global_banner_component_1.GlobalBannerComponent, map_locate_modal_component_1.MapLocateModalComponent, image_carousel_component_1.ImageCarouselComponent, redirect_component_1.RedirectComponent, debug_console_component_1.DebugConsoleComponent, json_display_component_1.JsonDisplayComponent, changelog_modal_component_1.ChangelogModalComponent, status_pill_component_1.StatusPillComponent, image_viewer_component_1.ImageViewerComponent, simple_table_component_1.SimpleTableComponent, fixed_pipe_1.FixedPipe, safe_pipe_1.SafePipe, sanitise_pipe_1.SanitizePipe, duration_pipe_1.DurationPipe, level_pipe_1.LevelPipe, building_pipe_1.BuildingPipe, date_from_pipe_1.DateFromPipe, media_duration_pipe_1.MediaDurationPipe, thumbnail_pipe_1.ThumbnailPipe, user_controls_component_1.UserControlsComponent, building_select_component_1.BuildingSelectComponent, region_select_component_1.RegionSelectComponent, help_tooltip_component_1.HelpTooltipComponent, accessibility_tooltip_component_1.AccessibilityTooltipComponent, language_tooltip_component_1.LanguageSelectComponent, upload_permissions_modal_component_1.UploadPermissionsModalComponent, printable_component_1.PrintableComponent, chat_component_1.ChatComponent, attached_resource_config_modal_component_1.AttachedResourceConfigModalComponent, available_rooms_state_modal_component_1.AvailableRoomsStateModalComponent, binding_directive_1.BindingDirective, authenticated_image_directive_1.AuthenticatedImageDirective, limit_input_directive_1.LimitInputDirective, autocomplete_1.MatAutocompleteModule, menu_1.MatMenuModule, form_field_1.MatFormFieldModule, select_1.MatSelectModule, core_2.MatRippleModule, autocomplete_1.MatAutocompleteModule, select_1.MatSelectModule, dialog_1.MatDialogModule, datepicker_1.MatDatepickerModule, input_1.MatInputModule, clipboard_1.ClipboardModule, progress_spinner_1.MatProgressSpinnerModule, chips_1.MatChipsModule, paginator_1.MatPaginatorModule, table_1.CdkTableModule, portal_1.PortalModule, sort_1.MatSortModule, scrolling_1.ScrollingModule, tooltip_1.MatTooltipModule, checkbox_1.MatCheckboxModule, radio_1.MatRadioModule, slider_1.MatSliderModule, slide_toggle_1.MatSlideToggleModule, button_toggle_1.MatButtonToggleModule, core_3.TranslateModule]
+    exports: [action_icon_component_1.ActionIconComponent, icon_component_1.IconComponent, popout_menu_component_1.PopoutMenuComponent, user_avatar_component_1.UserAvatarComponent, confirm_modal_component_1.ConfirmModalComponent, interactive_map_component_1.InteractiveMapComponent, map_renderer_component_1.MapRendererComponent, maps_indoors_component_1.MapsIndoorsComponent, map_pin_component_1.MapPinComponent, map_radius_component_1.MapRadiusComponent, map_polygon_component_1.MapPolygonComponent, map_canvas_component_1.MapCanvasComponent, indoor_maps_component_1.IndoorMapsComponent, status_overlay_component_1.StatusOverlayComponent, custom_table_component_1.CustomTableComponent, custom_tooltip_component_1.CustomTooltipComponent, virtual_keyboard_component_1.VirtualKeyboardComponent, global_loading_component_1.GlobalLoadingComponent, global_banner_component_1.GlobalBannerComponent, map_locate_modal_component_1.MapLocateModalComponent, image_carousel_component_1.ImageCarouselComponent, redirect_component_1.RedirectComponent, debug_console_component_1.DebugConsoleComponent, json_display_component_1.JsonDisplayComponent, changelog_modal_component_1.ChangelogModalComponent, status_pill_component_1.StatusPillComponent, image_viewer_component_1.ImageViewerComponent, simple_table_component_1.SimpleTableComponent, fixed_pipe_1.FixedPipe, safe_pipe_1.SafePipe, sanitise_pipe_1.SanitizePipe, duration_pipe_1.DurationPipe, level_pipe_1.LevelPipe, building_pipe_1.BuildingPipe, date_from_pipe_1.DateFromPipe, media_duration_pipe_1.MediaDurationPipe, thumbnail_pipe_1.ThumbnailPipe, user_controls_component_1.UserControlsComponent, building_select_component_1.BuildingSelectComponent, region_select_component_1.RegionSelectComponent, help_tooltip_component_1.HelpTooltipComponent, accessibility_tooltip_component_1.AccessibilityTooltipComponent, language_tooltip_component_1.LanguageSelectComponent, upload_permissions_modal_component_1.UploadPermissionsModalComponent, printable_component_1.PrintableComponent, chat_component_1.ChatComponent, attached_resource_config_modal_component_1.AttachedResourceConfigModalComponent, available_rooms_state_modal_component_1.AvailableRoomsStateModalComponent, desk_height_presets_component_1.DeskHeightPresetsComponent, binding_directive_1.BindingDirective, authenticated_image_directive_1.AuthenticatedImageDirective, limit_input_directive_1.LimitInputDirective, autocomplete_1.MatAutocompleteModule, menu_1.MatMenuModule, form_field_1.MatFormFieldModule, select_1.MatSelectModule, core_2.MatRippleModule, autocomplete_1.MatAutocompleteModule, select_1.MatSelectModule, dialog_1.MatDialogModule, datepicker_1.MatDatepickerModule, input_1.MatInputModule, clipboard_1.ClipboardModule, progress_spinner_1.MatProgressSpinnerModule, chips_1.MatChipsModule, paginator_1.MatPaginatorModule, table_1.CdkTableModule, portal_1.PortalModule, sort_1.MatSortModule, scrolling_1.ScrollingModule, tooltip_1.MatTooltipModule, checkbox_1.MatCheckboxModule, radio_1.MatRadioModule, slider_1.MatSliderModule, slide_toggle_1.MatSlideToggleModule, button_toggle_1.MatButtonToggleModule, core_3.TranslateModule]
   });
 })();
 i0.ɵɵsetComponentScope(user_avatar_component_1.UserAvatarComponent, function () {
@@ -34565,7 +34550,7 @@ i0.ɵɵsetComponentScope(debug_console_component_1.DebugConsoleComponent, functi
   return [i2.AsyncPipe, i2.DatePipe, sanitise_pipe_1.SanitizePipe];
 });
 i0.ɵɵsetComponentScope(user_controls_component_1.UserControlsComponent, function () {
-  return [i2.NgIf, i7.DefaultValueAccessor, i7.NgControlStatus, i7.NgModel, i3.MatRipple, i4.MatTooltip, i9.MatSlider, i9.MatSliderThumb, icon_component_1.IconComponent, user_avatar_component_1.UserAvatarComponent, custom_tooltip_component_1.CustomTooltipComponent];
+  return [i2.NgIf, i3.MatRipple, i4.MatTooltip, icon_component_1.IconComponent, user_avatar_component_1.UserAvatarComponent, custom_tooltip_component_1.CustomTooltipComponent, desk_height_presets_component_1.DeskHeightPresetsComponent];
 }, function () {
   return [i2.AsyncPipe, i2.DatePipe, i1.TranslatePipe];
 });
@@ -35791,6 +35776,192 @@ _DebugConsoleComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
   }
 });
 exports.DebugConsoleComponent = DebugConsoleComponent;
+
+/***/ }),
+
+/***/ 3051:
+/*!******************************************************************!*\
+  !*** ./libs/components/src/lib/desk-height-presets.component.ts ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+
+var _taggedTemplateLiteral = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js */ 9959)["default"]);
+var _classCallCheck = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/classCallCheck.js */ 80912)["default"]);
+var _createClass = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/createClass.js */ 92974)["default"]);
+var _DeskHeightPresetsComponent, _templateObject, _templateObject2;
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.DeskHeightPresetsComponent = void 0;
+var core_1 = __webpack_require__(/*! @angular/core */ 37580);
+var common_1 = __webpack_require__(/*! @placeos/common */ 22797);
+var i0 = __webpack_require__(/*! @angular/core */ 37580);
+var i1 = __webpack_require__(/*! @placeos/common */ 22797);
+var i2 = __webpack_require__(/*! @angular/common */ 60316);
+var i3 = __webpack_require__(/*! @angular/forms */ 34456);
+var i4 = __webpack_require__(/*! @angular/material/core */ 74646);
+var i5 = __webpack_require__(/*! @angular/material/slider */ 64992);
+function DeskHeightPresetsComponent_div_3_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 15);
+    i0.ɵɵtext(1, " Before you can set a desk height, presets must be set ");
+    i0.ɵɵelementEnd();
+  }
+}
+function DeskHeightPresetsComponent_button_21_Template(rf, ctx) {
+  if (rf & 1) {
+    var _r1 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "button", 16);
+    i0.ɵɵlistener("click", function DeskHeightPresetsComponent_button_21_Template_button_click_0_listener() {
+      i0.ɵɵrestoreView(_r1);
+      var ctx_r1 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r1.onClose());
+    });
+    i0.ɵɵtext(1, " Save Presets ");
+    i0.ɵɵelementEnd();
+  }
+}
+var DeskHeightPresetsComponent = /*#__PURE__*/function () {
+  function DeskHeightPresetsComponent(_settings) {
+    _classCallCheck(this, DeskHeightPresetsComponent);
+    this._settings = _settings;
+    this.show_close = false;
+    this.close = new core_1.EventEmitter();
+    this.not_set = false;
+    this.desk_sitting_height = 71;
+    this.desk_standing_height = 101;
+  }
+  return _createClass(DeskHeightPresetsComponent, [{
+    key: "ngOnInit",
+    value: function ngOnInit() {
+      this.not_set = !this._settings.get('desk_sitting_height') && !this._settings.get('desk_standing_height');
+      this.desk_sitting_height = this._settings.get('desk_sitting_height') || 71;
+      this.desk_standing_height = this._settings.get('desk_standing_height') || 101;
+    }
+  }, {
+    key: "onClose",
+    value: function onClose() {
+      this.saveSetting('desk_sitting_height', this.desk_sitting_height);
+      this.saveSetting('desk_standing_height', this.desk_standing_height);
+      this.close.emit();
+    }
+  }, {
+    key: "formatLabel",
+    value: function formatLabel(value) {
+      return "".concat(value.toFixed(1), "cm");
+    }
+  }, {
+    key: "saveSetting",
+    value: function saveSetting(name, value) {
+      console.log('Save setting', name, value);
+      this._settings.saveUserSetting(name, value);
+    }
+  }]);
+}();
+_DeskHeightPresetsComponent = DeskHeightPresetsComponent;
+_DeskHeightPresetsComponent.ɵfac = function DeskHeightPresetsComponent_Factory(t) {
+  return new (t || _DeskHeightPresetsComponent)(i0.ɵɵdirectiveInject(i1.SettingsService));
+};
+_DeskHeightPresetsComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
+  type: _DeskHeightPresetsComponent,
+  selectors: [["desk-height-presets"]],
+  inputs: {
+    show_close: "show_close"
+  },
+  outputs: {
+    close: "close"
+  },
+  decls: 22,
+  vars: 8,
+  consts: function consts() {
+    var i18n_0;
+    if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+      /**
+       * @suppress {msgDescriptions}
+       */
+      var MSG_EXTERNAL_1586279176802880074$$LIBS_COMPONENTS_SRC_LIB_DESK_HEIGHT_PRESETS_COMPONENT_TS_0 = goog.getMsg("Desk Height Presets");
+      i18n_0 = MSG_EXTERNAL_1586279176802880074$$LIBS_COMPONENTS_SRC_LIB_DESK_HEIGHT_PRESETS_COMPONENT_TS_0;
+    } else {
+      i18n_0 = $localize(_templateObject || (_templateObject = _taggedTemplateLiteral([":\u241F4a9ae1d6024ac45fcd744f2b33fcc1078684204c\u241F1586279176802880074:Desk Height Presets"])));
+    }
+    var i18n_1;
+    if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+      /**
+       * @suppress {msgDescriptions}
+       */
+      var MSG_EXTERNAL_8247461324425873330$$LIBS_COMPONENTS_SRC_LIB_DESK_HEIGHT_PRESETS_COMPONENT_TS_1 = goog.getMsg(" Set your desk height for the best experience ");
+      i18n_1 = MSG_EXTERNAL_8247461324425873330$$LIBS_COMPONENTS_SRC_LIB_DESK_HEIGHT_PRESETS_COMPONENT_TS_1;
+    } else {
+      i18n_1 = $localize(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral([":\u241Fde53fc27bc96d3e69d6c7d9b0a19619db7cc1076\u241F8247461324425873330: Set your desk height for the best experience "])));
+    }
+    return [i18n_0, i18n_1, [1, "relative", "p-4", "bg-base-100", "rounded", "shadow", "w-[20rem]"], [1, "text-lg"], ["class", "text-xs my-2 -mx-2 p-2 rounded bg-warning text-warning-content", 4, "ngIf"], [1, "text-xs", "opacity-60", "mb-4"], [1, "flex", "flex-col", "mt-2"], [1, "flex", "items-center", "space-x-2"], ["min", "60", "max", "80", "step", "0.5", "discrete", "", 1, "flex-1", 3, "displayWith"], ["matSliderThumb", "", 3, "ngModelChange", "ngModel"], [1, "text-sm", "w-12", "text-right"], [1, "flex", "items-center", "space-x-2", "mr-2"], ["min", "90", "max", "120", "step", "0.5", "discrete", "", 1, "flex-1", 3, "displayWith"], [1, "text-sm", "w-12", "text-right", "mr-2"], ["btn", "", "matRipple", "", "class", "w-full mt-2", 3, "click", 4, "ngIf"], [1, "text-xs", "my-2", "-mx-2", "p-2", "rounded", "bg-warning", "text-warning-content"], ["btn", "", "matRipple", "", 1, "w-full", "mt-2", 3, "click"]];
+  },
+  template: function DeskHeightPresetsComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      i0.ɵɵelementStart(0, "div", 2)(1, "div", 3);
+      i0.ɵɵi18n(2, 0);
+      i0.ɵɵelementEnd();
+      i0.ɵɵtemplate(3, DeskHeightPresetsComponent_div_3_Template, 2, 0, "div", 4);
+      i0.ɵɵelementStart(4, "div", 5);
+      i0.ɵɵi18n(5, 1);
+      i0.ɵɵelementEnd();
+      i0.ɵɵelementStart(6, "div", 6)(7, "label");
+      i0.ɵɵtext(8, "Sitting Height");
+      i0.ɵɵelementEnd();
+      i0.ɵɵelementStart(9, "div", 7)(10, "mat-slider", 8)(11, "input", 9);
+      i0.ɵɵtwoWayListener("ngModelChange", function DeskHeightPresetsComponent_Template_input_ngModelChange_11_listener($event) {
+        i0.ɵɵtwoWayBindingSet(ctx.desk_sitting_height, $event) || (ctx.desk_sitting_height = $event);
+        return $event;
+      });
+      i0.ɵɵlistener("ngModelChange", function DeskHeightPresetsComponent_Template_input_ngModelChange_11_listener($event) {
+        return ctx.saveSetting("desk_sitting_height", $event);
+      });
+      i0.ɵɵelementEnd()();
+      i0.ɵɵelementStart(12, "div", 10);
+      i0.ɵɵtext(13);
+      i0.ɵɵelementEnd()();
+      i0.ɵɵelementStart(14, "label");
+      i0.ɵɵtext(15, "Standing Height");
+      i0.ɵɵelementEnd();
+      i0.ɵɵelementStart(16, "div", 11)(17, "mat-slider", 12)(18, "input", 9);
+      i0.ɵɵtwoWayListener("ngModelChange", function DeskHeightPresetsComponent_Template_input_ngModelChange_18_listener($event) {
+        i0.ɵɵtwoWayBindingSet(ctx.desk_standing_height, $event) || (ctx.desk_standing_height = $event);
+        return $event;
+      });
+      i0.ɵɵlistener("ngModelChange", function DeskHeightPresetsComponent_Template_input_ngModelChange_18_listener($event) {
+        return ctx.saveSetting("desk_standing_height", $event);
+      });
+      i0.ɵɵelementEnd()();
+      i0.ɵɵelementStart(19, "div", 13);
+      i0.ɵɵtext(20);
+      i0.ɵɵelementEnd()()();
+      i0.ɵɵtemplate(21, DeskHeightPresetsComponent_button_21_Template, 2, 0, "button", 14);
+      i0.ɵɵelementEnd();
+    }
+    if (rf & 2) {
+      i0.ɵɵadvance(3);
+      i0.ɵɵproperty("ngIf", ctx.not_set && ctx.show_close);
+      i0.ɵɵadvance(7);
+      i0.ɵɵproperty("displayWith", ctx.formatLabel);
+      i0.ɵɵadvance();
+      i0.ɵɵtwoWayProperty("ngModel", ctx.desk_sitting_height);
+      i0.ɵɵadvance(2);
+      i0.ɵɵtextInterpolate1(" ", ctx.desk_sitting_height.toFixed(1), "cm ");
+      i0.ɵɵadvance(4);
+      i0.ɵɵproperty("displayWith", ctx.formatLabel);
+      i0.ɵɵadvance();
+      i0.ɵɵtwoWayProperty("ngModel", ctx.desk_standing_height);
+      i0.ɵɵadvance(2);
+      i0.ɵɵtextInterpolate1(" ", ctx.desk_standing_height.toFixed(1), "cm ");
+      i0.ɵɵadvance();
+      i0.ɵɵproperty("ngIf", ctx.show_close);
+    }
+  },
+  dependencies: [i2.NgIf, i3.DefaultValueAccessor, i3.NgControlStatus, i3.NgModel, i4.MatRipple, i5.MatSlider, i5.MatSliderThumb]
+});
+exports.DeskHeightPresetsComponent = DeskHeightPresetsComponent;
 
 /***/ }),
 
@@ -39140,7 +39311,7 @@ var MapRendererComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
               return _context.abrupt("return");
             case 5:
               if (!(this.src && (_this$_outlet_el = this._outlet_el) !== null && _this$_outlet_el !== void 0 && _this$_outlet_el.nativeElement && !this.loading)) {
-                _context.next = 22;
+                _context.next = 21;
                 break;
               }
               this.loading = true;
@@ -39156,9 +39327,8 @@ var MapRendererComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
               }
               this.updateFeatureList();
               tkn = (0, ts_client_1.token)();
-              console.log('Map Token:', tkn);
               document.cookie = "".concat(tkn === 'x-api-key' ? 'api-key=' + encodeURIComponent((0, ts_client_1.apiKey)()) : 'bearer_token=' + encodeURIComponent(tkn), ";max-age=30;path=/api/engine/v2/uploads;samesite=strict;").concat(location.protocol === 'https:' ? 'secure;' : '');
-              _context.next = 14;
+              _context.next = 13;
               return (0, svg_viewer_1.createViewer)({
                 element: (_this$_outlet_el2 = this._outlet_el) === null || _this$_outlet_el2 === void 0 ? void 0 : _this$_outlet_el2.nativeElement,
                 url: this.src,
@@ -39171,7 +39341,7 @@ var MapRendererComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
                 actions: this.actions,
                 options: this.options
               });
-            case 14:
+            case 13:
               this.viewer = _context.sent;
               this.loading = false;
               this.subscription('view_changes', (_ref = (0, svg_viewer_1.listenToViewerChanges)(this.viewer)) === null || _ref === void 0 ? void 0 : _ref.subscribe(function (v) {
@@ -39183,9 +39353,9 @@ var MapRendererComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
               viewer = (0, svg_viewer_1.getViewer)(this.viewer);
               this.mapInfo.emit(viewer.mappings);
               if (this.focus) this.focusOn(this.focus);
-              _context.next = 23;
+              _context.next = 22;
               break;
-            case 22:
+            case 21:
               if (this.src && !((_this$_outlet_el3 = this._outlet_el) !== null && _this$_outlet_el3 !== void 0 && _this$_outlet_el3.nativeElement) || this.loading) {
                 this.timeout('create_view', function () {
                   return _this4.createView()["catch"](function (e) {
@@ -39193,7 +39363,7 @@ var MapRendererComponent = /*#__PURE__*/function (_common_1$AsyncHandle) {
                   });
                 });
               }
-            case 23:
+            case 22:
             case "end":
               return _context.stop();
           }
@@ -40064,7 +40234,8 @@ var _MediaDurationPipe;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.MediaDurationPipe = exports.padLength = void 0;
+exports.MediaDurationPipe = void 0;
+exports.padLength = padLength;
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
 function padLength(value) {
   var length = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
@@ -40072,7 +40243,6 @@ function padLength(value) {
   while (str.length < length) str = "0".concat(str);
   return str;
 }
-exports.padLength = padLength;
 var MediaDurationPipe = /*#__PURE__*/function () {
   function MediaDurationPipe() {
     _classCallCheck(this, MediaDurationPipe);
@@ -42019,7 +42189,7 @@ var _regeneratorRuntime = (__webpack_require__(/*! ./node_modules/@babel/runtime
 var _asyncToGenerator = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/asyncToGenerator.js */ 95386)["default"]);
 var _classCallCheck = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/classCallCheck.js */ 80912)["default"]);
 var _createClass = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpers/createClass.js */ 92974)["default"]);
-var _UserControlsComponent, _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10;
+var _UserControlsComponent, _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
@@ -42036,22 +42206,21 @@ var help_tooltip_component_1 = __webpack_require__(/*! ./help-tooltip.component 
 var language_tooltip_component_1 = __webpack_require__(/*! ./language-tooltip.component */ 53835);
 var region_select_component_1 = __webpack_require__(/*! ./region-select.component */ 66962);
 var support_ticket_modal_component_1 = __webpack_require__(/*! libs/form-fields/src/lib/support-ticket-modal.component */ 38791);
-var operators_1 = __webpack_require__(/*! rxjs/operators */ 97303);
 var i0 = __webpack_require__(/*! @angular/core */ 37580);
 var i1 = __webpack_require__(/*! @placeos/common */ 22797);
 var i2 = __webpack_require__(/*! @placeos/organisation */ 2510);
 var i3 = __webpack_require__(/*! @angular/material/dialog */ 12587);
 function UserControlsComponent_div_7_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 34)(1, "button", 20)(2, "div", 21)(3, "div", 22)(4, "app-icon");
+    i0.ɵɵelementStart(0, "div", 32)(1, "button", 18)(2, "div", 19)(3, "div", 20)(4, "app-icon");
     i0.ɵɵtext(5, "layers");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(6, "div", 35);
+    i0.ɵɵelementStart(6, "div", 33);
     i0.ɵɵtext(7);
     i0.ɵɵpipe(8, "async");
     i0.ɵɵpipe(9, "async");
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(10, "app-icon", 24);
+    i0.ɵɵelementStart(10, "app-icon", 22);
     i0.ɵɵtext(11, " chevron_right ");
     i0.ɵɵelementEnd()()()();
   }
@@ -42065,15 +42234,15 @@ function UserControlsComponent_div_7_Template(rf, ctx) {
 }
 function UserControlsComponent_div_9_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 34)(1, "button", 20)(2, "div", 21)(3, "div", 22)(4, "app-icon");
+    i0.ɵɵelementStart(0, "div", 32)(1, "button", 18)(2, "div", 19)(3, "div", 20)(4, "app-icon");
     i0.ɵɵtext(5, "business");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(6, "div", 35);
+    i0.ɵɵelementStart(6, "div", 33);
     i0.ɵɵtext(7);
     i0.ɵɵpipe(8, "async");
     i0.ɵɵpipe(9, "async");
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(10, "app-icon", 24);
+    i0.ɵɵelementStart(10, "app-icon", 22);
     i0.ɵɵtext(11, " chevron_right ");
     i0.ɵɵelementEnd()()()();
   }
@@ -42087,13 +42256,13 @@ function UserControlsComponent_div_9_Template(rf, ctx) {
 }
 function UserControlsComponent_div_10_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 19)(1, "button", 20)(2, "div", 21)(3, "div", 22)(4, "app-icon");
+    i0.ɵɵelementStart(0, "div", 17)(1, "button", 18)(2, "div", 19)(3, "div", 20)(4, "app-icon");
     i0.ɵɵtext(5, "help");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(6, "div", 23);
+    i0.ɵɵelementStart(6, "div", 21);
     i0.ɵɵi18n(7, 4);
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(8, "app-icon", 24);
+    i0.ɵɵelementStart(8, "app-icon", 22);
     i0.ɵɵtext(9, "chevron_right");
     i0.ɵɵelementEnd()()()();
   }
@@ -42105,32 +42274,32 @@ function UserControlsComponent_div_10_Template(rf, ctx) {
 function UserControlsComponent_div_11_Template(rf, ctx) {
   if (rf & 1) {
     var _r3 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "div")(1, "button", 36);
+    i0.ɵɵelementStart(0, "div")(1, "button", 34);
     i0.ɵɵlistener("click", function UserControlsComponent_div_11_Template_button_click_1_listener() {
       i0.ɵɵrestoreView(_r3);
       var ctx_r1 = i0.ɵɵnextContext();
       return i0.ɵɵresetView(ctx_r1.openWfhModal());
     });
-    i0.ɵɵelementStart(2, "div", 21)(3, "div", 22)(4, "app-icon");
+    i0.ɵɵelementStart(2, "div", 19)(3, "div", 20)(4, "app-icon");
     i0.ɵɵtext(5, "share_location");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(6, "div", 23);
+    i0.ɵɵelementStart(6, "div", 21);
     i0.ɵɵi18n(7, 5);
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(8, "app-icon", 24);
+    i0.ɵɵelementStart(8, "app-icon", 22);
     i0.ɵɵtext(9, "chevron_right");
     i0.ɵɵelementEnd()()()();
   }
 }
 function UserControlsComponent_div_22_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 19)(1, "button", 20)(2, "div", 21)(3, "div", 22)(4, "app-icon");
+    i0.ɵɵelementStart(0, "div", 17)(1, "button", 18)(2, "div", 19)(3, "div", 20)(4, "app-icon");
     i0.ɵɵtext(5, "desk");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(6, "div", 23);
+    i0.ɵɵelementStart(6, "div", 21);
     i0.ɵɵi18n(7, 6);
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(8, "app-icon", 24);
+    i0.ɵɵelementStart(8, "app-icon", 22);
     i0.ɵɵtext(9, "chevron_right");
     i0.ɵɵelementEnd()()()();
   }
@@ -42143,79 +42312,20 @@ function UserControlsComponent_div_22_Template(rf, ctx) {
 }
 function UserControlsComponent_ng_template_23_Template(rf, ctx) {
   if (rf & 1) {
-    var _r5 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "div", 37)(1, "div", 38);
-    i0.ɵɵi18n(2, 7);
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(3, "div", 39);
-    i0.ɵɵi18n(4, 8);
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(5, "div", 40)(6, "label");
-    i0.ɵɵtext(7, "Sitting Height");
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(8, "div", 41)(9, "mat-slider", 42)(10, "input", 43);
-    i0.ɵɵtwoWayListener("ngModelChange", function UserControlsComponent_ng_template_23_Template_input_ngModelChange_10_listener($event) {
-      i0.ɵɵrestoreView(_r5);
-      var ctx_r1 = i0.ɵɵnextContext();
-      i0.ɵɵtwoWayBindingSet(ctx_r1.desk_sitting_height, $event) || (ctx_r1.desk_sitting_height = $event);
-      return i0.ɵɵresetView($event);
-    });
-    i0.ɵɵlistener("ngModelChange", function UserControlsComponent_ng_template_23_Template_input_ngModelChange_10_listener($event) {
-      i0.ɵɵrestoreView(_r5);
-      var ctx_r1 = i0.ɵɵnextContext();
-      return i0.ɵɵresetView(ctx_r1.saveSetting("desk_sitting_height", $event));
-    });
-    i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(11, "div", 44);
-    i0.ɵɵtext(12);
-    i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(13, "label");
-    i0.ɵɵtext(14, "Standing Height");
-    i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(15, "div", 45)(16, "mat-slider", 46)(17, "input", 43);
-    i0.ɵɵtwoWayListener("ngModelChange", function UserControlsComponent_ng_template_23_Template_input_ngModelChange_17_listener($event) {
-      i0.ɵɵrestoreView(_r5);
-      var ctx_r1 = i0.ɵɵnextContext();
-      i0.ɵɵtwoWayBindingSet(ctx_r1.desk_standing_height, $event) || (ctx_r1.desk_standing_height = $event);
-      return i0.ɵɵresetView($event);
-    });
-    i0.ɵɵlistener("ngModelChange", function UserControlsComponent_ng_template_23_Template_input_ngModelChange_17_listener($event) {
-      i0.ɵɵrestoreView(_r5);
-      var ctx_r1 = i0.ɵɵnextContext();
-      return i0.ɵɵresetView(ctx_r1.saveSetting("desk_standing_height", $event));
-    });
-    i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(18, "div", 47);
-    i0.ɵɵtext(19);
-    i0.ɵɵelementEnd()()()();
-  }
-  if (rf & 2) {
-    var ctx_r1 = i0.ɵɵnextContext();
-    i0.ɵɵadvance(9);
-    i0.ɵɵproperty("displayWith", ctx_r1.formatLabel);
-    i0.ɵɵadvance();
-    i0.ɵɵtwoWayProperty("ngModel", ctx_r1.desk_sitting_height);
-    i0.ɵɵadvance(2);
-    i0.ɵɵtextInterpolate1(" ", ctx_r1.desk_sitting_height.toFixed(1), "cm ");
-    i0.ɵɵadvance(4);
-    i0.ɵɵproperty("displayWith", ctx_r1.formatLabel);
-    i0.ɵɵadvance();
-    i0.ɵɵtwoWayProperty("ngModel", ctx_r1.desk_standing_height);
-    i0.ɵɵadvance(2);
-    i0.ɵɵtextInterpolate1(" ", ctx_r1.desk_standing_height.toFixed(1), "cm ");
+    i0.ɵɵelement(0, "desk-height-presets");
   }
 }
 function UserControlsComponent_div_25_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "div", 48)(1, "button", 20)(2, "div", 21)(3, "div", 22)(4, "app-icon");
+    i0.ɵɵelementStart(0, "div", 35)(1, "button", 18)(2, "div", 19)(3, "div", 20)(4, "app-icon");
     i0.ɵɵtext(5, "mode_night");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(6, "div", 23);
-    i0.ɵɵi18n(7, 9);
+    i0.ɵɵelementStart(6, "div", 21);
+    i0.ɵɵi18n(7, 7);
     i0.ɵɵpipe(8, "translate");
     i0.ɵɵpipe(9, "translate");
     i0.ɵɵelementEnd();
-    i0.ɵɵelementStart(10, "app-icon", 24);
+    i0.ɵɵelementStart(10, "app-icon", 22);
     i0.ɵɵtext(11, "chevron_right");
     i0.ɵɵelementEnd()()()();
   }
@@ -42229,27 +42339,27 @@ function UserControlsComponent_div_25_Template(rf, ctx) {
 }
 function UserControlsComponent_button_26_Template(rf, ctx) {
   if (rf & 1) {
-    var _r6 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "button", 36);
+    var _r5 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "button", 34);
     i0.ɵɵlistener("click", function UserControlsComponent_button_26_Template_button_click_0_listener() {
-      i0.ɵɵrestoreView(_r6);
+      i0.ɵɵrestoreView(_r5);
       var ctx_r1 = i0.ɵɵnextContext();
       return i0.ɵɵresetView(ctx_r1.newSupportTicket());
     });
-    i0.ɵɵelementStart(1, "div", 21)(2, "div", 22)(3, "app-icon");
+    i0.ɵɵelementStart(1, "div", 19)(2, "div", 20)(3, "app-icon");
     i0.ɵɵtext(4, "support_agent");
     i0.ɵɵelementEnd()();
-    i0.ɵɵelementStart(5, "div", 23);
-    i0.ɵɵi18n(6, 10);
+    i0.ɵɵelementStart(5, "div", 21);
+    i0.ɵɵi18n(6, 8);
     i0.ɵɵelementEnd()()();
   }
 }
 function UserControlsComponent_button_31_Template(rf, ctx) {
   if (rf & 1) {
-    var _r7 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "button", 49);
+    var _r6 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "button", 36);
     i0.ɵɵlistener("click", function UserControlsComponent_button_31_Template_button_click_0_listener() {
-      i0.ɵɵrestoreView(_r7);
+      i0.ɵɵrestoreView(_r6);
       var ctx_r1 = i0.ɵɵnextContext();
       return i0.ɵɵresetView(ctx_r1.reloadPage());
     });
@@ -42271,8 +42381,6 @@ var UserControlsComponent = /*#__PURE__*/function () {
     this.help_tooltip = help_tooltip_component_1.HelpTooltipComponent;
     this.accessibility_tooltip = accessibility_tooltip_component_1.AccessibilityTooltipComponent;
     this.language_tooltip = language_tooltip_component_1.LanguageSelectComponent;
-    this.desk_standing_height = 101;
-    this.desk_sitting_height = 71;
   }
   return _createClass(UserControlsComponent, [{
     key: "user",
@@ -42320,31 +42428,6 @@ var UserControlsComponent = /*#__PURE__*/function () {
       return (0, common_1.hasNewVersion)();
     }
   }, {
-    key: "ngOnInit",
-    value: function () {
-      var _ngOnInit = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-        return _regeneratorRuntime().wrap(function _callee$(_context) {
-          while (1) switch (_context.prev = _context.next) {
-            case 0:
-              _context.next = 2;
-              return this._org.initialised.pipe((0, operators_1.first)(function (_) {
-                return _;
-              })).toPromise();
-            case 2:
-              this.desk_sitting_height = this._settings.get('desk_sitting_height') || 71;
-              this.desk_standing_height = this._settings.get('desk_standing_height') || 101;
-            case 4:
-            case "end":
-              return _context.stop();
-          }
-        }, _callee, this);
-      }));
-      function ngOnInit() {
-        return _ngOnInit.apply(this, arguments);
-      }
-      return ngOnInit;
-    }()
-  }, {
     key: "logout",
     value: function logout() {
       (0, ts_client_1.logout)();
@@ -42371,18 +42454,18 @@ var UserControlsComponent = /*#__PURE__*/function () {
   }, {
     key: "viewChangelog",
     value: function () {
-      var _viewChangelog = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+      var _viewChangelog = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
         var changelog;
-        return _regeneratorRuntime().wrap(function _callee2$(_context2) {
-          while (1) switch (_context2.prev = _context2.next) {
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
             case 0:
-              _context2.next = 2;
+              _context.next = 2;
               return fetch('https://raw.githubusercontent.com/PlaceOS/user-interfaces/develop/CHANGELOG.md');
             case 2:
-              _context2.next = 4;
-              return _context2.sent.text();
+              _context.next = 4;
+              return _context.sent.text();
             case 4:
-              changelog = _context2.sent;
+              changelog = _context.sent;
               this._dialog.open(components_1.ChangelogModalComponent, {
                 data: {
                   changelog: changelog
@@ -42390,9 +42473,9 @@ var UserControlsComponent = /*#__PURE__*/function () {
               });
             case 6:
             case "end":
-              return _context2.stop();
+              return _context.stop();
           }
-        }, _callee2, this);
+        }, _callee, this);
       }));
       function viewChangelog() {
         return _viewChangelog.apply(this, arguments);
@@ -42487,27 +42570,7 @@ _UserControlsComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
       /**
        * @suppress {msgDescriptions}
        */
-      var MSG_EXTERNAL_7032027191807032897$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_6 = goog.getMsg("Desk Height");
-      i18n_6 = MSG_EXTERNAL_7032027191807032897$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_6;
-    } else {
-      i18n_6 = $localize(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral([":\u241Fec37a2ac1276a5f69d65d5ba86b2e98c41b201a9\u241F7032027191807032897:Desk Height"])));
-    }
-    var i18n_7;
-    if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-      /**
-       * @suppress {msgDescriptions}
-       */
-      var MSG_EXTERNAL_7033349286087719341$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_7 = goog.getMsg(" Set your desk height for the best experience ");
-      i18n_7 = MSG_EXTERNAL_7033349286087719341$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_7;
-    } else {
-      i18n_7 = $localize(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral([":\u241F75681ae09da891aca20405bb58ae40fae4cae7ce\u241F7033349286087719341: Set your desk height for the best experience "])));
-    }
-    var i18n_8;
-    if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-      /**
-       * @suppress {msgDescriptions}
-       */
-      var MSG_EXTERNAL_6210988327734808594$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_8 = goog.getMsg(" {$interpolation}: {$interpolation_1} ", {
+      var MSG_EXTERNAL_6210988327734808594$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_6 = goog.getMsg(" {$interpolation}: {$interpolation_1} ", {
         "interpolation": "\uFFFD0\uFFFD",
         "interpolation_1": "\uFFFD1\uFFFD"
       }, {
@@ -42516,67 +42579,67 @@ _UserControlsComponent.ɵcmp = /*@__PURE__*/i0.ɵɵdefineComponent({
           "interpolation_1": "{{ 'COMMON.LANGUAGE' | translate }}"
         }
       });
-      i18n_8 = MSG_EXTERNAL_6210988327734808594$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_8;
+      i18n_6 = MSG_EXTERNAL_6210988327734808594$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_6;
     } else {
-      i18n_8 = $localize(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral([":\u241F5a0db2e7be57ba081264f141f3ee4a8b683f1f6e\u241F6210988327734808594: ", ":INTERPOLATION:: ", ":INTERPOLATION_1: "])), "\uFFFD0\uFFFD", "\uFFFD1\uFFFD");
+      i18n_6 = $localize(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral([":\u241F5a0db2e7be57ba081264f141f3ee4a8b683f1f6e\u241F6210988327734808594: ", ":INTERPOLATION:: ", ":INTERPOLATION_1: "])), "\uFFFD0\uFFFD", "\uFFFD1\uFFFD");
     }
-    var i18n_9;
+    var i18n_7;
     if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
       /**
        * @suppress {msgDescriptions}
        */
-      var MSG_EXTERNAL_270482714535552546$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_9 = goog.getMsg("Raise a support ticket");
-      i18n_9 = MSG_EXTERNAL_270482714535552546$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_9;
+      var MSG_EXTERNAL_270482714535552546$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_7 = goog.getMsg("Raise a support ticket");
+      i18n_7 = MSG_EXTERNAL_270482714535552546$$LIBS_COMPONENTS_SRC_LIB_USER_CONTROLS_COMPONENT_TS_7;
     } else {
-      i18n_9 = $localize(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral([":\u241Fb862b54c42ded9ebb47260f60b0f75985c5fab18\u241F270482714535552546:Raise a support ticket"])));
+      i18n_7 = $localize(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral([":\u241Fb862b54c42ded9ebb47260f60b0f75985c5fab18\u241F270482714535552546:Raise a support ticket"])));
     }
-    return [["desk_height_tooltip", ""], i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_5, i18n_6, i18n_7, i18n_8, i18n_9, [1, "rounded", "bg-base-100", "shadow", "mt-1", "flex", "flex-col", "relative", "divide-y", "divide-base-200"], ["avatar", "", 1, "flex", "flex-col", "items-center", "p-2", "w-[18rem]"], [1, "text-2xl", 3, "user", "matTooltip"], [1, ""], [1, "text-xs", "opacity-60", "truncate"], ["customTooltip", "", "class", "relative", 3, "content", 4, "ngIf"], ["customTooltip", "", 3, "content", 4, "ngIf"], [4, "ngIf"], ["customTooltip", "", 3, "content"], ["btn", "", "matRipple", "", 1, "clear", "w-full", "text-left", "h-[3.5rem]"], [1, "w-full", "flex", "items-center", "space-x-2"], [1, "flex", "items-center", "justify-center", "rounded-full", "w-8", "h-8", "bg-base-200"], [1, "flex-1"], [1, "opacity-60", "text-2xl"], ["customTooltip", "", 3, "content", "!border-b", 4, "ngIf"], ["customTooltip", "", "class", "!border-b", 3, "content", 4, "ngIf"], ["btn", "", "matRipple", "", "class", "clear w-full text-left h-[3.5rem]", 3, "click", 4, "ngIf"], [1, "flex", "flex-col", "items-center", "p-4"], [1, "flex", "items-center", "justify-center", "space-x-2", "mb-4"], ["btn", "", "matRipple", "", 1, "inverse", 3, "click"], ["btn", "", "matRipple", "", 3, "click", 4, "ngIf"], [1, "text-xs", "opacity-60", "w-full"], [1, "underline", "p-0", "m-0", "bg-none", "border-none", "text-xs", 3, "click"], ["customTooltip", "", 1, "relative", 3, "content"], [1, "flex-1", "truncate", "w-px"], ["btn", "", "matRipple", "", 1, "clear", "w-full", "text-left", "h-[3.5rem]", 3, "click"], [1, "relative", "p-4", "bg-base-100", "rounded", "shadow", "w-64"], [1, "text-lg"], [1, "text-xs", "opacity-60", "mb-4"], [1, "flex", "flex-col", "mt-2"], [1, "flex", "items-center", "space-x-2"], ["min", "60", "max", "80", "step", "0.5", "discrete", "", 1, "flex-1", 3, "displayWith"], ["matSliderThumb", "", 3, "ngModelChange", "ngModel"], [1, "text-sm", "w-12", "text-right"], [1, "flex", "items-center", "space-x-2", "mr-2"], ["min", "90", "max", "120", "step", "0.5", "discrete", "", 1, "flex-1", 3, "displayWith"], [1, "text-sm", "w-12", "text-right", "mr-2"], ["customTooltip", "", 1, "!border-b", 3, "content"], ["btn", "", "matRipple", "", 3, "click"]];
+    return [["desk_height_tooltip", ""], i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_5, i18n_6, i18n_7, [1, "rounded", "bg-base-100", "shadow", "mt-1", "flex", "flex-col", "relative", "divide-y", "divide-base-200"], ["avatar", "", 1, "flex", "flex-col", "items-center", "p-2", "w-[18rem]"], [1, "text-2xl", 3, "user", "matTooltip"], [1, ""], [1, "text-xs", "opacity-60", "truncate"], ["customTooltip", "", "class", "relative", 3, "content", 4, "ngIf"], ["customTooltip", "", 3, "content", 4, "ngIf"], [4, "ngIf"], ["customTooltip", "", 3, "content"], ["btn", "", "matRipple", "", 1, "clear", "w-full", "text-left", "h-[3.5rem]"], [1, "w-full", "flex", "items-center", "space-x-2"], [1, "flex", "items-center", "justify-center", "rounded-full", "w-8", "h-8", "bg-base-200"], [1, "flex-1"], [1, "opacity-60", "text-2xl"], ["customTooltip", "", 3, "content", "!border-b", 4, "ngIf"], ["customTooltip", "", "class", "!border-b", 3, "content", 4, "ngIf"], ["btn", "", "matRipple", "", "class", "clear w-full text-left h-[3.5rem]", 3, "click", 4, "ngIf"], [1, "flex", "flex-col", "items-center", "p-4"], [1, "flex", "items-center", "justify-center", "space-x-2", "mb-4"], ["btn", "", "matRipple", "", 1, "inverse", 3, "click"], ["btn", "", "matRipple", "", 3, "click", 4, "ngIf"], [1, "text-xs", "opacity-60", "w-full"], [1, "underline", "p-0", "m-0", "bg-none", "border-none", "text-xs", 3, "click"], ["customTooltip", "", 1, "relative", 3, "content"], [1, "flex-1", "truncate", "w-px"], ["btn", "", "matRipple", "", 1, "clear", "w-full", "text-left", "h-[3.5rem]", 3, "click"], ["customTooltip", "", 1, "!border-b", 3, "content"], ["btn", "", "matRipple", "", 3, "click"]];
   },
   template: function UserControlsComponent_Template(rf, ctx) {
     if (rf & 1) {
       var _r1 = i0.ɵɵgetCurrentView();
-      i0.ɵɵelementStart(0, "div", 11)(1, "div", 12);
-      i0.ɵɵelement(2, "a-user-avatar", 13);
-      i0.ɵɵelementStart(3, "div", 14);
+      i0.ɵɵelementStart(0, "div", 9)(1, "div", 10);
+      i0.ɵɵelement(2, "a-user-avatar", 11);
+      i0.ɵɵelementStart(3, "div", 12);
       i0.ɵɵtext(4);
       i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(5, "div", 15);
+      i0.ɵɵelementStart(5, "div", 13);
       i0.ɵɵtext(6);
       i0.ɵɵelementEnd()();
-      i0.ɵɵtemplate(7, UserControlsComponent_div_7_Template, 12, 6, "div", 16);
+      i0.ɵɵtemplate(7, UserControlsComponent_div_7_Template, 12, 6, "div", 14);
       i0.ɵɵpipe(8, "async");
-      i0.ɵɵtemplate(9, UserControlsComponent_div_9_Template, 12, 6, "div", 16)(10, UserControlsComponent_div_10_Template, 10, 1, "div", 17)(11, UserControlsComponent_div_11_Template, 10, 0, "div", 18);
-      i0.ɵɵelementStart(12, "div", 19)(13, "button", 20)(14, "div", 21)(15, "div", 22)(16, "app-icon");
+      i0.ɵɵtemplate(9, UserControlsComponent_div_9_Template, 12, 6, "div", 14)(10, UserControlsComponent_div_10_Template, 10, 1, "div", 15)(11, UserControlsComponent_div_11_Template, 10, 0, "div", 16);
+      i0.ɵɵelementStart(12, "div", 17)(13, "button", 18)(14, "div", 19)(15, "div", 20)(16, "app-icon");
       i0.ɵɵtext(17, "mode_night");
       i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(18, "div", 23);
+      i0.ɵɵelementStart(18, "div", 21);
       i0.ɵɵi18n(19, 1);
       i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(20, "app-icon", 24);
+      i0.ɵɵelementStart(20, "app-icon", 22);
       i0.ɵɵtext(21, "chevron_right");
       i0.ɵɵelementEnd()()()();
-      i0.ɵɵtemplate(22, UserControlsComponent_div_22_Template, 10, 3, "div", 25)(23, UserControlsComponent_ng_template_23_Template, 20, 6, "ng-template", null, 0, i0.ɵɵtemplateRefExtractor)(25, UserControlsComponent_div_25_Template, 12, 7, "div", 26)(26, UserControlsComponent_button_26_Template, 7, 0, "button", 27);
-      i0.ɵɵelementStart(27, "div", 28)(28, "div", 29)(29, "button", 30);
+      i0.ɵɵtemplate(22, UserControlsComponent_div_22_Template, 10, 3, "div", 23)(23, UserControlsComponent_ng_template_23_Template, 1, 0, "ng-template", null, 0, i0.ɵɵtemplateRefExtractor)(25, UserControlsComponent_div_25_Template, 12, 7, "div", 24)(26, UserControlsComponent_button_26_Template, 7, 0, "button", 25);
+      i0.ɵɵelementStart(27, "div", 26)(28, "div", 27)(29, "button", 28);
       i0.ɵɵlistener("click", function UserControlsComponent_Template_button_click_29_listener() {
         i0.ɵɵrestoreView(_r1);
         return i0.ɵɵresetView(ctx.logout());
       });
       i0.ɵɵi18n(30, 2);
       i0.ɵɵelementEnd();
-      i0.ɵɵtemplate(31, UserControlsComponent_button_31_Template, 2, 0, "button", 31);
+      i0.ɵɵtemplate(31, UserControlsComponent_button_31_Template, 2, 0, "button", 29);
       i0.ɵɵelementEnd();
-      i0.ɵɵelementStart(32, "div", 32);
+      i0.ɵɵelementStart(32, "div", 30);
       i0.ɵɵelementContainerStart(33);
       i0.ɵɵi18n(34, 3);
       i0.ɵɵelementContainerEnd();
-      i0.ɵɵelementStart(35, "button", 33);
+      i0.ɵɵelementStart(35, "button", 31);
       i0.ɵɵlistener("click", function UserControlsComponent_Template_button_click_35_listener() {
         i0.ɵɵrestoreView(_r1);
         return i0.ɵɵresetView(ctx.viewChangelog());
       });
       i0.ɵɵtext(36);
       i0.ɵɵelementEnd()();
-      i0.ɵɵelementStart(37, "div", 32);
+      i0.ɵɵelementStart(37, "div", 30);
       i0.ɵɵtext(38);
       i0.ɵɵpipe(39, "date");
       i0.ɵɵpipe(40, "date");
@@ -44517,7 +44580,7 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
     _this.options = _this._options.asObservable();
     _this.booking_rules = _this._org.building_list.pipe((0, operators_1.switchMap)(function (list) {
       return Promise.all(list.map(function (bld) {
-        return (0, ts_client_1.showMetadata)(bld.id, 'booking_rules').toPromise();
+        return (0, ts_client_1.showMetadata)(bld.id, 'room_booking_rules').toPromise();
       }));
     }), (0, operators_1.map)(function (building_rules) {
       var mapping = {};
@@ -45510,7 +45573,8 @@ var _createClass = (__webpack_require__(/*! ./node_modules/@babel/runtime/helper
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.CalendarEvent = exports.setDefaultCreator = void 0;
+exports.CalendarEvent = void 0;
+exports.setDefaultCreator = setDefaultCreator;
 var common_1 = __webpack_require__(/*! @placeos/common */ 22797);
 var date_fns_1 = __webpack_require__(/*! date-fns */ 25773);
 var catering_order_class_1 = __webpack_require__(/*! libs/catering/src/lib/catering-order.class */ 75555);
@@ -45525,7 +45589,6 @@ var _default_user = {
 function setDefaultCreator(user) {
   if (user) _default_user = user;
 }
-exports.setDefaultCreator = setDefaultCreator;
 var DAYS_OF_WEEK = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 /** User's calendar event/booking */
 var CalendarEvent = /*#__PURE__*/function () {
@@ -45839,7 +45902,24 @@ var _asyncToGenerator = (__webpack_require__(/*! ./node_modules/@babel/runtime/h
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.querySpaceAvailability = exports.isSpaceAvailable = exports.updateEventMetadata = exports.getEventMetadata = exports.removeEventGuest = exports.addEventGuest = exports.checkinEventGuest = exports.queryEventGuests = exports.declineEvent = exports.rejectEvent = exports.approveEvent = exports.removeEvent = exports.saveEvent = exports.updateEvent = exports.createEvent = exports.showEvent = exports.queryAllEvents = exports.queryEvents = void 0;
+exports.saveEvent = void 0;
+exports.queryEvents = queryEvents;
+exports.queryAllEvents = queryAllEvents;
+exports.showEvent = showEvent;
+exports.createEvent = createEvent;
+exports.updateEvent = updateEvent;
+exports.removeEvent = removeEvent;
+exports.approveEvent = approveEvent;
+exports.rejectEvent = rejectEvent;
+exports.declineEvent = declineEvent;
+exports.queryEventGuests = queryEventGuests;
+exports.checkinEventGuest = checkinEventGuest;
+exports.addEventGuest = addEventGuest;
+exports.removeEventGuest = removeEventGuest;
+exports.getEventMetadata = getEventMetadata;
+exports.updateEventMetadata = updateEventMetadata;
+exports.isSpaceAvailable = isSpaceAvailable;
+exports.querySpaceAvailability = querySpaceAvailability;
 var ts_client_1 = __webpack_require__(/*! @placeos/ts-client */ 35713);
 var rxjs_1 = __webpack_require__(/*! rxjs */ 15681);
 var operators_1 = __webpack_require__(/*! rxjs/operators */ 97303);
@@ -45863,7 +45943,6 @@ function queryEvents(q) {
     return (0, rxjs_1.of)([]);
   }));
 }
-exports.queryEvents = queryEvents;
 function queryAllEvents(q) {
   return (0, ts_client_1.query)({
     query_params: q,
@@ -45912,7 +45991,6 @@ function queryAllEvents(q) {
     return (0, rxjs_1.of)([]);
   }));
 }
-exports.queryAllEvents = queryAllEvents;
 /**
  * Get event details
  * @param id ID of the event to grab
@@ -45925,7 +46003,6 @@ function showEvent(id) {
     return new event_class_1.CalendarEvent(item);
   }));
 }
-exports.showEvent = showEvent;
 /**
  * Create new calendar event and add it to the database
  * @param data New calendar event fields
@@ -45935,7 +46012,6 @@ function createEvent(data) {
     return new event_class_1.CalendarEvent(item);
   }));
 }
-exports.createEvent = createEvent;
 /**
  * Update an existing calendar event
  * @param id ID of the event to update
@@ -45951,7 +46027,6 @@ function updateEvent(id, data) {
     return new event_class_1.CalendarEvent(item);
   }));
 }
-exports.updateEvent = updateEvent;
 /**
  * Save changes to or create a calendar event
  * @param data State of the calendar event
@@ -45977,7 +46052,6 @@ function removeEvent(id) {
     response_type: 'void'
   });
 }
-exports.removeEvent = removeEvent;
 /**
  * Set the approval state of the event to approved
  * @param id ID of the event to approve
@@ -45988,7 +46062,6 @@ function approveEvent(id, system_id) {
     return new event_class_1.CalendarEvent(item);
   }));
 }
-exports.approveEvent = approveEvent;
 /**
  * Set the approval state of the event to rejected
  * @param id ID of the event to reject
@@ -45999,7 +46072,6 @@ function rejectEvent(id, system_id) {
     return new event_class_1.CalendarEvent(item);
   }));
 }
-exports.rejectEvent = rejectEvent;
 /**
  * Decline the given event
  * @param id ID of the event to decline
@@ -46012,7 +46084,6 @@ function declineEvent(id) {
     return new event_class_1.CalendarEvent(item);
   }));
 }
-exports.declineEvent = declineEvent;
 /**
  * List guests for event
  * @param id ID of the event to grab
@@ -46027,7 +46098,6 @@ function queryEventGuests(id) {
     });
   }));
 }
-exports.queryEventGuests = queryEventGuests;
 /**
  * Set the checkin state of an event guest
  * @param id ID of the event to grab
@@ -46044,7 +46114,6 @@ function checkinEventGuest(id, guest_id, state) {
     return new user_class_1.GuestUser(item);
   }));
 }
-exports.checkinEventGuest = checkinEventGuest;
 /**
  * Add a guest to a booking
  * @param id ID of the booking
@@ -46055,7 +46124,6 @@ function addEventGuest(id, guest) {
     return new user_class_1.GuestUser(item);
   }));
 }
-exports.addEventGuest = addEventGuest;
 /**
  * Remove an attendee from a booking
  * @param id ID of the booking
@@ -46066,7 +46134,6 @@ function removeEventGuest(id, guest) {
     return new user_class_1.GuestUser(item);
   }));
 }
-exports.removeEventGuest = removeEventGuest;
 /**
  * Get the extension data for an event
  * @param id ID of the event
@@ -46080,7 +46147,6 @@ function getEventMetadata(id, system_id) {
     return item;
   }));
 }
-exports.getEventMetadata = getEventMetadata;
 /**
  * Update the extension data for an event
  * @param id ID of the event
@@ -46095,7 +46161,6 @@ function updateEventMetadata(id, system_id, metadata) {
     return item;
   }));
 }
-exports.updateEventMetadata = updateEventMetadata;
 /**
  * Check whether a selected space is available
  * @param id ID of the space to check
@@ -46114,7 +46179,6 @@ function isSpaceAvailable(id, start, duration, ignore) {
     }).length === 0;
   }));
 }
-exports.isSpaceAvailable = isSpaceAvailable;
 /**
  * Check whether a list of spaces are available
  * @param id_list List of space IDs to check
@@ -46151,7 +46215,6 @@ function querySpaceAvailability(id_list, start, duration, ignore, type) {
     return short_list;
   }));
 }
-exports.querySpaceAvailability = querySpaceAvailability;
 
 /***/ }),
 
@@ -47329,7 +47392,12 @@ var _createForOfIteratorHelper = (__webpack_require__(/*! ./node_modules/@babel/
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.getNextFreeTimeSlot = exports.periodInFreeTimeSlot = exports.getFreeTimeSlots = exports.formatRecurrence = exports.parseRecurrence = exports.eventStatus = void 0;
+exports.eventStatus = eventStatus;
+exports.parseRecurrence = parseRecurrence;
+exports.formatRecurrence = formatRecurrence;
+exports.getFreeTimeSlots = getFreeTimeSlots;
+exports.periodInFreeTimeSlot = periodInFreeTimeSlot;
+exports.getNextFreeTimeSlot = getNextFreeTimeSlot;
 var date_fns_1 = __webpack_require__(/*! date-fns */ 25773);
 var DAYS_OF_WEEK = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 function eventStatus(details) {
@@ -47349,7 +47417,6 @@ function eventStatus(details) {
   }
   return 'approved';
 }
-exports.eventStatus = eventStatus;
 function parseRecurrence(data) {
   var _data$days_of_week;
   var start = data.start || data.range_start * 1000;
@@ -47382,7 +47449,6 @@ function parseRecurrence(data) {
     })) || []
   };
 }
-exports.parseRecurrence = parseRecurrence;
 function formatRecurrence(_ref) {
   var interval = _ref.interval,
     pattern = _ref.pattern,
@@ -47416,7 +47482,6 @@ function formatRecurrence(_ref) {
   }
   return details;
 }
-exports.formatRecurrence = formatRecurrence;
 /**
  * Generate a list of free time slots between the given bookings
  * @param list List of bookings to find slots between
@@ -47462,7 +47527,6 @@ function getFreeTimeSlots(list) {
   });
   return slots;
 }
-exports.getFreeTimeSlots = getFreeTimeSlots;
 function periodInFreeTimeSlot(start, end, list) {
   var min_size = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 29;
   var blocks = getFreeTimeSlots(list, min_size);
@@ -47482,7 +47546,6 @@ function periodInFreeTimeSlot(start, end, list) {
   }
   return false;
 }
-exports.periodInFreeTimeSlot = periodInFreeTimeSlot;
 /**
  * Get the next free time slot from the given bookings
  * @param list List of bookings to find the next slot
@@ -47513,7 +47576,6 @@ function getNextFreeTimeSlot(list) {
   }
   return slots[slots.length - 1];
 }
-exports.getNextFreeTimeSlot = getNextFreeTimeSlot;
 
 /***/ }),
 
@@ -47731,7 +47793,11 @@ var _objectSpread = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpe
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.newCalendarEventFromBooking = exports.replaceBookings = exports.statusFromBookings = exports.setMockBookingStartDatetime = exports.generateEventForm = void 0;
+exports.generateEventForm = generateEventForm;
+exports.setMockBookingStartDatetime = setMockBookingStartDatetime;
+exports.statusFromBookings = statusFromBookings;
+exports.replaceBookings = replaceBookings;
+exports.newCalendarEventFromBooking = newCalendarEventFromBooking;
 var forms_1 = __webpack_require__(/*! @angular/forms */ 34456);
 var date_fns_1 = __webpack_require__(/*! date-fns */ 25773);
 var common_1 = __webpack_require__(/*! @placeos/common */ 22797);
@@ -47922,7 +47988,6 @@ function generateEventForm() {
   if (event.state === 'started') form.get('date').disable();
   return form;
 }
-exports.generateEventForm = generateEventForm;
 /**
  * Set the initial time used for generating mock bookings
  * @param time New initial time as ms from UTC epoch
@@ -47930,7 +47995,6 @@ exports.generateEventForm = generateEventForm;
 function setMockBookingStartDatetime(time) {
   BOOKING_DATE = (0, date_fns_1.startOfMinute)(new Date(time));
 }
-exports.setMockBookingStartDatetime = setMockBookingStartDatetime;
 /**
  * Get current status within bookings
  * @param bookings List of bookings
@@ -47954,7 +48018,6 @@ function statusFromBookings(bookings, bookable, requestable) {
     available_until: free_today ? 'No meetings today' : currently_free ? "Free until ".concat((0, date_fns_1.format)(end, 'h:mm B'), "(").concat(time_until_next_block, ")") : free_tomorrow ? 'Unavailable today' : "Free at ".concat((0, date_fns_1.format)(start, 'h:mm B'), "(").concat(time_until_next_block, ")")
   };
 }
-exports.statusFromBookings = statusFromBookings;
 function replaceBookings(list, new_bookings, filter_options) {
   var from = filter_options.from;
   var to = filter_options.to;
@@ -47971,7 +48034,6 @@ function replaceBookings(list, new_bookings, filter_options) {
   });
   return (0, common_1.unique)(updated_list, 'id');
 }
-exports.replaceBookings = replaceBookings;
 function newCalendarEventFromBooking(booking) {
   var attendees = [{
     id: booking.user_id,
@@ -47994,7 +48056,6 @@ function newCalendarEventFromBooking(booking) {
     from_bookings: true
   }));
 }
-exports.newCalendarEventFromBooking = newCalendarEventFromBooking;
 
 /***/ }),
 
@@ -48009,7 +48070,8 @@ exports.newCalendarEventFromBooking = newCalendarEventFromBooking;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.isFuture = exports.endInFuture = void 0;
+exports.endInFuture = void 0;
+exports.isFuture = isFuture;
 var date_fns_1 = __webpack_require__(/*! date-fns */ 25773);
 var endInFuture = function endInFuture(control) {
   var _control$parent;
@@ -48028,7 +48090,6 @@ function isFuture(control) {
     is_future: true
   } : null;
 }
-exports.isFuture = isFuture;
 
 /***/ }),
 
@@ -56391,7 +56452,9 @@ var _ItemListFieldComponent;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.ItemListFieldComponent = exports.removeChipItem = exports.addChipItem = void 0;
+exports.ItemListFieldComponent = void 0;
+exports.addChipItem = addChipItem;
+exports.removeChipItem = removeChipItem;
 var core_1 = __webpack_require__(/*! @angular/core */ 37580);
 var forms_1 = __webpack_require__(/*! @angular/forms */ 34456);
 var keycodes_1 = __webpack_require__(/*! @angular/cdk/keycodes */ 74879);
@@ -56461,7 +56524,6 @@ function addChipItem(control, event) {
     input.value = '';
   }
 }
-exports.addChipItem = addChipItem;
 /**
  * Remove tag from the list
  * @param existing_tag Tag to remove
@@ -56477,7 +56539,6 @@ function removeChipItem(control, item) {
     control.setValue(item_list);
   }
 }
-exports.removeChipItem = removeChipItem;
 var ItemListFieldComponent = /*#__PURE__*/function () {
   function ItemListFieldComponent() {
     var _this = this;
@@ -60926,7 +60987,8 @@ var _objectSpread = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpe
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.generateCateringOrder = exports.MOCK_MENU = void 0;
+exports.MOCK_MENU = void 0;
+exports.generateCateringOrder = generateCateringOrder;
 var common_1 = __webpack_require__(/*! @placeos/common */ 22797);
 var date_fns_1 = __webpack_require__(/*! date-fns */ 25773);
 exports.MOCK_MENU = [{
@@ -61091,7 +61153,6 @@ function generateCateringOrder(event) {
     })
   };
 }
-exports.generateCateringOrder = generateCateringOrder;
 
 /***/ }),
 
@@ -62919,7 +62980,10 @@ var _createClass = (__webpack_require__(/*! ./node_modules/@babel/runtime/helper
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.generateLocation = exports.updateLocations = exports.createAreaManagementModule = exports.MockLocationServicesModule = exports.MockAreaManagementModule = void 0;
+exports.MockLocationServicesModule = exports.MockAreaManagementModule = void 0;
+exports.createAreaManagementModule = createAreaManagementModule;
+exports.updateLocations = updateLocations;
+exports.generateLocation = generateLocation;
 var ts_md5_1 = __webpack_require__(/*! ts-md5 */ 96466);
 var common_1 = __webpack_require__(/*! @placeos/common */ 22797);
 var zone_data_1 = __webpack_require__(/*! ../api/zone.data */ 19658);
@@ -63056,7 +63120,6 @@ function createAreaManagementModule(space) {
   }
   return mod;
 }
-exports.createAreaManagementModule = createAreaManagementModule;
 function updateLocations(mod, levels) {
   var _iterator2 = _createForOfIteratorHelper(levels),
     _step2;
@@ -63091,7 +63154,6 @@ function updateLocations(mod, levels) {
     _iterator2.f();
   }
 }
-exports.updateLocations = updateLocations;
 function generateLocation(lvl, desks) {
   var _ref, _ref2, _ts_md5_1$Md, _ts_md5_1$Md2;
   var users = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : users_data_1.MOCK_STAFF;
@@ -63119,7 +63181,6 @@ function generateLocation(lvl, desks) {
     map_height: 100
   };
 }
-exports.generateLocation = generateLocation;
 
 /***/ }),
 
@@ -63545,7 +63606,7 @@ exports.createVideoConferenceModule = createVideoConferenceModule;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.createSystem = void 0;
+exports.createSystem = createSystem;
 var ts_client_1 = __webpack_require__(/*! @placeos/ts-client */ 35713);
 var control_1 = __webpack_require__(/*! ./realtime/control */ 42);
 var events_1 = __webpack_require__(/*! ./realtime/events */ 74722);
@@ -63591,7 +63652,6 @@ function createSystem(space) {
     return system.AreaManagement[0].$update();
   }, 30 * 1000);
 }
-exports.createSystem = createSystem;
 
 /***/ }),
 
@@ -63807,7 +63867,8 @@ var _createForOfIteratorHelper = (__webpack_require__(/*! ./node_modules/@babel/
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.generateMockLevel = exports.generateMockBuilding = void 0;
+exports.generateMockBuilding = generateMockBuilding;
+exports.generateMockLevel = generateMockLevel;
 var BLD_COUNT = 0;
 var LVL_COUNT = 0;
 /* istanbul ignore next */
@@ -63884,7 +63945,6 @@ function generateMockBuilding(id) {
     }]
   };
 }
-exports.generateMockBuilding = generateMockBuilding;
 /* istanbul ignore next */
 /**
  * Generate raw mock data for a building level
@@ -63901,7 +63961,6 @@ function generateMockLevel(id, map_url) {
     map_url: map_url
   };
 }
-exports.generateMockLevel = generateMockLevel;
 
 /***/ }),
 
@@ -65188,7 +65247,8 @@ exports.OrganisationService = OrganisationService;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.moduleFromMetadata = exports.generateMockOrganisation = void 0;
+exports.generateMockOrganisation = generateMockOrganisation;
+exports.moduleFromMetadata = moduleFromMetadata;
 var ts_client_1 = __webpack_require__(/*! @placeos/ts-client */ 35713);
 var building_utilities_1 = __webpack_require__(/*! ./building.utilities */ 41274);
 var ORG_COUNT = 0;
@@ -65208,12 +65268,10 @@ function generateMockOrganisation() {
     }
   };
 }
-exports.generateMockOrganisation = generateMockOrganisation;
 function moduleFromMetadata(value, default_module) {
   if (!value) return null;
   return value instanceof Object ? (0, ts_client_1.getModule)(value.system_id, value.module || default_module) : (0, ts_client_1.getModule)(value, default_module);
 }
-exports.moduleFromMetadata = moduleFromMetadata;
 
 /***/ }),
 
@@ -65239,6 +65297,7 @@ var Region = /*#__PURE__*/_createClass(function Region(_data) {
   this.timezone = _data.timezone || '';
   this.images = _data.images || [];
   this.bindings = _data.bindings || {};
+  this.address = _data.address || '';
 });
 exports.Region = Region;
 
@@ -69002,7 +69061,8 @@ var _SpacePipe;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.SpacePipe = exports.updateSpaceList = void 0;
+exports.SpacePipe = void 0;
+exports.updateSpaceList = _updateSpaceList;
 var ts_client_1 = __webpack_require__(/*! @placeos/ts-client */ 35713);
 var organisation_service_1 = __webpack_require__(/*! libs/organisation/src/lib/organisation.service */ 19863);
 var space_class_1 = __webpack_require__(/*! ./space.class */ 30735);
@@ -69036,7 +69096,6 @@ function _updateSpaceList(space_list) {
     _iterator.f();
   }
 }
-exports.updateSpaceList = _updateSpaceList;
 setInterval(function () {
   for (var id in ATTEMPT_COUNT) {
     ATTEMPT_COUNT[id] = ATTEMPT_COUNT[id] - 1;
@@ -69177,7 +69236,10 @@ var _objectSpread = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpe
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.generateMockSpace = exports.requestSpacesForZone = exports.generateSystemsFormFields = exports.validateURL = exports.isValidUrl = void 0;
+exports.validateURL = exports.isValidUrl = void 0;
+exports.generateSystemsFormFields = generateSystemsFormFields;
+exports.requestSpacesForZone = requestSpacesForZone;
+exports.generateMockSpace = generateMockSpace;
 var common_1 = __webpack_require__(/*! @placeos/common */ 22797);
 var ts_client_1 = __webpack_require__(/*! @placeos/ts-client */ 35713);
 var rxjs_1 = __webpack_require__(/*! rxjs */ 15681);
@@ -69231,7 +69293,6 @@ function generateSystemsFormFields(system) {
   } else delete fields.zone;
   return new forms_1.FormGroup(fields);
 }
-exports.generateSystemsFormFields = generateSystemsFormFields;
 function requestSpacesForZone(id) {
   if (!id) return (0, rxjs_1.of)([]);
   if (SPACE_LIST_REQUESTS[id]) return SPACE_LIST_REQUESTS[id];
@@ -69247,7 +69308,6 @@ function requestSpacesForZone(id) {
   }), (0, operators_1.shareReplay)(1));
   return SPACE_LIST_REQUESTS[id];
 }
-exports.requestSpacesForZone = requestSpacesForZone;
 var SPACE_COUNT = 0;
 /* istanbul ignore next */
 function generateMockSpace() {
@@ -69284,7 +69344,6 @@ function generateMockSpace() {
   }
   return space;
 }
-exports.generateMockSpace = generateMockSpace;
 
 /***/ }),
 
@@ -70141,7 +70200,12 @@ var _objectSpread = (__webpack_require__(/*! ./node_modules/@babel/runtime/helpe
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.listGuestMeetings = exports.removeGuest = exports.updateGuest = exports.showGuest = exports.queryGuests = exports.searchGuests = void 0;
+exports.searchGuests = searchGuests;
+exports.queryGuests = queryGuests;
+exports.showGuest = showGuest;
+exports.updateGuest = updateGuest;
+exports.removeGuest = removeGuest;
+exports.listGuestMeetings = listGuestMeetings;
 var ts_client_1 = __webpack_require__(/*! @placeos/ts-client */ 35713);
 var operators_1 = __webpack_require__(/*! rxjs/operators */ 97303);
 var event_class_1 = __webpack_require__(/*! ../../../events/src/lib/event.class */ 6727);
@@ -70162,7 +70226,6 @@ function searchGuests(q) {
     });
   }));
 }
-exports.searchGuests = searchGuests;
 /**
  * List guests
  * @param q Parameters to pass to the API request
@@ -70175,7 +70238,6 @@ function queryGuests(q) {
     });
   }));
 }
-exports.queryGuests = queryGuests;
 /**
  * Get guest details
  * @param id ID of the guest
@@ -70185,7 +70247,6 @@ function showGuest(id) {
     return new user_class_1.GuestUser(item);
   }));
 }
-exports.showGuest = showGuest;
 /**
  * Update guest metadata
  * @param id ID of the guest
@@ -70196,7 +70257,6 @@ function updateGuest(id, data) {
     return new user_class_1.GuestUser(item);
   }));
 }
-exports.updateGuest = updateGuest;
 /**
  * Remove a guest
  * @param id ID of the guest to remove
@@ -70206,7 +70266,6 @@ function removeGuest(id) {
     response_type: 'void'
   });
 }
-exports.removeGuest = removeGuest;
 /**
  * List upcoming meetings for a guest
  * @param id ID of the guest
@@ -70218,7 +70277,6 @@ function listGuestMeetings(id) {
     });
   }));
 }
-exports.listGuestMeetings = listGuestMeetings;
 
 /***/ }),
 
@@ -70413,7 +70471,9 @@ exports.NewUserModalComponent = NewUserModalComponent;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.locateStaff = exports.showStaff = exports.searchStaff = void 0;
+exports.searchStaff = searchStaff;
+exports.showStaff = showStaff;
+exports.locateStaff = locateStaff;
 var ts_client_1 = __webpack_require__(/*! @placeos/ts-client */ 35713);
 var api_1 = __webpack_require__(/*! libs/common/src/lib/api */ 38385);
 var operators_1 = __webpack_require__(/*! rxjs/operators */ 97303);
@@ -70434,7 +70494,6 @@ function searchStaff(q) {
     });
   }));
 }
-exports.searchStaff = searchStaff;
 /**
  * Get user details
  * @param id User ID or email
@@ -70444,7 +70503,6 @@ function showStaff(id) {
     return new user_class_1.StaffUser(item);
   }));
 }
-exports.showStaff = showStaff;
 /**
  * Get user with their location details
  * @param email User email
@@ -70454,7 +70512,6 @@ function locateStaff(email) {
     return new user_class_1.StaffUser(item);
   }));
 }
-exports.locateStaff = locateStaff;
 
 /***/ }),
 
@@ -70936,7 +70993,11 @@ exports.UserPipe = UserPipe;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.generateGuestForm = exports.generateUserForm = exports.generateMockUser = exports.setInternalUserDomain = exports.USER_DOMAIN = void 0;
+exports.USER_DOMAIN = void 0;
+exports.setInternalUserDomain = setInternalUserDomain;
+exports.generateMockUser = generateMockUser;
+exports.generateUserForm = generateUserForm;
+exports.generateGuestForm = generateGuestForm;
 var forms_1 = __webpack_require__(/*! @angular/forms */ 34456);
 var general_1 = __webpack_require__(/*! ../../../common/src/lib/general */ 64217);
 var user_class_1 = __webpack_require__(/*! ./user.class */ 93693);
@@ -70945,7 +71006,6 @@ exports.USER_DOMAIN = '@place.tech';
 function setInternalUserDomain(domain) {
   exports.USER_DOMAIN = domain;
 }
-exports.setInternalUserDomain = setInternalUserDomain;
 var USER_EMAILS = [];
 /* istanbul ignore next */
 /**
@@ -70991,7 +71051,6 @@ function generateMockUser(id, name, external) {
     image: "".concat(id, ".png")
   };
 }
-exports.generateMockUser = generateMockUser;
 /**
  * Generate form fields for the given user
  * @param user User to generate form for
@@ -71013,7 +71072,6 @@ function generateUserForm(user) {
   var form = new forms_1.FormGroup(fields);
   return form;
 }
-exports.generateUserForm = generateUserForm;
 function generateGuestForm() {
   var user = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new user_class_1.GuestUser();
   var host = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
@@ -71028,7 +71086,6 @@ function generateGuestForm() {
   var form = new forms_1.FormGroup(fields);
   return form;
 }
-exports.generateGuestForm = generateGuestForm;
 
 /***/ }),
 
