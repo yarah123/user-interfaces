@@ -434,7 +434,7 @@ function EventListingComponent_ng_template_10_ng_template_2_Template(rf, ctx) {
   if (rf & 2) {
     const item_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnextContext"]().row;
     _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵproperty"]("list", item_r5.attendees)("host", item_r5.user_email)("hide_close", true)("custom_title", "Interested");
+    _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵproperty"]("list", item_r5.attendees)("host", item_r5.user_email || item_r5.host)("hide_close", true)("custom_title", "Interested");
   }
 }
 function EventListingComponent_ng_template_10_Template(rf, ctx) {
@@ -462,7 +462,7 @@ function EventListingComponent_ng_template_12_ng_template_2_Template(rf, ctx) {
     const item_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnextContext"]().row;
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵproperty"]("list", ctx_r1.checkedInList(item_r7.attendees))("host", item_r7.user_email)("hide_close", true);
+    _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵproperty"]("list", ctx_r1.checkedInList(item_r7.attendees))("host", item_r7.user_email || item_r7.host)("hide_close", true);
   }
 }
 function EventListingComponent_ng_template_12_Template(rf, ctx) {
