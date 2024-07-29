@@ -13000,15 +13000,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "4586479",
-  "hash": "4586479",
+  "raw": "1fe646f",
+  "hash": "1fe646f",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "4586479",
+  "suffix": "1fe646f",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1722221921174
+  "time": 1722225286094
 };
 /* tslint:enable */
 
@@ -24579,7 +24579,7 @@ class EventFormService extends _placeos_common__WEBPACK_IMPORTED_MODULE_2__.Asyn
             all_day,
             location_name: spaces[0]?.display_name || spaces[0]?.name || '',
             location_id: spaces[0]?.id || '',
-            zones: spaces[0]?.level?.parent_id ? [spaces[0]?.level?.parent_id] : [_this2._org.building?.id],
+            zones: spaces[0]?.level?.parent_id ? (0,_placeos_common__WEBPACK_IMPORTED_MODULE_2__.unique)([_this2._org.organisation.id, _this2._org.region?.id, spaces[0]?.level?.parent_id, spaces[0]?.level?.id]).filter(_ => !!_) : [_this2._org.building?.id],
             reset_state: changed_times
           }, assets, changed_spaces || changed_times).catch(on_error);
           if (!requests) throw 'Unable to validate asset requests';
@@ -24881,7 +24881,7 @@ class CalendarEvent {
     this.event_end = data.event_end || (0,date_fns__WEBPACK_IMPORTED_MODULE_6__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_8__.addMinutes)(this.event_start * 1000, data.duration || 30));
     this.calendar = data.calendar || '';
     this.creator = (data.creator || _default_user.email)?.toLowerCase() || '';
-    this.host = (data.host || this.creator || _default_user.email || '').toLowerCase();
+    this.host = (data.host || this.creator || data.host_email || _default_user.email || '').toLowerCase();
     const attendees = data.attendees || [];
     this.attendees = attendees.filter(user => !user.resource).map(u => new libs_users_src_lib_user_class__WEBPACK_IMPORTED_MODULE_3__.User(u));
     this.resources = (0,_placeos_common__WEBPACK_IMPORTED_MODULE_0__.unique)(data.resources || attendees.filter(user => user.resource).map(s => new libs_spaces_src_lib_space_class__WEBPACK_IMPORTED_MODULE_2__.Space(s)), 'email') || [];
