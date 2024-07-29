@@ -1,6 +1,460 @@
 "use strict";
 (self["webpackChunkconcierge"] = self["webpackChunkconcierge"] || []).push([["apps_concierge_src_app_reports_reports_module_ts"],{
 
+/***/ 69493:
+/*!*************************************************************************************!*\
+  !*** ./apps/concierge/src/app/reports/assets/asset-report-daily-usage.component.ts ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AssetReportDailyUsageComponent: () => (/* binding */ AssetReportDailyUsageComponent)
+/* harmony export */ });
+/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
+/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 22797);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 35443);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 33602);
+/* harmony import */ var _assets_report_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets-report.service */ 11700);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/core */ 74646);
+/* harmony import */ var _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../libs/components/src/lib/icon.component */ 69434);
+/* harmony import */ var _libs_components_src_lib_simple_table_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../libs/components/src/lib/simple-table.component */ 88328);
+
+
+
+
+
+
+
+
+
+
+const _c0 = () => ({
+  key: "name",
+  name: "Name"
+});
+const _c1 = a0 => ({
+  key: "date",
+  name: "Date",
+  content: a0
+});
+const _c2 = () => ({
+  key: "booking_count",
+  name: "Assets Booked"
+});
+const _c3 = () => ({
+  key: "asset_count",
+  name: "Assets"
+});
+const _c4 = (a0, a1, a2, a3) => [a0, a1, a2, a3];
+function AssetReportDailyUsageComponent_button_4_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AssetReportDailyUsageComponent_button_4_Template_button_click_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r1);
+      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r1.download());
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "app-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "download");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+  }
+}
+function AssetReportDailyUsageComponent_ng_template_6_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](2, "date");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const row_r3 = ctx.row;
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind2"](2, 1, row_r3.date, "mediumDate"), " ");
+  }
+}
+class AssetReportDailyUsageComponent {
+  constructor(_state) {
+    var _this = this;
+    this._state = _state;
+    this.print = false;
+    this.daily_products = this._state.stats$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.map)(days => {
+      let list = [];
+      for (const date in days) {
+        const {
+          events,
+          bookings,
+          products
+        } = days[date];
+        const products_list = products.map(p => ({
+          date,
+          name: p.host,
+          booking_count: bookings.filter(b => p.assets.find(_ => _.id === b.asset_id)).length,
+          asset_count: p.assets.length
+        }));
+        list = list.concat(products_list.filter(p => p.booking_count > 0));
+      }
+      return list;
+    }));
+    this.download = /*#__PURE__*/(0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      const data = yield _this.daily_products.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.take)(1)).toPromise();
+      (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.downloadFile)('report-assets-daily-usage.csv', (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.jsonToCsv)(data));
+    });
+  }
+  static #_ = this.ɵfac = function AssetReportDailyUsageComponent_Factory(t) {
+    return new (t || AssetReportDailyUsageComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_assets_report_service__WEBPACK_IMPORTED_MODULE_2__.AssetsReportService));
+  };
+  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
+    type: AssetReportDailyUsageComponent,
+    selectors: [["asset-report-daily-usage"]],
+    inputs: {
+      print: "print"
+    },
+    decls: 8,
+    vars: 15,
+    consts: [["date_template", ""], [1, "m-4", "rounded", "bg-base-100", "border", "border-base-200", "overflow-hidden"], [1, "border-b", "border-base-200", "px-4", "py-2", "flex", "items-center"], [1, "font-bold", "text-xl", "flex-1"], ["icon", "", "matRipple", "", 3, "click", 4, "ngIf"], ["empty_message", "No events for selected period", 1, "w-full", "block", "text-sm", 3, "data", "columns", "sortable", "page_size"], ["icon", "", "matRipple", "", 3, "click"], [1, "p-4"]],
+    template: function AssetReportDailyUsageComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 1)(1, "div", 2)(2, "h3", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, "Daily Asset Usage");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](4, AssetReportDailyUsageComponent_button_4_Template, 3, 0, "button", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](5, "simple-table", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](6, AssetReportDailyUsageComponent_ng_template_6_Template, 3, 4, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+      }
+      if (rf & 2) {
+        const date_template_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵreference"](7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !ctx.print);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("data", ctx.daily_products)("columns", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction4"](10, _c4, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](5, _c0), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction1"](6, _c1, date_template_r4), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](8, _c2), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](9, _c3)))("sortable", true)("page_size", ctx.print ? 0 : 10);
+      }
+    },
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _angular_material_core__WEBPACK_IMPORTED_MODULE_9__.MatRipple, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_3__.IconComponent, _libs_components_src_lib_simple_table_component__WEBPACK_IMPORTED_MODULE_4__.SimpleTableComponent, _angular_common__WEBPACK_IMPORTED_MODULE_8__.DatePipe]
+  });
+}
+
+/***/ }),
+
+/***/ 25511:
+/*!*********************************************************************************!*\
+  !*** ./apps/concierge/src/app/reports/assets/asset-report-overall.component.ts ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AssetReportOverallComponent: () => (/* binding */ AssetReportOverallComponent)
+/* harmony export */ });
+/* harmony import */ var _assets_report_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./assets-report.service */ 11700);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ 35443);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! date-fns */ 88948);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! date-fns */ 33240);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! date-fns */ 56441);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 60316);
+
+
+
+
+
+
+class AssetReportOverallComponent {
+  constructor(_state) {
+    this._state = _state;
+    this.total_count = this._state.stats$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.map)(i => i.count));
+    this.business_days = this._state.options$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.map)(({
+      start,
+      end
+    }) => (0,date_fns__WEBPACK_IMPORTED_MODULE_2__.differenceInBusinessDays)((0,date_fns__WEBPACK_IMPORTED_MODULE_3__.startOfDay)(end || Date.now()), (0,date_fns__WEBPACK_IMPORTED_MODULE_4__.endOfDay)(start || Date.now())) || 1));
+    this.avg_length = this._state.stats$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.map)(({
+      events
+    }) => events.reduce((c, i) => c + i.duration, 0) / events.length));
+  }
+  static #_ = this.ɵfac = function AssetReportOverallComponent_Factory(t) {
+    return new (t || AssetReportOverallComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_assets_report_service__WEBPACK_IMPORTED_MODULE_0__.AssetsReportService));
+  };
+  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
+    type: AssetReportOverallComponent,
+    selectors: [["asset-report-overall"]],
+    decls: 19,
+    vars: 9,
+    consts: [[1, "m-4", "p-4", "rounded", "bg-base-100", "border", "border-base-200", "flex", "justify-center", "items-center", "space-x-2"], [1, "flex", "flex-col", "items-center", "flex-1"]],
+    template: function AssetReportOverallComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, "Business Days");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](4, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](6, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](7, "div", 1)(8, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](9, "Total Bookings");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](10, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](12, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](13, "div", 1)(14, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](15, "Average Booking Length");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](16, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipe"](18, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()()();
+      }
+      if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](6, 3, ctx.business_days) || 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](12, 5, ctx.total_count) || 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpipeBind1"](18, 7, ctx.avg_length) || "None");
+      }
+    },
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_6__.AsyncPipe]
+  });
+}
+
+/***/ }),
+
+/***/ 3623:
+/*!***************************************************************************************!*\
+  !*** ./apps/concierge/src/app/reports/assets/asset-report-product-usage.component.ts ***!
+  \***************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AssetReportProductUsageComponent: () => (/* binding */ AssetReportProductUsageComponent)
+/* harmony export */ });
+/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
+/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 22797);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 35443);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 33602);
+/* harmony import */ var _assets_report_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets-report.service */ 11700);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/core */ 74646);
+/* harmony import */ var _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../libs/components/src/lib/icon.component */ 69434);
+/* harmony import */ var _libs_components_src_lib_simple_table_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../libs/components/src/lib/simple-table.component */ 88328);
+
+
+
+
+
+
+
+
+
+
+const _c0 = () => ({
+  key: "name",
+  name: "Name"
+});
+const _c1 = () => ({
+  key: "booking_count",
+  name: "Assets Booked"
+});
+const _c2 = () => ({
+  key: "asset_count",
+  name: "Assets"
+});
+const _c3 = (a0, a1, a2) => [a0, a1, a2];
+function AssetReportProductUsageComponent_button_4_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AssetReportProductUsageComponent_button_4_Template_button_click_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r1);
+      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r1.download());
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "app-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "download");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+  }
+}
+class AssetReportProductUsageComponent {
+  constructor(_state) {
+    var _this = this;
+    this._state = _state;
+    this.print = false;
+    this.products = this._state.stats$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.map)(({
+      events,
+      bookings,
+      products
+    }) => products.map(p => ({
+      name: p.host,
+      booking_count: bookings.filter(b => p.assets.find(_ => _.id === b.asset_id)).length,
+      asset_count: p.assets.length
+    })).filter(p => p.booking_count > 0)));
+    this.download = /*#__PURE__*/(0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      const data = yield _this.products.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.take)(1)).toPromise();
+      (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.downloadFile)('report-assets-product-usage.csv', (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.jsonToCsv)(data));
+    });
+  }
+  static #_ = this.ɵfac = function AssetReportProductUsageComponent_Factory(t) {
+    return new (t || AssetReportProductUsageComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_assets_report_service__WEBPACK_IMPORTED_MODULE_2__.AssetsReportService));
+  };
+  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
+    type: AssetReportProductUsageComponent,
+    selectors: [["asset-report-product-usage"]],
+    inputs: {
+      print: "print"
+    },
+    decls: 6,
+    vars: 12,
+    consts: [[1, "m-4", "rounded", "bg-base-100", "border", "border-base-200", "overflow-hidden"], [1, "border-b", "border-base-200", "px-4", "py-2", "flex", "items-center"], [1, "font-bold", "text-xl", "flex-1"], ["icon", "", "matRipple", "", 3, "click", 4, "ngIf"], ["empty_message", "No events for selected period", 1, "w-full", "block", "text-sm", 3, "data", "columns", "sortable", "page_size"], ["icon", "", "matRipple", "", 3, "click"]],
+    template: function AssetReportProductUsageComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "h3", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, "Asset Products Usage");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](4, AssetReportProductUsageComponent_button_4_Template, 3, 0, "button", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](5, "simple-table", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+      }
+      if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !ctx.print);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("data", ctx.products)("columns", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction3"](8, _c3, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](5, _c0), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](6, _c1), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](7, _c2)))("sortable", true)("page_size", ctx.print ? 0 : 10);
+      }
+    },
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _angular_material_core__WEBPACK_IMPORTED_MODULE_9__.MatRipple, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_3__.IconComponent, _libs_components_src_lib_simple_table_component__WEBPACK_IMPORTED_MODULE_4__.SimpleTableComponent]
+  });
+}
+
+/***/ }),
+
+/***/ 18686:
+/*!*******************************************************************************!*\
+  !*** ./apps/concierge/src/app/reports/assets/asset-report-users.component.ts ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AssetReportUsersComponent: () => (/* binding */ AssetReportUsersComponent)
+/* harmony export */ });
+/* harmony import */ var _home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
+/* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @placeos/common */ 22797);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 35443);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ 33602);
+/* harmony import */ var _assets_report_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets-report.service */ 11700);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/core */ 74646);
+/* harmony import */ var _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../libs/components/src/lib/icon.component */ 69434);
+/* harmony import */ var _libs_components_src_lib_simple_table_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../libs/components/src/lib/simple-table.component */ 88328);
+
+
+
+
+
+
+
+
+
+
+const _c0 = () => ({
+  key: "name",
+  name: "Name"
+});
+const _c1 = () => ({
+  key: "booking_count",
+  name: "Bookings"
+});
+const _c2 = () => ({
+  key: "asset_count",
+  name: "Assets Booked"
+});
+const _c3 = () => ({
+  key: "asset_types",
+  name: "Asset Types"
+});
+const _c4 = (a0, a1, a2, a3) => [a0, a1, a2, a3];
+function AssetReportUsersComponent_button_4_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "button", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AssetReportUsersComponent_button_4_Template_button_click_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r1);
+      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵresetView"](ctx_r1.download());
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "app-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](2, "download");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
+  }
+}
+class AssetReportUsersComponent {
+  constructor(_state) {
+    var _this = this;
+    this._state = _state;
+    this.print = false;
+    this.users = this._state.stats$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.map)(({
+      events,
+      bookings,
+      products
+    }) => (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.unique)(events, 'host').map(e => {
+      const host_bookings = bookings.filter(b => b.user_email === e.host);
+      const booked_assets = host_bookings.map(_ => _.asset_ids).flat();
+      return {
+        name: e.host,
+        booking_count: events.filter(e => e.host === e.host).length,
+        asset_count: booked_assets.length,
+        asset_types: (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.unique)(booked_assets.map(i => products.find(p => p.id === i)?.name))?.length || 0
+      };
+    })));
+    this.download = /*#__PURE__*/(0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      const data = yield _this.users.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.take)(1)).toPromise();
+      (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.downloadFile)('report-assets-users.csv', (0,_placeos_common__WEBPACK_IMPORTED_MODULE_1__.jsonToCsv)(data));
+    });
+  }
+  static #_ = this.ɵfac = function AssetReportUsersComponent_Factory(t) {
+    return new (t || AssetReportUsersComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_assets_report_service__WEBPACK_IMPORTED_MODULE_2__.AssetsReportService));
+  };
+  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({
+    type: AssetReportUsersComponent,
+    selectors: [["asset-report-daily-usage"]],
+    inputs: {
+      print: "print"
+    },
+    decls: 6,
+    vars: 14,
+    consts: [[1, "m-4", "rounded", "bg-base-100", "border", "border-base-200", "overflow-hidden"], [1, "border-b", "border-base-200", "px-4", "py-2", "flex", "items-center"], [1, "font-bold", "text-xl", "flex-1"], ["icon", "", "matRipple", "", 3, "click", 4, "ngIf"], ["empty_message", "No events for selected period", 1, "w-full", "block", "text-sm", 3, "data", "columns", "sortable", "page_size"], ["icon", "", "matRipple", "", 3, "click"]],
+    template: function AssetReportUsersComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "h3", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, "Users booking assets");
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](4, AssetReportUsersComponent_button_4_Template, 3, 0, "button", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](5, "simple-table", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+      }
+      if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !ctx.print);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("data", ctx.users)("columns", _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction4"](9, _c4, _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](5, _c0), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](6, _c1), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](7, _c2), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵpureFunction0"](8, _c3)))("sortable", true)("page_size", ctx.print ? 0 : 10);
+      }
+    },
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.NgIf, _angular_material_core__WEBPACK_IMPORTED_MODULE_9__.MatRipple, _libs_components_src_lib_icon_component__WEBPACK_IMPORTED_MODULE_3__.IconComponent, _libs_components_src_lib_simple_table_component__WEBPACK_IMPORTED_MODULE_4__.SimpleTableComponent]
+  });
+}
+
+/***/ }),
+
 /***/ 94812:
 /*!**************************************************************************!*\
   !*** ./apps/concierge/src/app/reports/assets/assets-report.component.ts ***!
@@ -11,14 +465,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   AssetsReportComponent: () => (/* binding */ AssetsReportComponent)
 /* harmony export */ });
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ 35443);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 35443);
 /* harmony import */ var _placeos_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @placeos/common */ 22797);
 /* harmony import */ var _assets_report_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets-report.service */ 11700);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 37580);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 95072);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 60316);
-/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/progress-spinner */ 41134);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ 95072);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/progress-spinner */ 41134);
 /* harmony import */ var _reports_options_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reports-options.component */ 5956);
+/* harmony import */ var _asset_report_overall_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./asset-report-overall.component */ 25511);
+/* harmony import */ var _asset_report_daily_usage_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./asset-report-daily-usage.component */ 69493);
+/* harmony import */ var _asset_report_product_usage_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./asset-report-product-usage.component */ 3623);
+/* harmony import */ var _asset_report_users_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./asset-report-users.component */ 18686);
+
+
+
+
 
 
 
@@ -33,41 +495,43 @@ __webpack_require__.r(__webpack_exports__);
 const _c0 = ["report-assets", ""];
 function AssetsReportComponent_ng_container_10_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementContainer"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](1, "asset-report-overall")(2, "asset-report-daily-usage")(3, "asset-report-product-usage")(4, "asset-report-users");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
   }
 }
 function AssetsReportComponent_ng_container_10_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, AssetsReportComponent_ng_container_10_ng_container_1_Template, 1, 0, "ng-container", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipe"](2, "async");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementContainerEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](1, AssetsReportComponent_ng_container_10_ng_container_1_Template, 5, 0, "ng-container", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipe"](2, "async");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-    const empty_state_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵreference"](15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind1"](2, 2, ctx_r1.total_count))("ngIfElse", empty_state_r3);
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵnextContext"]();
+    const empty_state_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵreference"](15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind1"](2, 2, ctx_r1.total_count))("ngIfElse", empty_state_r3);
   }
 }
 function AssetsReportComponent_ng_template_12_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](1, "mat-spinner", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "p", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](3, "Loading report data...");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](1, "mat-spinner", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](2, "p", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](3, "Loading report data...");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("diameter", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("diameter", 32);
   }
 }
 function AssetsReportComponent_ng_template_14_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 13)(1, "p", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2, " Select levels and time period to generate a report. ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 13)(1, "p", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](2, " Select levels and time period to generate a report. ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
   }
 }
 class AssetsReportComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0__.AsyncHandler {
@@ -80,7 +544,7 @@ class AssetsReportComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0__
     this._settings = _settings;
     this._route = _route;
     this.printing = false;
-    this.total_count = this._state.stats$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(i => i.count || 0));
+    this.total_count = this._state.stats$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.map)(i => i.count || 0));
     this.loading = this._state.loading$;
     this.downloadReport = () => this._state.downloadReport();
     this.generateReport = () => this._state.generateReport();
@@ -106,53 +570,53 @@ class AssetsReportComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0__
     }));
   }
   static #_ = this.ɵfac = function AssetsReportComponent_Factory(t) {
-    return new (t || AssetsReportComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_assets_report_service__WEBPACK_IMPORTED_MODULE_1__.AssetsReportService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_placeos_common__WEBPACK_IMPORTED_MODULE_0__.SettingsService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__.ActivatedRoute));
+    return new (t || AssetsReportComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_assets_report_service__WEBPACK_IMPORTED_MODULE_1__.AssetsReportService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_placeos_common__WEBPACK_IMPORTED_MODULE_0__.SettingsService), _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_9__.ActivatedRoute));
   };
-  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({
+  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineComponent"]({
     type: AssetsReportComponent,
     selectors: [["", "report-assets", ""]],
-    features: [_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵInheritDefinitionFeature"]],
+    features: [_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵInheritDefinitionFeature"]],
     attrs: _c0,
     decls: 16,
     vars: 11,
     consts: [["load_state", ""], ["empty_state", ""], [3, "printing", "download", "generate", "loading", "has_data"], [1, "relative", "flex-1", "h-1/2", "w-full", "overflow-auto", "print:overflow-visible", "print:h-auto"], [1, "w-full"], [1, "flex", "items-center", "m-4", "p-4", "rounded", "bg-base-200"], [1, "h-12", 3, "src"], [1, "flex-1"], [1, "text-2xl", "font-medium", "px-2"], [4, "ngIf", "ngIfElse"], [1, "h-full", "w-full", "flex", "flex-col", "items-center", "p-8"], [1, "mb-4", 3, "diameter"], [1, "opacity-30"], [1, "h-full", "w-full", "flex", "flex-col", "items-center", "p-8", "screen-only"]],
     template: function AssetsReportComponent_Template(rf, ctx) {
       if (rf & 1) {
-        const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "reports-options", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipe"](1, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipe"](2, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("printing", function AssetsReportComponent_Template_reports_options_printing_0_listener($event) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r1);
-          return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx.printing = $event);
+        const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵgetCurrentView"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "reports-options", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipe"](1, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipe"](2, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵlistener"]("printing", function AssetsReportComponent_Template_reports_options_printing_0_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r1);
+          return _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵresetView"](ctx.printing = $event);
         })("download", function AssetsReportComponent_Template_reports_options_download_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r1);
-          return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx.downloadReport());
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r1);
+          return _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵresetView"](ctx.downloadReport());
         })("generate", function AssetsReportComponent_Template_reports_options_generate_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r1);
-          return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx.generateReport());
+          _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵrestoreView"](_r1);
+          return _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵresetView"](ctx.generateReport());
         });
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](3, "div", 3)(4, "div", 4)(5, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](6, "img", 6)(7, "div", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](8, "h2", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](9, "Assets Report");
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](10, AssetsReportComponent_ng_container_10_Template, 3, 4, "ng-container", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipe"](11, "async");
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](12, AssetsReportComponent_ng_template_12_Template, 4, 1, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplateRefExtractor"])(14, AssetsReportComponent_ng_template_14_Template, 3, 0, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](3, "div", 3)(4, "div", 4)(5, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelement"](6, "img", 6)(7, "div", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](8, "h2", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtext"](9, "Assets Report");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](10, AssetsReportComponent_ng_container_10_Template, 3, 4, "ng-container", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipe"](11, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](12, AssetsReportComponent_ng_template_12_Template, 4, 1, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplateRefExtractor"])(14, AssetsReportComponent_ng_template_14_Template, 3, 0, "ng-template", null, 1, _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplateRefExtractor"]);
       }
       if (rf & 2) {
-        const load_state_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵreference"](13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("loading", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind1"](1, 5, ctx.loading))("has_data", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind1"](2, 7, ctx.total_count));
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("src", ctx.logo.src, _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsanitizeUrl"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", !_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind1"](11, 9, ctx.loading))("ngIfElse", load_state_r4);
+        const load_state_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵreference"](13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("loading", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind1"](1, 5, ctx.loading))("has_data", _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind1"](2, 7, ctx.total_count));
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("src", ctx.logo.src, _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵsanitizeUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", !_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵpipeBind1"](11, 9, ctx.loading))("ngIfElse", load_state_r4);
       }
     },
-    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_6__.NgIf, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_7__.MatProgressSpinner, _reports_options_component__WEBPACK_IMPORTED_MODULE_2__.ReportsOptionsComponent, _angular_common__WEBPACK_IMPORTED_MODULE_6__.AsyncPipe],
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_10__.NgIf, _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_11__.MatProgressSpinner, _reports_options_component__WEBPACK_IMPORTED_MODULE_2__.ReportsOptionsComponent, _asset_report_overall_component__WEBPACK_IMPORTED_MODULE_3__.AssetReportOverallComponent, _asset_report_daily_usage_component__WEBPACK_IMPORTED_MODULE_4__.AssetReportDailyUsageComponent, _asset_report_product_usage_component__WEBPACK_IMPORTED_MODULE_5__.AssetReportProductUsageComponent, _asset_report_users_component__WEBPACK_IMPORTED_MODULE_6__.AssetReportUsersComponent, _angular_common__WEBPACK_IMPORTED_MODULE_10__.AsyncPipe],
     styles: ["[_nghost-%COMP%] {\n                display: flex;\n                flex-direction: column;\n                height: 100%;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFzc2V0cy1yZXBvcnQuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxhQUFhO2dCQUNiLHNCQUFzQjtnQkFDdEIsWUFBWTtZQUNoQiIsImZpbGUiOiJhc3NldHMtcmVwb3J0LmNvbXBvbmVudC50cyIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgOmhvc3Qge1xuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdfQ== */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2FwcHMvY29uY2llcmdlL3NyYy9hcHAvcmVwb3J0cy9hc3NldHMvYXNzZXRzLXJlcG9ydC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGFBQWE7Z0JBQ2Isc0JBQXNCO2dCQUN0QixZQUFZO1lBQ2hCOztBQUVaLG9mQUFvZiIsInNvdXJjZXNDb250ZW50IjpbIlxuICAgICAgICAgICAgOmhvc3Qge1xuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XG4gICAgICAgICAgICB9XG4gICAgICAgICJdLCJzb3VyY2VSb290IjoiIn0= */"]
   });
 }
@@ -177,8 +641,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! date-fns */ 99908);
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! date-fns */ 33240);
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! date-fns */ 56441);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! date-fns */ 31257);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! date-fns */ 45726);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! date-fns */ 55882);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! date-fns */ 45726);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! date-fns */ 31257);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! date-fns */ 28797);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ 90521);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! rxjs */ 68824);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 19803);
@@ -187,8 +653,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 7841);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ 8627);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! rxjs/operators */ 35443);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! rxjs/operators */ 33602);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! rxjs/operators */ 33602);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/core */ 37580);
 
 
 
@@ -201,6 +667,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class AssetsReportService {
+  _processBookingStats(booking_list, products) {
+    const booked_assets = (0,_placeos_common__WEBPACK_IMPORTED_MODULE_3__.flatten)(booking_list.map(_ => _.asset_ids));
+    const unique_events = (0,_placeos_common__WEBPACK_IMPORTED_MODULE_3__.unique)(booking_list.map(_ => _.linked_event), 'id');
+    return {
+      events: unique_events,
+      bookings: booking_list,
+      products,
+      booking_count: booking_list.length,
+      event_count: unique_events.length,
+      total_booked_items: booking_list.reduce((c, i) => c + i.asset_ids.length, 0),
+      unique_items: products.filter(p => p.assets.find(_ => booked_assets.includes(_))).length,
+      products_booked: products.filter(p => p.assets.find(_ => booked_assets.includes(_))).map(p => ({
+        name: p.name,
+        count: p.assets.filter(_ => booked_assets.includes(_)).length
+      }))
+    };
+  }
   constructor(_org, _settings) {
     this._org = _org;
     this._settings = _settings;
@@ -219,13 +702,23 @@ class AssetsReportService {
       this._loading.next(true);
       return (0,_placeos_bookings__WEBPACK_IMPORTED_MODULE_2__.queryBookings)({
         period_start: (0,date_fns__WEBPACK_IMPORTED_MODULE_11__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_12__.startOfDay)(options.start)),
-        period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_11__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_13__.endOfDay)(options.end)),
+        period_end: (0,date_fns__WEBPACK_IMPORTED_MODULE_11__.getUnixTime)((0,date_fns__WEBPACK_IMPORTED_MODULE_13__.endOfDay)(options.end || options.start)),
         type: 'asset-request',
         zones: (options.zones || [])?.join(',') || (this._settings.get('app.use_region') ? this._org.region?.id : '') || this._org.building?.id
       });
     }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.tap)(() => this._loading.next(false)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.shareReplay)(1));
-    this.stats$ = (0,rxjs__WEBPACK_IMPORTED_MODULE_14__.combineLatest)([this.products$, this.bookings$]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_15__.map)(([products, bookings]) => {
-      return {};
+    this.stats$ = (0,rxjs__WEBPACK_IMPORTED_MODULE_14__.combineLatest)([this.products$, this.bookings$]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_15__.map)(([products, bookings]) => this._processBookingStats(bookings, products)));
+    this.daily_stats$ = (0,rxjs__WEBPACK_IMPORTED_MODULE_14__.combineLatest)([this._options, this.products$, this.bookings$]).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_15__.map)(([options, products, bookings]) => {
+      const stats = {};
+      let count = 0;
+      let start = (0,date_fns__WEBPACK_IMPORTED_MODULE_12__.startOfDay)(options.start);
+      const end = (0,date_fns__WEBPACK_IMPORTED_MODULE_13__.endOfDay)(options.end);
+      while ((0,date_fns__WEBPACK_IMPORTED_MODULE_16__.isBefore)(start, end) && count < 365) {
+        const date = (0,date_fns__WEBPACK_IMPORTED_MODULE_17__.format)(start, 'yyyy-MM-dd');
+        stats[date] = this._processBookingStats(bookings.filter(_ => (0,date_fns__WEBPACK_IMPORTED_MODULE_18__.isSameDay)(_.date, start)), products);
+        start = (0,date_fns__WEBPACK_IMPORTED_MODULE_19__.addDays)(start, 1);
+        count++;
+      }
     }));
   }
   generateReport() {
@@ -235,10 +728,10 @@ class AssetsReportService {
     var _this = this;
     return (0,_home_runner_work_user_interfaces_user_interfaces_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const options = _this._options.getValue();
-      const bookings = yield _this.bookings$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_16__.take)(1)).toPromise();
+      const bookings = yield _this.bookings$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_20__.take)(1)).toPromise();
       if (!bookings?.length) return;
-      const is_same = (0,date_fns__WEBPACK_IMPORTED_MODULE_17__.isSameDay)(options.start, options.end);
-      const date = is_same ? (0,date_fns__WEBPACK_IMPORTED_MODULE_18__.format)(options.start, 'yyyy-MM-dd') : `${(0,date_fns__WEBPACK_IMPORTED_MODULE_18__.format)(options.start, 'yyyy-MM-dd')}-${(0,date_fns__WEBPACK_IMPORTED_MODULE_18__.format)(options.end, 'yyyy-MM-dd')}`;
+      const is_same = (0,date_fns__WEBPACK_IMPORTED_MODULE_18__.isSameDay)(options.start, options.end);
+      const date = is_same ? (0,date_fns__WEBPACK_IMPORTED_MODULE_17__.format)(options.start, 'yyyy-MM-dd') : `${(0,date_fns__WEBPACK_IMPORTED_MODULE_17__.format)(options.start, 'yyyy-MM-dd')}-${(0,date_fns__WEBPACK_IMPORTED_MODULE_17__.format)(options.end, 'yyyy-MM-dd')}`;
       (0,_placeos_common__WEBPACK_IMPORTED_MODULE_3__.downloadFile)(`report+assets+${date}.tsv`, (0,_placeos_common__WEBPACK_IMPORTED_MODULE_3__.jsonToCsv)(bookings.map(bkn => {
         const details = bkn.toJSON();
         delete details.zones;
@@ -255,9 +748,9 @@ class AssetsReportService {
     });
   }
   static #_ = this.ɵfac = function AssetsReportService_Factory(t) {
-    return new (t || AssetsReportService)(_angular_core__WEBPACK_IMPORTED_MODULE_19__["ɵɵinject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_4__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_19__["ɵɵinject"](_placeos_common__WEBPACK_IMPORTED_MODULE_3__.SettingsService));
+    return new (t || AssetsReportService)(_angular_core__WEBPACK_IMPORTED_MODULE_21__["ɵɵinject"](_placeos_organisation__WEBPACK_IMPORTED_MODULE_4__.OrganisationService), _angular_core__WEBPACK_IMPORTED_MODULE_21__["ɵɵinject"](_placeos_common__WEBPACK_IMPORTED_MODULE_3__.SettingsService));
   };
-  static #_2 = this.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_19__["ɵɵdefineInjectable"]({
+  static #_2 = this.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_21__["ɵɵdefineInjectable"]({
     token: AssetsReportService,
     factory: AssetsReportService.ɵfac,
     providedIn: 'root'
@@ -3024,11 +3517,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ReportsModule: () => (/* binding */ ReportsModule)
 /* harmony export */ });
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @angular/common */ 60316);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @angular/forms */ 34456);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @angular/router */ 95072);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @angular/common */ 60316);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @angular/forms */ 34456);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @angular/router */ 95072);
 /* harmony import */ var _ui_ui_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ui/ui.module */ 15412);
-/* harmony import */ var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @angular/material/paginator */ 24624);
+/* harmony import */ var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @angular/material/paginator */ 24624);
 /* harmony import */ var _reports_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reports.component */ 99179);
 /* harmony import */ var _placeos_spaces__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @placeos/spaces */ 44855);
 /* harmony import */ var _placeos_users__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @placeos/users */ 41489);
@@ -3053,7 +3546,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _new_reports_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./new-reports.component */ 77332);
 /* harmony import */ var _spaces_report_spaces_overall_list_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./spaces/report-spaces-overall-list.component */ 1193);
 /* harmony import */ var _assets_assets_report_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./assets/assets-report.component */ 94812);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/core */ 37580);
+/* harmony import */ var _assets_asset_report_overall_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./assets/asset-report-overall.component */ 25511);
+/* harmony import */ var _assets_asset_report_daily_usage_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./assets/asset-report-daily-usage.component */ 69493);
+/* harmony import */ var _assets_asset_report_product_usage_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./assets/asset-report-product-usage.component */ 3623);
+/* harmony import */ var _assets_asset_report_users_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./assets/asset-report-users.component */ 18686);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @angular/core */ 37580);
+
+
+
+
 
 
 
@@ -3124,17 +3625,17 @@ class ReportsModule {
   static #_ = this.ɵfac = function ReportsModule_Factory(t) {
     return new (t || ReportsModule)();
   };
-  static #_2 = this.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_25__["ɵɵdefineNgModule"]({
+  static #_2 = this.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_29__["ɵɵdefineNgModule"]({
     type: ReportsModule
   });
-  static #_3 = this.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_25__["ɵɵdefineInjector"]({
-    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_26__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_27__.FormsModule, _ui_ui_module__WEBPACK_IMPORTED_MODULE_0__.UIModule, _placeos_spaces__WEBPACK_IMPORTED_MODULE_2__.SharedSpacesModule, _placeos_users__WEBPACK_IMPORTED_MODULE_3__.SharedUsersModule, _angular_material_paginator__WEBPACK_IMPORTED_MODULE_28__.MatPaginatorModule, _angular_router__WEBPACK_IMPORTED_MODULE_29__.RouterModule.forChild(ROUTES)]
+  static #_3 = this.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_29__["ɵɵdefineInjector"]({
+    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_30__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_31__.FormsModule, _ui_ui_module__WEBPACK_IMPORTED_MODULE_0__.UIModule, _placeos_spaces__WEBPACK_IMPORTED_MODULE_2__.SharedSpacesModule, _placeos_users__WEBPACK_IMPORTED_MODULE_3__.SharedUsersModule, _angular_material_paginator__WEBPACK_IMPORTED_MODULE_32__.MatPaginatorModule, _angular_router__WEBPACK_IMPORTED_MODULE_33__.RouterModule.forChild(ROUTES)]
   });
 }
 (function () {
-  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_25__["ɵɵsetNgModuleScope"](ReportsModule, {
-    declarations: [_new_reports_component__WEBPACK_IMPORTED_MODULE_22__.NewReportsComponent, _reports_component__WEBPACK_IMPORTED_MODULE_1__.ReportsComponent, _reports_options_component__WEBPACK_IMPORTED_MODULE_4__.ReportsOptionsComponent, _spaces_report_spaces_component__WEBPACK_IMPORTED_MODULE_5__.ReportSpacesComponent, _spaces_report_spaces_overall_component__WEBPACK_IMPORTED_MODULE_10__.ReportSpacesOverallComponent, _spaces_report_spaces_overall_list_component__WEBPACK_IMPORTED_MODULE_23__.ReportSpacesOverallListComponent, _spaces_report_spaces_space_listing_component__WEBPACK_IMPORTED_MODULE_11__.ReportSpacesSpaceListing, _spaces_report_spaces_user_listing_component__WEBPACK_IMPORTED_MODULE_12__.ReportSpacesUserListingComponent, _desks_report_desks_component__WEBPACK_IMPORTED_MODULE_6__.ReportDesksComponent, _desks_report_desks_overall_list_component__WEBPACK_IMPORTED_MODULE_7__.ReportDesksOverallListComponent, _desks_report_desks_level_list_component__WEBPACK_IMPORTED_MODULE_8__.ReportDesksLevelListComponent, _desks_report_desks_charts_component__WEBPACK_IMPORTED_MODULE_17__.ReportDesksChartsComponent, _reports_menu_component__WEBPACK_IMPORTED_MODULE_9__.ReportsMenuComponent, _catering_catering_report_component__WEBPACK_IMPORTED_MODULE_13__.CateringReportComponent, _catering_catering_report_overall_component__WEBPACK_IMPORTED_MODULE_14__.CateringReportOverallComponent, _catering_catering_report_orders_component__WEBPACK_IMPORTED_MODULE_15__.CateringReportOrdersComponent, _catering_catering_report_items_component__WEBPACK_IMPORTED_MODULE_16__.CateringReportItemsComponent, _assets_assets_report_component__WEBPACK_IMPORTED_MODULE_24__.AssetsReportComponent, _contact_tracing_contact_tracing_report_component__WEBPACK_IMPORTED_MODULE_18__.ContactTracingReportComponent, _contact_tracing_contact_tracing_options_component__WEBPACK_IMPORTED_MODULE_20__.ContactTracingOptionsComponent, _contact_tracing_get_user_pipe__WEBPACK_IMPORTED_MODULE_19__.GetUserPipe, _custom_report_component__WEBPACK_IMPORTED_MODULE_21__.CustomReportComponent],
-    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_26__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_27__.FormsModule, _ui_ui_module__WEBPACK_IMPORTED_MODULE_0__.UIModule, _placeos_spaces__WEBPACK_IMPORTED_MODULE_2__.SharedSpacesModule, _placeos_users__WEBPACK_IMPORTED_MODULE_3__.SharedUsersModule, _angular_material_paginator__WEBPACK_IMPORTED_MODULE_28__.MatPaginatorModule, _angular_router__WEBPACK_IMPORTED_MODULE_29__.RouterModule]
+  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_29__["ɵɵsetNgModuleScope"](ReportsModule, {
+    declarations: [_new_reports_component__WEBPACK_IMPORTED_MODULE_22__.NewReportsComponent, _reports_component__WEBPACK_IMPORTED_MODULE_1__.ReportsComponent, _reports_options_component__WEBPACK_IMPORTED_MODULE_4__.ReportsOptionsComponent, _spaces_report_spaces_component__WEBPACK_IMPORTED_MODULE_5__.ReportSpacesComponent, _spaces_report_spaces_overall_component__WEBPACK_IMPORTED_MODULE_10__.ReportSpacesOverallComponent, _spaces_report_spaces_overall_list_component__WEBPACK_IMPORTED_MODULE_23__.ReportSpacesOverallListComponent, _spaces_report_spaces_space_listing_component__WEBPACK_IMPORTED_MODULE_11__.ReportSpacesSpaceListing, _spaces_report_spaces_user_listing_component__WEBPACK_IMPORTED_MODULE_12__.ReportSpacesUserListingComponent, _desks_report_desks_component__WEBPACK_IMPORTED_MODULE_6__.ReportDesksComponent, _desks_report_desks_overall_list_component__WEBPACK_IMPORTED_MODULE_7__.ReportDesksOverallListComponent, _desks_report_desks_level_list_component__WEBPACK_IMPORTED_MODULE_8__.ReportDesksLevelListComponent, _desks_report_desks_charts_component__WEBPACK_IMPORTED_MODULE_17__.ReportDesksChartsComponent, _reports_menu_component__WEBPACK_IMPORTED_MODULE_9__.ReportsMenuComponent, _catering_catering_report_component__WEBPACK_IMPORTED_MODULE_13__.CateringReportComponent, _catering_catering_report_overall_component__WEBPACK_IMPORTED_MODULE_14__.CateringReportOverallComponent, _catering_catering_report_orders_component__WEBPACK_IMPORTED_MODULE_15__.CateringReportOrdersComponent, _catering_catering_report_items_component__WEBPACK_IMPORTED_MODULE_16__.CateringReportItemsComponent, _assets_assets_report_component__WEBPACK_IMPORTED_MODULE_24__.AssetsReportComponent, _assets_asset_report_overall_component__WEBPACK_IMPORTED_MODULE_25__.AssetReportOverallComponent, _assets_asset_report_daily_usage_component__WEBPACK_IMPORTED_MODULE_26__.AssetReportDailyUsageComponent, _assets_asset_report_product_usage_component__WEBPACK_IMPORTED_MODULE_27__.AssetReportProductUsageComponent, _assets_asset_report_users_component__WEBPACK_IMPORTED_MODULE_28__.AssetReportUsersComponent, _contact_tracing_contact_tracing_report_component__WEBPACK_IMPORTED_MODULE_18__.ContactTracingReportComponent, _contact_tracing_contact_tracing_options_component__WEBPACK_IMPORTED_MODULE_20__.ContactTracingOptionsComponent, _contact_tracing_get_user_pipe__WEBPACK_IMPORTED_MODULE_19__.GetUserPipe, _custom_report_component__WEBPACK_IMPORTED_MODULE_21__.CustomReportComponent],
+    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_30__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_31__.FormsModule, _ui_ui_module__WEBPACK_IMPORTED_MODULE_0__.UIModule, _placeos_spaces__WEBPACK_IMPORTED_MODULE_2__.SharedSpacesModule, _placeos_users__WEBPACK_IMPORTED_MODULE_3__.SharedUsersModule, _angular_material_paginator__WEBPACK_IMPORTED_MODULE_32__.MatPaginatorModule, _angular_router__WEBPACK_IMPORTED_MODULE_33__.RouterModule]
   });
 })();
 
