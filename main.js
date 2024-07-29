@@ -24001,15 +24001,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 const VERSION = {
   "dirty": false,
-  "raw": "e85c4cc",
-  "hash": "e85c4cc",
+  "raw": "4a3a703",
+  "hash": "4a3a703",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "e85c4cc",
+  "suffix": "4a3a703",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1721876146841
+  "time": 1722215544034
 };
 /* tslint:enable */
 
@@ -45718,22 +45718,15 @@ class RichTextInputComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0_
       header: [1, 2, 3, 4, 5, 6, false]
     }], ['bold', 'italic', 'underline'],
     // toggled buttons
-    ['blockquote', 'code-block'], [{
+    [{
       list: 'ordered'
     }, {
       list: 'bullet'
     }, {
       list: 'check'
     }], [{
-      indent: '-1'
-    }, {
-      indent: '+1'
-    }],
-    // outdent/indent
-    [{
       align: []
-    }], ['clean'] // remove formatting button
-    ];
+    }]];
     if (this.images_allowed) {
       toolbarOptions.push(['image', 'link']);
     }
@@ -45839,14 +45832,15 @@ class RichTextInputComponent extends _placeos_common__WEBPACK_IMPORTED_MODULE_0_
     }]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵInheritDefinitionFeature"], _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵNgOnChangesFeature"]],
     decls: 4,
     vars: 0,
-    consts: [["container", ""], ["editor", ""], [1, "h-full"]],
+    consts: [["container", ""], ["editor", ""], [1, "absolute", "inset-0"], [1, "h-full"]],
     template: function RichTextInputComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 2, 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](2, "div", 2, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](2, "div", 3, 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
       }
-    }
+    },
+    styles: ["[_nghost-%COMP%] {\n                display: block;\n                position: relative;\n                min-height: 8rem;\n                margin-bottom: 4rem;\n            }\n        \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJpY2gtdGV4dC1pbnB1dC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtZQUNZO2dCQUNJLGNBQWM7Z0JBQ2Qsa0JBQWtCO2dCQUNsQixnQkFBZ0I7Z0JBQ2hCLG1CQUFtQjtZQUN2QiIsImZpbGUiOiJyaWNoLXRleHQtaW5wdXQuY29tcG9uZW50LnRzIiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgICAgICA6aG9zdCB7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogYmxvY2s7XG4gICAgICAgICAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgICAgICAgICAgIG1pbi1oZWlnaHQ6IDhyZW07XG4gICAgICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogNHJlbTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgIl19 */\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL2xpYnMvZm9ybS1maWVsZHMvc3JjL2xpYi9yaWNoLXRleHQtaW5wdXQuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7WUFDWTtnQkFDSSxjQUFjO2dCQUNkLGtCQUFrQjtnQkFDbEIsZ0JBQWdCO2dCQUNoQixtQkFBbUI7WUFDdkI7O0FBRVosZ2tCQUFna0IiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgICAgICAgIDpob3N0IHtcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBibG9jaztcbiAgICAgICAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgICAgICAgICAgbWluLWhlaWdodDogOHJlbTtcbiAgICAgICAgICAgICAgICBtYXJnaW4tYm90dG9tOiA0cmVtO1xuICAgICAgICAgICAgfVxuICAgICAgICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
   });
 }
 
