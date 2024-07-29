@@ -31956,15 +31956,15 @@ exports.VERSION = void 0;
 /* tslint:disable */
 exports.VERSION = {
   "dirty": false,
-  "raw": "21aba94",
-  "hash": "21aba94",
+  "raw": "1fe646f",
+  "hash": "1fe646f",
   "distance": null,
   "tag": null,
   "semver": null,
-  "suffix": "21aba94",
+  "suffix": "1fe646f",
   "semverString": null,
   "version": "1.12.0",
-  "time": 1722215088085
+  "time": 1722225284874
 };
 /* tslint:enable */
 
@@ -45046,7 +45046,7 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
       return new Promise( /*#__PURE__*/function () {
         var _ref18 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(resolve, reject) {
           var _this7$event, _form$get, _form$get2, _form$get3, _ref19, _ref20, _spaces$, _this7$event2, _this7$event3, _this7$event4, _value$organiser, _ref21, _value$organiser2, _ref22, _ref23, _event$extension_data2;
-          var form, event, ical_uid, value, _value, id, host, date, duration, creator, all_day, assets, recurrence, spaces, catering, changed_times, changed_spaces, is_owner, space, attendees, message, space_id, query, receipt, d, _iterator2, _step2, order, setup, breakdown, _iterator3, _step3, _space, overflow, processed_assets, result, domain, visitors, creating_assets, on_error, _spaces$2, _spaces$3, _spaces$4, _spaces$5, _spaces$6, _this7$_org$building, requests;
+          var form, event, ical_uid, value, _value, id, host, date, duration, creator, all_day, assets, recurrence, spaces, catering, changed_times, changed_spaces, is_owner, space, attendees, message, space_id, query, receipt, d, _iterator2, _step2, order, setup, breakdown, _iterator3, _step3, _space, overflow, processed_assets, result, domain, visitors, creating_assets, on_error, _spaces$2, _spaces$3, _spaces$4, _spaces$5, _this7$_org$region, _spaces$6, _spaces$7, _this7$_org$building, requests;
           return _regeneratorRuntime().wrap(function _callee3$(_context3) {
             while (1) switch (_context3.prev = _context3.next) {
               case 0:
@@ -45277,7 +45277,9 @@ var EventFormService = /*#__PURE__*/function (_common_1$AsyncHandle) {
                   all_day: all_day,
                   location_name: ((_spaces$2 = spaces[0]) === null || _spaces$2 === void 0 ? void 0 : _spaces$2.display_name) || ((_spaces$3 = spaces[0]) === null || _spaces$3 === void 0 ? void 0 : _spaces$3.name) || '',
                   location_id: ((_spaces$4 = spaces[0]) === null || _spaces$4 === void 0 ? void 0 : _spaces$4.id) || '',
-                  zones: (_spaces$5 = spaces[0]) !== null && _spaces$5 !== void 0 && (_spaces$5 = _spaces$5.level) !== null && _spaces$5 !== void 0 && _spaces$5.parent_id ? [(_spaces$6 = spaces[0]) === null || _spaces$6 === void 0 || (_spaces$6 = _spaces$6.level) === null || _spaces$6 === void 0 ? void 0 : _spaces$6.parent_id] : [(_this7$_org$building = _this7._org.building) === null || _this7$_org$building === void 0 ? void 0 : _this7$_org$building.id],
+                  zones: (_spaces$5 = spaces[0]) !== null && _spaces$5 !== void 0 && (_spaces$5 = _spaces$5.level) !== null && _spaces$5 !== void 0 && _spaces$5.parent_id ? (0, common_1.unique)([_this7._org.organisation.id, (_this7$_org$region = _this7._org.region) === null || _this7$_org$region === void 0 ? void 0 : _this7$_org$region.id, (_spaces$6 = spaces[0]) === null || _spaces$6 === void 0 || (_spaces$6 = _spaces$6.level) === null || _spaces$6 === void 0 ? void 0 : _spaces$6.parent_id, (_spaces$7 = spaces[0]) === null || _spaces$7 === void 0 || (_spaces$7 = _spaces$7.level) === null || _spaces$7 === void 0 ? void 0 : _spaces$7.id]).filter(function (_) {
+                    return !!_;
+                  }) : [(_this7$_org$building = _this7._org.building) === null || _this7$_org$building === void 0 ? void 0 : _this7$_org$building.id],
                   reset_state: changed_times
                 }, assets, changed_spaces || changed_times)["catch"](on_error);
               case 62:
@@ -45651,7 +45653,7 @@ var CalendarEvent = /*#__PURE__*/function () {
     this.event_end = data.event_end || (0, date_fns_1.getUnixTime)((0, date_fns_1.addMinutes)(this.event_start * 1000, data.duration || 30));
     this.calendar = data.calendar || '';
     this.creator = ((_ref = data.creator || _default_user.email) === null || _ref === void 0 ? void 0 : _ref.toLowerCase()) || '';
-    this.host = (data.host || this.creator || _default_user.email || '').toLowerCase();
+    this.host = (data.host || this.creator || data.host_email || _default_user.email || '').toLowerCase();
     var attendees = data.attendees || [];
     this.attendees = attendees.filter(function (user) {
       return !user.resource;
