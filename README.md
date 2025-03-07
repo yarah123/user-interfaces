@@ -1,78 +1,70 @@
-# PlaceOS Template User Interfaces
+# Getting Started with Create React App
 
-![BUILD](https://github.com/placeos/user-interfaces/workflows/BUILD/badge.svg)
-![TEST](https://github.com/placeos/user-interfaces/workflows/TEST/badge.svg)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Setup
+## Available Scripts
 
-1. Install [NodeJS](https://nodejs.org/en/download/current/)
-1. Run `npm install` in the root folder
-1. Run `npm install --global nx` to install [NX](https://github.com/nrwl/nx)
-1. Run `npm install --global @angular/cli` to install [Angular CLI](https://github.com/angular/angular-cli)
+In the project directory, you can run:
 
-## Development
+### `npm start`
 
-To run the dev server use the command `nx serve <project>` e.g. `nx serve control`
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-By default the dev web server proxies all requests to the set live system, if you wish to use a mock requests and systems press `Ctrl + Alt/Option + Shift + M` to reload the page in mock mode. To leave mock mode you can repeat the keypresses.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### Connecting to a live environment
+### `npm test`
 
-If you wish to develop with a live environment you can change the details in [`config/proxy.conf.js`](./config/proxy.conf.js)
-to point the the server with the live environment and update the SSL settings the match that environment.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Note that OAuth redirects don't work when connecting you local instance to the live environment.
-To login in the local instance you will either need to copy a token from a live instance or use the basic auth form at `/login/?continue=/`. For the local login you will need to create a user or set a password for an auto-generated user.
+### `npm run build`
 
-## Compilation
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Compile the application into static files using `nx build <project>` e.g. `nx build bookings`
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-The command takes the arguments `--prod` to minify the resulting build and `--aot` to compile the angular code using the angular Ahead of Time compiler.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Default application/runtime settings can be found in `projects/<project>/app/settings.ts`
+### `npm run eject`
 
-## Tests
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-Unit tests can be run using `nx test <project>` e.g. `nx test kiosk`
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Integration tests can be run first starting up the webpack dev server with `nx serve`, setting `mock` to `true` in `projects/<project>/app/settings.ts` and running cypress with `nx e2e <project>-e2e`
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-## Deployment
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-Github actions have been setup for creating build artifacts and deploying them to a standalone branch on this repository.
+## Learn More
 
-Each application has a seperate branch dedicated to each of it's build types.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Commits to the branch `develop` will produce development builds that are committed to the branches `build/<project>/dev`  
-Commits to the branch `release/**` will produce development builds that are committed to the branches `build/<project>/uat`.
-You should have only one `release` branch at a time and it should be kept inline with develop rather than worked on directly.  
-Commits to the branch `master` will produce a production build that is commited to the branch `build/<project>/prod`
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-## Available Frontends
+### Code Splitting
 
-There are 7 available frontends for this client
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
--   [`bookings`](./apps/booking-panel/README.md) | Booking Panel user interface
--   [`catering`](./apps/caterers-ui/README.md) | Interface for external caterers
--   [`concierge`](./apps/concierge/README.md) | Concierge / Front of House application
--   [`control`](./apps/control/README.md) | AV/Room Control application
--   [`kiosk`](./apps/map-kiosk/README.md) | Internal building location kiosk UI
--   [`visitors`](./apps/visitor-kiosk/README.md) | Internal building location kiosk UI
--   [`workplace`](./apps/workplace/README.md) | Staff Application
+### Analyzing the Bundle Size
 
-## Settings
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-A list of application settings (configurable via Zone.metadata) is available at `/apps/<app name>/src/environments/settings.schema.json`
+### Making a Progressive Web App
 
--   [Workplace App](https://github.com/PlaceOS/user-interfaces/blob/master/apps/workplace/src/environments/settings.ts)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-## Upgrade
+### Advanced Configuration
 
-`nx migrate latest`
-`npm install`
-`nx migrate --run-migrations`
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-## Generate Changelog
+### Deployment
 
-`git cliff -o CHANGELOG.md`
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
