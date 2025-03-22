@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["css;8d0e49ce05f4619b253c26c4ab7aa7fd76467b364cc074030499c05c469734a7;/home/runner/work/user-interfaces/user-interfaces/apps/booking-panel/src/app/overlays/embedded-control-modal.component.ts"],
+  "sourcesContent": ["\n            [modal] {\n                height: calc(100vh - 3em);\n                box-sizing: content-box;\n                border: 2px solid #fff;\n                border-top: 1px solid #ccc;\n                transform: translate(-50%, calc(-50% + 1.75em));\n            }\n\n            .overlay {\n                position: absolute;\n                top: 0;\n                right: 0;\n                display: flex;\n                align-items: center;\n                height: 3em;\n            }\n        "],
+  "mappings": "AACY,CAAC,OACG,OAAQ,KAAK,MAAM,EAAE,KACrB,WAAY,YACZ,OAAQ,IAAI,MAAM,KAClB,WAAY,IAAI,MAAM,KACtB,UAAW,UAAU,IAAI,CAAE,KAAK,KAAK,EAAE,QAC3C,CAEA,CAAC,QACG,SAAU,SACV,IAAK,EACL,MAAO,EACP,QAAS,KACT,YAAa,OACb,OAAQ,GACZ",
+  "names": []
+}
