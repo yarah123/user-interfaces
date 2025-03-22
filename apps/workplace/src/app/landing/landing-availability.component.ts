@@ -15,6 +15,8 @@ import { LandingStateService } from './landing-state.service';
             >
                 {{ 'APP.WORKPLACE.AVAILABLE_LIST_HEADER' | translate }}
             </div>
+            <!-- MDI TASK: Remove available spaces due to client request-->
+            <!--
             <div
                 class="flex items-center space-x-2 px-4 text-sm sm:text-base"
                 *ngIf="!hide_spaces"
@@ -77,7 +79,7 @@ import { LandingStateService } from './landing-state.service';
                         'APP.WORKPLACE.AVAILABLE_LIST_SPACES_EMPTY' | translate
                     }}
                 </span>
-            </div>
+            </div> -->
             <div
                 class="flex items-center space-x-2 px-4 text-sm sm:text-base"
                 *ngIf="!hide_rooms"
