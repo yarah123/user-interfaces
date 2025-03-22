@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["css;79bb2ddcc0e6b6df72fbf4719bfeeba103c0ecfff3e15eb27703cf633e3433f5;/home/runner/work/user-interfaces/user-interfaces/libs/components/src/lib/popout-menu.component.ts"],
+  "sourcesContent": ["\n            :host {\n                position: relative;\n            }\n\n            app-icon {\n                transition: transform 200ms;\n            }\n\n            button {\n                background-color: #fff;\n                color: rgba(#000, 0.85);\n                font-size: 1.25rem;\n                height: 2.5em;\n                width: 2.5em;\n            }\n\n            button.show app-icon {\n                transform: rotate(45deg);\n            }\n\n            button.small {\n                transition:\n                    top 200ms,\n                    left 200ms;\n            }\n        "],
+  "mappings": "AACY,MACI,SAAU,QACd,CAEA,SACI,WAAY,UAAU,GAC1B,CAEA,OACI,iBAAkB,KAClB,MAAO,KAAK,IAAI,CAAE,KAClB,UAAW,QACX,OAAQ,MACR,MAAO,KACX,CAEA,MAAM,CAAC,KAAK,SACR,UAAW,OAAO,MACtB,CAEA,MAAM,CAAC,MACH,WACI,IAAI,GAAK,CACT,KAAK,GACb",
+  "names": []
+}
