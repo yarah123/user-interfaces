@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["css;3d3160faa32a80664198235484de268449d7fc62c02d80d27c6543aab05f2f86;/home/runner/work/user-interfaces/user-interfaces/libs/survey-suite/src/lib/survey-widget/table-widget.component.ts"],
+  "sourcesContent": ["\n            :host {\n                display: flex;\n                height: 100%;\n                width: 100%;\n                padding-bottom: 0.5rem;\n            }\n\n            blockquote:after,\n            blockquote:before {\n                font-size: 1.3rem;\n            }\n\n            blockquote:after {\n                content: close-quote;\n                vertical-align: bottom;\n                margin-left: 0.25rem;\n            }\n\n            blockquote:before {\n                content: open-quote;\n                vertical-align: top;\n                margin-right: 0.25rem;\n            }\n        "],
+  "mappings": "AACY,MACI,QAAS,KACT,OAAQ,KACR,MAAO,KACP,eAAgB,KACpB,CAEA,UAAU,OACV,UAAU,QACN,UAAW,MACf,CAEA,UAAU,OACN,QAAS,YACT,eAAgB,OAChB,YAAa,MACjB,CAEA,UAAU,QACN,QAAS,WACT,eAAgB,IAChB,aAAc,MAClB",
+  "names": []
+}

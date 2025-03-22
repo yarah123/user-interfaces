@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["css;af9cbbadfe855ed7e7b5f520687ba3be0ec8fbd9f118808a43689e6f43621347;/home/runner/work/user-interfaces/user-interfaces/libs/survey-suite/src/lib/question/selection.component.ts"],
+  "sourcesContent": ["\n            .item-textbox {\n                padding: 0.25rem;\n            }\n        "],
+  "mappings": "AACY,CAAC,aADb,QAEyB,MACb",
+  "names": []
+}
